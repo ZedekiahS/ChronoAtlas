@@ -49,6 +49,57 @@
             35
           ]
         ],
+        "boundaryGroups": [
+          {
+            "id": "rome-europe-180",
+            "label": "欧洲行省",
+            "boundaryType": "effective-control",
+            "confidence": "low",
+            "boundary": [
+              [-10, 36],
+              [-5, 45],
+              [6, 49],
+              [18, 47],
+              [30, 43],
+              [32, 38],
+              [22, 36],
+              [10, 39],
+              [0, 38],
+              [-10, 36]
+            ]
+          },
+          {
+            "id": "rome-africa-180",
+            "label": "北非行省",
+            "boundaryType": "effective-control",
+            "confidence": "low",
+            "boundary": [
+              [-7, 31],
+              [8, 29],
+              [24, 30],
+              [34, 32],
+              [32, 27],
+              [16, 27],
+              [0, 29],
+              [-7, 31]
+            ]
+          },
+          {
+            "id": "rome-east-180",
+            "label": "东方行省",
+            "boundaryType": "effective-control",
+            "confidence": "low",
+            "boundary": [
+              [25, 36],
+              [31, 43],
+              [42, 40],
+              [42, 35],
+              [35, 32],
+              [28, 33],
+              [25, 36]
+            ]
+          }
+        ],
         "sources": []
       },
       {
@@ -96,6 +147,57 @@
             35
           ]
         ],
+        "boundaryGroups": [
+          {
+            "id": "rome-europe-193",
+            "label": "欧洲行省",
+            "boundaryType": "effective-control",
+            "confidence": "low",
+            "boundary": [
+              [-9, 36],
+              [-4, 45],
+              [7, 49],
+              [19, 47],
+              [32, 43],
+              [33, 38],
+              [22, 36],
+              [10, 39],
+              [0, 38],
+              [-9, 36]
+            ]
+          },
+          {
+            "id": "rome-africa-193",
+            "label": "北非行省",
+            "boundaryType": "effective-control",
+            "confidence": "low",
+            "boundary": [
+              [-6, 31],
+              [9, 29],
+              [25, 30],
+              [35, 32],
+              [33, 27],
+              [16, 27],
+              [0, 29],
+              [-6, 31]
+            ]
+          },
+          {
+            "id": "rome-east-193",
+            "label": "东方行省",
+            "boundaryType": "effective-control",
+            "confidence": "low",
+            "boundary": [
+              [26, 36],
+              [32, 43],
+              [44, 40],
+              [43, 35],
+              [36, 32],
+              [29, 33],
+              [26, 36]
+            ]
+          }
+        ],
         "sources": []
       },
       {
@@ -142,6 +244,57 @@
             -8,
             35
           ]
+        ],
+        "boundaryGroups": [
+          {
+            "id": "rome-europe-235",
+            "label": "欧洲行省",
+            "boundaryType": "effective-control",
+            "confidence": "low",
+            "boundary": [
+              [-8, 36],
+              [-2, 44],
+              [8, 48],
+              [19, 47],
+              [30, 42],
+              [31, 38],
+              [21, 36],
+              [10, 39],
+              [1, 38],
+              [-8, 36]
+            ]
+          },
+          {
+            "id": "rome-africa-235",
+            "label": "北非行省",
+            "boundaryType": "effective-control",
+            "confidence": "low",
+            "boundary": [
+              [-5, 31],
+              [8, 29],
+              [23, 30],
+              [32, 32],
+              [30, 27],
+              [15, 27],
+              [0, 29],
+              [-5, 31]
+            ]
+          },
+          {
+            "id": "rome-east-235",
+            "label": "东方行省",
+            "boundaryType": "effective-control",
+            "confidence": "low",
+            "boundary": [
+              [26, 36],
+              [31, 42],
+              [39, 39],
+              [39, 35],
+              [34, 32],
+              [28, 33],
+              [26, 36]
+            ]
+          }
         ],
         "sources": []
       }
@@ -514,6 +667,53 @@
             100,
             21
           ]
+        ],
+        "boundaryGroups": [
+          {
+            "id": "cao-wei-220",
+            "label": "曹魏",
+            "boundaryType": "effective-control",
+            "confidence": "low",
+            "boundary": [
+              [103, 32],
+              [110, 41],
+              [123, 40],
+              [123, 31],
+              [116, 28],
+              [108, 29],
+              [103, 32]
+            ]
+          },
+          {
+            "id": "shu-han-220",
+            "label": "蜀汉",
+            "boundaryType": "effective-control",
+            "confidence": "low",
+            "boundary": [
+              [100, 24],
+              [104, 32],
+              [111, 31],
+              [110, 24],
+              [106, 20],
+              [101, 21],
+              [100, 24]
+            ]
+          },
+          {
+            "id": "eastern-wu-220",
+            "label": "孙吴",
+            "boundaryType": "effective-control",
+            "confidence": "low",
+            "boundary": [
+              [111, 22],
+              [116, 29],
+              [124, 30],
+              [122, 23],
+              [117, 19],
+              [112, 19],
+              [111, 22]
+            ]
+          }
         ],
         "sources": []
       },

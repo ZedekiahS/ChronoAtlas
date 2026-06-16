@@ -11,6 +11,20 @@ function assert(condition, message) {
   }
 }
 
+function validateBoundary(boundary, boundaryId) {
+  assert(Array.isArray(boundary) && boundary.length >= 4, `Boundary needs at least 4 points: ${boundaryId}`);
+
+  const first = boundary[0];
+  const last = boundary[boundary.length - 1];
+  assert(first[0] === last[0] && first[1] === last[1], `Boundary must be closed: ${boundaryId}`);
+
+  for (const point of boundary) {
+    assert(Array.isArray(point) && point.length === 2, `Boundary point must be [lon, lat]: ${boundaryId}`);
+    assert(point[0] >= -180 && point[0] <= 180, `Longitude out of range: ${boundaryId}`);
+    assert(point[1] >= -90 && point[1] <= 90, `Latitude out of range: ${boundaryId}`);
+  }
+}
+
 for (const event of events) {
   assert(regionIds.has(event.region), `Unknown event region: ${event.id}`);
   assert(Number.isInteger(event.startYear), `Event startYear must be an integer: ${event.id}`);
@@ -29,17 +43,24 @@ for (const region of regions) {
     assert(era.startYear <= era.endYear, `Era starts after it ends: ${eraId}`);
     assert(boundaryTypes.has(era.boundaryType), `Unknown boundaryType: ${eraId}`);
     assert(confidenceValues.has(era.confidence), `Unknown confidence: ${eraId}`);
-    assert(Array.isArray(era.boundary) && era.boundary.length >= 4, `Boundary needs at least 4 points: ${eraId}`);
 
-    const first = era.boundary[0];
-    const last = era.boundary[era.boundary.length - 1];
-    assert(first[0] === last[0] && first[1] === last[1], `Boundary must be closed: ${eraId}`);
-
-    for (const point of era.boundary) {
-      assert(Array.isArray(point) && point.length === 2, `Boundary point must be [lon, lat]: ${eraId}`);
-      assert(point[0] >= -180 && point[0] <= 180, `Longitude out of range: ${eraId}`);
-      assert(point[1] >= -90 && point[1] <= 90, `Latitude out of range: ${eraId}`);
+    if (era.boundary) {
+      validateBoundary(era.boundary, eraId);
     }
+
+    if (era.boundaryGroups) {
+      assert(Array.isArray(era.boundaryGroups), `boundaryGroups must be an array: ${eraId}`);
+      for (const group of era.boundaryGroups) {
+        const groupId = `${eraId}:${group.id}`;
+        assert(typeof group.id === "string" && group.id.length > 0, `Boundary group needs id: ${eraId}`);
+        assert(typeof group.label === "string" && group.label.length > 0, `Boundary group needs label: ${groupId}`);
+        assert(boundaryTypes.has(group.boundaryType), `Unknown group boundaryType: ${groupId}`);
+        assert(confidenceValues.has(group.confidence), `Unknown group confidence: ${groupId}`);
+        validateBoundary(group.boundary, groupId);
+      }
+    }
+
+    assert(era.boundary || era.boundaryGroups, `Era needs boundary or boundaryGroups: ${eraId}`);
   }
 }
 
