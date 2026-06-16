@@ -35,6 +35,20 @@
 - `docs/mvp-scope.md`: 第一阶段范围、边界和优先级。
 - `docs/data-model.md`: 历史事件数据结构。
 - `data/events-180-280.sample.json`: 首批结构化样例数据。
+- `src/`: 第一版交互原型。
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+默认开发地址：
+
+```text
+http://127.0.0.1:5173/
+```
 
 ## Near-Term Next Steps
 
