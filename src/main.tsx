@@ -1,7 +1,8 @@
 import { StrictMode, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { geoGraticule10, geoNaturalEarth1, geoPath } from "d3-geo";
-import type { Feature, FeatureCollection, Geometry, Polygon } from "geojson";
+import { curveCatmullRomClosed, line } from "d3-shape";
+import type { Feature, FeatureCollection, Geometry } from "geojson";
 import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
 import countries110 from "world-atlas/countries-110m.json";
@@ -114,16 +115,19 @@ function getRegionEra(region: RegionInfo, year: number) {
 }
 
 function getBoundaryPath(boundary: LonLat[]) {
-  const polygon: Feature<Polygon> = {
-    type: "Feature",
-    properties: {},
-    geometry: {
-      type: "Polygon",
-      coordinates: [boundary],
-    },
-  };
+  const projectedPoints = boundary
+    .slice(0, -1)
+    .map((point) => projection(point))
+    .filter((point): point is [number, number] => Boolean(point));
 
-  return path(polygon);
+  if (projectedPoints.length < 3) {
+    return null;
+  }
+
+  return line<[number, number]>()
+    .x((point) => point[0])
+    .y((point) => point[1])
+    .curve(curveCatmullRomClosed.alpha(0.55))(projectedPoints);
 }
 
 function getRegionSummary(region: RegionInfo, regionEvents: HistoricalEvent[], year: number) {
@@ -183,7 +187,9 @@ function WorldMap({
           return (
             <g key={region.id}>
               <path
-                className={`historical-boundary ${isActive ? "active" : ""} ${isHovered ? "hovered" : ""}`}
+                className={`historical-boundary confidence-${era.confidence} ${isActive ? "active" : ""} ${
+                  isHovered ? "hovered" : ""
+                }`}
                 d={boundaryPath}
                 style={{ "--accent": region.accent } as React.CSSProperties}
                 onMouseEnter={() => onHover(region.id)}

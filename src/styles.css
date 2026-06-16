@@ -157,6 +157,10 @@ h1 {
   vector-effect: non-scaling-stroke;
 }
 
+.historical-boundary.confidence-low {
+  stroke-dasharray: 8 4;
+}
+
 .historical-boundary:hover,
 .historical-boundary.hovered,
 .historical-boundary.active {
