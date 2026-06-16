@@ -180,6 +180,63 @@ h1 {
   vector-effect: non-scaling-stroke;
 }
 
+.regional-land {
+  fill: rgba(218, 222, 207, 0.9);
+  stroke: rgba(108, 119, 112, 0.28);
+  stroke-width: 0.7;
+  vector-effect: non-scaling-stroke;
+}
+
+.terrain-region {
+  fill: rgba(117, 102, 72, 0.14);
+  stroke: rgba(104, 92, 67, 0.16);
+  stroke-width: 0.5;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.terrain-range-mtn {
+  fill: rgba(111, 88, 55, 0.22);
+  stroke: rgba(87, 70, 48, 0.24);
+}
+
+.terrain-plateau {
+  fill: rgba(132, 112, 73, 0.18);
+}
+
+.terrain-desert {
+  fill: rgba(177, 157, 105, 0.18);
+}
+
+.terrain-basin,
+.terrain-plain,
+.terrain-valley {
+  fill: rgba(102, 123, 88, 0.1);
+}
+
+.physical-lake {
+  fill: rgba(91, 143, 164, 0.46);
+  stroke: rgba(68, 114, 138, 0.58);
+  stroke-width: 0.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.physical-river {
+  fill: none;
+  stroke: rgba(45, 109, 141, 0.42);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.45;
+  pointer-events: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.physical-river.major {
+  stroke: rgba(33, 101, 139, 0.72);
+  stroke-width: 1.15;
+}
+
 .historical-boundary {
   --accent: #b94f32;
   fill: color-mix(in srgb, var(--accent) 24%, rgba(255, 255, 255, 0.08));
@@ -223,15 +280,6 @@ h1 {
   vector-effect: non-scaling-stroke;
 }
 
-.river-line {
-  fill: none;
-  stroke: rgba(58, 117, 150, 0.72);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
-  vector-effect: non-scaling-stroke;
-}
-
 .polity-label {
   fill: rgba(30, 34, 38, 0.88);
   font-size: 6px;
@@ -255,6 +303,19 @@ h1 {
   stroke: rgba(238, 242, 238, 0.78);
   stroke-linejoin: round;
   stroke-width: 1.4px;
+  text-anchor: middle;
+}
+
+.terrain-label {
+  fill: rgba(79, 72, 60, 0.72);
+  font-size: 2.7px;
+  font-weight: 800;
+  letter-spacing: 0;
+  paint-order: stroke;
+  pointer-events: none;
+  stroke: rgba(234, 237, 226, 0.74);
+  stroke-linejoin: round;
+  stroke-width: 1.3px;
   text-anchor: middle;
 }
 

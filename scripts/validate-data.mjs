@@ -1,5 +1,6 @@
 import events from "../data/events-180-280.sample.json" with { type: "json" };
 import chinaMap from "../data/china-three-kingdoms-map.json" with { type: "json" };
+import naturalEarthChinaPhysical from "../data/natural-earth-china-physical.json" with { type: "json" };
 import regions from "../data/regions-180-280.json" with { type: "json" };
 
 const regionIds = new Set(["china", "rome", "sasanian-persia", "india"]);
@@ -28,6 +29,49 @@ function validateLonLat(point, pointId) {
   assert(Array.isArray(point) && point.length === 2, `Point must be [lon, lat]: ${pointId}`);
   assert(point[0] >= -180 && point[0] <= 180, `Longitude out of range: ${pointId}`);
   assert(point[1] >= -90 && point[1] <= 90, `Latitude out of range: ${pointId}`);
+}
+
+function collectGeometryCoordinates(geometry, collected = []) {
+  if (!geometry) {
+    return collected;
+  }
+
+  if (geometry.type === "GeometryCollection") {
+    for (const child of geometry.geometries) {
+      collectGeometryCoordinates(child, collected);
+    }
+    return collected;
+  }
+
+  collectCoordinateValues(geometry.coordinates, collected);
+  return collected;
+}
+
+function collectCoordinateValues(value, collected) {
+  if (Array.isArray(value) && value.length >= 2 && typeof value[0] === "number" && typeof value[1] === "number") {
+    collected.push(value);
+    return;
+  }
+
+  if (Array.isArray(value)) {
+    for (const child of value) {
+      collectCoordinateValues(child, collected);
+    }
+  }
+}
+
+function validateFeatureCollection(collection, collectionId) {
+  assert(collection.type === "FeatureCollection", `Expected FeatureCollection: ${collectionId}`);
+  assert(Array.isArray(collection.features) && collection.features.length > 0, `FeatureCollection needs features: ${collectionId}`);
+
+  for (const [index, feature] of collection.features.entries()) {
+    assert(feature.type === "Feature", `Expected Feature: ${collectionId}:${index}`);
+    const coordinates = collectGeometryCoordinates(feature.geometry);
+    assert(coordinates.length > 0, `Feature needs coordinates: ${collectionId}:${index}`);
+    for (const point of coordinates) {
+      validateLonLat(point, `${collectionId}:${index}`);
+    }
+  }
 }
 
 for (const event of events) {
@@ -101,5 +145,11 @@ for (const river of chinaMap.rivers) {
 for (const city of chinaMap.cities) {
   validateLonLat(city.coordinates, city.id);
 }
+
+assert(naturalEarthChinaPhysical.license === "Public domain", "Natural Earth physical data license must be public domain");
+validateFeatureCollection(naturalEarthChinaPhysical.land, "naturalEarthChinaPhysical.land");
+validateFeatureCollection(naturalEarthChinaPhysical.rivers, "naturalEarthChinaPhysical.rivers");
+validateFeatureCollection(naturalEarthChinaPhysical.lakes, "naturalEarthChinaPhysical.lakes");
+validateFeatureCollection(naturalEarthChinaPhysical.geographyRegions, "naturalEarthChinaPhysical.geographyRegions");
 
 console.log("Data validation OK");

@@ -1,8 +1,8 @@
 import { StrictMode, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { geoGraticule10, geoNaturalEarth1, geoPath } from "d3-geo";
-import { curveCatmullRom, curveLinearClosed, line } from "d3-shape";
-import type { Feature, FeatureCollection, Geometry } from "geojson";
+import { curveLinearClosed, line } from "d3-shape";
+import type { Feature, FeatureCollection, GeoJsonProperties, Geometry, GeometryCollection as GeoJsonGeometryCollection } from "geojson";
 import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
 import countries110 from "world-atlas/countries-110m.json";
@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import eventsData from "../data/events-180-280.sample.json";
 import chinaMapData from "../data/china-three-kingdoms-map.json";
+import naturalEarthChinaPhysicalData from "../data/natural-earth-china-physical.json";
 import regionsData from "../data/regions-180-280.json";
 import "./styles.css";
 
@@ -112,8 +113,25 @@ type ChinaMapLayer = {
   sources: string[];
 };
 
+type NaturalEarthPhysical = {
+  source: string;
+  license: string;
+  sourceUrls: Record<string, string>;
+  bbox: {
+    west: number;
+    south: number;
+    east: number;
+    north: number;
+  };
+  land: FeatureCollection<Geometry, GeoJsonProperties>;
+  rivers: FeatureCollection<Geometry, GeoJsonProperties>;
+  lakes: FeatureCollection<Geometry, GeoJsonProperties>;
+  geographyRegions: FeatureCollection<Geometry, GeoJsonProperties>;
+};
+
 const events = eventsData as HistoricalEvent[];
 const chinaMap = chinaMapData as ChinaMapLayer;
+const naturalEarthChinaPhysical = naturalEarthChinaPhysicalData as NaturalEarthPhysical;
 const regions = regionsData as unknown as RegionInfo[];
 type WorldAtlasTopology = Topology<{ countries: GeometryCollection }>;
 
@@ -184,21 +202,95 @@ function getBoundaryPath(boundary: LonLat[]) {
     .curve(curveLinearClosed)(projectedPoints);
 }
 
-function getRoutePath(points: LonLat[]) {
-  const projectedPoints = projectPoints(points);
+function getProjectedPoint(point: LonLat) {
+  return projection(point);
+}
 
-  if (projectedPoints.length < 2) {
+function collectGeometryCoordinates(geometry: Geometry | null | undefined, collected: LonLat[] = []) {
+  if (!geometry) {
+    return collected;
+  }
+
+  if (geometry.type === "GeometryCollection") {
+    for (const child of (geometry as GeoJsonGeometryCollection).geometries) {
+      collectGeometryCoordinates(child, collected);
+    }
+    return collected;
+  }
+
+  collectCoordinateValues("coordinates" in geometry ? geometry.coordinates : null, collected);
+  return collected;
+}
+
+function collectCoordinateValues(value: unknown, collected: LonLat[]) {
+  if (
+    Array.isArray(value) &&
+    value.length >= 2 &&
+    typeof value[0] === "number" &&
+    typeof value[1] === "number"
+  ) {
+    collected.push([value[0], value[1]]);
+    return;
+  }
+
+  if (Array.isArray(value)) {
+    for (const child of value) {
+      collectCoordinateValues(child, collected);
+    }
+  }
+}
+
+function getFeatureLabelPoint(geoFeature: Feature<Geometry>) {
+  const projectedPoints = collectGeometryCoordinates(geoFeature.geometry)
+    .map((point) => projection(point))
+    .filter((point): point is [number, number] => Boolean(point));
+
+  if (!projectedPoints.length) {
     return null;
   }
 
-  return line<[number, number]>()
-    .x((point) => point[0])
-    .y((point) => point[1])
-    .curve(curveCatmullRom.alpha(0.55))(projectedPoints);
+  const xs = projectedPoints.map((point) => point[0]);
+  const ys = projectedPoints.map((point) => point[1]);
+  return [
+    (Math.min(...xs) + Math.max(...xs)) / 2,
+    (Math.min(...ys) + Math.max(...ys)) / 2,
+  ] as [number, number];
 }
 
-function getProjectedPoint(point: LonLat) {
-  return projection(point);
+function getNaturalEarthProperty(geoFeature: Feature<Geometry>, keys: string[]) {
+  for (const key of keys) {
+    const value = geoFeature.properties?.[key];
+    if (typeof value === "string" && value.length) {
+      return value;
+    }
+  }
+
+  return "";
+}
+
+function getNaturalEarthScaleRank(geoFeature: Feature<Geometry>) {
+  const value = geoFeature.properties?.scalerank ?? geoFeature.properties?.SCALERANK;
+  return typeof value === "number" ? value : 99;
+}
+
+function getNaturalEarthClass(geoFeature: Feature<Geometry>) {
+  return getNaturalEarthProperty(geoFeature, ["featurecla", "FEATURECLA"]).toLowerCase();
+}
+
+function getNaturalEarthLabel(geoFeature: Feature<Geometry>) {
+  return getNaturalEarthProperty(geoFeature, ["NAME_ZH", "name_zh", "NAME_EN", "name_en", "NAME", "name"]);
+}
+
+function shouldShowTerrainLabel(geoFeature: Feature<Geometry>) {
+  const rank = getNaturalEarthScaleRank(geoFeature);
+  const label = getNaturalEarthLabel(geoFeature);
+
+  return (
+    rank <= 2 ||
+    /秦岭|青藏|黄土|塔里木|准噶尔|昆仑|祁连|天山|喜马拉雅|戈壁|阴山|大兴安|小兴安|四川|云贵|Qinling|Tibetan|Loess|Tarim|Dzungarian|Kunlun|Qilian|Tien Shan|Himalaya|Gobi|Yin Mountains|Khingan|Sichuan|Yunnan/i.test(
+      label,
+    )
+  );
 }
 
 function getProjectedViewBox(northWest: LonLat, southEast: LonLat, padding: number) {
@@ -359,12 +451,53 @@ function ChinaRegionMap({
         onClick={onClearSummary}
       >
         {graticulePath && <path className="graticule" d={graticulePath} />}
-        <g>
-          {countries.map((country, index) => {
-            const d = path(country);
-            return d ? <path className="country" d={d} key={index} onClick={onClearSummary} /> : null;
-          })}
-        </g>
+        {naturalEarthChinaPhysical.land.features.map((geoFeature, index) => {
+          const landPath = path(geoFeature);
+          if (!landPath) {
+            return null;
+          }
+
+          return <path className="regional-land" d={landPath} key={`land-${index}`} onClick={onClearSummary} />;
+        })}
+
+        {naturalEarthChinaPhysical.geographyRegions.features.map((geoFeature, index) => {
+          const regionPath = path(geoFeature);
+          if (!regionPath) {
+            return null;
+          }
+
+          return (
+            <path
+              className={`terrain-region terrain-${getNaturalEarthClass(geoFeature).replace(/[^a-z]+/g, "-")}`}
+              d={regionPath}
+              key={`terrain-${index}`}
+            />
+          );
+        })}
+
+        {naturalEarthChinaPhysical.lakes.features.map((geoFeature, index) => {
+          const lakePath = path(geoFeature);
+          if (!lakePath) {
+            return null;
+          }
+
+          return <path className="physical-lake" d={lakePath} key={`lake-${index}`} />;
+        })}
+
+        {naturalEarthChinaPhysical.rivers.features.map((geoFeature, index) => {
+          const riverPath = path(geoFeature);
+          if (!riverPath) {
+            return null;
+          }
+
+          return (
+            <path
+              className={`physical-river ${getNaturalEarthScaleRank(geoFeature) <= 2 ? "major" : ""}`}
+              d={riverPath}
+              key={`river-${index}`}
+            />
+          );
+        })}
 
         {mapLayer?.frontierZones.map((zone) => {
           const boundaryPath = getBoundaryPath(zone.boundary);
@@ -402,15 +535,6 @@ function ChinaRegionMap({
           );
         })}
 
-        {mapLayer?.rivers.map((river) => {
-          const riverPath = getRoutePath(river.points);
-          if (!riverPath) {
-            return null;
-          }
-
-          return <path className="river-line" d={riverPath} key={river.id} />;
-        })}
-
         {mapLayer?.frontierZones.map((zone) => {
           const labelPoint = getProjectedPoint(zone.boundary[Math.floor(zone.boundary.length / 2)]);
           if (!labelPoint) {
@@ -420,6 +544,24 @@ function ChinaRegionMap({
           return (
             <text className="frontier-label" key={`${zone.id}-label`} x={labelPoint[0]} y={labelPoint[1]}>
               {zone.label}
+            </text>
+          );
+        })}
+
+        {naturalEarthChinaPhysical.geographyRegions.features.map((geoFeature, index) => {
+          if (!shouldShowTerrainLabel(geoFeature)) {
+            return null;
+          }
+
+          const labelPoint = getFeatureLabelPoint(geoFeature);
+          const label = getNaturalEarthLabel(geoFeature);
+          if (!labelPoint || !label) {
+            return null;
+          }
+
+          return (
+            <text className="terrain-label" key={`terrain-label-${index}`} x={labelPoint[0]} y={labelPoint[1]}>
+              {label}
             </text>
           );
         })}
