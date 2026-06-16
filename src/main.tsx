@@ -7,6 +7,7 @@ import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
 import countries110 from "world-atlas/countries-110m.json";
 import {
+  ArrowLeft,
   CalendarDays,
   ChevronLeft,
   ChevronRight,
@@ -45,6 +46,8 @@ type HistoricalEvent = {
   confidence: "high" | "medium" | "low";
   sources: unknown[];
 };
+
+type Page = "world" | "china";
 
 type RegionInfo = {
   id: Region;
@@ -90,6 +93,8 @@ const projection = geoNaturalEarth1().fitExtent(
 const path = geoPath(projection);
 const graticulePath = path(geoGraticule10());
 const spherePath = path({ type: "Sphere" });
+const worldViewBox = "0 0 1000 520";
+const chinaViewBox = getProjectedViewBox([78, 54], [135, 8], 22);
 
 const categoryLabels: Record<EventCategory, string> = {
   politics: "政治",
@@ -139,6 +144,42 @@ function getBoundaryPath(boundary: LonLat[]) {
     .curve(curveCatmullRomClosed.alpha(0.55))(projectedPoints);
 }
 
+function getProjectedViewBox(northWest: LonLat, southEast: LonLat, padding: number) {
+  const topLeft = projection(northWest);
+  const bottomRight = projection(southEast);
+
+  if (!topLeft || !bottomRight) {
+    return worldViewBox;
+  }
+
+  const x = Math.min(topLeft[0], bottomRight[0]) - padding;
+  const y = Math.min(topLeft[1], bottomRight[1]) - padding;
+  const width = Math.abs(bottomRight[0] - topLeft[0]) + padding * 2;
+  const height = Math.abs(bottomRight[1] - topLeft[1]) + padding * 2;
+
+  return `${x} ${y} ${width} ${height}`;
+}
+
+function getBoundaryGroups(region: RegionInfo, era: RegionEra) {
+  if (era.boundaryGroups?.length) {
+    return era.boundaryGroups;
+  }
+
+  if (!era.boundary) {
+    return [];
+  }
+
+  return [
+    {
+      id: region.id,
+      label: region.label,
+      boundaryType: era.boundaryType,
+      confidence: era.confidence,
+      boundary: era.boundary,
+    },
+  ];
+}
+
 function getRegionSummary(region: RegionInfo, regionEvents: HistoricalEvent[], year: number) {
   const era = getRegionEra(region, year);
   const activeEvent = regionEvents.find((event) => isActiveInYear(event, year));
@@ -158,6 +199,7 @@ function WorldMap({
   onSelect,
   onClearSummary,
   year,
+  viewBox = worldViewBox,
 }: {
   activeRegion: Region;
   hoveredRegion: Region | null;
@@ -165,12 +207,13 @@ function WorldMap({
   onSelect: (region: Region) => void;
   onClearSummary: () => void;
   year: number;
+  viewBox?: string;
 }) {
   return (
     <div className="map-frame" aria-label="世界地图总览">
       <svg
         className="world-map"
-        viewBox="0 0 1000 520"
+        viewBox={viewBox}
         role="img"
         aria-label="世界地图"
         onClick={onClearSummary}
@@ -221,13 +264,76 @@ function WorldMap({
   );
 }
 
+function ChinaRegionMap({
+  activeGroup,
+  onSelectGroup,
+  onClearSummary,
+  year,
+}: {
+  activeGroup: string | null;
+  onSelectGroup: (group: BoundaryGroup) => void;
+  onClearSummary: () => void;
+  year: number;
+}) {
+  const china = regions.find((region) => region.id === "china")!;
+  const era = getRegionEra(china, year);
+  const boundaryGroups = getBoundaryGroups(china, era);
+
+  return (
+    <div className="map-frame" aria-label="中国区域地图">
+      <svg
+        className="world-map regional-map"
+        viewBox={chinaViewBox}
+        role="img"
+        aria-label="中国及周边区域地图"
+        onClick={onClearSummary}
+      >
+        {graticulePath && <path className="graticule" d={graticulePath} />}
+        <g>
+          {countries.map((country, index) => {
+            const d = path(country);
+            return d ? <path className="country" d={d} key={index} onClick={onClearSummary} /> : null;
+          })}
+        </g>
+
+        {boundaryGroups.map((group) => {
+          const boundaryPath = getBoundaryPath(group.boundary);
+          if (!boundaryPath) {
+            return null;
+          }
+
+          return (
+            <path
+              className={`historical-boundary regional-boundary confidence-${group.confidence} boundary-${
+                group.boundaryType
+              } ${activeGroup === group.id ? "active" : ""}`}
+              d={boundaryPath}
+              key={group.id}
+              style={{ "--accent": "#b94f32" } as React.CSSProperties}
+              onClick={(event) => {
+                event.stopPropagation();
+                onSelectGroup(group);
+              }}
+              tabIndex={0}
+              role="button"
+              aria-label={`选择${group.label}`}
+            />
+          );
+        })}
+      </svg>
+    </div>
+  );
+}
+
 function App() {
+  const [page, setPage] = useState<Page>("world");
   const [year, setYear] = useState(220);
   const [query, setQuery] = useState("");
   const [selectedRegion, setSelectedRegion] = useState<Region>("china");
   const [hoveredRegion, setHoveredRegion] = useState<Region | null>(null);
   const [summaryRegion, setSummaryRegion] = useState<Region | null>("china");
   const [selectedId, setSelectedId] = useState("china-220-cao-pi-founds-wei");
+  const [selectedChinaGroup, setSelectedChinaGroup] = useState<BoundaryGroup | null>(null);
 
   const normalizedQuery = query.trim().toLowerCase();
 
@@ -264,6 +370,9 @@ function App() {
   const inspectedRegion = hoverRegionInfo ?? summaryRegionInfo;
   const inspectedEra = inspectedRegion ? getRegionEra(inspectedRegion, year) : null;
   const selectedRegionEra = getRegionEra(selectedRegionInfo, year);
+  const chinaRegionInfo = regions.find((region) => region.id === "china")!;
+  const chinaRegionEra = getRegionEra(chinaRegionInfo, year);
+  const chinaBoundaryGroups = getBoundaryGroups(chinaRegionInfo, chinaRegionEra);
 
   const selectedRegionEvents = visibleEvents.filter((event) => event.region === selectedRegion);
   const selectedEvent =
@@ -277,6 +386,19 @@ function App() {
     .filter((event): event is HistoricalEvent => Boolean(event));
 
   function selectRegion(region: Region) {
+    if (region === "china") {
+      setPage("china");
+      setSelectedRegion("china");
+      setSummaryRegion(null);
+      setHoveredRegion(null);
+      setSelectedChinaGroup(chinaBoundaryGroups[0] ?? null);
+      const firstChinaEvent = visibleEvents.find((event) => event.region === "china");
+      if (firstChinaEvent) {
+        setSelectedId(firstChinaEvent.id);
+      }
+      return;
+    }
+
     setSelectedRegion(region);
     setSummaryRegion(region);
     const firstEvent = visibleEvents.find((event) => event.region === region);
@@ -285,13 +407,20 @@ function App() {
     }
   }
 
+  function returnToWorld() {
+    setPage("world");
+    setSelectedRegion("china");
+    setSummaryRegion("china");
+    setSelectedChinaGroup(null);
+  }
+
   return (
     <main className="app-shell">
       <section className="map-workspace">
         <header className="topbar">
           <div>
             <p className="kicker">ChronoAtlas</p>
-            <h1>拖动时间，观察世界局势的同一瞬间</h1>
+            <h1>{page === "china" ? "中国区域：三国格局" : "拖动时间，观察世界局势的同一瞬间"}</h1>
           </div>
           <label className="search-box">
             <Search size={18} aria-hidden="true" />
@@ -303,17 +432,36 @@ function App() {
           </label>
         </header>
 
-        <section className="map-stage">
-          <WorldMap
-            activeRegion={selectedRegion}
-            hoveredRegion={hoveredRegion}
-            onHover={setHoveredRegion}
-            onSelect={selectRegion}
-            onClearSummary={() => setSummaryRegion(null)}
-            year={year}
-          />
+        {page === "china" && (
+          <div className="region-toolbar">
+            <button className="back-button" type="button" onClick={returnToWorld}>
+              <ArrowLeft size={18} />
+              世界总览
+            </button>
+            <span>{chinaRegionEra.title}</span>
+          </div>
+        )}
 
-          {inspectedRegion && inspectedEra && (
+        <section className="map-stage">
+          {page === "world" ? (
+            <WorldMap
+              activeRegion={selectedRegion}
+              hoveredRegion={hoveredRegion}
+              onHover={setHoveredRegion}
+              onSelect={selectRegion}
+              onClearSummary={() => setSummaryRegion(null)}
+              year={year}
+            />
+          ) : (
+            <ChinaRegionMap
+              activeGroup={selectedChinaGroup?.id ?? null}
+              onSelectGroup={setSelectedChinaGroup}
+              onClearSummary={() => setSelectedChinaGroup(null)}
+              year={year}
+            />
+          )}
+
+          {page === "world" && inspectedRegion && inspectedEra && (
             <aside
               className="hover-summary"
               style={{ "--accent": inspectedRegion.accent } as React.CSSProperties}
@@ -343,6 +491,30 @@ function App() {
               <div className="summary-meta">
                 <span>{inspectedEra.title}</span>
                 <strong>{regionCounts[inspectedRegion.id]} 个事件</strong>
+              </div>
+            </aside>
+          )}
+
+          {page === "china" && selectedChinaGroup && (
+            <aside className="hover-summary regional-summary" style={{ "--accent": "#b94f32" } as React.CSSProperties}>
+              <div className="summary-heading">
+                <MapPinned size={18} aria-hidden="true" />
+                <span>区域片段</span>
+                <button
+                  className="summary-close"
+                  type="button"
+                  aria-label="关闭区域信息"
+                  title="关闭区域信息"
+                  onClick={() => setSelectedChinaGroup(null)}
+                >
+                  <X size={16} />
+                </button>
+              </div>
+              <h2>{selectedChinaGroup.label}</h2>
+              <p>{chinaRegionEra.summary}</p>
+              <div className="summary-meta">
+                <span>{chinaRegionEra.title}</span>
+                <strong>{selectedChinaGroup.confidence}</strong>
               </div>
             </aside>
           )}
@@ -393,13 +565,26 @@ function App() {
 
       <aside className="detail-panel" aria-label="区域与事件详情">
         <div className="region-detail">
-          <div className="detail-eyebrow" style={{ color: selectedRegionInfo.accent }}>
+          <div className="detail-eyebrow" style={{ color: page === "china" ? "#b94f32" : selectedRegionInfo.accent }}>
             <Info size={18} aria-hidden="true" />
-            <span>{selectedRegionInfo.label}</span>
+            <span>{page === "china" ? "中国" : selectedRegionInfo.label}</span>
           </div>
-          <h2>{selectedRegionEra.title}</h2>
-          <p className="detail-summary">{selectedRegionEra.summary}</p>
+          <h2>{page === "china" ? chinaRegionEra.title : selectedRegionEra.title}</h2>
+          <p className="detail-summary">{page === "china" ? chinaRegionEra.summary : selectedRegionEra.summary}</p>
         </div>
+
+        {page === "china" && (
+          <section className="event-list">
+            <h3>势力范围</h3>
+            <div className="chips">
+              {chinaBoundaryGroups.map((group) => (
+                <button className="chip-button" key={group.id} type="button" onClick={() => setSelectedChinaGroup(group)}>
+                  {group.label}
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section className="event-list">
           <h3>区域事件</h3>
