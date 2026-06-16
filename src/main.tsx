@@ -1,5 +1,10 @@
 import { StrictMode, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
+import { geoGraticule10, geoNaturalEarth1, geoPath } from "d3-geo";
+import type { Feature, FeatureCollection, Geometry } from "geojson";
+import { feature } from "topojson-client";
+import type { GeometryCollection, Topology } from "topojson-specification";
+import countries110 from "world-atlas/countries-110m.json";
 import {
   CalendarDays,
   ChevronLeft,
@@ -40,51 +45,153 @@ type HistoricalEvent = {
 type RegionInfo = {
   id: Region;
   label: string;
-  short: string;
-  status: string;
   accent: string;
-  mapLabel: { x: number; y: number };
-  hotspot: { x: number; y: number; width: number; height: number };
+  focus: [number, number];
+  radius: [number, number];
+  labelOffset: [number, number];
+  eras: Array<{
+    startYear: number;
+    endYear: number;
+    title: string;
+    summary: string;
+  }>;
 };
 
 const events = eventsData as HistoricalEvent[];
+type WorldAtlasTopology = Topology<{ countries: GeometryCollection }>;
+
+const atlas = countries110 as unknown as WorldAtlasTopology;
+const world = feature(atlas, atlas.objects.countries) as FeatureCollection<Geometry>;
+const countries = world.features as Array<Feature<Geometry>>;
+const projection = geoNaturalEarth1().fitExtent(
+  [
+    [28, 24],
+    [972, 496],
+  ],
+  { type: "Sphere" },
+);
+const path = geoPath(projection);
+const graticulePath = path(geoGraticule10());
+const spherePath = path({ type: "Sphere" });
 
 const regions: RegionInfo[] = [
   {
     id: "rome",
     label: "罗马",
-    short: "帝国承压",
-    status: "地中海世界仍由罗马帝国主导，军队、财政和边境压力正在积累。",
     accent: "#5b6fbb",
-    mapLabel: { x: 46, y: 43 },
-    hotspot: { x: 34, y: 32, width: 18, height: 18 },
+    focus: [13, 42],
+    radius: [86, 42],
+    labelOffset: [-62, -56],
+    eras: [
+      {
+        startYear: 180,
+        endYear: 192,
+        title: "康茂德时期",
+        summary: "罗马仍控制地中海世界，但皇权威信和边境压力开始显出裂纹。",
+      },
+      {
+        startYear: 193,
+        endYear: 234,
+        title: "塞维鲁王朝",
+        summary: "军队在皇位继承中的地位上升，帝国依靠军事财政维持广阔边境。",
+      },
+      {
+        startYear: 235,
+        endYear: 280,
+        title: "三世纪危机",
+        summary: "罗马进入皇位频繁更替、边境战争、财政压力和地方割据交织的危机期。",
+      },
+    ],
   },
   {
     id: "sasanian-persia",
     label: "萨珊波斯",
-    short: "西亚重组",
-    status: "萨珊势力取代安息传统，成为罗马东方最重要的对手。",
     accent: "#168069",
-    mapLabel: { x: 57, y: 47 },
-    hotspot: { x: 52, y: 37, width: 13, height: 17 },
+    focus: [53, 32],
+    radius: [72, 40],
+    labelOffset: [10, -48],
+    eras: [
+      {
+        startYear: 180,
+        endYear: 223,
+        title: "安息末期",
+        summary: "西亚仍处在安息传统的影响下，地方贵族和新兴波斯势力逐渐拉开距离。",
+      },
+      {
+        startYear: 224,
+        endYear: 240,
+        title: "萨珊建立",
+        summary: "阿尔达希尔击败安息王朝，新的萨珊君主制开始重塑西亚政治秩序。",
+      },
+      {
+        startYear: 241,
+        endYear: 280,
+        title: "沙普尔扩张",
+        summary: "萨珊波斯成为罗马东方强敌，战争、外交和边境城市构成时代主线。",
+      },
+    ],
   },
   {
     id: "india",
     label: "印度次大陆",
-    short: "区域化",
-    status: "贵霜影响力减弱，印度西北与次大陆内部的区域力量逐渐重组。",
     accent: "#9a6a16",
-    mapLabel: { x: 67, y: 58 },
-    hotspot: { x: 63, y: 47, width: 12, height: 18 },
+    focus: [78, 22],
+    radius: [62, 48],
+    labelOffset: [12, 18],
+    eras: [
+      {
+        startYear: 180,
+        endYear: 219,
+        title: "贵霜后期",
+        summary: "贵霜仍连接印度西北、中亚和贸易网络，但控制力已不像早期那样稳固。",
+      },
+      {
+        startYear: 220,
+        endYear: 260,
+        title: "区域重组",
+        summary: "印度西北和次大陆内部力量分化，贵霜影响力持续减弱。",
+      },
+      {
+        startYear: 261,
+        endYear: 280,
+        title: "地方化加深",
+        summary: "更分散的区域政权和贸易网络成为理解三世纪印度次大陆的重要线索。",
+      },
+    ],
   },
   {
     id: "china",
     label: "中国",
-    short: "三国形成",
-    status: "东汉秩序崩溃后，魏蜀吴政治格局正在形成，地方军事集团成为主角。",
     accent: "#b94f32",
-    mapLabel: { x: 78, y: 47 },
-    hotspot: { x: 72, y: 35, width: 14, height: 19 },
+    focus: [112, 34],
+    radius: [74, 46],
+    labelOffset: [18, -52],
+    eras: [
+      {
+        startYear: 180,
+        endYear: 189,
+        title: "东汉末年",
+        summary: "黄巾起义和中央权威衰退让地方军事力量迅速坐大。",
+      },
+      {
+        startYear: 190,
+        endYear: 219,
+        title: "军阀割据",
+        summary: "董卓之乱后，各地军事集团竞争，曹操、刘备、孙权等势力逐渐成形。",
+      },
+      {
+        startYear: 220,
+        endYear: 263,
+        title: "三国形成",
+        summary: "魏蜀吴格局确立，政权竞争、边境战争和制度重建同时展开。",
+      },
+      {
+        startYear: 264,
+        endYear: 280,
+        title: "走向统一",
+        summary: "蜀汉灭亡后，司马氏控制下的魏晋权力转换推动统一进程。",
+      },
+    ],
   },
 ];
 
@@ -113,15 +220,23 @@ function formatYearRange(event: HistoricalEvent) {
     : `${event.startYear}-${event.endYear} 年`;
 }
 
+function getRegionEra(region: RegionInfo, year: number) {
+  return (
+    region.eras.find((era) => era.startYear <= year && era.endYear >= year) ??
+    region.eras[region.eras.length - 1]
+  );
+}
+
 function getRegionSummary(region: RegionInfo, regionEvents: HistoricalEvent[], year: number) {
+  const era = getRegionEra(region, year);
   const activeEvent = regionEvents.find((event) => isActiveInYear(event, year));
   const nearEvent = activeEvent ?? regionEvents[0];
 
   if (!nearEvent) {
-    return `${year} 年附近，${region.label}区域还没有录入足够样例事件。`;
+    return `${year} 年附近：${era.summary}`;
   }
 
-  return `${year} 年附近：${nearEvent.title}。${region.status}`;
+  return `${year} 年附近：${nearEvent.title}。${era.summary}`;
 }
 
 function WorldMap({
@@ -139,34 +254,35 @@ function WorldMap({
 }) {
   return (
     <div className="map-frame" aria-label="世界地图总览">
-      <svg className="world-map" viewBox="0 0 1000 520" role="img" aria-label="简化世界地图">
-        <path
-          className="landmass"
-          d="M87 184c47-48 122-52 176-27 35 16 61 44 105 39 44-6 63-39 112-45 48-7 91 15 130 9 48-8 76-53 134-51 75 3 127 72 116 142-8 51-52 81-105 78-48-3-69-30-116-20-50 10-72 50-122 50-55 0-76-48-127-43-48 5-74 50-128 43-47-6-70-44-113-50-43-7-72 19-105 3-40-19-32-91 43-128Z"
-        />
-        <path
-          className="landmass secondary"
-          d="M179 344c38 8 61 34 62 72 1 42-24 73-59 68-35-6-54-48-45-89 6-31 20-43 42-51Z"
-        />
-        <path
-          className="landmass secondary"
-          d="M739 330c46 4 78 35 73 70-4 30-33 51-67 45-42-7-70-47-58-79 8-22 26-38 52-36Z"
-        />
-        <path className="sea-line" d="M115 250c127 60 248 66 363 18 131-55 253-47 363 24" />
-        <path className="sea-line" d="M318 135c76 36 152 39 229 8" />
+      <svg className="world-map" viewBox="0 0 1000 520" role="img" aria-label="世界地图">
+        {spherePath && <path className="sphere" d={spherePath} />}
+        {graticulePath && <path className="graticule" d={graticulePath} />}
+        <g>
+          {countries.map((country, index) => {
+            const d = path(country);
+            return d ? <path className="country" d={d} key={index} /> : null;
+          })}
+        </g>
 
         {regions.map((region) => {
           const isActive = region.id === activeRegion;
           const isHovered = region.id === hoveredRegion;
+          const point = projection(region.focus);
+          if (!point) {
+            return null;
+          }
+          const [x, y] = point;
+          const [rx, ry] = region.radius;
+          const [labelX, labelY] = region.labelOffset;
+
           return (
             <g key={region.id}>
-              <rect
-                className={`hotspot ${isActive ? "active" : ""} ${isHovered ? "hovered" : ""}`}
-                x={region.hotspot.x * 10}
-                y={region.hotspot.y * 5.2}
-                width={region.hotspot.width * 10}
-                height={region.hotspot.height * 5.2}
-                rx="28"
+              <ellipse
+                className={`region-lens ${isActive ? "active" : ""} ${isHovered ? "hovered" : ""}`}
+                cx={x}
+                cy={y}
+                rx={rx}
+                ry={ry}
                 style={{ "--accent": region.accent } as React.CSSProperties}
                 onMouseEnter={() => onHover(region.id)}
                 onMouseLeave={() => onHover(null)}
@@ -177,10 +293,17 @@ function WorldMap({
                 role="button"
                 aria-label={`选择${region.label}`}
               />
+              <circle
+                className={`region-marker ${isActive ? "active" : ""}`}
+                cx={x}
+                cy={y}
+                r="6"
+                style={{ "--accent": region.accent } as React.CSSProperties}
+              />
               <foreignObject
-                x={region.mapLabel.x * 10 - 58}
-                y={region.mapLabel.y * 5.2 - 22}
-                width="116"
+                x={x + labelX}
+                y={y + labelY}
+                width="142"
                 height="48"
                 className="map-label"
                 style={{ "--accent": region.accent } as React.CSSProperties}
@@ -237,6 +360,8 @@ function App() {
   const selectedRegionInfo = regions.find((region) => region.id === selectedRegion) ?? regions[0];
   const hoverRegionInfo = regions.find((region) => region.id === hoveredRegion);
   const inspectedRegion = hoverRegionInfo ?? selectedRegionInfo;
+  const inspectedEra = getRegionEra(inspectedRegion, year);
+  const selectedRegionEra = getRegionEra(selectedRegionInfo, year);
 
   const selectedRegionEvents = visibleEvents.filter((event) => event.region === selectedRegion);
   const selectedEvent =
@@ -302,7 +427,7 @@ function App() {
               )}
             </p>
             <div className="summary-meta">
-              <span>{inspectedRegion.short}</span>
+              <span>{inspectedEra.title}</span>
               <strong>{regionCounts[inspectedRegion.id]} 个事件</strong>
             </div>
           </aside>
@@ -357,8 +482,8 @@ function App() {
             <Info size={18} aria-hidden="true" />
             <span>{selectedRegionInfo.label}</span>
           </div>
-          <h2>{selectedRegionInfo.short}</h2>
-          <p className="detail-summary">{selectedRegionInfo.status}</p>
+          <h2>{selectedRegionEra.title}</h2>
+          <p className="detail-summary">{selectedRegionEra.summary}</p>
         </div>
 
         <section className="event-list">
