@@ -1,7 +1,7 @@
 import { StrictMode, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { geoGraticule10, geoNaturalEarth1, geoPath } from "d3-geo";
-import type { Feature, FeatureCollection, Geometry } from "geojson";
+import type { Feature, FeatureCollection, Geometry, Polygon } from "geojson";
 import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
 import countries110 from "world-atlas/countries-110m.json";
@@ -23,6 +23,7 @@ import "./styles.css";
 type Region = "china" | "rome" | "sasanian-persia" | "india";
 
 type EventCategory = "politics" | "war" | "society" | "culture" | "economy";
+type LonLat = [number, number];
 
 type HistoricalEvent = {
   id: string;
@@ -47,13 +48,13 @@ type RegionInfo = {
   label: string;
   accent: string;
   focus: [number, number];
-  radius: [number, number];
   labelOffset: [number, number];
   eras: Array<{
     startYear: number;
     endYear: number;
     title: string;
     summary: string;
+    boundary: LonLat[];
   }>;
 };
 
@@ -80,7 +81,6 @@ const regions: RegionInfo[] = [
     label: "罗马",
     accent: "#5b6fbb",
     focus: [13, 42],
-    radius: [86, 42],
     labelOffset: [-62, -56],
     eras: [
       {
@@ -88,18 +88,51 @@ const regions: RegionInfo[] = [
         endYear: 192,
         title: "康茂德时期",
         summary: "罗马仍控制地中海世界，但皇权威信和边境压力开始显出裂纹。",
+        boundary: [
+          [-10, 35],
+          [-3, 51],
+          [13, 55],
+          [31, 48],
+          [42, 38],
+          [32, 28],
+          [13, 29],
+          [-5, 31],
+          [-10, 35],
+        ],
       },
       {
         startYear: 193,
         endYear: 234,
         title: "塞维鲁王朝",
         summary: "军队在皇位继承中的地位上升，帝国依靠军事财政维持广阔边境。",
+        boundary: [
+          [-9, 35],
+          [-2, 51],
+          [14, 54],
+          [33, 48],
+          [44, 38],
+          [33, 28],
+          [14, 29],
+          [-5, 31],
+          [-9, 35],
+        ],
       },
       {
         startYear: 235,
         endYear: 280,
         title: "三世纪危机",
         summary: "罗马进入皇位频繁更替、边境战争、财政压力和地方割据交织的危机期。",
+        boundary: [
+          [-8, 35],
+          [0, 50],
+          [14, 53],
+          [31, 47],
+          [39, 38],
+          [30, 29],
+          [13, 30],
+          [-4, 32],
+          [-8, 35],
+        ],
       },
     ],
   },
@@ -108,7 +141,6 @@ const regions: RegionInfo[] = [
     label: "萨珊波斯",
     accent: "#168069",
     focus: [53, 32],
-    radius: [72, 40],
     labelOffset: [10, -48],
     eras: [
       {
@@ -116,18 +148,45 @@ const regions: RegionInfo[] = [
         endYear: 223,
         title: "安息末期",
         summary: "西亚仍处在安息传统的影响下，地方贵族和新兴波斯势力逐渐拉开距离。",
+        boundary: [
+          [42, 26],
+          [48, 39],
+          [62, 39],
+          [72, 31],
+          [63, 22],
+          [48, 24],
+          [42, 26],
+        ],
       },
       {
         startYear: 224,
         endYear: 240,
         title: "萨珊建立",
         summary: "阿尔达希尔击败安息王朝，新的萨珊君主制开始重塑西亚政治秩序。",
+        boundary: [
+          [43, 25],
+          [50, 40],
+          [66, 39],
+          [76, 30],
+          [65, 22],
+          [49, 24],
+          [43, 25],
+        ],
       },
       {
         startYear: 241,
         endYear: 280,
         title: "沙普尔扩张",
         summary: "萨珊波斯成为罗马东方强敌，战争、外交和边境城市构成时代主线。",
+        boundary: [
+          [39, 25],
+          [50, 42],
+          [70, 40],
+          [79, 31],
+          [66, 20],
+          [47, 23],
+          [39, 25],
+        ],
       },
     ],
   },
@@ -136,7 +195,6 @@ const regions: RegionInfo[] = [
     label: "印度次大陆",
     accent: "#9a6a16",
     focus: [78, 22],
-    radius: [62, 48],
     labelOffset: [12, 18],
     eras: [
       {
@@ -144,18 +202,45 @@ const regions: RegionInfo[] = [
         endYear: 219,
         title: "贵霜后期",
         summary: "贵霜仍连接印度西北、中亚和贸易网络，但控制力已不像早期那样稳固。",
+        boundary: [
+          [66, 25],
+          [71, 38],
+          [82, 36],
+          [84, 29],
+          [77, 22],
+          [68, 23],
+          [66, 25],
+        ],
       },
       {
         startYear: 220,
         endYear: 260,
         title: "区域重组",
         summary: "印度西北和次大陆内部力量分化，贵霜影响力持续减弱。",
+        boundary: [
+          [67, 23],
+          [73, 35],
+          [85, 31],
+          [87, 21],
+          [82, 10],
+          [72, 9],
+          [67, 23],
+        ],
       },
       {
         startYear: 261,
         endYear: 280,
         title: "地方化加深",
         summary: "更分散的区域政权和贸易网络成为理解三世纪印度次大陆的重要线索。",
+        boundary: [
+          [68, 22],
+          [74, 34],
+          [85, 29],
+          [86, 19],
+          [81, 11],
+          [73, 10],
+          [68, 22],
+        ],
       },
     ],
   },
@@ -164,7 +249,6 @@ const regions: RegionInfo[] = [
     label: "中国",
     accent: "#b94f32",
     focus: [112, 34],
-    radius: [74, 46],
     labelOffset: [18, -52],
     eras: [
       {
@@ -172,24 +256,60 @@ const regions: RegionInfo[] = [
         endYear: 189,
         title: "东汉末年",
         summary: "黄巾起义和中央权威衰退让地方军事力量迅速坐大。",
+        boundary: [
+          [95, 24],
+          [104, 42],
+          [121, 43],
+          [125, 32],
+          [121, 22],
+          [109, 18],
+          [95, 24],
+        ],
       },
       {
         startYear: 190,
         endYear: 219,
         title: "军阀割据",
         summary: "董卓之乱后，各地军事集团竞争，曹操、刘备、孙权等势力逐渐成形。",
+        boundary: [
+          [99, 23],
+          [106, 41],
+          [122, 41],
+          [125, 31],
+          [119, 22],
+          [108, 18],
+          [99, 23],
+        ],
       },
       {
         startYear: 220,
         endYear: 263,
         title: "三国形成",
         summary: "魏蜀吴格局确立，政权竞争、边境战争和制度重建同时展开。",
+        boundary: [
+          [100, 21],
+          [108, 40],
+          [123, 40],
+          [125, 30],
+          [120, 22],
+          [110, 18],
+          [100, 21],
+        ],
       },
       {
         startYear: 264,
         endYear: 280,
         title: "走向统一",
         summary: "蜀汉灭亡后，司马氏控制下的魏晋权力转换推动统一进程。",
+        boundary: [
+          [102, 21],
+          [110, 40],
+          [123, 39],
+          [124, 29],
+          [119, 22],
+          [111, 18],
+          [102, 21],
+        ],
       },
     ],
   },
@@ -227,6 +347,19 @@ function getRegionEra(region: RegionInfo, year: number) {
   );
 }
 
+function getBoundaryPath(boundary: LonLat[]) {
+  const polygon: Feature<Polygon> = {
+    type: "Feature",
+    properties: {},
+    geometry: {
+      type: "Polygon",
+      coordinates: [boundary],
+    },
+  };
+
+  return path(polygon);
+}
+
 function getRegionSummary(region: RegionInfo, regionEvents: HistoricalEvent[], year: number) {
   const era = getRegionEra(region, year);
   const activeEvent = regionEvents.find((event) => isActiveInYear(event, year));
@@ -245,12 +378,14 @@ function WorldMap({
   onHover,
   onSelect,
   regionCounts,
+  year,
 }: {
   activeRegion: Region;
   hoveredRegion: Region | null;
   onHover: (region: Region | null) => void;
   onSelect: (region: Region) => void;
   regionCounts: Record<Region, number>;
+  year: number;
 }) {
   return (
     <div className="map-frame" aria-label="世界地图总览">
@@ -268,21 +403,22 @@ function WorldMap({
           const isActive = region.id === activeRegion;
           const isHovered = region.id === hoveredRegion;
           const point = projection(region.focus);
+          const era = getRegionEra(region, year);
+          const boundaryPath = getBoundaryPath(era.boundary);
           if (!point) {
             return null;
           }
           const [x, y] = point;
-          const [rx, ry] = region.radius;
           const [labelX, labelY] = region.labelOffset;
+          if (!boundaryPath) {
+            return null;
+          }
 
           return (
             <g key={region.id}>
-              <ellipse
-                className={`region-lens ${isActive ? "active" : ""} ${isHovered ? "hovered" : ""}`}
-                cx={x}
-                cy={y}
-                rx={rx}
-                ry={ry}
+              <path
+                className={`historical-boundary ${isActive ? "active" : ""} ${isHovered ? "hovered" : ""}`}
+                d={boundaryPath}
                 style={{ "--accent": region.accent } as React.CSSProperties}
                 onMouseEnter={() => onHover(region.id)}
                 onMouseLeave={() => onHover(null)}
@@ -407,6 +543,7 @@ function App() {
             onHover={setHoveredRegion}
             onSelect={selectRegion}
             regionCounts={regionCounts}
+            year={year}
           />
 
           <aside

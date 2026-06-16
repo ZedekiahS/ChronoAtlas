@@ -136,16 +136,16 @@ h1 {
 }
 
 .country {
-  fill: rgba(238, 229, 198, 0.88);
-  stroke: rgba(72, 91, 88, 0.28);
-  stroke-width: 0.55;
+  fill: rgba(215, 215, 205, 0.62);
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 0;
   vector-effect: non-scaling-stroke;
 }
 
-.region-lens {
+.historical-boundary {
   --accent: #b94f32;
-  fill: color-mix(in srgb, var(--accent) 20%, transparent);
-  stroke: color-mix(in srgb, var(--accent) 66%, #ffffff);
+  fill: color-mix(in srgb, var(--accent) 24%, rgba(255, 255, 255, 0.08));
+  stroke: color-mix(in srgb, var(--accent) 72%, #1e2226);
   stroke-width: 2.2;
   outline: none;
   transition:
@@ -154,13 +154,14 @@ h1 {
     filter 160ms ease;
   transform-box: fill-box;
   transform-origin: center;
+  vector-effect: non-scaling-stroke;
 }
 
-.region-lens:hover,
-.region-lens.hovered,
-.region-lens.active {
-  fill: color-mix(in srgb, var(--accent) 38%, transparent);
-  stroke-width: 3.8;
+.historical-boundary:hover,
+.historical-boundary.hovered,
+.historical-boundary.active {
+  fill: color-mix(in srgb, var(--accent) 42%, rgba(255, 255, 255, 0.1));
+  stroke-width: 4.8;
   filter: drop-shadow(0 12px 18px rgba(30, 34, 38, 0.22));
 }
 
