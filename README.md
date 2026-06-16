@@ -35,12 +35,14 @@
 - `docs/mvp-scope.md`: 第一阶段范围、边界和优先级。
 - `docs/data-model.md`: 历史事件数据结构。
 - `data/events-180-280.sample.json`: 首批结构化样例数据。
+- `data/regions-180-280.json`: 第一版历史区域与近似边界数据。
 - `src/`: 第一版交互原型。
 
 ## Local Development
 
 ```bash
 npm install
+npm run validate:data
 npm run dev
 ```
 
