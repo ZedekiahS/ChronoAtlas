@@ -15,6 +15,7 @@
     "lucide-react": "^0.561.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "three": "^0.184.0",
     "topojson-client": "^3.1.0",
     "world-atlas": "^2.0.2"
   },
@@ -25,6 +26,7 @@
     "@types/geojson": "^7946.0.16",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.184.1",
     "@types/topojson-client": "^3.1.5",
     "@vitejs/plugin-react": "^6.0.2",
     "typescript": "^5.9.3",

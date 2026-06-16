@@ -1,4 +1,4 @@
-import { StrictMode, useMemo, useState } from "react";
+import { StrictMode, useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { geoGraticule10, geoNaturalEarth1, geoPath } from "d3-geo";
 import { curveLinearClosed, line } from "d3-shape";
@@ -8,6 +8,7 @@ import type { GeometryCollection, Topology } from "topojson-specification";
 import countries110 from "world-atlas/countries-110m.json";
 import {
   ArrowLeft,
+  Box,
   CalendarDays,
   ChevronLeft,
   ChevronRight,
@@ -15,8 +16,10 @@ import {
   X,
   Compass,
   Info,
+  Layers,
   Link2,
   MapPinned,
+  Mountain,
   Search,
   UsersRound,
 } from "lucide-react";
@@ -50,6 +53,7 @@ type HistoricalEvent = {
 };
 
 type Page = "world" | "china";
+type ChinaMapMode = "political" | "terrain" | "three-d";
 
 type RegionInfo = {
   id: Region;
@@ -89,20 +93,12 @@ type ChinaPolity = BoundaryGroup & {
 type ChinaMapLayer = {
   id: string;
   label: string;
-  startYear: number;
-  endYear: number;
   view: {
     northWest: LonLat;
     southEast: LonLat;
     padding: number;
   };
-  polities: ChinaPolity[];
-  frontierZones: BoundaryGroup[];
-  rivers: Array<{
-    id: string;
-    label: string;
-    points: LonLat[];
-  }>;
+  eras: ChinaMapEra[];
   cities: Array<{
     id: string;
     label: string;
@@ -111,6 +107,15 @@ type ChinaMapLayer = {
     polity: string;
   }>;
   sources: string[];
+};
+
+type ChinaMapEra = {
+  startYear: number;
+  endYear: number;
+  title: string;
+  summary: string;
+  polities: ChinaPolity[];
+  frontierZones?: BoundaryGroup[];
 };
 
 type NaturalEarthPhysical = {
@@ -158,6 +163,16 @@ const categoryLabels: Record<EventCategory, string> = {
   culture: "文化",
   economy: "经济",
 };
+
+const chinaMapModes: Array<{
+  id: ChinaMapMode;
+  label: string;
+  Icon: typeof Layers;
+}> = [
+  { id: "political", label: "政治", Icon: Layers },
+  { id: "terrain", label: "地形", Icon: Mountain },
+  { id: "three-d", label: "3D", Icon: Box },
+];
 
 const yearMin = 180;
 const yearMax = 280;
@@ -330,11 +345,7 @@ function getBoundaryGroups(region: RegionInfo, era: RegionEra) {
 }
 
 function getChinaMapLayer(year: number) {
-  if (chinaMap.startYear <= year && chinaMap.endYear >= year) {
-    return chinaMap;
-  }
-
-  return null;
+  return chinaMap.eras.find((era) => era.startYear <= year && era.endYear >= year) ?? null;
 }
 
 function isChinaPolity(group: BoundaryGroup | ChinaPolity): group is ChinaPolity {
@@ -425,13 +436,172 @@ function WorldMap({
   );
 }
 
+function getTerrainHeight(lon: number, lat: number) {
+  const ridge = (centerLon: number, centerLat: number, lonSpread: number, latSpread: number, height: number) => {
+    const lonDistance = (lon - centerLon) / lonSpread;
+    const latDistance = (lat - centerLat) / latSpread;
+    return height * Math.exp(-(lonDistance * lonDistance + latDistance * latDistance));
+  };
+
+  return (
+    0.02 +
+    ridge(88, 32, 12, 8, 1.6) +
+    ridge(80, 42, 8, 3, 0.75) +
+    ridge(96, 36, 9, 2.4, 0.55) +
+    ridge(106, 33, 7, 1.6, 0.38) +
+    ridge(101, 27, 5.5, 5, 0.55) +
+    ridge(113, 42, 8, 3, 0.35) +
+    ridge(116, 25, 8, 4, 0.26)
+  );
+}
+
+function getLocalTerrainPoint(lon: number, lat: number, height = 0) {
+  const { west, east, south, north } = naturalEarthChinaPhysical.bbox;
+  const x = ((lon - west) / (east - west) - 0.5) * 10.8;
+  const z = (0.5 - (lat - south) / (north - south)) * 6.5;
+  return { x, y: height, z };
+}
+
+function ChinaTerrain3DMap({ onClearSummary }: { onClearSummary: () => void }) {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  useEffect(() => {
+    let disposed = false;
+    let animationFrame = 0;
+    let cleanupResize = () => {};
+
+    async function renderTerrain() {
+      const THREE = await import("three");
+      const canvas = canvasRef.current;
+      if (!canvas || disposed) {
+        return;
+      }
+
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0xd6e2dd);
+
+      const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+      camera.position.set(0, 6.1, 8.4);
+      camera.lookAt(0, 0, 0);
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      const resize = () => {
+        const bounds = canvas.getBoundingClientRect();
+        renderer.setSize(bounds.width, bounds.height, false);
+        camera.aspect = bounds.width / bounds.height;
+        camera.updateProjectionMatrix();
+      };
+      resize();
+      window.addEventListener("resize", resize);
+      cleanupResize = () => window.removeEventListener("resize", resize);
+
+      scene.add(new THREE.HemisphereLight(0xf2f5eb, 0x65736d, 2.2));
+      const sun = new THREE.DirectionalLight(0xffffff, 2.4);
+      sun.position.set(-3, 7, 4);
+      scene.add(sun);
+
+      const terrainGroup = new THREE.Group();
+      scene.add(terrainGroup);
+
+      const width = 10.8;
+      const depth = 6.5;
+      const geometry = new THREE.PlaneGeometry(width, depth, 128, 82);
+      const positions = geometry.attributes.position;
+      const colors: number[] = [];
+      const color = new THREE.Color();
+
+      for (let index = 0; index < positions.count; index += 1) {
+        const x = positions.getX(index);
+        const planarY = positions.getY(index);
+        const lon = naturalEarthChinaPhysical.bbox.west + (x / width + 0.5) * (naturalEarthChinaPhysical.bbox.east - naturalEarthChinaPhysical.bbox.west);
+        const lat = naturalEarthChinaPhysical.bbox.south + (planarY / depth + 0.5) * (naturalEarthChinaPhysical.bbox.north - naturalEarthChinaPhysical.bbox.south);
+        const height = getTerrainHeight(lon, lat);
+        positions.setXYZ(index, x, height, -planarY);
+
+        if (height > 1.0) {
+          color.setRGB(0.62, 0.56, 0.44);
+        } else if (height > 0.45) {
+          color.setRGB(0.51, 0.56, 0.43);
+        } else {
+          color.setRGB(0.63, 0.69, 0.56);
+        }
+        colors.push(color.r, color.g, color.b);
+      }
+
+      geometry.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
+      geometry.computeVertexNormals();
+
+      const material = new THREE.MeshStandardMaterial({
+        metalness: 0,
+        roughness: 0.92,
+        vertexColors: true,
+      });
+      const terrain = new THREE.Mesh(geometry, material);
+      terrainGroup.add(terrain);
+
+      const water = new THREE.Mesh(
+        new THREE.PlaneGeometry(width, depth),
+        new THREE.MeshStandardMaterial({
+          color: 0x7ea9b7,
+          opacity: 0.28,
+          transparent: true,
+          roughness: 0.65,
+        }),
+      );
+      water.rotation.x = -Math.PI / 2;
+      water.position.y = -0.015;
+      terrainGroup.add(water);
+
+      const riverMaterial = new THREE.LineBasicMaterial({ color: 0x2b6f96, transparent: true, opacity: 0.72 });
+      for (const river of naturalEarthChinaPhysical.rivers.features.filter((featureItem) => getNaturalEarthScaleRank(featureItem) <= 2)) {
+        const points = collectGeometryCoordinates(river.geometry)
+          .map(([lon, lat]) => {
+            const local = getLocalTerrainPoint(lon, lat, getTerrainHeight(lon, lat) + 0.035);
+            return new THREE.Vector3(local.x, local.y, local.z);
+          })
+          .filter((point) => Number.isFinite(point.x) && Number.isFinite(point.z));
+
+        if (points.length >= 2) {
+          terrainGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(points), riverMaterial));
+        }
+      }
+
+      const animate = () => {
+        const time = performance.now() * 0.001;
+        terrainGroup.rotation.y = Math.sin(time * 0.35) * 0.045;
+        renderer.render(scene, camera);
+        animationFrame = window.requestAnimationFrame(animate);
+      };
+      animate();
+    }
+
+    renderTerrain();
+
+    return () => {
+      disposed = true;
+      cleanupResize();
+      window.cancelAnimationFrame(animationFrame);
+    };
+  }, []);
+
+  return (
+    <div className="terrain-3d-frame" onClick={onClearSummary}>
+      <canvas ref={canvasRef} aria-label="中国区域 3D 地形图" />
+    </div>
+  );
+}
+
 function ChinaRegionMap({
   activeGroup,
+  mapMode,
   onSelectGroup,
   onClearSummary,
   year,
 }: {
   activeGroup: string | null;
+  mapMode: ChinaMapMode;
   onSelectGroup: (group: BoundaryGroup) => void;
   onClearSummary: () => void;
   year: number;
@@ -441,8 +611,12 @@ function ChinaRegionMap({
   const mapLayer = getChinaMapLayer(year);
   const boundaryGroups = mapLayer?.polities ?? getBoundaryGroups(china, era);
 
+  if (mapMode === "three-d") {
+    return <ChinaTerrain3DMap onClearSummary={onClearSummary} />;
+  }
+
   return (
-    <div className="map-frame" aria-label="中国区域地图">
+    <div className={`map-frame map-mode-${mapMode}`} aria-label="中国区域地图">
       <svg
         className="world-map regional-map"
         viewBox={chinaViewBox}
@@ -460,140 +634,126 @@ function ChinaRegionMap({
           return <path className="regional-land" d={landPath} key={`land-${index}`} onClick={onClearSummary} />;
         })}
 
-        {naturalEarthChinaPhysical.geographyRegions.features.map((geoFeature, index) => {
-          const regionPath = path(geoFeature);
-          if (!regionPath) {
-            return null;
-          }
+        {mapMode === "terrain" && (
+          <>
+            {naturalEarthChinaPhysical.geographyRegions.features.map((geoFeature, index) => {
+              const regionPath = path(geoFeature);
+              if (!regionPath) {
+                return null;
+              }
 
-          return (
-            <path
-              className={`terrain-region terrain-${getNaturalEarthClass(geoFeature).replace(/[^a-z]+/g, "-")}`}
-              d={regionPath}
-              key={`terrain-${index}`}
-            />
-          );
-        })}
+              return (
+                <path
+                  className={`terrain-region terrain-${getNaturalEarthClass(geoFeature).replace(/[^a-z]+/g, "-")}`}
+                  d={regionPath}
+                  key={`terrain-${index}`}
+                />
+              );
+            })}
 
-        {naturalEarthChinaPhysical.lakes.features.map((geoFeature, index) => {
-          const lakePath = path(geoFeature);
-          if (!lakePath) {
-            return null;
-          }
+            {naturalEarthChinaPhysical.lakes.features.map((geoFeature, index) => {
+              const lakePath = path(geoFeature);
+              if (!lakePath) {
+                return null;
+              }
 
-          return <path className="physical-lake" d={lakePath} key={`lake-${index}`} />;
-        })}
+              return <path className="physical-lake" d={lakePath} key={`lake-${index}`} />;
+            })}
 
-        {naturalEarthChinaPhysical.rivers.features.map((geoFeature, index) => {
-          const riverPath = path(geoFeature);
-          if (!riverPath) {
-            return null;
-          }
+            {naturalEarthChinaPhysical.rivers.features.map((geoFeature, index) => {
+              const riverPath = path(geoFeature);
+              if (!riverPath) {
+                return null;
+              }
 
-          return (
-            <path
-              className={`physical-river ${getNaturalEarthScaleRank(geoFeature) <= 2 ? "major" : ""}`}
-              d={riverPath}
-              key={`river-${index}`}
-            />
-          );
-        })}
+              return (
+                <path
+                  className={`physical-river ${getNaturalEarthScaleRank(geoFeature) <= 2 ? "major" : ""}`}
+                  d={riverPath}
+                  key={`river-${index}`}
+                />
+              );
+            })}
 
-        {mapLayer?.frontierZones.map((zone) => {
-          const boundaryPath = getBoundaryPath(zone.boundary);
-          if (!boundaryPath) {
-            return null;
-          }
+            {naturalEarthChinaPhysical.geographyRegions.features.map((geoFeature, index) => {
+              if (!shouldShowTerrainLabel(geoFeature)) {
+                return null;
+              }
 
-          return <path className="frontier-zone" d={boundaryPath} key={zone.id} />;
-        })}
+              const labelPoint = getFeatureLabelPoint(geoFeature);
+              const label = getNaturalEarthLabel(geoFeature);
+              if (!labelPoint || !label) {
+                return null;
+              }
 
-        {boundaryGroups.map((group) => {
-          const boundaryPath = getBoundaryPath(group.boundary);
-          if (!boundaryPath) {
-            return null;
-          }
+              return (
+                <text className="terrain-label" key={`terrain-label-${index}`} x={labelPoint[0]} y={labelPoint[1]}>
+                  {label}
+                </text>
+              );
+            })}
+          </>
+        )}
 
-          const accent = isChinaPolity(group) ? group.accent : "#b94f32";
+        {mapMode === "political" && (
+          <>
+            {boundaryGroups.map((group) => {
+              const boundaryPath = getBoundaryPath(group.boundary);
+              if (!boundaryPath) {
+                return null;
+              }
 
-          return (
-            <path
-              className={`historical-boundary regional-boundary confidence-${group.confidence} boundary-${
-                group.boundaryType
-              } ${activeGroup === group.id ? "active" : ""}`}
-              d={boundaryPath}
-              key={group.id}
-              style={{ "--accent": accent } as React.CSSProperties}
-              onClick={(event) => {
-                event.stopPropagation();
-                onSelectGroup(group);
-              }}
-              tabIndex={0}
-              role="button"
-              aria-label={`选择${group.label}`}
-            />
-          );
-        })}
+              const accent = isChinaPolity(group) ? group.accent : "#b94f32";
 
-        {mapLayer?.frontierZones.map((zone) => {
-          const labelPoint = getProjectedPoint(zone.boundary[Math.floor(zone.boundary.length / 2)]);
-          if (!labelPoint) {
-            return null;
-          }
+              return (
+                <path
+                  className={`historical-boundary regional-boundary confidence-${group.confidence} boundary-${
+                    group.boundaryType
+                  } ${activeGroup === group.id ? "active" : ""}`}
+                  d={boundaryPath}
+                  key={group.id}
+                  style={{ "--accent": accent } as React.CSSProperties}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    onSelectGroup(group);
+                  }}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`选择${group.label}`}
+                />
+              );
+            })}
 
-          return (
-            <text className="frontier-label" key={`${zone.id}-label`} x={labelPoint[0]} y={labelPoint[1]}>
-              {zone.label}
-            </text>
-          );
-        })}
+            {mapLayer?.polities.map((polity) => {
+              const center = getProjectedPoint(polity.center);
+              if (!center) {
+                return null;
+              }
 
-        {naturalEarthChinaPhysical.geographyRegions.features.map((geoFeature, index) => {
-          if (!shouldShowTerrainLabel(geoFeature)) {
-            return null;
-          }
+              return (
+                <text className="polity-label" key={`${polity.id}-label`} x={center[0]} y={center[1]}>
+                  {polity.label}
+                </text>
+              );
+            })}
 
-          const labelPoint = getFeatureLabelPoint(geoFeature);
-          const label = getNaturalEarthLabel(geoFeature);
-          if (!labelPoint || !label) {
-            return null;
-          }
+            {chinaMap.cities.map((city) => {
+              const cityPoint = getProjectedPoint(city.coordinates);
+              if (!cityPoint) {
+                return null;
+              }
 
-          return (
-            <text className="terrain-label" key={`terrain-label-${index}`} x={labelPoint[0]} y={labelPoint[1]}>
-              {label}
-            </text>
-          );
-        })}
-
-        {mapLayer?.polities.map((polity) => {
-          const center = getProjectedPoint(polity.center);
-          if (!center) {
-            return null;
-          }
-
-          return (
-            <text className="polity-label" key={`${polity.id}-label`} x={center[0]} y={center[1]}>
-              {polity.label}
-            </text>
-          );
-        })}
-
-        {mapLayer?.cities.map((city) => {
-          const cityPoint = getProjectedPoint(city.coordinates);
-          if (!cityPoint) {
-            return null;
-          }
-
-          return (
-            <g className={`city-marker city-${city.kind}`} key={city.id}>
-              <circle cx={cityPoint[0]} cy={cityPoint[1]} r={city.kind === "capital" ? 1.9 : 1.25} />
-              <text x={cityPoint[0] + 2.4} y={cityPoint[1] - 1.8}>
-                {city.label}
-              </text>
-            </g>
-          );
-        })}
+              return (
+                <g className={`city-marker city-${city.kind}`} key={city.id}>
+                  <circle cx={cityPoint[0]} cy={cityPoint[1]} r={city.kind === "capital" ? 1.9 : 1.25} />
+                  <text x={cityPoint[0] + 2.4} y={cityPoint[1] - 1.8}>
+                    {city.label}
+                  </text>
+                </g>
+              );
+            })}
+          </>
+        )}
       </svg>
     </div>
   );
@@ -603,6 +763,7 @@ function App() {
   const [page, setPage] = useState<Page>("world");
   const [year, setYear] = useState(220);
   const [query, setQuery] = useState("");
+  const [chinaMapMode, setChinaMapMode] = useState<ChinaMapMode>("political");
   const [selectedRegion, setSelectedRegion] = useState<Region>("china");
   const [hoveredRegion, setHoveredRegion] = useState<Region | null>(null);
   const [summaryRegion, setSummaryRegion] = useState<Region | null>("china");
@@ -649,7 +810,9 @@ function App() {
   const chinaMapLayer = getChinaMapLayer(year);
   const chinaBoundaryGroups = chinaMapLayer?.polities ?? getBoundaryGroups(chinaRegionInfo, chinaRegionEra);
   const selectedChinaGroupInView =
-    chinaBoundaryGroups.find((group) => group.id === selectedChinaGroup?.id) ?? null;
+    chinaMapMode === "political"
+      ? (chinaBoundaryGroups.find((group) => group.id === selectedChinaGroup?.id) ?? null)
+      : null;
 
   const selectedRegionEvents = visibleEvents.filter((event) => event.region === selectedRegion);
   const selectedEvent =
@@ -662,9 +825,20 @@ function App() {
     .map((id) => events.find((event) => event.id === id))
     .filter((event): event is HistoricalEvent => Boolean(event));
 
+  useEffect(() => {
+    if (page !== "china" || chinaMapMode !== "political") {
+      return;
+    }
+
+    if (!selectedChinaGroupInView) {
+      setSelectedChinaGroup(chinaBoundaryGroups[0] ?? null);
+    }
+  }, [chinaBoundaryGroups, chinaMapMode, page, selectedChinaGroupInView]);
+
   function selectRegion(region: Region) {
     if (region === "china") {
       setPage("china");
+      setChinaMapMode("political");
       setSelectedRegion("china");
       setSummaryRegion(null);
       setHoveredRegion(null);
@@ -691,6 +865,11 @@ function App() {
     setSelectedChinaGroup(null);
   }
 
+  function changeChinaMapMode(mode: ChinaMapMode) {
+    setChinaMapMode(mode);
+    setSelectedChinaGroup(mode === "political" ? (chinaBoundaryGroups[0] ?? null) : null);
+  }
+
   return (
     <main className="app-shell">
       <section className="map-workspace">
@@ -715,7 +894,22 @@ function App() {
               <ArrowLeft size={18} />
               世界总览
             </button>
-            <span>{chinaRegionEra.title}</span>
+            <div className="map-mode-control" role="group" aria-label="地图模式">
+              {chinaMapModes.map(({ id, label, Icon }) => (
+                <button
+                  className={`map-mode-button ${chinaMapMode === id ? "active" : ""}`}
+                  key={id}
+                  type="button"
+                  aria-pressed={chinaMapMode === id}
+                  title={`${label}地图`}
+                  onClick={() => changeChinaMapMode(id)}
+                >
+                  <Icon size={16} />
+                  <span>{label}</span>
+                </button>
+              ))}
+            </div>
+            <span>{chinaMapLayer?.title ?? chinaRegionEra.title}</span>
           </div>
         )}
 
@@ -732,6 +926,7 @@ function App() {
           ) : (
             <ChinaRegionMap
               activeGroup={selectedChinaGroupInView?.id ?? null}
+              mapMode={chinaMapMode}
               onSelectGroup={setSelectedChinaGroup}
               onClearSummary={() => setSelectedChinaGroup(null)}
               year={year}
@@ -772,7 +967,7 @@ function App() {
             </aside>
           )}
 
-          {page === "china" && selectedChinaGroupInView && (
+          {page === "china" && chinaMapMode === "political" && selectedChinaGroupInView && (
             <aside
               className="hover-summary regional-summary"
               style={
@@ -857,11 +1052,13 @@ function App() {
             <Info size={18} aria-hidden="true" />
             <span>{page === "china" ? "中国" : selectedRegionInfo.label}</span>
           </div>
-          <h2>{page === "china" ? chinaRegionEra.title : selectedRegionEra.title}</h2>
-          <p className="detail-summary">{page === "china" ? chinaRegionEra.summary : selectedRegionEra.summary}</p>
+          <h2>{page === "china" ? (chinaMapLayer?.title ?? chinaRegionEra.title) : selectedRegionEra.title}</h2>
+          <p className="detail-summary">
+            {page === "china" ? (chinaMapLayer?.summary ?? chinaRegionEra.summary) : selectedRegionEra.summary}
+          </p>
         </div>
 
-        {page === "china" && (
+        {page === "china" && chinaMapMode === "political" && (
           <section className="event-list">
             <h3>势力范围</h3>
             <div className="chips">
@@ -944,8 +1141,8 @@ function App() {
               政权与标签
             </h3>
             <div className="chips">
-              {[...selectedEvent.polities, ...selectedEvent.tags].map((tag) => (
-                <span key={tag}>{tag}</span>
+              {[...selectedEvent.polities, ...selectedEvent.tags].map((tag, index) => (
+                <span key={`${tag}-${index}`}>{tag}</span>
               ))}
             </div>
           </section>

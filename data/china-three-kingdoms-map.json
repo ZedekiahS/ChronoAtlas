@@ -1,235 +1,493 @@
 {
-  "id": "china-three-kingdoms-220-263",
-  "label": "三国区域地图",
-  "startYear": 220,
-  "endYear": 263,
+  "id": "china-three-kingdoms-180-280",
+  "label": "中国三国时期区域地图",
   "view": {
     "northWest": [78, 50],
     "southEast": [132, 16],
     "padding": 18
   },
-  "polities": [
+  "eras": [
     {
-      "id": "cao-wei-220",
-      "label": "曹魏",
-      "accent": "#9f4f38",
-      "capitalName": "洛阳",
-      "capital": [112.45, 34.62],
-      "center": [112.8, 36.2],
-      "summary": "控制华北、中原和关中，是三国中人口与制度资源最强的一方。",
-      "boundaryType": "effective-control",
-      "confidence": "low",
-      "boundary": [
-        [92.4, 40.2],
-        [97.4, 40.5],
-        [101.5, 39.0],
-        [105.6, 38.6],
-        [110.4, 40.7],
-        [116.3, 41.2],
-        [122.5, 40.6],
-        [126.0, 39.3],
-        [125.0, 35.7],
-        [121.5, 33.4],
-        [118.6, 32.8],
-        [116.1, 31.9],
-        [114.0, 32.2],
-        [111.8, 33.2],
-        [108.8, 33.2],
-        [106.9, 32.0],
-        [105.0, 32.6],
-        [103.8, 34.6],
-        [101.6, 35.8],
-        [98.2, 36.6],
-        [94.6, 38.2],
-        [92.4, 40.2]
+      "startYear": 180,
+      "endYear": 189,
+      "title": "东汉末年",
+      "summary": "名义上的东汉疆域仍覆盖主要农业区，但中央权威快速衰退，地方军事化开始改变实际控制。",
+      "polities": [
+        {
+          "id": "late-han-180",
+          "label": "东汉",
+          "accent": "#9f4f38",
+          "capitalName": "洛阳",
+          "capital": [112.45, 34.62],
+          "center": [111.5, 33.5],
+          "summary": "东汉仍是名义中央，但州郡和地方豪强正在获得更大军事自主权。",
+          "boundaryType": "nominal",
+          "confidence": "low",
+          "boundary": [
+            [95.0, 40.5],
+            [104.0, 42.5],
+            [119.5, 41.0],
+            [124.8, 36.5],
+            [123.2, 30.0],
+            [118.0, 23.2],
+            [109.5, 19.5],
+            [100.0, 22.0],
+            [96.2, 29.0],
+            [95.0, 40.5]
+          ]
+        }
       ]
     },
     {
-      "id": "shu-han-220",
-      "label": "蜀汉",
-      "accent": "#9b7a20",
-      "capitalName": "成都",
-      "capital": [104.07, 30.67],
-      "center": [104.5, 28.6],
-      "summary": "以益州盆地为核心，北控汉中，南接南中，依托山地防线与魏吴周旋。",
-      "boundaryType": "effective-control",
-      "confidence": "low",
-      "boundary": [
-        [97.5, 31.4],
-        [100.0, 33.3],
-        [103.0, 34.0],
-        [106.9, 32.0],
-        [108.8, 33.2],
-        [110.0, 31.2],
-        [109.2, 28.8],
-        [107.4, 26.5],
-        [106.5, 24.3],
-        [104.0, 22.2],
-        [101.0, 22.0],
-        [98.6, 23.7],
-        [97.0, 26.0],
-        [96.2, 29.0],
-        [97.5, 31.4]
+      "startYear": 190,
+      "endYear": 207,
+      "title": "群雄割据",
+      "summary": "董卓之乱后，地方军事集团迅速分化，华北、中原、江东、荆益等区域形成互相竞争的控制圈。",
+      "polities": [
+        {
+          "id": "cao-cao-190",
+          "label": "曹操集团",
+          "accent": "#9f4f38",
+          "capitalName": "许",
+          "capital": [113.82, 34.02],
+          "center": [113.2, 35.0],
+          "summary": "曹操控制兖豫与中原核心，逐步向河北、关中和淮北扩展。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [105.5, 37.6],
+            [111.0, 39.2],
+            [119.5, 39.0],
+            [121.8, 35.5],
+            [118.5, 32.6],
+            [112.0, 32.5],
+            [106.8, 34.0],
+            [105.5, 37.6]
+          ]
+        },
+        {
+          "id": "yuan-shao-190",
+          "label": "袁绍集团",
+          "accent": "#755c9f",
+          "capitalName": "邺",
+          "capital": [114.5, 36.35],
+          "center": [115.0, 38.0],
+          "summary": "河北是袁绍势力核心，官渡前后逐步被曹操吞并。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [109.0, 41.0],
+            [116.5, 41.2],
+            [123.0, 40.0],
+            [121.6, 37.0],
+            [116.0, 35.8],
+            [110.5, 36.2],
+            [109.0, 41.0]
+          ]
+        },
+        {
+          "id": "liu-biao-190",
+          "label": "荆州刘表",
+          "accent": "#5f7f9f",
+          "capitalName": "襄阳",
+          "capital": [112.14, 32.04],
+          "center": [112.2, 29.8],
+          "summary": "荆州位于长江中游，是曹、孙、刘三方竞争的关键连接区。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [109.2, 32.0],
+            [114.0, 32.3],
+            [116.0, 30.0],
+            [114.2, 27.0],
+            [110.8, 26.0],
+            [108.2, 28.4],
+            [109.2, 32.0]
+          ]
+        },
+        {
+          "id": "sun-clan-190",
+          "label": "孙氏江东",
+          "accent": "#2f7d68",
+          "capitalName": "吴",
+          "capital": [120.62, 31.32],
+          "center": [119.0, 29.0],
+          "summary": "孙策、孙权据江东，控制长江下游和沿海水网。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [116.0, 31.5],
+            [121.5, 32.5],
+            [123.0, 29.5],
+            [121.0, 26.0],
+            [117.0, 24.0],
+            [113.8, 27.2],
+            [116.0, 31.5]
+          ]
+        },
+        {
+          "id": "liu-zhang-190",
+          "label": "益州刘璋",
+          "accent": "#9b7a20",
+          "capitalName": "成都",
+          "capital": [104.07, 30.67],
+          "center": [103.5, 29.5],
+          "summary": "益州依靠盆地与山地防线保持相对独立，后来成为刘备政权核心。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [97.5, 31.4],
+            [101.0, 33.6],
+            [106.5, 32.8],
+            [108.2, 28.4],
+            [106.2, 24.0],
+            [101.0, 22.2],
+            [97.0, 26.0],
+            [97.5, 31.4]
+          ]
+        }
       ]
     },
     {
-      "id": "eastern-wu-220",
-      "label": "孙吴",
-      "accent": "#2f7d68",
-      "capitalName": "建业",
-      "capital": [118.79, 32.06],
-      "center": [116.8, 27.0],
-      "summary": "据长江中下游、江东和岭南，依靠水网、江防与海陆交通维持南方政权。",
-      "boundaryType": "effective-control",
-      "confidence": "low",
-      "boundary": [
-        [110.0, 31.2],
-        [111.8, 33.2],
-        [114.0, 32.2],
-        [116.1, 31.9],
-        [118.6, 32.8],
-        [121.5, 33.4],
-        [123.1, 31.2],
-        [122.4, 28.2],
-        [120.8, 25.5],
-        [118.0, 23.2],
-        [114.0, 22.0],
-        [110.0, 21.2],
-        [106.5, 22.0],
-        [104.0, 22.2],
-        [106.5, 24.3],
-        [107.4, 26.5],
-        [109.2, 28.8],
-        [110.0, 31.2]
-      ]
-    }
-  ],
-  "frontierZones": [
-    {
-      "id": "xianbei-north",
-      "label": "鲜卑等北方部族",
-      "boundaryType": "cultural-influence",
-      "confidence": "low",
-      "boundary": [
-        [95, 46],
-        [104, 48],
-        [116, 47],
-        [126, 45],
-        [128, 41],
-        [121, 40],
-        [110, 41],
-        [101, 39],
-        [94, 40],
-        [95, 46]
-      ]
-    },
-    {
-      "id": "goguryeo-liaodong",
-      "label": "高句丽与辽东边缘",
-      "boundaryType": "cultural-influence",
-      "confidence": "low",
-      "boundary": [
-        [121, 41],
-        [127, 42],
-        [130, 40],
-        [129, 37],
-        [124, 37],
-        [122, 39],
-        [121, 41]
-      ]
-    },
-    {
-      "id": "western-steppe-corridor",
-      "label": "西域交通与河西边缘",
-      "boundaryType": "cultural-influence",
-      "confidence": "low",
-      "boundary": [
-        [78, 41],
-        [88, 42],
-        [96, 40],
-        [94, 37],
-        [86, 36],
-        [78, 38],
-        [78, 41]
+      "startYear": 208,
+      "endYear": 219,
+      "title": "赤壁之后",
+      "summary": "赤壁之战后，曹操控制北方，孙权稳固江东，刘备取得荆州与益州，三国格局轮廓形成。",
+      "polities": [
+        {
+          "id": "cao-cao-208",
+          "label": "曹操集团",
+          "accent": "#9f4f38",
+          "capitalName": "邺",
+          "capital": [114.5, 36.35],
+          "center": [113.0, 36.0],
+          "summary": "曹操集团控制华北和中原，南线以淮汉与荆州为竞争前沿。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [94.5, 40.2],
+            [104.5, 41.0],
+            [116.5, 41.2],
+            [124.0, 39.2],
+            [123.0, 34.0],
+            [118.0, 32.8],
+            [112.0, 32.5],
+            [108.0, 33.2],
+            [104.0, 36.0],
+            [94.5, 40.2]
+          ]
+        },
+        {
+          "id": "liu-bei-208",
+          "label": "刘备集团",
+          "accent": "#9b7a20",
+          "capitalName": "成都",
+          "capital": [104.07, 30.67],
+          "center": [104.8, 29.2],
+          "summary": "刘备控制益州并争夺汉中、荆州，山地和长江中游是其战略屏障。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [97.2, 31.5],
+            [101.5, 34.0],
+            [107.8, 33.0],
+            [111.5, 31.4],
+            [113.8, 29.4],
+            [112.2, 26.0],
+            [106.5, 24.0],
+            [101.0, 22.0],
+            [97.0, 26.0],
+            [97.2, 31.5]
+          ]
+        },
+        {
+          "id": "sun-quan-208",
+          "label": "孙权集团",
+          "accent": "#2f7d68",
+          "capitalName": "建业",
+          "capital": [118.79, 32.06],
+          "center": [117.4, 28.0],
+          "summary": "孙权集团稳固江东，依靠长江下游、湖泊水网和沿海交通维持南方势力。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [111.5, 31.4],
+            [116.0, 32.0],
+            [121.8, 32.6],
+            [123.0, 29.5],
+            [121.0, 25.5],
+            [117.2, 23.5],
+            [111.0, 21.5],
+            [106.5, 22.0],
+            [112.2, 26.0],
+            [113.8, 29.4],
+            [111.5, 31.4]
+          ]
+        }
       ]
     },
     {
-      "id": "nanzhong-frontier",
-      "label": "南中与岭南边缘",
-      "boundaryType": "cultural-influence",
-      "confidence": "low",
-      "boundary": [
-        [98, 22],
-        [106, 22],
-        [114, 21],
-        [116, 18],
-        [110, 17],
-        [101, 18],
-        [96, 20],
-        [98, 22]
-      ]
-    }
-  ],
-  "rivers": [
-    {
-      "id": "yellow-river",
-      "label": "黄河",
-      "points": [
-        [96, 35.8],
-        [101, 36.3],
-        [106, 35.6],
-        [110, 34.9],
-        [113, 35.0],
-        [116, 36.0],
-        [119, 37.3]
+      "startYear": 220,
+      "endYear": 234,
+      "title": "三国形成",
+      "summary": "魏蜀吴三方正式成形，曹魏居北，蜀汉据西南，孙吴控制江东和岭南。",
+      "polities": [
+        {
+          "id": "cao-wei-220",
+          "label": "曹魏",
+          "accent": "#9f4f38",
+          "capitalName": "洛阳",
+          "capital": [112.45, 34.62],
+          "center": [112.8, 36.2],
+          "summary": "控制华北、中原和关中，是三国中人口与制度资源最强的一方。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [92.4, 40.2],
+            [101.5, 39.2],
+            [110.4, 40.7],
+            [122.5, 40.4],
+            [125.0, 35.7],
+            [121.5, 33.2],
+            [116.0, 31.8],
+            [111.8, 33.2],
+            [106.9, 32.0],
+            [103.8, 34.6],
+            [98.2, 36.6],
+            [92.4, 40.2]
+          ]
+        },
+        {
+          "id": "shu-han-220",
+          "label": "蜀汉",
+          "accent": "#9b7a20",
+          "capitalName": "成都",
+          "capital": [104.07, 30.67],
+          "center": [104.5, 28.6],
+          "summary": "以益州盆地为核心，北控汉中，南接南中，依托山地防线与魏吴周旋。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [97.5, 31.4],
+            [100.0, 33.3],
+            [106.9, 32.0],
+            [110.0, 31.2],
+            [109.2, 28.8],
+            [106.5, 24.3],
+            [101.0, 22.0],
+            [97.0, 26.0],
+            [97.5, 31.4]
+          ]
+        },
+        {
+          "id": "eastern-wu-220",
+          "label": "孙吴",
+          "accent": "#2f7d68",
+          "capitalName": "建业",
+          "capital": [118.79, 32.06],
+          "center": [116.8, 27.0],
+          "summary": "据长江中下游、江东和岭南，依靠水网、江防与海陆交通维持南方政权。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [110.0, 31.2],
+            [116.0, 31.8],
+            [121.5, 33.2],
+            [123.1, 31.2],
+            [122.4, 28.2],
+            [118.0, 23.2],
+            [110.0, 21.2],
+            [106.5, 22.0],
+            [109.2, 28.8],
+            [110.0, 31.2]
+          ]
+        }
       ]
     },
     {
-      "id": "yangtze-river",
-      "label": "长江",
-      "points": [
-        [98, 30.8],
-        [103, 30.6],
-        [107, 30.3],
-        [111, 30.7],
-        [114, 30.5],
-        [117, 31.1],
-        [121.5, 31.4]
+      "startYear": 235,
+      "endYear": 263,
+      "title": "三国相持",
+      "summary": "诸葛亮北伐后，魏蜀吴边界趋于稳定，但淮南、汉中、荆州与辽东仍是冲突重点。",
+      "polities": [
+        {
+          "id": "cao-wei-235",
+          "label": "曹魏",
+          "accent": "#9f4f38",
+          "capitalName": "洛阳",
+          "capital": [112.45, 34.62],
+          "center": [113.2, 36.0],
+          "summary": "曹魏持续巩固北方，并逐步压缩蜀汉与辽东地方势力空间。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [92.0, 40.0],
+            [102.0, 40.0],
+            [112.0, 41.0],
+            [126.0, 40.0],
+            [125.0, 35.0],
+            [121.0, 33.0],
+            [116.8, 32.0],
+            [112.0, 32.7],
+            [108.0, 33.0],
+            [104.0, 34.4],
+            [99.0, 36.4],
+            [92.0, 40.0]
+          ]
+        },
+        {
+          "id": "shu-han-235",
+          "label": "蜀汉",
+          "accent": "#9b7a20",
+          "capitalName": "成都",
+          "capital": [104.07, 30.67],
+          "center": [104.2, 28.3],
+          "summary": "蜀汉以益州、汉中为核心，北伐和防守都围绕秦岭与汉中走廊展开。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [97.5, 31.2],
+            [101.0, 33.2],
+            [106.8, 32.0],
+            [108.0, 30.5],
+            [108.8, 27.5],
+            [106.2, 24.0],
+            [101.0, 22.0],
+            [97.0, 26.0],
+            [97.5, 31.2]
+          ]
+        },
+        {
+          "id": "eastern-wu-235",
+          "label": "孙吴",
+          "accent": "#2f7d68",
+          "capitalName": "建业",
+          "capital": [118.79, 32.06],
+          "center": [116.5, 26.8],
+          "summary": "孙吴继续控制江东、荆南与岭南，北线与魏围绕淮南反复交战。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [108.0, 30.5],
+            [112.0, 32.7],
+            [116.8, 32.0],
+            [121.0, 33.0],
+            [123.0, 30.0],
+            [122.0, 27.0],
+            [118.0, 23.0],
+            [110.0, 21.2],
+            [106.2, 24.0],
+            [108.8, 27.5],
+            [108.0, 30.5]
+          ]
+        }
       ]
     },
     {
-      "id": "huai-river",
-      "label": "淮河",
-      "points": [
-        [111.5, 33.0],
-        [114, 33.1],
-        [117, 33.4],
-        [119.5, 33.1]
+      "startYear": 264,
+      "endYear": 279,
+      "title": "魏晋过渡",
+      "summary": "蜀汉灭亡后，司马氏控制下的魏晋政权接收益州，孙吴成为南方最后的独立政权。",
+      "polities": [
+        {
+          "id": "wei-jin-264",
+          "label": "魏晋",
+          "accent": "#9f4f38",
+          "capitalName": "洛阳",
+          "capital": [112.45, 34.62],
+          "center": [110.5, 34.2],
+          "summary": "北方政权接收蜀汉旧地，统一压力转向长江以南的孙吴。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [92.0, 40.0],
+            [104.0, 41.0],
+            [118.0, 41.0],
+            [126.0, 39.5],
+            [124.0, 35.0],
+            [121.0, 33.0],
+            [116.0, 32.0],
+            [111.0, 32.8],
+            [106.2, 24.0],
+            [101.0, 22.0],
+            [97.0, 26.0],
+            [97.5, 31.2],
+            [99.0, 36.4],
+            [92.0, 40.0]
+          ]
+        },
+        {
+          "id": "eastern-wu-264",
+          "label": "孙吴",
+          "accent": "#2f7d68",
+          "capitalName": "建业",
+          "capital": [118.79, 32.06],
+          "center": [117.0, 26.5],
+          "summary": "孙吴仍控制长江以南与岭南，但北方统一后的战略压力持续增加。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [111.0, 32.8],
+            [116.0, 32.0],
+            [121.0, 33.0],
+            [123.0, 30.0],
+            [122.0, 27.0],
+            [118.0, 23.0],
+            [110.0, 21.2],
+            [106.2, 24.0],
+            [111.0, 32.8]
+          ]
+        }
       ]
     },
     {
-      "id": "han-river",
-      "label": "汉水",
-      "points": [
-        [106.2, 33.1],
-        [108.5, 32.7],
-        [111.2, 32.5],
-        [113.0, 31.7]
+      "startYear": 280,
+      "endYear": 280,
+      "title": "西晋统一",
+      "summary": "晋灭吴后，中国主要农业区重新归于一个中央王朝控制。",
+      "polities": [
+        {
+          "id": "western-jin-280",
+          "label": "西晋",
+          "accent": "#9f4f38",
+          "capitalName": "洛阳",
+          "capital": [112.45, 34.62],
+          "center": [111.5, 32.5],
+          "summary": "西晋完成统一，魏蜀吴分立局面结束。",
+          "boundaryType": "effective-control",
+          "confidence": "low",
+          "boundary": [
+            [92.0, 40.0],
+            [104.0, 41.0],
+            [118.0, 41.0],
+            [126.0, 39.5],
+            [124.0, 35.0],
+            [122.0, 29.0],
+            [118.0, 23.0],
+            [110.0, 21.0],
+            [101.0, 22.0],
+            [97.0, 26.0],
+            [97.5, 31.2],
+            [99.0, 36.4],
+            [92.0, 40.0]
+          ]
+        }
       ]
     }
   ],
   "cities": [
-    { "id": "luoyang", "label": "洛阳", "kind": "capital", "coordinates": [112.45, 34.62], "polity": "曹魏" },
-    { "id": "chang-an", "label": "长安", "kind": "major", "coordinates": [108.94, 34.34], "polity": "曹魏" },
+    { "id": "luoyang", "label": "洛阳", "kind": "capital", "coordinates": [112.45, 34.62], "polity": "曹魏/西晋" },
+    { "id": "chang-an", "label": "长安", "kind": "major", "coordinates": [108.94, 34.34], "polity": "曹魏/西晋" },
     { "id": "ye", "label": "邺", "kind": "major", "coordinates": [114.5, 36.35], "polity": "曹魏" },
-    { "id": "chengdu", "label": "成都", "kind": "capital", "coordinates": [104.07, 30.67], "polity": "蜀汉" },
-    { "id": "hanzhong", "label": "汉中", "kind": "frontier", "coordinates": [107.03, 33.07], "polity": "蜀汉" },
+    { "id": "chengdu", "label": "成都", "kind": "capital", "coordinates": [104.07, 30.67], "polity": "蜀汉/西晋" },
+    { "id": "hanzhong", "label": "汉中", "kind": "frontier", "coordinates": [107.03, 33.07], "polity": "蜀汉/曹魏" },
     { "id": "jianye", "label": "建业", "kind": "capital", "coordinates": [118.79, 32.06], "polity": "孙吴" },
     { "id": "wuchang", "label": "武昌", "kind": "major", "coordinates": [114.32, 30.55], "polity": "孙吴" },
-    { "id": "xiangyang", "label": "襄阳", "kind": "frontier", "coordinates": [112.14, 32.04], "polity": "曹魏" },
-    { "id": "hefei", "label": "合肥", "kind": "frontier", "coordinates": [117.25, 31.86], "polity": "曹魏" }
+    { "id": "xiangyang", "label": "襄阳", "kind": "frontier", "coordinates": [112.14, 32.04], "polity": "曹魏/孙吴" },
+    { "id": "hefei", "label": "合肥", "kind": "frontier", "coordinates": [117.25, 31.86], "polity": "曹魏/孙吴" }
   ],
   "sources": [
+    "Natural Earth physical vectors for base geography",
     "Wikimedia Commons category: Maps of the Three Kingdoms",
     "World History Encyclopedia: Three Kingdoms Period of China and the Rise of Xianbei",
     "Kongming's Archives: Maps of the Three Kingdoms"

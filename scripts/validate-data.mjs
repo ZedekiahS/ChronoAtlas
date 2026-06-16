@@ -113,32 +113,32 @@ for (const region of regions) {
   }
 }
 
-assert(Number.isInteger(chinaMap.startYear), "China map startYear must be an integer");
-assert(Number.isInteger(chinaMap.endYear), "China map endYear must be an integer");
-assert(chinaMap.startYear <= chinaMap.endYear, "China map starts after it ends");
 validateLonLat(chinaMap.view.northWest, "chinaMap.view.northWest");
 validateLonLat(chinaMap.view.southEast, "chinaMap.view.southEast");
 
-for (const polity of chinaMap.polities) {
-  assert(typeof polity.id === "string" && polity.id.length > 0, "China polity needs id");
-  assert(typeof polity.label === "string" && polity.label.length > 0, `China polity needs label: ${polity.id}`);
-  assert(boundaryTypes.has(polity.boundaryType), `Unknown polity boundaryType: ${polity.id}`);
-  assert(confidenceValues.has(polity.confidence), `Unknown polity confidence: ${polity.id}`);
-  validateLonLat(polity.capital, `${polity.id}:capital`);
-  validateLonLat(polity.center, `${polity.id}:center`);
-  validateBoundary(polity.boundary, polity.id);
-}
+assert(Array.isArray(chinaMap.eras) && chinaMap.eras.length > 0, "China map needs eras");
 
-for (const zone of chinaMap.frontierZones) {
-  assert(boundaryTypes.has(zone.boundaryType), `Unknown frontier boundaryType: ${zone.id}`);
-  assert(confidenceValues.has(zone.confidence), `Unknown frontier confidence: ${zone.id}`);
-  validateBoundary(zone.boundary, zone.id);
-}
+for (const era of chinaMap.eras) {
+  const eraId = `chinaMap:${era.startYear}-${era.endYear}`;
+  assert(Number.isInteger(era.startYear), `China map era startYear must be an integer: ${eraId}`);
+  assert(Number.isInteger(era.endYear), `China map era endYear must be an integer: ${eraId}`);
+  assert(era.startYear <= era.endYear, `China map era starts after it ends: ${eraId}`);
+  assert(Array.isArray(era.polities) && era.polities.length > 0, `China map era needs polities: ${eraId}`);
 
-for (const river of chinaMap.rivers) {
-  assert(Array.isArray(river.points) && river.points.length >= 2, `River needs at least 2 points: ${river.id}`);
-  for (const point of river.points) {
-    validateLonLat(point, river.id);
+  for (const polity of era.polities) {
+    assert(typeof polity.id === "string" && polity.id.length > 0, `China polity needs id: ${eraId}`);
+    assert(typeof polity.label === "string" && polity.label.length > 0, `China polity needs label: ${polity.id}`);
+    assert(boundaryTypes.has(polity.boundaryType), `Unknown polity boundaryType: ${polity.id}`);
+    assert(confidenceValues.has(polity.confidence), `Unknown polity confidence: ${polity.id}`);
+    validateLonLat(polity.capital, `${polity.id}:capital`);
+    validateLonLat(polity.center, `${polity.id}:center`);
+    validateBoundary(polity.boundary, polity.id);
+  }
+
+  for (const zone of era.frontierZones ?? []) {
+    assert(boundaryTypes.has(zone.boundaryType), `Unknown frontier boundaryType: ${zone.id}`);
+    assert(confidenceValues.has(zone.confidence), `Unknown frontier confidence: ${zone.id}`);
+    validateBoundary(zone.boundary, zone.id);
   }
 }
 
