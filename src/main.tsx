@@ -139,26 +139,6 @@ function getBoundaryPath(boundary: LonLat[]) {
     .curve(curveCatmullRomClosed.alpha(0.55))(projectedPoints);
 }
 
-function getBoundaryGroups(region: RegionInfo, era: RegionEra) {
-  if (era.boundaryGroups?.length) {
-    return era.boundaryGroups;
-  }
-
-  if (!era.boundary) {
-    return [];
-  }
-
-  return [
-    {
-      id: region.id,
-      label: region.label,
-      boundaryType: era.boundaryType,
-      confidence: era.confidence,
-      boundary: era.boundary,
-    },
-  ];
-}
-
 function getRegionSummary(region: RegionInfo, regionEvents: HistoricalEvent[], year: number) {
   const era = getRegionEra(region, year);
   const activeEvent = regionEvents.find((event) => isActiveInYear(event, year));
@@ -208,38 +188,31 @@ function WorldMap({
           const isActive = region.id === activeRegion;
           const isHovered = region.id === hoveredRegion;
           const era = getRegionEra(region, year);
-          const boundaryGroups = getBoundaryGroups(region, era);
+          const boundaryPath = era.boundary ? getBoundaryPath(era.boundary) : null;
+          if (!boundaryPath) {
+            return null;
+          }
 
           return (
             <g key={region.id}>
-              {boundaryGroups.map((group) => {
-                const boundaryPath = getBoundaryPath(group.boundary);
-                if (!boundaryPath) {
-                  return null;
-                }
-
-                return (
-                  <path
-                    className={`historical-boundary confidence-${group.confidence} boundary-${group.boundaryType} ${
-                      isActive ? "active" : ""
-                    } ${isHovered ? "hovered" : ""}`}
-                    d={boundaryPath}
-                    key={group.id}
-                    style={{ "--accent": region.accent } as React.CSSProperties}
-                    onMouseEnter={() => onHover(region.id)}
-                    onMouseLeave={() => onHover(null)}
-                    onFocus={() => onHover(region.id)}
-                    onBlur={() => onHover(null)}
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      onSelect(region.id);
-                    }}
-                    tabIndex={0}
-                    role="button"
-                    aria-label={`选择${region.label}：${group.label}`}
-                  />
-                );
-              })}
+              <path
+                className={`historical-boundary confidence-${era.confidence} boundary-${era.boundaryType} ${
+                  isActive ? "active" : ""
+                } ${isHovered ? "hovered" : ""}`}
+                d={boundaryPath}
+                style={{ "--accent": region.accent } as React.CSSProperties}
+                onMouseEnter={() => onHover(region.id)}
+                onMouseLeave={() => onHover(null)}
+                onFocus={() => onHover(region.id)}
+                onBlur={() => onHover(null)}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  onSelect(region.id);
+                }}
+                tabIndex={0}
+                role="button"
+                aria-label={`选择${region.label}`}
+              />
             </g>
           );
         })}
