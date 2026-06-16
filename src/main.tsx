@@ -1,7 +1,7 @@
 import { StrictMode, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { geoGraticule10, geoNaturalEarth1, geoPath } from "d3-geo";
-import { curveCatmullRomClosed, line } from "d3-shape";
+import { curveCatmullRom, curveLinearClosed, line } from "d3-shape";
 import type { Feature, FeatureCollection, Geometry } from "geojson";
 import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
@@ -21,6 +21,7 @@ import {
   UsersRound,
 } from "lucide-react";
 import eventsData from "../data/events-180-280.sample.json";
+import chinaMapData from "../data/china-three-kingdoms-map.json";
 import regionsData from "../data/regions-180-280.json";
 import "./styles.css";
 
@@ -76,7 +77,43 @@ type BoundaryGroup = {
   boundary: LonLat[];
 };
 
+type ChinaPolity = BoundaryGroup & {
+  accent: string;
+  capitalName: string;
+  capital: LonLat;
+  center: LonLat;
+  summary: string;
+};
+
+type ChinaMapLayer = {
+  id: string;
+  label: string;
+  startYear: number;
+  endYear: number;
+  view: {
+    northWest: LonLat;
+    southEast: LonLat;
+    padding: number;
+  };
+  polities: ChinaPolity[];
+  frontierZones: BoundaryGroup[];
+  rivers: Array<{
+    id: string;
+    label: string;
+    points: LonLat[];
+  }>;
+  cities: Array<{
+    id: string;
+    label: string;
+    kind: "capital" | "major" | "frontier";
+    coordinates: LonLat;
+    polity: string;
+  }>;
+  sources: string[];
+};
+
 const events = eventsData as HistoricalEvent[];
+const chinaMap = chinaMapData as ChinaMapLayer;
 const regions = regionsData as unknown as RegionInfo[];
 type WorldAtlasTopology = Topology<{ countries: GeometryCollection }>;
 
@@ -94,7 +131,7 @@ const path = geoPath(projection);
 const graticulePath = path(geoGraticule10());
 const spherePath = path({ type: "Sphere" });
 const worldViewBox = "0 0 1000 520";
-const chinaViewBox = getProjectedViewBox([78, 54], [135, 8], 22);
+const chinaViewBox = getProjectedViewBox(chinaMap.view.northWest, chinaMap.view.southEast, chinaMap.view.padding);
 
 const categoryLabels: Record<EventCategory, string> = {
   politics: "政治",
@@ -128,11 +165,14 @@ function getRegionEra(region: RegionInfo, year: number) {
   );
 }
 
-function getBoundaryPath(boundary: LonLat[]) {
-  const projectedPoints = boundary
-    .slice(0, -1)
+function projectPoints(points: LonLat[]) {
+  return points
     .map((point) => projection(point))
     .filter((point): point is [number, number] => Boolean(point));
+}
+
+function getBoundaryPath(boundary: LonLat[]) {
+  const projectedPoints = projectPoints(boundary.slice(0, -1));
 
   if (projectedPoints.length < 3) {
     return null;
@@ -141,7 +181,24 @@ function getBoundaryPath(boundary: LonLat[]) {
   return line<[number, number]>()
     .x((point) => point[0])
     .y((point) => point[1])
-    .curve(curveCatmullRomClosed.alpha(0.55))(projectedPoints);
+    .curve(curveLinearClosed)(projectedPoints);
+}
+
+function getRoutePath(points: LonLat[]) {
+  const projectedPoints = projectPoints(points);
+
+  if (projectedPoints.length < 2) {
+    return null;
+  }
+
+  return line<[number, number]>()
+    .x((point) => point[0])
+    .y((point) => point[1])
+    .curve(curveCatmullRom.alpha(0.55))(projectedPoints);
+}
+
+function getProjectedPoint(point: LonLat) {
+  return projection(point);
 }
 
 function getProjectedViewBox(northWest: LonLat, southEast: LonLat, padding: number) {
@@ -178,6 +235,18 @@ function getBoundaryGroups(region: RegionInfo, era: RegionEra) {
       boundary: era.boundary,
     },
   ];
+}
+
+function getChinaMapLayer(year: number) {
+  if (chinaMap.startYear <= year && chinaMap.endYear >= year) {
+    return chinaMap;
+  }
+
+  return null;
+}
+
+function isChinaPolity(group: BoundaryGroup | ChinaPolity): group is ChinaPolity {
+  return "capitalName" in group;
 }
 
 function getRegionSummary(region: RegionInfo, regionEvents: HistoricalEvent[], year: number) {
@@ -277,7 +346,8 @@ function ChinaRegionMap({
 }) {
   const china = regions.find((region) => region.id === "china")!;
   const era = getRegionEra(china, year);
-  const boundaryGroups = getBoundaryGroups(china, era);
+  const mapLayer = getChinaMapLayer(year);
+  const boundaryGroups = mapLayer?.polities ?? getBoundaryGroups(china, era);
 
   return (
     <div className="map-frame" aria-label="中国区域地图">
@@ -296,11 +366,22 @@ function ChinaRegionMap({
           })}
         </g>
 
+        {mapLayer?.frontierZones.map((zone) => {
+          const boundaryPath = getBoundaryPath(zone.boundary);
+          if (!boundaryPath) {
+            return null;
+          }
+
+          return <path className="frontier-zone" d={boundaryPath} key={zone.id} />;
+        })}
+
         {boundaryGroups.map((group) => {
           const boundaryPath = getBoundaryPath(group.boundary);
           if (!boundaryPath) {
             return null;
           }
+
+          const accent = isChinaPolity(group) ? group.accent : "#b94f32";
 
           return (
             <path
@@ -309,7 +390,7 @@ function ChinaRegionMap({
               } ${activeGroup === group.id ? "active" : ""}`}
               d={boundaryPath}
               key={group.id}
-              style={{ "--accent": "#b94f32" } as React.CSSProperties}
+              style={{ "--accent": accent } as React.CSSProperties}
               onClick={(event) => {
                 event.stopPropagation();
                 onSelectGroup(group);
@@ -318,6 +399,57 @@ function ChinaRegionMap({
               role="button"
               aria-label={`选择${group.label}`}
             />
+          );
+        })}
+
+        {mapLayer?.rivers.map((river) => {
+          const riverPath = getRoutePath(river.points);
+          if (!riverPath) {
+            return null;
+          }
+
+          return <path className="river-line" d={riverPath} key={river.id} />;
+        })}
+
+        {mapLayer?.frontierZones.map((zone) => {
+          const labelPoint = getProjectedPoint(zone.boundary[Math.floor(zone.boundary.length / 2)]);
+          if (!labelPoint) {
+            return null;
+          }
+
+          return (
+            <text className="frontier-label" key={`${zone.id}-label`} x={labelPoint[0]} y={labelPoint[1]}>
+              {zone.label}
+            </text>
+          );
+        })}
+
+        {mapLayer?.polities.map((polity) => {
+          const center = getProjectedPoint(polity.center);
+          if (!center) {
+            return null;
+          }
+
+          return (
+            <text className="polity-label" key={`${polity.id}-label`} x={center[0]} y={center[1]}>
+              {polity.label}
+            </text>
+          );
+        })}
+
+        {mapLayer?.cities.map((city) => {
+          const cityPoint = getProjectedPoint(city.coordinates);
+          if (!cityPoint) {
+            return null;
+          }
+
+          return (
+            <g className={`city-marker city-${city.kind}`} key={city.id}>
+              <circle cx={cityPoint[0]} cy={cityPoint[1]} r={city.kind === "capital" ? 1.9 : 1.25} />
+              <text x={cityPoint[0] + 2.4} y={cityPoint[1] - 1.8}>
+                {city.label}
+              </text>
+            </g>
           );
         })}
       </svg>
@@ -372,7 +504,10 @@ function App() {
   const selectedRegionEra = getRegionEra(selectedRegionInfo, year);
   const chinaRegionInfo = regions.find((region) => region.id === "china")!;
   const chinaRegionEra = getRegionEra(chinaRegionInfo, year);
-  const chinaBoundaryGroups = getBoundaryGroups(chinaRegionInfo, chinaRegionEra);
+  const chinaMapLayer = getChinaMapLayer(year);
+  const chinaBoundaryGroups = chinaMapLayer?.polities ?? getBoundaryGroups(chinaRegionInfo, chinaRegionEra);
+  const selectedChinaGroupInView =
+    chinaBoundaryGroups.find((group) => group.id === selectedChinaGroup?.id) ?? null;
 
   const selectedRegionEvents = visibleEvents.filter((event) => event.region === selectedRegion);
   const selectedEvent =
@@ -454,7 +589,7 @@ function App() {
             />
           ) : (
             <ChinaRegionMap
-              activeGroup={selectedChinaGroup?.id ?? null}
+              activeGroup={selectedChinaGroupInView?.id ?? null}
               onSelectGroup={setSelectedChinaGroup}
               onClearSummary={() => setSelectedChinaGroup(null)}
               year={year}
@@ -495,8 +630,15 @@ function App() {
             </aside>
           )}
 
-          {page === "china" && selectedChinaGroup && (
-            <aside className="hover-summary regional-summary" style={{ "--accent": "#b94f32" } as React.CSSProperties}>
+          {page === "china" && selectedChinaGroupInView && (
+            <aside
+              className="hover-summary regional-summary"
+              style={
+                {
+                  "--accent": isChinaPolity(selectedChinaGroupInView) ? selectedChinaGroupInView.accent : "#b94f32",
+                } as React.CSSProperties
+              }
+            >
               <div className="summary-heading">
                 <MapPinned size={18} aria-hidden="true" />
                 <span>区域片段</span>
@@ -510,11 +652,15 @@ function App() {
                   <X size={16} />
                 </button>
               </div>
-              <h2>{selectedChinaGroup.label}</h2>
-              <p>{chinaRegionEra.summary}</p>
+              <h2>{selectedChinaGroupInView.label}</h2>
+              <p>{isChinaPolity(selectedChinaGroupInView) ? selectedChinaGroupInView.summary : chinaRegionEra.summary}</p>
               <div className="summary-meta">
-                <span>{chinaRegionEra.title}</span>
-                <strong>{selectedChinaGroup.confidence}</strong>
+                <span>
+                  {isChinaPolity(selectedChinaGroupInView)
+                    ? `都城：${selectedChinaGroupInView.capitalName}`
+                    : chinaRegionEra.title}
+                </span>
+                <strong>{selectedChinaGroupInView.confidence}</strong>
               </div>
             </aside>
           )}
@@ -578,7 +724,12 @@ function App() {
             <h3>势力范围</h3>
             <div className="chips">
               {chinaBoundaryGroups.map((group) => (
-                <button className="chip-button" key={group.id} type="button" onClick={() => setSelectedChinaGroup(group)}>
+                <button
+                  className={`chip-button ${selectedChinaGroupInView?.id === group.id ? "selected" : ""}`}
+                  key={group.id}
+                  type="button"
+                  onClick={() => setSelectedChinaGroup(group)}
+                >
                   {group.label}
                 </button>
               ))}

@@ -215,6 +215,82 @@ h1 {
   stroke-width: 5.2;
 }
 
+.frontier-zone {
+  fill: rgba(92, 97, 91, 0.12);
+  stroke: rgba(65, 76, 76, 0.35);
+  stroke-width: 1.2;
+  stroke-dasharray: 7 5;
+  vector-effect: non-scaling-stroke;
+}
+
+.river-line {
+  fill: none;
+  stroke: rgba(58, 117, 150, 0.72);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.polity-label {
+  fill: rgba(30, 34, 38, 0.88);
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: 0;
+  paint-order: stroke;
+  pointer-events: none;
+  stroke: rgba(246, 248, 245, 0.82);
+  stroke-linejoin: round;
+  stroke-width: 1.8px;
+  text-anchor: middle;
+}
+
+.frontier-label {
+  fill: rgba(70, 77, 76, 0.72);
+  font-size: 3.2px;
+  font-weight: 800;
+  letter-spacing: 0;
+  paint-order: stroke;
+  pointer-events: none;
+  stroke: rgba(238, 242, 238, 0.78);
+  stroke-linejoin: round;
+  stroke-width: 1.4px;
+  text-anchor: middle;
+}
+
+.city-marker {
+  color: #1e2226;
+  pointer-events: none;
+}
+
+.city-marker circle {
+  fill: #ffffff;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.city-marker text {
+  fill: #23282d;
+  font-size: 2.8px;
+  font-weight: 850;
+  letter-spacing: 0;
+  paint-order: stroke;
+  stroke: rgba(246, 248, 245, 0.82);
+  stroke-linejoin: round;
+  stroke-width: 0.9px;
+}
+
+.city-capital circle {
+  fill: #1e2226;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.city-capital text {
+  font-size: 3.2px;
+}
+
 .hover-summary {
   --accent: #b94f32;
   position: absolute;
@@ -514,6 +590,13 @@ input[type="range"] {
 .chip-button:hover {
   border-color: rgba(185, 79, 50, 0.42);
   background: #ffffff;
+}
+
+.chip-button.selected {
+  border-color: rgba(185, 79, 50, 0.7);
+  background: rgba(185, 79, 50, 0.1);
+  color: #8b3f2d;
+  font-weight: 850;
 }
 
 .related-list {
