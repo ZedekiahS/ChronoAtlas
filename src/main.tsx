@@ -634,7 +634,7 @@ function ChinaRegionMap({
           return <path className="regional-land" d={landPath} key={`land-${index}`} onClick={onClearSummary} />;
         })}
 
-        {mapMode === "terrain" && (
+        {(mapMode === "political" || mapMode === "terrain") && (
           <>
             {naturalEarthChinaPhysical.geographyRegions.features.map((geoFeature, index) => {
               const regionPath = path(geoFeature);
@@ -675,23 +675,24 @@ function ChinaRegionMap({
               );
             })}
 
-            {naturalEarthChinaPhysical.geographyRegions.features.map((geoFeature, index) => {
-              if (!shouldShowTerrainLabel(geoFeature)) {
-                return null;
-              }
+            {mapMode === "terrain" &&
+              naturalEarthChinaPhysical.geographyRegions.features.map((geoFeature, index) => {
+                if (!shouldShowTerrainLabel(geoFeature)) {
+                  return null;
+                }
 
-              const labelPoint = getFeatureLabelPoint(geoFeature);
-              const label = getNaturalEarthLabel(geoFeature);
-              if (!labelPoint || !label) {
-                return null;
-              }
+                const labelPoint = getFeatureLabelPoint(geoFeature);
+                const label = getNaturalEarthLabel(geoFeature);
+                if (!labelPoint || !label) {
+                  return null;
+                }
 
-              return (
-                <text className="terrain-label" key={`terrain-label-${index}`} x={labelPoint[0]} y={labelPoint[1]}>
-                  {label}
-                </text>
-              );
-            })}
+                return (
+                  <text className="terrain-label" key={`terrain-label-${index}`} x={labelPoint[0]} y={labelPoint[1]}>
+                    {label}
+                  </text>
+                );
+              })}
           </>
         )}
 
@@ -830,10 +831,14 @@ function App() {
       return;
     }
 
+    if (!selectedChinaGroup) {
+      return;
+    }
+
     if (!selectedChinaGroupInView) {
       setSelectedChinaGroup(chinaBoundaryGroups[0] ?? null);
     }
-  }, [chinaBoundaryGroups, chinaMapMode, page, selectedChinaGroupInView]);
+  }, [chinaBoundaryGroups, chinaMapMode, page, selectedChinaGroup, selectedChinaGroupInView]);
 
   function selectRegion(region: Region) {
     if (region === "china") {

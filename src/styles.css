@@ -272,6 +272,65 @@ h1 {
   stroke-width: 1.15;
 }
 
+.map-mode-political .graticule {
+  stroke: rgba(111, 105, 82, 0.14);
+}
+
+.map-mode-political .regional-land {
+  fill: rgba(214, 217, 198, 0.96);
+  stroke: rgba(82, 91, 84, 0.2);
+}
+
+.map-mode-political .terrain-region {
+  fill: rgba(113, 101, 74, 0.15);
+  stroke: rgba(88, 78, 58, 0.09);
+}
+
+.map-mode-political .terrain-range-mtn {
+  fill: rgba(100, 83, 57, 0.23);
+  stroke: rgba(75, 62, 46, 0.17);
+}
+
+.map-mode-political .terrain-plateau {
+  fill: rgba(126, 105, 72, 0.17);
+}
+
+.map-mode-political .terrain-desert {
+  fill: rgba(169, 144, 92, 0.16);
+}
+
+.map-mode-political .terrain-basin,
+.map-mode-political .terrain-plain,
+.map-mode-political .terrain-valley {
+  fill: rgba(91, 113, 83, 0.1);
+}
+
+.map-mode-political .physical-lake {
+  fill: rgba(83, 131, 151, 0.3);
+  stroke: rgba(58, 101, 125, 0.38);
+}
+
+.map-mode-political .physical-river {
+  stroke: rgba(40, 98, 126, 0.28);
+  stroke-width: 0.38;
+}
+
+.map-mode-political .physical-river.major {
+  stroke: rgba(34, 94, 125, 0.56);
+  stroke-width: 0.82;
+}
+
+.map-mode-political .historical-boundary {
+  fill: color-mix(in srgb, var(--accent) 40%, rgba(228, 218, 190, 0.18));
+  mix-blend-mode: multiply;
+  stroke-width: 1.55;
+}
+
+.map-mode-political .historical-boundary:hover,
+.map-mode-political .historical-boundary.active {
+  fill: color-mix(in srgb, var(--accent) 50%, rgba(240, 233, 211, 0.12));
+}
+
 .historical-boundary {
   --accent: #b94f32;
   fill: color-mix(in srgb, var(--accent) 34%, rgba(255, 255, 255, 0.16));
