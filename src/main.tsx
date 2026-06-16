@@ -10,6 +10,7 @@ import {
   ChevronLeft,
   ChevronRight,
   CircleDot,
+  X,
   Compass,
   Info,
   Link2,
@@ -377,6 +378,7 @@ function WorldMap({
   hoveredRegion,
   onHover,
   onSelect,
+  onClearSummary,
   regionCounts,
   year,
 }: {
@@ -384,18 +386,25 @@ function WorldMap({
   hoveredRegion: Region | null;
   onHover: (region: Region | null) => void;
   onSelect: (region: Region) => void;
+  onClearSummary: () => void;
   regionCounts: Record<Region, number>;
   year: number;
 }) {
   return (
     <div className="map-frame" aria-label="世界地图总览">
-      <svg className="world-map" viewBox="0 0 1000 520" role="img" aria-label="世界地图">
-        {spherePath && <path className="sphere" d={spherePath} />}
+      <svg
+        className="world-map"
+        viewBox="0 0 1000 520"
+        role="img"
+        aria-label="世界地图"
+        onClick={onClearSummary}
+      >
+        {spherePath && <path className="sphere" d={spherePath} onClick={onClearSummary} />}
         {graticulePath && <path className="graticule" d={graticulePath} />}
         <g>
           {countries.map((country, index) => {
             const d = path(country);
-            return d ? <path className="country" d={d} key={index} /> : null;
+            return d ? <path className="country" d={d} key={index} onClick={onClearSummary} /> : null;
           })}
         </g>
 
@@ -424,7 +433,10 @@ function WorldMap({
                 onMouseLeave={() => onHover(null)}
                 onFocus={() => onHover(region.id)}
                 onBlur={() => onHover(null)}
-                onClick={() => onSelect(region.id)}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  onSelect(region.id);
+                }}
                 tabIndex={0}
                 role="button"
                 aria-label={`选择${region.label}`}
@@ -444,7 +456,13 @@ function WorldMap({
                 className="map-label"
                 style={{ "--accent": region.accent } as React.CSSProperties}
               >
-                <button type="button" onClick={() => onSelect(region.id)}>
+                <button
+                  type="button"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    onSelect(region.id);
+                  }}
+                >
                   <span>{region.label}</span>
                   <strong>{regionCounts[region.id]}</strong>
                 </button>
@@ -462,6 +480,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [selectedRegion, setSelectedRegion] = useState<Region>("china");
   const [hoveredRegion, setHoveredRegion] = useState<Region | null>(null);
+  const [summaryRegion, setSummaryRegion] = useState<Region | null>("china");
   const [selectedId, setSelectedId] = useState("china-220-cao-pi-founds-wei");
 
   const normalizedQuery = query.trim().toLowerCase();
@@ -495,8 +514,9 @@ function App() {
 
   const selectedRegionInfo = regions.find((region) => region.id === selectedRegion) ?? regions[0];
   const hoverRegionInfo = regions.find((region) => region.id === hoveredRegion);
-  const inspectedRegion = hoverRegionInfo ?? selectedRegionInfo;
-  const inspectedEra = getRegionEra(inspectedRegion, year);
+  const summaryRegionInfo = regions.find((region) => region.id === summaryRegion);
+  const inspectedRegion = hoverRegionInfo ?? summaryRegionInfo;
+  const inspectedEra = inspectedRegion ? getRegionEra(inspectedRegion, year) : null;
   const selectedRegionEra = getRegionEra(selectedRegionInfo, year);
 
   const selectedRegionEvents = visibleEvents.filter((event) => event.region === selectedRegion);
@@ -512,6 +532,7 @@ function App() {
 
   function selectRegion(region: Region) {
     setSelectedRegion(region);
+    setSummaryRegion(region);
     const firstEvent = visibleEvents.find((event) => event.region === region);
     if (firstEvent) {
       setSelectedId(firstEvent.id);
@@ -542,32 +563,44 @@ function App() {
             hoveredRegion={hoveredRegion}
             onHover={setHoveredRegion}
             onSelect={selectRegion}
+            onClearSummary={() => setSummaryRegion(null)}
             regionCounts={regionCounts}
             year={year}
           />
 
-          <aside
-            className="hover-summary"
-            style={{ "--accent": inspectedRegion.accent } as React.CSSProperties}
-            aria-live="polite"
-          >
-            <div className="summary-heading">
-              <MapPinned size={18} aria-hidden="true" />
-              <span>{hoverRegionInfo ? "悬停区域" : "选中区域"}</span>
-            </div>
-            <h2>{inspectedRegion.label}</h2>
-            <p>
-              {getRegionSummary(
-                inspectedRegion,
-                visibleEvents.filter((event) => event.region === inspectedRegion.id),
-                year,
-              )}
-            </p>
-            <div className="summary-meta">
-              <span>{inspectedEra.title}</span>
-              <strong>{regionCounts[inspectedRegion.id]} 个事件</strong>
-            </div>
-          </aside>
+          {inspectedRegion && inspectedEra && (
+            <aside
+              className="hover-summary"
+              style={{ "--accent": inspectedRegion.accent } as React.CSSProperties}
+              aria-live="polite"
+            >
+              <div className="summary-heading">
+                <MapPinned size={18} aria-hidden="true" />
+                <span>{hoverRegionInfo ? "悬停区域" : "选中区域"}</span>
+                <button
+                  className="summary-close"
+                  type="button"
+                  aria-label="关闭区域信息"
+                  title="关闭区域信息"
+                  onClick={() => setSummaryRegion(null)}
+                >
+                  <X size={16} />
+                </button>
+              </div>
+              <h2>{inspectedRegion.label}</h2>
+              <p>
+                {getRegionSummary(
+                  inspectedRegion,
+                  visibleEvents.filter((event) => event.region === inspectedRegion.id),
+                  year,
+                )}
+              </p>
+              <div className="summary-meta">
+                <span>{inspectedEra.title}</span>
+                <strong>{regionCounts[inspectedRegion.id]} 个事件</strong>
+              </div>
+            </aside>
+          )}
         </section>
 
         <section className="timeline-dock" aria-label="时间线">

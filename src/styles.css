@@ -242,6 +242,31 @@ h1 {
   font-weight: 850;
 }
 
+.summary-heading {
+  min-width: 0;
+}
+
+.summary-heading span {
+  min-width: 0;
+}
+
+.summary-close {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+  place-items: center;
+  border: 1px solid rgba(30, 34, 38, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.74);
+  color: #30363c;
+}
+
+.summary-close:hover {
+  border-color: rgba(30, 34, 38, 0.26);
+  background: #ffffff;
+}
+
 .hover-summary h2 {
   margin-bottom: 0;
   font-size: 24px;
