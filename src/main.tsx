@@ -49,20 +49,18 @@ type RegionInfo = {
   id: Region;
   label: string;
   accent: string;
-  focus: [number, number];
-  labelOffset: [number, number];
   eras: RegionEra[];
 };
 
 type RegionEra = {
-    startYear: number;
-    endYear: number;
-    title: string;
-    summary: string;
-    boundaryType: "effective-control" | "nominal" | "cultural-influence";
-    confidence: "high" | "medium" | "low";
-    boundary: LonLat[];
-    sources: unknown[];
+  startYear: number;
+  endYear: number;
+  title: string;
+  summary: string;
+  boundaryType: "effective-control" | "nominal" | "cultural-influence";
+  confidence: "high" | "medium" | "low";
+  boundary: LonLat[];
+  sources: unknown[];
 };
 
 const events = eventsData as HistoricalEvent[];
@@ -146,7 +144,6 @@ function WorldMap({
   onHover,
   onSelect,
   onClearSummary,
-  regionCounts,
   year,
 }: {
   activeRegion: Region;
@@ -154,7 +151,6 @@ function WorldMap({
   onHover: (region: Region | null) => void;
   onSelect: (region: Region) => void;
   onClearSummary: () => void;
-  regionCounts: Record<Region, number>;
   year: number;
 }) {
   return (
@@ -178,14 +174,8 @@ function WorldMap({
         {regions.map((region) => {
           const isActive = region.id === activeRegion;
           const isHovered = region.id === hoveredRegion;
-          const point = projection(region.focus);
           const era = getRegionEra(region, year);
           const boundaryPath = getBoundaryPath(era.boundary);
-          if (!point) {
-            return null;
-          }
-          const [x, y] = point;
-          const [labelX, labelY] = region.labelOffset;
           if (!boundaryPath) {
             return null;
           }
@@ -208,32 +198,6 @@ function WorldMap({
                 role="button"
                 aria-label={`选择${region.label}`}
               />
-              <circle
-                className={`region-marker ${isActive ? "active" : ""}`}
-                cx={x}
-                cy={y}
-                r="6"
-                style={{ "--accent": region.accent } as React.CSSProperties}
-              />
-              <foreignObject
-                x={x + labelX}
-                y={y + labelY}
-                width="142"
-                height="48"
-                className="map-label"
-                style={{ "--accent": region.accent } as React.CSSProperties}
-              >
-                <button
-                  type="button"
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    onSelect(region.id);
-                  }}
-                >
-                  <span>{region.label}</span>
-                  <strong>{regionCounts[region.id]}</strong>
-                </button>
-              </foreignObject>
             </g>
           );
         })}
@@ -331,7 +295,6 @@ function App() {
             onHover={setHoveredRegion}
             onSelect={selectRegion}
             onClearSummary={() => setSummaryRegion(null)}
-            regionCounts={regionCounts}
             year={year}
           />
 

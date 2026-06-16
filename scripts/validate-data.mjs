@@ -20,11 +20,6 @@ for (const event of events) {
 
 for (const region of regions) {
   assert(regionIds.has(region.id), `Unknown region id: ${region.id}`);
-  assert(Array.isArray(region.focus) && region.focus.length === 2, `Region focus must be [lon, lat]: ${region.id}`);
-  assert(
-    Array.isArray(region.labelOffset) && region.labelOffset.length === 2,
-    `Region labelOffset must be [x, y]: ${region.id}`,
-  );
   assert(Array.isArray(region.eras) && region.eras.length > 0, `Region needs eras: ${region.id}`);
 
   for (const era of region.eras) {

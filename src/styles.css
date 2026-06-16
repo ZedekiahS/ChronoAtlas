@@ -165,58 +165,6 @@ h1 {
   filter: drop-shadow(0 12px 18px rgba(30, 34, 38, 0.22));
 }
 
-.region-marker {
-  --accent: #b94f32;
-  fill: #ffffff;
-  stroke: var(--accent);
-  stroke-width: 3;
-  pointer-events: none;
-}
-
-.region-marker.active {
-  fill: var(--accent);
-  stroke: #ffffff;
-}
-
-.map-label {
-  pointer-events: none;
-}
-
-.map-label button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  width: 138px;
-  min-height: 38px;
-  padding: 8px 10px;
-  border: 1px solid color-mix(in srgb, var(--accent) 46%, #ffffff);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.88);
-  color: #1e2226;
-  pointer-events: auto;
-}
-
-.map-label span {
-  overflow: hidden;
-  font-size: 13px;
-  font-weight: 850;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.map-label strong {
-  display: grid;
-  flex: 0 0 auto;
-  width: 22px;
-  height: 22px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #ffffff;
-  font-size: 12px;
-}
-
 .hover-summary {
   --accent: #b94f32;
   position: absolute;
