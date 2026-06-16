@@ -1,4 +1,4 @@
-# Parallel Antiquity
+# ChronoAtlas
 
 一个交互式世界历史年表项目，第一阶段聚焦公元 180-280 年：
 
