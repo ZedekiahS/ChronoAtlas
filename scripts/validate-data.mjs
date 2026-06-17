@@ -2,6 +2,7 @@ import events from "../data/events-180-280.sample.json" with { type: "json" };
 import chinaBlocks from "../data/china-admin-blocks-190-280.json" with { type: "json" };
 import chinaControlTimeline from "../data/china-block-control-timeline-190-280.json" with { type: "json" };
 import chinaMap from "../data/china-three-kingdoms-map.json" with { type: "json" };
+import chinaPersonLifeEvents from "../data/china-person-life-events.json" with { type: "json" };
 import chinaPersonRelations from "../data/china-person-relations.json" with { type: "json" };
 import chinaPersons from "../data/china-persons.json" with { type: "json" };
 import chinaSources from "../data/china-sources.json" with { type: "json" };
@@ -13,6 +14,19 @@ const boundaryTypes = new Set(["effective-control", "nominal", "cultural-influen
 const blockLevels = new Set(["province", "commandery", "county-seat"]);
 const controlStatuses = new Set(["effective-control", "contested", "frontier", "nominal-control"]);
 const confidenceValues = new Set(["high", "medium", "low"]);
+const personLifeEventTypes = new Set([
+  "abdication",
+  "birth",
+  "campaign",
+  "death",
+  "diplomacy",
+  "later-tradition",
+  "office",
+  "politics",
+  "service",
+  "strategy",
+  "turning-point",
+]);
 const requiredChinaBlockIds = new Set([
   "ji-zhou",
   "you-zhou",
@@ -285,6 +299,10 @@ for (const relation of chinaPersonRelations) {
   validateSourceRefs(relation.sourceRefs, `${relation.id}:sourceRefs`, sourceIds);
 }
 
+assert(Array.isArray(chinaPersonLifeEvents), "China person life events must be an array");
+const lifeEventIds = new Set();
+const lifeEventsByPersonId = new Map();
+
 const eventIds = new Set();
 
 for (const event of events) {
@@ -319,6 +337,39 @@ for (const event of events) {
     const presentFields = detailFields.filter((field) => validateOptionalTextList(event.detail[field], `${event.id}:detail:${field}`));
     assert(presentFields.length > 0, `Event detail needs at least one populated field: ${event.id}`);
   }
+}
+
+for (const lifeEvent of chinaPersonLifeEvents) {
+  assert(typeof lifeEvent.id === "string" && lifeEvent.id.length > 0, "Life event needs id");
+  assert(!lifeEventIds.has(lifeEvent.id), `Duplicate life event id: ${lifeEvent.id}`);
+  lifeEventIds.add(lifeEvent.id);
+  assert(personIds.has(lifeEvent.personId), `Life event uses unknown personId: ${lifeEvent.id}:${lifeEvent.personId}`);
+  assert(Number.isInteger(lifeEvent.year) || lifeEvent.year === null, `Life event year must be integer or null: ${lifeEvent.id}`);
+  if ("endYear" in lifeEvent) {
+    assert(Number.isInteger(lifeEvent.endYear) || lifeEvent.endYear === null, `Life event endYear must be integer or null: ${lifeEvent.id}`);
+  }
+  if (Number.isInteger(lifeEvent.year) && Number.isInteger(lifeEvent.endYear)) {
+    assert(lifeEvent.year <= lifeEvent.endYear, `Life event starts after it ends: ${lifeEvent.id}`);
+  }
+  assert(typeof lifeEvent.displayYear === "string" && lifeEvent.displayYear.length > 0, `Life event needs displayYear: ${lifeEvent.id}`);
+  assert(personLifeEventTypes.has(lifeEvent.type), `Unknown life event type: ${lifeEvent.id}:${lifeEvent.type}`);
+  assert(typeof lifeEvent.title === "string" && lifeEvent.title.length > 0, `Life event needs title: ${lifeEvent.id}`);
+  assert(typeof lifeEvent.summary === "string" && lifeEvent.summary.length > 0, `Life event needs summary: ${lifeEvent.id}`);
+  assert(Array.isArray(lifeEvent.relatedEventIds), `Life event relatedEventIds must be an array: ${lifeEvent.id}`);
+  assert(confidenceValues.has(lifeEvent.confidence), `Unknown life event confidence: ${lifeEvent.id}`);
+  validateSourceRefs(lifeEvent.sourceRefs, `${lifeEvent.id}:sourceRefs`, sourceIds);
+
+  for (const relatedEventId of lifeEvent.relatedEventIds) {
+    assert(eventIds.has(relatedEventId), `Life event uses unknown relatedEventId: ${lifeEvent.id}:${relatedEventId}`);
+  }
+
+  const personLifeEvents = lifeEventsByPersonId.get(lifeEvent.personId) ?? [];
+  personLifeEvents.push(lifeEvent);
+  lifeEventsByPersonId.set(lifeEvent.personId, personLifeEvents);
+}
+
+for (const personId of personIds) {
+  assert(lifeEventsByPersonId.has(personId), `Person has no life events: ${personId}`);
 }
 
 for (const event of events) {

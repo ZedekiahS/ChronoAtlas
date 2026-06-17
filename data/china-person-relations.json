@@ -256,5 +256,207 @@
       { "sourceId": "zizhi-tongjian-78", "locator": "司马氏代魏背景" },
       { "sourceId": "jinshu-wudi", "locator": "武帝纪" }
     ]
+  },
+  {
+    "id": "yuan-shao-yan-liang-commander",
+    "sourcePersonId": "yuan-shao",
+    "targetPersonId": "yan-liang",
+    "type": "commander",
+    "startYear": 199,
+    "endYear": 200,
+    "summary": "颜良为袁绍大将，200 年进攻白马，是官渡前哨战的关键将领之一。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传官渡前后" },
+      { "sourceId": "sanguozhi-shu-guan-yu", "locator": "关羽传白马斩颜良" }
+    ]
+  },
+  {
+    "id": "yuan-shao-wen-chou-commander",
+    "sourcePersonId": "yuan-shao",
+    "targetPersonId": "wen-chou",
+    "type": "commander",
+    "startYear": 199,
+    "endYear": 200,
+    "summary": "文丑为袁绍军中名将，颜良败亡后继续参与延津方向作战。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传官渡前后" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "yuan-shao-zhang-he-commander",
+    "sourcePersonId": "yuan-shao",
+    "targetPersonId": "zhang-he",
+    "type": "commander",
+    "startYear": 191,
+    "endYear": 200,
+    "summary": "张郃在袁绍集团中参与对公孙瓒和官渡战事，200 年在乌巢转折后归降曹操。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-zhang-he", "locator": "张郃传" },
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传官渡相关记载" }
+    ]
+  },
+  {
+    "id": "yuan-shao-gao-lan-commander",
+    "sourcePersonId": "yuan-shao",
+    "targetPersonId": "gao-lan",
+    "type": "commander",
+    "startYear": 199,
+    "endYear": 200,
+    "summary": "高览在官渡相关记载中与张郃并见，作为袁绍部将参与前线行动，后续仕历不详。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传官渡相关记载" },
+      { "sourceId": "sanguozhi-wei-zhang-he", "locator": "张郃传裴注异文" }
+    ]
+  },
+  {
+    "id": "yuan-shao-xu-you-advisor",
+    "sourcePersonId": "yuan-shao",
+    "targetPersonId": "xu-you",
+    "type": "advisor",
+    "startYear": 190,
+    "endYear": 200,
+    "summary": "许攸原为袁绍谋士，官渡相持时转投曹操，成为袁绍集团失势的重要转折人物。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传官渡相关记载" },
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "yuan-shao-ju-shou-advisor",
+    "sourcePersonId": "yuan-shao",
+    "targetPersonId": "ju-shou",
+    "type": "advisor",
+    "startYear": 190,
+    "endYear": 200,
+    "summary": "沮授长期为袁绍谋划河北与南下战略，主张持重，不少意见未被采纳。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "沮授、田丰相关记载" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "yuan-shao-tian-feng-advisor",
+    "sourcePersonId": "yuan-shao",
+    "targetPersonId": "tian-feng",
+    "type": "advisor",
+    "startYear": 190,
+    "endYear": 200,
+    "summary": "田丰是袁绍谋臣中直言进谏者，官渡前反对仓促南下，因言获罪。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "沮授、田丰相关记载" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "yuan-shao-shen-pei-official",
+    "sourcePersonId": "yuan-shao",
+    "targetPersonId": "shen-pei",
+    "type": "advisor",
+    "startYear": 190,
+    "endYear": 204,
+    "summary": "审配是袁绍集团重要僚佐，袁绍死后卷入袁氏诸子内争并守邺到底。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传及袁氏诸子相关记载" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "河北战事延续" }
+    ]
+  },
+  {
+    "id": "cao-cao-xu-you-defection",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "xu-you",
+    "type": "defection",
+    "startYear": 200,
+    "endYear": 200,
+    "summary": "许攸投奔曹操后提供袁军粮秣情报，推动乌巢袭击成为官渡转折。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安五年乌巢相关记载" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "cao-cao-zhang-he-defection",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "zhang-he",
+    "type": "defection",
+    "startYear": 200,
+    "endYear": 231,
+    "summary": "张郃在官渡后归降曹操，之后成为曹魏长期倚重的方面将领。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-zhang-he", "locator": "张郃传" }
+    ]
+  },
+  {
+    "id": "cao-cao-xun-yu-advisor",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "xun-yu",
+    "type": "advisor",
+    "startYear": 191,
+    "endYear": 212,
+    "summary": "荀彧辅佐曹操经营许都和北方战略，官渡相持时坚持不可轻退。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-xun-yu-jia-xu", "locator": "荀彧传" }
+    ]
+  },
+  {
+    "id": "cao-cao-xun-you-advisor",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "xun-you",
+    "type": "advisor",
+    "startYear": 196,
+    "endYear": 214,
+    "summary": "荀攸为曹操军中谋主，在下邳、官渡等战役中参与具体军略。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-xun-yu-jia-xu", "locator": "荀攸传" }
+    ]
+  },
+  {
+    "id": "cao-cao-guo-jia-advisor",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "guo-jia",
+    "type": "advisor",
+    "startYear": 196,
+    "endYear": 207,
+    "summary": "郭嘉是曹操早期关键谋士，参与判断吕布、袁绍及河北后续战局。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-guo-jia", "locator": "郭嘉传" }
+    ]
+  },
+  {
+    "id": "cao-cao-jia-xu-advisor",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "jia-xu",
+    "type": "advisor",
+    "startYear": 199,
+    "endYear": 220,
+    "summary": "贾诩随张绣归曹后进入曹操集团，在军政和继嗣问题上多有谨慎建议。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-xun-yu-jia-xu", "locator": "贾诩传" }
+    ]
+  },
+  {
+    "id": "guan-yu-yan-liang-boma",
+    "sourcePersonId": "guan-yu",
+    "targetPersonId": "yan-liang",
+    "type": "campaign-opponent",
+    "startYear": 200,
+    "endYear": 200,
+    "summary": "白马之战中，关羽作为曹军先锋斩颜良，解除白马之围。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-guan-yu", "locator": "关羽传白马斩颜良" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "hebei-four-pillars-tradition",
+    "sourcePersonId": "yan-liang",
+    "targetPersonId": "zhang-he",
+    "type": "later-tradition",
+    "startYear": 200,
+    "endYear": 200,
+    "summary": "颜良、文丑、张郃、高览并称“河北四庭柱”是后世通俗归纳，项目保留为人物标签和传统关系，不作为当时官制。",
+    "sourceRefs": [
+      { "sourceId": "literary-hebei-four-pillars", "locator": "后世传统称呼" }
+    ]
   }
 ]

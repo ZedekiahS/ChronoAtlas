@@ -222,5 +222,45 @@
     "type": "official-history",
     "citationShort": "《晋书·武帝纪》",
     "note": "记录司马炎代魏、晋灭吴和西晋初年制度。"
+  },
+  {
+    "id": "sanguozhi-wei-xun-yu-jia-xu",
+    "title": "三国志·魏书·荀彧荀攸贾诩传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志》卷十",
+    "note": "记录荀彧、荀攸、贾诩等曹操集团谋臣的仕历与关键建议。"
+  },
+  {
+    "id": "sanguozhi-wei-guo-jia",
+    "title": "三国志·魏书·程郭董刘蒋刘传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志》卷十四",
+    "note": "记录郭嘉、程昱等曹操集团谋臣的传记材料。"
+  },
+  {
+    "id": "sanguozhi-wei-zhang-he",
+    "title": "三国志·魏书·张乐于张徐传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志》卷十七",
+    "note": "记录张郃从袁绍到曹魏的军事经历、街亭之战与木门之死。"
+  },
+  {
+    "id": "sanguozhi-shu-zhang-fei",
+    "title": "三国志·蜀书·关张马黄赵传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志》卷三十六",
+    "note": "记录关羽、张飞等刘备集团早期核心将领的传记材料。"
+  },
+  {
+    "id": "literary-hebei-four-pillars",
+    "title": "河北四庭柱传统称呼",
+    "author": "后世通俗叙事归纳",
+    "type": "later-tradition",
+    "citationShort": "河北四庭柱传统",
+    "note": "颜良、文丑、张郃、高览并称的后世通俗归类，项目中标记为传统称呼，不作为汉末正式制度。"
   }
 ]

@@ -52,6 +52,115 @@
     ]
   },
   {
+    "id": "yan-liang",
+    "name": "颜良",
+    "courtesyName": null,
+    "life": "?-200",
+    "primaryPolity": "袁绍集团",
+    "roles": ["将领", "河北四庭柱传统成员"],
+    "summary": "袁绍麾下大将，200 年进攻白马时被关羽斩杀。其列入“河北四庭柱”属于后世通俗归类，不是汉末正式称号。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传官渡前后" },
+      { "sourceId": "sanguozhi-shu-guan-yu", "locator": "关羽传白马斩颜良" },
+      { "sourceId": "literary-hebei-four-pillars", "locator": "后世传统称呼" }
+    ]
+  },
+  {
+    "id": "wen-chou",
+    "name": "文丑",
+    "courtesyName": null,
+    "life": "?-200",
+    "primaryPolity": "袁绍集团",
+    "roles": ["将领", "河北四庭柱传统成员"],
+    "summary": "袁绍麾下名将，官渡前哨战中在延津方向败亡，与颜良常并称为袁绍军中勇将。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传官渡前后" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年延津相关记载" },
+      { "sourceId": "literary-hebei-four-pillars", "locator": "后世传统称呼" }
+    ]
+  },
+  {
+    "id": "zhang-he",
+    "name": "张郃",
+    "courtesyName": "儁乂",
+    "life": "?-231",
+    "primaryPolity": "袁绍集团 / 曹魏",
+    "roles": ["将领", "河北四庭柱传统成员", "曹魏五子良将"],
+    "summary": "初属韩馥、袁绍，官渡之战中归降曹操，后成为曹魏重要将领，231 年在木门中箭而卒。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-zhang-he", "locator": "张郃传" },
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传官渡相关记载" },
+      { "sourceId": "literary-hebei-four-pillars", "locator": "后世传统称呼" }
+    ]
+  },
+  {
+    "id": "gao-lan",
+    "name": "高览",
+    "courtesyName": null,
+    "life": "生卒未详",
+    "primaryPolity": "袁绍集团 / 曹操集团",
+    "roles": ["将领", "河北四庭柱传统成员"],
+    "summary": "袁绍部将，官渡之战中与张郃相关的降曹记载相连；后续仕历不详。其“四庭柱”身份属后世传统归类。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传官渡相关记载" },
+      { "sourceId": "sanguozhi-wei-zhang-he", "locator": "张郃传裴注异文" },
+      { "sourceId": "literary-hebei-four-pillars", "locator": "后世传统称呼" }
+    ]
+  },
+  {
+    "id": "xu-you",
+    "name": "许攸",
+    "courtesyName": "子远",
+    "life": "生卒未详",
+    "primaryPolity": "袁绍集团 / 曹操集团",
+    "roles": ["谋士", "降曹者"],
+    "summary": "袁绍旧友和谋士，官渡相持时投奔曹操，提供袁军粮秣情报，是乌巢转折的重要人物。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安五年乌巢相关记载" },
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传官渡相关记载" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "ju-shou",
+    "name": "沮授",
+    "courtesyName": null,
+    "life": "?-200?",
+    "primaryPolity": "袁绍集团",
+    "roles": ["谋士", "监军"],
+    "summary": "袁绍重要谋臣，多次提出稳健策略，官渡失败后被曹操俘获，拒绝归附，结局记载略有不确定。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "沮授、田丰相关记载" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "tian-feng",
+    "name": "田丰",
+    "courtesyName": "元皓",
+    "life": "?-200",
+    "primaryPolity": "袁绍集团",
+    "roles": ["谋士"],
+    "summary": "袁绍谋士，主张审慎用兵并多次进谏，官渡前后被袁绍囚禁，战败后遇害。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "沮授、田丰相关记载" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "shen-pei",
+    "name": "审配",
+    "courtesyName": "正南",
+    "life": "?-204",
+    "primaryPolity": "袁绍集团",
+    "roles": ["谋臣", "守城者"],
+    "summary": "袁绍集团核心僚佐，袁氏内争中守邺，204 年邺城陷落后被杀。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传及袁氏诸子相关记载" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "河北战事延续" }
+    ]
+  },
+  {
     "id": "yuan-shu",
     "name": "袁术",
     "courtesyName": "公路",
@@ -101,6 +210,58 @@
     "sourceRefs": [
       { "sourceId": "sanguozhi-wei-wudi", "locator": "武帝纪" },
       { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "xun-yu",
+    "name": "荀彧",
+    "courtesyName": "文若",
+    "life": "163-212",
+    "primaryPolity": "曹操集团 / 东汉朝廷",
+    "roles": ["谋臣", "尚书令", "战略顾问"],
+    "summary": "曹操最重要的中枢谋臣之一，参与迎献帝、守许与官渡战略判断，后因魏公问题与曹操产生裂痕。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-xun-yu-jia-xu", "locator": "荀彧传" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "xun-you",
+    "name": "荀攸",
+    "courtesyName": "公达",
+    "life": "157-214",
+    "primaryPolity": "曹操集团",
+    "roles": ["谋臣", "军师"],
+    "summary": "曹操军中谋主，参与下邳、官渡等关键战役谋划，以临战计策见长。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-xun-yu-jia-xu", "locator": "荀攸传" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "guo-jia",
+    "name": "郭嘉",
+    "courtesyName": "奉孝",
+    "life": "170-207",
+    "primaryPolity": "曹操集团",
+    "roles": ["谋臣", "战略顾问"],
+    "summary": "曹操早期重要谋士，参与对吕布、袁绍及河北后续战事判断，207 年北征乌桓后不久去世。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-guo-jia", "locator": "郭嘉传" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "官渡及河北形势" }
+    ]
+  },
+  {
+    "id": "jia-xu",
+    "name": "贾诩",
+    "courtesyName": "文和",
+    "life": "147-223",
+    "primaryPolity": "凉州军 / 张绣集团 / 曹魏",
+    "roles": ["谋臣", "太尉"],
+    "summary": "先后服务凉州军、张绣和曹操集团，199 年随张绣归曹，后在曹魏中枢以谨慎谋略著称。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-xun-yu-jia-xu", "locator": "贾诩传" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安年间" }
     ]
   },
   {

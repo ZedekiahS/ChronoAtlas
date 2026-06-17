@@ -29,6 +29,7 @@ import eventsData from "../data/events-180-280.sample.json";
 import chinaAdminBlocksData from "../data/china-admin-blocks-190-280.json";
 import chinaBlockControlTimelineData from "../data/china-block-control-timeline-190-280.json";
 import chinaMapData from "../data/china-three-kingdoms-map.json";
+import chinaPersonLifeEventsData from "../data/china-person-life-events.json";
 import chinaPersonRelationsData from "../data/china-person-relations.json";
 import chinaPersonsData from "../data/china-persons.json";
 import chinaSourcesData from "../data/china-sources.json";
@@ -96,6 +97,31 @@ type HistoricalPerson = {
   primaryPolity: string;
   roles: string[];
   summary: string;
+  sourceRefs: SourceRef[];
+};
+
+type PersonLifeEvent = {
+  id: string;
+  personId: string;
+  year: number | null;
+  endYear?: number | null;
+  displayYear: string;
+  type:
+    | "abdication"
+    | "birth"
+    | "campaign"
+    | "death"
+    | "diplomacy"
+    | "later-tradition"
+    | "office"
+    | "politics"
+    | "service"
+    | "strategy"
+    | "turning-point";
+  title: string;
+  summary: string;
+  relatedEventIds: string[];
+  confidence: "high" | "medium" | "low";
   sourceRefs: SourceRef[];
 };
 
@@ -247,6 +273,7 @@ type NaturalEarthPhysical = {
 const events = eventsData as HistoricalEvent[];
 const chinaSources = chinaSourcesData as SourceRecord[];
 const chinaPersons = chinaPersonsData as HistoricalPerson[];
+const chinaPersonLifeEvents = chinaPersonLifeEventsData as PersonLifeEvent[];
 const chinaPersonRelations = chinaPersonRelationsData as PersonRelation[];
 const chinaBlocksDataset = chinaAdminBlocksData as unknown as ChinaAdminBlocksDataset;
 const chinaControlTimeline = chinaBlockControlTimelineData as unknown as ChinaControlTimeline;
@@ -362,8 +389,10 @@ function getRelationTypeLabel(type: string) {
     commander: "统帅关系",
     "core-ally": "核心同盟",
     "court-control": "朝廷控制",
+    defection: "归附转投",
     "family-lineage": "家族承继",
     "family-successor": "父子继承",
+    "later-tradition": "后世传统",
     regency: "辅政",
     rival: "竞争",
     enemy: "敌对",
@@ -385,8 +414,10 @@ function getRelationColor(type: string) {
     commander: "#35689a",
     "core-ally": "#2f7d4f",
     "court-control": "#8b3f2d",
+    defection: "#7d5d26",
     "family-lineage": "#6f5b28",
     "family-successor": "#6f5b28",
+    "later-tradition": "#6f5b91",
     regency: "#5a6f91",
     rival: "#8f6f1f",
     enemy: "#9c3f32",
@@ -669,6 +700,32 @@ function getConfidenceLabel(confidence: "high" | "medium" | "low" | undefined) {
     default:
       return "可信度待补";
   }
+}
+
+function getLifeEventTypeLabel(type: PersonLifeEvent["type"]) {
+  const labels: Record<PersonLifeEvent["type"], string> = {
+    abdication: "禅让",
+    birth: "出生",
+    campaign: "战事",
+    death: "死亡",
+    diplomacy: "外交",
+    "later-tradition": "传统称呼",
+    office: "任位",
+    politics: "政治",
+    service: "仕历",
+    strategy: "谋略",
+    "turning-point": "转折",
+  };
+
+  return labels[type] ?? type;
+}
+
+function getLifeEventSortValue(lifeEvent: PersonLifeEvent) {
+  if (Number.isInteger(lifeEvent.year)) {
+    return lifeEvent.year as number;
+  }
+
+  return lifeEvent.type === "birth" ? Number.NEGATIVE_INFINITY : Number.POSITIVE_INFINITY;
 }
 
 function isChinaPolity(group: BoundaryGroup | ChinaPolity): group is ChinaPolity {
@@ -1223,6 +1280,11 @@ function App() {
         .filter((event) => event.personIds?.includes(selectedPerson.id))
         .sort((left, right) => left.startYear - right.startYear || left.endYear - right.endYear)
     : [];
+  const selectedPersonLifeEvents = selectedPerson
+    ? chinaPersonLifeEvents
+        .filter((lifeEvent) => lifeEvent.personId === selectedPerson.id)
+        .sort((left, right) => getLifeEventSortValue(left) - getLifeEventSortValue(right) || left.displayYear.localeCompare(right.displayYear))
+    : [];
   const relationshipGraphNodes = selectedPerson
     ? selectedPersonRelations.slice(0, 6).map((relation, index, relations) => {
         const isSource = relation.sourcePersonId === selectedPerson.id;
@@ -1476,7 +1538,9 @@ function App() {
               type="range"
               min={yearMin}
               max={yearMax}
+              step={1}
               value={year}
+              onInput={(event) => setYear(Number(event.currentTarget.value))}
               onChange={(event) => setYear(Number(event.target.value))}
             />
             <div className="range-labels">
@@ -1768,6 +1832,57 @@ function App() {
                   ))}
                 </div>
 
+                <div className="person-event-heading">
+                  <CalendarDays size={16} aria-hidden="true" />
+                  <span>生平年表</span>
+                  <strong>{selectedPersonLifeEvents.length}</strong>
+                </div>
+                <div className="person-life-timeline">
+                  {selectedPersonLifeEvents.length ? (
+                    selectedPersonLifeEvents.map((lifeEvent) => {
+                      const linkedEvent = lifeEvent.relatedEventIds
+                        .map((eventId) => events.find((event) => event.id === eventId))
+                        .find((event): event is HistoricalEvent => Boolean(event));
+                      const content = (
+                        <>
+                          <div className="life-event-year">
+                            <span>{lifeEvent.displayYear}</span>
+                            <small>{getLifeEventTypeLabel(lifeEvent.type)}</small>
+                          </div>
+                          <div className="life-event-copy">
+                            <strong>{lifeEvent.title}</strong>
+                            <p>{lifeEvent.summary}</p>
+                            <div className="life-event-meta">
+                              <span>{getConfidenceLabel(lifeEvent.confidence)}</span>
+                              {lifeEvent.sourceRefs.slice(0, 2).map((ref) => (
+                                <span key={`${lifeEvent.id}-${ref.sourceId}-${ref.locator ?? ""}`}>{formatSourceRef(ref)}</span>
+                              ))}
+                            </div>
+                          </div>
+                        </>
+                      );
+
+                      return linkedEvent ? (
+                        <button
+                          className={`person-life-event ${linkedEvent.id === selectedEvent.id ? "selected" : ""}`}
+                          data-person-life-event-id={lifeEvent.id}
+                          key={lifeEvent.id}
+                          type="button"
+                          onClick={() => selectHistoricalEvent(linkedEvent)}
+                        >
+                          {content}
+                        </button>
+                      ) : (
+                        <article className="person-life-event" data-person-life-event-id={lifeEvent.id} key={lifeEvent.id}>
+                          {content}
+                        </article>
+                      );
+                    })
+                  ) : (
+                    <p>待补充生平年表</p>
+                  )}
+                </div>
+
                 <div className="relation-heading">
                   <Network size={16} aria-hidden="true" />
                   <span>人物关系</span>
@@ -1836,7 +1951,7 @@ function App() {
 
                 <div className="person-event-heading">
                   <CalendarDays size={16} aria-hidden="true" />
-                  <span>人物事件脉络</span>
+                  <span>关联大事件</span>
                   <strong>{selectedPersonEvents.length}</strong>
                 </div>
                 <div className="person-event-timeline">
@@ -1933,7 +2048,16 @@ function App() {
   );
 }
 
-createRoot(document.getElementById("root")!).render(
+type ChronoAtlasWindow = Window & {
+  __chronoAtlasRoot?: ReturnType<typeof createRoot>;
+};
+
+const rootElement = document.getElementById("root")!;
+const chronoAtlasWindow = window as ChronoAtlasWindow;
+const root = chronoAtlasWindow.__chronoAtlasRoot ?? createRoot(rootElement);
+chronoAtlasWindow.__chronoAtlasRoot = root;
+
+root.render(
   <StrictMode>
     <App />
   </StrictMode>,

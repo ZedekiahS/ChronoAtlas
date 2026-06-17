@@ -1116,6 +1116,82 @@ input[type="range"] {
   position: relative;
 }
 
+.person-life-timeline {
+  display: grid;
+  gap: 8px;
+}
+
+.person-life-event {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(30, 34, 38, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.76);
+  color: inherit;
+  text-align: left;
+}
+
+button.person-life-event:hover,
+.person-life-event.selected {
+  border-color: rgba(185, 79, 50, 0.34);
+  background: #ffffff;
+}
+
+.life-event-year {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.life-event-year span {
+  color: #8b3f2d;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.life-event-year small,
+.life-event-meta span {
+  width: fit-content;
+  padding: 4px 6px;
+  border-radius: 999px;
+  background: rgba(22, 128, 105, 0.1);
+  color: #37675d;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.life-event-copy {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.life-event-copy strong {
+  overflow-wrap: anywhere;
+  color: #1e2226;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.life-event-copy p {
+  font-size: 12px;
+}
+
+.life-event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.life-event-meta span {
+  background: rgba(30, 34, 38, 0.06);
+  color: #5b6369;
+}
+
 .person-event-timeline::before {
   content: "";
   position: absolute;
