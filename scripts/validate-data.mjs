@@ -1,6 +1,6 @@
 import events from "../data/events-180-280.sample.json" with { type: "json" };
-import chinaBlocks from "../data/china-blocks-190-280.json" with { type: "json" };
-import chinaControlTimeline from "../data/china-control-timeline-190-280.json" with { type: "json" };
+import chinaBlocks from "../data/china-admin-blocks-190-280.json" with { type: "json" };
+import chinaControlTimeline from "../data/china-block-control-timeline-190-280.json" with { type: "json" };
 import chinaMap from "../data/china-three-kingdoms-map.json" with { type: "json" };
 import naturalEarthChinaPhysical from "../data/natural-earth-china-physical.json" with { type: "json" };
 import regions from "../data/regions-180-280.json" with { type: "json" };
@@ -23,6 +23,7 @@ const requiredChinaBlockIds = new Set([
   "liang-zhou",
   "jing-zhou",
   "yang-zhou",
+  "huainan",
   "yi-zhou",
   "jiao-zhou",
   "hanzhong",
@@ -134,6 +135,63 @@ function validatePolygonGeometry(geometry, geometryId) {
   }
 }
 
+function normalizeEdge(start, end) {
+  const left = `${start[0]},${start[1]}`;
+  const right = `${end[0]},${end[1]}`;
+  return left < right ? `${left}|${right}` : `${right}|${left}`;
+}
+
+function getPolygonEdges(geometry) {
+  const edges = [];
+  for (const ring of geometry.coordinates) {
+    for (let index = 0; index < ring.length - 1; index += 1) {
+      edges.push(normalizeEdge(ring[index], ring[index + 1]));
+    }
+  }
+  return edges;
+}
+
+function isPointOnSegment(point, start, end) {
+  const cross = (point[1] - start[1]) * (end[0] - start[0]) - (point[0] - start[0]) * (end[1] - start[1]);
+  if (Math.abs(cross) > 1e-9) {
+    return false;
+  }
+
+  return (
+    point[0] >= Math.min(start[0], end[0]) &&
+    point[0] <= Math.max(start[0], end[0]) &&
+    point[1] >= Math.min(start[1], end[1]) &&
+    point[1] <= Math.max(start[1], end[1])
+  );
+}
+
+function isPointInPolygon(point, geometry) {
+  let inside = false;
+  const ring = geometry.coordinates[0];
+
+  for (let index = 0, previous = ring.length - 1; index < ring.length; previous = index, index += 1) {
+    const currentPoint = ring[index];
+    const previousPoint = ring[previous];
+
+    if (isPointOnSegment(point, previousPoint, currentPoint)) {
+      return true;
+    }
+
+    const intersects =
+      currentPoint[1] > point[1] !== previousPoint[1] > point[1] &&
+      point[0] <
+        ((previousPoint[0] - currentPoint[0]) * (point[1] - currentPoint[1])) /
+          (previousPoint[1] - currentPoint[1]) +
+          currentPoint[0];
+
+    if (intersects) {
+      inside = !inside;
+    }
+  }
+
+  return inside;
+}
+
 for (const event of events) {
   assert(regionIds.has(event.region), `Unknown event region: ${event.id}`);
   assert(Number.isInteger(event.startYear), `Event startYear must be an integer: ${event.id}`);
@@ -212,9 +270,10 @@ validateFeatureCollection(naturalEarthChinaPhysical.rivers, "naturalEarthChinaPh
 validateFeatureCollection(naturalEarthChinaPhysical.lakes, "naturalEarthChinaPhysical.lakes");
 validateFeatureCollection(naturalEarthChinaPhysical.geographyRegions, "naturalEarthChinaPhysical.geographyRegions");
 
-assert(chinaBlocks.model === "china-block-map", "Unexpected China block map model");
+assert(chinaBlocks.model === "china-admin-block-map", "Unexpected China block map model");
 assert(Array.isArray(chinaBlocks.blocks) && chinaBlocks.blocks.length > 0, "China block map needs blocks");
 const chinaBlockIds = new Set();
+const chinaBlockEdgeOwners = new Map();
 
 for (const block of chinaBlocks.blocks) {
   assert(typeof block.id === "string" && block.id.length > 0, "China block needs id");
@@ -225,9 +284,26 @@ for (const block of chinaBlocks.blocks) {
   assert(block.parent === null || typeof block.parent === "string", `Invalid China block parent: ${block.id}`);
   validateLonLat(block.center, `${block.id}:center`);
   validatePolygonGeometry(block.geometry, `${block.id}:geometry`);
+  for (const edge of getPolygonEdges(block.geometry)) {
+    const owners = chinaBlockEdgeOwners.get(edge) ?? [];
+    owners.push(block.id);
+    chinaBlockEdgeOwners.set(edge, owners);
+  }
   assert(confidenceValues.has(block.confidence), `Unknown China block confidence: ${block.id}`);
   assert(typeof block.approximate === "boolean", `China block approximate must be boolean: ${block.id}`);
   validateSources(block.sources, `${block.id}:sources`);
+}
+
+for (const block of chinaBlocks.blocks) {
+  const sharedEdgeCount = getPolygonEdges(block.geometry).filter((edge) => (chinaBlockEdgeOwners.get(edge) ?? []).length > 1).length;
+  assert(sharedEdgeCount > 0, `China admin block has no shared boundary edge: ${block.id}`);
+}
+
+for (let lon = 92.25; lon <= 129.75; lon += 0.5) {
+  for (let lat = 20.25; lat <= 43.75; lat += 0.5) {
+    const owners = chinaBlocks.blocks.filter((block) => isPointInPolygon([lon, lat], block.geometry)).map((block) => block.id);
+    assert(owners.length <= 1, `China admin blocks overlap near ${lon},${lat}: ${owners.join(", ")}`);
+  }
 }
 
 for (const blockId of requiredChinaBlockIds) {

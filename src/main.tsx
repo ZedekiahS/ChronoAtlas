@@ -24,8 +24,8 @@ import {
   UsersRound,
 } from "lucide-react";
 import eventsData from "../data/events-180-280.sample.json";
-import chinaBlocksData from "../data/china-blocks-190-280.json";
-import chinaControlTimelineData from "../data/china-control-timeline-190-280.json";
+import chinaAdminBlocksData from "../data/china-admin-blocks-190-280.json";
+import chinaBlockControlTimelineData from "../data/china-block-control-timeline-190-280.json";
 import chinaMapData from "../data/china-three-kingdoms-map.json";
 import naturalEarthChinaPhysicalData from "../data/natural-earth-china-physical.json";
 import regionsData from "../data/regions-180-280.json";
@@ -139,7 +139,7 @@ type ChinaBlock = {
   sources: string[];
 };
 
-type ChinaBlocksDataset = {
+type ChinaAdminBlocksDataset = {
   schemaVersion: number;
   model: string;
   range: [number, number];
@@ -188,8 +188,8 @@ type NaturalEarthPhysical = {
 };
 
 const events = eventsData as HistoricalEvent[];
-const chinaBlocksDataset = chinaBlocksData as ChinaBlocksDataset;
-const chinaControlTimeline = chinaControlTimelineData as ChinaControlTimeline;
+const chinaBlocksDataset = chinaAdminBlocksData as unknown as ChinaAdminBlocksDataset;
+const chinaControlTimeline = chinaBlockControlTimelineData as unknown as ChinaControlTimeline;
 const chinaMap = chinaMapData as ChinaMapLayer;
 const naturalEarthChinaPhysical = naturalEarthChinaPhysicalData as NaturalEarthPhysical;
 const regions = regionsData as unknown as RegionInfo[];
