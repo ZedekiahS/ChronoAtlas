@@ -8,6 +8,7 @@ import type { GeometryCollection, Topology } from "topojson-specification";
 import countries110 from "world-atlas/countries-110m.json";
 import {
   ArrowLeft,
+  BookOpen,
   Box,
   CalendarDays,
   ChevronLeft,
@@ -20,6 +21,7 @@ import {
   Link2,
   MapPinned,
   Mountain,
+  Network,
   Search,
   UsersRound,
 } from "lucide-react";
@@ -27,6 +29,9 @@ import eventsData from "../data/events-180-280.sample.json";
 import chinaAdminBlocksData from "../data/china-admin-blocks-190-280.json";
 import chinaBlockControlTimelineData from "../data/china-block-control-timeline-190-280.json";
 import chinaMapData from "../data/china-three-kingdoms-map.json";
+import chinaPersonRelationsData from "../data/china-person-relations.json";
+import chinaPersonsData from "../data/china-persons.json";
+import chinaSourcesData from "../data/china-sources.json";
 import naturalEarthChinaPhysicalData from "../data/natural-earth-china-physical.json";
 import regionsData from "../data/regions-180-280.json";
 import "./styles.css";
@@ -47,11 +52,50 @@ type HistoricalEvent = {
   category: EventCategory;
   summary: string;
   people: string[];
+  personIds?: string[];
   polities: string[];
   relatedEvents: string[];
   tags: string[];
   confidence: "high" | "medium" | "low";
-  sources: unknown[];
+  sources: string[];
+  sourceRefs?: SourceRef[];
+};
+
+type SourceRef = {
+  sourceId: string;
+  locator?: string;
+  note?: string;
+};
+
+type SourceRecord = {
+  id: string;
+  title: string;
+  author: string;
+  type: string;
+  citationShort: string;
+  note: string;
+};
+
+type HistoricalPerson = {
+  id: string;
+  name: string;
+  courtesyName: string | null;
+  life: string | null;
+  primaryPolity: string;
+  roles: string[];
+  summary: string;
+  sourceRefs: SourceRef[];
+};
+
+type PersonRelation = {
+  id: string;
+  sourcePersonId: string;
+  targetPersonId: string;
+  type: string;
+  startYear?: number;
+  endYear?: number;
+  summary: string;
+  sourceRefs: SourceRef[];
 };
 
 type Page = "world" | "china";
@@ -188,6 +232,9 @@ type NaturalEarthPhysical = {
 };
 
 const events = eventsData as HistoricalEvent[];
+const chinaSources = chinaSourcesData as SourceRecord[];
+const chinaPersons = chinaPersonsData as HistoricalPerson[];
+const chinaPersonRelations = chinaPersonRelationsData as PersonRelation[];
 const chinaBlocksDataset = chinaAdminBlocksData as unknown as ChinaAdminBlocksDataset;
 const chinaControlTimeline = chinaBlockControlTimelineData as unknown as ChinaControlTimeline;
 const chinaMap = chinaMapData as ChinaMapLayer;
@@ -196,6 +243,8 @@ const regions = regionsData as unknown as RegionInfo[];
 const chinaBlocks = chinaBlocksDataset.blocks;
 const chinaBlockById = new Map(chinaBlocks.map((block) => [block.id, block]));
 const chinaControllerColorMap = new Map(chinaControlTimeline.controllers.map((controller) => [controller.id, controller.color]));
+const chinaSourceById = new Map(chinaSources.map((source) => [source.id, source]));
+const chinaPersonById = new Map(chinaPersons.map((person) => [person.id, person]));
 type WorldAtlasTopology = Topology<{ countries: GeometryCollection }>;
 
 const atlas = countries110 as unknown as WorldAtlasTopology;
@@ -247,6 +296,43 @@ function formatYearRange(event: HistoricalEvent) {
   return event.startYear === event.endYear
     ? `${event.startYear} 年`
     : `${event.startYear}-${event.endYear} 年`;
+}
+
+function formatYearSpan(startYear?: number, endYear?: number) {
+  if (!startYear && !endYear) {
+    return "时间未定";
+  }
+
+  if (startYear && endYear && startYear !== endYear) {
+    return `${startYear}-${endYear} 年`;
+  }
+
+  return `${startYear ?? endYear} 年`;
+}
+
+function formatSourceRef(ref: SourceRef) {
+  const source = chinaSourceById.get(ref.sourceId);
+  const citation = source?.citationShort ?? ref.sourceId;
+  return [citation, ref.locator].filter(Boolean).join(" · ");
+}
+
+function getRelationTypeLabel(type: string) {
+  const labels: Record<string, string> = {
+    abdication: "禅让",
+    advisor: "辅佐",
+    "ally-rival": "联盟转竞争",
+    "campaign-opponent": "战役对手",
+    commander: "统帅关系",
+    "core-ally": "核心同盟",
+    "court-control": "朝廷控制",
+    "family-lineage": "家族承继",
+    "family-successor": "父子继承",
+    regency: "辅政",
+    rival: "竞争",
+    enemy: "敌对",
+  };
+
+  return labels[type] ?? type;
 }
 
 function getRegionEra(region: RegionInfo, year: number) {
@@ -940,17 +1026,23 @@ function App() {
   const [selectedId, setSelectedId] = useState("china-220-cao-pi-founds-wei");
   const [selectedChinaBlockId, setSelectedChinaBlockId] = useState<string | null>(null);
   const [hoveredChinaBlockId, setHoveredChinaBlockId] = useState<string | null>(null);
+  const [selectedPersonId, setSelectedPersonId] = useState<string | null>(null);
 
   const normalizedQuery = query.trim().toLowerCase();
 
   const visibleEvents = useMemo(() => {
     return events.filter((event) => {
       const matchesYear = isActiveInYear(event, year) || isNearYear(event, year);
+      const linkedPeople = (event.personIds ?? [])
+        .map((personId) => chinaPersonById.get(personId))
+        .filter((person): person is HistoricalPerson => Boolean(person))
+        .flatMap((person) => [person.name, person.courtesyName, person.primaryPolity, ...person.roles]);
       const text = [
         event.title,
         event.summary,
         event.locationName,
         ...event.people,
+        ...linkedPeople,
         ...event.polities,
         ...event.tags,
       ]
@@ -1002,6 +1094,22 @@ function App() {
   const relatedEvents = selectedEvent.relatedEvents
     .map((id) => events.find((event) => event.id === id))
     .filter((event): event is HistoricalEvent => Boolean(event));
+  const selectedEventPersonIds = (selectedEvent.personIds ?? []).filter((id) => chinaPersonById.has(id));
+  const activeSelectedPersonId =
+    selectedPersonId && selectedEventPersonIds.includes(selectedPersonId) ? selectedPersonId : null;
+  const selectedPerson = activeSelectedPersonId ? (chinaPersonById.get(activeSelectedPersonId) ?? null) : null;
+  const selectedPersonRelations = selectedPerson
+    ? chinaPersonRelations.filter(
+        (relation) => relation.sourcePersonId === selectedPerson.id || relation.targetPersonId === selectedPerson.id,
+      )
+    : [];
+  const selectedEventSourceRefs = selectedEvent.sourceRefs ?? [];
+
+  useEffect(() => {
+    setSelectedPersonId((current) =>
+      current && selectedEventPersonIds.includes(current) ? current : (selectedEventPersonIds[0] ?? null),
+    );
+  }, [selectedEvent.id, selectedEventPersonIds.join("|")]);
 
   useEffect(() => {
     if (page !== "china" || chinaMapMode !== "political" || !selectedChinaBlockId) {
@@ -1334,12 +1442,84 @@ function App() {
               相关人物
             </h3>
             <div className="chips">
-              {selectedEvent.people.length ? (
+              {selectedEventPersonIds.length ? (
+                selectedEventPersonIds.map((personId) => {
+                  const person = chinaPersonById.get(personId)!;
+
+                  return (
+                    <button
+                      className={`chip-button person-chip ${activeSelectedPersonId === personId ? "selected" : ""}`}
+                      data-person-id={personId}
+                      key={personId}
+                      type="button"
+                      onClick={() => setSelectedPersonId(personId)}
+                    >
+                      <span>{person.name}</span>
+                      <small>{person.primaryPolity}</small>
+                    </button>
+                  );
+                })
+              ) : selectedEvent.people.length ? (
                 selectedEvent.people.map((person) => <span key={person}>{person}</span>)
               ) : (
                 <span>待补充</span>
               )}
             </div>
+
+            {selectedPerson && (
+              <article className="person-card">
+                <div className="person-card-header">
+                  <div>
+                    <span>人物档案</span>
+                    <h4>
+                      {selectedPerson.name}
+                      {selectedPerson.courtesyName ? ` · 字${selectedPerson.courtesyName}` : ""}
+                    </h4>
+                  </div>
+                  <strong>{selectedPerson.life ?? "生卒未详"}</strong>
+                </div>
+                <p>{selectedPerson.summary}</p>
+                <div className="person-meta">
+                  <span>{selectedPerson.primaryPolity}</span>
+                  {selectedPerson.roles.map((role) => (
+                    <span key={role}>{role}</span>
+                  ))}
+                </div>
+
+                <div className="relation-heading">
+                  <Network size={16} aria-hidden="true" />
+                  <span>人物关系</span>
+                </div>
+                <div className="relationship-list">
+                  {selectedPersonRelations.length ? (
+                    selectedPersonRelations.map((relation) => {
+                      const isSource = relation.sourcePersonId === selectedPerson.id;
+                      const counterpartId = isSource ? relation.targetPersonId : relation.sourcePersonId;
+                      const counterpart = chinaPersonById.get(counterpartId);
+
+                      return (
+                        <article className="relationship-item" key={relation.id}>
+                          <div>
+                            <span>{getRelationTypeLabel(relation.type)}</span>
+                            <strong>{counterpart?.name ?? counterpartId}</strong>
+                          </div>
+                          <small>{formatYearSpan(relation.startYear, relation.endYear)}</small>
+                          <p>{relation.summary}</p>
+                        </article>
+                      );
+                    })
+                  ) : (
+                    <p>待补充人物关系</p>
+                  )}
+                </div>
+
+                <div className="source-list compact">
+                  {selectedPerson.sourceRefs.map((ref) => (
+                    <span key={`${selectedPerson.id}-${ref.sourceId}-${ref.locator ?? ""}`}>{formatSourceRef(ref)}</span>
+                  ))}
+                </div>
+              </article>
+            )}
           </section>
 
           <section className="detail-section">
@@ -1369,6 +1549,35 @@ function App() {
                 ))
               ) : (
                 <p>暂无关联事件</p>
+              )}
+            </div>
+          </section>
+
+          <section className="detail-section">
+            <h3>
+              <BookOpen size={17} aria-hidden="true" />
+              出处
+            </h3>
+            <div className="source-list">
+              {selectedEventSourceRefs.length ? (
+                selectedEventSourceRefs.map((ref) => {
+                  const source = chinaSourceById.get(ref.sourceId);
+
+                  return (
+                    <article className="source-item" key={`${ref.sourceId}-${ref.locator ?? ""}`}>
+                      <strong>{formatSourceRef(ref)}</strong>
+                      {source?.note && <span>{source.note}</span>}
+                    </article>
+                  );
+                })
+              ) : selectedEvent.sources.length ? (
+                selectedEvent.sources.map((source) => (
+                  <article className="source-item" key={source}>
+                    <strong>{source}</strong>
+                  </article>
+                ))
+              ) : (
+                <p>待补充出处</p>
               )}
             </div>
           </section>

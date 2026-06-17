@@ -1,0 +1,339 @@
+[
+  {
+    "id": "zhang-jiao",
+    "name": "张角",
+    "courtesyName": null,
+    "life": "?-184",
+    "primaryPolity": "太平道 / 黄巾军",
+    "roles": ["宗教领袖", "起义领袖"],
+    "summary": "太平道领袖，发动黄巾起义，成为东汉末年地方军事化和群雄割据的起点之一。",
+    "sourceRefs": [
+      { "sourceId": "houhanshu-huangfu-song", "locator": "黄巾起义相关记载" },
+      { "sourceId": "zizhi-tongjian-58", "locator": "中平元年" }
+    ]
+  },
+  {
+    "id": "dong-zhuo",
+    "name": "董卓",
+    "courtesyName": "仲颖",
+    "life": "?-192",
+    "primaryPolity": "东汉朝廷 / 凉州军",
+    "roles": ["权臣", "军阀"],
+    "summary": "凉州军阀，189 年入洛阳控制朝廷，废立皇帝并迁都长安，引发关东诸军讨伐。",
+    "sourceRefs": [
+      { "sourceId": "houhanshu-dong-zhuo", "locator": "董卓列传" },
+      { "sourceId": "zizhi-tongjian-59", "locator": "初平元年前后" }
+    ]
+  },
+  {
+    "id": "han-xiandi",
+    "name": "汉献帝",
+    "courtesyName": null,
+    "life": "181-234",
+    "primaryPolity": "东汉",
+    "roles": ["皇帝"],
+    "summary": "东汉末代皇帝，先后受董卓、李傕郭汜、曹操集团控制，220 年禅位于曹丕。",
+    "sourceRefs": [
+      { "sourceId": "houhanshu-xiandi", "locator": "孝献帝纪" },
+      { "sourceId": "sanguozhi-wei-wendi", "locator": "黄初元年" }
+    ]
+  },
+  {
+    "id": "yuan-shao",
+    "name": "袁绍",
+    "courtesyName": "本初",
+    "life": "?-202",
+    "primaryPolity": "袁绍集团",
+    "roles": ["军阀", "冀州牧"],
+    "summary": "汝南袁氏出身，控制河北四州，是官渡之战前北方最强势力之一。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "yuan-shu",
+    "name": "袁术",
+    "courtesyName": "公路",
+    "life": "?-199",
+    "primaryPolity": "袁术集团",
+    "roles": ["军阀"],
+    "summary": "控制淮南一带，197 年称帝导致政治孤立，势力迅速瓦解。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shu", "locator": "袁术传" },
+      { "sourceId": "zizhi-tongjian-59", "locator": "初平至建安年间" }
+    ]
+  },
+  {
+    "id": "gongsun-zan",
+    "name": "公孙瓒",
+    "courtesyName": "伯圭",
+    "life": "?-199",
+    "primaryPolity": "公孙瓒集团",
+    "roles": ["军阀", "幽州势力"],
+    "summary": "在幽州、冀北与袁绍长期争夺，199 年败亡后河北格局转向袁绍主导。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-gongsun-zan", "locator": "公孙瓒传" },
+      { "sourceId": "zizhi-tongjian-59", "locator": "初平至建安年间" }
+    ]
+  },
+  {
+    "id": "lu-bu",
+    "name": "吕布",
+    "courtesyName": "奉先",
+    "life": "?-199",
+    "primaryPolity": "吕布集团",
+    "roles": ["武将", "军阀"],
+    "summary": "先后依附董卓、袁绍、刘备等势力，194 年袭取兖州，后据徐州，下邳败亡。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传" },
+      { "sourceId": "zizhi-tongjian-59", "locator": "兴平至建安三年" }
+    ]
+  },
+  {
+    "id": "cao-cao",
+    "name": "曹操",
+    "courtesyName": "孟德",
+    "life": "155-220",
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": ["政治家", "军事统帅", "魏王"],
+    "summary": "迎汉献帝至许，逐步统一北方，奠定曹魏政权基础，是三国前期最重要的政治军事人物。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "武帝纪" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+    ]
+  },
+  {
+    "id": "cao-pi",
+    "name": "曹丕",
+    "courtesyName": "子桓",
+    "life": "187-226",
+    "primaryPolity": "曹魏",
+    "roles": ["皇帝", "魏文帝"],
+    "summary": "曹操之子，220 年受汉献帝禅让称帝，建立曹魏。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wendi", "locator": "文帝纪" },
+      { "sourceId": "houhanshu-xiandi", "locator": "延康元年" }
+    ]
+  },
+  {
+    "id": "liu-biao",
+    "name": "刘表",
+    "courtesyName": "景升",
+    "life": "142-208",
+    "primaryPolity": "荆州刘表集团",
+    "roles": ["荆州牧", "宗室军阀"],
+    "summary": "长期据有荆州，维持长江中游相对稳定，其死后荆州成为曹操、刘备、孙权争夺焦点。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "先主依刘表相关记载" },
+      { "sourceId": "zizhi-tongjian-65", "locator": "建安十三年" }
+    ]
+  },
+  {
+    "id": "liu-bei",
+    "name": "刘备",
+    "courtesyName": "玄德",
+    "life": "161-223",
+    "primaryPolity": "蜀汉",
+    "roles": ["皇帝", "军事统帅", "汉中王"],
+    "summary": "以汉室宗亲身份起兵，辗转北方、荆州、益州，221 年称帝建立蜀汉。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "先主传" },
+      { "sourceId": "zizhi-tongjian-69", "locator": "章武元年" }
+    ]
+  },
+  {
+    "id": "guan-yu",
+    "name": "关羽",
+    "courtesyName": "云长",
+    "life": "?-220",
+    "primaryPolity": "刘备集团 / 蜀汉",
+    "roles": ["将领", "荆州守将"],
+    "summary": "刘备集团核心将领，镇守荆州并北伐襄樊，219 年因孙吴袭取荆州而败亡。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-guan-yu", "locator": "关羽传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
+    ]
+  },
+  {
+    "id": "zhang-fei",
+    "name": "张飞",
+    "courtesyName": "益德",
+    "life": "?-221",
+    "primaryPolity": "刘备集团 / 蜀汉",
+    "roles": ["将领"],
+    "summary": "刘备集团早期核心将领，长期参与刘备转战和入蜀作战。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "先主传张飞相关记载" }
+    ]
+  },
+  {
+    "id": "zhuge-liang",
+    "name": "诸葛亮",
+    "courtesyName": "孔明",
+    "life": "181-234",
+    "primaryPolity": "蜀汉",
+    "roles": ["丞相", "战略家", "辅政者"],
+    "summary": "提出隆中对，辅佐刘备、刘禅，主持蜀汉政务并多次北伐，234 年卒于五丈原。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-zhuge-liang", "locator": "诸葛亮传" },
+      { "sourceId": "zizhi-tongjian-72", "locator": "青龙二年 / 建兴十二年" }
+    ]
+  },
+  {
+    "id": "liu-zhang",
+    "name": "刘璋",
+    "courtesyName": "季玉",
+    "life": "?-219",
+    "primaryPolity": "益州刘璋集团",
+    "roles": ["益州牧", "军阀"],
+    "summary": "继承益州割据格局，后邀请刘备入蜀，214 年向刘备投降。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "取益州相关记载" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安十九年" }
+    ]
+  },
+  {
+    "id": "zhang-lu",
+    "name": "张鲁",
+    "courtesyName": "公祺",
+    "life": "?-216",
+    "primaryPolity": "汉中张鲁集团",
+    "roles": ["汉中割据者", "五斗米道领袖"],
+    "summary": "长期控制汉中，215 年降曹操，汉中随后成为曹刘争夺核心区域。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-zhang-lu", "locator": "张鲁传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安二十年" }
+    ]
+  },
+  {
+    "id": "sun-quan",
+    "name": "孙权",
+    "courtesyName": "仲谋",
+    "life": "182-252",
+    "primaryPolity": "孙吴",
+    "roles": ["皇帝", "吴大帝", "江东统治者"],
+    "summary": "继承江东基业，联合刘备抵抗曹操，229 年称帝建立孙吴。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-wuzhu", "locator": "吴主传" },
+      { "sourceId": "zizhi-tongjian-69", "locator": "黄龙元年" }
+    ]
+  },
+  {
+    "id": "zhou-yu",
+    "name": "周瑜",
+    "courtesyName": "公瑾",
+    "life": "175-210",
+    "primaryPolity": "孙吴",
+    "roles": ["将领", "都督"],
+    "summary": "江东核心统帅，赤壁之战中与刘备集团联合作战，阻止曹操南下。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "周瑜传" },
+      { "sourceId": "zizhi-tongjian-65", "locator": "建安十三年" }
+    ]
+  },
+  {
+    "id": "lu-su",
+    "name": "鲁肃",
+    "courtesyName": "子敬",
+    "life": "172-217",
+    "primaryPolity": "孙吴",
+    "roles": ["谋臣", "外交协调者"],
+    "summary": "主张联刘抗曹，赤壁前后在孙刘关系和荆州安排中作用突出。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "鲁肃传" },
+      { "sourceId": "zizhi-tongjian-65", "locator": "建安十三年" }
+    ]
+  },
+  {
+    "id": "lu-xun",
+    "name": "陆逊",
+    "courtesyName": "伯言",
+    "life": "183-245",
+    "primaryPolity": "孙吴",
+    "roles": ["将领", "丞相"],
+    "summary": "参与孙吴袭取荆州，222 年在夷陵之战击败刘备，后为吴国重臣。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-lu-xun", "locator": "陆逊传" },
+      { "sourceId": "zizhi-tongjian-70", "locator": "黄武元年 / 章武二年" }
+    ]
+  },
+  {
+    "id": "liu-shan",
+    "name": "刘禅",
+    "courtesyName": "公嗣",
+    "life": "207-271",
+    "primaryPolity": "蜀汉",
+    "roles": ["皇帝", "蜀汉后主"],
+    "summary": "刘备之子，223 年即位，263 年向邓艾投降，蜀汉灭亡。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-houzhu", "locator": "后主传" },
+      { "sourceId": "zizhi-tongjian-78", "locator": "景元四年" }
+    ]
+  },
+  {
+    "id": "jiang-wei",
+    "name": "姜维",
+    "courtesyName": "伯约",
+    "life": "202-264",
+    "primaryPolity": "蜀汉",
+    "roles": ["将领", "北伐统帅"],
+    "summary": "魏降蜀后成为蜀汉后期重要将领，灭蜀战争中退守剑阁，后参与钟会之乱失败。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-houzhu", "locator": "灭蜀相关记载" },
+      { "sourceId": "zizhi-tongjian-78", "locator": "景元四年" }
+    ]
+  },
+  {
+    "id": "deng-ai",
+    "name": "邓艾",
+    "courtesyName": "士载",
+    "life": "197-264",
+    "primaryPolity": "曹魏",
+    "roles": ["将领", "灭蜀主将"],
+    "summary": "魏将，263 年率军偷渡阴平入蜀，迫使刘禅投降。",
+    "sourceRefs": [
+      { "sourceId": "zizhi-tongjian-78", "locator": "景元四年" },
+      { "sourceId": "sanguozhi-shu-houzhu", "locator": "蜀亡相关记载" }
+    ]
+  },
+  {
+    "id": "zhong-hui",
+    "name": "钟会",
+    "courtesyName": "士季",
+    "life": "225-264",
+    "primaryPolity": "曹魏",
+    "roles": ["将领", "灭蜀主将"],
+    "summary": "魏将，263 年率主力攻蜀，与邓艾分进合击，后在成都发动叛乱失败。",
+    "sourceRefs": [
+      { "sourceId": "zizhi-tongjian-78", "locator": "景元四年" },
+      { "sourceId": "sanguozhi-shu-houzhu", "locator": "蜀亡相关记载" }
+    ]
+  },
+  {
+    "id": "sima-yi",
+    "name": "司马懿",
+    "courtesyName": "仲达",
+    "life": "179-251",
+    "primaryPolity": "曹魏 / 司马氏",
+    "roles": ["权臣", "军事统帅"],
+    "summary": "曹魏后期重臣，多次与诸葛亮对峙，249 年高平陵之变后司马氏控制魏政。",
+    "sourceRefs": [
+      { "sourceId": "zizhi-tongjian-72", "locator": "诸葛亮北伐后期" },
+      { "sourceId": "zizhi-tongjian-78", "locator": "司马氏代魏背景" }
+    ]
+  },
+  {
+    "id": "sima-yan",
+    "name": "司马炎",
+    "courtesyName": "安世",
+    "life": "236-290",
+    "primaryPolity": "西晋",
+    "roles": ["皇帝", "晋武帝"],
+    "summary": "司马昭之子，265 年代魏称帝，280 年灭吴完成统一。",
+    "sourceRefs": [
+      { "sourceId": "jinshu-wudi", "locator": "武帝纪" },
+      { "sourceId": "zizhi-tongjian-81", "locator": "太康元年" }
+    ]
+  }
+]

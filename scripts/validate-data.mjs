@@ -2,6 +2,9 @@ import events from "../data/events-180-280.sample.json" with { type: "json" };
 import chinaBlocks from "../data/china-admin-blocks-190-280.json" with { type: "json" };
 import chinaControlTimeline from "../data/china-block-control-timeline-190-280.json" with { type: "json" };
 import chinaMap from "../data/china-three-kingdoms-map.json" with { type: "json" };
+import chinaPersonRelations from "../data/china-person-relations.json" with { type: "json" };
+import chinaPersons from "../data/china-persons.json" with { type: "json" };
+import chinaSources from "../data/china-sources.json" with { type: "json" };
 import naturalEarthChinaPhysical from "../data/natural-earth-china-physical.json" with { type: "json" };
 import regions from "../data/regions-180-280.json" with { type: "json" };
 
@@ -119,6 +122,25 @@ function validateSources(sources, sourceId) {
   }
 }
 
+function validateSourceRefs(sourceRefs, refId, sourceIds) {
+  assert(Array.isArray(sourceRefs) && sourceRefs.length > 0, `sourceRefs must be a non-empty array: ${refId}`);
+
+  for (const [index, ref] of sourceRefs.entries()) {
+    const itemId = `${refId}:${index}`;
+    assert(ref && typeof ref === "object", `sourceRef must be an object: ${itemId}`);
+    assert(typeof ref.sourceId === "string" && ref.sourceId.length > 0, `sourceRef needs sourceId: ${itemId}`);
+    assert(sourceIds.has(ref.sourceId), `sourceRef uses unknown sourceId: ${itemId}:${ref.sourceId}`);
+
+    if ("locator" in ref) {
+      assert(typeof ref.locator === "string" && ref.locator.length > 0, `sourceRef locator must be string: ${itemId}`);
+    }
+
+    if ("note" in ref) {
+      assert(typeof ref.note === "string" && ref.note.length > 0, `sourceRef note must be string: ${itemId}`);
+    }
+  }
+}
+
 function validatePolygonGeometry(geometry, geometryId) {
   assert(geometry?.type === "Polygon", `Expected Polygon geometry: ${geometryId}`);
   assert(Array.isArray(geometry.coordinates) && geometry.coordinates.length > 0, `Polygon needs rings: ${geometryId}`);
@@ -192,11 +214,96 @@ function isPointInPolygon(point, geometry) {
   return inside;
 }
 
+assert(Array.isArray(chinaSources) && chinaSources.length > 0, "China sources must be a non-empty array");
+const sourceIds = new Set();
+
+for (const source of chinaSources) {
+  assert(typeof source.id === "string" && source.id.length > 0, "Source needs id");
+  assert(!sourceIds.has(source.id), `Duplicate source id: ${source.id}`);
+  sourceIds.add(source.id);
+  assert(typeof source.title === "string" && source.title.length > 0, `Source needs title: ${source.id}`);
+  assert(typeof source.author === "string" && source.author.length > 0, `Source needs author: ${source.id}`);
+  assert(typeof source.type === "string" && source.type.length > 0, `Source needs type: ${source.id}`);
+  assert(typeof source.citationShort === "string" && source.citationShort.length > 0, `Source needs citationShort: ${source.id}`);
+  assert(typeof source.note === "string" && source.note.length > 0, `Source needs note: ${source.id}`);
+}
+
+assert(Array.isArray(chinaPersons) && chinaPersons.length > 0, "China persons must be a non-empty array");
+const personIds = new Set();
+
+for (const person of chinaPersons) {
+  assert(typeof person.id === "string" && person.id.length > 0, "Person needs id");
+  assert(!personIds.has(person.id), `Duplicate person id: ${person.id}`);
+  personIds.add(person.id);
+  assert(typeof person.name === "string" && person.name.length > 0, `Person needs name: ${person.id}`);
+  assert(person.courtesyName === null || typeof person.courtesyName === "string", `Invalid courtesyName: ${person.id}`);
+  assert(person.life === null || typeof person.life === "string", `Invalid life: ${person.id}`);
+  assert(typeof person.primaryPolity === "string" && person.primaryPolity.length > 0, `Person needs primaryPolity: ${person.id}`);
+  assert(Array.isArray(person.roles) && person.roles.length > 0, `Person needs roles: ${person.id}`);
+  for (const role of person.roles) {
+    assert(typeof role === "string" && role.length > 0, `Person role must be string: ${person.id}`);
+  }
+  assert(typeof person.summary === "string" && person.summary.length > 0, `Person needs summary: ${person.id}`);
+  validateSourceRefs(person.sourceRefs, `${person.id}:sourceRefs`, sourceIds);
+}
+
+assert(Array.isArray(chinaPersonRelations), "China person relations must be an array");
+const relationIds = new Set();
+
+for (const relation of chinaPersonRelations) {
+  assert(typeof relation.id === "string" && relation.id.length > 0, "Relation needs id");
+  assert(!relationIds.has(relation.id), `Duplicate relation id: ${relation.id}`);
+  relationIds.add(relation.id);
+  assert(personIds.has(relation.sourcePersonId), `Relation uses unknown sourcePersonId: ${relation.id}`);
+  assert(personIds.has(relation.targetPersonId), `Relation uses unknown targetPersonId: ${relation.id}`);
+  assert(relation.sourcePersonId !== relation.targetPersonId, `Relation cannot point to itself: ${relation.id}`);
+  assert(typeof relation.type === "string" && relation.type.length > 0, `Relation needs type: ${relation.id}`);
+  if ("startYear" in relation) {
+    assert(Number.isInteger(relation.startYear), `Relation startYear must be an integer: ${relation.id}`);
+  }
+  if ("endYear" in relation) {
+    assert(Number.isInteger(relation.endYear), `Relation endYear must be an integer: ${relation.id}`);
+  }
+  if ("startYear" in relation && "endYear" in relation) {
+    assert(relation.startYear <= relation.endYear, `Relation starts after it ends: ${relation.id}`);
+  }
+  assert(typeof relation.summary === "string" && relation.summary.length > 0, `Relation needs summary: ${relation.id}`);
+  validateSourceRefs(relation.sourceRefs, `${relation.id}:sourceRefs`, sourceIds);
+}
+
+const eventIds = new Set();
+
 for (const event of events) {
+  assert(typeof event.id === "string" && event.id.length > 0, "Event needs id");
+  assert(!eventIds.has(event.id), `Duplicate event id: ${event.id}`);
+  eventIds.add(event.id);
   assert(regionIds.has(event.region), `Unknown event region: ${event.id}`);
   assert(Number.isInteger(event.startYear), `Event startYear must be an integer: ${event.id}`);
   assert(Number.isInteger(event.endYear), `Event endYear must be an integer: ${event.id}`);
   assert(event.startYear <= event.endYear, `Event starts after it ends: ${event.id}`);
+  assert(Array.isArray(event.people), `Event people must be an array: ${event.id}`);
+  assert(Array.isArray(event.polities) && event.polities.length > 0, `Event needs polities: ${event.id}`);
+  assert(Array.isArray(event.relatedEvents), `Event relatedEvents must be an array: ${event.id}`);
+  assert(Array.isArray(event.tags), `Event tags must be an array: ${event.id}`);
+  assert(confidenceValues.has(event.confidence), `Unknown event confidence: ${event.id}`);
+  validateSources(event.sources, `${event.id}:sources`);
+
+  if (event.personIds) {
+    assert(Array.isArray(event.personIds), `Event personIds must be an array: ${event.id}`);
+    for (const personId of event.personIds) {
+      assert(personIds.has(personId), `Event uses unknown personId: ${event.id}:${personId}`);
+    }
+  }
+
+  if (event.sourceRefs) {
+    validateSourceRefs(event.sourceRefs, `${event.id}:sourceRefs`, sourceIds);
+  }
+}
+
+for (const event of events) {
+  for (const relatedId of event.relatedEvents) {
+    assert(eventIds.has(relatedId), `Event uses unknown relatedEvent: ${event.id}:${relatedId}`);
+  }
 }
 
 for (const region of regions) {

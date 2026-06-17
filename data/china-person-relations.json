@@ -1,0 +1,260 @@
+[
+  {
+    "id": "cao-cao-han-xiandi-court-control",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "han-xiandi",
+    "type": "court-control",
+    "startYear": 196,
+    "endYear": 220,
+    "summary": "曹操迎献帝至许，以汉廷名义整合政治合法性，同时实际掌握朝政。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安元年前后" },
+      { "sourceId": "houhanshu-xiandi", "locator": "建安元年" }
+    ]
+  },
+  {
+    "id": "cao-cao-cao-pi-family-successor",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "cao-pi",
+    "type": "family-successor",
+    "startYear": 187,
+    "endYear": 220,
+    "summary": "曹丕为曹操之子，继承魏王地位并在同年受禅称帝。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安二十五年" },
+      { "sourceId": "sanguozhi-wei-wendi", "locator": "黄初元年" }
+    ]
+  },
+  {
+    "id": "cao-pi-han-xiandi-abdication",
+    "sourcePersonId": "cao-pi",
+    "targetPersonId": "han-xiandi",
+    "type": "abdication",
+    "startYear": 220,
+    "endYear": 220,
+    "summary": "曹丕接受汉献帝禅让，建立曹魏，东汉正式结束。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wendi", "locator": "黄初元年" },
+      { "sourceId": "houhanshu-xiandi", "locator": "延康元年" }
+    ]
+  },
+  {
+    "id": "cao-cao-yuan-shao-rivalry",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "yuan-shao",
+    "type": "rival",
+    "startYear": 190,
+    "endYear": 202,
+    "summary": "二人从讨董盟友转为北方霸权竞争者，官渡之战后袁绍集团优势瓦解。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "官渡相关记载" },
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传" }
+    ]
+  },
+  {
+    "id": "yuan-shao-gongsun-zan-north-rivalry",
+    "sourcePersonId": "yuan-shao",
+    "targetPersonId": "gongsun-zan",
+    "type": "rival",
+    "startYear": 191,
+    "endYear": 199,
+    "summary": "袁绍与公孙瓒围绕冀州、幽州及河北北部持续争夺。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传" },
+      { "sourceId": "sanguozhi-wei-gongsun-zan", "locator": "公孙瓒传" }
+    ]
+  },
+  {
+    "id": "cao-cao-lu-bu-enemy",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "lu-bu",
+    "type": "enemy",
+    "startYear": 194,
+    "endYear": 199,
+    "summary": "吕布袭取兖州后与曹操成为直接军事敌手，后曹操攻下下邳。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "兴平至建安三年" },
+      { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传" }
+    ]
+  },
+  {
+    "id": "liu-bei-zhuge-liang-advisor",
+    "sourcePersonId": "liu-bei",
+    "targetPersonId": "zhuge-liang",
+    "type": "advisor",
+    "startYear": 207,
+    "endYear": 223,
+    "summary": "刘备延揽诸葛亮后，以隆中对为重要战略构想，逐步形成荆益并重的路线。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-zhuge-liang", "locator": "隆中对相关记载" },
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "建安十二年前后" }
+    ]
+  },
+  {
+    "id": "liu-bei-guan-yu-core-ally",
+    "sourcePersonId": "liu-bei",
+    "targetPersonId": "guan-yu",
+    "type": "core-ally",
+    "startYear": 184,
+    "endYear": 220,
+    "summary": "关羽长期追随刘备，是刘备集团早期和荆州阶段的核心将领。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-guan-yu", "locator": "关羽传" },
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "先主传" }
+    ]
+  },
+  {
+    "id": "liu-bei-zhang-fei-core-ally",
+    "sourcePersonId": "liu-bei",
+    "targetPersonId": "zhang-fei",
+    "type": "core-ally",
+    "startYear": 184,
+    "endYear": 221,
+    "summary": "张飞长期追随刘备，参与徐州、荆州、益州等阶段的军事行动。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "先主传张飞相关记载" }
+    ]
+  },
+  {
+    "id": "liu-bei-sun-quan-ally-to-rival",
+    "sourcePersonId": "liu-bei",
+    "targetPersonId": "sun-quan",
+    "type": "ally-rival",
+    "startYear": 208,
+    "endYear": 222,
+    "summary": "赤壁时孙刘联合抗曹，荆州归属问题使双方关系转向紧张，并在夷陵爆发战争。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "赤壁、夷陵相关记载" },
+      { "sourceId": "sanguozhi-wu-wuzhu", "locator": "吴主传" }
+    ]
+  },
+  {
+    "id": "sun-quan-zhou-yu-commander",
+    "sourcePersonId": "sun-quan",
+    "targetPersonId": "zhou-yu",
+    "type": "commander",
+    "startYear": 200,
+    "endYear": 210,
+    "summary": "周瑜为孙权集团核心统帅，赤壁之战中负责抵抗曹操南下。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "周瑜传" },
+      { "sourceId": "sanguozhi-wu-wuzhu", "locator": "吴主传" }
+    ]
+  },
+  {
+    "id": "sun-quan-lu-su-strategist",
+    "sourcePersonId": "sun-quan",
+    "targetPersonId": "lu-su",
+    "type": "advisor",
+    "startYear": 200,
+    "endYear": 217,
+    "summary": "鲁肃主张联刘抗曹，并在赤壁前后协调孙刘关系。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "鲁肃传" },
+      { "sourceId": "zizhi-tongjian-65", "locator": "建安十三年" }
+    ]
+  },
+  {
+    "id": "sun-quan-lu-xun-commander",
+    "sourcePersonId": "sun-quan",
+    "targetPersonId": "lu-xun",
+    "type": "commander",
+    "startYear": 219,
+    "endYear": 245,
+    "summary": "陆逊在孙权统治下成为重要统帅，参与取荆州并在夷陵击败刘备。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-lu-xun", "locator": "陆逊传" },
+      { "sourceId": "zizhi-tongjian-70", "locator": "黄武元年" }
+    ]
+  },
+  {
+    "id": "guan-yu-lu-xun-jingzhou-opponents",
+    "sourcePersonId": "guan-yu",
+    "targetPersonId": "lu-xun",
+    "type": "campaign-opponent",
+    "startYear": 219,
+    "endYear": 219,
+    "summary": "孙吴袭取荆州过程中，陆逊配合吕蒙行动，关羽后路被断而败亡。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-guan-yu", "locator": "关羽传" },
+      { "sourceId": "sanguozhi-wu-lu-xun", "locator": "陆逊传" }
+    ]
+  },
+  {
+    "id": "zhuge-liang-sima-yi-northern-front",
+    "sourcePersonId": "zhuge-liang",
+    "targetPersonId": "sima-yi",
+    "type": "campaign-opponent",
+    "startYear": 231,
+    "endYear": 234,
+    "summary": "诸葛亮北伐后期与司马懿长期对峙，五丈原成为蜀汉北伐的重要终点。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-zhuge-liang", "locator": "诸葛亮传" },
+      { "sourceId": "zizhi-tongjian-72", "locator": "青龙二年" }
+    ]
+  },
+  {
+    "id": "liu-bei-liu-shan-family-successor",
+    "sourcePersonId": "liu-bei",
+    "targetPersonId": "liu-shan",
+    "type": "family-successor",
+    "startYear": 207,
+    "endYear": 223,
+    "summary": "刘禅为刘备之子，刘备死后继位，由诸葛亮辅政。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "章武三年" },
+      { "sourceId": "sanguozhi-shu-houzhu", "locator": "建兴元年" }
+    ]
+  },
+  {
+    "id": "liu-shan-zhuge-liang-regency",
+    "sourcePersonId": "liu-shan",
+    "targetPersonId": "zhuge-liang",
+    "type": "regency",
+    "startYear": 223,
+    "endYear": 234,
+    "summary": "刘禅即位后，诸葛亮以丞相身份辅政，主持蜀汉军政。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-houzhu", "locator": "建兴元年以后" },
+      { "sourceId": "sanguozhi-shu-zhuge-liang", "locator": "诸葛亮传" }
+    ]
+  },
+  {
+    "id": "jiang-wei-deng-ai-final-campaign",
+    "sourcePersonId": "jiang-wei",
+    "targetPersonId": "deng-ai",
+    "type": "campaign-opponent",
+    "startYear": 263,
+    "endYear": 263,
+    "summary": "姜维据守剑阁牵制钟会主力，邓艾则绕道阴平直入成都，改变灭蜀战局。",
+    "sourceRefs": [
+      { "sourceId": "zizhi-tongjian-78", "locator": "景元四年" },
+      { "sourceId": "sanguozhi-shu-houzhu", "locator": "蜀亡相关记载" }
+    ]
+  },
+  {
+    "id": "jiang-wei-zhong-hui-final-campaign",
+    "sourcePersonId": "jiang-wei",
+    "targetPersonId": "zhong-hui",
+    "type": "campaign-opponent",
+    "startYear": 263,
+    "endYear": 264,
+    "summary": "钟会率主力攻蜀，蜀亡后姜维试图利用钟会野心复国，最终事败。",
+    "sourceRefs": [
+      { "sourceId": "zizhi-tongjian-78", "locator": "景元四年至咸熙元年" }
+    ]
+  },
+  {
+    "id": "sima-yi-sima-yan-family-line",
+    "sourcePersonId": "sima-yi",
+    "targetPersonId": "sima-yan",
+    "type": "family-lineage",
+    "startYear": 236,
+    "endYear": 265,
+    "summary": "司马懿为司马氏掌权奠基，司马炎最终代魏建立西晋。",
+    "sourceRefs": [
+      { "sourceId": "zizhi-tongjian-78", "locator": "司马氏代魏背景" },
+      { "sourceId": "jinshu-wudi", "locator": "武帝纪" }
+    ]
+  }
+]
