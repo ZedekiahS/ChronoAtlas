@@ -1189,6 +1189,11 @@ function App() {
         (relation) => relation.sourcePersonId === selectedPerson.id || relation.targetPersonId === selectedPerson.id,
       )
     : [];
+  const selectedPersonEvents = selectedPerson
+    ? events
+        .filter((event) => event.personIds?.includes(selectedPerson.id))
+        .sort((left, right) => left.startYear - right.startYear || left.endYear - right.endYear)
+    : [];
   const relationshipGraphNodes = selectedPerson
     ? selectedPersonRelations.slice(0, 6).map((relation, index, relations) => {
         const isSource = relation.sourcePersonId === selectedPerson.id;
@@ -1258,6 +1263,19 @@ function App() {
     setChinaMapMode(mode);
     setSelectedChinaBlockId(null);
     setHoveredChinaBlockId(null);
+  }
+
+  function selectHistoricalEvent(event: HistoricalEvent) {
+    setSelectedRegion(event.region);
+    if (event.region === "china") {
+      setPage("china");
+      if (!matchesThreeKingdomsFilter(event, eventFilter)) {
+        setEventFilter("all");
+      }
+    }
+
+    setSelectedId(event.id);
+    setYear(Math.min(yearMax, Math.max(yearMin, event.startYear)));
   }
 
   return (
@@ -1525,7 +1543,7 @@ function App() {
                   className={`event-card ${event.id === selectedEvent.id ? "selected" : ""}`}
                   key={event.id}
                   type="button"
-                  onClick={() => setSelectedId(event.id)}
+                  onClick={() => selectHistoricalEvent(event)}
                 >
                   <span className="event-year">{formatYearRange(event)}</span>
                   <strong>{event.title}</strong>
@@ -1677,6 +1695,31 @@ function App() {
                   )}
                 </div>
 
+                <div className="person-event-heading">
+                  <CalendarDays size={16} aria-hidden="true" />
+                  <span>人物事件脉络</span>
+                  <strong>{selectedPersonEvents.length}</strong>
+                </div>
+                <div className="person-event-timeline">
+                  {selectedPersonEvents.length ? (
+                    selectedPersonEvents.map((event) => (
+                      <button
+                        className={`person-event-item ${event.id === selectedEvent.id ? "selected" : ""}`}
+                        data-person-event-id={event.id}
+                        key={event.id}
+                        type="button"
+                        onClick={() => selectHistoricalEvent(event)}
+                      >
+                        <span>{formatYearRange(event)}</span>
+                        <strong>{event.title}</strong>
+                        <small>{event.locationName ?? "地点待补"}</small>
+                      </button>
+                    ))
+                  ) : (
+                    <p>待补充人物事件</p>
+                  )}
+                </div>
+
                 <div className="source-list compact">
                   {selectedPerson.sourceRefs.map((ref) => (
                     <span key={`${selectedPerson.id}-${ref.sourceId}-${ref.locator ?? ""}`}>{formatSourceRef(ref)}</span>
@@ -1706,7 +1749,7 @@ function App() {
             <div className="related-list">
               {relatedEvents.length ? (
                 relatedEvents.map((event) => (
-                  <button key={event.id} type="button" onClick={() => setSelectedId(event.id)}>
+                  <button key={event.id} type="button" onClick={() => selectHistoricalEvent(event)}>
                     <span>{formatYearRange(event)}</span>
                     <strong>{event.title}</strong>
                   </button>

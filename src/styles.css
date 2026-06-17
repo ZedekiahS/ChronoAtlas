@@ -974,7 +974,8 @@ input[type="range"] {
 }
 
 .person-card-header span,
-.relation-heading span {
+.relation-heading span,
+.person-event-heading span {
   color: #8b3f2d;
   font-size: 12px;
   font-weight: 850;
@@ -1017,11 +1018,99 @@ input[type="range"] {
   font-weight: 750;
 }
 
-.relation-heading {
+.relation-heading,
+.person-event-heading {
   display: flex;
   align-items: center;
   gap: 7px;
   margin-top: 2px;
+}
+
+.person-event-heading strong {
+  display: grid;
+  min-width: 22px;
+  height: 22px;
+  place-items: center;
+  margin-left: auto;
+  border-radius: 999px;
+  background: rgba(185, 79, 50, 0.12);
+  color: #8b3f2d;
+  font-size: 12px;
+}
+
+.person-event-timeline {
+  display: grid;
+  gap: 7px;
+  position: relative;
+}
+
+.person-event-timeline::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 9px;
+  width: 2px;
+  border-radius: 999px;
+  background: rgba(185, 79, 50, 0.18);
+}
+
+.person-event-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  gap: 3px 10px;
+  align-items: center;
+  min-height: 54px;
+  padding: 9px 10px 9px 28px;
+  border: 1px solid rgba(30, 34, 38, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+  color: inherit;
+  text-align: left;
+}
+
+.person-event-item::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 21px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  background: #b94f32;
+  box-shadow: 0 0 0 1px rgba(185, 79, 50, 0.38);
+}
+
+.person-event-item:hover,
+.person-event-item.selected {
+  border-color: rgba(185, 79, 50, 0.34);
+  background: #ffffff;
+}
+
+.person-event-item.selected::before {
+  background: #168069;
+  box-shadow: 0 0 0 1px rgba(22, 128, 105, 0.38);
+}
+
+.person-event-item span {
+  color: #8b3f2d;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.person-event-item strong {
+  overflow-wrap: anywhere;
+  color: #1e2226;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.person-event-item small {
+  grid-column: 2;
+  color: #687077;
+  font-size: 12px;
 }
 
 .relationship-graph {
