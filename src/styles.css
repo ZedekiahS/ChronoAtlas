@@ -751,6 +751,63 @@ input[type="range"] {
   font-size: 15px;
 }
 
+.event-list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.event-list-heading span {
+  color: #687077;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.event-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.event-filter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 7px 10px;
+  border: 1px solid rgba(30, 34, 38, 0.12);
+  border-radius: 999px;
+  background: #f7f8f5;
+  color: #343b41;
+  font-size: 13px;
+}
+
+.event-filter-button:hover,
+.event-filter-button.selected {
+  border-color: rgba(185, 79, 50, 0.48);
+  background: rgba(185, 79, 50, 0.08);
+  color: #8b3f2d;
+}
+
+.event-filter-button small {
+  display: grid;
+  min-width: 20px;
+  height: 20px;
+  place-items: center;
+  padding-inline: 5px;
+  border-radius: 999px;
+  background: rgba(30, 34, 38, 0.08);
+  color: #4b535a;
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.event-filter-button.selected small {
+  background: #b94f32;
+  color: #ffffff;
+}
+
 .event-stack {
   display: flex;
   flex-direction: column;
@@ -965,6 +1022,90 @@ input[type="range"] {
   align-items: center;
   gap: 7px;
   margin-top: 2px;
+}
+
+.relationship-graph {
+  position: relative;
+  min-height: 238px;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.95), rgba(247, 248, 245, 0.62)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(233, 236, 229, 0.36));
+  overflow: hidden;
+}
+
+.relationship-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.relationship-lines line {
+  stroke: var(--relation-color);
+  stroke-linecap: round;
+  stroke-opacity: 0.46;
+  stroke-width: 1.8;
+}
+
+.graph-node {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.graph-node.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 104px;
+  min-height: 66px;
+  padding: 9px;
+  border: 2px solid rgba(185, 79, 50, 0.32);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(35, 31, 25, 0.12);
+  transform: translate(-50%, -50%);
+}
+
+.graph-node.relation {
+  position: absolute;
+  left: var(--node-x);
+  top: var(--node-y);
+  z-index: 3;
+  width: min(108px, 32%);
+  min-height: 58px;
+  padding: 8px;
+  border: 1px solid color-mix(in srgb, var(--relation-color) 56%, rgba(30, 34, 38, 0.16));
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #1e2226;
+  box-shadow: 0 8px 18px rgba(35, 31, 25, 0.1);
+  transform: translate(-50%, -50%);
+}
+
+.graph-node.relation:hover {
+  background: color-mix(in srgb, var(--relation-color) 10%, #ffffff);
+}
+
+.graph-node strong {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.graph-node small {
+  max-width: 100%;
+  color: #687077;
+  font-size: 11px;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.graph-node.relation small {
+  color: var(--relation-color);
 }
 
 .relationship-list {

@@ -100,6 +100,7 @@ type PersonRelation = {
 
 type Page = "world" | "china";
 type ChinaMapMode = "political" | "terrain" | "three-d";
+type ThreeKingdomsFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "war" | "politics";
 
 type RegionInfo = {
   id: Region;
@@ -281,6 +282,19 @@ const chinaMapModes: Array<{
   { id: "three-d", label: "3D", Icon: Box },
 ];
 
+const threeKingdomsFilters: Array<{
+  id: ThreeKingdomsFilter;
+  label: string;
+}> = [
+  { id: "all", label: "全部" },
+  { id: "cao-wei", label: "曹魏线" },
+  { id: "shu-han", label: "蜀汉线" },
+  { id: "sun-wu", label: "孙吴线" },
+  { id: "late-han", label: "汉末群雄" },
+  { id: "war", label: "战役" },
+  { id: "politics", label: "政治更替" },
+];
+
 const yearMin = 190;
 const yearMax = 280;
 
@@ -333,6 +347,68 @@ function getRelationTypeLabel(type: string) {
   };
 
   return labels[type] ?? type;
+}
+
+function getRelationColor(type: string) {
+  const colors: Record<string, string> = {
+    abdication: "#7a5e9a",
+    advisor: "#168069",
+    "ally-rival": "#8d6d2b",
+    "campaign-opponent": "#9c3f32",
+    commander: "#35689a",
+    "core-ally": "#2f7d4f",
+    "court-control": "#8b3f2d",
+    "family-lineage": "#6f5b28",
+    "family-successor": "#6f5b28",
+    regency: "#5a6f91",
+    rival: "#8f6f1f",
+    enemy: "#9c3f32",
+  };
+
+  return colors[type] ?? "#4b535a";
+}
+
+function eventContainsAny(event: HistoricalEvent, terms: string[]) {
+  const linkedPeople = (event.personIds ?? [])
+    .map((personId) => chinaPersonById.get(personId))
+    .filter((person): person is HistoricalPerson => Boolean(person))
+    .flatMap((person) => [person.name, person.courtesyName, person.primaryPolity, ...person.roles]);
+  const text = [event.title, event.summary, event.locationName, ...event.people, ...linkedPeople, ...event.polities, ...event.tags]
+    .filter(Boolean)
+    .join(" ");
+
+  return terms.some((term) => text.includes(term));
+}
+
+function matchesThreeKingdomsFilter(event: HistoricalEvent, filter: ThreeKingdomsFilter) {
+  if (filter === "all") {
+    return true;
+  }
+
+  if (filter === "war") {
+    return event.category === "war";
+  }
+
+  if (filter === "politics") {
+    return event.category === "politics" || eventContainsAny(event, ["称帝", "建立", "禅让", "代魏", "控制朝廷"]);
+  }
+
+  if (filter === "cao-wei") {
+    return eventContainsAny(event, ["曹操集团", "曹魏", "曹操", "曹丕", "司马懿", "邓艾", "钟会"]);
+  }
+
+  if (filter === "shu-han") {
+    return eventContainsAny(event, ["刘备集团", "蜀汉", "刘备", "诸葛亮", "关羽", "刘禅", "姜维"]);
+  }
+
+  if (filter === "sun-wu") {
+    return eventContainsAny(event, ["孙吴", "孙权", "周瑜", "鲁肃", "陆逊", "建业"]);
+  }
+
+  return (
+    event.startYear < 220 &&
+    eventContainsAny(event, ["东汉", "群雄", "袁绍", "袁术", "董卓", "吕布", "公孙瓒", "刘表", "张鲁", "刘璋"])
+  );
 }
 
 function getRegionEra(region: RegionInfo, year: number) {
@@ -1024,6 +1100,7 @@ function App() {
   const [hoveredRegion, setHoveredRegion] = useState<Region | null>(null);
   const [summaryRegion, setSummaryRegion] = useState<Region | null>("china");
   const [selectedId, setSelectedId] = useState("china-220-cao-pi-founds-wei");
+  const [eventFilter, setEventFilter] = useState<ThreeKingdomsFilter>("all");
   const [selectedChinaBlockId, setSelectedChinaBlockId] = useState<string | null>(null);
   const [hoveredChinaBlockId, setHoveredChinaBlockId] = useState<string | null>(null);
   const [selectedPersonId, setSelectedPersonId] = useState<string | null>(null);
@@ -1085,9 +1162,19 @@ function App() {
   const inspectedChinaControl = inspectedChinaBlock ? getChinaBlockControl(inspectedChinaBlock.id, year) : null;
 
   const selectedRegionEvents = visibleEvents.filter((event) => event.region === selectedRegion);
+  const filteredRegionEvents =
+    selectedRegion === "china"
+      ? selectedRegionEvents.filter((event) => matchesThreeKingdomsFilter(event, eventFilter))
+      : selectedRegionEvents;
+  const eventFilterCounts = Object.fromEntries(
+    threeKingdomsFilters.map((filter) => [
+      filter.id,
+      selectedRegionEvents.filter((event) => matchesThreeKingdomsFilter(event, filter.id)).length,
+    ]),
+  ) as Record<ThreeKingdomsFilter, number>;
   const selectedEvent =
-    selectedRegionEvents.find((event) => event.id === selectedId) ??
-    selectedRegionEvents[0] ??
+    filteredRegionEvents.find((event) => event.id === selectedId) ??
+    filteredRegionEvents[0] ??
     events.find((event) => event.id === selectedId) ??
     events[0];
 
@@ -1095,13 +1182,27 @@ function App() {
     .map((id) => events.find((event) => event.id === id))
     .filter((event): event is HistoricalEvent => Boolean(event));
   const selectedEventPersonIds = (selectedEvent.personIds ?? []).filter((id) => chinaPersonById.has(id));
-  const activeSelectedPersonId =
-    selectedPersonId && selectedEventPersonIds.includes(selectedPersonId) ? selectedPersonId : null;
-  const selectedPerson = activeSelectedPersonId ? (chinaPersonById.get(activeSelectedPersonId) ?? null) : null;
+  const selectedPerson = selectedPersonId ? (chinaPersonById.get(selectedPersonId) ?? null) : null;
+  const activeSelectedPersonId = selectedPerson?.id ?? null;
   const selectedPersonRelations = selectedPerson
     ? chinaPersonRelations.filter(
         (relation) => relation.sourcePersonId === selectedPerson.id || relation.targetPersonId === selectedPerson.id,
       )
+    : [];
+  const relationshipGraphNodes = selectedPerson
+    ? selectedPersonRelations.slice(0, 6).map((relation, index, relations) => {
+        const isSource = relation.sourcePersonId === selectedPerson.id;
+        const counterpartId = isSource ? relation.targetPersonId : relation.sourcePersonId;
+        const angle = (-90 + (360 / Math.max(relations.length, 1)) * index) * (Math.PI / 180);
+
+        return {
+          relation,
+          counterpartId,
+          counterpart: chinaPersonById.get(counterpartId),
+          x: 50 + Math.cos(angle) * 38,
+          y: 50 + Math.sin(angle) * 39,
+        };
+      })
     : [];
   const selectedEventSourceRefs = selectedEvent.sourceRefs ?? [];
 
@@ -1392,10 +1493,34 @@ function App() {
         )}
 
         <section className="event-list">
-          <h3>区域事件</h3>
+          <div className="event-list-heading">
+            <h3>区域事件</h3>
+            {selectedRegion === "china" && (
+              <span>
+                {filteredRegionEvents.length}/{selectedRegionEvents.length}
+              </span>
+            )}
+          </div>
+          {selectedRegion === "china" && (
+            <div className="event-filter-bar" role="group" aria-label="三国事件筛选">
+              {threeKingdomsFilters.map((filter) => (
+                <button
+                  className={`event-filter-button ${eventFilter === filter.id ? "selected" : ""}`}
+                  data-event-filter={filter.id}
+                  key={filter.id}
+                  type="button"
+                  aria-pressed={eventFilter === filter.id}
+                  onClick={() => setEventFilter(filter.id)}
+                >
+                  <span>{filter.label}</span>
+                  <small>{eventFilterCounts[filter.id]}</small>
+                </button>
+              ))}
+            </div>
+          )}
           <div className="event-stack">
-            {selectedRegionEvents.length ? (
-              selectedRegionEvents.map((event) => (
+            {filteredRegionEvents.length ? (
+              filteredRegionEvents.map((event) => (
                 <button
                   className={`event-card ${event.id === selectedEvent.id ? "selected" : ""}`}
                   key={event.id}
@@ -1408,7 +1533,7 @@ function App() {
                 </button>
               ))
             ) : (
-              <div className="empty-state">这一年附近暂无样例事件</div>
+              <div className="empty-state">当前筛选下暂无事件</div>
             )}
           </div>
         </section>
@@ -1490,6 +1615,45 @@ function App() {
                   <Network size={16} aria-hidden="true" />
                   <span>人物关系</span>
                 </div>
+                {relationshipGraphNodes.length > 0 && (
+                  <div className="relationship-graph" aria-label={`${selectedPerson.name}的人物关系图`}>
+                    <svg className="relationship-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                      {relationshipGraphNodes.map((node) => (
+                        <line
+                          key={node.relation.id}
+                          x1="50"
+                          y1="50"
+                          x2={node.x}
+                          y2={node.y}
+                          style={{ "--relation-color": getRelationColor(node.relation.type) } as React.CSSProperties}
+                        />
+                      ))}
+                    </svg>
+                    <div className="graph-node center">
+                      <strong>{selectedPerson.name}</strong>
+                      <small>{selectedPerson.primaryPolity}</small>
+                    </div>
+                    {relationshipGraphNodes.map((node) => (
+                      <button
+                        className="graph-node relation"
+                        data-person-id={node.counterpartId}
+                        key={node.relation.id}
+                        type="button"
+                        style={
+                          {
+                            "--node-x": `${node.x}%`,
+                            "--node-y": `${node.y}%`,
+                            "--relation-color": getRelationColor(node.relation.type),
+                          } as React.CSSProperties
+                        }
+                        onClick={() => setSelectedPersonId(node.counterpartId)}
+                      >
+                        <small>{getRelationTypeLabel(node.relation.type)}</small>
+                        <strong>{node.counterpart?.name ?? node.counterpartId}</strong>
+                      </button>
+                    ))}
+                  </div>
+                )}
                 <div className="relationship-list">
                   {selectedPersonRelations.length ? (
                     selectedPersonRelations.map((relation) => {
