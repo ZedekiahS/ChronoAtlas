@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "model": "china-block-map",
+  "range": [190, 280],
+  "notes": "First-pass simplified province/commandery blocks for a strategy-map style Three Kingdoms China view. Geometry is approximate and should not be read as exact borders.",
+  "blocks": [
+    {
+      "id": "ji-zhou",
+      "name": "冀州",
+      "level": "province",
+      "parent": null,
+      "center": [116.2, 38.0],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [113.0, 35.2],
+            [116.0, 35.2],
+            [119.5, 37.0],
+            [119.6, 40.2],
+            [116.6, 41.2],
+            [113.4, 39.4],
+            [112.0, 37.1],
+            [113.0, 35.2]
+          ]
+        ]
+      },
+      "confidence": "medium",
+      "approximate": true,
+      "sources": ["三国志相关地理记载", "资治通鉴相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "you-zhou",
+      "name": "幽州",
+      "level": "province",
+      "parent": null,
+      "center": [118.4, 41.9],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [114.2, 39.2],
+            [119.8, 39.4],
+            [123.0, 41.2],
+            [123.5, 44.3],
+            [118.5, 44.8],
+            [114.5, 42.6],
+            [114.2, 39.2]
+          ]
+        ]
+      },
+      "confidence": "medium",
+      "approximate": true,
+      "sources": ["三国志魏书相关记载", "资治通鉴相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "bing-zhou",
+      "name": "并州",
+      "level": "province",
+      "parent": null,
+      "center": [110.5, 38.6],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [108.0, 35.5],
+            [113.5, 35.6],
+            [113.2, 40.6],
+            [111.0, 42.4],
+            [108.2, 40.5],
+            [106.8, 37.5],
+            [108.0, 35.5]
+          ]
+        ]
+      },
+      "confidence": "low",
+      "approximate": true,
+      "sources": ["三国志魏书相关记载", "资治通鉴相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "qing-zhou",
+      "name": "青州",
+      "level": "province",
+      "parent": null,
+      "center": [119.0, 36.8],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [117.2, 35.0],
+            [121.8, 36.2],
+            [122.2, 38.6],
+            [119.1, 39.0],
+            [116.5, 37.3],
+            [117.2, 35.0]
+          ]
+        ]
+      },
+      "confidence": "medium",
+      "approximate": true,
+      "sources": ["三国志魏书相关记载", "资治通鉴相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "yan-zhou",
+      "name": "兖州",
+      "level": "province",
+      "parent": null,
+      "center": [115.2, 35.4],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [113.5, 33.9],
+            [117.3, 34.2],
+            [117.4, 36.6],
+            [114.5, 37.2],
+            [112.6, 35.8],
+            [113.5, 33.9]
+          ]
+        ]
+      },
+      "confidence": "medium",
+      "approximate": true,
+      "sources": ["三国志魏书武帝纪", "资治通鉴相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "yu-zhou",
+      "name": "豫州",
+      "level": "province",
+      "parent": null,
+      "center": [113.8, 33.0],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [111.5, 31.6],
+            [115.6, 31.8],
+            [116.8, 34.2],
+            [113.2, 34.8],
+            [110.5, 33.5],
+            [111.5, 31.6]
+          ]
+        ]
+      },
+      "confidence": "medium",
+      "approximate": true,
+      "sources": ["三国志魏书相关记载", "资治通鉴相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "xu-zhou",
+      "name": "徐州",
+      "level": "province",
+      "parent": null,
+      "center": [118.6, 34.0],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [116.2, 32.4],
+            [119.6, 32.8],
+            [121.4, 35.3],
+            [118.3, 36.4],
+            [116.6, 34.2],
+            [116.2, 32.4]
+          ]
+        ]
+      },
+      "confidence": "medium",
+      "approximate": true,
+      "sources": ["三国志魏书吕布传", "资治通鉴相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "sili",
+      "name": "司隶",
+      "level": "province",
+      "parent": null,
+      "center": [110.0, 34.5],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [106.5, 33.4],
+            [111.8, 33.4],
+            [113.2, 35.2],
+            [111.2, 36.1],
+            [107.8, 35.7],
+            [106.5, 33.4]
+          ]
+        ]
+      },
+      "confidence": "medium",
+      "approximate": true,
+      "sources": ["后汉书郡国志参考", "资治通鉴相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "yong-zhou",
+      "name": "雍州",
+      "level": "province",
+      "parent": null,
+      "center": [104.5, 35.8],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [101.2, 32.8],
+            [107.5, 32.9],
+            [108.2, 36.5],
+            [104.4, 38.5],
+            [100.2, 36.8],
+            [101.2, 32.8]
+          ]
+        ]
+      },
+      "confidence": "low",
+      "approximate": true,
+      "sources": ["三国志魏书相关记载", "资治通鉴关中相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "liang-zhou",
+      "name": "凉州",
+      "level": "province",
+      "parent": null,
+      "center": [98.7, 39.2],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [92.5, 36.0],
+            [104.3, 36.3],
+            [104.6, 40.8],
+            [99.0, 42.7],
+            [92.0, 40.2],
+            [92.5, 36.0]
+          ]
+        ]
+      },
+      "confidence": "low",
+      "approximate": true,
+      "sources": ["三国志魏书相关记载", "资治通鉴凉州关中相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "jing-zhou",
+      "name": "荆州",
+      "level": "province",
+      "parent": null,
+      "center": [112.4, 29.4],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [108.0, 26.4],
+            [114.5, 25.8],
+            [117.6, 29.4],
+            [116.2, 32.2],
+            [111.1, 32.4],
+            [107.5, 30.2],
+            [108.0, 26.4]
+          ]
+        ]
+      },
+      "confidence": "medium",
+      "approximate": true,
+      "sources": ["三国志蜀书先主传", "三国志吴书吴主传", "资治通鉴赤壁前后纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "yang-zhou",
+      "name": "扬州",
+      "level": "province",
+      "parent": null,
+      "center": [118.5, 28.4],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [114.4, 23.8],
+            [121.8, 25.2],
+            [122.5, 31.4],
+            [117.4, 31.8],
+            [114.8, 29.1],
+            [112.9, 25.7],
+            [114.4, 23.8]
+          ]
+        ]
+      },
+      "confidence": "medium",
+      "approximate": true,
+      "sources": ["三国志吴书孙策传", "三国志吴书吴主传", "资治通鉴相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "yi-zhou",
+      "name": "益州",
+      "level": "province",
+      "parent": null,
+      "center": [103.4, 29.2],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [97.6, 25.0],
+            [108.4, 25.2],
+            [108.2, 32.8],
+            [103.4, 33.4],
+            [98.6, 31.0],
+            [96.4, 27.4],
+            [97.6, 25.0]
+          ]
+        ]
+      },
+      "confidence": "medium",
+      "approximate": true,
+      "sources": ["三国志蜀书先主传", "三国志蜀书后主传", "资治通鉴益州相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "jiao-zhou",
+      "name": "交州",
+      "level": "province",
+      "parent": null,
+      "center": [108.4, 21.6],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [105.0, 18.3],
+            [112.5, 18.9],
+            [113.5, 24.5],
+            [108.2, 24.8],
+            [104.2, 22.2],
+            [105.0, 18.3]
+          ]
+        ]
+      },
+      "confidence": "low",
+      "approximate": true,
+      "sources": ["三国志吴书士燮传", "资治通鉴交州相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "hanzhong",
+      "name": "汉中",
+      "level": "commandery",
+      "parent": "yi-zhou",
+      "center": [106.9, 32.3],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [105.0, 31.3],
+            [108.6, 31.4],
+            [108.8, 33.0],
+            [105.6, 33.3],
+            [104.4, 32.1],
+            [105.0, 31.3]
+          ]
+        ]
+      },
+      "confidence": "medium",
+      "approximate": true,
+      "sources": ["三国志魏书武帝纪", "三国志蜀书先主传", "资治通鉴汉中相关纪年", "中国历史地图集东汉三国图幅参考"]
+    },
+    {
+      "id": "liaodong",
+      "name": "辽东",
+      "level": "commandery",
+      "parent": "you-zhou",
+      "center": [124.2, 41.8],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [120.4, 39.6],
+            [126.5, 39.8],
+            [128.8, 42.0],
+            [125.8, 43.8],
+            [121.5, 42.5],
+            [120.4, 39.6]
+          ]
+        ]
+      },
+      "confidence": "low",
+      "approximate": true,
+      "sources": ["三国志魏书公孙度传", "资治通鉴辽东相关纪年", "中国历史地图集东汉三国图幅参考"]
+    }
+  ]
+}

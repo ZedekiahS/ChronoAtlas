@@ -24,6 +24,8 @@ import {
   UsersRound,
 } from "lucide-react";
 import eventsData from "../data/events-180-280.sample.json";
+import chinaBlocksData from "../data/china-blocks-190-280.json";
+import chinaControlTimelineData from "../data/china-control-timeline-190-280.json";
 import chinaMapData from "../data/china-three-kingdoms-map.json";
 import naturalEarthChinaPhysicalData from "../data/natural-earth-china-physical.json";
 import regionsData from "../data/regions-180-280.json";
@@ -118,6 +120,57 @@ type ChinaMapEra = {
   frontierZones?: BoundaryGroup[];
 };
 
+type ChinaBlockLevel = "province" | "commandery" | "county-seat";
+type ChinaControlStatus = "effective-control" | "contested" | "frontier" | "nominal-control";
+type ChinaBlockGeometry = {
+  type: "Polygon";
+  coordinates: LonLat[][];
+};
+
+type ChinaBlock = {
+  id: string;
+  name: string;
+  level: ChinaBlockLevel;
+  parent: string | null;
+  center: LonLat;
+  geometry: ChinaBlockGeometry;
+  confidence: "high" | "medium" | "low";
+  approximate: boolean;
+  sources: string[];
+};
+
+type ChinaBlocksDataset = {
+  schemaVersion: number;
+  model: string;
+  range: [number, number];
+  notes: string;
+  blocks: ChinaBlock[];
+};
+
+type ChinaController = {
+  id: string;
+  color: string;
+};
+
+type ChinaControlRecord = {
+  blockId: string;
+  startYear: number;
+  endYear: number;
+  controller: string;
+  status: ChinaControlStatus;
+  confidence: "high" | "medium" | "low";
+  sources: string[];
+};
+
+type ChinaControlTimeline = {
+  schemaVersion: number;
+  model: string;
+  range: [number, number];
+  keyYears: number[];
+  controllers: ChinaController[];
+  records: ChinaControlRecord[];
+};
+
 type NaturalEarthPhysical = {
   source: string;
   license: string;
@@ -135,9 +188,14 @@ type NaturalEarthPhysical = {
 };
 
 const events = eventsData as HistoricalEvent[];
+const chinaBlocksDataset = chinaBlocksData as ChinaBlocksDataset;
+const chinaControlTimeline = chinaControlTimelineData as ChinaControlTimeline;
 const chinaMap = chinaMapData as ChinaMapLayer;
 const naturalEarthChinaPhysical = naturalEarthChinaPhysicalData as NaturalEarthPhysical;
 const regions = regionsData as unknown as RegionInfo[];
+const chinaBlocks = chinaBlocksDataset.blocks;
+const chinaBlockById = new Map(chinaBlocks.map((block) => [block.id, block]));
+const chinaControllerColorMap = new Map(chinaControlTimeline.controllers.map((controller) => [controller.id, controller.color]));
 type WorldAtlasTopology = Topology<{ countries: GeometryCollection }>;
 
 const atlas = countries110 as unknown as WorldAtlasTopology;
@@ -154,7 +212,7 @@ const path = geoPath(projection);
 const graticulePath = path(geoGraticule10());
 const spherePath = path({ type: "Sphere" });
 const worldViewBox = "0 0 1000 520";
-const chinaViewBox = getProjectedViewBox(chinaMap.view.northWest, chinaMap.view.southEast, chinaMap.view.padding);
+const chinaViewBox = getProjectedViewBox([90, 45], [130, 18], 18);
 
 const categoryLabels: Record<EventCategory, string> = {
   politics: "政治",
@@ -169,12 +227,12 @@ const chinaMapModes: Array<{
   label: string;
   Icon: typeof Layers;
 }> = [
-  { id: "political", label: "政治", Icon: Layers },
+  { id: "political", label: "控制", Icon: Layers },
   { id: "terrain", label: "地形", Icon: Mountain },
   { id: "three-d", label: "3D", Icon: Box },
 ];
 
-const yearMin = 180;
+const yearMin = 190;
 const yearMax = 280;
 
 function isActiveInYear(event: HistoricalEvent, year: number) {
@@ -346,6 +404,82 @@ function getBoundaryGroups(region: RegionInfo, era: RegionEra) {
 
 function getChinaMapLayer(year: number) {
   return chinaMap.eras.find((era) => era.startYear <= year && era.endYear >= year) ?? null;
+}
+
+function getChinaBlockControl(blockId: string, year: number) {
+  return (
+    chinaControlTimeline.records.find(
+      (record) => record.blockId === blockId && record.startYear <= year && record.endYear >= year,
+    ) ?? null
+  );
+}
+
+function getChinaControllerColor(controller?: string | null) {
+  return controller ? (chinaControllerColorMap.get(controller) ?? "#7d8578") : "#7d8578";
+}
+
+function getChinaBlockPath(block: ChinaBlock) {
+  const blockFeature = {
+    type: "Feature",
+    properties: {},
+    geometry: {
+      ...block.geometry,
+      coordinates: block.geometry.coordinates.map((ring) => [...ring].reverse()),
+    },
+  } as Feature<Geometry, GeoJsonProperties>;
+
+  return path(blockFeature);
+}
+
+function formatChinaControlRange(control: ChinaControlRecord | null) {
+  if (!control) {
+    return "待补";
+  }
+
+  return control.startYear === control.endYear
+    ? `${control.startYear} 年`
+    : `${control.startYear}-${control.endYear} 年`;
+}
+
+function getChinaControlStatusLabel(status: ChinaControlStatus | undefined) {
+  switch (status) {
+    case "effective-control":
+      return "实际控制";
+    case "contested":
+      return "争夺区";
+    case "frontier":
+      return "边缘控制";
+    case "nominal-control":
+      return "名义控制";
+    default:
+      return "待补";
+  }
+}
+
+function getChinaBlockLevelLabel(level: ChinaBlockLevel) {
+  switch (level) {
+    case "province":
+      return "州级区块";
+    case "commandery":
+      return "重点郡国";
+    case "county-seat":
+      return "重点县治";
+    default:
+      return "区块";
+  }
+}
+
+function getConfidenceLabel(confidence: "high" | "medium" | "low" | undefined) {
+  switch (confidence) {
+    case "high":
+      return "可信度高";
+    case "medium":
+      return "可信度中";
+    case "low":
+      return "可信度低";
+    default:
+      return "可信度待补";
+  }
 }
 
 function isChinaPolity(group: BoundaryGroup | ChinaPolity): group is ChinaPolity {
@@ -594,22 +728,26 @@ function ChinaTerrain3DMap({ onClearSummary }: { onClearSummary: () => void }) {
 }
 
 function ChinaRegionMap({
-  activeGroup,
+  activeBlockId,
+  hoveredBlockId,
   mapMode,
-  onSelectGroup,
+  onSelectBlock,
+  onHoverBlock,
   onClearSummary,
   year,
 }: {
-  activeGroup: string | null;
+  activeBlockId: string | null;
+  hoveredBlockId: string | null;
   mapMode: ChinaMapMode;
-  onSelectGroup: (group: BoundaryGroup) => void;
+  onSelectBlock: (blockId: string) => void;
+  onHoverBlock: (blockId: string | null) => void;
   onClearSummary: () => void;
   year: number;
 }) {
-  const china = regions.find((region) => region.id === "china")!;
-  const era = getRegionEra(china, year);
-  const mapLayer = getChinaMapLayer(year);
-  const boundaryGroups = mapLayer?.polities ?? getBoundaryGroups(china, era);
+  const blockEntries = chinaBlocks.map((block) => ({
+    block,
+    control: getChinaBlockControl(block.id, year),
+  }));
 
   if (mapMode === "three-d") {
     return <ChinaTerrain3DMap onClearSummary={onClearSummary} />;
@@ -624,6 +762,11 @@ function ChinaRegionMap({
         aria-label="中国及周边区域地图"
         onClick={onClearSummary}
       >
+        <defs>
+          <pattern id="contested-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+            <path className="control-hatch-line" d="M 0 0 L 0 7" />
+          </pattern>
+        </defs>
         {graticulePath && <path className="graticule" d={graticulePath} />}
         {naturalEarthChinaPhysical.land.features.map((geoFeature, index) => {
           const landPath = path(geoFeature);
@@ -698,43 +841,69 @@ function ChinaRegionMap({
 
         {mapMode === "political" && (
           <>
-            {boundaryGroups.map((group) => {
-              const boundaryPath = getBoundaryPath(group.boundary);
-              if (!boundaryPath) {
+            {blockEntries.map(({ block, control }) => {
+              const blockPath = getChinaBlockPath(block);
+              if (!blockPath) {
                 return null;
               }
 
-              const accent = isChinaPolity(group) ? group.accent : "#b94f32";
+              const color = getChinaControllerColor(control?.controller);
+              const isActive = activeBlockId === block.id;
+              const isHovered = hoveredBlockId === block.id;
+              const status = control?.status ?? "frontier";
+              const confidence = control?.confidence ?? block.confidence;
 
               return (
-                <path
-                  className={`historical-boundary regional-boundary confidence-${group.confidence} boundary-${
-                    group.boundaryType
-                  } ${activeGroup === group.id ? "active" : ""}`}
-                  d={boundaryPath}
-                  key={group.id}
-                  style={{ "--accent": accent } as React.CSSProperties}
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    onSelectGroup(group);
-                  }}
-                  tabIndex={0}
-                  role="button"
-                  aria-label={`选择${group.label}`}
-                />
+                <g key={block.id}>
+                  <path
+                    className={`control-block level-${block.level} status-${status} confidence-${confidence} ${
+                      isActive ? "active" : ""
+                    } ${isHovered ? "hovered" : ""}`}
+                    d={blockPath}
+                    style={{ "--controller-color": color } as React.CSSProperties}
+                    onMouseEnter={() => onHoverBlock(block.id)}
+                    onMouseLeave={() => onHoverBlock(null)}
+                    onFocus={() => onHoverBlock(block.id)}
+                    onBlur={() => onHoverBlock(null)}
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      onSelectBlock(block.id);
+                    }}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`选择控制区块：${block.name}`}
+                  />
+                  {status === "contested" && <path className="control-block-hatch" d={blockPath} />}
+                </g>
               );
             })}
 
-            {mapLayer?.polities.map((polity) => {
-              const center = getProjectedPoint(polity.center);
+            {naturalEarthChinaPhysical.rivers.features
+              .filter((geoFeature) => getNaturalEarthScaleRank(geoFeature) <= 2)
+              .map((geoFeature, index) => {
+                const riverPath = path(geoFeature);
+                if (!riverPath) {
+                  return null;
+                }
+
+                return <path className="political-river-overlay" d={riverPath} key={`river-overlay-${index}`} />;
+              })}
+
+            {blockEntries.map(({ block, control }) => {
+              const center = getProjectedPoint(block.center);
               if (!center) {
                 return null;
               }
 
               return (
-                <text className="polity-label" key={`${polity.id}-label`} x={center[0]} y={center[1]}>
-                  {polity.label}
-                </text>
+                <g className="control-block-label" key={`${block.id}-label`}>
+                  <text x={center[0]} y={center[1]}>
+                    {block.name}
+                  </text>
+                  <text className="controller-name" x={center[0]} y={center[1] + 4.4}>
+                    {control?.controller ?? "待补"}
+                  </text>
+                </g>
               );
             })}
 
@@ -769,7 +938,8 @@ function App() {
   const [hoveredRegion, setHoveredRegion] = useState<Region | null>(null);
   const [summaryRegion, setSummaryRegion] = useState<Region | null>("china");
   const [selectedId, setSelectedId] = useState("china-220-cao-pi-founds-wei");
-  const [selectedChinaGroup, setSelectedChinaGroup] = useState<BoundaryGroup | null>(null);
+  const [selectedChinaBlockId, setSelectedChinaBlockId] = useState<string | null>(null);
+  const [hoveredChinaBlockId, setHoveredChinaBlockId] = useState<string | null>(null);
 
   const normalizedQuery = query.trim().toLowerCase();
 
@@ -809,11 +979,18 @@ function App() {
   const chinaRegionInfo = regions.find((region) => region.id === "china")!;
   const chinaRegionEra = getRegionEra(chinaRegionInfo, year);
   const chinaMapLayer = getChinaMapLayer(year);
-  const chinaBoundaryGroups = chinaMapLayer?.polities ?? getBoundaryGroups(chinaRegionInfo, chinaRegionEra);
-  const selectedChinaGroupInView =
-    chinaMapMode === "political"
-      ? (chinaBoundaryGroups.find((group) => group.id === selectedChinaGroup?.id) ?? null)
-      : null;
+  const chinaBlockSnapshots = useMemo(
+    () =>
+      chinaBlocks.map((block) => ({
+        block,
+        control: getChinaBlockControl(block.id, year),
+      })),
+    [year],
+  );
+  const selectedChinaBlock = selectedChinaBlockId ? (chinaBlockById.get(selectedChinaBlockId) ?? null) : null;
+  const hoveredChinaBlock = hoveredChinaBlockId ? (chinaBlockById.get(hoveredChinaBlockId) ?? null) : null;
+  const inspectedChinaBlock = hoveredChinaBlock ?? selectedChinaBlock;
+  const inspectedChinaControl = inspectedChinaBlock ? getChinaBlockControl(inspectedChinaBlock.id, year) : null;
 
   const selectedRegionEvents = visibleEvents.filter((event) => event.region === selectedRegion);
   const selectedEvent =
@@ -827,18 +1004,14 @@ function App() {
     .filter((event): event is HistoricalEvent => Boolean(event));
 
   useEffect(() => {
-    if (page !== "china" || chinaMapMode !== "political") {
+    if (page !== "china" || chinaMapMode !== "political" || !selectedChinaBlockId) {
       return;
     }
 
-    if (!selectedChinaGroup) {
-      return;
+    if (!chinaBlockById.has(selectedChinaBlockId)) {
+      setSelectedChinaBlockId(null);
     }
-
-    if (!selectedChinaGroupInView) {
-      setSelectedChinaGroup(chinaBoundaryGroups[0] ?? null);
-    }
-  }, [chinaBoundaryGroups, chinaMapMode, page, selectedChinaGroup, selectedChinaGroupInView]);
+  }, [chinaMapMode, page, selectedChinaBlockId]);
 
   function selectRegion(region: Region) {
     if (region === "china") {
@@ -847,7 +1020,8 @@ function App() {
       setSelectedRegion("china");
       setSummaryRegion(null);
       setHoveredRegion(null);
-      setSelectedChinaGroup(chinaBoundaryGroups[0] ?? null);
+      setSelectedChinaBlockId(null);
+      setHoveredChinaBlockId(null);
       const firstChinaEvent = visibleEvents.find((event) => event.region === "china");
       if (firstChinaEvent) {
         setSelectedId(firstChinaEvent.id);
@@ -867,12 +1041,14 @@ function App() {
     setPage("world");
     setSelectedRegion("china");
     setSummaryRegion("china");
-    setSelectedChinaGroup(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
   }
 
   function changeChinaMapMode(mode: ChinaMapMode) {
     setChinaMapMode(mode);
-    setSelectedChinaGroup(mode === "political" ? (chinaBoundaryGroups[0] ?? null) : null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
   }
 
   return (
@@ -914,7 +1090,7 @@ function App() {
                 </button>
               ))}
             </div>
-            <span>{chinaMapLayer?.title ?? chinaRegionEra.title}</span>
+            <span>{chinaMapMode === "political" ? "州郡区块模型" : (chinaMapLayer?.title ?? chinaRegionEra.title)}</span>
           </div>
         )}
 
@@ -930,10 +1106,15 @@ function App() {
             />
           ) : (
             <ChinaRegionMap
-              activeGroup={selectedChinaGroupInView?.id ?? null}
+              activeBlockId={selectedChinaBlockId}
+              hoveredBlockId={hoveredChinaBlockId}
               mapMode={chinaMapMode}
-              onSelectGroup={setSelectedChinaGroup}
-              onClearSummary={() => setSelectedChinaGroup(null)}
+              onSelectBlock={setSelectedChinaBlockId}
+              onHoverBlock={setHoveredChinaBlockId}
+              onClearSummary={() => {
+                setSelectedChinaBlockId(null);
+                setHoveredChinaBlockId(null);
+              }}
               year={year}
             />
           )}
@@ -972,37 +1153,43 @@ function App() {
             </aside>
           )}
 
-          {page === "china" && chinaMapMode === "political" && selectedChinaGroupInView && (
+          {page === "china" && chinaMapMode === "political" && inspectedChinaBlock && (
             <aside
               className="hover-summary regional-summary"
               style={
                 {
-                  "--accent": isChinaPolity(selectedChinaGroupInView) ? selectedChinaGroupInView.accent : "#b94f32",
+                  "--accent": getChinaControllerColor(inspectedChinaControl?.controller),
                 } as React.CSSProperties
               }
+              aria-live="polite"
             >
               <div className="summary-heading">
                 <MapPinned size={18} aria-hidden="true" />
-                <span>区域片段</span>
+                <span>{hoveredChinaBlock ? "悬停控制区块" : "选中控制区块"}</span>
                 <button
                   className="summary-close"
                   type="button"
                   aria-label="关闭区域信息"
                   title="关闭区域信息"
-                  onClick={() => setSelectedChinaGroup(null)}
+                  onClick={() => {
+                    setSelectedChinaBlockId(null);
+                    setHoveredChinaBlockId(null);
+                  }}
                 >
                   <X size={16} />
                 </button>
               </div>
-              <h2>{selectedChinaGroupInView.label}</h2>
-              <p>{isChinaPolity(selectedChinaGroupInView) ? selectedChinaGroupInView.summary : chinaRegionEra.summary}</p>
+              <h2>{inspectedChinaBlock.name}</h2>
+              <p>
+                {inspectedChinaControl?.controller ?? "待补"}在 {formatChinaControlRange(inspectedChinaControl)}
+                对此区块为{getChinaControlStatusLabel(inspectedChinaControl?.status)}。此层为控制区块与势力范围近似，不是精确国界。
+              </p>
               <div className="summary-meta">
                 <span>
-                  {isChinaPolity(selectedChinaGroupInView)
-                    ? `都城：${selectedChinaGroupInView.capitalName}`
-                    : chinaRegionEra.title}
+                  {getChinaBlockLevelLabel(inspectedChinaBlock.level)} ·{" "}
+                  {getChinaControlStatusLabel(inspectedChinaControl?.status)}
                 </span>
-                <strong>{selectedChinaGroupInView.confidence}</strong>
+                <strong>{getConfidenceLabel(inspectedChinaControl?.confidence ?? inspectedChinaBlock.confidence)}</strong>
               </div>
             </aside>
           )}
@@ -1033,7 +1220,7 @@ function App() {
               onChange={(event) => setYear(Number(event.target.value))}
             />
             <div className="range-labels">
-              <span>180</span>
+              <span>190</span>
               <span>220</span>
               <span>260</span>
               <span>280</span>
@@ -1057,24 +1244,39 @@ function App() {
             <Info size={18} aria-hidden="true" />
             <span>{page === "china" ? "中国" : selectedRegionInfo.label}</span>
           </div>
-          <h2>{page === "china" ? (chinaMapLayer?.title ?? chinaRegionEra.title) : selectedRegionEra.title}</h2>
+          <h2>
+            {page === "china" && chinaMapMode === "political"
+              ? "控制区块 / 势力范围近似"
+              : page === "china"
+                ? (chinaMapLayer?.title ?? chinaRegionEra.title)
+                : selectedRegionEra.title}
+          </h2>
           <p className="detail-summary">
-            {page === "china" ? (chinaMapLayer?.summary ?? chinaRegionEra.summary) : selectedRegionEra.summary}
+            {page === "china" && chinaMapMode === "political"
+              ? `${year} 年按州与重点郡级区块显示控制者。区块颜色表示当前控制权，争夺区使用斜线样式；该层是势力范围近似，不是精确国界。`
+              : page === "china"
+                ? (chinaMapLayer?.summary ?? chinaRegionEra.summary)
+                : selectedRegionEra.summary}
           </p>
         </div>
 
         {page === "china" && chinaMapMode === "political" && (
           <section className="event-list">
-            <h3>势力范围</h3>
-            <div className="chips">
-              {chinaBoundaryGroups.map((group) => (
+            <h3>控制区块</h3>
+            <div className="chips block-chip-list">
+              {chinaBlockSnapshots.map(({ block, control }) => (
                 <button
-                  className={`chip-button ${selectedChinaGroupInView?.id === group.id ? "selected" : ""}`}
-                  key={group.id}
+                  className={`chip-button block-chip ${selectedChinaBlockId === block.id ? "selected" : ""}`}
+                  key={block.id}
                   type="button"
-                  onClick={() => setSelectedChinaGroup(group)}
+                  style={{ "--controller-color": getChinaControllerColor(control?.controller) } as React.CSSProperties}
+                  onMouseEnter={() => setHoveredChinaBlockId(block.id)}
+                  onMouseLeave={() => setHoveredChinaBlockId(null)}
+                  onClick={() => setSelectedChinaBlockId(block.id)}
                 >
-                  {group.label}
+                  <span className="controller-swatch" aria-hidden="true" />
+                  <span>{block.name}</span>
+                  <small>{control?.controller ?? "待补"}</small>
                 </button>
               ))}
             </div>

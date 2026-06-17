@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "model": "china-block-control-timeline",
+  "range": [190, 280],
+  "keyYears": [190, 195, 200, 208, 220, 229, 234, 263, 265, 280],
+  "controllers": [
+    { "id": "袁绍", "color": "#7b63a8" },
+    { "id": "袁术", "color": "#b9872c" },
+    { "id": "曹操", "color": "#9d5238" },
+    { "id": "刘表", "color": "#4f7f9d" },
+    { "id": "吕布", "color": "#8a4f87" },
+    { "id": "公孙瓒", "color": "#6277ad" },
+    { "id": "张鲁", "color": "#8d7435" },
+    { "id": "刘璋", "color": "#6f9659" },
+    { "id": "曹魏", "color": "#b65a3a" },
+    { "id": "蜀汉", "color": "#c19a3c" },
+    { "id": "孙吴", "color": "#3f8b78" },
+    { "id": "西晋", "color": "#8b99a5" },
+    { "id": "陶谦", "color": "#7d8b6f" },
+    { "id": "关中军阀", "color": "#9a7a5d" },
+    { "id": "马腾韩遂", "color": "#9a8f50" },
+    { "id": "士燮", "color": "#5c927e" },
+    { "id": "辽东公孙氏", "color": "#6d86a4" }
+  ],
+  "records": [
+    { "blockId": "ji-zhou", "startYear": 190, "endYear": 199, "controller": "袁绍", "status": "effective-control", "confidence": "medium", "sources": ["三国志魏书袁绍传", "资治通鉴初平至建安年间"] },
+    { "blockId": "ji-zhou", "startYear": 200, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴官渡以后纪年"] },
+    { "blockId": "ji-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
+    { "blockId": "ji-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
+
+    { "blockId": "you-zhou", "startYear": 190, "endYear": 198, "controller": "公孙瓒", "status": "contested", "confidence": "medium", "sources": ["三国志魏书公孙瓒传", "资治通鉴初平至建安年间"] },
+    { "blockId": "you-zhou", "startYear": 199, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴建安四年以后"] },
+    { "blockId": "you-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
+    { "blockId": "you-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
+
+    { "blockId": "bing-zhou", "startYear": 190, "endYear": 205, "controller": "袁绍", "status": "frontier", "confidence": "low", "sources": ["三国志魏书袁绍传", "资治通鉴并州相关纪年"] },
+    { "blockId": "bing-zhou", "startYear": 206, "endYear": 219, "controller": "曹操", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书武帝纪", "资治通鉴建安年间"] },
+    { "blockId": "bing-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
+    { "blockId": "bing-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "frontier", "confidence": "medium", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
+
+    { "blockId": "qing-zhou", "startYear": 190, "endYear": 199, "controller": "袁绍", "status": "contested", "confidence": "medium", "sources": ["三国志魏书袁绍传", "资治通鉴初平至建安年间"] },
+    { "blockId": "qing-zhou", "startYear": 200, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴官渡以后纪年"] },
+    { "blockId": "qing-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
+    { "blockId": "qing-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
+
+    { "blockId": "yan-zhou", "startYear": 190, "endYear": 193, "controller": "曹操", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书武帝纪", "资治通鉴初平年间"] },
+    { "blockId": "yan-zhou", "startYear": 194, "endYear": 195, "controller": "吕布", "status": "contested", "confidence": "high", "sources": ["三国志魏书吕布传", "资治通鉴兴平年间"] },
+    { "blockId": "yan-zhou", "startYear": 196, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴建安年间"] },
+    { "blockId": "yan-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
+    { "blockId": "yan-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
+
+    { "blockId": "yu-zhou", "startYear": 190, "endYear": 197, "controller": "袁术", "status": "contested", "confidence": "medium", "sources": ["三国志魏书袁术传", "资治通鉴初平至建安二年"] },
+    { "blockId": "yu-zhou", "startYear": 198, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴建安年间"] },
+    { "blockId": "yu-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
+    { "blockId": "yu-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
+
+    { "blockId": "xu-zhou", "startYear": 190, "endYear": 194, "controller": "陶谦", "status": "effective-control", "confidence": "medium", "sources": ["三国志魏书陶谦传", "资治通鉴初平年间"] },
+    { "blockId": "xu-zhou", "startYear": 195, "endYear": 198, "controller": "吕布", "status": "contested", "confidence": "high", "sources": ["三国志魏书吕布传", "资治通鉴建安元年至三年"] },
+    { "blockId": "xu-zhou", "startYear": 199, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴下邳以后纪年"] },
+    { "blockId": "xu-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
+    { "blockId": "xu-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
+
+    { "blockId": "sili", "startYear": 190, "endYear": 195, "controller": "关中军阀", "status": "contested", "confidence": "medium", "sources": ["后汉书董卓传", "资治通鉴初平至兴平年间"] },
+    { "blockId": "sili", "startYear": 196, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴建安年间"] },
+    { "blockId": "sili", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
+    { "blockId": "sili", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
+
+    { "blockId": "yong-zhou", "startYear": 190, "endYear": 211, "controller": "马腾韩遂", "status": "frontier", "confidence": "low", "sources": ["三国志魏书马超传", "资治通鉴关中相关纪年"] },
+    { "blockId": "yong-zhou", "startYear": 212, "endYear": 219, "controller": "曹操", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书武帝纪", "资治通鉴潼关以后纪年"] },
+    { "blockId": "yong-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
+    { "blockId": "yong-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "frontier", "confidence": "medium", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
+
+    { "blockId": "liang-zhou", "startYear": 190, "endYear": 213, "controller": "马腾韩遂", "status": "frontier", "confidence": "low", "sources": ["三国志魏书马超传", "资治通鉴凉州关中相关纪年"] },
+    { "blockId": "liang-zhou", "startYear": 214, "endYear": 219, "controller": "曹操", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书武帝纪", "资治通鉴建安后期"] },
+    { "blockId": "liang-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
+    { "blockId": "liang-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "frontier", "confidence": "medium", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
+
+    { "blockId": "jing-zhou", "startYear": 190, "endYear": 207, "controller": "刘表", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书刘表传", "资治通鉴荆州相关纪年"] },
+    { "blockId": "jing-zhou", "startYear": 208, "endYear": 219, "controller": "孙吴", "status": "contested", "confidence": "medium", "sources": ["三国志蜀书先主传", "三国志吴书吴主传", "资治通鉴赤壁至荆州争夺"] },
+    { "blockId": "jing-zhou", "startYear": 220, "endYear": 279, "controller": "孙吴", "status": "effective-control", "confidence": "medium", "sources": ["三国志吴书吴主传", "中国历史地图集三国图幅参考"] },
+    { "blockId": "jing-zhou", "startYear": 280, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "资治通鉴太康元年"] },
+
+    { "blockId": "yang-zhou", "startYear": 190, "endYear": 196, "controller": "袁术", "status": "contested", "confidence": "medium", "sources": ["三国志魏书袁术传", "资治通鉴初平至建安元年"] },
+    { "blockId": "yang-zhou", "startYear": 197, "endYear": 219, "controller": "孙吴", "status": "effective-control", "confidence": "medium", "sources": ["三国志吴书孙策传", "三国志吴书吴主传", "资治通鉴江东相关纪年"] },
+    { "blockId": "yang-zhou", "startYear": 220, "endYear": 279, "controller": "孙吴", "status": "effective-control", "confidence": "high", "sources": ["三国志吴书吴主传", "中国历史地图集三国图幅参考"] },
+    { "blockId": "yang-zhou", "startYear": 280, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "资治通鉴太康元年"] },
+
+    { "blockId": "yi-zhou", "startYear": 190, "endYear": 213, "controller": "刘璋", "status": "effective-control", "confidence": "high", "sources": ["三国志蜀书先主传", "资治通鉴益州相关纪年"] },
+    { "blockId": "yi-zhou", "startYear": 214, "endYear": 262, "controller": "蜀汉", "status": "effective-control", "confidence": "high", "sources": ["三国志蜀书先主传", "三国志蜀书后主传", "中国历史地图集三国图幅参考"] },
+    { "blockId": "yi-zhou", "startYear": 263, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书陈留王纪", "资治通鉴景元四年"] },
+    { "blockId": "yi-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
+
+    { "blockId": "jiao-zhou", "startYear": 190, "endYear": 219, "controller": "士燮", "status": "nominal-control", "confidence": "medium", "sources": ["三国志吴书士燮传", "资治通鉴交州相关纪年"] },
+    { "blockId": "jiao-zhou", "startYear": 220, "endYear": 279, "controller": "孙吴", "status": "nominal-control", "confidence": "medium", "sources": ["三国志吴书士燮传", "中国历史地图集三国图幅参考"] },
+    { "blockId": "jiao-zhou", "startYear": 280, "endYear": 280, "controller": "西晋", "status": "nominal-control", "confidence": "medium", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
+
+    { "blockId": "hanzhong", "startYear": 190, "endYear": 214, "controller": "张鲁", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书张鲁传", "资治通鉴汉中相关纪年"] },
+    { "blockId": "hanzhong", "startYear": 215, "endYear": 218, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴建安二十年"] },
+    { "blockId": "hanzhong", "startYear": 219, "endYear": 262, "controller": "蜀汉", "status": "effective-control", "confidence": "high", "sources": ["三国志蜀书先主传", "三国志蜀书后主传", "中国历史地图集三国图幅参考"] },
+    { "blockId": "hanzhong", "startYear": 263, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书陈留王纪", "资治通鉴景元四年"] },
+    { "blockId": "hanzhong", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
+
+    { "blockId": "liaodong", "startYear": 190, "endYear": 237, "controller": "辽东公孙氏", "status": "nominal-control", "confidence": "medium", "sources": ["三国志魏书公孙度传", "资治通鉴辽东相关纪年"] },
+    { "blockId": "liaodong", "startYear": 238, "endYear": 264, "controller": "曹魏", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书明帝纪", "资治通鉴景初二年"] },
+    { "blockId": "liaodong", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "frontier", "confidence": "medium", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] }
+  ]
+}

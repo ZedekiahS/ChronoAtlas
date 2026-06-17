@@ -1,11 +1,48 @@
 import events from "../data/events-180-280.sample.json" with { type: "json" };
+import chinaBlocks from "../data/china-blocks-190-280.json" with { type: "json" };
+import chinaControlTimeline from "../data/china-control-timeline-190-280.json" with { type: "json" };
 import chinaMap from "../data/china-three-kingdoms-map.json" with { type: "json" };
 import naturalEarthChinaPhysical from "../data/natural-earth-china-physical.json" with { type: "json" };
 import regions from "../data/regions-180-280.json" with { type: "json" };
 
 const regionIds = new Set(["china", "rome", "sasanian-persia", "india"]);
 const boundaryTypes = new Set(["effective-control", "nominal", "cultural-influence"]);
+const blockLevels = new Set(["province", "commandery", "county-seat"]);
+const controlStatuses = new Set(["effective-control", "contested", "frontier", "nominal-control"]);
 const confidenceValues = new Set(["high", "medium", "low"]);
+const requiredChinaBlockIds = new Set([
+  "ji-zhou",
+  "you-zhou",
+  "bing-zhou",
+  "qing-zhou",
+  "yan-zhou",
+  "yu-zhou",
+  "xu-zhou",
+  "sili",
+  "yong-zhou",
+  "liang-zhou",
+  "jing-zhou",
+  "yang-zhou",
+  "yi-zhou",
+  "jiao-zhou",
+  "hanzhong",
+  "liaodong",
+]);
+const requiredControllers = new Set([
+  "袁绍",
+  "袁术",
+  "曹操",
+  "刘表",
+  "吕布",
+  "公孙瓒",
+  "张鲁",
+  "刘璋",
+  "曹魏",
+  "蜀汉",
+  "孙吴",
+  "西晋",
+]);
+const requiredChinaKeyYears = [190, 195, 200, 208, 220, 229, 234, 263, 265, 280];
 
 function assert(condition, message) {
   if (!condition) {
@@ -70,6 +107,29 @@ function validateFeatureCollection(collection, collectionId) {
     assert(coordinates.length > 0, `Feature needs coordinates: ${collectionId}:${index}`);
     for (const point of coordinates) {
       validateLonLat(point, `${collectionId}:${index}`);
+    }
+  }
+}
+
+function validateSources(sources, sourceId) {
+  assert(Array.isArray(sources) && sources.length > 0, `Sources must be a non-empty array: ${sourceId}`);
+  for (const [index, source] of sources.entries()) {
+    assert(typeof source === "string" && source.length > 0, `Source must be a string: ${sourceId}:${index}`);
+  }
+}
+
+function validatePolygonGeometry(geometry, geometryId) {
+  assert(geometry?.type === "Polygon", `Expected Polygon geometry: ${geometryId}`);
+  assert(Array.isArray(geometry.coordinates) && geometry.coordinates.length > 0, `Polygon needs rings: ${geometryId}`);
+
+  for (const [ringIndex, ring] of geometry.coordinates.entries()) {
+    assert(Array.isArray(ring) && ring.length >= 4, `Polygon ring needs at least 4 points: ${geometryId}:${ringIndex}`);
+    const first = ring[0];
+    const last = ring[ring.length - 1];
+    assert(first[0] === last[0] && first[1] === last[1], `Polygon ring must be closed: ${geometryId}:${ringIndex}`);
+
+    for (const point of ring) {
+      validateLonLat(point, `${geometryId}:${ringIndex}`);
     }
   }
 }
@@ -151,5 +211,67 @@ validateFeatureCollection(naturalEarthChinaPhysical.land, "naturalEarthChinaPhys
 validateFeatureCollection(naturalEarthChinaPhysical.rivers, "naturalEarthChinaPhysical.rivers");
 validateFeatureCollection(naturalEarthChinaPhysical.lakes, "naturalEarthChinaPhysical.lakes");
 validateFeatureCollection(naturalEarthChinaPhysical.geographyRegions, "naturalEarthChinaPhysical.geographyRegions");
+
+assert(chinaBlocks.model === "china-block-map", "Unexpected China block map model");
+assert(Array.isArray(chinaBlocks.blocks) && chinaBlocks.blocks.length > 0, "China block map needs blocks");
+const chinaBlockIds = new Set();
+
+for (const block of chinaBlocks.blocks) {
+  assert(typeof block.id === "string" && block.id.length > 0, "China block needs id");
+  assert(!chinaBlockIds.has(block.id), `Duplicate China block id: ${block.id}`);
+  chinaBlockIds.add(block.id);
+  assert(typeof block.name === "string" && block.name.length > 0, `China block needs name: ${block.id}`);
+  assert(blockLevels.has(block.level), `Unknown China block level: ${block.id}`);
+  assert(block.parent === null || typeof block.parent === "string", `Invalid China block parent: ${block.id}`);
+  validateLonLat(block.center, `${block.id}:center`);
+  validatePolygonGeometry(block.geometry, `${block.id}:geometry`);
+  assert(confidenceValues.has(block.confidence), `Unknown China block confidence: ${block.id}`);
+  assert(typeof block.approximate === "boolean", `China block approximate must be boolean: ${block.id}`);
+  validateSources(block.sources, `${block.id}:sources`);
+}
+
+for (const blockId of requiredChinaBlockIds) {
+  assert(chinaBlockIds.has(blockId), `Missing required China block: ${blockId}`);
+}
+
+assert(chinaControlTimeline.model === "china-block-control-timeline", "Unexpected China control timeline model");
+assert(Array.isArray(chinaControlTimeline.controllers) && chinaControlTimeline.controllers.length > 0, "China control timeline needs controllers");
+const controllerIds = new Set();
+
+for (const controller of chinaControlTimeline.controllers) {
+  assert(typeof controller.id === "string" && controller.id.length > 0, "Controller needs id");
+  assert(!controllerIds.has(controller.id), `Duplicate controller id: ${controller.id}`);
+  controllerIds.add(controller.id);
+  assert(/^#[0-9a-f]{6}$/i.test(controller.color), `Controller color must be #rrggbb: ${controller.id}`);
+}
+
+for (const controller of requiredControllers) {
+  assert(controllerIds.has(controller), `Missing required controller: ${controller}`);
+}
+
+assert(Array.isArray(chinaControlTimeline.records) && chinaControlTimeline.records.length > 0, "China control timeline needs records");
+
+for (const record of chinaControlTimeline.records) {
+  const recordId = `${record.blockId}:${record.startYear}-${record.endYear}`;
+  assert(chinaBlockIds.has(record.blockId), `Control record uses unknown blockId: ${recordId}`);
+  assert(Number.isInteger(record.startYear), `Control startYear must be an integer: ${recordId}`);
+  assert(Number.isInteger(record.endYear), `Control endYear must be an integer: ${recordId}`);
+  assert(record.startYear <= record.endYear, `Control record starts after it ends: ${recordId}`);
+  assert(controllerIds.has(record.controller), `Control record uses unknown controller: ${recordId}`);
+  assert(controlStatuses.has(record.status), `Unknown control status: ${recordId}`);
+  assert(confidenceValues.has(record.confidence), `Unknown control confidence: ${recordId}`);
+  validateSources(record.sources, `${recordId}:sources`);
+}
+
+for (const year of requiredChinaKeyYears) {
+  assert(chinaControlTimeline.keyYears.includes(year), `China control timeline missing key year: ${year}`);
+
+  for (const blockId of chinaBlockIds) {
+    const matches = chinaControlTimeline.records.filter(
+      (record) => record.blockId === blockId && record.startYear <= year && record.endYear >= year,
+    );
+    assert(matches.length === 1, `Expected exactly one control record for ${blockId} in ${year}, found ${matches.length}`);
+  }
+}
 
 console.log("Data validation OK");
