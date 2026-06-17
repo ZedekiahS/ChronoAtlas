@@ -47,6 +47,7 @@ const requiredControllers = new Set([
   "西晋",
 ]);
 const requiredChinaKeyYears = [190, 195, 200, 208, 220, 229, 234, 263, 265, 280];
+const requiredDeepDetailEventIds = new Set(["china-200-guandu", "china-208-red-cliffs"]);
 
 function assert(condition, message) {
   if (!condition) {
@@ -139,6 +140,19 @@ function validateSourceRefs(sourceRefs, refId, sourceIds) {
       assert(typeof ref.note === "string" && ref.note.length > 0, `sourceRef note must be string: ${itemId}`);
     }
   }
+}
+
+function validateOptionalTextList(items, listId) {
+  if (items === undefined) {
+    return false;
+  }
+
+  assert(Array.isArray(items) && items.length > 0, `Detail list must be a non-empty array: ${listId}`);
+  for (const [index, item] of items.entries()) {
+    assert(typeof item === "string" && item.length > 0, `Detail list item must be string: ${listId}:${index}`);
+  }
+
+  return true;
 }
 
 function validatePolygonGeometry(geometry, geometryId) {
@@ -298,12 +312,24 @@ for (const event of events) {
   if (event.sourceRefs) {
     validateSourceRefs(event.sourceRefs, `${event.id}:sourceRefs`, sourceIds);
   }
+
+  if (event.detail) {
+    assert(typeof event.detail === "object", `Event detail must be an object: ${event.id}`);
+    const detailFields = ["background", "process", "result", "impact", "sourceNotes", "uncertainty"];
+    const presentFields = detailFields.filter((field) => validateOptionalTextList(event.detail[field], `${event.id}:detail:${field}`));
+    assert(presentFields.length > 0, `Event detail needs at least one populated field: ${event.id}`);
+  }
 }
 
 for (const event of events) {
   for (const relatedId of event.relatedEvents) {
     assert(eventIds.has(relatedId), `Event uses unknown relatedEvent: ${event.id}:${relatedId}`);
   }
+}
+
+for (const eventId of requiredDeepDetailEventIds) {
+  const event = events.find((item) => item.id === eventId);
+  assert(event?.detail, `Missing required deep event detail: ${eventId}`);
 }
 
 for (const region of regions) {

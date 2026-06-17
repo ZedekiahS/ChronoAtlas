@@ -59,7 +59,19 @@ type HistoricalEvent = {
   confidence: "high" | "medium" | "low";
   sources: string[];
   sourceRefs?: SourceRef[];
+  detail?: EventDeepDetail;
 };
+
+type EventDeepDetail = {
+  background?: string[];
+  process?: string[];
+  result?: string[];
+  impact?: string[];
+  sourceNotes?: string[];
+  uncertainty?: string[];
+};
+
+type EventDetailTab = "overview" | "background" | "process" | "impact" | "sources";
 
 type SourceRef = {
   sourceId: string;
@@ -295,6 +307,17 @@ const threeKingdomsFilters: Array<{
   { id: "politics", label: "政治更替" },
 ];
 
+const eventDetailTabs: Array<{
+  id: EventDetailTab;
+  label: string;
+}> = [
+  { id: "overview", label: "概览" },
+  { id: "background", label: "背景" },
+  { id: "process", label: "经过" },
+  { id: "impact", label: "影响" },
+  { id: "sources", label: "史料" },
+];
+
 const yearMin = 190;
 const yearMax = 280;
 
@@ -347,6 +370,10 @@ function getRelationTypeLabel(type: string) {
   };
 
   return labels[type] ?? type;
+}
+
+function hasDetailItems(items?: string[]) {
+  return Array.isArray(items) && items.length > 0;
 }
 
 function getRelationColor(type: string) {
@@ -1101,6 +1128,7 @@ function App() {
   const [summaryRegion, setSummaryRegion] = useState<Region | null>("china");
   const [selectedId, setSelectedId] = useState("china-220-cao-pi-founds-wei");
   const [eventFilter, setEventFilter] = useState<ThreeKingdomsFilter>("all");
+  const [eventDetailTab, setEventDetailTab] = useState<EventDetailTab>("overview");
   const [selectedChinaBlockId, setSelectedChinaBlockId] = useState<string | null>(null);
   const [hoveredChinaBlockId, setHoveredChinaBlockId] = useState<string | null>(null);
   const [selectedPersonId, setSelectedPersonId] = useState<string | null>(null);
@@ -1177,6 +1205,7 @@ function App() {
     filteredRegionEvents[0] ??
     events.find((event) => event.id === selectedId) ??
     events[0];
+  const selectedEventDetail = selectedEvent.detail ?? null;
 
   const relatedEvents = selectedEvent.relatedEvents
     .map((id) => events.find((event) => event.id === id))
@@ -1216,6 +1245,10 @@ function App() {
       current && selectedEventPersonIds.includes(current) ? current : (selectedEventPersonIds[0] ?? null),
     );
   }, [selectedEvent.id, selectedEventPersonIds.join("|")]);
+
+  useEffect(() => {
+    setEventDetailTab("overview");
+  }, [selectedEvent.id]);
 
   useEffect(() => {
     if (page !== "china" || chinaMapMode !== "political" || !selectedChinaBlockId) {
@@ -1578,6 +1611,112 @@ function App() {
               <strong>{selectedEvent.confidence}</strong>
             </div>
           </div>
+
+          {selectedEventDetail && (
+            <section className="detail-section event-deep-detail">
+              <h3>
+                <BookOpen size={17} aria-hidden="true" />
+                事件详解
+              </h3>
+              <div className="event-detail-tabs" role="tablist" aria-label={`${selectedEvent.title}结构化详情`}>
+                {eventDetailTabs.map((tab) => (
+                  <button
+                    className={`event-detail-tab ${eventDetailTab === tab.id ? "selected" : ""}`}
+                    data-event-detail-tab={tab.id}
+                    key={tab.id}
+                    type="button"
+                    aria-selected={eventDetailTab === tab.id}
+                    role="tab"
+                    onClick={() => setEventDetailTab(tab.id)}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+              <div className="event-detail-panel" role="tabpanel">
+                {eventDetailTab === "overview" && (
+                  <div className="event-detail-grid">
+                    <article>
+                      <span>核心判断</span>
+                      <p>{selectedEvent.summary}</p>
+                    </article>
+                    {hasDetailItems(selectedEventDetail.result) && (
+                      <article>
+                        <span>结果</span>
+                        <ul>
+                          {selectedEventDetail.result!.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </article>
+                    )}
+                  </div>
+                )}
+
+                {eventDetailTab === "background" && (
+                  <ul className="event-detail-list">
+                    {selectedEventDetail.background?.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                )}
+
+                {eventDetailTab === "process" && (
+                  <ul className="event-detail-list">
+                    {selectedEventDetail.process?.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                )}
+
+                {eventDetailTab === "impact" && (
+                  <div className="event-detail-grid">
+                    {hasDetailItems(selectedEventDetail.result) && (
+                      <article>
+                        <span>直接结果</span>
+                        <ul>
+                          {selectedEventDetail.result!.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </article>
+                    )}
+                    {hasDetailItems(selectedEventDetail.impact) && (
+                      <article>
+                        <span>后续影响</span>
+                        <ul>
+                          {selectedEventDetail.impact!.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </article>
+                    )}
+                  </div>
+                )}
+
+                {eventDetailTab === "sources" && (
+                  <div className="event-detail-grid">
+                    {hasDetailItems(selectedEventDetail.sourceNotes) && (
+                      <article>
+                        <span>史料说明</span>
+                        <ul>
+                          {selectedEventDetail.sourceNotes!.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </article>
+                    )}
+                    {hasDetailItems(selectedEventDetail.uncertainty) && (
+                      <article>
+                        <span>不确定性</span>
+                        <ul>
+                          {selectedEventDetail.uncertainty!.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </article>
+                    )}
+                  </div>
+                )}
+              </div>
+            </section>
+          )}
 
           <section className="detail-section">
             <h3>
