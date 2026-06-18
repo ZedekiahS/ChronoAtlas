@@ -136,9 +136,10 @@ type PersonRelation = {
   sourceRefs: SourceRef[];
 };
 
-type Page = "world" | "china";
+type Page = "world" | "china" | "people";
 type ChinaMapMode = "political" | "terrain" | "three-d";
 type ThreeKingdomsFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "war" | "politics";
+type PersonIndexFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han";
 
 type RegionInfo = {
   id: Region;
@@ -334,6 +335,22 @@ const threeKingdomsFilters: Array<{
   { id: "politics", label: "政治更替" },
 ];
 
+const personIndexFilters: Array<{
+  id: PersonIndexFilter;
+  label: string;
+  terms: string[];
+}> = [
+  { id: "all", label: "全部人物", terms: [] },
+  { id: "cao-wei", label: "曹魏线", terms: ["曹操集团", "曹魏", "曹操", "曹丕", "司马"] },
+  { id: "shu-han", label: "蜀汉线", terms: ["刘备集团", "蜀汉", "刘备", "诸葛亮", "关羽", "张飞", "刘禅"] },
+  { id: "sun-wu", label: "孙吴线", terms: ["孙吴", "江东", "孙权", "周瑜", "鲁肃", "吕蒙", "陆逊"] },
+  {
+    id: "late-han",
+    label: "汉末群雄",
+    terms: ["东汉", "汉末", "袁绍", "袁术", "董卓", "吕布", "刘表", "刘璋", "张鲁", "公孙瓒", "黄巾"],
+  },
+];
+
 const eventDetailTabs: Array<{
   id: EventDetailTab;
   label: string;
@@ -436,6 +453,43 @@ function eventContainsAny(event: HistoricalEvent, terms: string[]) {
     .join(" ");
 
   return terms.some((term) => text.includes(term));
+}
+
+function getPersonSearchFields(person: HistoricalPerson) {
+  return [person.name, person.courtesyName, person.primaryPolity, ...person.roles, person.summary].filter(Boolean) as string[];
+}
+
+function personContainsAny(person: HistoricalPerson, terms: string[]) {
+  const text = getPersonSearchFields(person).join(" ");
+  return terms.some((term) => text.includes(term));
+}
+
+function getPersonSearchRank(person: HistoricalPerson, normalizedQuery: string) {
+  if (!normalizedQuery) {
+    return 0;
+  }
+
+  const fields = getPersonSearchFields(person).map((field) => field.toLowerCase());
+  return fields.reduce((best, field, index) => {
+    if (field === normalizedQuery) {
+      return Math.min(best, index);
+    }
+
+    if (field.includes(normalizedQuery)) {
+      return Math.min(best, index + 8);
+    }
+
+    return best;
+  }, Number.POSITIVE_INFINITY);
+}
+
+function matchesPersonIndexFilter(person: HistoricalPerson, filter: PersonIndexFilter) {
+  if (filter === "all") {
+    return true;
+  }
+
+  const filterConfig = personIndexFilters.find((item) => item.id === filter);
+  return filterConfig ? personContainsAny(person, filterConfig.terms) : true;
 }
 
 function matchesThreeKingdomsFilter(event: HistoricalEvent, filter: ThreeKingdomsFilter) {
@@ -1189,6 +1243,7 @@ function App() {
   const [selectedChinaBlockId, setSelectedChinaBlockId] = useState<string | null>(null);
   const [hoveredChinaBlockId, setHoveredChinaBlockId] = useState<string | null>(null);
   const [selectedPersonId, setSelectedPersonId] = useState<string | null>(null);
+  const [personIndexFilter, setPersonIndexFilter] = useState<PersonIndexFilter>("all");
 
   const normalizedQuery = query.trim().toLowerCase();
 
@@ -1301,30 +1356,54 @@ function App() {
       })
     : [];
   const selectedEventSourceRefs = selectedEvent.sourceRefs ?? [];
+  const personLifeEventCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    chinaPersonLifeEvents.forEach((lifeEvent) => counts.set(lifeEvent.personId, (counts.get(lifeEvent.personId) ?? 0) + 1));
+    return counts;
+  }, []);
+  const personRelationCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    chinaPersonRelations.forEach((relation) => {
+      counts.set(relation.sourcePersonId, (counts.get(relation.sourcePersonId) ?? 0) + 1);
+      counts.set(relation.targetPersonId, (counts.get(relation.targetPersonId) ?? 0) + 1);
+    });
+    return counts;
+  }, []);
+  const personEventCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    events.forEach((event) => {
+      event.personIds?.forEach((personId) => counts.set(personId, (counts.get(personId) ?? 0) + 1));
+    });
+    return counts;
+  }, []);
+  const personIndexCounts = Object.fromEntries(
+    personIndexFilters.map((filter) => [
+      filter.id,
+      chinaPersons.filter((person) => matchesPersonIndexFilter(person, filter.id)).length,
+    ]),
+  ) as Record<PersonIndexFilter, number>;
+  const visiblePersonIndex = useMemo(() => {
+    return chinaPersons
+      .map((person) => ({
+        person,
+        rank: getPersonSearchRank(person, normalizedQuery),
+      }))
+      .filter(({ person, rank }) => matchesPersonIndexFilter(person, personIndexFilter) && (!normalizedQuery || Number.isFinite(rank)))
+      .sort(
+        (left, right) =>
+          left.rank - right.rank ||
+          (personEventCounts.get(right.person.id) ?? 0) - (personEventCounts.get(left.person.id) ?? 0) ||
+          left.person.name.localeCompare(right.person.name, "zh-Hans-CN"),
+      )
+      .map(({ person }) => person);
+  }, [normalizedQuery, personEventCounts, personIndexFilter]);
   const personSearchResults = useMemo(() => {
     if (!normalizedQuery) {
       return [];
     }
 
     return chinaPersons
-      .map((person) => {
-        const searchableFields = [person.name, person.courtesyName, person.primaryPolity, ...person.roles, person.summary]
-          .filter(Boolean)
-          .map((field) => field!.toLowerCase());
-        const rank = searchableFields.reduce((best, field, index) => {
-          if (field === normalizedQuery) {
-            return Math.min(best, index);
-          }
-
-          if (field.includes(normalizedQuery)) {
-            return Math.min(best, index + 8);
-          }
-
-          return best;
-        }, Number.POSITIVE_INFINITY);
-
-        return { person, rank };
-      })
+      .map((person) => ({ person, rank: getPersonSearchRank(person, normalizedQuery) }))
       .filter((item) => Number.isFinite(item.rank))
       .sort((left, right) => left.rank - right.rank || left.person.name.localeCompare(right.person.name, "zh-Hans-CN"))
       .map((item) => item.person)
@@ -1337,6 +1416,21 @@ function App() {
       current && selectedEventPersonIds.includes(current) ? current : (selectedEventPersonIds[0] ?? null),
     );
   }, [selectedEvent.id, selectedEventPersonIds.join("|")]);
+
+  useEffect(() => {
+    if (page !== "people") {
+      return;
+    }
+
+    if (!visiblePersonIndex.length) {
+      setSelectedPersonId(null);
+      return;
+    }
+
+    if (!selectedPersonId || !visiblePersonIndex.some((person) => person.id === selectedPersonId)) {
+      setSelectedPersonId(visiblePersonIndex[0].id);
+    }
+  }, [page, selectedPersonId, visiblePersonIndex]);
 
   useEffect(() => {
     setEventDetailTab("overview");
@@ -1384,6 +1478,16 @@ function App() {
     setHoveredChinaBlockId(null);
   }
 
+  function openPeopleIndex() {
+    setPage("people");
+    setSelectedRegion("china");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+    setSelectedPersonId((current) => current ?? "cao-cao");
+  }
+
   function changeChinaMapMode(mode: ChinaMapMode) {
     setChinaMapMode(mode);
     setSelectedChinaBlockId(null);
@@ -1413,16 +1517,33 @@ function App() {
         <header className="topbar">
           <div>
             <p className="kicker">ChronoAtlas</p>
-            <h1>{page === "china" ? "中国区域：三国格局" : "拖动时间，观察世界局势的同一瞬间"}</h1>
+            <h1>
+              {page === "people"
+                ? "人物索引：三国人物关系与生平"
+                : page === "china"
+                  ? "中国区域：三国格局"
+                  : "拖动时间，观察世界局势的同一瞬间"}
+            </h1>
           </div>
-          <label className="search-box">
-            <Search size={18} aria-hidden="true" />
-            <input
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="搜索人物、政权、事件"
-            />
-          </label>
+          <div className="topbar-actions">
+            <button
+              className={`topbar-action ${page === "people" ? "active" : ""}`}
+              type="button"
+              aria-pressed={page === "people"}
+              onClick={openPeopleIndex}
+            >
+              <UsersRound size={17} aria-hidden="true" />
+              <span>人物索引</span>
+            </button>
+            <label className="search-box">
+              <Search size={18} aria-hidden="true" />
+              <input
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder={page === "people" ? "搜索人物、字号、势力" : "搜索人物、政权、事件"}
+              />
+            </label>
+          </div>
         </header>
 
         {page === "china" && (
@@ -1450,7 +1571,89 @@ function App() {
           </div>
         )}
 
-        <section className="map-stage">
+        {page === "people" && (
+          <div className="region-toolbar">
+            <button className="back-button" type="button" onClick={returnToWorld}>
+              <ArrowLeft size={18} />
+              世界总览
+            </button>
+            <button className="back-button" type="button" onClick={() => selectRegion("china")}>
+              <MapPinned size={18} />
+              中国地图
+            </button>
+            <span>{visiblePersonIndex.length}/{chinaPersons.length} 个人物</span>
+          </div>
+        )}
+
+        {page === "people" ? (
+          <section className="person-index-stage" aria-label="人物索引">
+            <div className="person-index-summary">
+              <div>
+                <p className="kicker">人物资料库</p>
+                <h2>三国人物索引</h2>
+              </div>
+              <div className="person-index-metrics">
+                <div>
+                  <span>当前结果</span>
+                  <strong>{visiblePersonIndex.length}</strong>
+                </div>
+                <div>
+                  <span>资料人物</span>
+                  <strong>{chinaPersons.length}</strong>
+                </div>
+                <div>
+                  <span>关系记录</span>
+                  <strong>{chinaPersonRelations.length}</strong>
+                </div>
+              </div>
+            </div>
+
+            <div className="person-filter-bar" role="group" aria-label="人物分组筛选">
+              {personIndexFilters.map((filter) => (
+                <button
+                  className={`person-filter-button ${personIndexFilter === filter.id ? "selected" : ""}`}
+                  key={filter.id}
+                  type="button"
+                  aria-pressed={personIndexFilter === filter.id}
+                  onClick={() => setPersonIndexFilter(filter.id)}
+                >
+                  <span>{filter.label}</span>
+                  <small>{personIndexCounts[filter.id]}</small>
+                </button>
+              ))}
+            </div>
+
+            <div className="person-index-grid">
+              {visiblePersonIndex.length ? (
+                visiblePersonIndex.map((person) => (
+                  <button
+                    className={`person-index-card ${activeSelectedPersonId === person.id ? "selected" : ""}`}
+                    data-person-id={person.id}
+                    key={person.id}
+                    type="button"
+                    onClick={() => selectPerson(person.id)}
+                  >
+                    <span className="person-index-name">
+                      <strong>{person.name}</strong>
+                      {person.courtesyName && <small>字{person.courtesyName}</small>}
+                    </span>
+                    <span className="person-index-life">{person.life ?? "生卒未详"}</span>
+                    <span className="person-index-polity">{person.primaryPolity}</span>
+                    <span className="person-index-summary-text">{person.summary}</span>
+                    <span className="person-index-card-stats">
+                      <span>{personLifeEventCounts.get(person.id) ?? 0} 生平</span>
+                      <span>{personRelationCounts.get(person.id) ?? 0} 关系</span>
+                      <span>{personEventCounts.get(person.id) ?? 0} 事件</span>
+                    </span>
+                  </button>
+                ))
+              ) : (
+                <div className="empty-state">暂无匹配人物</div>
+              )}
+            </div>
+          </section>
+        ) : (
+          <section className="map-stage">
           {page === "world" ? (
             <WorldMap
               activeRegion={selectedRegion}
@@ -1549,9 +1752,11 @@ function App() {
               </div>
             </aside>
           )}
-        </section>
+          </section>
+        )}
 
-        <section className="timeline-dock" aria-label="时间线">
+        {page !== "people" && (
+          <section className="timeline-dock" aria-label="时间线">
           <button
             className="icon-button"
             type="button"
@@ -1593,24 +1798,32 @@ function App() {
           >
             <ChevronRight size={20} />
           </button>
-        </section>
+          </section>
+        )}
       </section>
 
       <aside className="detail-panel" aria-label="区域与事件详情">
         <div className="region-detail">
-          <div className="detail-eyebrow" style={{ color: page === "china" ? "#b94f32" : selectedRegionInfo.accent }}>
-            <Info size={18} aria-hidden="true" />
-            <span>{page === "china" ? "中国" : selectedRegionInfo.label}</span>
+          <div
+            className="detail-eyebrow"
+            style={{ color: page === "china" || page === "people" ? "#b94f32" : selectedRegionInfo.accent }}
+          >
+            {page === "people" ? <UsersRound size={18} aria-hidden="true" /> : <Info size={18} aria-hidden="true" />}
+            <span>{page === "people" ? "人物档案" : page === "china" ? "中国" : selectedRegionInfo.label}</span>
           </div>
           <h2>
-            {page === "china" && chinaMapMode === "political"
+            {page === "people"
+              ? (selectedPerson?.name ?? "人物索引")
+              : page === "china" && chinaMapMode === "political"
               ? "控制区块 / 势力范围近似"
               : page === "china"
                 ? (chinaMapLayer?.title ?? chinaRegionEra.title)
                 : selectedRegionEra.title}
           </h2>
           <p className="detail-summary">
-            {page === "china" && chinaMapMode === "political"
+            {page === "people"
+              ? (selectedPerson?.summary ?? "暂无选中人物")
+              : page === "china" && chinaMapMode === "political"
               ? `${year} 年按州与重点郡级区块显示控制者。区块颜色表示当前控制权，争夺区使用斜线样式；该层是势力范围近似，不是精确国界。`
               : page === "china"
                 ? (chinaMapLayer?.summary ?? chinaRegionEra.summary)
@@ -1618,7 +1831,152 @@ function App() {
           </p>
         </div>
 
-        {page === "china" && chinaMapMode === "political" && (
+        {page === "people" && (
+          <section className="detail-section person-detail-section standalone-person-detail">
+            {selectedPerson ? (
+              <article className="person-card">
+                <div className="person-card-header">
+                  <div>
+                    <span>人物档案</span>
+                    <h4>
+                      {selectedPerson.name}
+                      {selectedPerson.courtesyName ? ` · 字${selectedPerson.courtesyName}` : ""}
+                    </h4>
+                  </div>
+                  <strong>{selectedPerson.life ?? "生卒未详"}</strong>
+                </div>
+                <div className="person-meta">
+                  <span>{selectedPerson.primaryPolity}</span>
+                  {selectedPerson.roles.map((role) => (
+                    <span key={role}>{role}</span>
+                  ))}
+                </div>
+                <div className="person-stats">
+                  <div>
+                    <span>生平节点</span>
+                    <strong>{selectedPersonLifeEvents.length}</strong>
+                  </div>
+                  <div>
+                    <span>人物关系</span>
+                    <strong>{selectedPersonRelations.length}</strong>
+                  </div>
+                  <div>
+                    <span>参与事件</span>
+                    <strong>{selectedPersonEvents.length}</strong>
+                  </div>
+                </div>
+
+                <div className="person-event-heading">
+                  <CalendarDays size={16} aria-hidden="true" />
+                  <span>生平年表</span>
+                  <strong>{selectedPersonLifeEvents.length}</strong>
+                </div>
+                <div className="person-life-timeline">
+                  {selectedPersonLifeEvents.length ? (
+                    selectedPersonLifeEvents.map((lifeEvent) => {
+                      const linkedEvent = lifeEvent.relatedEventIds
+                        .map((eventId) => events.find((event) => event.id === eventId))
+                        .find((event): event is HistoricalEvent => Boolean(event));
+
+                      return (
+                        <button
+                          className={`person-life-event ${linkedEvent?.id === selectedEvent.id ? "selected" : ""}`}
+                          data-person-life-event-id={lifeEvent.id}
+                          key={lifeEvent.id}
+                          type="button"
+                          onClick={() => {
+                            if (linkedEvent) {
+                              selectHistoricalEvent(linkedEvent);
+                            }
+                          }}
+                        >
+                          <div className="life-event-year">
+                            <span>{lifeEvent.displayYear}</span>
+                            <small>{getLifeEventTypeLabel(lifeEvent.type)}</small>
+                          </div>
+                          <div className="life-event-copy">
+                            <strong>{lifeEvent.title}</strong>
+                            <p>{lifeEvent.summary}</p>
+                          </div>
+                        </button>
+                      );
+                    })
+                  ) : (
+                    <p>待补充生平年表</p>
+                  )}
+                </div>
+
+                <div className="relation-heading">
+                  <Network size={16} aria-hidden="true" />
+                  <span>人物关系</span>
+                </div>
+                <div className="relationship-list">
+                  {selectedPersonRelations.length ? (
+                    selectedPersonRelations.map((relation) => {
+                      const isSource = relation.sourcePersonId === selectedPerson.id;
+                      const counterpartId = isSource ? relation.targetPersonId : relation.sourcePersonId;
+                      const counterpart = chinaPersonById.get(counterpartId);
+
+                      return (
+                        <button
+                          className="relationship-item"
+                          data-person-relation-id={relation.id}
+                          key={relation.id}
+                          type="button"
+                          onClick={() => selectPerson(counterpartId)}
+                        >
+                          <span className="relationship-title">
+                            <span>{getRelationTypeLabel(relation.type)}</span>
+                            <strong>{counterpart?.name ?? counterpartId}</strong>
+                          </span>
+                          <small>{formatYearSpan(relation.startYear, relation.endYear)}</small>
+                          <span className="relationship-summary">{relation.summary}</span>
+                        </button>
+                      );
+                    })
+                  ) : (
+                    <p>待补充人物关系</p>
+                  )}
+                </div>
+
+                <div className="person-event-heading">
+                  <CalendarDays size={16} aria-hidden="true" />
+                  <span>关联大事件</span>
+                  <strong>{selectedPersonEvents.length}</strong>
+                </div>
+                <div className="person-event-timeline">
+                  {selectedPersonEvents.length ? (
+                    selectedPersonEvents.map((event) => (
+                      <button
+                        className={`person-event-item ${event.id === selectedEvent.id ? "selected" : ""}`}
+                        data-person-event-id={event.id}
+                        key={event.id}
+                        type="button"
+                        onClick={() => selectHistoricalEvent(event)}
+                      >
+                        <span>{formatYearRange(event)}</span>
+                        <strong>{event.title}</strong>
+                        <small>{event.locationName ?? "地点待补"}</small>
+                      </button>
+                    ))
+                  ) : (
+                    <p>待补充人物事件</p>
+                  )}
+                </div>
+
+                <div className="source-list compact">
+                  {selectedPerson.sourceRefs.map((ref) => (
+                    <span key={`${selectedPerson.id}-${ref.sourceId}-${ref.locator ?? ""}`}>{formatSourceRef(ref)}</span>
+                  ))}
+                </div>
+              </article>
+            ) : (
+              <div className="empty-state">暂无匹配人物</div>
+            )}
+          </section>
+        )}
+
+        {page !== "people" && page === "china" && chinaMapMode === "political" && (
           <section className="event-list">
             <h3>控制区块</h3>
             <div className="chips block-chip-list">
@@ -1641,7 +1999,8 @@ function App() {
           </section>
         )}
 
-        <section className="event-list">
+        {page !== "people" && (
+          <section className="event-list">
           <div className="event-list-heading">
             <h3>区域事件</h3>
             {selectedRegion === "china" && (
@@ -1685,7 +2044,8 @@ function App() {
               <div className="empty-state">当前筛选下暂无事件</div>
             )}
           </div>
-        </section>
+          </section>
+        )}
 
         {page === "china" && normalizedQuery && (
           <section className="event-list person-search-panel">
@@ -1714,7 +2074,8 @@ function App() {
           </section>
         )}
 
-        <section className="event-detail">
+        {page !== "people" && (
+          <section className="event-detail">
           <div className="detail-eyebrow">
             <CircleDot size={18} aria-hidden="true" />
             <span>{categoryLabels[selectedEvent.category]}</span>
@@ -2141,7 +2502,8 @@ function App() {
               )}
             </div>
           </section>
-        </section>
+          </section>
+        )}
       </aside>
     </main>
   );
