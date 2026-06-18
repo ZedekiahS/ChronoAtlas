@@ -219,7 +219,7 @@
     "life": "155-220",
     "primaryPolity": "曹操集团 / 曹魏",
     "roles": ["政治家", "军事统帅", "魏王"],
-    "summary": "迎汉献帝至许，逐步统一北方，奠定曹魏政权基础，是三国前期最重要的政治军事人物。",
+    "summary": "从讨董、兖州危机中起势，迎汉献帝至许后掌握朝廷名义，击败吕布、袁绍并统一北方，晚年进爵魏公、魏王，奠定曹魏政权基础。",
     "sourceRefs": [
       { "sourceId": "sanguozhi-wei-wudi", "locator": "武帝纪" },
       { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
@@ -310,7 +310,7 @@
     "life": "161-223",
     "primaryPolity": "蜀汉",
     "roles": ["皇帝", "军事统帅", "汉中王"],
-    "summary": "以汉室宗亲身份起兵，辗转北方、荆州、益州，221 年称帝建立蜀汉。",
+    "summary": "以汉室宗亲身份起兵，早年辗转徐州、许都、荆州，赤壁后取得立足空间，入主益州并夺汉中，221 年称帝建立蜀汉，夷陵败后托孤而终。",
     "sourceRefs": [
       { "sourceId": "sanguozhi-shu-xianzhu", "locator": "先主传" },
       { "sourceId": "zizhi-tongjian-69", "locator": "章武元年" }
@@ -439,7 +439,7 @@
     "life": "182-252",
     "primaryPolity": "孙吴",
     "roles": ["皇帝", "吴大帝", "江东统治者"],
-    "summary": "继承江东基业，联合刘备抵抗曹操，229 年称帝建立孙吴。",
+    "summary": "孙策死后继承江东基业，依托江东士族与周瑜、鲁肃等臣僚稳固统治；赤壁联合刘备抗曹，后取荆州、守江淮，229 年称帝建立孙吴。",
     "sourceRefs": [
       { "sourceId": "sanguozhi-wu-wuzhu", "locator": "吴主传" },
       { "sourceId": "zizhi-tongjian-69", "locator": "黄龙元年" }

@@ -78,6 +78,33 @@
     ]
   },
   {
+    "id": "cao-cao-liu-bei-ally-to-rival",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "liu-bei",
+    "type": "ally-rival",
+    "startYear": 198,
+    "endYear": 220,
+    "summary": "刘备曾与曹操协力攻吕布，也曾短暂依附曹操；此后双方围绕徐州、荆州、益州和汉中长期对抗。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安三年至二十四年" },
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "先主传徐州、荆州、汉中相关记载" }
+    ]
+  },
+  {
+    "id": "cao-cao-sun-quan-rivalry",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "sun-quan",
+    "type": "rival",
+    "startYear": 208,
+    "endYear": 220,
+    "summary": "赤壁之后，曹操集团与孙权集团长期围绕江淮、荆州与长江防线竞争，南北对峙格局趋于稳定。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安十三年以后南方战事" },
+      { "sourceId": "sanguozhi-wu-wuzhu", "locator": "吴主传赤壁至合肥相关记载" },
+      { "sourceId": "zizhi-tongjian-65", "locator": "建安十三年" }
+    ]
+  },
+  {
     "id": "liu-bei-zhuge-liang-advisor",
     "sourcePersonId": "liu-bei",
     "targetPersonId": "zhuge-liang",

@@ -648,6 +648,51 @@
     ]
   },
   {
+    "id": "cao-cao-190-coalition",
+    "personId": "cao-cao",
+    "year": 190,
+    "displayYear": "190",
+    "type": "campaign",
+    "title": "参加关东讨董",
+    "summary": "曹操参与关东诸军讨董，虽兵力不大，却在汉末群雄政治舞台上开始形成独立军事声望。",
+    "relatedEventIds": ["china-190-coalition-against-dong-zhuo"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "初平元年" },
+      { "sourceId": "zizhi-tongjian-59", "locator": "初平元年" }
+    ]
+  },
+  {
+    "id": "cao-cao-194-yanzhou-crisis",
+    "personId": "cao-cao",
+    "year": 194,
+    "displayYear": "194-195",
+    "type": "campaign",
+    "title": "兖州根据地危机",
+    "summary": "吕布、陈宫等袭取兖州多地，曹操一度只保有少数城邑，早期根据地几近崩溃。",
+    "relatedEventIds": ["china-194-lu-bu-seizes-yan"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "兴平元年至二年" },
+      { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传" }
+    ]
+  },
+  {
+    "id": "cao-cao-199-xiapi",
+    "personId": "cao-cao",
+    "year": 199,
+    "displayYear": "199",
+    "type": "campaign",
+    "title": "下邳灭吕布",
+    "summary": "曹操围攻下邳并处死吕布、陈宫，清除官渡前东南方向的重要威胁。",
+    "relatedEventIds": ["china-199-lu-bu-defeated"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安三年至四年" },
+      { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传" }
+    ]
+  },
+  {
     "id": "cao-cao-200-guandu",
     "personId": "cao-cao",
     "year": 200,
@@ -663,6 +708,21 @@
     ]
   },
   {
+    "id": "cao-cao-204-hebei",
+    "personId": "cao-cao",
+    "year": 204,
+    "displayYear": "204-207",
+    "type": "campaign",
+    "title": "平定袁氏河北余部",
+    "summary": "官渡之后，曹操继续北攻袁谭、袁尚等袁氏残余，并向乌桓方向推进，北方统一格局逐渐完成。",
+    "relatedEventIds": ["china-200-guandu"],
+    "confidence": "medium",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安九年至十二年" },
+      { "sourceId": "zizhi-tongjian-63", "locator": "河北战事延续" }
+    ]
+  },
+  {
     "id": "cao-cao-208-red-cliffs",
     "personId": "cao-cao",
     "year": 208,
@@ -675,6 +735,60 @@
     "sourceRefs": [
       { "sourceId": "sanguozhi-wei-wudi", "locator": "建安十三年" },
       { "sourceId": "zizhi-tongjian-65", "locator": "建安十三年" }
+    ]
+  },
+  {
+    "id": "cao-cao-213-duke-wei",
+    "personId": "cao-cao",
+    "year": 213,
+    "displayYear": "213",
+    "type": "office",
+    "title": "进爵魏公",
+    "summary": "曹操受封魏公，建立魏国封建架构，曹氏政权从汉臣集团进一步走向准王朝形态。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-wei-wudi", "locator": "建安十八年" }]
+  },
+  {
+    "id": "cao-cao-215-hanzhong",
+    "personId": "cao-cao",
+    "year": 215,
+    "displayYear": "215",
+    "type": "campaign",
+    "title": "取汉中，张鲁归降",
+    "summary": "曹操西征汉中，张鲁归降，汉中一度纳入曹操控制，也让曹刘争夺益州北部门户的矛盾激化。",
+    "relatedEventIds": ["china-215-cao-cao-takes-hanzhong"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安二十年" },
+      { "sourceId": "sanguozhi-wei-zhang-lu", "locator": "张鲁传" }
+    ]
+  },
+  {
+    "id": "cao-cao-216-king-wei",
+    "personId": "cao-cao",
+    "year": 216,
+    "displayYear": "216",
+    "type": "office",
+    "title": "进爵魏王",
+    "summary": "曹操由魏公进爵魏王，曹氏政权制度化程度进一步提高，为曹丕代汉奠定政治结构。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-wei-wudi", "locator": "建安二十一年" }]
+  },
+  {
+    "id": "cao-cao-219-hanzhong-retreat",
+    "personId": "cao-cao",
+    "year": 219,
+    "displayYear": "219",
+    "type": "campaign",
+    "title": "汉中退兵与荆州压力",
+    "summary": "刘备夺取汉中后称汉中王，关羽又在荆州北伐襄樊，曹操集团同时承受西线和南线压力。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安二十四年" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
     ]
   },
   {
@@ -966,6 +1080,66 @@
     "sourceRefs": [{ "sourceId": "sanguozhi-shu-xianzhu", "locator": "先主传" }]
   },
   {
+    "id": "liu-bei-184-yellow-turban",
+    "personId": "liu-bei",
+    "year": 184,
+    "displayYear": "184",
+    "type": "campaign",
+    "title": "起兵参与黄巾平乱",
+    "summary": "黄巾起义爆发后，刘备在涿郡一带聚合关羽、张飞等人投入平乱，开始进入汉末军事政治舞台。",
+    "relatedEventIds": ["china-184-yellow-turban-rebellion"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "先主早年从讨黄巾" },
+      { "sourceId": "zizhi-tongjian-58", "locator": "中平元年" }
+    ]
+  },
+  {
+    "id": "liu-bei-194-xuzhou",
+    "personId": "liu-bei",
+    "year": 194,
+    "displayYear": "194-196",
+    "type": "turning-point",
+    "title": "入徐州并接掌州事",
+    "summary": "陶谦迎刘备入徐州，陶谦死后刘备一度接掌徐州，这是他第一次拥有较完整的州级政治基础。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "陶谦迎先主入徐州" },
+      { "sourceId": "zizhi-tongjian-59", "locator": "兴平元年至建安元年" }
+    ]
+  },
+  {
+    "id": "liu-bei-199-xiapi",
+    "personId": "liu-bei",
+    "year": 199,
+    "displayYear": "199",
+    "type": "campaign",
+    "title": "协曹攻吕布后失徐州基础",
+    "summary": "刘备与曹操共同击败吕布，但徐州格局很快转向曹操主导，刘备再次进入流动依附和再起阶段。",
+    "relatedEventIds": ["china-199-lu-bu-defeated"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "建安三年至四年" },
+      { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传下邳败亡" }
+    ]
+  },
+  {
+    "id": "liu-bei-201-jingzhou",
+    "personId": "liu-bei",
+    "year": 201,
+    "displayYear": "201-207",
+    "type": "service",
+    "title": "依附刘表，屯驻荆州北部",
+    "summary": "官渡后刘备转入荆州，依附刘表并屯驻新野等地，为后来联吴抗曹和取荆益二州留下空间。",
+    "relatedEventIds": ["china-207-longzhong-plan"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "依刘表居新野" },
+      { "sourceId": "zizhi-tongjian-65", "locator": "建安十三年前荆州形势" }
+    ]
+  },
+  {
     "id": "liu-bei-207-longzhong",
     "personId": "liu-bei",
     "year": 207,
@@ -1011,6 +1185,21 @@
     ]
   },
   {
+    "id": "liu-bei-219-hanzhong-king",
+    "personId": "liu-bei",
+    "year": 219,
+    "displayYear": "219",
+    "type": "politics",
+    "title": "夺汉中后称汉中王",
+    "summary": "汉中战事获胜后，刘备称汉中王，蜀汉建国前的政治形态基本成形。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "建安二十四年称汉中王" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
+    ]
+  },
+  {
     "id": "liu-bei-221-emperor",
     "personId": "liu-bei",
     "year": 221,
@@ -1023,6 +1212,21 @@
     "sourceRefs": [
       { "sourceId": "sanguozhi-shu-xianzhu", "locator": "章武元年" },
       { "sourceId": "zizhi-tongjian-69", "locator": "章武元年" }
+    ]
+  },
+  {
+    "id": "liu-bei-222-yiling",
+    "personId": "liu-bei",
+    "year": 222,
+    "displayYear": "222",
+    "type": "campaign",
+    "title": "夷陵败退",
+    "summary": "刘备东征孙吴以争夺荆州旧地，被陆逊在夷陵一线击败，蜀汉外向扩张能力受到沉重打击。",
+    "relatedEventIds": ["china-222-yiling"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "章武二年夷陵败绩" },
+      { "sourceId": "zizhi-tongjian-70", "locator": "黄武元年 / 章武二年" }
     ]
   },
   {
@@ -1245,6 +1449,18 @@
     "sourceRefs": [{ "sourceId": "sanguozhi-wu-wuzhu", "locator": "吴主传" }]
   },
   {
+    "id": "sun-quan-200-succeeds-jiangdong",
+    "personId": "sun-quan",
+    "year": 200,
+    "displayYear": "200",
+    "type": "turning-point",
+    "title": "继承江东基业",
+    "summary": "孙策遇刺后，孙权继承江东，依托张昭、周瑜等旧臣稳定内部，完成从继承者到统治者的过渡。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-wu-wuzhu", "locator": "建安五年孙策卒后" }]
+  },
+  {
     "id": "sun-quan-208-red-cliffs",
     "personId": "sun-quan",
     "year": 208,
@@ -1257,6 +1473,52 @@
     "sourceRefs": [
       { "sourceId": "sanguozhi-wu-wuzhu", "locator": "建安十三年" },
       { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "周瑜、鲁肃传赤壁相关记载" }
+    ]
+  },
+  {
+    "id": "sun-quan-215-hefei",
+    "personId": "sun-quan",
+    "year": 215,
+    "displayYear": "215",
+    "type": "campaign",
+    "title": "合肥受挫",
+    "summary": "孙权北攻合肥未能突破曹魏江淮防线，显示江东虽能守长江，却很难稳定向淮北推进。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-wuzhu", "locator": "建安二十年合肥相关记载" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安二十年" }
+    ]
+  },
+  {
+    "id": "sun-quan-219-jingzhou",
+    "personId": "sun-quan",
+    "year": 219,
+    "displayYear": "219",
+    "type": "campaign",
+    "title": "袭取荆州，孙刘关系破裂",
+    "summary": "孙权命吕蒙等袭取关羽后方，夺回荆州要地，赤壁以来的孙刘联盟由合作转为公开对抗。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-wuzhu", "locator": "建安二十四年" },
+      { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "吕蒙传荆州相关记载" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
+    ]
+  },
+  {
+    "id": "sun-quan-222-king-wu",
+    "personId": "sun-quan",
+    "year": 222,
+    "displayYear": "222",
+    "type": "politics",
+    "title": "受封吴王并稳住荆州",
+    "summary": "夷陵战后孙权在吴、蜀、魏之间调整外交位置，一面接受魏封吴王，一面巩固荆州与江东防线。",
+    "relatedEventIds": ["china-222-yiling"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-wuzhu", "locator": "黄武元年" },
+      { "sourceId": "zizhi-tongjian-70", "locator": "黄武元年" }
     ]
   },
   {
