@@ -168,6 +168,10 @@ function validateSourceRefs(sourceRefs, refId, sourceIds) {
     if ("note" in ref) {
       assert(typeof ref.note === "string" && ref.note.length > 0, `sourceRef note must be string: ${itemId}`);
     }
+
+    if ("quote" in ref) {
+      assert(typeof ref.quote === "string" && ref.quote.length > 0, `sourceRef quote must be string: ${itemId}`);
+    }
   }
 }
 

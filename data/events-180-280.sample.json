@@ -336,12 +336,36 @@
       "《资治通鉴》卷六十三"
     ],
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安五年" },
-      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍传官渡相关记载" },
-      { "sourceId": "sanguozhi-wei-zhang-he", "locator": "张郃传官渡相关记载" },
-      { "sourceId": "sanguozhi-wei-xun-yu-jia-xu", "locator": "荀彧、荀攸传官渡相关记载" },
-      { "sourceId": "sanguozhi-shu-guan-yu", "locator": "关羽传白马斩颜良" },
-      { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安五年",
+        "quote": "袁绍运谷车数千乘至，公用荀攸计，遣徐晃、史涣邀击，大破之，尽烧其车。公乃留曹洪守，自将步骑五千人夜往，会明至。"
+      },
+      {
+        "sourceId": "sanguozhi-wei-yuan-shao",
+        "locator": "袁绍传官渡相关记载",
+        "quote": "沮授又曰：“北兵数衆而果劲不及南，南谷虚少而货财不及北；南利在于急战，北利在于缓搏。宜徐持乆，旷以日月。”绍不从。"
+      },
+      {
+        "sourceId": "sanguozhi-wei-zhang-he",
+        "locator": "张郃传官渡相关记载",
+        "quote": "合说绍曰：“曹公兵精，往必破琼等；琼等破，则将军事去矣，宜急引兵救之。”"
+      },
+      {
+        "sourceId": "sanguozhi-wei-xun-yu-jia-xu",
+        "locator": "荀彧、荀攸传官渡相关记载",
+        "quote": "太祖保官渡，绍围之。太祖军粮方尽，书与彧，议欲还许以引绍。彧曰：“今军食虽少，未若楚、汉在荥阳、成皐间也。”"
+      },
+      {
+        "sourceId": "sanguozhi-shu-guan-yu",
+        "locator": "关羽传白马斩颜良",
+        "quote": "羽望见良麾盖，策马刺良于万衆之中，斩其首还，绍诸将莫能当者，遂解白马围。"
+      },
+      {
+        "sourceId": "zizhi-tongjian-63",
+        "locator": "建安五年",
+        "quote": "冬，十月，绍复遣车运谷，使其将淳于琼等将兵万馀人送之，宿绍营北四十里。"
+      }
     ],
     "detail": {
       "background": [
@@ -421,12 +445,28 @@
       "《资治通鉴》卷六十五"
     ],
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安十三年" },
-      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "建安十三年" },
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安十三年",
+        "quote": "公至赤壁，与备战，不利。于是大疫，吏士多死者，乃引军还。备遂有荆州、江南诸郡。"
+      },
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "建安十三年",
+        "quote": "与曹公战于赤壁，大破之，焚其舟船。先主与吴军水陆并进，追到南郡。"
+      },
       { "sourceId": "sanguozhi-shu-zhuge-liang", "locator": "赤壁前后刘备战略相关记载" },
       { "sourceId": "sanguozhi-wei-xun-yu-jia-xu", "locator": "贾诩传南征前后相关记载" },
-      { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "周瑜、鲁肃传赤壁相关记载" },
-      { "sourceId": "zizhi-tongjian-65", "locator": "建安十三年" }
+      {
+        "sourceId": "sanguozhi-wu-zhou-yu",
+        "locator": "周瑜、鲁肃传赤壁相关记载",
+        "quote": "权遂遣瑜及程普等与备并力逆曹公，遇于赤壁。时曹公军衆已有疾病，初一交战，公军败退，引次江北。"
+      },
+      {
+        "sourceId": "zizhi-tongjian-65",
+        "locator": "建安十三年",
+        "quote": "遂以周瑜、程普为左右督，将兵与备并力逆操；以鲁肃为赞军校尉，助画方略。"
+      }
     ],
     "detail": {
       "background": [
@@ -630,9 +670,17 @@
     "confidence": "high",
     "sources": ["《三国志·魏书·文帝纪》", "《后汉书·孝献帝纪》", "《资治通鉴》卷六十九"],
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wei-wendi", "locator": "黄初元年" },
+      {
+        "sourceId": "sanguozhi-wei-wendi",
+        "locator": "黄初元年",
+        "quote": "今其追踵尧典，禅位于魏王。告祠高庙。使兼御史大夫张音持节奉玺绶禅位。"
+      },
       { "sourceId": "houhanshu-xiandi", "locator": "延康元年" },
-      { "sourceId": "zizhi-tongjian-69", "locator": "黄初元年" }
+      {
+        "sourceId": "zizhi-tongjian-69",
+        "locator": "黄初元年",
+        "quote": "冬十月乙卯，汉帝告祠高庙，使行御史大夫张音持节奉玺绶诏册，禅位于魏。辛未，升坛受玺绶，即皇帝位。"
+      }
     ]
   },
   {
@@ -653,8 +701,16 @@
     "confidence": "high",
     "sources": ["《三国志·蜀书·先主传》", "《资治通鉴》卷六十九"],
     "sourceRefs": [
-      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "章武元年" },
-      { "sourceId": "zizhi-tongjian-69", "locator": "章武元年" }
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "章武元年",
+        "quote": "章武元年夏四月，大赦，改年。以诸葛亮为丞相，许靖为司徒。置百官，立宗庙。"
+      },
+      {
+        "sourceId": "zizhi-tongjian-69",
+        "locator": "章武元年",
+        "quote": "夏四月丙午，汉中王即皇帝位于武担之南。大赦，改元章武。以诸葛亮为丞相，许靖为司徒。"
+      }
     ]
   },
   {
@@ -675,9 +731,21 @@
     "confidence": "high",
     "sources": ["《三国志·蜀书·先主传》", "《三国志·吴书·陆逊传》", "《资治通鉴》卷七十"],
     "sourceRefs": [
-      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "章武二年" },
-      { "sourceId": "sanguozhi-wu-lu-xun", "locator": "陆逊传夷陵相关记载" },
-      { "sourceId": "zizhi-tongjian-70", "locator": "章武二年 / 黄武元年" }
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "章武二年",
+        "quote": "陆议大破先主军于猇亭，将军冯习、张南等皆没。先主自猇亭还秭归，收合离散兵。"
+      },
+      {
+        "sourceId": "sanguozhi-wu-lu-xun",
+        "locator": "陆逊传夷陵相关记载",
+        "quote": "逊曰：“吾已晓破之之术。”乃敕各持一把茅，以火攻拔之。通率诸军同时俱攻，斩张南、冯习及胡王沙摩柯等首，破其四十馀营。"
+      },
+      {
+        "sourceId": "zizhi-tongjian-70",
+        "locator": "章武二年 / 黄武元年",
+        "quote": "陆逊督诸军大破先主军于猇亭，将军冯习、张南等皆没。"
+      }
     ],
     "detail": {
       "background": [

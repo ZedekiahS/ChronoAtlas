@@ -78,6 +78,7 @@ type SourceRef = {
   sourceId: string;
   locator?: string;
   note?: string;
+  quote?: string;
 };
 
 type SourceRecord = {
@@ -419,9 +420,22 @@ function SourceRefLink({
   }
 
   return (
-    <a className={className} href={url} rel="noreferrer" target="_blank" title={`查看原文：${label}`}>
+    <a className={className} href={url} rel="noreferrer" target="_blank" title={`打开外部全文：${label}`}>
       {label}
     </a>
+  );
+}
+
+function SourceExcerpt({ quote }: { quote?: string }) {
+  if (!quote) {
+    return null;
+  }
+
+  return (
+    <details className="source-excerpt">
+      <summary>原文摘录/引用段落</summary>
+      <blockquote>{quote}</blockquote>
+    </details>
   );
 }
 
@@ -2515,6 +2529,7 @@ function App() {
                   return (
                     <article className="source-item" key={`${ref.sourceId}-${ref.locator ?? ""}`}>
                       <SourceRefLink className="source-title-link" sourceRef={ref} />
+                      <SourceExcerpt quote={ref.quote} />
                       {source?.note && <span>{source.note}</span>}
                     </article>
                   );
