@@ -61,7 +61,22 @@ const requiredControllers = new Set([
   "西晋",
 ]);
 const requiredChinaKeyYears = [190, 195, 200, 208, 220, 229, 234, 263, 265, 280];
-const requiredDeepDetailEventIds = new Set(["china-200-guandu", "china-208-red-cliffs"]);
+const requiredDeepDetailEventIds = new Set([
+  "china-184-yellow-turban-rebellion",
+  "china-189-dong-zhuo-enters-luoyang",
+  "china-194-lu-bu-seizes-yan",
+  "china-199-lu-bu-defeated",
+  "china-200-guandu",
+  "china-208-red-cliffs",
+  "china-214-liu-bei-takes-yi",
+  "china-215-cao-cao-takes-hanzhong",
+  "china-219-hanzhong-and-jingzhou-crisis",
+  "china-222-yiling",
+  "china-234-wuzhang-plains",
+  "china-263-shu-han-conquered",
+  "china-265-jin-replaces-wei",
+  "china-280-jin-conquers-wu",
+]);
 
 function assert(condition, message) {
   if (!condition) {

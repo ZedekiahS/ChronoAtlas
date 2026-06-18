@@ -458,5 +458,173 @@
     "sourceRefs": [
       { "sourceId": "literary-hebei-four-pillars", "locator": "后世传统称呼" }
     ]
+  },
+  {
+    "id": "lu-bu-chen-gong-advisor",
+    "sourcePersonId": "lu-bu",
+    "targetPersonId": "chen-gong",
+    "type": "advisor",
+    "startYear": 194,
+    "endYear": 199,
+    "summary": "陈宫迎吕布入兖州并长期辅佐吕布，是吕布集团最重要谋士之一。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传陈宫相关记载" },
+      { "sourceId": "zizhi-tongjian-59", "locator": "兴平至建安三年" }
+    ]
+  },
+  {
+    "id": "cao-cao-chen-gong-rival",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "chen-gong",
+    "type": "rival",
+    "startYear": 194,
+    "endYear": 199,
+    "summary": "陈宫背离曹操并迎吕布入兖州，成为曹操早期根据地危机的关键人物。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传" },
+      { "sourceId": "zizhi-tongjian-59", "locator": "兴平元年至建安三年" }
+    ]
+  },
+  {
+    "id": "liu-bei-pang-tong-advisor",
+    "sourcePersonId": "liu-bei",
+    "targetPersonId": "pang-tong",
+    "type": "advisor",
+    "startYear": 211,
+    "endYear": 214,
+    "summary": "庞统随刘备入蜀，参与夺取益州谋划，死于雒城战事。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-pangtong-fa-zheng", "locator": "庞统传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "刘备取益州相关记载" }
+    ]
+  },
+  {
+    "id": "liu-bei-fa-zheng-advisor",
+    "sourcePersonId": "liu-bei",
+    "targetPersonId": "fa-zheng",
+    "type": "advisor",
+    "startYear": 211,
+    "endYear": 220,
+    "summary": "法正由刘璋阵营转向刘备，先助取益州，后在汉中战事中参与关键决策。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-pangtong-fa-zheng", "locator": "法正传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安十九年至二十四年" }
+    ]
+  },
+  {
+    "id": "liu-bei-ma-chao-commander",
+    "sourcePersonId": "liu-bei",
+    "targetPersonId": "ma-chao",
+    "type": "commander",
+    "startYear": 214,
+    "endYear": 222,
+    "summary": "马超归附刘备后成为蜀汉重要将领，其声望对刘备入主益州和称汉中王有政治意义。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-zhang-fei", "locator": "马超传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安十九年至二十四年" }
+    ]
+  },
+  {
+    "id": "liu-bei-huang-zhong-commander",
+    "sourcePersonId": "liu-bei",
+    "targetPersonId": "huang-zhong",
+    "type": "commander",
+    "startYear": 211,
+    "endYear": 220,
+    "summary": "黄忠归刘备后参与入蜀和汉中战事，定军山击杀夏侯渊是刘备夺汉中的关键节点。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-zhang-fei", "locator": "黄忠传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
+    ]
+  },
+  {
+    "id": "sun-quan-lu-meng-commander",
+    "sourcePersonId": "sun-quan",
+    "targetPersonId": "lu-meng",
+    "type": "commander",
+    "startYear": 200,
+    "endYear": 220,
+    "summary": "吕蒙受孙权重用，继鲁肃后主持荆州方向并完成袭取荆州。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "吕蒙传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
+    ]
+  },
+  {
+    "id": "lu-meng-guan-yu-jingzhou",
+    "sourcePersonId": "lu-meng",
+    "targetPersonId": "guan-yu",
+    "type": "campaign-opponent",
+    "startYear": 219,
+    "endYear": 219,
+    "summary": "吕蒙袭取荆州切断关羽后方，关羽败亡，吴蜀联盟破裂。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "吕蒙传" },
+      { "sourceId": "sanguozhi-shu-guan-yu", "locator": "关羽传" }
+    ]
+  },
+  {
+    "id": "sima-zhao-sima-yan-successor",
+    "sourcePersonId": "sima-zhao",
+    "targetPersonId": "sima-yan",
+    "type": "family-successor",
+    "startYear": 236,
+    "endYear": 265,
+    "summary": "司马昭为司马炎之父，司马炎继承其晋王地位后完成代魏。",
+    "sourceRefs": [
+      { "sourceId": "jinshu-wudi", "locator": "武帝纪" },
+      { "sourceId": "zizhi-tongjian-78", "locator": "咸熙二年" }
+    ]
+  },
+  {
+    "id": "sima-zhao-deng-ai-zhong-hui",
+    "sourcePersonId": "sima-zhao",
+    "targetPersonId": "deng-ai",
+    "type": "commander",
+    "startYear": 263,
+    "endYear": 264,
+    "summary": "司马昭主持灭蜀战略，邓艾与钟会分进合击，最终迫降成都。",
+    "sourceRefs": [
+      { "sourceId": "zizhi-tongjian-78", "locator": "景元四年" }
+    ]
+  },
+  {
+    "id": "sima-yan-sun-hao-final-opponent",
+    "sourcePersonId": "sima-yan",
+    "targetPersonId": "sun-hao",
+    "type": "campaign-opponent",
+    "startYear": 279,
+    "endYear": 280,
+    "summary": "司马炎发动灭吴，孙皓在晋军逼近建业后出降，三国鼎立结束。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-sun-hao", "locator": "孙皓传" },
+      { "sourceId": "zizhi-tongjian-81", "locator": "太康元年" }
+    ]
+  },
+  {
+    "id": "sima-yan-wang-jun-commander",
+    "sourcePersonId": "sima-yan",
+    "targetPersonId": "wang-jun",
+    "type": "commander",
+    "startYear": 279,
+    "endYear": 280,
+    "summary": "王濬受命从益州顺江东下，是西晋灭吴水路推进的关键将领。",
+    "sourceRefs": [
+      { "sourceId": "jinshu-wang-jun-du-yu", "locator": "王濬传" },
+      { "sourceId": "zizhi-tongjian-81", "locator": "太康元年" }
+    ]
+  },
+  {
+    "id": "sima-yan-du-yu-commander",
+    "sourcePersonId": "sima-yan",
+    "targetPersonId": "du-yu",
+    "type": "commander",
+    "startYear": 279,
+    "endYear": 280,
+    "summary": "杜预负责荆州方向筹划和推进，与益州水军配合瓦解吴国长江防线。",
+    "sourceRefs": [
+      { "sourceId": "jinshu-wang-jun-du-yu", "locator": "杜预传" },
+      { "sourceId": "zizhi-tongjian-81", "locator": "太康元年" }
+    ]
   }
 ]

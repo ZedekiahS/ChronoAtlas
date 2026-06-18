@@ -200,6 +200,19 @@
     ]
   },
   {
+    "id": "chen-gong",
+    "name": "陈宫",
+    "courtesyName": "公台",
+    "life": "?-199",
+    "primaryPolity": "吕布集团",
+    "roles": ["谋士", "兖州叛曹核心人物"],
+    "summary": "初与曹操有交集，后与张邈等迎吕布入兖州，成为吕布集团重要谋士；下邳败亡后被曹操处死。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传陈宫相关记载" },
+      { "sourceId": "zizhi-tongjian-59", "locator": "兴平至建安三年" }
+    ]
+  },
+  {
     "id": "cao-cao",
     "name": "曹操",
     "courtesyName": "孟德",
@@ -329,6 +342,58 @@
     ]
   },
   {
+    "id": "pang-tong",
+    "name": "庞统",
+    "courtesyName": "士元",
+    "life": "179-214",
+    "primaryPolity": "刘备集团",
+    "roles": ["谋士", "军师中郎将"],
+    "summary": "荆州名士，赤壁后进入刘备集团，参与取益州谋划，214 年攻雒城时中流矢而卒。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-pangtong-fa-zheng", "locator": "庞统传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "刘备取益州相关记载" }
+    ]
+  },
+  {
+    "id": "fa-zheng",
+    "name": "法正",
+    "courtesyName": "孝直",
+    "life": "176-220",
+    "primaryPolity": "刘璋集团 / 刘备集团",
+    "roles": ["谋士", "蜀汉开国谋臣"],
+    "summary": "原属刘璋，后协助刘备入主益州，并在汉中之战中提出关键战略建议，是刘备前期最重要谋臣之一。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-pangtong-fa-zheng", "locator": "法正传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安十九年至二十四年" }
+    ]
+  },
+  {
+    "id": "ma-chao",
+    "name": "马超",
+    "courtesyName": "孟起",
+    "life": "176-222",
+    "primaryPolity": "关中军阀 / 刘备集团",
+    "roles": ["将领", "蜀汉名将"],
+    "summary": "凉州、关中军阀马腾之子，先与曹操对抗，后归附刘备，参与刘备入主益州后的政权建构。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-zhang-fei", "locator": "马超传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安十九年至二十四年" }
+    ]
+  },
+  {
+    "id": "huang-zhong",
+    "name": "黄忠",
+    "courtesyName": "汉升",
+    "life": "?-220",
+    "primaryPolity": "刘表集团 / 刘备集团",
+    "roles": ["将领", "蜀汉名将"],
+    "summary": "原为荆州将领，归刘备后参与入蜀和汉中战事，定军山斩夏侯渊成为汉中战局转折点。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-zhang-fei", "locator": "黄忠传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
+    ]
+  },
+  {
     "id": "zhuge-liang",
     "name": "诸葛亮",
     "courtesyName": "孔明",
@@ -404,6 +469,19 @@
     "sourceRefs": [
       { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "鲁肃传" },
       { "sourceId": "zizhi-tongjian-65", "locator": "建安十三年" }
+    ]
+  },
+  {
+    "id": "lu-meng",
+    "name": "吕蒙",
+    "courtesyName": "子明",
+    "life": "178-220",
+    "primaryPolity": "孙吴",
+    "roles": ["将领", "荆州战线统帅"],
+    "summary": "孙权集团重要将领，继鲁肃后主持荆州方向，219 年袭取荆州导致关羽败亡。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "吕蒙传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
     ]
   },
   {
@@ -485,6 +563,19 @@
     ]
   },
   {
+    "id": "sima-zhao",
+    "name": "司马昭",
+    "courtesyName": "子上",
+    "life": "211-265",
+    "primaryPolity": "曹魏 / 司马氏",
+    "roles": ["权臣", "晋王"],
+    "summary": "司马懿之子，曹魏后期实际掌权者，主持灭蜀战略，其子司马炎最终代魏称帝。",
+    "sourceRefs": [
+      { "sourceId": "zizhi-tongjian-78", "locator": "景元四年至咸熙二年" },
+      { "sourceId": "jinshu-wudi", "locator": "武帝纪司马氏代魏背景" }
+    ]
+  },
+  {
     "id": "sima-yan",
     "name": "司马炎",
     "courtesyName": "安世",
@@ -495,6 +586,45 @@
     "sourceRefs": [
       { "sourceId": "jinshu-wudi", "locator": "武帝纪" },
       { "sourceId": "zizhi-tongjian-81", "locator": "太康元年" }
+    ]
+  },
+  {
+    "id": "sun-hao",
+    "name": "孙皓",
+    "courtesyName": "元宗",
+    "life": "242-284",
+    "primaryPolity": "孙吴",
+    "roles": ["皇帝", "吴末帝"],
+    "summary": "孙权之孙，264 年即位，吴末政治日益失序，280 年向西晋投降，孙吴灭亡。",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-sun-hao", "locator": "孙皓传" },
+      { "sourceId": "zizhi-tongjian-81", "locator": "太康元年灭吴相关记载" }
+    ]
+  },
+  {
+    "id": "wang-jun",
+    "name": "王濬",
+    "courtesyName": "士治",
+    "life": "206-286",
+    "primaryPolity": "西晋",
+    "roles": ["将领", "灭吴主将"],
+    "summary": "西晋益州方面将领，长期营造楼船，280 年顺江东下入建业，是灭吴战役关键统帅。",
+    "sourceRefs": [
+      { "sourceId": "jinshu-wang-jun-du-yu", "locator": "王濬传" },
+      { "sourceId": "zizhi-tongjian-81", "locator": "太康元年灭吴相关记载" }
+    ]
+  },
+  {
+    "id": "du-yu",
+    "name": "杜预",
+    "courtesyName": "元凯",
+    "life": "222-285",
+    "primaryPolity": "西晋",
+    "roles": ["将领", "荆州都督", "学者"],
+    "summary": "西晋荆州方面统帅，参与制定灭吴战略并推进江陵、荆州方向作战，亦以《春秋左氏经传集解》著称。",
+    "sourceRefs": [
+      { "sourceId": "jinshu-wang-jun-du-yu", "locator": "杜预传" },
+      { "sourceId": "zizhi-tongjian-81", "locator": "太康元年灭吴相关记载" }
     ]
   }
 ]

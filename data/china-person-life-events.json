@@ -1678,5 +1678,425 @@
     "relatedEventIds": [],
     "confidence": "high",
     "sourceRefs": [{ "sourceId": "jinshu-wudi", "locator": "武帝纪" }]
+  },
+  {
+    "id": "chen-gong-unknown-birth",
+    "personId": "chen-gong",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "东郡人，早年纪年不详",
+    "summary": "陈宫早年履历不完整，史料重点集中在迎吕布入兖州、辅佐吕布与下邳败亡。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [{ "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传陈宫相关记载" }]
+  },
+  {
+    "id": "chen-gong-194-yan",
+    "personId": "chen-gong",
+    "year": 194,
+    "displayYear": "194",
+    "type": "turning-point",
+    "title": "迎吕布入兖州",
+    "summary": "陈宫与张邈等背离曹操，迎吕布入兖州，几乎动摇曹操早期根据地。",
+    "relatedEventIds": ["china-194-lu-bu-seizes-yan"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传" },
+      { "sourceId": "zizhi-tongjian-59", "locator": "兴平元年" }
+    ]
+  },
+  {
+    "id": "chen-gong-199-death",
+    "personId": "chen-gong",
+    "year": 199,
+    "displayYear": "199",
+    "type": "death",
+    "title": "下邳败亡后被杀",
+    "summary": "下邳城破后，陈宫与吕布一同被擒，最终被曹操处死。",
+    "relatedEventIds": ["china-199-lu-bu-defeated"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传" },
+      { "sourceId": "zizhi-tongjian-59", "locator": "建安三年至四年" }
+    ]
+  },
+  {
+    "id": "pang-tong-179-born",
+    "personId": "pang-tong",
+    "year": 179,
+    "displayYear": "179",
+    "type": "birth",
+    "title": "庞统出生",
+    "summary": "庞统为襄阳人，荆州名士，后入刘备幕府。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-shu-pangtong-fa-zheng", "locator": "庞统传" }]
+  },
+  {
+    "id": "pang-tong-211-yi-plan",
+    "personId": "pang-tong",
+    "year": 211,
+    "displayYear": "211-214",
+    "type": "strategy",
+    "title": "参与取益州谋划",
+    "summary": "庞统随刘备入蜀，参与从援刘璋转向夺取益州的战略谋划。",
+    "relatedEventIds": ["china-214-liu-bei-takes-yi"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-pangtong-fa-zheng", "locator": "庞统传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "刘备取益州相关记载" }
+    ]
+  },
+  {
+    "id": "pang-tong-214-death",
+    "personId": "pang-tong",
+    "year": 214,
+    "displayYear": "214",
+    "type": "death",
+    "title": "攻雒城时中流矢而卒",
+    "summary": "刘备攻雒城期间，庞统中流矢而死，刘备集团失去重要谋士。",
+    "relatedEventIds": ["china-214-liu-bei-takes-yi"],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-shu-pangtong-fa-zheng", "locator": "庞统传" }]
+  },
+  {
+    "id": "fa-zheng-176-born",
+    "personId": "fa-zheng",
+    "year": 176,
+    "displayYear": "176",
+    "type": "birth",
+    "title": "法正出生",
+    "summary": "法正为扶风郿人，后入益州刘璋幕府。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-shu-pangtong-fa-zheng", "locator": "法正传" }]
+  },
+  {
+    "id": "fa-zheng-214-yi",
+    "personId": "fa-zheng",
+    "year": 214,
+    "displayYear": "214",
+    "type": "turning-point",
+    "title": "协助刘备入主益州",
+    "summary": "法正从刘璋阵营转向刘备，为刘备夺取益州提供内应、情报和政治支持。",
+    "relatedEventIds": ["china-214-liu-bei-takes-yi"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-pangtong-fa-zheng", "locator": "法正传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安十九年" }
+    ]
+  },
+  {
+    "id": "fa-zheng-219-hanzhong",
+    "personId": "fa-zheng",
+    "year": 219,
+    "displayYear": "219",
+    "type": "strategy",
+    "title": "汉中战略核心谋臣",
+    "summary": "汉中之战中，法正参与刘备军事决策，是定军山和汉中胜利的重要谋臣之一。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-pangtong-fa-zheng", "locator": "法正传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
+    ]
+  },
+  {
+    "id": "fa-zheng-220-death",
+    "personId": "fa-zheng",
+    "year": 220,
+    "displayYear": "220",
+    "type": "death",
+    "title": "法正去世",
+    "summary": "法正去世后，刘备集团失去一位善于判断局势和军事机会的关键谋臣。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-shu-pangtong-fa-zheng", "locator": "法正传" }]
+  },
+  {
+    "id": "ma-chao-176-born",
+    "personId": "ma-chao",
+    "year": 176,
+    "displayYear": "176",
+    "type": "birth",
+    "title": "马超出生",
+    "summary": "马超为马腾之子，出身凉州、关中军事集团。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-shu-zhang-fei", "locator": "马超传" }]
+  },
+  {
+    "id": "ma-chao-214-joins-liu-bei",
+    "personId": "ma-chao",
+    "year": 214,
+    "displayYear": "214",
+    "type": "service",
+    "title": "归附刘备",
+    "summary": "马超在关中失败后转入西南，最终归附刘备，对成都压力和刘备取益州有政治军事意义。",
+    "relatedEventIds": ["china-214-liu-bei-takes-yi"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-zhang-fei", "locator": "马超传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安十九年" }
+    ]
+  },
+  {
+    "id": "ma-chao-222-death",
+    "personId": "ma-chao",
+    "year": 222,
+    "displayYear": "222",
+    "type": "death",
+    "title": "马超去世",
+    "summary": "刘备称帝后不久，马超在蜀汉去世。",
+    "relatedEventIds": ["china-221-liu-bei-founds-shu"],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-shu-zhang-fei", "locator": "马超传" }]
+  },
+  {
+    "id": "huang-zhong-unknown-birth",
+    "personId": "huang-zhong",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "南阳人，早年纪年不详",
+    "summary": "黄忠早年在荆州刘表、长沙韩玄系统中任职，明确生年不详。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [{ "sourceId": "sanguozhi-shu-zhang-fei", "locator": "黄忠传" }]
+  },
+  {
+    "id": "huang-zhong-219-dingjun",
+    "personId": "huang-zhong",
+    "year": 219,
+    "displayYear": "219",
+    "type": "campaign",
+    "title": "定军山斩夏侯渊",
+    "summary": "汉中战事中，黄忠在定军山击杀夏侯渊，推动刘备取得汉中优势。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-shu-zhang-fei", "locator": "黄忠传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
+    ]
+  },
+  {
+    "id": "huang-zhong-220-death",
+    "personId": "huang-zhong",
+    "year": 220,
+    "displayYear": "220",
+    "type": "death",
+    "title": "黄忠去世",
+    "summary": "黄忠在刘备称汉中王后不久去世。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-shu-zhang-fei", "locator": "黄忠传" }]
+  },
+  {
+    "id": "lu-meng-178-born",
+    "personId": "lu-meng",
+    "year": 178,
+    "displayYear": "178",
+    "type": "birth",
+    "title": "吕蒙出生",
+    "summary": "吕蒙为汝南富陂人，少年从军，后成为孙权集团重要将领。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-wu-zhou-yu", "locator": "吕蒙传" }]
+  },
+  {
+    "id": "lu-meng-219-jingzhou",
+    "personId": "lu-meng",
+    "year": 219,
+    "displayYear": "219",
+    "type": "campaign",
+    "title": "袭取荆州",
+    "summary": "吕蒙主持孙吴袭取荆州，切断关羽后路，直接改变吴蜀关系。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "吕蒙传" },
+      { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
+    ]
+  },
+  {
+    "id": "lu-meng-220-death",
+    "personId": "lu-meng",
+    "year": 220,
+    "displayYear": "220",
+    "type": "death",
+    "title": "吕蒙去世",
+    "summary": "荆州战役后不久，吕蒙病逝。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-wu-zhou-yu", "locator": "吕蒙传" }]
+  },
+  {
+    "id": "sima-zhao-211-born",
+    "personId": "sima-zhao",
+    "year": 211,
+    "displayYear": "211",
+    "type": "birth",
+    "title": "司马昭出生",
+    "summary": "司马昭为司马懿之子，后成为曹魏后期实际掌权者。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "zizhi-tongjian-78", "locator": "司马氏代魏背景" }]
+  },
+  {
+    "id": "sima-zhao-263-shu",
+    "personId": "sima-zhao",
+    "year": 263,
+    "displayYear": "263",
+    "type": "politics",
+    "title": "主持灭蜀战略",
+    "summary": "司马昭以曹魏实际掌权者身份推动灭蜀，邓艾、钟会分进合击，蜀汉灭亡。",
+    "relatedEventIds": ["china-263-shu-han-conquered"],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "zizhi-tongjian-78", "locator": "景元四年" }]
+  },
+  {
+    "id": "sima-zhao-265-death",
+    "personId": "sima-zhao",
+    "year": 265,
+    "displayYear": "265",
+    "type": "death",
+    "title": "司马昭去世",
+    "summary": "司马昭去世后，司马炎继承晋王位，并很快完成代魏。",
+    "relatedEventIds": ["china-265-jin-replaces-wei"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "zizhi-tongjian-78", "locator": "咸熙二年" },
+      { "sourceId": "jinshu-wudi", "locator": "武帝纪" }
+    ]
+  },
+  {
+    "id": "sun-hao-242-born",
+    "personId": "sun-hao",
+    "year": 242,
+    "displayYear": "242",
+    "type": "birth",
+    "title": "孙皓出生",
+    "summary": "孙皓为孙权之孙、孙和之子，后成为孙吴末代皇帝。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-wu-sun-hao", "locator": "孙皓传" }]
+  },
+  {
+    "id": "sun-hao-264-enthroned",
+    "personId": "sun-hao",
+    "year": 264,
+    "displayYear": "264",
+    "type": "office",
+    "title": "即位为吴主",
+    "summary": "孙休死后，孙皓被拥立为吴主。其统治后期政治失序，是吴亡的重要背景。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-wu-sun-hao", "locator": "孙皓传" }]
+  },
+  {
+    "id": "sun-hao-280-surrender",
+    "personId": "sun-hao",
+    "year": 280,
+    "displayYear": "280",
+    "type": "abdication",
+    "title": "向西晋投降",
+    "summary": "晋军水陆并进抵达建业，孙皓出降，孙吴灭亡。",
+    "relatedEventIds": ["china-280-jin-conquers-wu"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-sun-hao", "locator": "孙皓传" },
+      { "sourceId": "zizhi-tongjian-81", "locator": "太康元年" }
+    ]
+  },
+  {
+    "id": "sun-hao-284-death",
+    "personId": "sun-hao",
+    "year": 284,
+    "displayYear": "284",
+    "type": "death",
+    "title": "孙皓去世",
+    "summary": "孙吴灭亡后，孙皓迁居洛阳，284 年去世。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "sanguozhi-wu-sun-hao", "locator": "孙皓传" }]
+  },
+  {
+    "id": "wang-jun-206-born",
+    "personId": "wang-jun",
+    "year": 206,
+    "displayYear": "206",
+    "type": "birth",
+    "title": "王濬出生",
+    "summary": "王濬为弘农湖人，西晋时在益州经营水军。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "jinshu-wang-jun-du-yu", "locator": "王濬传" }]
+  },
+  {
+    "id": "wang-jun-280-wu",
+    "personId": "wang-jun",
+    "year": 280,
+    "displayYear": "280",
+    "type": "campaign",
+    "title": "顺江东下入建业",
+    "summary": "王濬率楼船水军自益州顺江东下，突破长江防线并进入建业，是西晋灭吴的关键执行者。",
+    "relatedEventIds": ["china-280-jin-conquers-wu"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "jinshu-wang-jun-du-yu", "locator": "王濬传" },
+      { "sourceId": "zizhi-tongjian-81", "locator": "太康元年" }
+    ]
+  },
+  {
+    "id": "wang-jun-286-death",
+    "personId": "wang-jun",
+    "year": 286,
+    "displayYear": "286",
+    "type": "death",
+    "title": "王濬去世",
+    "summary": "灭吴后，王濬以功名显于西晋，286 年去世。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "jinshu-wang-jun-du-yu", "locator": "王濬传" }]
+  },
+  {
+    "id": "du-yu-222-born",
+    "personId": "du-yu",
+    "year": 222,
+    "displayYear": "222",
+    "type": "birth",
+    "title": "杜预出生",
+    "summary": "杜预为京兆杜陵人，西晋名臣、将领和经学家。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "jinshu-wang-jun-du-yu", "locator": "杜预传" }]
+  },
+  {
+    "id": "du-yu-280-wu",
+    "personId": "du-yu",
+    "year": 280,
+    "displayYear": "280",
+    "type": "campaign",
+    "title": "荆州方向推进灭吴",
+    "summary": "杜预统筹荆州方向作战，配合益州水军和多路晋军推进，使吴军长江防线迅速瓦解。",
+    "relatedEventIds": ["china-280-jin-conquers-wu"],
+    "confidence": "high",
+    "sourceRefs": [
+      { "sourceId": "jinshu-wang-jun-du-yu", "locator": "杜预传" },
+      { "sourceId": "zizhi-tongjian-81", "locator": "太康元年" }
+    ]
+  },
+  {
+    "id": "du-yu-285-death",
+    "personId": "du-yu",
+    "year": 285,
+    "displayYear": "285",
+    "type": "death",
+    "title": "杜预去世",
+    "summary": "杜预灭吴后继续任职并著述，285 年去世。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [{ "sourceId": "jinshu-wang-jun-du-yu", "locator": "杜预传" }]
   }
 ]

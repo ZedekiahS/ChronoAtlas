@@ -262,5 +262,29 @@
     "type": "later-tradition",
     "citationShort": "河北四庭柱传统",
     "note": "颜良、文丑、张郃、高览并称的后世通俗归类，项目中标记为传统称呼，不作为汉末正式制度。"
+  },
+  {
+    "id": "sanguozhi-shu-pangtong-fa-zheng",
+    "title": "三国志·蜀书·庞统法正传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志》卷三十七",
+    "note": "记录庞统、法正参与刘备取益州、汉中战略的传记材料。"
+  },
+  {
+    "id": "sanguozhi-wu-sun-hao",
+    "title": "三国志·吴书·三嗣主传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志》卷四十八",
+    "note": "记录孙亮、孙休、孙皓时期，含孙皓即位、吴末政治与降晋。"
+  },
+  {
+    "id": "jinshu-wang-jun-du-yu",
+    "title": "晋书·杜预传 / 王濬传",
+    "author": "房玄龄等",
+    "type": "official-history",
+    "citationShort": "《晋书》杜预、王濬传",
+    "note": "记录西晋灭吴前后荆州、益州水陆并进部署和主要将领事迹。"
   }
 ]
