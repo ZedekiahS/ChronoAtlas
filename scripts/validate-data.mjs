@@ -269,6 +269,16 @@ for (const source of chinaSources) {
   assert(typeof source.type === "string" && source.type.length > 0, `Source needs type: ${source.id}`);
   assert(typeof source.citationShort === "string" && source.citationShort.length > 0, `Source needs citationShort: ${source.id}`);
   assert(typeof source.note === "string" && source.note.length > 0, `Source needs note: ${source.id}`);
+  if ("url" in source) {
+    assert(typeof source.url === "string" && source.url.length > 0, `Source url must be string: ${source.id}`);
+    assert(/^https:\/\//.test(source.url), `Source url must be https: ${source.id}`);
+    assert(!/wikisource\.org/i.test(source.url), `Source url must not use Wikisource: ${source.id}`);
+    try {
+      new URL(source.url);
+    } catch {
+      assert(false, `Source url must be valid: ${source.id}`);
+    }
+  }
 }
 
 assert(Array.isArray(chinaPersons) && chinaPersons.length > 0, "China persons must be a non-empty array");

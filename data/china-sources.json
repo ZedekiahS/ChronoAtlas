@@ -5,7 +5,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·魏书·武帝纪》",
-    "note": "曹操本纪，是建安时期曹操军政活动的核心纪年材料。"
+    "note": "曹操本纪，是建安时期曹操军政活动的核心纪年材料。",
+    "url": "https://ctext.org/sanguozhi/wu-di-ji/zh"
   },
   {
     "id": "sanguozhi-wei-wendi",
@@ -13,7 +14,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·魏书·文帝纪》",
-    "note": "曹丕本纪，记录魏代汉、黄初初年制度与政治事件。"
+    "note": "曹丕本纪，记录魏代汉、黄初初年制度与政治事件。",
+    "url": "https://ctext.org/sanguozhi/wen-di-ji/zh"
   },
   {
     "id": "sanguozhi-wei-yuan-shao",
@@ -21,7 +23,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·魏书·袁绍传》",
-    "note": "记录袁绍集团、河北争夺与官渡前后局势。"
+    "note": "记录袁绍集团、河北争夺与官渡前后局势。",
+    "url": "https://ctext.org/sanguozhi/yuan-shao-zhuan/zh"
   },
   {
     "id": "sanguozhi-wei-yuan-shu",
@@ -29,7 +32,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·魏书·袁术传》",
-    "note": "记录袁术集团、淮南控制和称帝失败。"
+    "note": "记录袁术集团、淮南控制和称帝失败。",
+    "url": "https://ctext.org/sanguozhi/yuan-shu-zhuan/zh"
   },
   {
     "id": "sanguozhi-wei-lubu",
@@ -37,7 +41,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·魏书·吕布传》",
-    "note": "记录吕布转战兖州、徐州及下邳败亡。"
+    "note": "记录吕布转战兖州、徐州及下邳败亡。",
+    "url": "https://ctext.org/sanguozhi/lu-bu-zhuan/zh"
   },
   {
     "id": "sanguozhi-wei-gongsun-zan",
@@ -45,7 +50,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·魏书·公孙瓒传》",
-    "note": "记录幽州、公孙瓒与袁绍在北方的争夺。"
+    "note": "记录幽州、公孙瓒与袁绍在北方的争夺。",
+    "url": "https://ctext.org/sanguozhi/gongsun-zan-zhuan/zh"
   },
   {
     "id": "sanguozhi-wei-zhang-lu",
@@ -53,7 +59,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·魏书·张鲁传》",
-    "note": "记录汉中张鲁政权和曹操取汉中。"
+    "note": "记录汉中张鲁政权和曹操取汉中。",
+    "url": "https://ctext.org/sanguozhi/zhang-lu-zhuan/zh"
   },
   {
     "id": "sanguozhi-shu-xianzhu",
@@ -61,7 +68,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·蜀书·先主传》",
-    "note": "刘备本纪，覆盖赤壁、入蜀、汉中、称帝、夷陵等关键事件。"
+    "note": "刘备本纪，覆盖赤壁、入蜀、汉中、称帝、夷陵等关键事件。",
+    "url": "https://ctext.org/sanguozhi/xian-zhu-zhuan/zh"
   },
   {
     "id": "sanguozhi-shu-houzhu",
@@ -69,7 +77,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·蜀书·后主传》",
-    "note": "刘禅本纪，记录蜀汉后期政局和灭亡。"
+    "note": "刘禅本纪，记录蜀汉后期政局和灭亡。",
+    "url": "https://ctext.org/sanguozhi/hou-zhu-zhuan/zh"
   },
   {
     "id": "sanguozhi-shu-zhuge-liang",
@@ -77,7 +86,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·蜀书·诸葛亮传》",
-    "note": "诸葛亮传，覆盖隆中对、蜀汉政务与北伐。"
+    "note": "诸葛亮传，覆盖隆中对、蜀汉政务与北伐。",
+    "url": "https://ctext.org/sanguozhi/zhuge-liang-zhuan/zh"
   },
   {
     "id": "sanguozhi-shu-guan-yu",
@@ -85,7 +95,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·蜀书·关羽传》",
-    "note": "记录关羽镇守荆州、北伐襄樊与失荆州。"
+    "note": "记录关羽镇守荆州、北伐襄樊与失荆州。",
+    "url": "https://ctext.org/sanguozhi/guan-yu-zhuan/zh"
   },
   {
     "id": "sanguozhi-wu-wuzhu",
@@ -93,7 +104,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·吴书·吴主传》",
-    "note": "孙权本纪，覆盖江东政权、赤壁联盟、称帝与晚年政局。"
+    "note": "孙权本纪，覆盖江东政权、赤壁联盟、称帝与晚年政局。",
+    "url": "https://ctext.org/sanguozhi/wu-zhu-zhuan/zh"
   },
   {
     "id": "sanguozhi-wu-zhou-yu",
@@ -101,7 +113,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·吴书·周瑜鲁肃吕蒙传》",
-    "note": "记录赤壁前后孙刘联盟、荆州争夺与江东战略。"
+    "note": "记录赤壁前后孙刘联盟、荆州争夺与江东战略。",
+    "url": "https://ctext.org/sanguozhi/zhou-yu-lu-su-lu-meng-zhuan/zh"
   },
   {
     "id": "sanguozhi-wu-lu-xun",
@@ -109,7 +122,8 @@
     "author": "陈寿",
     "type": "official-history",
     "citationShort": "《三国志·吴书·陆逊传》",
-    "note": "记录陆逊参与荆州攻取、夷陵之战及吴国军政。"
+    "note": "记录陆逊参与荆州攻取、夷陵之战及吴国军政。",
+    "url": "https://ctext.org/sanguozhi/lu-xun-zhuan/zh"
   },
   {
     "id": "houhanshu-xiandi",
@@ -141,7 +155,8 @@
     "author": "司马光",
     "type": "chronicle",
     "citationShort": "《资治通鉴》卷五十八",
-    "note": "覆盖中平、初平之际汉末动乱。"
+    "note": "覆盖中平、初平之际汉末动乱。",
+    "url": "https://ctext.org/zizhi-tongjian/58/zh"
   },
   {
     "id": "zizhi-tongjian-59",
@@ -149,7 +164,8 @@
     "author": "司马光",
     "type": "chronicle",
     "citationShort": "《资治通鉴》卷五十九",
-    "note": "覆盖初平、兴平前后董卓、关东诸军、群雄并起。"
+    "note": "覆盖初平、兴平前后董卓、关东诸军、群雄并起。",
+    "url": "https://ctext.org/zizhi-tongjian/59/zh"
   },
   {
     "id": "zizhi-tongjian-63",
@@ -157,7 +173,8 @@
     "author": "司马光",
     "type": "chronicle",
     "citationShort": "《资治通鉴》卷六十三",
-    "note": "覆盖建安五年前后，官渡之战及其前后局势。"
+    "note": "覆盖建安五年前后，官渡之战及其前后局势。",
+    "url": "https://ctext.org/zizhi-tongjian/63/zh"
   },
   {
     "id": "zizhi-tongjian-65",
@@ -165,7 +182,8 @@
     "author": "司马光",
     "type": "chronicle",
     "citationShort": "《资治通鉴》卷六十五",
-    "note": "覆盖建安十三年前后，赤壁及荆州局势。"
+    "note": "覆盖建安十三年前后，赤壁及荆州局势。",
+    "url": "https://ctext.org/zizhi-tongjian/65/zh"
   },
   {
     "id": "zizhi-tongjian-67",
@@ -173,7 +191,8 @@
     "author": "司马光",
     "type": "chronicle",
     "citationShort": "《资治通鉴》卷六十七",
-    "note": "覆盖建安十九年至二十四年前后，入蜀、汉中、荆州争夺。"
+    "note": "覆盖建安十九年至二十四年前后，入蜀、汉中、荆州争夺。",
+    "url": "https://ctext.org/zizhi-tongjian/67/zh"
   },
   {
     "id": "zizhi-tongjian-69",
@@ -181,7 +200,8 @@
     "author": "司马光",
     "type": "chronicle",
     "citationShort": "《资治通鉴》卷六十九",
-    "note": "覆盖魏文帝、蜀汉昭烈帝、吴黄武初年政局。"
+    "note": "覆盖魏文帝、蜀汉昭烈帝、吴黄武初年政局。",
+    "url": "https://ctext.org/zizhi-tongjian/69/zh"
   },
   {
     "id": "zizhi-tongjian-70",
@@ -189,7 +209,8 @@
     "author": "司马光",
     "type": "chronicle",
     "citationShort": "《资治通鉴》卷七十",
-    "note": "覆盖夷陵战后和吴蜀魏关系调整。"
+    "note": "覆盖夷陵战后和吴蜀魏关系调整。",
+    "url": "https://ctext.org/zizhi-tongjian/70/zh"
   },
   {
     "id": "zizhi-tongjian-72",
@@ -197,7 +218,8 @@
     "author": "司马光",
     "type": "chronicle",
     "citationShort": "《资治通鉴》卷七十二",
-    "note": "覆盖诸葛亮北伐后期与五丈原。"
+    "note": "覆盖诸葛亮北伐后期与五丈原。",
+    "url": "https://ctext.org/zizhi-tongjian/72/zh"
   },
   {
     "id": "zizhi-tongjian-78",
@@ -205,7 +227,8 @@
     "author": "司马光",
     "type": "chronicle",
     "citationShort": "《资治通鉴》卷七十八",
-    "note": "覆盖魏末灭蜀、司马氏代魏前后。"
+    "note": "覆盖魏末灭蜀、司马氏代魏前后。",
+    "url": "https://ctext.org/zizhi-tongjian/78/zh"
   },
   {
     "id": "zizhi-tongjian-81",
@@ -213,7 +236,8 @@
     "author": "司马光",
     "type": "chronicle",
     "citationShort": "《资治通鉴》卷八十一",
-    "note": "覆盖晋灭吴与三国统一。"
+    "note": "覆盖晋灭吴与三国统一。",
+    "url": "https://ctext.org/zizhi-tongjian/81/zh"
   },
   {
     "id": "jinshu-wudi",
@@ -229,7 +253,8 @@
     "author": "陈寿撰，裴松之注",
     "type": "official-history",
     "citationShort": "《三国志》卷十",
-    "note": "记录荀彧、荀攸、贾诩等曹操集团谋臣的仕历与关键建议。"
+    "note": "记录荀彧、荀攸、贾诩等曹操集团谋臣的仕历与关键建议。",
+    "url": "https://ctext.org/sanguozhi/xun-yu-xun-you-jia-xu-zhuan/zh"
   },
   {
     "id": "sanguozhi-wei-guo-jia",
@@ -237,7 +262,8 @@
     "author": "陈寿撰，裴松之注",
     "type": "official-history",
     "citationShort": "《三国志》卷十四",
-    "note": "记录郭嘉、程昱等曹操集团谋臣的传记材料。"
+    "note": "记录郭嘉、程昱等曹操集团谋臣的传记材料。",
+    "url": "https://ctext.org/sanguozhi/cheng-guo-dong-liu-jiang-liu-zhuan/zh"
   },
   {
     "id": "sanguozhi-wei-zhang-he",
@@ -245,7 +271,8 @@
     "author": "陈寿撰，裴松之注",
     "type": "official-history",
     "citationShort": "《三国志》卷十七",
-    "note": "记录张郃从袁绍到曹魏的军事经历、街亭之战与木门之死。"
+    "note": "记录张郃从袁绍到曹魏的军事经历、街亭之战与木门之死。",
+    "url": "https://ctext.org/sanguozhi/zhang-le-yu-zhang-xu-zhuan/zh"
   },
   {
     "id": "sanguozhi-shu-zhang-fei",
@@ -253,7 +280,8 @@
     "author": "陈寿撰，裴松之注",
     "type": "official-history",
     "citationShort": "《三国志》卷三十六",
-    "note": "记录关羽、张飞等刘备集团早期核心将领的传记材料。"
+    "note": "记录关羽、张飞等刘备集团早期核心将领的传记材料。",
+    "url": "https://ctext.org/sanguozhi/guan-zhang-ma-huang-zhao-zhuan/zh"
   },
   {
     "id": "literary-hebei-four-pillars",
@@ -269,7 +297,8 @@
     "author": "陈寿撰，裴松之注",
     "type": "official-history",
     "citationShort": "《三国志》卷三十七",
-    "note": "记录庞统、法正参与刘备取益州、汉中战略的传记材料。"
+    "note": "记录庞统、法正参与刘备取益州、汉中战略的传记材料。",
+    "url": "https://ctext.org/sanguozhi/pang-tong-fa-zheng-zhuan/zh"
   },
   {
     "id": "sanguozhi-wu-sun-hao",
@@ -277,7 +306,8 @@
     "author": "陈寿撰，裴松之注",
     "type": "official-history",
     "citationShort": "《三国志》卷四十八",
-    "note": "记录孙亮、孙休、孙皓时期，含孙皓即位、吴末政治与降晋。"
+    "note": "记录孙亮、孙休、孙皓时期，含孙皓即位、吴末政治与降晋。",
+    "url": "https://ctext.org/sanguozhi/san-si-zhu-zhuan/zh"
   },
   {
     "id": "jinshu-wang-jun-du-yu",

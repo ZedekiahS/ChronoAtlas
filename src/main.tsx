@@ -87,6 +87,7 @@ type SourceRecord = {
   type: string;
   citationShort: string;
   note: string;
+  url?: string;
 };
 
 type HistoricalPerson = {
@@ -395,6 +396,33 @@ function formatSourceRef(ref: SourceRef) {
   const source = chinaSourceById.get(ref.sourceId);
   const citation = source?.citationShort ?? ref.sourceId;
   return [citation, ref.locator].filter(Boolean).join(" · ");
+}
+
+function getSourceRefUrl(ref: SourceRef) {
+  return chinaSourceById.get(ref.sourceId)?.url ?? null;
+}
+
+function SourceRefLink({
+  className,
+  interactive = true,
+  sourceRef,
+}: {
+  className?: string;
+  interactive?: boolean;
+  sourceRef: SourceRef;
+}) {
+  const label = formatSourceRef(sourceRef);
+  const url = getSourceRefUrl(sourceRef);
+
+  if (!interactive || !url) {
+    return <span className={className}>{label}</span>;
+  }
+
+  return (
+    <a className={className} href={url} rel="noreferrer" target="_blank" title={`查看原文：${label}`}>
+      {label}
+    </a>
+  );
 }
 
 function getRelationTypeLabel(type: string) {
@@ -1966,7 +1994,7 @@ function App() {
 
                 <div className="source-list compact">
                   {selectedPerson.sourceRefs.map((ref) => (
-                    <span key={`${selectedPerson.id}-${ref.sourceId}-${ref.locator ?? ""}`}>{formatSourceRef(ref)}</span>
+                    <SourceRefLink key={`${selectedPerson.id}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
                   ))}
                 </div>
               </article>
@@ -2298,7 +2326,7 @@ function App() {
                             <div className="life-event-meta">
                               <span>{getConfidenceLabel(lifeEvent.confidence)}</span>
                               {lifeEvent.sourceRefs.slice(0, 2).map((ref) => (
-                                <span key={`${lifeEvent.id}-${ref.sourceId}-${ref.locator ?? ""}`}>{formatSourceRef(ref)}</span>
+                                <SourceRefLink interactive={false} key={`${lifeEvent.id}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
                               ))}
                             </div>
                           </div>
@@ -2392,7 +2420,7 @@ function App() {
                           <span className="relationship-summary">{relation.summary}</span>
                           <span className="relationship-sources">
                             {relation.sourceRefs.slice(0, 2).map((ref) => (
-                              <span key={`${relation.id}-${ref.sourceId}-${ref.locator ?? ""}`}>{formatSourceRef(ref)}</span>
+                              <SourceRefLink interactive={false} key={`${relation.id}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
                             ))}
                           </span>
                         </button>
@@ -2436,7 +2464,7 @@ function App() {
 
                 <div className="source-list compact">
                   {selectedPerson.sourceRefs.map((ref) => (
-                    <span key={`${selectedPerson.id}-${ref.sourceId}-${ref.locator ?? ""}`}>{formatSourceRef(ref)}</span>
+                    <SourceRefLink key={`${selectedPerson.id}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
                   ))}
                 </div>
               </article>
@@ -2486,7 +2514,7 @@ function App() {
 
                   return (
                     <article className="source-item" key={`${ref.sourceId}-${ref.locator ?? ""}`}>
-                      <strong>{formatSourceRef(ref)}</strong>
+                      <SourceRefLink className="source-title-link" sourceRef={ref} />
                       {source?.note && <span>{source.note}</span>}
                     </article>
                   );
