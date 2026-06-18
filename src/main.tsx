@@ -1301,6 +1301,36 @@ function App() {
       })
     : [];
   const selectedEventSourceRefs = selectedEvent.sourceRefs ?? [];
+  const personSearchResults = useMemo(() => {
+    if (!normalizedQuery) {
+      return [];
+    }
+
+    return chinaPersons
+      .map((person) => {
+        const searchableFields = [person.name, person.courtesyName, person.primaryPolity, ...person.roles, person.summary]
+          .filter(Boolean)
+          .map((field) => field!.toLowerCase());
+        const rank = searchableFields.reduce((best, field, index) => {
+          if (field === normalizedQuery) {
+            return Math.min(best, index);
+          }
+
+          if (field.includes(normalizedQuery)) {
+            return Math.min(best, index + 8);
+          }
+
+          return best;
+        }, Number.POSITIVE_INFINITY);
+
+        return { person, rank };
+      })
+      .filter((item) => Number.isFinite(item.rank))
+      .sort((left, right) => left.rank - right.rank || left.person.name.localeCompare(right.person.name, "zh-Hans-CN"))
+      .map((item) => item.person)
+      .slice(0, 8);
+  }, [normalizedQuery]);
+  const selectedPersonIsInEvent = selectedPerson ? selectedEventPersonIds.includes(selectedPerson.id) : false;
 
   useEffect(() => {
     setSelectedPersonId((current) =>
@@ -1371,6 +1401,10 @@ function App() {
 
     setSelectedId(event.id);
     setYear(Math.min(yearMax, Math.max(yearMin, event.startYear)));
+  }
+
+  function selectPerson(personId: string) {
+    setSelectedPersonId(personId);
   }
 
   return (
@@ -1653,6 +1687,33 @@ function App() {
           </div>
         </section>
 
+        {page === "china" && normalizedQuery && (
+          <section className="event-list person-search-panel">
+            <div className="event-list-heading">
+              <h3>人物结果</h3>
+              <span>{personSearchResults.length}</span>
+            </div>
+            {personSearchResults.length ? (
+              <div className="person-result-grid">
+                {personSearchResults.map((person) => (
+                  <button
+                    className={`person-result ${activeSelectedPersonId === person.id ? "selected" : ""}`}
+                    data-person-id={person.id}
+                    key={person.id}
+                    type="button"
+                    onClick={() => selectPerson(person.id)}
+                  >
+                    <span>{person.name}</span>
+                    <small>{person.life ?? "生卒未详"} · {person.primaryPolity}</small>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div className="empty-state">暂无匹配人物</div>
+            )}
+          </section>
+        )}
+
         <section className="event-detail">
           <div className="detail-eyebrow">
             <CircleDot size={18} aria-hidden="true" />
@@ -1782,11 +1843,18 @@ function App() {
             </section>
           )}
 
-          <section className="detail-section">
-            <h3>
-              <UsersRound size={17} aria-hidden="true" />
-              相关人物
-            </h3>
+          <section className="detail-section person-detail-section">
+            <div className="person-section-heading">
+              <h3>
+                <UsersRound size={17} aria-hidden="true" />
+                人物详情
+              </h3>
+              {selectedPerson && !selectedPersonIsInEvent && selectedEventPersonIds.length > 0 && (
+                <button className="text-action" type="button" onClick={() => selectPerson(selectedEventPersonIds[0])}>
+                  回到事件人物
+                </button>
+              )}
+            </div>
             <div className="chips">
               {selectedEventPersonIds.length ? (
                 selectedEventPersonIds.map((personId) => {
@@ -1798,7 +1866,7 @@ function App() {
                       data-person-id={personId}
                       key={personId}
                       type="button"
-                      onClick={() => setSelectedPersonId(personId)}
+                      onClick={() => selectPerson(personId)}
                     >
                       <span>{person.name}</span>
                       <small>{person.primaryPolity}</small>
@@ -1830,6 +1898,20 @@ function App() {
                   {selectedPerson.roles.map((role) => (
                     <span key={role}>{role}</span>
                   ))}
+                </div>
+                <div className="person-stats">
+                  <div>
+                    <span>生平节点</span>
+                    <strong>{selectedPersonLifeEvents.length}</strong>
+                  </div>
+                  <div>
+                    <span>人物关系</span>
+                    <strong>{selectedPersonRelations.length}</strong>
+                  </div>
+                  <div>
+                    <span>参与事件</span>
+                    <strong>{selectedPersonEvents.length}</strong>
+                  </div>
                 </div>
 
                 <div className="person-event-heading">
@@ -1918,7 +2000,7 @@ function App() {
                             "--relation-color": getRelationColor(node.relation.type),
                           } as React.CSSProperties
                         }
-                        onClick={() => setSelectedPersonId(node.counterpartId)}
+                        onClick={() => selectPerson(node.counterpartId)}
                       >
                         <small>{getRelationTypeLabel(node.relation.type)}</small>
                         <strong>{node.counterpart?.name ?? node.counterpartId}</strong>
@@ -1934,14 +2016,25 @@ function App() {
                       const counterpart = chinaPersonById.get(counterpartId);
 
                       return (
-                        <article className="relationship-item" key={relation.id}>
-                          <div>
+                        <button
+                          className="relationship-item"
+                          data-person-relation-id={relation.id}
+                          key={relation.id}
+                          type="button"
+                          onClick={() => selectPerson(counterpartId)}
+                        >
+                          <span className="relationship-title">
                             <span>{getRelationTypeLabel(relation.type)}</span>
                             <strong>{counterpart?.name ?? counterpartId}</strong>
-                          </div>
+                          </span>
                           <small>{formatYearSpan(relation.startYear, relation.endYear)}</small>
-                          <p>{relation.summary}</p>
-                        </article>
+                          <span className="relationship-summary">{relation.summary}</span>
+                          <span className="relationship-sources">
+                            {relation.sourceRefs.slice(0, 2).map((ref) => (
+                              <span key={`${relation.id}-${ref.sourceId}-${ref.locator ?? ""}`}>{formatSourceRef(ref)}</span>
+                            ))}
+                          </span>
+                        </button>
                       );
                     })
                   ) : (
@@ -1967,6 +2060,12 @@ function App() {
                         <span>{formatYearRange(event)}</span>
                         <strong>{event.title}</strong>
                         <small>{event.locationName ?? "地点待补"}</small>
+                        <span className="person-event-tags">
+                          <span>{categoryLabels[event.category]}</span>
+                          {event.polities.slice(0, 2).map((polity) => (
+                            <span key={`${event.id}-${polity}`}>{polity}</span>
+                          ))}
+                        </span>
                       </button>
                     ))
                   ) : (
