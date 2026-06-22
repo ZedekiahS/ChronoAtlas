@@ -630,7 +630,13 @@
     "summary": "曹操生于沛国谯县，后以宦官养子曹嵩之子身份进入东汉政治网络。",
     "relatedEventIds": [],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-wei-wudi", "locator": "武帝纪" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "武帝纪",
+        "quote": "太祖武皇帝，沛国谯人也，姓曹，讳操，字孟德，汉相国参之后。"
+      }
+    ]
   },
   {
     "id": "cao-cao-196-xu",
@@ -643,7 +649,11 @@
     "relatedEventIds": ["china-196-cao-cao-escorts-emperor"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安元年" },
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安元年",
+        "quote": "太祖将迎天子，诸将或疑，荀彧、程昱劝之，乃遣曹洪将兵西迎。"
+      },
       { "sourceId": "houhanshu-xiandi", "locator": "建安元年" }
     ]
   },
@@ -658,7 +668,11 @@
     "relatedEventIds": ["china-190-coalition-against-dong-zhuo"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wei-wudi", "locator": "初平元年" },
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "初平元年",
+        "quote": "初平元年春正月，后将军袁术、冀州牧韩馥等同时俱起兵，众各数万，推绍为盟主。太祖行奋武将军。"
+      },
       { "sourceId": "zizhi-tongjian-59", "locator": "初平元年" }
     ]
   },
@@ -673,7 +687,11 @@
     "relatedEventIds": ["china-194-lu-bu-seizes-yan"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wei-wudi", "locator": "兴平元年至二年" },
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "兴平元年至二年",
+        "quote": "会张邈与陈宫叛迎吕布，郡县皆应。荀彧、程昱保鄄城，范、东阿二县固守，太祖乃引军还。"
+      },
       { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传" }
     ]
   },
@@ -688,7 +706,11 @@
     "relatedEventIds": ["china-199-lu-bu-defeated"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安三年至四年" },
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安三年至四年",
+        "quote": "月馀，布将宋宪、魏续等执陈宫，举城降，生禽布、宫，皆杀之。"
+      },
       { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传" }
     ]
   },
@@ -703,7 +725,11 @@
     "relatedEventIds": ["china-200-guandu"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安五年" },
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安五年",
+        "quote": "公乃留曹洪守，自将步骑五千人夜往，会明至。公急击之，琼退保营，遂攻之。"
+      },
       { "sourceId": "zizhi-tongjian-63", "locator": "建安五年" }
     ]
   },
@@ -718,7 +744,11 @@
     "relatedEventIds": ["china-200-guandu"],
     "confidence": "medium",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安九年至十二年" },
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安九年至十二年",
+        "quote": "八月，审配兄子荣夜开所守城东门内兵。配逆战，败，生禽配，斩之，邺定。"
+      },
       { "sourceId": "zizhi-tongjian-63", "locator": "河北战事延续" }
     ]
   },
@@ -733,7 +763,11 @@
     "relatedEventIds": ["china-208-red-cliffs"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安十三年" },
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安十三年",
+        "quote": "公至赤壁，与备战，不利。于是大疫，吏士多死者，乃引军还。"
+      },
       { "sourceId": "zizhi-tongjian-65", "locator": "建安十三年" }
     ]
   },
@@ -747,7 +781,13 @@
     "summary": "曹操受封魏公，建立魏国封建架构，曹氏政权从汉臣集团进一步走向准王朝形态。",
     "relatedEventIds": [],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-wei-wudi", "locator": "建安十八年" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安十八年",
+        "quote": "五月丙申，天子使御史大夫郗虑持节策命公为魏公。"
+      }
+    ]
   },
   {
     "id": "cao-cao-215-hanzhong",
@@ -760,7 +800,11 @@
     "relatedEventIds": ["china-215-cao-cao-takes-hanzhong"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安二十年" },
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安二十年",
+        "quote": "公军入南郑，尽得鲁府库珍宝。巴、汉皆降。复汉宁郡为汉中。"
+      },
       { "sourceId": "sanguozhi-wei-zhang-lu", "locator": "张鲁传" }
     ]
   },
@@ -774,7 +818,13 @@
     "summary": "曹操由魏公进爵魏王，曹氏政权制度化程度进一步提高，为曹丕代汉奠定政治结构。",
     "relatedEventIds": [],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-wei-wudi", "locator": "建安二十一年" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安二十一年",
+        "quote": "夏五月，天子进公爵为魏王。"
+      }
+    ]
   },
   {
     "id": "cao-cao-219-hanzhong-retreat",
@@ -787,7 +837,11 @@
     "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wei-wudi", "locator": "建安二十四年" },
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安二十四年",
+        "quote": "秋七月，以夫人卞氏为王后。遣于禁助曹仁击关羽。八月，汉水溢，灌禁军，军没，羽获禁，遂围仁。"
+      },
       { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
     ]
   },
@@ -801,7 +855,13 @@
     "summary": "曹操去世后，曹丕继承魏王位并在同年完成代汉。",
     "relatedEventIds": ["china-220-cao-pi-founds-wei"],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-wei-wudi", "locator": "建安二十五年" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安二十五年",
+        "quote": "庚子，王崩于洛阳，年六十六。遗令曰：“天下尚未安定，未得遵古也。”"
+      }
+    ]
   },
   {
     "id": "xun-yu-163-born",
@@ -1077,7 +1137,13 @@
     "summary": "刘备为涿郡人，自称中山靖王之后，汉末以宗室身份起兵。",
     "relatedEventIds": [],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-shu-xianzhu", "locator": "先主传" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "先主传",
+        "quote": "先主姓刘，讳备，字玄德，涿郡涿县人，汉景帝子中山靖王胜之后也。"
+      }
+    ]
   },
   {
     "id": "liu-bei-184-yellow-turban",
@@ -1090,7 +1156,11 @@
     "relatedEventIds": ["china-184-yellow-turban-rebellion"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "先主早年从讨黄巾" },
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "先主早年从讨黄巾",
+        "quote": "灵帝末，黄巾起，州郡各举义兵，先主率其属从校尉邹靖讨黄巾贼有功，除安喜尉。"
+      },
       { "sourceId": "zizhi-tongjian-58", "locator": "中平元年" }
     ]
   },
@@ -1105,7 +1175,11 @@
     "relatedEventIds": [],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "陶谦迎先主入徐州" },
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "陶谦迎先主入徐州",
+        "quote": "孔融谓先主曰：“袁公路岂忧国忘家者邪？冢中枯骨，何足介意。”先主遂领徐州。"
+      },
       { "sourceId": "zizhi-tongjian-59", "locator": "兴平元年至建安元年" }
     ]
   },
@@ -1120,7 +1194,11 @@
     "relatedEventIds": ["china-199-lu-bu-defeated"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "建安三年至四年" },
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "建安三年至四年",
+        "quote": "先主复得妻子，从曹公还许。表先主为左将军，礼之愈重，出则同舆，坐则同席。"
+      },
       { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传下邳败亡" }
     ]
   },
@@ -1135,7 +1213,11 @@
     "relatedEventIds": ["china-207-longzhong-plan"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "依刘表居新野" },
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "依刘表居新野",
+        "quote": "先主遣麋竺、孙乾与刘表相闻，表自郊迎，以上宾礼待之，益其兵，使屯新野。"
+      },
       { "sourceId": "zizhi-tongjian-65", "locator": "建安十三年前荆州形势" }
     ]
   },
@@ -1151,7 +1233,11 @@
     "confidence": "high",
     "sourceRefs": [
       { "sourceId": "sanguozhi-shu-xianzhu", "locator": "三顾与隆中相关记载" },
-      { "sourceId": "sanguozhi-shu-zhuge-liang", "locator": "诸葛亮传" }
+      {
+        "sourceId": "sanguozhi-shu-zhuge-liang",
+        "locator": "诸葛亮传",
+        "quote": "徐庶曰：“此人可就见，不可屈致也。将军宜枉驾顾之。”由是先主遂诣亮，凡三往，乃见。"
+      }
     ]
   },
   {
@@ -1165,7 +1251,11 @@
     "relatedEventIds": ["china-208-red-cliffs"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "建安十三年" },
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "建安十三年",
+        "quote": "与曹公战于赤壁，大破之，焚其舟船。先主与吴军水陆并进，追到南郡。"
+      },
       { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "周瑜、鲁肃传赤壁相关记载" }
     ]
   },
@@ -1180,7 +1270,11 @@
     "relatedEventIds": ["china-214-liu-bei-takes-yi"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "取益州相关记载" },
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "取益州相关记载",
+        "quote": "先主遣人迎超，超将兵径到城下。城中震怖，璋即稽服。"
+      },
       { "sourceId": "zizhi-tongjian-67", "locator": "建安十九年" }
     ]
   },
@@ -1195,7 +1289,11 @@
     "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "建安二十四年称汉中王" },
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "建安二十四年称汉中王",
+        "quote": "秋，群下上先主为汉中王，表于汉帝。"
+      },
       { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
     ]
   },
@@ -1210,7 +1308,11 @@
     "relatedEventIds": ["china-221-liu-bei-founds-shu"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "章武元年" },
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "章武元年",
+        "quote": "章武元年夏四月，大赦，改年。以诸葛亮为丞相，许靖为司徒。置百官，立宗庙。"
+      },
       { "sourceId": "zizhi-tongjian-69", "locator": "章武元年" }
     ]
   },
@@ -1225,7 +1327,11 @@
     "relatedEventIds": ["china-222-yiling"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "章武二年夷陵败绩" },
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "章武二年夷陵败绩",
+        "quote": "陆议大破先主军于猇亭，将军冯习、张南等皆没。先主自猇亭还秭归，收合离散兵。"
+      },
       { "sourceId": "zizhi-tongjian-70", "locator": "黄武元年 / 章武二年" }
     ]
   },
@@ -1239,7 +1345,13 @@
     "summary": "夷陵失败后，刘备退至永安，临终托孤诸葛亮，蜀汉进入刘禅与诸葛亮辅政阶段。",
     "relatedEventIds": ["china-222-yiling"],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-shu-xianzhu", "locator": "章武三年" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "章武三年",
+        "quote": "先主病笃，托孤于丞相亮，尚书令李严为副。夏四月癸巳，先主殂于永安宫，时年六十三。"
+      }
+    ]
   },
   {
     "id": "guan-yu-unknown-birth",
@@ -1329,7 +1441,13 @@
     "summary": "诸葛亮为琅邪阳都人，后隐居隆中，被刘备三顾请出。",
     "relatedEventIds": [],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-shu-zhuge-liang", "locator": "诸葛亮传" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-zhuge-liang",
+        "locator": "诸葛亮传",
+        "quote": "诸葛亮字孔明，琅邪阳都人也。汉司隶校尉诸葛丰后也。"
+      }
+    ]
   },
   {
     "id": "zhuge-liang-207-longzhong",
@@ -1341,7 +1459,13 @@
     "summary": "诸葛亮为刘备提出取荆、益二州、联吴抗曹、待天下有变的战略设想。",
     "relatedEventIds": ["china-207-longzhong-plan"],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-shu-zhuge-liang", "locator": "诸葛亮传" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-zhuge-liang",
+        "locator": "诸葛亮传",
+        "quote": "亮答曰：“自董卓已来，豪杰并起，跨州连郡者不可胜数。”"
+      }
+    ]
   },
   {
     "id": "zhuge-liang-234-death",
@@ -1354,7 +1478,11 @@
     "relatedEventIds": ["china-234-wuzhang-plains"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-shu-zhuge-liang", "locator": "诸葛亮传" },
+      {
+        "sourceId": "sanguozhi-shu-zhuge-liang",
+        "locator": "诸葛亮传",
+        "quote": "相持百馀日。其年八月，亮疾病，卒于军，时年五十四。"
+      },
       { "sourceId": "zizhi-tongjian-72", "locator": "青龙二年 / 建兴十二年" }
     ]
   },
@@ -1446,7 +1574,13 @@
     "summary": "孙权为孙坚之子、孙策之弟，后继承江东基业。",
     "relatedEventIds": [],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-wu-wuzhu", "locator": "吴主传" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-wuzhu",
+        "locator": "吴主传",
+        "quote": "孙权字仲谋。兄策既定诸郡，时权年十五，以为阳羡长。"
+      }
+    ]
   },
   {
     "id": "sun-quan-200-succeeds-jiangdong",
@@ -1458,7 +1592,13 @@
     "summary": "孙策遇刺后，孙权继承江东，依托张昭、周瑜等旧臣稳定内部，完成从继承者到统治者的过渡。",
     "relatedEventIds": [],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-wu-wuzhu", "locator": "建安五年孙策卒后" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-wuzhu",
+        "locator": "建安五年孙策卒后",
+        "quote": "五年，策薨，以事授权，权哭未及息。张昭谓权曰：“此宁哭时邪？”乃改易权服，扶令上马，使出巡军。"
+      }
+    ]
   },
   {
     "id": "sun-quan-208-red-cliffs",
@@ -1471,7 +1611,11 @@
     "relatedEventIds": ["china-208-red-cliffs"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wu-wuzhu", "locator": "建安十三年" },
+      {
+        "sourceId": "sanguozhi-wu-wuzhu",
+        "locator": "建安十三年",
+        "quote": "惟瑜、肃执拒之议，意与权同。瑜、普为左右督，各领万人，与备俱进，遇于赤壁，大破曹公军。"
+      },
       { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "周瑜、鲁肃传赤壁相关记载" }
     ]
   },
@@ -1486,7 +1630,11 @@
     "relatedEventIds": [],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wu-wuzhu", "locator": "建安二十年合肥相关记载" },
+      {
+        "sourceId": "sanguozhi-wu-wuzhu",
+        "locator": "建安二十年合肥相关记载",
+        "quote": "合肥未下，彻军还。兵皆就路，权与凌统、甘宁等在津北为魏将张辽所袭，统等以死捍权，权乘骏马越津桥得去。"
+      },
       { "sourceId": "zizhi-tongjian-67", "locator": "建安二十年" }
     ]
   },
@@ -1501,7 +1649,11 @@
     "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wu-wuzhu", "locator": "建安二十四年" },
+      {
+        "sourceId": "sanguozhi-wu-wuzhu",
+        "locator": "建安二十四年",
+        "quote": "闰月，权征羽，先遣吕蒙袭公安，获将军士仁。蒙到南郡，南郡太守麋芳以城降。"
+      },
       { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "吕蒙传荆州相关记载" },
       { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
     ]
@@ -1517,7 +1669,11 @@
     "relatedEventIds": ["china-222-yiling"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wu-wuzhu", "locator": "黄武元年" },
+      {
+        "sourceId": "sanguozhi-wu-wuzhu",
+        "locator": "黄武元年",
+        "quote": "黄武元年春正月，陆逊部将军宋谦等攻蜀五屯，皆破之，斩其将。"
+      },
       { "sourceId": "zizhi-tongjian-70", "locator": "黄武元年" }
     ]
   },
@@ -1532,7 +1688,11 @@
     "relatedEventIds": ["china-229-sun-quan-emperor"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wu-wuzhu", "locator": "黄龙元年" },
+      {
+        "sourceId": "sanguozhi-wu-wuzhu",
+        "locator": "黄龙元年",
+        "quote": "黄龙元年春，公卿百司皆劝权正尊号。夏四月，夏口、武昌并言黄龙、凤凰见。丙申，南郊即皇帝位。"
+      },
       { "sourceId": "zizhi-tongjian-69", "locator": "黄龙元年" }
     ]
   },
@@ -1546,7 +1706,13 @@
     "summary": "孙权去世后，孙吴进入宗室与权臣政治更替频繁的阶段。",
     "relatedEventIds": [],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-wu-wuzhu", "locator": "吴主传" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-wuzhu",
+        "locator": "吴主传",
+        "quote": "夏四月，权薨，时年七十一，谥曰大皇帝。秋七月，葬蒋陵。"
+      }
+    ]
   },
   {
     "id": "zhou-yu-175-born",
@@ -1558,7 +1724,13 @@
     "summary": "周瑜为庐江舒人，早与孙策交好，后成为江东核心统帅。",
     "relatedEventIds": [],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-wu-zhou-yu", "locator": "周瑜传" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-zhou-yu",
+        "locator": "周瑜传",
+        "quote": "周瑜字公瑾，庐江舒人也。从祖父景，景子忠，皆为汉太尉。"
+      }
+    ]
   },
   {
     "id": "zhou-yu-208-red-cliffs",
@@ -1571,7 +1743,11 @@
     "relatedEventIds": ["china-208-red-cliffs"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wu-zhou-yu", "locator": "周瑜传赤壁相关记载" },
+      {
+        "sourceId": "sanguozhi-wu-zhou-yu",
+        "locator": "周瑜传赤壁相关记载",
+        "quote": "权遂遣瑜及程普等与备并力逆曹公，遇于赤壁。时曹公军众已有疾病，初一交战，公军败退。"
+      },
       { "sourceId": "zizhi-tongjian-65", "locator": "建安十三年" }
     ]
   },
@@ -1585,7 +1761,13 @@
     "summary": "赤壁后周瑜继续谋划荆州与益州方向，210 年病逝。",
     "relatedEventIds": [],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-wu-zhou-yu", "locator": "周瑜传" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-zhou-yu",
+        "locator": "周瑜传",
+        "quote": "瑜还江陵，为行装，而道于巴丘病卒，时年三十六。权素服举哀，感恸左右。"
+      }
+    ]
   },
   {
     "id": "lu-su-172-born",
@@ -1636,7 +1818,13 @@
     "summary": "陆逊为吴郡吴县人，后成为孙吴军事与政治核心人物。",
     "relatedEventIds": [],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-wu-lu-xun", "locator": "陆逊传" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-lu-xun",
+        "locator": "陆逊传",
+        "quote": "陆逊字伯言，吴郡吴人也。本名议，世江东大族。"
+      }
+    ]
   },
   {
     "id": "lu-xun-219-jingzhou",
@@ -1649,7 +1837,11 @@
     "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wu-lu-xun", "locator": "陆逊传" },
+      {
+        "sourceId": "sanguozhi-wu-lu-xun",
+        "locator": "陆逊传",
+        "quote": "逊具启形状，陈其可禽之要。权乃潜军而上，使逊与吕蒙为前部，至即克公安、南郡。"
+      },
       { "sourceId": "zizhi-tongjian-67", "locator": "建安二十四年" }
     ]
   },
@@ -1664,7 +1856,11 @@
     "relatedEventIds": ["china-222-yiling"],
     "confidence": "high",
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wu-lu-xun", "locator": "陆逊传" },
+      {
+        "sourceId": "sanguozhi-wu-lu-xun",
+        "locator": "陆逊传",
+        "quote": "逊曰：“吾已晓破之之术。”乃敕各持一把茅，以火攻拔之。通率诸军同时俱攻，斩张南、冯习等，破其四十馀营。"
+      },
       { "sourceId": "zizhi-tongjian-70", "locator": "黄武元年 / 章武二年" }
     ]
   },
@@ -1678,7 +1874,13 @@
     "summary": "陆逊晚年卷入孙吴继嗣与宫廷政治压力，245 年去世。",
     "relatedEventIds": [],
     "confidence": "high",
-    "sourceRefs": [{ "sourceId": "sanguozhi-wu-lu-xun", "locator": "陆逊传" }]
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-lu-xun",
+        "locator": "陆逊传",
+        "quote": "权累遣中使责让逊，逊愤恚致卒，时年六十三，家无馀财。"
+      }
+    ]
   },
   {
     "id": "liu-shan-207-born",

@@ -439,6 +439,73 @@ function SourceExcerpt({ quote }: { quote?: string }) {
   );
 }
 
+function LifeEventSources({ lifeEvent }: { lifeEvent: PersonLifeEvent }) {
+  return (
+    <div className="life-event-source-list">
+      <div className="life-event-meta">
+        <span>{getConfidenceLabel(lifeEvent.confidence)}</span>
+        {lifeEvent.sourceRefs.slice(0, 2).map((ref) => (
+          <SourceRefLink key={`${lifeEvent.id}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
+        ))}
+      </div>
+      {lifeEvent.sourceRefs.some((ref) => ref.quote) && (
+        <div className="life-event-excerpts">
+          {lifeEvent.sourceRefs
+            .filter((ref) => ref.quote)
+            .map((ref) => (
+              <div className="life-event-excerpt" key={`${lifeEvent.id}-${ref.sourceId}-${ref.locator ?? ""}-quote`}>
+                <span>{formatSourceRef(ref)}</span>
+                <SourceExcerpt quote={ref.quote} />
+              </div>
+            ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function PersonLifeEventCard({
+  lifeEvent,
+  linkedEvent,
+  selectedEventId,
+  onSelectEvent,
+}: {
+  lifeEvent: PersonLifeEvent;
+  linkedEvent?: HistoricalEvent;
+  selectedEventId: string;
+  onSelectEvent: (event: HistoricalEvent) => void;
+}) {
+  const isSelected = linkedEvent?.id === selectedEventId;
+  const mainContent = (
+    <>
+      <div className="life-event-year">
+        <span>{lifeEvent.displayYear}</span>
+        <small>{getLifeEventTypeLabel(lifeEvent.type)}</small>
+      </div>
+      <div className="life-event-copy">
+        <strong>{lifeEvent.title}</strong>
+        <p>{lifeEvent.summary}</p>
+      </div>
+    </>
+  );
+
+  return (
+    <article
+      className={`person-life-event ${linkedEvent ? "clickable" : ""} ${isSelected ? "selected" : ""}`}
+      data-person-life-event-id={lifeEvent.id}
+    >
+      {linkedEvent ? (
+        <button className="life-event-main" type="button" onClick={() => onSelectEvent(linkedEvent)}>
+          {mainContent}
+        </button>
+      ) : (
+        <div className="life-event-main">{mainContent}</div>
+      )}
+      <LifeEventSources lifeEvent={lifeEvent} />
+    </article>
+  );
+}
+
 function getRelationTypeLabel(type: string) {
   const labels: Record<string, string> = {
     abdication: "禅让",
@@ -1921,26 +1988,13 @@ function App() {
                         .find((event): event is HistoricalEvent => Boolean(event));
 
                       return (
-                        <button
-                          className={`person-life-event ${linkedEvent?.id === selectedEvent.id ? "selected" : ""}`}
-                          data-person-life-event-id={lifeEvent.id}
+                        <PersonLifeEventCard
                           key={lifeEvent.id}
-                          type="button"
-                          onClick={() => {
-                            if (linkedEvent) {
-                              selectHistoricalEvent(linkedEvent);
-                            }
-                          }}
-                        >
-                          <div className="life-event-year">
-                            <span>{lifeEvent.displayYear}</span>
-                            <small>{getLifeEventTypeLabel(lifeEvent.type)}</small>
-                          </div>
-                          <div className="life-event-copy">
-                            <strong>{lifeEvent.title}</strong>
-                            <p>{lifeEvent.summary}</p>
-                          </div>
-                        </button>
+                          lifeEvent={lifeEvent}
+                          linkedEvent={linkedEvent}
+                          selectedEventId={selectedEvent.id}
+                          onSelectEvent={selectHistoricalEvent}
+                        />
                       );
                     })
                   ) : (
@@ -2328,39 +2382,14 @@ function App() {
                       const linkedEvent = lifeEvent.relatedEventIds
                         .map((eventId) => events.find((event) => event.id === eventId))
                         .find((event): event is HistoricalEvent => Boolean(event));
-                      const content = (
-                        <>
-                          <div className="life-event-year">
-                            <span>{lifeEvent.displayYear}</span>
-                            <small>{getLifeEventTypeLabel(lifeEvent.type)}</small>
-                          </div>
-                          <div className="life-event-copy">
-                            <strong>{lifeEvent.title}</strong>
-                            <p>{lifeEvent.summary}</p>
-                            <div className="life-event-meta">
-                              <span>{getConfidenceLabel(lifeEvent.confidence)}</span>
-                              {lifeEvent.sourceRefs.slice(0, 2).map((ref) => (
-                                <SourceRefLink interactive={false} key={`${lifeEvent.id}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
-                              ))}
-                            </div>
-                          </div>
-                        </>
-                      );
-
-                      return linkedEvent ? (
-                        <button
-                          className={`person-life-event ${linkedEvent.id === selectedEvent.id ? "selected" : ""}`}
-                          data-person-life-event-id={lifeEvent.id}
+                      return (
+                        <PersonLifeEventCard
                           key={lifeEvent.id}
-                          type="button"
-                          onClick={() => selectHistoricalEvent(linkedEvent)}
-                        >
-                          {content}
-                        </button>
-                      ) : (
-                        <article className="person-life-event" data-person-life-event-id={lifeEvent.id} key={lifeEvent.id}>
-                          {content}
-                        </article>
+                          lifeEvent={lifeEvent}
+                          linkedEvent={linkedEvent}
+                          selectedEventId={selectedEvent.id}
+                          onSelectEvent={selectHistoricalEvent}
+                        />
                       );
                     })
                   ) : (

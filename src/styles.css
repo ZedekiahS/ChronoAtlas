@@ -1444,8 +1444,7 @@ input[type="range"] {
 
 .person-life-event {
   display: grid;
-  grid-template-columns: 76px 1fr;
-  gap: 10px;
+  gap: 8px;
   width: 100%;
   padding: 10px;
   border: 1px solid rgba(30, 34, 38, 0.1);
@@ -1455,7 +1454,23 @@ input[type="range"] {
   text-align: left;
 }
 
-button.person-life-event:hover,
+.life-event-main {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+}
+
+button.life-event-main {
+  cursor: pointer;
+}
+
+.person-life-event.clickable:hover,
 .person-life-event.selected {
   border-color: rgba(185, 79, 50, 0.34);
   background: #ffffff;
@@ -1519,6 +1534,38 @@ button.person-life-event:hover,
 .life-event-meta a:hover {
   color: #8b3f2d;
   background: rgba(185, 79, 50, 0.09);
+}
+
+.life-event-source-list {
+  display: grid;
+  gap: 7px;
+  margin-left: 86px;
+}
+
+.life-event-excerpts {
+  display: grid;
+  gap: 6px;
+}
+
+.life-event-excerpt {
+  display: grid;
+  gap: 5px;
+}
+
+.life-event-excerpt > span {
+  color: #687077;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.life-event-excerpt .source-excerpt {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.life-event-excerpt .source-excerpt blockquote {
+  font-size: 12px;
 }
 
 .person-event-timeline::before {
@@ -2008,6 +2055,14 @@ a.source-title-link:hover {
   .person-index-grid {
     grid-template-columns: 1fr;
     overflow: visible;
+  }
+
+  .life-event-main {
+    grid-template-columns: 1fr;
+  }
+
+  .life-event-source-list {
+    margin-left: 0;
   }
 
   .map-frame {
