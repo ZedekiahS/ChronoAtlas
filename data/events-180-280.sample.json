@@ -158,6 +158,62 @@
     "sources": ["Cassius Dio, Roman History", "Herodian, History of the Roman Empire"]
   },
   {
+    "id": "china-194-tao-qian-yields-xuzhou",
+    "title": "陶谦病卒，刘备领徐州",
+    "startYear": 194,
+    "endYear": 194,
+    "region": "china",
+    "locationName": "徐州",
+    "coordinates": [117.2, 34.26],
+    "category": "politics",
+    "summary": "陶谦病重后将徐州托付给刘备，陶谦死后刘备在徐州士民推举下接掌州事，第一次获得较完整的州级政治基础。",
+    "people": ["陶谦", "刘备", "糜竺", "孔融"],
+    "personIds": ["tao-qian", "liu-bei"],
+    "polities": ["徐州陶谦集团", "刘备集团", "东汉"],
+    "relatedEvents": ["china-194-lu-bu-seizes-yan", "china-196-lu-bu-seizes-xuzhou", "china-199-lu-bu-defeated"],
+    "tags": ["徐州", "陶谦", "刘备早期根据地"],
+    "confidence": "high",
+    "sources": ["《三国志·蜀书·先主传》", "《三国志·魏书·陶谦传》", "《资治通鉴》卷六十一"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "陶谦迎先主入徐州",
+        "quote": "谦病笃，谓别驾麋竺曰：“非刘备不能安此州也。”"
+      },
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "先主遂领徐州",
+        "quote": "孔融谓先主曰：“袁公路岂忧国忘家者邪？冢中枯骨，何足介意。”先主遂领徐州。"
+      },
+      { "sourceId": "sanguozhi-wei-tao-qian", "locator": "陶谦传徐州相关记载" }
+    ],
+    "detail": {
+      "background": [
+        "徐州位于兖州、豫州、淮南、青州之间，是曹操、袁术、吕布、刘备都可能介入的中原东南枢纽。",
+        "曹操东征徐州与陶谦冲突后，徐州内部需要新的军事保护者，刘备由此进入徐州政治。"
+      ],
+      "process": [
+        "陶谦病重时将徐州托付给刘备，糜竺等徐州士人推动刘备接掌州事。",
+        "刘备起初有所迟疑，孔融劝其不要依附袁术，最终刘备领徐州。"
+      ],
+      "result": [
+        "刘备获得第一个州级政治舞台，但徐州基础仍然薄弱。",
+        "徐州很快卷入袁术、吕布和曹操之间的连续争夺。"
+      ],
+      "impact": [
+        "这是刘备从流动武装首领转向州级割据者的第一次机会。",
+        "徐州得失也解释了刘备早年为何长期在曹操、袁绍、刘表等大势力之间辗转。"
+      ],
+      "sourceNotes": [
+        "《先主传》保存刘备领徐州的核心叙述，《陶谦传》可补徐州前置背景。",
+        "此事件作为中型事件展示，不进入主时间条大型事件点。"
+      ],
+      "uncertainty": [
+        "陶谦临终托付、徐州士人推举和刘备实际控制范围并不等于全州稳固控制，第一版按政治主导权处理。"
+      ]
+    }
+  },
+  {
     "id": "china-194-lu-bu-seizes-yan",
     "title": "吕布袭取兖州，曹操根据地受挫",
     "startYear": 194,
@@ -228,6 +284,58 @@
     ]
   },
   {
+    "id": "china-196-lu-bu-seizes-xuzhou",
+    "title": "吕布袭下邳，刘备失徐州",
+    "startYear": 196,
+    "endYear": 196,
+    "region": "china",
+    "locationName": "下邳、徐州",
+    "coordinates": [118.0, 34.3],
+    "category": "war",
+    "summary": "刘备与袁术交战时，吕布袭取下邳并控制徐州。刘备失去刚取得的州级基础，转入依附吕布、曹操之间的夹缝状态。",
+    "people": ["吕布", "刘备", "袁术", "张飞"],
+    "personIds": ["lu-bu", "liu-bei", "yuan-shu", "zhang-fei"],
+    "polities": ["吕布集团", "刘备集团", "袁术集团"],
+    "relatedEvents": ["china-194-tao-qian-yields-xuzhou", "china-197-yuan-shu-declares-emperor", "china-199-lu-bu-defeated"],
+    "tags": ["徐州", "下邳", "吕布", "刘备失据"],
+    "confidence": "high",
+    "sources": ["《三国志·魏书·吕布传》", "《三国志·蜀书·先主传》", "《资治通鉴》卷六十二"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-lubu",
+        "locator": "吕布传徐州相关记载",
+        "quote": "备东击术，布袭取下邳，获备妻子。"
+      },
+      { "sourceId": "sanguozhi-shu-xianzhu", "locator": "先主传徐州相关记载" },
+      { "sourceId": "zizhi-tongjian-62", "locator": "建安元年" }
+    ],
+    "detail": {
+      "background": [
+        "刘备接掌徐州后，既要面对袁术压力，也要安置来投的吕布，政治基础并不稳固。",
+        "徐州内部军事力量复杂，刘备、张飞、吕布、袁术的行动互相牵动。"
+      ],
+      "process": [
+        "刘备东向与袁术相争，吕布趁机袭取下邳。",
+        "吕布取得刘备家属和徐州核心据点，刘备被迫向外求援或转为依附。"
+      ],
+      "result": [
+        "吕布成为徐州实际主导者，刘备失去陶谦死后取得的州级根据地。",
+        "徐州问题进一步牵动曹操、袁术和刘备，最终导向下邳之战。"
+      ],
+      "impact": [
+        "此事件让吕布从兖州失败后的流动势力，转为徐州割据者。",
+        "刘备早期事业再次受挫，也为后来与曹操合攻吕布埋下伏笔。"
+      ],
+      "sourceNotes": [
+        "《吕布传》保留了吕布袭下邳的简明叙述，《先主传》可与刘备失徐州线索互证。",
+        "这里作为中型事件折叠显示，用来补足徐州连续格局，而不是主时间条大型事件。"
+      ],
+      "uncertainty": [
+        "徐州各郡县归属在 196-198 年间变化频繁，当前只记录下邳和徐州主导权转移。"
+      ]
+    }
+  },
+  {
     "id": "china-197-yuan-shu-declares-emperor",
     "title": "袁术称帝，淮南集团迅速孤立",
     "startYear": 197,
@@ -240,13 +348,156 @@
     "people": ["袁术"],
     "personIds": ["yuan-shu"],
     "polities": ["袁术集团", "东汉"],
-    "relatedEvents": ["china-190-coalition-against-dong-zhuo", "china-199-lu-bu-defeated"],
+    "relatedEvents": ["china-190-coalition-against-dong-zhuo", "china-196-lu-bu-seizes-xuzhou", "china-199-yuan-shu-collapse", "china-199-lu-bu-defeated"],
     "tags": ["淮南", "称帝", "政治孤立"],
     "confidence": "high",
     "sources": ["《三国志·魏书·袁术传》", "《资治通鉴》卷六十二"],
     "sourceRefs": [
-      { "sourceId": "sanguozhi-wei-yuan-shu", "locator": "袁术称帝相关记载" }
-    ]
+      {
+        "sourceId": "sanguozhi-wei-yuan-shu",
+        "locator": "袁术称帝相关记载",
+        "quote": "用河内张烱之符命，遂僭号。"
+      },
+      {
+        "sourceId": "sanguozhi-wei-yuan-shu",
+        "locator": "典略所载建号",
+        "quote": "自以名字当之，乃建号称仲氏。"
+      },
+      { "sourceId": "zizhi-tongjian-62", "locator": "建安二年" }
+    ],
+    "detail": {
+      "background": [
+        "袁术出自汝南袁氏，曾掌握淮南和部分扬州资源，在汉末群雄中有很高门第资本。",
+        "曹操迎汉献帝至许后，东汉名义秩序反而被曹操利用；袁术称帝是在这一合法性竞争中的冒进选择。"
+      ],
+      "process": [
+        "袁术以符命和袁氏门第为依据，在寿春僭号称帝，建立“仲氏”名号。",
+        "阎象等部属曾以周文王事殷作比劝阻，但袁术没有采纳。"
+      ],
+      "result": [
+        "袁术称帝迅速引发政治孤立，其他势力更容易以维护汉室名义排斥或攻击袁术。",
+        "淮南集团财政、粮食和军心压力加速恶化。"
+      ],
+      "impact": [
+        "袁术称帝是汉末群雄中最早公开破坏汉室名义秩序的举动之一。",
+        "它也解释了袁术为何从强势淮南军阀快速走向败亡。"
+      ],
+      "sourceNotes": [
+        "《袁术传》提供袁术称帝、部属劝阻和败亡的核心叙述。",
+        "《资治通鉴》卷六十二可用于校准建安二年前后的连续政局。"
+      ],
+      "uncertainty": [
+        "袁术称帝的具体仪式制度可后续细化；当前重点记录其政治后果。"
+      ]
+    }
+  },
+  {
+    "id": "china-199-yuan-shu-collapse",
+    "title": "袁术败亡，淮南集团瓦解",
+    "startYear": 199,
+    "endYear": 199,
+    "region": "china",
+    "locationName": "淮南、江亭一带",
+    "coordinates": [116.78, 32.57],
+    "category": "politics",
+    "summary": "称帝后的袁术先后受吕布、曹操等压力，粮尽势孤，欲北投袁谭未成，最终病死。淮南袁术集团作为独立势力瓦解。",
+    "people": ["袁术", "袁绍", "袁谭", "曹操", "吕布"],
+    "personIds": ["yuan-shu", "yuan-shao", "cao-cao", "lu-bu"],
+    "polities": ["袁术集团", "曹操集团", "袁绍集团"],
+    "relatedEvents": ["china-197-yuan-shu-declares-emperor", "china-199-lu-bu-defeated", "china-200-guandu"],
+    "tags": ["袁术", "淮南", "群雄败亡"],
+    "confidence": "high",
+    "sources": ["《三国志·魏书·袁术传》", "《资治通鉴》卷六十二"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yuan-shu",
+        "locator": "袁术败亡相关记载",
+        "quote": "术前为吕布所破，后为太祖所败，奔其部曲雷薄、陈兰于灊山，复为所拒。"
+      },
+      {
+        "sourceId": "sanguozhi-wei-yuan-shu",
+        "locator": "江亭病死",
+        "quote": "欲至青州从袁谭，发病道死。"
+      },
+      { "sourceId": "zizhi-tongjian-62", "locator": "建安四年" }
+    ],
+    "detail": {
+      "background": [
+        "袁术称帝后，原本可借袁氏门第整合的政治资源迅速转化为负担。",
+        "吕布、曹操、孙策等势力都与袁术发生过冲突，淮南集团内外压力不断加重。"
+      ],
+      "process": [
+        "袁术称帝后军政资源枯竭，部曲雷薄、陈兰等拒绝接纳，袁术欲转向袁绍集团方向求存。",
+        "袁术在北走途中病死，集团核心不再具备独立政治号召力。"
+      ],
+      "result": [
+        "袁术集团瓦解，淮南权力真空被曹操、孙策等势力重新分割。",
+        "袁术称帝失败也成为汉末其他群雄避免过早称帝的重要反例。"
+      ],
+      "impact": [
+        "袁术败亡减少了中原东南部的独立竞争者。",
+        "淮南和江淮地区此后更直接进入曹操、孙权两大集团的长期对峙格局。"
+      ],
+      "sourceNotes": [
+        "《袁术传》同时记录称帝和败亡，适合把 197 与 199 两个节点连成一条线。",
+        "《资治通鉴》卷六十二可校准建安四年前后的袁术、吕布、曹操事件顺序。"
+      ],
+      "uncertainty": [
+        "袁术败亡前各部曲、部将的具体去向较分散，第一版只处理集团瓦解这一层。"
+      ]
+    }
+  },
+  {
+    "id": "china-199-gongsun-zan-defeated",
+    "title": "易京陷落，公孙瓒败亡",
+    "startYear": 199,
+    "endYear": 199,
+    "region": "china",
+    "locationName": "易京",
+    "coordinates": [115.49, 39.35],
+    "category": "war",
+    "summary": "袁绍长期围攻公孙瓒，易京最终陷落。公孙瓒败亡后，幽州与冀北格局转向袁绍主导，为官渡前袁绍强势地位提供基础。",
+    "people": ["公孙瓒", "袁绍"],
+    "personIds": ["gongsun-zan", "yuan-shao"],
+    "polities": ["公孙瓒集团", "袁绍集团"],
+    "relatedEvents": ["china-200-guandu"],
+    "tags": ["易京", "幽州", "袁绍", "公孙瓒败亡"],
+    "confidence": "high",
+    "sources": ["《三国志·魏书·公孙瓒传》", "《三国志·魏书·袁绍传》", "《资治通鉴》卷六十二"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-gongsun-zan",
+        "locator": "易京固守相关记载",
+        "quote": "瓒军数败，乃走还易京固守。"
+      },
+      { "sourceId": "sanguozhi-wei-yuan-shao", "locator": "袁绍平公孙瓒相关记载" },
+      { "sourceId": "zizhi-tongjian-62", "locator": "建安四年" }
+    ],
+    "detail": {
+      "background": [
+        "袁绍与公孙瓒长期争夺冀州、幽州和北方边地资源。",
+        "公孙瓒后期退守易京，以高楼、深堑和积谷进行防御。"
+      ],
+      "process": [
+        "袁绍连续围攻易京，公孙瓒无法恢复外线主动。",
+        "易京陷落后，公孙瓒集团瓦解。"
+      ],
+      "result": [
+        "袁绍取得河北和幽州方向更完整的控制。",
+        "官渡前，袁绍因此成为北方资源最强的军事政治集团。"
+      ],
+      "impact": [
+        "公孙瓒败亡是官渡之前北方格局收束的重要节点。",
+        "它不是曹刘孙主线事件，但对理解袁绍为何能南下压迫曹操非常重要。"
+      ],
+      "sourceNotes": [
+        "《公孙瓒传》提供易京固守和败亡脉络，《袁绍传》提供袁绍北方扩张视角。",
+        "此事件按中型事件处理，适合在打开中型事件时显示。"
+      ],
+      "uncertainty": [
+        "易京位置和围攻细节可后续结合地图资料细化；当前以北方权力转移为主。"
+      ]
+    }
   },
   {
     "id": "china-199-lu-bu-defeated",
@@ -261,13 +512,18 @@
     "people": ["曹操", "吕布", "刘备", "陈宫"],
     "personIds": ["cao-cao", "lu-bu", "liu-bei", "chen-gong"],
     "polities": ["曹操集团", "吕布集团"],
-    "relatedEvents": ["china-194-lu-bu-seizes-yan", "china-200-guandu"],
+    "relatedEvents": ["china-194-lu-bu-seizes-yan", "china-196-lu-bu-seizes-xuzhou", "china-199-yuan-shu-collapse", "china-200-guandu"],
     "tags": ["下邳", "徐州", "吕布败亡"],
     "confidence": "high",
     "sources": ["《三国志·魏书·武帝纪》", "《三国志·魏书·吕布传》", "《资治通鉴》卷六十二"],
     "sourceRefs": [
       { "sourceId": "sanguozhi-wei-wudi", "locator": "建安三年至四年" },
-      { "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传" }
+      {
+        "sourceId": "sanguozhi-wei-lubu",
+        "locator": "吕布传下邳败亡",
+        "quote": "太祖堑围之三月，上下离心，其将侯成、宋宪、魏续缚陈宫，将其衆降。"
+      },
+      { "sourceId": "zizhi-tongjian-62", "locator": "建安三年至四年" }
     ],
     "detail": {
       "background": [
@@ -789,6 +1045,63 @@
     "tags": ["萨珊波斯", "安息帝国", "西亚"],
     "confidence": "high",
     "sources": ["al-Tabari, History", "Touraj Daryaee, Sasanian Persia"]
+  },
+  {
+    "id": "china-226-jiaozhou-incorporated-by-wu",
+    "title": "士燮卒，交州士氏独立地位削弱",
+    "startYear": 226,
+    "endYear": 226,
+    "region": "china",
+    "locationName": "交州、交趾",
+    "coordinates": [106.35, 21.03],
+    "category": "politics",
+    "summary": "士燮去世后，交州士氏长期自治的局面开始改变。孙吴通过刺史任命和军事处置加强交州控制，岭南逐渐纳入孙吴直接经营。",
+    "people": ["士燮", "孙权", "吕岱", "士徽"],
+    "personIds": ["shi-xie", "sun-quan"],
+    "polities": ["交州士氏", "孙吴"],
+    "relatedEvents": ["china-222-yiling", "china-229-sun-quan-emperor"],
+    "tags": ["交州", "士燮", "孙吴岭南经营"],
+    "confidence": "medium",
+    "sources": ["《三国志·吴书·士燮传》", "《三国志·吴书·吕岱传》", "《资治通鉴》卷七十"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-shi-xie",
+        "locator": "建安十五年至黄武五年",
+        "quote": "建安十五年，孙权遣步隲为交州刺史。隲到，燮率兄弟奉承节度。"
+      },
+      {
+        "sourceId": "sanguozhi-wu-shi-xie",
+        "locator": "黄武五年",
+        "quote": "燮在郡四十馀岁，黄武五年，年九十卒。"
+      },
+      { "sourceId": "sanguozhi-wu-lu-dai", "locator": "吕岱传交州相关记载" },
+      { "sourceId": "zizhi-tongjian-70", "locator": "黄武五年前后" }
+    ],
+    "detail": {
+      "background": [
+        "士燮长期据交趾并影响交州诸郡，虽向孙权奉贡、遣子入质，但地方士氏仍保有很强自治色彩。",
+        "对孙吴而言，交州连接岭南资源、海上交通和南方边郡，不能长期只停留在名义臣属状态。"
+      ],
+      "process": [
+        "士燮去世后，孙吴对交州官职进行重新任命，并依靠吕岱等人处理地方反抗和郡县秩序。",
+        "士氏家族原本的地方独立地位被削弱，孙吴刺史体系和军事力量进一步进入交州。"
+      ],
+      "result": [
+        "交州从士燮时代的半自治名义臣属，转向孙吴更直接的行政和军事控制。",
+        "岭南不再只是地图边缘的灰色背景，而是孙吴南方政权结构的一部分。"
+      ],
+      "impact": [
+        "此事件属于非主角派系并入或失去独立地位的中型事件，正好适合补充你说的对比信息层。",
+        "它也为后续孙吴在南方的资源、边郡治理和海路活动提供背景。"
+      ],
+      "sourceNotes": [
+        "《士燮传》记录士燮向孙权奉承节度、遣子入质和黄武五年去世。",
+        "《吕岱传》补足孙吴在交州的实际军事和行政经营。"
+      ],
+      "uncertainty": [
+        "“并入”不是一天完成的静态边界变化，而是士燮死后孙吴任命、军事处置和地方秩序重组的过程；当前用 226 年作为关键节点。"
+      ]
+    }
   },
   {
     "id": "china-229-sun-quan-emperor",

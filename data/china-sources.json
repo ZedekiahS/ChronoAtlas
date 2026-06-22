@@ -54,6 +54,15 @@
     "url": "https://ctext.org/text.pl?if=gb&node=602294&remap=gb"
   },
   {
+    "id": "sanguozhi-wei-tao-qian",
+    "title": "三国志·魏书·二公孙陶四张传 / 陶谦",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·陶谦传》",
+    "note": "记录陶谦据徐州、曹操东征徐州及陶谦卒后徐州归属。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602294&remap=gb"
+  },
+  {
     "id": "sanguozhi-wei-zhang-lu",
     "title": "三国志·魏书·张鲁传",
     "author": "陈寿",
@@ -108,6 +117,15 @@
     "url": "https://ctext.org/text.pl?if=gb&node=603909&remap=gb"
   },
   {
+    "id": "sanguozhi-wu-shi-xie",
+    "title": "三国志·吴书·刘繇太史慈士燮传 / 士燮",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·吴书·士燮传》",
+    "note": "记录士燮在交州的长期控制、向孙权输诚及黄武五年去世。",
+    "url": "https://ctext.org/text.pl?if=gb&node=604033&remap=gb"
+  },
+  {
     "id": "sanguozhi-wu-zhou-yu",
     "title": "三国志·吴书·周瑜鲁肃吕蒙传",
     "author": "陈寿",
@@ -124,6 +142,15 @@
     "citationShort": "《三国志·吴书·陆逊传》",
     "note": "记录陆逊参与荆州攻取、夷陵之战及吴国军政。",
     "url": "https://ctext.org/text.pl?if=gb&node=604417&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wu-lu-dai",
+    "title": "三国志·吴书·吕岱传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·吴书·吕岱传》",
+    "note": "记录吕岱任交州刺史、平定岭南诸郡和孙吴经营交州。",
+    "url": "https://ctext.org/text.pl?if=gb&node=604506&remap=gb"
   },
   {
     "id": "houhanshu-xiandi",
@@ -166,6 +193,15 @@
     "citationShort": "《资治通鉴》卷五十九",
     "note": "覆盖初平、兴平前后董卓、关东诸军、群雄并起。",
     "url": "https://www.guoxue.com/shibu/zztj/content/zztj_059.htm"
+  },
+  {
+    "id": "zizhi-tongjian-62",
+    "title": "资治通鉴·卷六十二",
+    "author": "司马光",
+    "type": "chronicle",
+    "citationShort": "《资治通鉴》卷六十二",
+    "note": "覆盖建安初年，曹操迎献帝、袁术称帝、吕布徐州败亡等事件。",
+    "url": "https://www.guoxue.com/shibu/zztj/content/zztj_062.htm"
   },
   {
     "id": "zizhi-tongjian-63",

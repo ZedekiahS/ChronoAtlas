@@ -535,9 +535,40 @@
     "type": "death",
     "title": "袁术败亡",
     "summary": "称帝后资源枯竭、盟友离散，袁术在败局中去世。",
-    "relatedEventIds": ["china-197-yuan-shu-declares-emperor"],
+    "relatedEventIds": ["china-197-yuan-shu-declares-emperor", "china-199-yuan-shu-collapse"],
     "confidence": "high",
     "sourceRefs": [{ "sourceId": "sanguozhi-wei-yuan-shu", "locator": "袁术传" }]
+  },
+  {
+    "id": "tao-qian-132-born",
+    "personId": "tao-qian",
+    "year": 132,
+    "displayYear": "132",
+    "type": "birth",
+    "title": "陶谦出生",
+    "summary": "陶谦为丹阳人，后任徐州牧，成为汉末徐州的主要军政首领。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [{ "sourceId": "sanguozhi-wei-tao-qian", "locator": "陶谦传" }]
+  },
+  {
+    "id": "tao-qian-194-xuzhou",
+    "personId": "tao-qian",
+    "year": 194,
+    "displayYear": "194",
+    "type": "death",
+    "title": "病卒，徐州转归刘备",
+    "summary": "陶谦病重时以刘备可安徐州为托付对象，陶谦死后刘备在徐州士民推举下接掌州事。",
+    "relatedEventIds": ["china-194-tao-qian-yields-xuzhou"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-xianzhu",
+        "locator": "陶谦迎先主入徐州",
+        "quote": "谦病笃，谓别驾麋竺曰：“非刘备不能安此州也。”"
+      },
+      { "sourceId": "sanguozhi-wei-tao-qian", "locator": "陶谦传" }
+    ]
   },
   {
     "id": "gongsun-zan-unknown-birth",
@@ -559,7 +590,7 @@
     "type": "death",
     "title": "易京败亡",
     "summary": "公孙瓒在与袁绍的长期争夺中失败，易京陷落后败亡，幽州与冀北形势转向袁绍。",
-    "relatedEventIds": [],
+    "relatedEventIds": ["china-199-gongsun-zan-defeated"],
     "confidence": "high",
     "sourceRefs": [
       { "sourceId": "sanguozhi-wei-gongsun-zan", "locator": "公孙瓒传" },
@@ -604,6 +635,25 @@
     "relatedEventIds": ["china-194-lu-bu-seizes-yan"],
     "confidence": "high",
     "sourceRefs": [{ "sourceId": "sanguozhi-wei-lubu", "locator": "吕布传" }]
+  },
+  {
+    "id": "lu-bu-196-xuzhou",
+    "personId": "lu-bu",
+    "year": 196,
+    "displayYear": "196",
+    "type": "campaign",
+    "title": "袭取下邳据徐州",
+    "summary": "吕布趁刘备与袁术相争，袭取下邳并夺得徐州，刘备被迫转为依附和借势求存。",
+    "relatedEventIds": ["china-196-lu-bu-seizes-xuzhou"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-lubu",
+        "locator": "吕布传徐州相关记载",
+        "quote": "备东击术，布袭取下邳，获备妻子。"
+      },
+      { "sourceId": "zizhi-tongjian-62", "locator": "建安元年" }
+    ]
   },
   {
     "id": "lu-bu-199-death",
@@ -1172,7 +1222,7 @@
     "type": "turning-point",
     "title": "入徐州并接掌州事",
     "summary": "陶谦迎刘备入徐州，陶谦死后刘备一度接掌徐州，这是他第一次拥有较完整的州级政治基础。",
-    "relatedEventIds": [],
+    "relatedEventIds": ["china-194-tao-qian-yields-xuzhou"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -1678,6 +1728,21 @@
     ]
   },
   {
+    "id": "sun-quan-226-jiaozhou",
+    "personId": "sun-quan",
+    "year": 226,
+    "displayYear": "226",
+    "type": "politics",
+    "title": "交州士氏独立地位削弱",
+    "summary": "士燮去世后，孙吴加强对交州的任命和军事处置，岭南从士氏名义臣属转向更直接的孙吴经营。",
+    "relatedEventIds": ["china-226-jiaozhou-incorporated-by-wu"],
+    "confidence": "medium",
+    "sourceRefs": [
+      { "sourceId": "sanguozhi-wu-shi-xie", "locator": "士燮传黄武五年" },
+      { "sourceId": "sanguozhi-wu-lu-dai", "locator": "吕岱传交州相关记载" }
+    ]
+  },
+  {
     "id": "sun-quan-229-emperor",
     "personId": "sun-quan",
     "year": 229,
@@ -1712,6 +1777,61 @@
         "locator": "吴主传",
         "quote": "夏四月，权薨，时年七十一，谥曰大皇帝。秋七月，葬蒋陵。"
       }
+    ]
+  },
+  {
+    "id": "shi-xie-137-born",
+    "personId": "shi-xie",
+    "year": 137,
+    "displayYear": "约 137",
+    "type": "birth",
+    "title": "士燮出生",
+    "summary": "士燮为苍梧广信人，出生年份据黄武五年卒、年九十逆推，精确性保留为近似。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-shi-xie",
+        "locator": "士燮传",
+        "quote": "士燮字威彦，苍梧广信人也。"
+      }
+    ]
+  },
+  {
+    "id": "shi-xie-210-submits-wu",
+    "personId": "shi-xie",
+    "year": 210,
+    "displayYear": "210",
+    "type": "politics",
+    "title": "向孙权奉承节度",
+    "summary": "孙权遣步骘为交州刺史，士燮率兄弟接受节度，并以贡纳、子弟入质维持与江东的名义关系。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-shi-xie",
+        "locator": "建安十五年前后",
+        "quote": "建安十五年，孙权遣步隲为交州刺史。隲到，燮率兄弟奉承节度。"
+      }
+    ]
+  },
+  {
+    "id": "shi-xie-226-death",
+    "personId": "shi-xie",
+    "year": 226,
+    "displayYear": "226",
+    "type": "death",
+    "title": "士燮去世",
+    "summary": "士燮去世后，交州士氏的地方自治空间迅速收缩，孙吴通过刺史和军事处置加强直接控制。",
+    "relatedEventIds": ["china-226-jiaozhou-incorporated-by-wu"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-shi-xie",
+        "locator": "黄武五年",
+        "quote": "燮在郡四十馀岁，黄武五年，年九十卒。"
+      },
+      { "sourceId": "sanguozhi-wu-lu-dai", "locator": "吕岱传交州相关记载" }
     ]
   },
   {
