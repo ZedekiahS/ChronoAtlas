@@ -469,5 +469,86 @@
     "citationShort": "《三国志·蜀书·魏延传》",
     "note": "魏延主传，记录其随刘备入蜀、镇守汉中、随诸葛亮北伐和五丈原后败亡。",
     "url": "https://ctext.org/text.pl?if=gb&node=603669&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-yue-jin",
+    "title": "三国志·魏书·乐进传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·乐进传》",
+    "note": "乐进主传，记录其从曹操帐下起家、先登战功、官渡与合肥等战事。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602719&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-yu-jin",
+    "title": "三国志·魏书·于禁传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·于禁传》",
+    "note": "于禁主传，记录其从鲍信、曹操，宛城军纪、曹魏早期战功和襄樊降关羽。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602722&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-xu-huang",
+    "title": "三国志·魏书·徐晃传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·徐晃传》",
+    "note": "徐晃主传，记录其由杨奉部归曹、官渡战事和襄樊解围。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602734&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-xiu",
+    "title": "三国志·魏书·曹休传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·曹休传》",
+    "note": "曹休主传，记录其曹魏宗亲身份、东线都督、伐吴和石亭战败。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602363&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-zhen",
+    "title": "三国志·魏书·曹真传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·曹真传》",
+    "note": "曹真主传，记录其曹魏宗亲养成、汉中西线、雍凉都督和辅政。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602370&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-man-chong",
+    "title": "三国志·魏书·满宠传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·满宠传》",
+    "note": "满宠主传，记录其治狱、辅佐曹仁守樊城、合肥新城和东线防御。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603126&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-wen-pin",
+    "title": "三国志·魏书·文聘传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·文聘传》",
+    "note": "文聘主传，记录其由刘表旧将归曹、长坂追刘备和江夏边防。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602761&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zang-ba",
+    "title": "三国志·魏书·臧霸传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·臧霸传》",
+    "note": "臧霸主传，记录其泰山、徐州地方武装、归曹后青徐控制和东线战事。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602756&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-li-tong",
+    "title": "三国志·魏书·李通传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·李通传》",
+    "note": "李通主传，记录其汝南地方武装、归曹、征张绣和江陵方向战事。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602750&remap=gb"
   }
 ]

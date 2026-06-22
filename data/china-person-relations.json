@@ -1207,5 +1207,317 @@
         "locator": "北伐相关记载"
       }
     ]
+  },
+  {
+    "id": "cao-cao-yue-jin-service",
+    "sourcePersonId": "yue-jin",
+    "targetPersonId": "cao-cao",
+    "type": "lord-vassal",
+    "startYear": 190,
+    "endYear": 218,
+    "summary": "乐进早年以胆烈从曹操，长期作为曹军先登将领参与中原、河北和东线战事。",
+    "relatedEventIds": ["china-190-coalition-against-dong-zhuo", "china-200-guandu"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yue-jin",
+        "locator": "乐进传"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-yu-jin-service",
+    "sourcePersonId": "yu-jin",
+    "targetPersonId": "cao-cao",
+    "type": "lord-vassal",
+    "startYear": 194,
+    "endYear": 219,
+    "summary": "于禁经王朗推荐入曹操军，以军纪和战功成为曹魏名将，至襄樊败降前长期服属曹操集团。",
+    "relatedEventIds": ["china-194-lu-bu-seizes-yan", "china-219-hanzhong-and-jingzhou-crisis"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yu-jin",
+        "locator": "于禁传"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-xu-huang-service",
+    "sourcePersonId": "xu-huang",
+    "targetPersonId": "cao-cao",
+    "type": "lord-vassal",
+    "startYear": 196,
+    "endYear": 220,
+    "summary": "徐晃由杨奉部转归曹操，成为曹操集团后期多战线的重要将领。",
+    "relatedEventIds": ["china-196-cao-cao-escorts-emperor", "china-219-hanzhong-and-jingzhou-crisis"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-huang",
+        "locator": "徐晃传"
+      }
+    ]
+  },
+  {
+    "id": "five-elite-generals-cao-wei",
+    "sourcePersonId": "zhang-liao",
+    "targetPersonId": "zhang-he",
+    "type": "collective-tradition",
+    "startYear": 200,
+    "endYear": 231,
+    "summary": "张辽、乐进、于禁、张郃、徐晃在后世常合称曹魏五子良将，是曹操集团外姓将领体系的核心代表。",
+    "relatedEventIds": ["china-200-guandu", "china-219-hanzhong-and-jingzhou-crisis"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-he",
+        "locator": "张乐于张徐传"
+      },
+      {
+        "sourceId": "sanguozhi-wei-zhang-liao",
+        "locator": "张辽传"
+      },
+      {
+        "sourceId": "sanguozhi-wei-yue-jin",
+        "locator": "乐进传"
+      },
+      {
+        "sourceId": "sanguozhi-wei-yu-jin",
+        "locator": "于禁传"
+      },
+      {
+        "sourceId": "sanguozhi-wei-xu-huang",
+        "locator": "徐晃传"
+      }
+    ]
+  },
+  {
+    "id": "yue-jin-zhang-liao-hefei",
+    "sourcePersonId": "yue-jin",
+    "targetPersonId": "zhang-liao",
+    "type": "colleague",
+    "startYear": 215,
+    "endYear": 215,
+    "summary": "乐进与张辽、李典同处合肥方向防御体系，共同承担孙权东线压力。",
+    "relatedEventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yue-jin",
+        "locator": "乐进传合肥相关记载"
+      },
+      {
+        "sourceId": "sanguozhi-wei-zhang-liao",
+        "locator": "张辽传"
+      }
+    ]
+  },
+  {
+    "id": "yu-jin-cao-ren-fancheng",
+    "sourcePersonId": "yu-jin",
+    "targetPersonId": "cao-ren",
+    "type": "campaign-colleague",
+    "startYear": 219,
+    "endYear": 219,
+    "summary": "于禁督七军救援被关羽围困的曹仁，兵败投降使曹魏襄樊战局一度危急。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yu-jin",
+        "locator": "于禁传"
+      },
+      {
+        "sourceId": "sanguozhi-wei-cao-ren",
+        "locator": "曹仁传"
+      }
+    ]
+  },
+  {
+    "id": "xu-huang-cao-ren-fancheng",
+    "sourcePersonId": "xu-huang",
+    "targetPersonId": "cao-ren",
+    "type": "rescued",
+    "startYear": 219,
+    "endYear": 219,
+    "summary": "徐晃在襄樊战事中击破关羽围营，解曹仁樊城之围。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-huang",
+        "locator": "徐晃传"
+      },
+      {
+        "sourceId": "sanguozhi-wei-cao-ren",
+        "locator": "曹仁传"
+      }
+    ]
+  },
+  {
+    "id": "man-chong-cao-ren-fancheng",
+    "sourcePersonId": "man-chong",
+    "targetPersonId": "cao-ren",
+    "type": "advisor",
+    "startYear": 219,
+    "endYear": 219,
+    "summary": "满宠在襄樊战事中劝曹仁坚守樊城，帮助稳定曹魏南线防御。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-man-chong",
+        "locator": "满宠传"
+      },
+      {
+        "sourceId": "sanguozhi-wei-cao-ren",
+        "locator": "曹仁传"
+      }
+    ]
+  },
+  {
+    "id": "cao-xiu-cao-pi-east-front",
+    "sourcePersonId": "cao-xiu",
+    "targetPersonId": "cao-pi",
+    "type": "lord-vassal",
+    "startYear": 220,
+    "endYear": 226,
+    "summary": "曹丕时期，曹休被委以东南对吴方向军权，是曹魏宗亲都督体系的重要人物。",
+    "relatedEventIds": ["china-220-cao-pi-founds-wei", "china-222-yiling"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-xiu",
+        "locator": "曹休传"
+      },
+      {
+        "sourceId": "sanguozhi-wei-wendi",
+        "locator": "文帝纪"
+      }
+    ]
+  },
+  {
+    "id": "cao-zhen-cao-pi-west-front",
+    "sourcePersonId": "cao-zhen",
+    "targetPersonId": "cao-pi",
+    "type": "lord-vassal",
+    "startYear": 220,
+    "endYear": 226,
+    "summary": "曹丕时期，曹真为镇西将军、都督雍凉，负责曹魏西线军政。",
+    "relatedEventIds": ["china-220-cao-pi-founds-wei"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhen",
+        "locator": "曹真传"
+      },
+      {
+        "sourceId": "sanguozhi-wei-wendi",
+        "locator": "文帝纪"
+      }
+    ]
+  },
+  {
+    "id": "cao-zhen-sima-yi-regency",
+    "sourcePersonId": "cao-zhen",
+    "targetPersonId": "sima-yi",
+    "type": "co-regent",
+    "startYear": 226,
+    "endYear": 231,
+    "summary": "魏文帝临终后，曹真与司马懿等同受遗诏辅政，共同构成魏明帝初年的辅政格局。",
+    "relatedEventIds": [],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhen",
+        "locator": "曹真传"
+      },
+      {
+        "sourceId": "zizhi-tongjian-72",
+        "locator": "曹魏辅政与诸葛亮北伐相关记载"
+      }
+    ]
+  },
+  {
+    "id": "wen-pin-liu-cong-surrender",
+    "sourcePersonId": "wen-pin",
+    "targetPersonId": "liu-cong",
+    "type": "surrendered-with",
+    "startYear": 208,
+    "endYear": 208,
+    "summary": "文聘原属刘表集团，刘琮举州降曹后才归曹操，并以不能保全荆州为惭。",
+    "relatedEventIds": ["china-208-red-cliffs"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wen-pin",
+        "locator": "文聘传"
+      },
+      {
+        "sourceId": "sanguozhi-wei-liu-biao",
+        "locator": "刘表传"
+      }
+    ]
+  },
+  {
+    "id": "wen-pin-cao-cao-jiangxia",
+    "sourcePersonId": "wen-pin",
+    "targetPersonId": "cao-cao",
+    "type": "lord-vassal",
+    "startYear": 208,
+    "endYear": 220,
+    "summary": "文聘归曹后被曹操厚礼对待，并任江夏太守承担荆州、江夏方向边事。",
+    "relatedEventIds": ["china-208-red-cliffs"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wen-pin",
+        "locator": "文聘传"
+      },
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安十三年"
+      }
+    ]
+  },
+  {
+    "id": "zang-ba-cao-cao-east-security",
+    "sourcePersonId": "zang-ba",
+    "targetPersonId": "cao-cao",
+    "type": "lord-vassal",
+    "startYear": 199,
+    "endYear": 220,
+    "summary": "臧霸归曹后控制青徐东方力量，使曹操在官渡前后得以专注河北战场。",
+    "relatedEventIds": ["china-199-lu-bu-defeated", "china-200-guandu"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zang-ba",
+        "locator": "臧霸传"
+      }
+    ]
+  },
+  {
+    "id": "zang-ba-zhang-liao-east-front",
+    "sourcePersonId": "zang-ba",
+    "targetPersonId": "zhang-liao",
+    "type": "campaign-colleague",
+    "startYear": 209,
+    "endYear": 222,
+    "summary": "臧霸与张辽多次同处曹魏东线对吴作战体系，形成青徐、合肥方向联动。",
+    "relatedEventIds": ["china-222-yiling"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zang-ba",
+        "locator": "臧霸传"
+      },
+      {
+        "sourceId": "sanguozhi-wei-zhang-liao",
+        "locator": "张辽传"
+      }
+    ]
+  },
+  {
+    "id": "li-tong-cao-cao-service",
+    "sourcePersonId": "li-tong",
+    "targetPersonId": "cao-cao",
+    "type": "lord-vassal",
+    "startYear": 190,
+    "endYear": 209,
+    "summary": "李通以汝南地方武装归曹操，在张绣、刘表、荆州方向战事中为曹操集团效力。",
+    "relatedEventIds": ["china-208-red-cliffs"],
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-li-tong",
+        "locator": "李通传"
+      }
+    ]
   }
 ]

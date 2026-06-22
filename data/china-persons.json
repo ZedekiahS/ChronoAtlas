@@ -1159,5 +1159,140 @@
         "locator": "魏延传"
       }
     ]
+  },
+  {
+    "id": "yue-jin",
+    "name": "乐进",
+    "courtesyName": "文谦",
+    "life": "?-218",
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": ["将领", "五子良将", "先登将"],
+    "summary": "阳平卫国人，以胆烈从曹操，屡立先登战功；官渡、南皮等战事有功，后与张辽、李典共同镇守合肥方向。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yue-jin",
+        "locator": "乐进传"
+      }
+    ]
+  },
+  {
+    "id": "yu-jin",
+    "name": "于禁",
+    "courtesyName": "文则",
+    "life": "?-221",
+    "primaryPolity": "鲍信部 / 曹操集团 / 曹魏",
+    "roles": ["将领", "五子良将", "军纪代表"],
+    "summary": "泰山钜平人，早随鲍信，后归曹操；以军纪严整著称，219 年襄樊战事中为关羽所俘并投降。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yu-jin",
+        "locator": "于禁传"
+      }
+    ]
+  },
+  {
+    "id": "xu-huang",
+    "name": "徐晃",
+    "courtesyName": "公明",
+    "life": "?-227",
+    "primaryPolity": "杨奉部 / 曹操集团 / 曹魏",
+    "roles": ["将领", "五子良将", "襄樊解围统帅"],
+    "summary": "河东杨人，先属杨奉，后归曹操；官渡、关中、汉中、襄樊等战事屡有功，219 年解曹仁樊城之围。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-huang",
+        "locator": "徐晃传"
+      }
+    ]
+  },
+  {
+    "id": "cao-xiu",
+    "name": "曹休",
+    "courtesyName": "文烈",
+    "life": "?-228",
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": ["宗亲将领", "东线都督"],
+    "summary": "曹魏宗亲，早年归曹操，被视为“千里驹”；曹丕、曹叡时期主持东线伐吴，228 年石亭战败后去世。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-xiu",
+        "locator": "曹休传"
+      }
+    ]
+  },
+  {
+    "id": "cao-zhen",
+    "name": "曹真",
+    "courtesyName": "子丹",
+    "life": "?-231",
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": ["宗亲将领", "西线都督", "辅政大臣"],
+    "summary": "曹操族子，少孤后由曹操抚养，掌虎豹骑并长期负责雍凉、关中、西线军事，曹叡初年为辅政重臣。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhen",
+        "locator": "曹真传"
+      }
+    ]
+  },
+  {
+    "id": "man-chong",
+    "name": "满宠",
+    "courtesyName": "伯宁",
+    "life": "?-242",
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": ["官员", "将领", "东线防御核心"],
+    "summary": "山阳昌邑人，早以执法严整著称；襄樊战事中辅佐曹仁坚守，曹魏后期主持合肥、淮南东线防御。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-man-chong",
+        "locator": "满宠传"
+      }
+    ]
+  },
+  {
+    "id": "wen-pin",
+    "name": "文聘",
+    "courtesyName": "仲业",
+    "life": "?-?",
+    "primaryPolity": "刘表集团 / 曹操集团 / 曹魏",
+    "roles": ["将领", "江夏太守", "荆州旧将"],
+    "summary": "南阳宛人，原为刘表大将；刘琮降曹后归曹操，长期镇守江夏，承担曹魏荆州、江夏方向防务。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wen-pin",
+        "locator": "文聘传"
+      }
+    ]
+  },
+  {
+    "id": "zang-ba",
+    "name": "臧霸",
+    "courtesyName": "宣高",
+    "life": "?-?",
+    "primaryPolity": "陶谦部 / 吕布集团 / 曹操集团 / 曹魏",
+    "roles": ["地方武装首领", "将领", "青徐方面人物"],
+    "summary": "泰山华人，早年聚兵于徐州、泰山一带，先助吕布后归曹操；曹操借其控制青徐东方，减轻官渡前后东线压力。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zang-ba",
+        "locator": "臧霸传"
+      }
+    ]
+  },
+  {
+    "id": "li-tong",
+    "name": "李通",
+    "courtesyName": "文达",
+    "life": "?-209",
+    "primaryPolity": "汝南地方势力 / 曹操集团",
+    "roles": ["地方武装首领", "将领"],
+    "summary": "江夏平春人，早据汝南一带，后归曹操；张绣、刘表相关战事中有功，江陵方向作战后病卒。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-li-tong",
+        "locator": "李通传"
+      }
+    ]
   }
 ]

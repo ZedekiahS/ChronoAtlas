@@ -4382,5 +4382,728 @@
         "locator": "魏延传"
       }
     ]
+  },
+  {
+    "id": "yue-jin-unknown-birth",
+    "personId": "yue-jin",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "阳平卫国人",
+    "summary": "乐进为阳平卫国人，以胆烈从曹操，明确生年不详。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yue-jin",
+        "locator": "乐进传",
+        "quote": "乐进字文谦，阳平卫国人也。"
+      }
+    ]
+  },
+  {
+    "id": "yue-jin-190-service",
+    "personId": "yue-jin",
+    "year": 190,
+    "displayYear": "190 前后",
+    "type": "service",
+    "title": "以胆烈从曹操并募兵",
+    "summary": "乐进从曹操为帐下吏，奉命还本郡募兵，成为曹操早期军事骨干。",
+    "relatedEventIds": ["china-190-coalition-against-dong-zhuo"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yue-jin",
+        "locator": "乐进传",
+        "quote": "以胆烈从太祖，为帐下吏。遣还本郡募兵，得千馀人。"
+      }
+    ]
+  },
+  {
+    "id": "yue-jin-200-guandu",
+    "personId": "yue-jin",
+    "year": 200,
+    "displayYear": "200",
+    "type": "campaign",
+    "title": "官渡力战斩淳于琼",
+    "summary": "官渡战事中，乐进从曹操击袁绍，力战并斩袁绍将淳于琼。",
+    "relatedEventIds": ["china-200-guandu"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yue-jin",
+        "locator": "乐进传",
+        "quote": "从击袁绍于官渡，力战，斩绍将淳于琼。"
+      }
+    ]
+  },
+  {
+    "id": "yue-jin-215-hefei",
+    "personId": "yue-jin",
+    "year": 215,
+    "displayYear": "215",
+    "type": "campaign",
+    "title": "合肥方向协防",
+    "summary": "乐进与张辽、李典同属合肥方向曹魏守将体系，参与东线对孙权防御。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yue-jin",
+        "locator": "乐进传合肥相关记载"
+      },
+      {
+        "sourceId": "sanguozhi-wei-zhang-liao",
+        "locator": "张辽传合肥战事"
+      }
+    ]
+  },
+  {
+    "id": "yue-jin-218-death",
+    "personId": "yue-jin",
+    "year": 218,
+    "displayYear": "218",
+    "type": "death",
+    "title": "乐进去世",
+    "summary": "乐进于建安二十三年前后去世，谥曰威侯。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yue-jin",
+        "locator": "乐进传"
+      }
+    ]
+  },
+  {
+    "id": "yu-jin-unknown-birth",
+    "personId": "yu-jin",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "泰山钜平人",
+    "summary": "于禁为泰山钜平人，黄巾起后先从鲍信，生年不详。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yu-jin",
+        "locator": "于禁传",
+        "quote": "于禁字文则，泰山钜平人也。"
+      }
+    ]
+  },
+  {
+    "id": "yu-jin-194-service",
+    "personId": "yu-jin",
+    "year": 194,
+    "displayYear": "194 前后",
+    "type": "service",
+    "title": "曹操领兖州后归入曹军",
+    "summary": "曹操领兖州后，于禁经王朗推荐，被曹操任为军司马，开始成为曹军将领。",
+    "relatedEventIds": ["china-194-lu-bu-seizes-yan"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yu-jin",
+        "locator": "于禁传"
+      }
+    ]
+  },
+  {
+    "id": "yu-jin-197-wancheng",
+    "personId": "yu-jin",
+    "year": 197,
+    "displayYear": "197",
+    "type": "campaign",
+    "title": "宛城败退中整军守纪",
+    "summary": "张绣复叛、曹军败退时，于禁收束部队、整顿营垒，被曹操称许为有不可动之节。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yu-jin",
+        "locator": "于禁传",
+        "quote": "将军在乱能整，讨暴坚垒，有不可动之节。"
+      }
+    ]
+  },
+  {
+    "id": "yu-jin-219-surrender",
+    "personId": "yu-jin",
+    "year": 219,
+    "displayYear": "219",
+    "type": "turning-point",
+    "title": "襄樊战事中降关羽",
+    "summary": "关羽北伐襄樊时，于禁督七军救援曹仁，遇水灾兵败后降关羽，成为曹魏军誉重大挫折。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yu-jin",
+        "locator": "于禁传"
+      },
+      {
+        "sourceId": "sanguozhi-shu-guan-yu",
+        "locator": "关羽传襄樊战事"
+      }
+    ]
+  },
+  {
+    "id": "yu-jin-221-death",
+    "personId": "yu-jin",
+    "year": 221,
+    "displayYear": "221",
+    "type": "death",
+    "title": "于禁去世",
+    "summary": "孙权称臣后，于禁被送还魏，曹丕以陵屋画事羞之，于禁惭恚而死。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yu-jin",
+        "locator": "于禁传"
+      }
+    ]
+  },
+  {
+    "id": "xu-huang-unknown-birth",
+    "personId": "xu-huang",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "河东杨人",
+    "summary": "徐晃为河东杨人，早年为郡吏，生年不详。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-huang",
+        "locator": "徐晃传",
+        "quote": "徐晃字公明，河东杨人也。"
+      }
+    ]
+  },
+  {
+    "id": "xu-huang-196-joins-cao",
+    "personId": "xu-huang",
+    "year": 196,
+    "displayYear": "196 前后",
+    "type": "turning-point",
+    "title": "由杨奉部归曹操",
+    "summary": "徐晃先随杨奉护送天子，后在梁地归曹操，转入曹魏军事体系。",
+    "relatedEventIds": ["china-196-cao-cao-escorts-emperor"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-huang",
+        "locator": "徐晃传",
+        "quote": "晃说奉令归太祖；奉欲从之，后悔。太祖讨奉于梁，晃遂归太祖。"
+      }
+    ]
+  },
+  {
+    "id": "xu-huang-200-guandu",
+    "personId": "xu-huang",
+    "year": 200,
+    "displayYear": "200",
+    "type": "campaign",
+    "title": "官渡战事中破袁绍输送",
+    "summary": "官渡期间，徐晃参与截击袁绍输送和北方诸战，为曹操战胜河北势力立功。",
+    "relatedEventIds": ["china-200-guandu"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-huang",
+        "locator": "徐晃传官渡相关记载"
+      }
+    ]
+  },
+  {
+    "id": "xu-huang-219-fancheng",
+    "personId": "xu-huang",
+    "year": 219,
+    "displayYear": "219",
+    "type": "campaign",
+    "title": "襄樊解曹仁之围",
+    "summary": "关羽围曹仁于樊城时，徐晃率军击破关羽围营，解除曹魏南线危机。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-huang",
+        "locator": "徐晃传襄樊战事"
+      },
+      {
+        "sourceId": "sanguozhi-shu-guan-yu",
+        "locator": "关羽传"
+      }
+    ]
+  },
+  {
+    "id": "xu-huang-227-death",
+    "personId": "xu-huang",
+    "year": 227,
+    "displayYear": "227",
+    "type": "death",
+    "title": "徐晃去世",
+    "summary": "徐晃于太和元年前后去世，谥曰壮侯。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-huang",
+        "locator": "徐晃传"
+      }
+    ]
+  },
+  {
+    "id": "cao-xiu-unknown-birth",
+    "personId": "cao-xiu",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "曹魏宗亲，少孤归曹操",
+    "summary": "曹休为曹魏宗亲，早年避乱至吴地，后归曹操，被曹操称为千里驹。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-xiu",
+        "locator": "曹休传"
+      }
+    ]
+  },
+  {
+    "id": "cao-xiu-220-east-command",
+    "personId": "cao-xiu",
+    "year": 220,
+    "displayYear": "220 前后",
+    "type": "office",
+    "title": "接替东南方向军任",
+    "summary": "夏侯惇去世后，曹休为镇南将军、假节都督诸军事，承担东南对吴方向重任。",
+    "relatedEventIds": ["china-220-cao-pi-founds-wei"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-xiu",
+        "locator": "曹休传",
+        "quote": "夏侯敦薨，以休为镇南将军，假节都督诸军事。"
+      }
+    ]
+  },
+  {
+    "id": "cao-xiu-222-wu-front",
+    "personId": "cao-xiu",
+    "year": 222,
+    "displayYear": "222",
+    "type": "campaign",
+    "title": "魏吴东线作战",
+    "summary": "曹休为征东将军、领扬州刺史，在魏吴关系转折后负责东线伐吴。",
+    "relatedEventIds": ["china-222-yiling"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-xiu",
+        "locator": "曹休传"
+      }
+    ]
+  },
+  {
+    "id": "cao-xiu-228-shiting",
+    "personId": "cao-xiu",
+    "year": 228,
+    "displayYear": "228",
+    "type": "campaign",
+    "title": "石亭战败后去世",
+    "summary": "曹休在石亭受吴军诱击而败，回军后发病去世。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-xiu",
+        "locator": "曹休传石亭战事"
+      }
+    ]
+  },
+  {
+    "id": "cao-zhen-unknown-birth",
+    "personId": "cao-zhen",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "曹操收养的宗亲将领",
+    "summary": "曹真少孤，曹操收养并使其与曹丕同处，生年不详。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhen",
+        "locator": "曹真传",
+        "quote": "太祖哀真少孤，收养与诸子同，使与文帝共止。"
+      }
+    ]
+  },
+  {
+    "id": "cao-zhen-219-hanzhong",
+    "personId": "cao-zhen",
+    "year": 219,
+    "displayYear": "219",
+    "type": "campaign",
+    "title": "汉中战后督徐晃破蜀军",
+    "summary": "夏侯渊没后，曹操以曹真为征蜀护军，督徐晃等在阳平方向击破刘备别将。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhen",
+        "locator": "曹真传"
+      }
+    ]
+  },
+  {
+    "id": "cao-zhen-220-west-command",
+    "personId": "cao-zhen",
+    "year": 220,
+    "displayYear": "220",
+    "type": "office",
+    "title": "镇西将军，都督雍凉",
+    "summary": "曹丕即王位后，曹真为镇西将军，假节都督雍、凉州诸军事，负责曹魏西线。",
+    "relatedEventIds": ["china-220-cao-pi-founds-wei"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhen",
+        "locator": "曹真传"
+      }
+    ]
+  },
+  {
+    "id": "cao-zhen-226-regency",
+    "personId": "cao-zhen",
+    "year": 226,
+    "displayYear": "226",
+    "type": "politics",
+    "title": "受遗诏辅政",
+    "summary": "魏文帝临终时，曹真与陈群、司马懿等受遗诏辅政，成为曹叡初年核心重臣。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhen",
+        "locator": "曹真传",
+        "quote": "七年，文帝寝疾，真与陈群、司马宣王等受遗诏辅政。"
+      }
+    ]
+  },
+  {
+    "id": "cao-zhen-231-death",
+    "personId": "cao-zhen",
+    "year": 231,
+    "displayYear": "231",
+    "type": "death",
+    "title": "曹真去世",
+    "summary": "曹真在太和五年前后去世，曹魏西线和辅政格局随之变化。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhen",
+        "locator": "曹真传"
+      }
+    ]
+  },
+  {
+    "id": "man-chong-unknown-birth",
+    "personId": "man-chong",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "山阳昌邑人",
+    "summary": "满宠为山阳昌邑人，早年任郡督邮，生年不详。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-man-chong",
+        "locator": "满宠传",
+        "quote": "满宠字伯宁，山阳昌邑人也。"
+      }
+    ]
+  },
+  {
+    "id": "man-chong-196-xu",
+    "personId": "man-chong",
+    "year": 196,
+    "displayYear": "196 前后",
+    "type": "office",
+    "title": "许县任职，执法严整",
+    "summary": "曹操迎汉献帝至许后，满宠在许地任职并以执法严明受到重用。",
+    "relatedEventIds": ["china-196-cao-cao-escorts-emperor"],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-man-chong",
+        "locator": "满宠传"
+      }
+    ]
+  },
+  {
+    "id": "man-chong-219-fancheng",
+    "personId": "man-chong",
+    "year": 219,
+    "displayYear": "219",
+    "type": "strategy",
+    "title": "劝曹仁坚守樊城",
+    "summary": "关羽围樊城时，满宠劝曹仁坚守，参与稳定曹魏南线防御。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-man-chong",
+        "locator": "满宠传襄樊战事"
+      }
+    ]
+  },
+  {
+    "id": "man-chong-230-hefei-new-city",
+    "personId": "man-chong",
+    "year": 230,
+    "displayYear": "230 前后",
+    "type": "strategy",
+    "title": "主持合肥新城与淮南防务",
+    "summary": "满宠后期主持合肥、淮南方向防御，成为曹魏东线长期防守的关键人物。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-man-chong",
+        "locator": "满宠传合肥新城相关记载"
+      }
+    ]
+  },
+  {
+    "id": "man-chong-242-death",
+    "personId": "man-chong",
+    "year": 242,
+    "displayYear": "242",
+    "type": "death",
+    "title": "满宠去世",
+    "summary": "满宠于正始三年前后去世，谥曰景侯。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-man-chong",
+        "locator": "满宠传"
+      }
+    ]
+  },
+  {
+    "id": "wen-pin-unknown-birth",
+    "personId": "wen-pin",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "南阳宛人，刘表大将",
+    "summary": "文聘为南阳宛人，原为刘表大将，负责防御北方。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wen-pin",
+        "locator": "文聘传",
+        "quote": "文聘字仲业，南阳宛人也，为刘表大将，使御北方。"
+      }
+    ]
+  },
+  {
+    "id": "wen-pin-208-surrender",
+    "personId": "wen-pin",
+    "year": 208,
+    "displayYear": "208",
+    "type": "turning-point",
+    "title": "刘琮降曹后归曹操",
+    "summary": "刘琮举州降曹后，文聘以不能保全荆州为耻，随后归曹操并受到厚礼。",
+    "relatedEventIds": ["china-208-red-cliffs"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wen-pin",
+        "locator": "文聘传"
+      }
+    ]
+  },
+  {
+    "id": "wen-pin-208-jiangxia",
+    "personId": "wen-pin",
+    "year": 208,
+    "displayYear": "208 以后",
+    "type": "office",
+    "title": "任江夏太守，典北兵",
+    "summary": "曹操定荆州后，以文聘为江夏太守，使典北兵，委以边事，负责荆州、江夏方向边防。",
+    "relatedEventIds": ["china-208-red-cliffs"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wen-pin",
+        "locator": "文聘传",
+        "quote": "乃以聘为江夏太守，使典北兵，委以边事，赐爵关内侯。"
+      }
+    ]
+  },
+  {
+    "id": "zang-ba-unknown-birth",
+    "personId": "zang-ba",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "泰山华人，勇壮闻名",
+    "summary": "臧霸为泰山华人，早年以救父和聚兵闻名，生年不详。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zang-ba",
+        "locator": "臧霸传"
+      }
+    ]
+  },
+  {
+    "id": "zang-ba-184-yellow-turban",
+    "personId": "zang-ba",
+    "year": 184,
+    "displayYear": "184 前后",
+    "type": "campaign",
+    "title": "随陶谦击黄巾",
+    "summary": "黄巾起后，臧霸从陶谦击破黄巾，拜骑都尉，并逐渐在徐州、泰山一带形成地方武装。",
+    "relatedEventIds": ["china-184-yellow-turban-rebellion"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zang-ba",
+        "locator": "臧霸传"
+      }
+    ]
+  },
+  {
+    "id": "zang-ba-199-cao",
+    "personId": "zang-ba",
+    "year": 199,
+    "displayYear": "199",
+    "type": "turning-point",
+    "title": "吕布败亡后归曹操",
+    "summary": "下邳之战后，臧霸为曹操所得，被任用并招纳徐州诸将，成为曹操控制青徐的重要力量。",
+    "relatedEventIds": ["china-199-lu-bu-defeated"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zang-ba",
+        "locator": "臧霸传"
+      }
+    ]
+  },
+  {
+    "id": "zang-ba-200-east-security",
+    "personId": "zang-ba",
+    "year": 200,
+    "displayYear": "200 前后",
+    "type": "service",
+    "title": "青徐东方牵制，支撑官渡",
+    "summary": "官渡前后，臧霸多以精兵入青州，使曹操得以专事袁绍而不以东方为念。",
+    "relatedEventIds": ["china-200-guandu"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zang-ba",
+        "locator": "臧霸传",
+        "quote": "时太祖方与袁绍相拒，而霸数以精兵入青州，故太祖得专事绍，不以东方为念。"
+      }
+    ]
+  },
+  {
+    "id": "zang-ba-222-east-front",
+    "personId": "zang-ba",
+    "year": 222,
+    "displayYear": "222 前后",
+    "type": "campaign",
+    "title": "魏吴东线作战",
+    "summary": "曹丕时期，臧霸与曹休等参与对吴作战，是曹魏青徐、东线军事体系的重要成员。",
+    "relatedEventIds": ["china-222-yiling"],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zang-ba",
+        "locator": "臧霸传"
+      }
+    ]
+  },
+  {
+    "id": "li-tong-unknown-birth",
+    "personId": "li-tong",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "江夏平春人",
+    "summary": "李通为江夏平春人，早年据汝南一带，生年不详。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-li-tong",
+        "locator": "李通传"
+      }
+    ]
+  },
+  {
+    "id": "li-tong-190-local-force",
+    "personId": "li-tong",
+    "year": 190,
+    "displayYear": "190 前后",
+    "type": "service",
+    "title": "据汝南地方势力后归曹操",
+    "summary": "李通早年聚兵于汝南一带，后归附曹操，成为汝南方向重要地方将领。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-li-tong",
+        "locator": "李通传"
+      }
+    ]
+  },
+  {
+    "id": "li-tong-197-zhang-xiu",
+    "personId": "li-tong",
+    "year": 197,
+    "displayYear": "197 前后",
+    "type": "campaign",
+    "title": "参与张绣、刘表方向作战",
+    "summary": "曹操与张绣、刘表方向作战时，李通率军支援并有先登战功。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-li-tong",
+        "locator": "李通传"
+      }
+    ]
+  },
+  {
+    "id": "li-tong-209-death",
+    "personId": "li-tong",
+    "year": 209,
+    "displayYear": "209 前后",
+    "type": "death",
+    "title": "江陵方向作战后病卒",
+    "summary": "赤壁后曹刘孙争夺荆州时，李通参与江陵方向作战，后病卒。",
+    "relatedEventIds": ["china-208-red-cliffs"],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-li-tong",
+        "locator": "李通传"
+      }
+    ]
   }
 ]

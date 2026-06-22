@@ -4,6 +4,70 @@
   "purpose": "前端人物索引和覆盖度概览；完整原文与传记节点仍保存在数据库和源 JSON 中。",
   "persons": [
     {
+      "id": "yue-jin",
+      "name": "乐进",
+      "courtesyName": "文谦",
+      "life": "?-218",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "阳平卫国人，以胆烈从曹操，屡立先登战功；官渡、南皮等战事有功，后与张辽、李典共同镇守合肥方向。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 5,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 190,
+      "lastRecordedYear": 218,
+      "sourceIds": [
+        "sanguozhi-wei-yue-jin",
+        "sanguozhi-wei-zhang-liao"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-yue-jin",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "yu-jin",
+      "name": "于禁",
+      "courtesyName": "文则",
+      "life": "?-221",
+      "primaryPolity": "鲍信部 / 曹操集团 / 曹魏",
+      "summary": "泰山钜平人，早随鲍信，后归曹操；以军纪严整著称，219 年襄樊战事中为关羽所俘并投降。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 5,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 194,
+      "lastRecordedYear": 221,
+      "sourceIds": [
+        "sanguozhi-shu-guan-yu",
+        "sanguozhi-wei-yu-jin"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-yu-jin",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "gongsun-zan",
       "name": "公孙瓒",
       "courtesyName": "伯圭",
@@ -1044,6 +1108,38 @@
       }
     },
     {
+      "id": "xu-huang",
+      "name": "徐晃",
+      "courtesyName": "公明",
+      "life": "?-227",
+      "primaryPolity": "杨奉部 / 曹操集团 / 曹魏",
+      "summary": "河东杨人，先属杨奉，后归曹操；官渡、关中、汉中、襄樊等战事屡有功，219 年解曹仁樊城之围。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 5,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 196,
+      "lastRecordedYear": 227,
+      "sourceIds": [
+        "sanguozhi-shu-guan-yu",
+        "sanguozhi-wei-xu-huang"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-xu-huang",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "wen-chou",
       "name": "文丑",
       "courtesyName": null,
@@ -1079,6 +1175,37 @@
           },
           {
             "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wen-pin",
+      "name": "文聘",
+      "courtesyName": "仲业",
+      "life": "?-?",
+      "primaryPolity": "刘表集团 / 曹操集团 / 曹魏",
+      "summary": "南阳宛人，原为刘表大将；刘琮降曹后归曹操，长期镇守江夏，承担曹魏荆州、江夏方向防务。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 208,
+      "lastRecordedYear": 208,
+      "sourceIds": [
+        "sanguozhi-wei-wen-pin"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-wen-pin",
             "status": "partial"
           }
         ]
@@ -1153,6 +1280,37 @@
       }
     },
     {
+      "id": "cao-xiu",
+      "name": "曹休",
+      "courtesyName": "文烈",
+      "life": "?-228",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "曹魏宗亲，早年归曹操，被视为“千里驹”；曹丕、曹叡时期主持东线伐吴，228 年石亭战败后去世。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 220,
+      "lastRecordedYear": 228,
+      "sourceIds": [
+        "sanguozhi-wei-cao-xiu"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-xiu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "cao-cao",
       "name": "曹操",
       "courtesyName": "孟德",
@@ -1197,6 +1355,37 @@
       }
     },
     {
+      "id": "cao-zhen",
+      "name": "曹真",
+      "courtesyName": "子丹",
+      "life": "?-231",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "曹操族子，少孤后由曹操抚养，掌虎豹骑并长期负责雍凉、关中、西线军事，曹叡初年为辅政重臣。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 5,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 219,
+      "lastRecordedYear": 231,
+      "sourceIds": [
+        "sanguozhi-wei-cao-zhen"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-zhen",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "li-dian",
       "name": "李典",
       "courtesyName": "曼成",
@@ -1223,6 +1412,37 @@
         "sources": [
           {
             "sourceId": "sanguozhi-wei-li-dian",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "li-tong",
+      "name": "李通",
+      "courtesyName": "文达",
+      "life": "?-209",
+      "primaryPolity": "汝南地方势力 / 曹操集团",
+      "summary": "江夏平春人，早据汝南一带，后归曹操；张绣、刘表相关战事中有功，江陵方向作战后病卒。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 190,
+      "lastRecordedYear": 209,
+      "sourceIds": [
+        "sanguozhi-wei-li-tong"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-li-tong",
             "status": "partial"
           }
         ]
@@ -1374,6 +1594,37 @@
       }
     },
     {
+      "id": "man-chong",
+      "name": "满宠",
+      "courtesyName": "伯宁",
+      "life": "?-242",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "山阳昌邑人，早以执法严整著称；襄樊战事中辅佐曹仁坚守，曹魏后期主持合肥、淮南东线防御。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 5,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 196,
+      "lastRecordedYear": 242,
+      "sourceIds": [
+        "sanguozhi-wei-man-chong"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-man-chong",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "wang-jun",
       "name": "王濬",
       "courtesyName": "士治",
@@ -1505,6 +1756,37 @@
         "sources": [
           {
             "sourceId": "sanguozhi-wu-cheng-pu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zang-ba",
+      "name": "臧霸",
+      "courtesyName": "宣高",
+      "life": "?-?",
+      "primaryPolity": "陶谦部 / 吕布集团 / 曹操集团 / 曹魏",
+      "summary": "泰山华人，早年聚兵于徐州、泰山一带，先助吕布后归曹操；曹操借其控制青徐东方，减轻官渡前后东线压力。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 5,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 184,
+      "lastRecordedYear": 222,
+      "sourceIds": [
+        "sanguozhi-wei-zang-ba"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zang-ba",
             "status": "partial"
           }
         ]
