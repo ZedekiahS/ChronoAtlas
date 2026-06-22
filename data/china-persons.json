@@ -40,6 +40,10 @@
       {
         "sourceId": "zizhi-tongjian-59",
         "locator": "初平元年前后"
+      },
+      {
+        "sourceId": "sanguozhi-wei-dong-zhuo",
+        "locator": "董卓传"
       }
     ]
   },
@@ -788,6 +792,10 @@
       {
         "sourceId": "zizhi-tongjian-65",
         "locator": "建安十三年"
+      },
+      {
+        "sourceId": "sanguozhi-wei-liu-biao",
+        "locator": "刘表传"
       }
     ]
   },
@@ -1204,6 +1212,10 @@
       {
         "sourceId": "sanguozhi-shu-houzhu",
         "locator": "蜀亡相关记载"
+      },
+      {
+        "sourceId": "sanguozhi-wei-deng-ai",
+        "locator": "邓艾传"
       }
     ]
   },
@@ -1226,6 +1238,10 @@
       {
         "sourceId": "sanguozhi-shu-houzhu",
         "locator": "蜀亡相关记载"
+      },
+      {
+        "sourceId": "sanguozhi-wei-zhong-hui",
+        "locator": "钟会传"
       }
     ]
   },
@@ -1767,6 +1783,2286 @@
       {
         "sourceId": "sanguozhi-wei-li-tong",
         "locator": "李通传"
+      }
+    ]
+  },
+  {
+    "id": "cao-rui",
+    "name": "曹叡",
+    "courtesyName": "元仲",
+    "life": "204-239",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "皇帝",
+      "魏书本纪人物"
+    ],
+    "summary": "曹叡见于《三国志·魏书·明帝纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-mingdi",
+        "locator": "明帝纪"
+      }
+    ]
+  },
+  {
+    "id": "cao-fang",
+    "name": "曹芳",
+    "courtesyName": null,
+    "life": "232-274",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "皇帝",
+      "魏书本纪人物"
+    ],
+    "summary": "曹芳见于《三国志·魏书·齐王纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-qi-wang",
+        "locator": "齐王纪"
+      }
+    ]
+  },
+  {
+    "id": "cao-mao",
+    "name": "曹髦",
+    "courtesyName": "彦士",
+    "life": "241-260",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "皇帝",
+      "魏书本纪人物"
+    ],
+    "summary": "曹髦见于《三国志·魏书·高贵乡公纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-gaogui-xianggong",
+        "locator": "高贵乡公纪"
+      }
+    ]
+  },
+  {
+    "id": "cao-huan",
+    "name": "曹奂",
+    "courtesyName": null,
+    "life": "246-302",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "皇帝",
+      "魏书本纪人物"
+    ],
+    "summary": "曹奂见于《三国志·魏书·陈留王纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chenliu-wang",
+        "locator": "陈留王纪"
+      }
+    ]
+  },
+  {
+    "id": "empress-bian",
+    "name": "卞皇后",
+    "courtesyName": null,
+    "life": "160-230",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "后妃",
+      "魏书后妃传人物"
+    ],
+    "summary": "卞皇后见于《三国志·魏书·武宣卞皇后传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-empress-bian",
+        "locator": "武宣卞皇后传"
+      }
+    ]
+  },
+  {
+    "id": "empress-zhen",
+    "name": "甄皇后",
+    "courtesyName": null,
+    "life": "183-221",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "后妃",
+      "魏书后妃传人物"
+    ],
+    "summary": "甄皇后见于《三国志·魏书·文昭甄皇后传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-empress-zhen",
+        "locator": "文昭甄皇后传"
+      }
+    ]
+  },
+  {
+    "id": "empress-guo-wende",
+    "name": "郭皇后",
+    "courtesyName": null,
+    "life": "184-235",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "后妃",
+      "魏书后妃传人物"
+    ],
+    "summary": "郭皇后见于《三国志·魏书·文德郭皇后传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-empress-guo-wende",
+        "locator": "文德郭皇后传"
+      }
+    ]
+  },
+  {
+    "id": "empress-mao",
+    "name": "毛皇后",
+    "courtesyName": null,
+    "life": "?-237",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "后妃",
+      "魏书后妃传人物"
+    ],
+    "summary": "毛皇后见于《三国志·魏书·明悼毛皇后传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-empress-mao",
+        "locator": "明悼毛皇后传"
+      }
+    ]
+  },
+  {
+    "id": "empress-guo-mingyuan",
+    "name": "郭皇后",
+    "courtesyName": null,
+    "life": "?-264",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "后妃",
+      "魏书后妃传人物"
+    ],
+    "summary": "郭皇后见于《三国志·魏书·明元郭皇后传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-empress-guo-mingyuan",
+        "locator": "明元郭皇后传"
+      }
+    ]
+  },
+  {
+    "id": "zang-hong",
+    "name": "臧洪",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "袁绍集团相关",
+    "roles": [
+      "汉末军阀",
+      "魏书列传人物"
+    ],
+    "summary": "臧洪见于《三国志·魏书·臧洪传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zang-hong",
+        "locator": "臧洪传"
+      }
+    ]
+  },
+  {
+    "id": "zhang-yang",
+    "name": "张杨",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "河内张杨集团",
+    "roles": [
+      "汉末军阀",
+      "魏书列传人物"
+    ],
+    "summary": "张杨见于《三国志·魏书·张杨传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-yang",
+        "locator": "张杨传"
+      }
+    ]
+  },
+  {
+    "id": "gongsun-du",
+    "name": "公孙度",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "辽东公孙氏",
+    "roles": [
+      "汉末军阀",
+      "魏书列传人物"
+    ],
+    "summary": "公孙度见于《三国志·魏书·公孙度传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-gongsun-du",
+        "locator": "公孙度传"
+      }
+    ]
+  },
+  {
+    "id": "zhang-yan",
+    "name": "张燕",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "黑山军 / 曹操集团",
+    "roles": [
+      "汉末军阀",
+      "魏书列传人物"
+    ],
+    "summary": "张燕见于《三国志·魏书·张燕传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-yan",
+        "locator": "张燕传"
+      }
+    ]
+  },
+  {
+    "id": "zhang-xiu",
+    "name": "张绣",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "张济旧部 / 曹操集团",
+    "roles": [
+      "汉末军阀",
+      "魏书列传人物"
+    ],
+    "summary": "张绣见于《三国志·魏书·张绣传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-xiu",
+        "locator": "张绣传"
+      }
+    ]
+  },
+  {
+    "id": "cao-hong",
+    "name": "曹洪",
+    "courtesyName": null,
+    "life": "?-232",
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏将领",
+      "魏书列传人物"
+    ],
+    "summary": "曹洪见于《三国志·魏书·曹洪传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-hong",
+        "locator": "曹洪传"
+      }
+    ]
+  },
+  {
+    "id": "cao-shuang",
+    "name": "曹爽",
+    "courtesyName": null,
+    "life": "?-249",
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏将领",
+      "魏书列传人物"
+    ],
+    "summary": "曹爽见于《三国志·魏书·曹爽传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-shuang",
+        "locator": "曹爽传"
+      }
+    ]
+  },
+  {
+    "id": "xiahou-shang",
+    "name": "夏侯尚",
+    "courtesyName": "伯仁",
+    "life": "?-225",
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏将领",
+      "魏书列传人物"
+    ],
+    "summary": "夏侯尚见于《三国志·魏书·夏侯尚传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xiahou-shang",
+        "locator": "夏侯尚传"
+      }
+    ]
+  },
+  {
+    "id": "yuan-huan",
+    "name": "袁涣",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "袁涣见于《三国志·魏书·袁涣传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yuan-huan",
+        "locator": "袁涣传"
+      }
+    ]
+  },
+  {
+    "id": "zhang-fan",
+    "name": "张范",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "张范见于《三国志·魏书·张范传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-fan",
+        "locator": "张范传"
+      }
+    ]
+  },
+  {
+    "id": "liang-mao",
+    "name": "凉茂",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "凉茂见于《三国志·魏书·凉茂传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liang-mao",
+        "locator": "凉茂传"
+      }
+    ]
+  },
+  {
+    "id": "guo-yuan",
+    "name": "国渊",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "国渊见于《三国志·魏书·国渊传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-guo-yuan",
+        "locator": "国渊传"
+      }
+    ]
+  },
+  {
+    "id": "tian-chou",
+    "name": "田畴",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "田畴见于《三国志·魏书·田畴传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-tian-chou",
+        "locator": "田畴传"
+      }
+    ]
+  },
+  {
+    "id": "wang-xiu",
+    "name": "王修",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "王修见于《三国志·魏书·王修传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-xiu",
+        "locator": "王修传"
+      }
+    ]
+  },
+  {
+    "id": "bing-yuan",
+    "name": "邴原",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "邴原见于《三国志·魏书·邴原传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-bing-yuan",
+        "locator": "邴原传"
+      }
+    ]
+  },
+  {
+    "id": "guan-ning",
+    "name": "管宁",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "管宁见于《三国志·魏书·管宁传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-guan-ning",
+        "locator": "管宁传"
+      }
+    ]
+  },
+  {
+    "id": "cui-yan",
+    "name": "崔琰",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "崔琰见于《三国志·魏书·崔琰传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cui-yan",
+        "locator": "崔琰传"
+      }
+    ]
+  },
+  {
+    "id": "mao-jie",
+    "name": "毛玠",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "毛玠见于《三国志·魏书·毛玠传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-mao-jie",
+        "locator": "毛玠传"
+      }
+    ]
+  },
+  {
+    "id": "xu-yi",
+    "name": "徐奕",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "徐奕见于《三国志·魏书·徐奕传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-yi",
+        "locator": "徐奕传"
+      }
+    ]
+  },
+  {
+    "id": "he-kui",
+    "name": "何夔",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "何夔见于《三国志·魏书·何夔传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-he-kui",
+        "locator": "何夔传"
+      }
+    ]
+  },
+  {
+    "id": "xing-yong",
+    "name": "邢颙",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "邢颙见于《三国志·魏书·邢颙传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xing-yong",
+        "locator": "邢颙传"
+      }
+    ]
+  },
+  {
+    "id": "bao-xun",
+    "name": "鲍勋",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "鲍勋见于《三国志·魏书·鲍勋传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-bao-xun",
+        "locator": "鲍勋传"
+      }
+    ]
+  },
+  {
+    "id": "sima-zhi",
+    "name": "司马芝",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "司马芝见于《三国志·魏书·司马芝传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-sima-zhi",
+        "locator": "司马芝传"
+      }
+    ]
+  },
+  {
+    "id": "zhong-yu",
+    "name": "钟毓",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "钟毓见于《三国志·魏书·钟繇传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhong-yao",
+        "locator": "钟毓附传"
+      }
+    ]
+  },
+  {
+    "id": "hua-xin",
+    "name": "华歆",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "华歆见于《三国志·魏书·华歆传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-hua-xin",
+        "locator": "华歆传"
+      }
+    ]
+  },
+  {
+    "id": "wang-lang",
+    "name": "王朗",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "王朗见于《三国志·魏书·王朗传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-lang",
+        "locator": "王朗传"
+      }
+    ]
+  },
+  {
+    "id": "wang-su",
+    "name": "王肃",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "王肃见于《三国志·魏书·王朗传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-lang",
+        "locator": "王肃附传"
+      }
+    ]
+  },
+  {
+    "id": "liu-fu",
+    "name": "刘馥",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "刘馥见于《三国志·魏书·刘馥传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fu",
+        "locator": "刘馥传"
+      }
+    ]
+  },
+  {
+    "id": "liang-xi",
+    "name": "梁习",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "梁习见于《三国志·魏书·梁习传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liang-xi",
+        "locator": "梁习传"
+      }
+    ]
+  },
+  {
+    "id": "zhang-ji-wei",
+    "name": "张既",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "张既见于《三国志·魏书·张既传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-ji",
+        "locator": "张既传"
+      }
+    ]
+  },
+  {
+    "id": "wen-hui",
+    "name": "温恢",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "温恢见于《三国志·魏书·温恢传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wen-hui",
+        "locator": "温恢传"
+      }
+    ]
+  },
+  {
+    "id": "ren-jun",
+    "name": "任峻",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "任峻见于《三国志·魏书·任峻传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-ren-jun",
+        "locator": "任峻传"
+      }
+    ]
+  },
+  {
+    "id": "su-ze",
+    "name": "苏则",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "苏则见于《三国志·魏书·苏则传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-su-ze",
+        "locator": "苏则传"
+      }
+    ]
+  },
+  {
+    "id": "du-ji",
+    "name": "杜畿",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "杜畿见于《三国志·魏书·杜畿传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-du-ji",
+        "locator": "杜畿传"
+      }
+    ]
+  },
+  {
+    "id": "zheng-hun",
+    "name": "郑浑",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "郑浑见于《三国志·魏书·郑浑传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zheng-hun",
+        "locator": "郑浑传"
+      }
+    ]
+  },
+  {
+    "id": "cang-ci",
+    "name": "仓慈",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "仓慈见于《三国志·魏书·仓慈传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cang-ci",
+        "locator": "仓慈传"
+      }
+    ]
+  },
+  {
+    "id": "lv-qian",
+    "name": "吕虔",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏将领",
+      "魏书列传人物"
+    ],
+    "summary": "吕虔见于《三国志·魏书·吕虔传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-lv-qian",
+        "locator": "吕虔传"
+      }
+    ]
+  },
+  {
+    "id": "xu-chu",
+    "name": "许褚",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏将领",
+      "魏书列传人物"
+    ],
+    "summary": "许褚见于《三国志·魏书·许褚传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-chu",
+        "locator": "许褚传"
+      }
+    ]
+  },
+  {
+    "id": "dian-wei",
+    "name": "典韦",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏将领",
+      "魏书列传人物"
+    ],
+    "summary": "典韦见于《三国志·魏书·典韦传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-dian-wei",
+        "locator": "典韦传"
+      }
+    ]
+  },
+  {
+    "id": "pang-de",
+    "name": "庞德",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏将领",
+      "魏书列传人物"
+    ],
+    "summary": "庞德见于《三国志·魏书·庞德传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-pang-de",
+        "locator": "庞德传"
+      }
+    ]
+  },
+  {
+    "id": "pang-yu",
+    "name": "庞淯",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "庞淯见于《三国志·魏书·庞淯传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-pang-yu",
+        "locator": "庞淯传"
+      }
+    ]
+  },
+  {
+    "id": "yan-wen",
+    "name": "阎温",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "阎温见于《三国志·魏书·阎温传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yan-wen",
+        "locator": "阎温传"
+      }
+    ]
+  },
+  {
+    "id": "cao-zhang",
+    "name": "曹彰",
+    "courtesyName": "子文",
+    "life": "?-223",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹彰见于《三国志·魏书·任城威王彰传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhang",
+        "locator": "任城威王彰传"
+      }
+    ]
+  },
+  {
+    "id": "cao-zhi",
+    "name": "曹植",
+    "courtesyName": "子建",
+    "life": "192-232",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹植见于《三国志·魏书·陈思王植传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhi",
+        "locator": "陈思王植传"
+      }
+    ]
+  },
+  {
+    "id": "cao-xiong",
+    "name": "曹熊",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹熊见于《三国志·魏书·萧怀王熊传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-xiong",
+        "locator": "萧怀王熊传"
+      }
+    ]
+  },
+  {
+    "id": "cao-ang",
+    "name": "曹昂",
+    "courtesyName": null,
+    "life": "?-197",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹昂见于《三国志·魏书·丰愍王昂传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-ang",
+        "locator": "丰愍王昂传"
+      }
+    ]
+  },
+  {
+    "id": "cao-shuo",
+    "name": "曹铄",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹铄见于《三国志·魏书·相殇王铄传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-shuo",
+        "locator": "相殇王铄传"
+      }
+    ]
+  },
+  {
+    "id": "cao-chong",
+    "name": "曹冲",
+    "courtesyName": "仓舒",
+    "life": "196-208",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹冲见于《三国志·魏书·邓哀王冲传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-chong",
+        "locator": "邓哀王冲传"
+      }
+    ]
+  },
+  {
+    "id": "cao-ju",
+    "name": "曹据",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹据见于《三国志·魏书·彭城王据传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-ju",
+        "locator": "彭城王据传"
+      }
+    ]
+  },
+  {
+    "id": "cao-yu",
+    "name": "曹宇",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹宇见于《三国志·魏书·燕王宇传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-yu",
+        "locator": "燕王宇传"
+      }
+    ]
+  },
+  {
+    "id": "cao-lin",
+    "name": "曹林",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹林见于《三国志·魏书·沛穆王林传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-lin",
+        "locator": "沛穆王林传"
+      }
+    ]
+  },
+  {
+    "id": "cao-gun",
+    "name": "曹衮",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹衮见于《三国志·魏书·中山恭王衮传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-gun",
+        "locator": "中山恭王衮传"
+      }
+    ]
+  },
+  {
+    "id": "cao-xuan",
+    "name": "曹玹",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹玹见于《三国志·魏书·济阳怀王玹传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-xuan",
+        "locator": "济阳怀王玹传"
+      }
+    ]
+  },
+  {
+    "id": "cao-jun",
+    "name": "曹峻",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹峻见于《三国志·魏书·陈留恭王峻传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-jun",
+        "locator": "陈留恭王峻传"
+      }
+    ]
+  },
+  {
+    "id": "cao-ju-fanyang",
+    "name": "曹矩",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹矩见于《三国志·魏书·范阳闵王矩传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-ju-fanyang",
+        "locator": "范阳闵王矩传"
+      }
+    ]
+  },
+  {
+    "id": "cao-gan",
+    "name": "曹干",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹干见于《三国志·魏书·赵王干传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-gan",
+        "locator": "赵王干传"
+      }
+    ]
+  },
+  {
+    "id": "cao-shang",
+    "name": "曹上",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹上见于《三国志·魏书·临邑殇公子上传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-shang",
+        "locator": "临邑殇公子上传"
+      }
+    ]
+  },
+  {
+    "id": "cao-biao",
+    "name": "曹彪",
+    "courtesyName": null,
+    "life": "195-251",
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹彪见于《三国志·魏书·楚王彪传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-biao",
+        "locator": "楚王彪传"
+      }
+    ]
+  },
+  {
+    "id": "cao-qin",
+    "name": "曹勤",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹勤见于《三国志·魏书·刚殇公子勤传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-qin",
+        "locator": "刚殇公子勤传"
+      }
+    ]
+  },
+  {
+    "id": "cao-cheng",
+    "name": "曹乘",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹乘见于《三国志·魏书·谷城殇公子乘传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-cheng",
+        "locator": "谷城殇公子乘传"
+      }
+    ]
+  },
+  {
+    "id": "cao-zheng",
+    "name": "曹整",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹整见于《三国志·魏书·郿戴公子整传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zheng",
+        "locator": "郿戴公子整传"
+      }
+    ]
+  },
+  {
+    "id": "cao-jing",
+    "name": "曹京",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹京见于《三国志·魏书·灵殇公子京传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-jing",
+        "locator": "灵殇公子京传"
+      }
+    ]
+  },
+  {
+    "id": "cao-jun-fan",
+    "name": "曹均",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹均见于《三国志·魏书·樊安公均传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-jun-fan",
+        "locator": "樊安公均传"
+      }
+    ]
+  },
+  {
+    "id": "cao-ji",
+    "name": "曹棘",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹棘见于《三国志·魏书·广宗殇公子棘传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-ji",
+        "locator": "广宗殇公子棘传"
+      }
+    ]
+  },
+  {
+    "id": "cao-hui",
+    "name": "曹徽",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹徽见于《三国志·魏书·东平灵王徽传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-hui",
+        "locator": "东平灵王徽传"
+      }
+    ]
+  },
+  {
+    "id": "cao-mao-prince",
+    "name": "曹茂",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹茂见于《三国志·魏书·乐陵王茂传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-mao-prince",
+        "locator": "乐陵王茂传"
+      }
+    ]
+  },
+  {
+    "id": "cao-xie",
+    "name": "曹协",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹协见于《三国志·魏书·赞哀王协传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-xie",
+        "locator": "赞哀王协传"
+      }
+    ]
+  },
+  {
+    "id": "cao-rui-prince",
+    "name": "曹蕤",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹蕤见于《三国志·魏书·北海悼王蕤传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-rui-prince",
+        "locator": "北海悼王蕤传"
+      }
+    ]
+  },
+  {
+    "id": "cao-jian",
+    "name": "曹鉴",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹鉴见于《三国志·魏书·东武阳怀王鉴传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-jian",
+        "locator": "东武阳怀王鉴传"
+      }
+    ]
+  },
+  {
+    "id": "cao-lin-donghai",
+    "name": "曹霖",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹霖见于《三国志·魏书·东海定王霖传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-lin-donghai",
+        "locator": "东海定王霖传"
+      }
+    ]
+  },
+  {
+    "id": "cao-li",
+    "name": "曹礼",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹礼见于《三国志·魏书·元城哀王礼传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-li",
+        "locator": "元城哀王礼传"
+      }
+    ]
+  },
+  {
+    "id": "cao-yong",
+    "name": "曹邕",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹邕见于《三国志·魏书·邯郸怀王邕传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-yong",
+        "locator": "邯郸怀王邕传"
+      }
+    ]
+  },
+  {
+    "id": "cao-gong",
+    "name": "曹贡",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹贡见于《三国志·魏书·清河悼王贡传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-gong",
+        "locator": "清河悼王贡传"
+      }
+    ]
+  },
+  {
+    "id": "cao-yan",
+    "name": "曹俨",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹魏",
+    "roles": [
+      "曹魏宗室",
+      "魏书宗室传人物"
+    ],
+    "summary": "曹俨见于《三国志·魏书·广平哀王俨传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-yan",
+        "locator": "广平哀王俨传"
+      }
+    ]
+  },
+  {
+    "id": "liu-shao",
+    "name": "刘劭",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "刘劭见于《三国志·魏书·刘劭传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-shao",
+        "locator": "刘劭传"
+      }
+    ]
+  },
+  {
+    "id": "fu-gu",
+    "name": "傅嘏",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "傅嘏见于《三国志·魏书·傅嘏传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-fu-gu",
+        "locator": "傅嘏传"
+      }
+    ]
+  },
+  {
+    "id": "huan-jie",
+    "name": "桓阶",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "桓阶见于《三国志·魏书·桓阶传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-huan-jie",
+        "locator": "桓阶传"
+      }
+    ]
+  },
+  {
+    "id": "chen-tai",
+    "name": "陈泰",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "陈泰见于《三国志·魏书·陈群传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chen-qun",
+        "locator": "陈泰附传"
+      }
+    ]
+  },
+  {
+    "id": "chen-jiao",
+    "name": "陈矫",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "陈矫见于《三国志·魏书·陈矫传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chen-jiao",
+        "locator": "陈矫传"
+      }
+    ]
+  },
+  {
+    "id": "xu-xuan",
+    "name": "徐宣",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "徐宣见于《三国志·魏书·徐宣传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-xuan",
+        "locator": "徐宣传"
+      }
+    ]
+  },
+  {
+    "id": "wei-zhen",
+    "name": "卫臻",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "卫臻见于《三国志·魏书·卫臻传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wei-zhen",
+        "locator": "卫臻传"
+      }
+    ]
+  },
+  {
+    "id": "lu-yu",
+    "name": "卢毓",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "卢毓见于《三国志·魏书·卢毓传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-lu-yu",
+        "locator": "卢毓传"
+      }
+    ]
+  },
+  {
+    "id": "he-qia",
+    "name": "和洽",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "和洽见于《三国志·魏书·和洽传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-he-qia",
+        "locator": "和洽传"
+      }
+    ]
+  },
+  {
+    "id": "chang-lin",
+    "name": "常林",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "常林见于《三国志·魏书·常林传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chang-lin",
+        "locator": "常林传"
+      }
+    ]
+  },
+  {
+    "id": "yang-jun",
+    "name": "杨俊",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "杨俊见于《三国志·魏书·杨俊传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yang-jun",
+        "locator": "杨俊传"
+      }
+    ]
+  },
+  {
+    "id": "du-xi",
+    "name": "杜袭",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "杜袭见于《三国志·魏书·杜袭传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-du-xi",
+        "locator": "杜袭传"
+      }
+    ]
+  },
+  {
+    "id": "zhao-yan",
+    "name": "赵俨",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "赵俨见于《三国志·魏书·赵俨传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhao-yan",
+        "locator": "赵俨传"
+      }
+    ]
+  },
+  {
+    "id": "pei-qian",
+    "name": "裴潜",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "裴潜见于《三国志·魏书·裴潜传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-pei-qian",
+        "locator": "裴潜传"
+      }
+    ]
+  },
+  {
+    "id": "han-ji",
+    "name": "韩暨",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "韩暨见于《三国志·魏书·韩暨传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-han-ji",
+        "locator": "韩暨传"
+      }
+    ]
+  },
+  {
+    "id": "cui-lin",
+    "name": "崔林",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "崔林见于《三国志·魏书·崔林传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cui-lin",
+        "locator": "崔林传"
+      }
+    ]
+  },
+  {
+    "id": "gao-rou",
+    "name": "高柔",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "高柔见于《三国志·魏书·高柔传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-gao-rou",
+        "locator": "高柔传"
+      }
+    ]
+  },
+  {
+    "id": "sun-li",
+    "name": "孙礼",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "孙礼见于《三国志·魏书·孙礼传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-sun-li",
+        "locator": "孙礼传"
+      }
+    ]
+  },
+  {
+    "id": "wang-guan",
+    "name": "王观",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "王观见于《三国志·魏书·王观传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-guan",
+        "locator": "王观传"
+      }
+    ]
+  },
+  {
+    "id": "xin-pi",
+    "name": "辛毗",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "辛毗见于《三国志·魏书·辛毗传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xin-pi",
+        "locator": "辛毗传"
+      }
+    ]
+  },
+  {
+    "id": "yang-fu",
+    "name": "杨阜",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "杨阜见于《三国志·魏书·杨阜传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yang-fu",
+        "locator": "杨阜传"
+      }
+    ]
+  },
+  {
+    "id": "gao-tang-long",
+    "name": "高堂隆",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "高堂隆见于《三国志·魏书·高堂隆传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-gao-tang-long",
+        "locator": "高堂隆传"
+      }
+    ]
+  },
+  {
+    "id": "tian-yu",
+    "name": "田豫",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏将领",
+      "魏书列传人物"
+    ],
+    "summary": "田豫见于《三国志·魏书·田豫传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-tian-yu",
+        "locator": "田豫传"
+      }
+    ]
+  },
+  {
+    "id": "qian-zhao",
+    "name": "牵招",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏将领",
+      "魏书列传人物"
+    ],
+    "summary": "牵招见于《三国志·魏书·牵招传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-qian-zhao",
+        "locator": "牵招传"
+      }
+    ]
+  },
+  {
+    "id": "guo-huai",
+    "name": "郭淮",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏将领",
+      "魏书列传人物"
+    ],
+    "summary": "郭淮见于《三国志·魏书·郭淮传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-guo-huai",
+        "locator": "郭淮传"
+      }
+    ]
+  },
+  {
+    "id": "xu-miao",
+    "name": "徐邈",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "徐邈见于《三国志·魏书·徐邈传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-miao",
+        "locator": "徐邈传"
+      }
+    ]
+  },
+  {
+    "id": "hu-zhi",
+    "name": "胡质",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "胡质见于《三国志·魏书·胡质传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-hu-zhi",
+        "locator": "胡质传"
+      }
+    ]
+  },
+  {
+    "id": "wang-chang",
+    "name": "王昶",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "王昶见于《三国志·魏书·王昶传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-chang",
+        "locator": "王昶传"
+      }
+    ]
+  },
+  {
+    "id": "wang-ji",
+    "name": "王基",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏人物",
+      "魏书列传人物"
+    ],
+    "summary": "王基见于《三国志·魏书·王基传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-ji",
+        "locator": "王基传"
+      }
+    ]
+  },
+  {
+    "id": "wang-ling",
+    "name": "王凌",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏将领",
+      "魏书列传人物"
+    ],
+    "summary": "王凌见于《三国志·魏书·王凌传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-ling",
+        "locator": "王凌传"
+      }
+    ]
+  },
+  {
+    "id": "guanqiu-jian",
+    "name": "毌丘俭",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏将领",
+      "魏书列传人物"
+    ],
+    "summary": "毌丘俭见于《三国志·魏书·毌丘俭传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-guanqiu-jian",
+        "locator": "毌丘俭传"
+      }
+    ]
+  },
+  {
+    "id": "zhuge-dan",
+    "name": "诸葛诞",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "曹魏将领",
+      "魏书列传人物"
+    ],
+    "summary": "诸葛诞见于《三国志·魏书·诸葛诞传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhuge-dan",
+        "locator": "诸葛诞传"
+      }
+    ]
+  },
+  {
+    "id": "hua-tuo",
+    "name": "华佗",
+    "courtesyName": null,
+    "life": "?-208",
+    "primaryPolity": "东汉末 / 曹魏相关",
+    "roles": [
+      "方技人物",
+      "魏书方技传人物"
+    ],
+    "summary": "华佗见于《三国志·魏书·华佗传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-hua-tuo",
+        "locator": "华佗传"
+      }
+    ]
+  },
+  {
+    "id": "du-kui",
+    "name": "杜夔",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "东汉末 / 曹魏相关",
+    "roles": [
+      "方技人物",
+      "魏书方技传人物"
+    ],
+    "summary": "杜夔见于《三国志·魏书·杜夔传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-du-kui",
+        "locator": "杜夔传"
+      }
+    ]
+  },
+  {
+    "id": "zhu-jianping",
+    "name": "朱建平",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "东汉末 / 曹魏相关",
+    "roles": [
+      "方技人物",
+      "魏书方技传人物"
+    ],
+    "summary": "朱建平见于《三国志·魏书·朱建平传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhu-jianping",
+        "locator": "朱建平传"
+      }
+    ]
+  },
+  {
+    "id": "zhou-xuan",
+    "name": "周宣",
+    "courtesyName": null,
+    "life": null,
+    "primaryPolity": "东汉末 / 曹魏相关",
+    "roles": [
+      "方技人物",
+      "魏书方技传人物"
+    ],
+    "summary": "周宣见于《三国志·魏书·周宣传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhou-xuan",
+        "locator": "周宣传"
+      }
+    ]
+  },
+  {
+    "id": "guan-lu",
+    "name": "管辂",
+    "courtesyName": "公明",
+    "life": "209-256",
+    "primaryPolity": "东汉末 / 曹魏相关",
+    "roles": [
+      "方技人物",
+      "魏书方技传人物"
+    ],
+    "summary": "管辂见于《三国志·魏书·管辂传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+    "coverageStatus": "stub",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-guan-lu",
+        "locator": "管辂传"
       }
     ]
   }

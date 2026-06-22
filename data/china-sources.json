@@ -676,5 +676,1094 @@
     "citationShort": "《三国志·魏书·刘廙传》",
     "note": "刘廙本传，记录其荆州背景、入曹操幕府、牵连获赦与魏初仕历。",
     "url": "https://ctext.org/text.pl?if=gb&node=602924&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-mingdi",
+    "title": "三国志·魏书·明帝纪",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·明帝纪》",
+    "note": "明帝纪，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602047&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-qi-wang",
+    "title": "三国志·魏书·齐王纪",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·齐王纪》",
+    "note": "齐王纪，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602095&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-gaogui-xianggong",
+    "title": "三国志·魏书·高贵乡公纪",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·高贵乡公纪》",
+    "note": "高贵乡公纪，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602124&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-chenliu-wang",
+    "title": "三国志·魏书·陈留王纪",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·陈留王纪》",
+    "note": "陈留王纪，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602162&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-empress-bian",
+    "title": "三国志·魏书·武宣卞皇后传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·武宣卞皇后传》",
+    "note": "武宣卞皇后传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602190&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-empress-zhen",
+    "title": "三国志·魏书·文昭甄皇后传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·文昭甄皇后传》",
+    "note": "文昭甄皇后传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602196&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-empress-guo-wende",
+    "title": "三国志·魏书·文德郭皇后传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·文德郭皇后传》",
+    "note": "文德郭皇后传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602203&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-empress-mao",
+    "title": "三国志·魏书·明悼毛皇后传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·明悼毛皇后传》",
+    "note": "明悼毛皇后传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602209&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-empress-guo-mingyuan",
+    "title": "三国志·魏书·明元郭皇后传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·明元郭皇后传》",
+    "note": "明元郭皇后传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602214&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-dong-zhuo",
+    "title": "三国志·魏书·董卓传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·董卓传》",
+    "note": "董卓传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602219&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zang-hong",
+    "title": "三国志·魏书·臧洪传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·臧洪传》",
+    "note": "臧洪传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602280&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zhang-yang",
+    "title": "三国志·魏书·张杨传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·张杨传》",
+    "note": "张杨传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602307&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-gongsun-du",
+    "title": "三国志·魏书·公孙度传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·公孙度传》",
+    "note": "公孙度传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602310&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zhang-yan",
+    "title": "三国志·魏书·张燕传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·张燕传》",
+    "note": "张燕传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602318&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zhang-xiu",
+    "title": "三国志·魏书·张绣传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·张绣传》",
+    "note": "张绣传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602321&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-hong",
+    "title": "三国志·魏书·曹洪传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·曹洪传》",
+    "note": "曹洪传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602357&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-shuang",
+    "title": "三国志·魏书·曹爽传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·曹爽传》",
+    "note": "曹爽传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602375&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-xiahou-shang",
+    "title": "三国志·魏书·夏侯尚传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·夏侯尚传》",
+    "note": "夏侯尚传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602383&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-yuan-huan",
+    "title": "三国志·魏书·袁涣传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·袁涣传》",
+    "note": "袁涣传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602432&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zhang-fan",
+    "title": "三国志·魏书·张范传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·张范传》",
+    "note": "张范传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602439&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-liang-mao",
+    "title": "三国志·魏书·凉茂传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·凉茂传》",
+    "note": "凉茂传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602443&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-guo-yuan",
+    "title": "三国志·魏书·国渊传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·国渊传》",
+    "note": "国渊传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602446&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-tian-chou",
+    "title": "三国志·魏书·田畴传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·田畴传》",
+    "note": "田畴传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602450&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-wang-xiu",
+    "title": "三国志·魏书·王修传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·王修传》",
+    "note": "王修传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602456&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-bing-yuan",
+    "title": "三国志·魏书·邴原传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·邴原传》",
+    "note": "邴原传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602461&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-guan-ning",
+    "title": "三国志·魏书·管宁传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·管宁传》",
+    "note": "管宁传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602466&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cui-yan",
+    "title": "三国志·魏书·崔琰传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·崔琰传》",
+    "note": "崔琰传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602481&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-mao-jie",
+    "title": "三国志·魏书·毛玠传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·毛玠传》",
+    "note": "毛玠传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602491&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-xu-yi",
+    "title": "三国志·魏书·徐奕传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·徐奕传》",
+    "note": "徐奕传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602496&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-he-kui",
+    "title": "三国志·魏书·何夔传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·何夔传》",
+    "note": "何夔传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602500&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-xing-yong",
+    "title": "三国志·魏书·邢颙传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·邢颙传》",
+    "note": "邢颙传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602506&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-bao-xun",
+    "title": "三国志·魏书·鲍勋传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·鲍勋传》",
+    "note": "鲍勋传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602510&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-sima-zhi",
+    "title": "三国志·魏书·司马芝传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·司马芝传》",
+    "note": "司马芝传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602517&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-hua-xin",
+    "title": "三国志·魏书·华歆传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·华歆传》",
+    "note": "华歆传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602537&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-wang-lang",
+    "title": "三国志·魏书·王朗传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·王朗传》",
+    "note": "王朗传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602545&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-liu-fu",
+    "title": "三国志·魏书·刘馥传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·刘馥传》",
+    "note": "刘馥传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602622&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-liang-xi",
+    "title": "三国志·魏书·梁习传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·梁习传》",
+    "note": "梁习传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602635&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zhang-ji",
+    "title": "三国志·魏书·张既传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·张既传》",
+    "note": "张既传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602639&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-wen-hui",
+    "title": "三国志·魏书·温恢传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·温恢传》",
+    "note": "温恢传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602647&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-ren-jun",
+    "title": "三国志·魏书·任峻传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·任峻传》",
+    "note": "任峻传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602663&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-su-ze",
+    "title": "三国志·魏书·苏则传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·苏则传》",
+    "note": "苏则传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602667&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-du-ji",
+    "title": "三国志·魏书·杜畿传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·杜畿传》",
+    "note": "杜畿传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602673&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zheng-hun",
+    "title": "三国志·魏书·郑浑传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·郑浑传》",
+    "note": "郑浑传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602699&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cang-ci",
+    "title": "三国志·魏书·仓慈传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·仓慈传》",
+    "note": "仓慈传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602704&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-lv-qian",
+    "title": "三国志·魏书·吕虔传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·吕虔传》",
+    "note": "吕虔传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602766&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-xu-chu",
+    "title": "三国志·魏书·许褚传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·许褚传》",
+    "note": "许褚传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602769&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-dian-wei",
+    "title": "三国志·魏书·典韦传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·典韦传》",
+    "note": "典韦传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602773&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-pang-de",
+    "title": "三国志·魏书·庞德传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·庞德传》",
+    "note": "庞德传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602776&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-pang-yu",
+    "title": "三国志·魏书·庞淯传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·庞淯传》",
+    "note": "庞淯传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602780&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-yan-wen",
+    "title": "三国志·魏书·阎温传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·阎温传》",
+    "note": "阎温传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602784&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-zhang",
+    "title": "三国志·魏书·任城威王彰传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·任城威王彰传》",
+    "note": "任城威王彰传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602790&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-zhi",
+    "title": "三国志·魏书·陈思王植传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·陈思王植传》",
+    "note": "陈思王植传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602795&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-xiong",
+    "title": "三国志·魏书·萧怀王熊传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·萧怀王熊传》",
+    "note": "萧怀王熊传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602824&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-ang",
+    "title": "三国志·魏书·丰愍王昂传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·丰愍王昂传》",
+    "note": "丰愍王昂传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602831&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-shuo",
+    "title": "三国志·魏书·相殇王铄传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·相殇王铄传》",
+    "note": "相殇王铄传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602833&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-chong",
+    "title": "三国志·魏书·邓哀王冲传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·邓哀王冲传》",
+    "note": "邓哀王冲传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602835&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-ju",
+    "title": "三国志·魏书·彭城王据传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·彭城王据传》",
+    "note": "彭城王据传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602838&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-yu",
+    "title": "三国志·魏书·燕王宇传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·燕王宇传》",
+    "note": "燕王宇传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602841&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-lin",
+    "title": "三国志·魏书·沛穆王林传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·沛穆王林传》",
+    "note": "沛穆王林传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602843&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-gun",
+    "title": "三国志·魏书·中山恭王衮传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·中山恭王衮传》",
+    "note": "中山恭王衮传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602846&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-xuan",
+    "title": "三国志·魏书·济阳怀王玹传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·济阳怀王玹传》",
+    "note": "济阳怀王玹传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602850&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-jun",
+    "title": "三国志·魏书·陈留恭王峻传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·陈留恭王峻传》",
+    "note": "陈留恭王峻传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602852&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-ju-fanyang",
+    "title": "三国志·魏书·范阳闵王矩传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·范阳闵王矩传》",
+    "note": "范阳闵王矩传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602854&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-gan",
+    "title": "三国志·魏书·赵王干传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·赵王干传》",
+    "note": "赵王干传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602856&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-shang",
+    "title": "三国志·魏书·临邑殇公子上传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·临邑殇公子上传》",
+    "note": "临邑殇公子上传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602859&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-biao",
+    "title": "三国志·魏书·楚王彪传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·楚王彪传》",
+    "note": "楚王彪传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602861&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-qin",
+    "title": "三国志·魏书·刚殇公子勤传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·刚殇公子勤传》",
+    "note": "刚殇公子勤传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602864&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-cheng",
+    "title": "三国志·魏书·谷城殇公子乘传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·谷城殇公子乘传》",
+    "note": "谷城殇公子乘传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602866&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-zheng",
+    "title": "三国志·魏书·郿戴公子整传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·郿戴公子整传》",
+    "note": "郿戴公子整传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602868&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-jing",
+    "title": "三国志·魏书·灵殇公子京传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·灵殇公子京传》",
+    "note": "灵殇公子京传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602870&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-jun-fan",
+    "title": "三国志·魏书·樊安公均传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·樊安公均传》",
+    "note": "樊安公均传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602872&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-ji",
+    "title": "三国志·魏书·广宗殇公子棘传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·广宗殇公子棘传》",
+    "note": "广宗殇公子棘传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602874&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-hui",
+    "title": "三国志·魏书·东平灵王徽传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·东平灵王徽传》",
+    "note": "东平灵王徽传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602876&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-mao-prince",
+    "title": "三国志·魏书·乐陵王茂传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·乐陵王茂传》",
+    "note": "乐陵王茂传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602879&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-xie",
+    "title": "三国志·魏书·赞哀王协传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·赞哀王协传》",
+    "note": "赞哀王协传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602882&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-rui-prince",
+    "title": "三国志·魏书·北海悼王蕤传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·北海悼王蕤传》",
+    "note": "北海悼王蕤传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602884&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-jian",
+    "title": "三国志·魏书·东武阳怀王鉴传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·东武阳怀王鉴传》",
+    "note": "东武阳怀王鉴传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602886&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-lin-donghai",
+    "title": "三国志·魏书·东海定王霖传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·东海定王霖传》",
+    "note": "东海定王霖传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602888&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-li",
+    "title": "三国志·魏书·元城哀王礼传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·元城哀王礼传》",
+    "note": "元城哀王礼传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602890&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-yong",
+    "title": "三国志·魏书·邯郸怀王邕传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·邯郸怀王邕传》",
+    "note": "邯郸怀王邕传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602892&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-gong",
+    "title": "三国志·魏书·清河悼王贡传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·清河悼王贡传》",
+    "note": "清河悼王贡传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602894&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-yan",
+    "title": "三国志·魏书·广平哀王俨传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·广平哀王俨传》",
+    "note": "广平哀王俨传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602896&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-liu-shao",
+    "title": "三国志·魏书·刘劭传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·刘劭传》",
+    "note": "刘劭传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602929&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-fu-gu",
+    "title": "三国志·魏书·傅嘏传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·傅嘏传》",
+    "note": "傅嘏传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602939&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-huan-jie",
+    "title": "三国志·魏书·桓阶传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·桓阶传》",
+    "note": "桓阶传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602947&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-chen-jiao",
+    "title": "三国志·魏书·陈矫传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·陈矫传》",
+    "note": "陈矫传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602965&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-xu-xuan",
+    "title": "三国志·魏书·徐宣传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·徐宣传》",
+    "note": "徐宣传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602972&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-wei-zhen",
+    "title": "三国志·魏书·卫臻传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·卫臻传》",
+    "note": "卫臻传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602976&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-lu-yu",
+    "title": "三国志·魏书·卢毓传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·卢毓传》",
+    "note": "卢毓传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602982&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-he-qia",
+    "title": "三国志·魏书·和洽传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·和洽传》",
+    "note": "和洽传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602991&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-chang-lin",
+    "title": "三国志·魏书·常林传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·常林传》",
+    "note": "常林传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603000&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-yang-jun",
+    "title": "三国志·魏书·杨俊传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·杨俊传》",
+    "note": "杨俊传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603005&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-du-xi",
+    "title": "三国志·魏书·杜袭传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·杜袭传》",
+    "note": "杜袭传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603010&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zhao-yan",
+    "title": "三国志·魏书·赵俨传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·赵俨传》",
+    "note": "赵俨传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603017&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-pei-qian",
+    "title": "三国志·魏书·裴潜传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·裴潜传》",
+    "note": "裴潜传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603024&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-han-ji",
+    "title": "三国志·魏书·韩暨传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·韩暨传》",
+    "note": "韩暨传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603031&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cui-lin",
+    "title": "三国志·魏书·崔林传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·崔林传》",
+    "note": "崔林传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603036&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-gao-rou",
+    "title": "三国志·魏书·高柔传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·高柔传》",
+    "note": "高柔传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603045&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-sun-li",
+    "title": "三国志·魏书·孙礼传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·孙礼传》",
+    "note": "孙礼传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603062&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-wang-guan",
+    "title": "三国志·魏书·王观传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·王观传》",
+    "note": "王观传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603069&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-xin-pi",
+    "title": "三国志·魏书·辛毗传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·辛毗传》",
+    "note": "辛毗传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603074&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-yang-fu",
+    "title": "三国志·魏书·杨阜传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·杨阜传》",
+    "note": "杨阜传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603084&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-gao-tang-long",
+    "title": "三国志·魏书·高堂隆传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·高堂隆传》",
+    "note": "高堂隆传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603099&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-tian-yu",
+    "title": "三国志·魏书·田豫传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·田豫传》",
+    "note": "田豫传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603135&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-qian-zhao",
+    "title": "三国志·魏书·牵招传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·牵招传》",
+    "note": "牵招传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603146&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-guo-huai",
+    "title": "三国志·魏书·郭淮传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·郭淮传》",
+    "note": "郭淮传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603156&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-xu-miao",
+    "title": "三国志·魏书·徐邈传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·徐邈传》",
+    "note": "徐邈传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603166&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-hu-zhi",
+    "title": "三国志·魏书·胡质传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·胡质传》",
+    "note": "胡质传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603172&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-wang-chang",
+    "title": "三国志·魏书·王昶传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·王昶传》",
+    "note": "王昶传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603179&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-wang-ji",
+    "title": "三国志·魏书·王基传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·王基传》",
+    "note": "王基传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603189&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-wang-ling",
+    "title": "三国志·魏书·王凌传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·王凌传》",
+    "note": "王凌传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603203&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-guanqiu-jian",
+    "title": "三国志·魏书·毌丘俭传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·毌丘俭传》",
+    "note": "毌丘俭传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603208&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zhuge-dan",
+    "title": "三国志·魏书·诸葛诞传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·诸葛诞传》",
+    "note": "诸葛诞传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603218&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-deng-ai",
+    "title": "三国志·魏书·邓艾传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·邓艾传》",
+    "note": "邓艾传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603228&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zhong-hui",
+    "title": "三国志·魏书·钟会传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·钟会传》",
+    "note": "钟会传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603245&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-hua-tuo",
+    "title": "三国志·魏书·华佗传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·华佗传》",
+    "note": "华佗传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603261&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-du-kui",
+    "title": "三国志·魏书·杜夔传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·杜夔传》",
+    "note": "杜夔传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603282&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zhu-jianping",
+    "title": "三国志·魏书·朱建平传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·朱建平传》",
+    "note": "朱建平传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603288&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zhou-xuan",
+    "title": "三国志·魏书·周宣传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·周宣传》",
+    "note": "周宣传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603293&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-guan-lu",
+    "title": "三国志·魏书·管辂传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·管辂传》",
+    "note": "管辂传，本项目用于《魏书》人物基础建档与后续逐段摘录。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603298&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-wuwan-xianbei-dongyi",
+    "title": "三国志·魏书·乌丸鲜卑东夷传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·乌丸鲜卑东夷传》",
+    "note": "魏书三十为族群与边疆地理政治材料，暂不作为单个人物档案导入。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603321&remap=gb"
   }
 ]

@@ -68,6 +68,161 @@
       }
     },
     {
+      "id": "cang-ci",
+      "name": "仓慈",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "仓慈见于《三国志·魏书·仓慈传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cang-ci"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cang-ci",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ren-jun",
+      "name": "任峻",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "任峻见于《三国志·魏书·任峻传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-ren-jun"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-ren-jun",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "he-kui",
+      "name": "何夔",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "何夔见于《三国志·魏书·何夔传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-he-kui"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-he-kui",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fu-gu",
+      "name": "傅嘏",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "傅嘏见于《三国志·魏书·傅嘏传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-fu-gu"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-fu-gu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gongsun-du",
+      "name": "公孙度",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "辽东公孙氏",
+      "summary": "公孙度见于《三国志·魏书·公孙度传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-gongsun-du"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-gongsun-du",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "gongsun-zan",
       "name": "公孙瓒",
       "courtesyName": "伯圭",
@@ -136,6 +291,99 @@
           },
           {
             "sourceId": "zizhi-tongjian-67",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dian-wei",
+      "name": "典韦",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "典韦见于《三国志·魏书·典韦传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-dian-wei"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-dian-wei",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "liang-mao",
+      "name": "凉茂",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "凉茂见于《三国志·魏书·凉茂传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-liang-mao"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-liang-mao",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "liu-shao",
+      "name": "刘劭",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "刘劭见于《三国志·魏书·刘劭传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-liu-shao"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-liu-shao",
             "status": "partial"
           }
         ]
@@ -414,7 +662,197 @@
             "status": "partial"
           },
           {
+            "sourceId": "sanguozhi-wei-liu-biao",
+            "status": "partial"
+          },
+          {
             "sourceId": "zizhi-tongjian-65",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "liu-fu",
+      "name": "刘馥",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "刘馥见于《三国志·魏书·刘馥传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-liu-fu"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-liu-fu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hua-tuo",
+      "name": "华佗",
+      "courtesyName": null,
+      "life": "?-208",
+      "primaryPolity": "东汉末 / 曹魏相关",
+      "summary": "华佗见于《三国志·魏书·华佗传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-hua-tuo"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-hua-tuo",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hua-xin",
+      "name": "华歆",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "华歆见于《三国志·魏书·华歆传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-hua-xin"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-hua-xin",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "empress-bian",
+      "name": "卞皇后",
+      "courtesyName": null,
+      "life": "160-230",
+      "primaryPolity": "曹魏",
+      "summary": "卞皇后见于《三国志·魏书·武宣卞皇后传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-empress-bian"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-empress-bian",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lu-yu",
+      "name": "卢毓",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "卢毓见于《三国志·魏书·卢毓传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-lu-yu"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-lu-yu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wei-zhen",
+      "name": "卫臻",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "卫臻见于《三国志·魏书·卫臻传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-wei-zhen"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-wei-zhen",
             "status": "partial"
           }
         ]
@@ -593,6 +1031,37 @@
       }
     },
     {
+      "id": "sima-zhi",
+      "name": "司马芝",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "司马芝见于《三国志·魏书·司马芝传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-sima-zhi"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-sima-zhi",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "lu-bu",
       "name": "吕布",
       "courtesyName": "奉先",
@@ -667,6 +1136,68 @@
       }
     },
     {
+      "id": "lv-qian",
+      "name": "吕虔",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "吕虔见于《三国志·魏书·吕虔传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-lv-qian"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-lv-qian",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhou-xuan",
+      "name": "周宣",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "东汉末 / 曹魏相关",
+      "summary": "周宣见于《三国志·魏书·周宣传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-zhou-xuan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhou-xuan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "zhou-yu",
       "name": "周瑜",
       "courtesyName": "公瑾",
@@ -705,6 +1236,68 @@
       }
     },
     {
+      "id": "he-qia",
+      "name": "和洽",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "和洽见于《三国志·魏书·和洽传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-he-qia"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-he-qia",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "guo-yuan",
+      "name": "国渊",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "国渊见于《三国志·魏书·国渊传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-guo-yuan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-guo-yuan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "shi-xie",
       "name": "士燮",
       "courtesyName": "威彦",
@@ -735,6 +1328,37 @@
           },
           {
             "sourceId": "sanguozhi-wu-shi-xie",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "xiahou-shang",
+      "name": "夏侯尚",
+      "courtesyName": "伯仁",
+      "life": "?-225",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "夏侯尚见于《三国志·魏书·夏侯尚传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-xiahou-shang"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-xiahou-shang",
             "status": "partial"
           }
         ]
@@ -951,6 +1575,37 @@
       }
     },
     {
+      "id": "sun-li",
+      "name": "孙礼",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "孙礼见于《三国志·魏书·孙礼传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-sun-li"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-sun-li",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "sun-ce",
       "name": "孙策",
       "courtesyName": "伯符",
@@ -1049,6 +1704,161 @@
       }
     },
     {
+      "id": "cui-lin",
+      "name": "崔林",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "崔林见于《三国志·魏书·崔林传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cui-lin"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cui-lin",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cui-yan",
+      "name": "崔琰",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "崔琰见于《三国志·魏书·崔琰传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cui-yan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cui-yan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "chang-lin",
+      "name": "常林",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "常林见于《三国志·魏书·常林传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-chang-lin"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-chang-lin",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pang-de",
+      "name": "庞德",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "庞德见于《三国志·魏书·庞德传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-pang-de"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-pang-de",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pang-yu",
+      "name": "庞淯",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "庞淯见于《三国志·魏书·庞淯传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-pang-yu"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-pang-yu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "pang-tong",
       "name": "庞统",
       "courtesyName": "士元",
@@ -1079,6 +1889,161 @@
           },
           {
             "sourceId": "zizhi-tongjian-67",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhang-ji-wei",
+      "name": "张既",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "张既见于《三国志·魏书·张既传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-zhang-ji"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhang-ji",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhang-yang",
+      "name": "张杨",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "河内张杨集团",
+      "summary": "张杨见于《三国志·魏书·张杨传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-zhang-yang"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhang-yang",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhang-yan",
+      "name": "张燕",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "黑山军 / 曹操集团",
+      "summary": "张燕见于《三国志·魏书·张燕传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-zhang-yan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhang-yan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhang-xiu",
+      "name": "张绣",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "张济旧部 / 曹操集团",
+      "summary": "张绣见于《三国志·魏书·张绣传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-zhang-xiu"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhang-xiu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhang-fan",
+      "name": "张范",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "张范见于《三国志·魏书·张范传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-zhang-fan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhang-fan",
             "status": "partial"
           }
         ]
@@ -1294,6 +2259,68 @@
       }
     },
     {
+      "id": "xu-yi",
+      "name": "徐奕",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "徐奕见于《三国志·魏书·徐奕传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-xu-yi"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-xu-yi",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "xu-xuan",
+      "name": "徐宣",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "徐宣见于《三国志·魏书·徐宣传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-xu-xuan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-xu-xuan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "xu-huang",
       "name": "徐晃",
       "courtesyName": "公明",
@@ -1320,6 +2347,37 @@
         "sources": [
           {
             "sourceId": "sanguozhi-wei-xu-huang",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "xu-miao",
+      "name": "徐邈",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "徐邈见于《三国志·魏书·徐邈传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-xu-miao"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-xu-miao",
             "status": "partial"
           }
         ]
@@ -1398,6 +2456,37 @@
       }
     },
     {
+      "id": "cao-shang",
+      "name": "曹上",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹上见于《三国志·魏书·临邑殇公子上传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-shang"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-shang",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "cao-pi",
       "name": "曹丕",
       "courtesyName": "子桓",
@@ -1429,6 +2518,68 @@
           },
           {
             "sourceId": "sanguozhi-wei-wendi",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-cheng",
+      "name": "曹乘",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹乘见于《三国志·魏书·谷城殇公子乘传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-cheng"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-cheng",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-jing",
+      "name": "曹京",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹京见于《三国志·魏书·灵殇公子京传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-jing"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-jing",
             "status": "partial"
           }
         ]
@@ -1497,6 +2648,440 @@
       }
     },
     {
+      "id": "cao-yan",
+      "name": "曹俨",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹俨见于《三国志·魏书·广平哀王俨传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-yan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-yan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-chong",
+      "name": "曹冲",
+      "courtesyName": "仓舒",
+      "life": "196-208",
+      "primaryPolity": "曹魏",
+      "summary": "曹冲见于《三国志·魏书·邓哀王冲传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-chong"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-chong",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-qin",
+      "name": "曹勤",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹勤见于《三国志·魏书·刚殇公子勤传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-qin"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-qin",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-xie",
+      "name": "曹协",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹协见于《三国志·魏书·赞哀王协传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-xie"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-xie",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-rui",
+      "name": "曹叡",
+      "courtesyName": "元仲",
+      "life": "204-239",
+      "primaryPolity": "曹魏",
+      "summary": "曹叡见于《三国志·魏书·明帝纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-mingdi"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-mingdi",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-jun-fan",
+      "name": "曹均",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹均见于《三国志·魏书·樊安公均传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-jun-fan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-jun-fan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-huan",
+      "name": "曹奂",
+      "courtesyName": null,
+      "life": "246-302",
+      "primaryPolity": "曹魏",
+      "summary": "曹奂见于《三国志·魏书·陈留王纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-chenliu-wang"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-chenliu-wang",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-yu",
+      "name": "曹宇",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹宇见于《三国志·魏书·燕王宇传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-yu"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-yu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-jun",
+      "name": "曹峻",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹峻见于《三国志·魏书·陈留恭王峻传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-jun"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-jun",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-gan",
+      "name": "曹干",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹干见于《三国志·魏书·赵王干传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-gan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-gan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-biao",
+      "name": "曹彪",
+      "courtesyName": null,
+      "life": "195-251",
+      "primaryPolity": "曹魏",
+      "summary": "曹彪见于《三国志·魏书·楚王彪传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-biao"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-biao",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-zhang",
+      "name": "曹彰",
+      "courtesyName": "子文",
+      "life": "?-223",
+      "primaryPolity": "曹魏",
+      "summary": "曹彰见于《三国志·魏书·任城威王彰传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-zhang"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-zhang",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-hui",
+      "name": "曹徽",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹徽见于《三国志·魏书·东平灵王徽传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-hui"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-hui",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-ju",
+      "name": "曹据",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹据见于《三国志·魏书·彭城王据传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-ju"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-ju",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "cao-cao",
       "name": "曹操",
       "courtesyName": "孟德",
@@ -1541,6 +3126,285 @@
       }
     },
     {
+      "id": "cao-zheng",
+      "name": "曹整",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹整见于《三国志·魏书·郿戴公子整传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-zheng"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-zheng",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-ang",
+      "name": "曹昂",
+      "courtesyName": null,
+      "life": "?-197",
+      "primaryPolity": "曹魏",
+      "summary": "曹昂见于《三国志·魏书·丰愍王昂传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-ang"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-ang",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-lin",
+      "name": "曹林",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹林见于《三国志·魏书·沛穆王林传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-lin"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-lin",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-ji",
+      "name": "曹棘",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹棘见于《三国志·魏书·广宗殇公子棘传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-ji"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-ji",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-zhi",
+      "name": "曹植",
+      "courtesyName": "子建",
+      "life": "192-232",
+      "primaryPolity": "曹魏",
+      "summary": "曹植见于《三国志·魏书·陈思王植传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-zhi"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-zhi",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-hong",
+      "name": "曹洪",
+      "courtesyName": null,
+      "life": "?-232",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "曹洪见于《三国志·魏书·曹洪传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-hong"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-hong",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-xiong",
+      "name": "曹熊",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹熊见于《三国志·魏书·萧怀王熊传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-xiong"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-xiong",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-shuang",
+      "name": "曹爽",
+      "courtesyName": null,
+      "life": "?-249",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "曹爽见于《三国志·魏书·曹爽传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-shuang"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-shuang",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-xuan",
+      "name": "曹玹",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹玹见于《三国志·魏书·济阳怀王玹传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-xuan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-xuan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "cao-zhen",
       "name": "曹真",
       "courtesyName": "子丹",
@@ -1566,6 +3430,409 @@
         "sources": [
           {
             "sourceId": "sanguozhi-wei-cao-zhen",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-ju-fanyang",
+      "name": "曹矩",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹矩见于《三国志·魏书·范阳闵王矩传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-ju-fanyang"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-ju-fanyang",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-li",
+      "name": "曹礼",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹礼见于《三国志·魏书·元城哀王礼传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-li"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-li",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-fang",
+      "name": "曹芳",
+      "courtesyName": null,
+      "life": "232-274",
+      "primaryPolity": "曹魏",
+      "summary": "曹芳见于《三国志·魏书·齐王纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-qi-wang"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-qi-wang",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-mao-prince",
+      "name": "曹茂",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹茂见于《三国志·魏书·乐陵王茂传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-mao-prince"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-mao-prince",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-rui-prince",
+      "name": "曹蕤",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹蕤见于《三国志·魏书·北海悼王蕤传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-rui-prince"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-rui-prince",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-gun",
+      "name": "曹衮",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹衮见于《三国志·魏书·中山恭王衮传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-gun"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-gun",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-gong",
+      "name": "曹贡",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹贡见于《三国志·魏书·清河悼王贡传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-gong"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-gong",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-yong",
+      "name": "曹邕",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹邕见于《三国志·魏书·邯郸怀王邕传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-yong"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-yong",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-jian",
+      "name": "曹鉴",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹鉴见于《三国志·魏书·东武阳怀王鉴传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-jian"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-jian",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-shuo",
+      "name": "曹铄",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹铄见于《三国志·魏书·相殇王铄传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-shuo"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-shuo",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-lin-donghai",
+      "name": "曹霖",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹魏",
+      "summary": "曹霖见于《三国志·魏书·东海定王霖传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-cao-lin-donghai"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-lin-donghai",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-mao",
+      "name": "曹髦",
+      "courtesyName": "彦士",
+      "life": "241-260",
+      "primaryPolity": "曹魏",
+      "summary": "曹髦见于《三国志·魏书·高贵乡公纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-gaogui-xianggong"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-gaogui-xianggong",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhu-jianping",
+      "name": "朱建平",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "东汉末 / 曹魏相关",
+      "summary": "朱建平见于《三国志·魏书·朱建平传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-zhu-jianping"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhu-jianping",
             "status": "partial"
           }
         ]
@@ -1635,6 +3902,99 @@
       }
     },
     {
+      "id": "du-kui",
+      "name": "杜夔",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "东汉末 / 曹魏相关",
+      "summary": "杜夔见于《三国志·魏书·杜夔传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-du-kui"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-du-kui",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "du-ji",
+      "name": "杜畿",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "杜畿见于《三国志·魏书·杜畿传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-du-ji"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-du-ji",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "du-xi",
+      "name": "杜袭",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "杜袭见于《三国志·魏书·杜袭传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-du-xi"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-du-xi",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "du-yu",
       "name": "杜预",
       "courtesyName": "元凯",
@@ -1665,6 +4025,223 @@
           },
           {
             "sourceId": "zizhi-tongjian-81",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "yang-jun",
+      "name": "杨俊",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "杨俊见于《三国志·魏书·杨俊传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-yang-jun"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-yang-jun",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "yang-fu",
+      "name": "杨阜",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "杨阜见于《三国志·魏书·杨阜传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-yang-fu"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-yang-fu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "huan-jie",
+      "name": "桓阶",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "桓阶见于《三国志·魏书·桓阶传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-huan-jie"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-huan-jie",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "liang-xi",
+      "name": "梁习",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "梁习见于《三国志·魏书·梁习传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-liang-xi"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-liang-xi",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "guanqiu-jian",
+      "name": "毌丘俭",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "毌丘俭见于《三国志·魏书·毌丘俭传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-guanqiu-jian"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-guanqiu-jian",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mao-jie",
+      "name": "毛玠",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "毛玠见于《三国志·魏书·毛玠传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-mao-jie"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-mao-jie",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "empress-mao",
+      "name": "毛皇后",
+      "courtesyName": null,
+      "life": "?-237",
+      "primaryPolity": "曹魏",
+      "summary": "毛皇后见于《三国志·魏书·明悼毛皇后传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-empress-mao"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-empress-mao",
             "status": "partial"
           }
         ]
@@ -1780,6 +4357,37 @@
       }
     },
     {
+      "id": "wen-hui",
+      "name": "温恢",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "温恢见于《三国志·魏书·温恢传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-wen-hui"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-wen-hui",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "man-chong",
       "name": "满宠",
       "courtesyName": "伯宁",
@@ -1805,6 +4413,192 @@
         "sources": [
           {
             "sourceId": "sanguozhi-wei-man-chong",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "qian-zhao",
+      "name": "牵招",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "牵招见于《三国志·魏书·牵招传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-qian-zhao"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-qian-zhao",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wang-xiu",
+      "name": "王修",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "王修见于《三国志·魏书·王修传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-wang-xiu"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-wang-xiu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wang-ling",
+      "name": "王凌",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "王凌见于《三国志·魏书·王凌传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-wang-ling"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-wang-ling",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wang-ji",
+      "name": "王基",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "王基见于《三国志·魏书·王基传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-wang-ji"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-wang-ji",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wang-chang",
+      "name": "王昶",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "王昶见于《三国志·魏书·王昶传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-wang-chang"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-wang-chang",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wang-lang",
+      "name": "王朗",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "王朗见于《三国志·魏书·王朗传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-wang-lang"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-wang-lang",
             "status": "partial"
           }
         ]
@@ -1878,6 +4672,99 @@
       }
     },
     {
+      "id": "wang-su",
+      "name": "王肃",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "王肃见于《三国志·魏书·王朗传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-wang-lang"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-wang-lang",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wang-guan",
+      "name": "王观",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "王观见于《三国志·魏书·王观传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-wang-guan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-wang-guan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "empress-zhen",
+      "name": "甄皇后",
+      "courtesyName": null,
+      "life": "183-221",
+      "primaryPolity": "曹魏",
+      "summary": "甄皇后见于《三国志·魏书·文昭甄皇后传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-empress-zhen"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-empress-zhen",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "tian-feng",
       "name": "田丰",
       "courtesyName": "元皓",
@@ -1908,6 +4795,68 @@
           },
           {
             "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tian-chou",
+      "name": "田畴",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "田畴见于《三国志·魏书·田畴传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-tian-chou"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-tian-chou",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tian-yu",
+      "name": "田豫",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "田豫见于《三国志·魏书·田豫传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-tian-yu"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-tian-yu",
             "status": "partial"
           }
         ]
@@ -1979,6 +4928,130 @@
       }
     },
     {
+      "id": "guan-ning",
+      "name": "管宁",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "管宁见于《三国志·魏书·管宁传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-guan-ning"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-guan-ning",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "guan-lu",
+      "name": "管辂",
+      "courtesyName": "公明",
+      "life": "209-256",
+      "primaryPolity": "东汉末 / 曹魏相关",
+      "summary": "管辂见于《三国志·魏书·管辂传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-guan-lu"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-guan-lu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hu-zhi",
+      "name": "胡质",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "胡质见于《三国志·魏书·胡质传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-hu-zhi"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-hu-zhi",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zang-hong",
+      "name": "臧洪",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "袁绍集团相关",
+      "summary": "臧洪见于《三国志·魏书·臧洪传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-zang-hong"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zang-hong",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "zang-ba",
       "name": "臧霸",
       "courtesyName": "宣高",
@@ -2004,6 +5077,37 @@
         "sources": [
           {
             "sourceId": "sanguozhi-wei-zang-ba",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "su-ze",
+      "name": "苏则",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "苏则见于《三国志·魏书·苏则传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-su-ze"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-su-ze",
             "status": "partial"
           }
         ]
@@ -2108,6 +5212,10 @@
         "sources": [
           {
             "sourceId": "houhanshu-dong-zhuo",
+            "status": "partial"
+          },
+          {
+            "sourceId": "sanguozhi-wei-dong-zhuo",
             "status": "partial"
           },
           {
@@ -2218,6 +5326,37 @@
       }
     },
     {
+      "id": "yuan-huan",
+      "name": "袁涣",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "袁涣见于《三国志·魏书·袁涣传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-yuan-huan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-yuan-huan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "yuan-shao",
       "name": "袁绍",
       "courtesyName": "本初",
@@ -2251,6 +5390,37 @@
           },
           {
             "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pei-qian",
+      "name": "裴潜",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "裴潜见于《三国志·魏书·裴潜传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-pei-qian"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-pei-qian",
             "status": "partial"
           }
         ]
@@ -2298,6 +5468,37 @@
       }
     },
     {
+      "id": "xu-chu",
+      "name": "许褚",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "许褚见于《三国志·魏书·许褚传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-xu-chu"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-xu-chu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "zhuge-liang",
       "name": "诸葛亮",
       "courtesyName": "孔明",
@@ -2329,6 +5530,37 @@
           },
           {
             "sourceId": "zizhi-tongjian-72",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhuge-dan",
+      "name": "诸葛诞",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "诸葛诞见于《三国志·魏书·诸葛诞传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-zhuge-dan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhuge-dan",
             "status": "partial"
           }
         ]
@@ -2401,6 +5633,68 @@
       }
     },
     {
+      "id": "zhao-yan",
+      "name": "赵俨",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "赵俨见于《三国志·魏书·赵俨传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-zhao-yan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhao-yan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "xin-pi",
+      "name": "辛毗",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "辛毗见于《三国志·魏书·辛毗传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-xin-pi"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-xin-pi",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "deng-ai",
       "name": "邓艾",
       "courtesyName": "士载",
@@ -2430,7 +5724,104 @@
             "status": "partial"
           },
           {
+            "sourceId": "sanguozhi-wei-deng-ai",
+            "status": "partial"
+          },
+          {
             "sourceId": "zizhi-tongjian-78",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "xing-yong",
+      "name": "邢颙",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "邢颙见于《三国志·魏书·邢颙传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-xing-yong"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-xing-yong",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bing-yuan",
+      "name": "邴原",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "邴原见于《三国志·魏书·邴原传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-bing-yuan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-bing-yuan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zheng-hun",
+      "name": "郑浑",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "郑浑见于《三国志·魏书·郑浑传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-zheng-hun"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zheng-hun",
             "status": "partial"
           }
         ]
@@ -2473,6 +5864,99 @@
       }
     },
     {
+      "id": "guo-huai",
+      "name": "郭淮",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "郭淮见于《三国志·魏书·郭淮传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-guo-huai"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-guo-huai",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "empress-guo-wende",
+      "name": "郭皇后",
+      "courtesyName": null,
+      "life": "184-235",
+      "primaryPolity": "曹魏",
+      "summary": "郭皇后见于《三国志·魏书·文德郭皇后传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-empress-guo-wende"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-empress-guo-wende",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "empress-guo-mingyuan",
+      "name": "郭皇后",
+      "courtesyName": null,
+      "life": "?-264",
+      "primaryPolity": "曹魏",
+      "summary": "郭皇后见于《三国志·魏书·明元郭皇后传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-empress-guo-mingyuan"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-empress-guo-mingyuan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "zhong-hui",
       "name": "钟会",
       "courtesyName": "士季",
@@ -2501,7 +5985,42 @@
             "status": "partial"
           },
           {
+            "sourceId": "sanguozhi-wei-zhong-hui",
+            "status": "partial"
+          },
+          {
             "sourceId": "zizhi-tongjian-78",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhong-yu",
+      "name": "钟毓",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "钟毓见于《三国志·魏书·钟繇传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-zhong-yao"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhong-yao",
             "status": "partial"
           }
         ]
@@ -2533,6 +6052,37 @@
         "sources": [
           {
             "sourceId": "sanguozhi-wei-zhong-yao",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "yan-wen",
+      "name": "阎温",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "阎温见于《三国志·魏书·阎温传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-yan-wen"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-yan-wen",
             "status": "partial"
           }
         ]
@@ -2614,6 +6164,68 @@
       }
     },
     {
+      "id": "chen-tai",
+      "name": "陈泰",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "陈泰见于《三国志·魏书·陈群传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-chen-qun"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-chen-qun",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "chen-jiao",
+      "name": "陈矫",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "陈矫见于《三国志·魏书·陈矫传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-chen-jiao"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-chen-jiao",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "chen-qun",
       "name": "陈群",
       "courtesyName": "长文",
@@ -2675,6 +6287,37 @@
           },
           {
             "sourceId": "sanguozhi-wei-tao-qian",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "han-ji",
+      "name": "韩暨",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "韩暨见于《三国志·魏书·韩暨传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-han-ji"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-han-ji",
             "status": "partial"
           }
         ]
@@ -2791,6 +6434,68 @@
       }
     },
     {
+      "id": "gao-tang-long",
+      "name": "高堂隆",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "高堂隆见于《三国志·魏书·高堂隆传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-gao-tang-long"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-gao-tang-long",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gao-rou",
+      "name": "高柔",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "高柔见于《三国志·魏书·高柔传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-gao-rou"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-gao-rou",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "gao-lan",
       "name": "高览",
       "courtesyName": null,
@@ -2896,6 +6601,37 @@
           },
           {
             "sourceId": "zizhi-tongjian-65",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bao-xun",
+      "name": "鲍勋",
+      "courtesyName": null,
+      "life": null,
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "鲍勋见于《三国志·魏书·鲍勋传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
+      "coverageStatus": "stub",
+      "lifeEventCount": 1,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": null,
+      "lastRecordedYear": null,
+      "sourceIds": [
+        "sanguozhi-wei-bao-xun"
+      ],
+      "coverage": {
+        "status": "stub",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-bao-xun",
             "status": "partial"
           }
         ]

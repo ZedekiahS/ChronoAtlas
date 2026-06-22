@@ -6801,5 +6801,2165 @@
         "locator": "李通传"
       }
     ]
+  },
+  {
+    "id": "cao-rui-wei-shu-source-seed",
+    "personId": "cao-rui",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹叡已根据《三国志·魏书·明帝纪》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-mingdi",
+        "locator": "明帝纪",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-fang-wei-shu-source-seed",
+    "personId": "cao-fang",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹芳已根据《三国志·魏书·齐王纪》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-qi-wang",
+        "locator": "齐王纪",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-mao-wei-shu-source-seed",
+    "personId": "cao-mao",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹髦已根据《三国志·魏书·高贵乡公纪》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-gaogui-xianggong",
+        "locator": "高贵乡公纪",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-huan-wei-shu-source-seed",
+    "personId": "cao-huan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹奂已根据《三国志·魏书·陈留王纪》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chenliu-wang",
+        "locator": "陈留王纪",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "empress-bian-wei-shu-source-seed",
+    "personId": "empress-bian",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "卞皇后已根据《三国志·魏书·武宣卞皇后传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-empress-bian",
+        "locator": "武宣卞皇后传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "empress-zhen-wei-shu-source-seed",
+    "personId": "empress-zhen",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "甄皇后已根据《三国志·魏书·文昭甄皇后传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-empress-zhen",
+        "locator": "文昭甄皇后传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "empress-guo-wende-wei-shu-source-seed",
+    "personId": "empress-guo-wende",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "郭皇后已根据《三国志·魏书·文德郭皇后传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-empress-guo-wende",
+        "locator": "文德郭皇后传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "empress-mao-wei-shu-source-seed",
+    "personId": "empress-mao",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "毛皇后已根据《三国志·魏书·明悼毛皇后传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-empress-mao",
+        "locator": "明悼毛皇后传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "empress-guo-mingyuan-wei-shu-source-seed",
+    "personId": "empress-guo-mingyuan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "郭皇后已根据《三国志·魏书·明元郭皇后传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-empress-guo-mingyuan",
+        "locator": "明元郭皇后传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "zang-hong-wei-shu-source-seed",
+    "personId": "zang-hong",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "臧洪已根据《三国志·魏书·臧洪传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zang-hong",
+        "locator": "臧洪传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "zhang-yang-wei-shu-source-seed",
+    "personId": "zhang-yang",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "张杨已根据《三国志·魏书·张杨传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-yang",
+        "locator": "张杨传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "gongsun-du-wei-shu-source-seed",
+    "personId": "gongsun-du",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "公孙度已根据《三国志·魏书·公孙度传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-gongsun-du",
+        "locator": "公孙度传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "zhang-yan-wei-shu-source-seed",
+    "personId": "zhang-yan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "张燕已根据《三国志·魏书·张燕传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-yan",
+        "locator": "张燕传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "zhang-xiu-wei-shu-source-seed",
+    "personId": "zhang-xiu",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "张绣已根据《三国志·魏书·张绣传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-xiu",
+        "locator": "张绣传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-hong-wei-shu-source-seed",
+    "personId": "cao-hong",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹洪已根据《三国志·魏书·曹洪传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-hong",
+        "locator": "曹洪传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-shuang-wei-shu-source-seed",
+    "personId": "cao-shuang",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹爽已根据《三国志·魏书·曹爽传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-shuang",
+        "locator": "曹爽传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "xiahou-shang-wei-shu-source-seed",
+    "personId": "xiahou-shang",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "夏侯尚已根据《三国志·魏书·夏侯尚传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xiahou-shang",
+        "locator": "夏侯尚传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "yuan-huan-wei-shu-source-seed",
+    "personId": "yuan-huan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "袁涣已根据《三国志·魏书·袁涣传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yuan-huan",
+        "locator": "袁涣传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "zhang-fan-wei-shu-source-seed",
+    "personId": "zhang-fan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "张范已根据《三国志·魏书·张范传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-fan",
+        "locator": "张范传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "liang-mao-wei-shu-source-seed",
+    "personId": "liang-mao",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "凉茂已根据《三国志·魏书·凉茂传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liang-mao",
+        "locator": "凉茂传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "guo-yuan-wei-shu-source-seed",
+    "personId": "guo-yuan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "国渊已根据《三国志·魏书·国渊传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-guo-yuan",
+        "locator": "国渊传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "tian-chou-wei-shu-source-seed",
+    "personId": "tian-chou",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "田畴已根据《三国志·魏书·田畴传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-tian-chou",
+        "locator": "田畴传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "wang-xiu-wei-shu-source-seed",
+    "personId": "wang-xiu",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "王修已根据《三国志·魏书·王修传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-xiu",
+        "locator": "王修传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "bing-yuan-wei-shu-source-seed",
+    "personId": "bing-yuan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "邴原已根据《三国志·魏书·邴原传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-bing-yuan",
+        "locator": "邴原传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "guan-ning-wei-shu-source-seed",
+    "personId": "guan-ning",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "管宁已根据《三国志·魏书·管宁传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-guan-ning",
+        "locator": "管宁传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cui-yan-wei-shu-source-seed",
+    "personId": "cui-yan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "崔琰已根据《三国志·魏书·崔琰传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cui-yan",
+        "locator": "崔琰传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "mao-jie-wei-shu-source-seed",
+    "personId": "mao-jie",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "毛玠已根据《三国志·魏书·毛玠传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-mao-jie",
+        "locator": "毛玠传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "xu-yi-wei-shu-source-seed",
+    "personId": "xu-yi",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "徐奕已根据《三国志·魏书·徐奕传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-yi",
+        "locator": "徐奕传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "he-kui-wei-shu-source-seed",
+    "personId": "he-kui",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "何夔已根据《三国志·魏书·何夔传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-he-kui",
+        "locator": "何夔传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "xing-yong-wei-shu-source-seed",
+    "personId": "xing-yong",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "邢颙已根据《三国志·魏书·邢颙传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xing-yong",
+        "locator": "邢颙传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "bao-xun-wei-shu-source-seed",
+    "personId": "bao-xun",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "鲍勋已根据《三国志·魏书·鲍勋传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-bao-xun",
+        "locator": "鲍勋传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "sima-zhi-wei-shu-source-seed",
+    "personId": "sima-zhi",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "司马芝已根据《三国志·魏书·司马芝传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-sima-zhi",
+        "locator": "司马芝传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "zhong-yu-wei-shu-source-seed",
+    "personId": "zhong-yu",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "钟毓已根据《三国志·魏书·钟繇传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhong-yao",
+        "locator": "钟毓附传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "hua-xin-wei-shu-source-seed",
+    "personId": "hua-xin",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "华歆已根据《三国志·魏书·华歆传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-hua-xin",
+        "locator": "华歆传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "wang-lang-wei-shu-source-seed",
+    "personId": "wang-lang",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "王朗已根据《三国志·魏书·王朗传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-lang",
+        "locator": "王朗传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "wang-su-wei-shu-source-seed",
+    "personId": "wang-su",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "王肃已根据《三国志·魏书·王朗传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-lang",
+        "locator": "王肃附传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "liu-fu-wei-shu-source-seed",
+    "personId": "liu-fu",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "刘馥已根据《三国志·魏书·刘馥传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fu",
+        "locator": "刘馥传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "liang-xi-wei-shu-source-seed",
+    "personId": "liang-xi",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "梁习已根据《三国志·魏书·梁习传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liang-xi",
+        "locator": "梁习传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "zhang-ji-wei-wei-shu-source-seed",
+    "personId": "zhang-ji-wei",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "张既已根据《三国志·魏书·张既传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-ji",
+        "locator": "张既传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "wen-hui-wei-shu-source-seed",
+    "personId": "wen-hui",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "温恢已根据《三国志·魏书·温恢传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wen-hui",
+        "locator": "温恢传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "ren-jun-wei-shu-source-seed",
+    "personId": "ren-jun",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "任峻已根据《三国志·魏书·任峻传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-ren-jun",
+        "locator": "任峻传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "su-ze-wei-shu-source-seed",
+    "personId": "su-ze",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "苏则已根据《三国志·魏书·苏则传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-su-ze",
+        "locator": "苏则传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "du-ji-wei-shu-source-seed",
+    "personId": "du-ji",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "杜畿已根据《三国志·魏书·杜畿传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-du-ji",
+        "locator": "杜畿传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "zheng-hun-wei-shu-source-seed",
+    "personId": "zheng-hun",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "郑浑已根据《三国志·魏书·郑浑传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zheng-hun",
+        "locator": "郑浑传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cang-ci-wei-shu-source-seed",
+    "personId": "cang-ci",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "仓慈已根据《三国志·魏书·仓慈传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cang-ci",
+        "locator": "仓慈传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "lv-qian-wei-shu-source-seed",
+    "personId": "lv-qian",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "吕虔已根据《三国志·魏书·吕虔传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-lv-qian",
+        "locator": "吕虔传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "xu-chu-wei-shu-source-seed",
+    "personId": "xu-chu",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "许褚已根据《三国志·魏书·许褚传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-chu",
+        "locator": "许褚传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "dian-wei-wei-shu-source-seed",
+    "personId": "dian-wei",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "典韦已根据《三国志·魏书·典韦传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-dian-wei",
+        "locator": "典韦传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "pang-de-wei-shu-source-seed",
+    "personId": "pang-de",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "庞德已根据《三国志·魏书·庞德传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-pang-de",
+        "locator": "庞德传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "pang-yu-wei-shu-source-seed",
+    "personId": "pang-yu",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "庞淯已根据《三国志·魏书·庞淯传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-pang-yu",
+        "locator": "庞淯传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "yan-wen-wei-shu-source-seed",
+    "personId": "yan-wen",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "阎温已根据《三国志·魏书·阎温传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yan-wen",
+        "locator": "阎温传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-zhang-wei-shu-source-seed",
+    "personId": "cao-zhang",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹彰已根据《三国志·魏书·任城威王彰传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhang",
+        "locator": "任城威王彰传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-zhi-wei-shu-source-seed",
+    "personId": "cao-zhi",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹植已根据《三国志·魏书·陈思王植传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhi",
+        "locator": "陈思王植传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-xiong-wei-shu-source-seed",
+    "personId": "cao-xiong",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹熊已根据《三国志·魏书·萧怀王熊传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-xiong",
+        "locator": "萧怀王熊传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-ang-wei-shu-source-seed",
+    "personId": "cao-ang",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹昂已根据《三国志·魏书·丰愍王昂传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-ang",
+        "locator": "丰愍王昂传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-shuo-wei-shu-source-seed",
+    "personId": "cao-shuo",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹铄已根据《三国志·魏书·相殇王铄传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-shuo",
+        "locator": "相殇王铄传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-chong-wei-shu-source-seed",
+    "personId": "cao-chong",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹冲已根据《三国志·魏书·邓哀王冲传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-chong",
+        "locator": "邓哀王冲传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-ju-wei-shu-source-seed",
+    "personId": "cao-ju",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹据已根据《三国志·魏书·彭城王据传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-ju",
+        "locator": "彭城王据传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-yu-wei-shu-source-seed",
+    "personId": "cao-yu",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹宇已根据《三国志·魏书·燕王宇传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-yu",
+        "locator": "燕王宇传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-lin-wei-shu-source-seed",
+    "personId": "cao-lin",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹林已根据《三国志·魏书·沛穆王林传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-lin",
+        "locator": "沛穆王林传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-gun-wei-shu-source-seed",
+    "personId": "cao-gun",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹衮已根据《三国志·魏书·中山恭王衮传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-gun",
+        "locator": "中山恭王衮传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-xuan-wei-shu-source-seed",
+    "personId": "cao-xuan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹玹已根据《三国志·魏书·济阳怀王玹传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-xuan",
+        "locator": "济阳怀王玹传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-jun-wei-shu-source-seed",
+    "personId": "cao-jun",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹峻已根据《三国志·魏书·陈留恭王峻传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-jun",
+        "locator": "陈留恭王峻传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-ju-fanyang-wei-shu-source-seed",
+    "personId": "cao-ju-fanyang",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹矩已根据《三国志·魏书·范阳闵王矩传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-ju-fanyang",
+        "locator": "范阳闵王矩传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-gan-wei-shu-source-seed",
+    "personId": "cao-gan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹干已根据《三国志·魏书·赵王干传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-gan",
+        "locator": "赵王干传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-shang-wei-shu-source-seed",
+    "personId": "cao-shang",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹上已根据《三国志·魏书·临邑殇公子上传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-shang",
+        "locator": "临邑殇公子上传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-biao-wei-shu-source-seed",
+    "personId": "cao-biao",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹彪已根据《三国志·魏书·楚王彪传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-biao",
+        "locator": "楚王彪传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-qin-wei-shu-source-seed",
+    "personId": "cao-qin",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹勤已根据《三国志·魏书·刚殇公子勤传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-qin",
+        "locator": "刚殇公子勤传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-cheng-wei-shu-source-seed",
+    "personId": "cao-cheng",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹乘已根据《三国志·魏书·谷城殇公子乘传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-cheng",
+        "locator": "谷城殇公子乘传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-zheng-wei-shu-source-seed",
+    "personId": "cao-zheng",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹整已根据《三国志·魏书·郿戴公子整传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zheng",
+        "locator": "郿戴公子整传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-jing-wei-shu-source-seed",
+    "personId": "cao-jing",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹京已根据《三国志·魏书·灵殇公子京传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-jing",
+        "locator": "灵殇公子京传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-jun-fan-wei-shu-source-seed",
+    "personId": "cao-jun-fan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹均已根据《三国志·魏书·樊安公均传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-jun-fan",
+        "locator": "樊安公均传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-ji-wei-shu-source-seed",
+    "personId": "cao-ji",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹棘已根据《三国志·魏书·广宗殇公子棘传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-ji",
+        "locator": "广宗殇公子棘传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-hui-wei-shu-source-seed",
+    "personId": "cao-hui",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹徽已根据《三国志·魏书·东平灵王徽传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-hui",
+        "locator": "东平灵王徽传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-mao-prince-wei-shu-source-seed",
+    "personId": "cao-mao-prince",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹茂已根据《三国志·魏书·乐陵王茂传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-mao-prince",
+        "locator": "乐陵王茂传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-xie-wei-shu-source-seed",
+    "personId": "cao-xie",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹协已根据《三国志·魏书·赞哀王协传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-xie",
+        "locator": "赞哀王协传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-rui-prince-wei-shu-source-seed",
+    "personId": "cao-rui-prince",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹蕤已根据《三国志·魏书·北海悼王蕤传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-rui-prince",
+        "locator": "北海悼王蕤传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-jian-wei-shu-source-seed",
+    "personId": "cao-jian",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹鉴已根据《三国志·魏书·东武阳怀王鉴传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-jian",
+        "locator": "东武阳怀王鉴传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-lin-donghai-wei-shu-source-seed",
+    "personId": "cao-lin-donghai",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹霖已根据《三国志·魏书·东海定王霖传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-lin-donghai",
+        "locator": "东海定王霖传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-li-wei-shu-source-seed",
+    "personId": "cao-li",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹礼已根据《三国志·魏书·元城哀王礼传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-li",
+        "locator": "元城哀王礼传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-yong-wei-shu-source-seed",
+    "personId": "cao-yong",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹邕已根据《三国志·魏书·邯郸怀王邕传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-yong",
+        "locator": "邯郸怀王邕传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-gong-wei-shu-source-seed",
+    "personId": "cao-gong",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹贡已根据《三国志·魏书·清河悼王贡传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-gong",
+        "locator": "清河悼王贡传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cao-yan-wei-shu-source-seed",
+    "personId": "cao-yan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "曹俨已根据《三国志·魏书·广平哀王俨传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-yan",
+        "locator": "广平哀王俨传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "liu-shao-wei-shu-source-seed",
+    "personId": "liu-shao",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "刘劭已根据《三国志·魏书·刘劭传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-shao",
+        "locator": "刘劭传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "fu-gu-wei-shu-source-seed",
+    "personId": "fu-gu",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "傅嘏已根据《三国志·魏书·傅嘏传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-fu-gu",
+        "locator": "傅嘏传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "huan-jie-wei-shu-source-seed",
+    "personId": "huan-jie",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "桓阶已根据《三国志·魏书·桓阶传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-huan-jie",
+        "locator": "桓阶传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "chen-tai-wei-shu-source-seed",
+    "personId": "chen-tai",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "陈泰已根据《三国志·魏书·陈群传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chen-qun",
+        "locator": "陈泰附传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "chen-jiao-wei-shu-source-seed",
+    "personId": "chen-jiao",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "陈矫已根据《三国志·魏书·陈矫传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chen-jiao",
+        "locator": "陈矫传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "xu-xuan-wei-shu-source-seed",
+    "personId": "xu-xuan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "徐宣已根据《三国志·魏书·徐宣传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-xuan",
+        "locator": "徐宣传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "wei-zhen-wei-shu-source-seed",
+    "personId": "wei-zhen",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "卫臻已根据《三国志·魏书·卫臻传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wei-zhen",
+        "locator": "卫臻传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "lu-yu-wei-shu-source-seed",
+    "personId": "lu-yu",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "卢毓已根据《三国志·魏书·卢毓传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-lu-yu",
+        "locator": "卢毓传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "he-qia-wei-shu-source-seed",
+    "personId": "he-qia",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "和洽已根据《三国志·魏书·和洽传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-he-qia",
+        "locator": "和洽传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "chang-lin-wei-shu-source-seed",
+    "personId": "chang-lin",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "常林已根据《三国志·魏书·常林传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chang-lin",
+        "locator": "常林传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "yang-jun-wei-shu-source-seed",
+    "personId": "yang-jun",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "杨俊已根据《三国志·魏书·杨俊传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yang-jun",
+        "locator": "杨俊传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "du-xi-wei-shu-source-seed",
+    "personId": "du-xi",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "杜袭已根据《三国志·魏书·杜袭传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-du-xi",
+        "locator": "杜袭传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "zhao-yan-wei-shu-source-seed",
+    "personId": "zhao-yan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "赵俨已根据《三国志·魏书·赵俨传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhao-yan",
+        "locator": "赵俨传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "pei-qian-wei-shu-source-seed",
+    "personId": "pei-qian",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "裴潜已根据《三国志·魏书·裴潜传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-pei-qian",
+        "locator": "裴潜传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "han-ji-wei-shu-source-seed",
+    "personId": "han-ji",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "韩暨已根据《三国志·魏书·韩暨传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-han-ji",
+        "locator": "韩暨传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "cui-lin-wei-shu-source-seed",
+    "personId": "cui-lin",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "崔林已根据《三国志·魏书·崔林传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cui-lin",
+        "locator": "崔林传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "gao-rou-wei-shu-source-seed",
+    "personId": "gao-rou",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "高柔已根据《三国志·魏书·高柔传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-gao-rou",
+        "locator": "高柔传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "sun-li-wei-shu-source-seed",
+    "personId": "sun-li",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "孙礼已根据《三国志·魏书·孙礼传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-sun-li",
+        "locator": "孙礼传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "wang-guan-wei-shu-source-seed",
+    "personId": "wang-guan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "王观已根据《三国志·魏书·王观传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-guan",
+        "locator": "王观传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "xin-pi-wei-shu-source-seed",
+    "personId": "xin-pi",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "辛毗已根据《三国志·魏书·辛毗传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xin-pi",
+        "locator": "辛毗传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "yang-fu-wei-shu-source-seed",
+    "personId": "yang-fu",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "杨阜已根据《三国志·魏书·杨阜传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-yang-fu",
+        "locator": "杨阜传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "gao-tang-long-wei-shu-source-seed",
+    "personId": "gao-tang-long",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "高堂隆已根据《三国志·魏书·高堂隆传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-gao-tang-long",
+        "locator": "高堂隆传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "tian-yu-wei-shu-source-seed",
+    "personId": "tian-yu",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "田豫已根据《三国志·魏书·田豫传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-tian-yu",
+        "locator": "田豫传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "qian-zhao-wei-shu-source-seed",
+    "personId": "qian-zhao",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "牵招已根据《三国志·魏书·牵招传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-qian-zhao",
+        "locator": "牵招传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "guo-huai-wei-shu-source-seed",
+    "personId": "guo-huai",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "郭淮已根据《三国志·魏书·郭淮传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-guo-huai",
+        "locator": "郭淮传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "xu-miao-wei-shu-source-seed",
+    "personId": "xu-miao",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "徐邈已根据《三国志·魏书·徐邈传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xu-miao",
+        "locator": "徐邈传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "hu-zhi-wei-shu-source-seed",
+    "personId": "hu-zhi",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "胡质已根据《三国志·魏书·胡质传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-hu-zhi",
+        "locator": "胡质传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "wang-chang-wei-shu-source-seed",
+    "personId": "wang-chang",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "王昶已根据《三国志·魏书·王昶传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-chang",
+        "locator": "王昶传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "wang-ji-wei-shu-source-seed",
+    "personId": "wang-ji",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "王基已根据《三国志·魏书·王基传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-ji",
+        "locator": "王基传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "wang-ling-wei-shu-source-seed",
+    "personId": "wang-ling",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "王凌已根据《三国志·魏书·王凌传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-ling",
+        "locator": "王凌传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "guanqiu-jian-wei-shu-source-seed",
+    "personId": "guanqiu-jian",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "毌丘俭已根据《三国志·魏书·毌丘俭传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-guanqiu-jian",
+        "locator": "毌丘俭传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "zhuge-dan-wei-shu-source-seed",
+    "personId": "zhuge-dan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "诸葛诞已根据《三国志·魏书·诸葛诞传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhuge-dan",
+        "locator": "诸葛诞传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "hua-tuo-wei-shu-source-seed",
+    "personId": "hua-tuo",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "华佗已根据《三国志·魏书·华佗传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-hua-tuo",
+        "locator": "华佗传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "du-kui-wei-shu-source-seed",
+    "personId": "du-kui",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "杜夔已根据《三国志·魏书·杜夔传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-du-kui",
+        "locator": "杜夔传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "zhu-jianping-wei-shu-source-seed",
+    "personId": "zhu-jianping",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "朱建平已根据《三国志·魏书·朱建平传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhu-jianping",
+        "locator": "朱建平传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "zhou-xuan-wei-shu-source-seed",
+    "personId": "zhou-xuan",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "周宣已根据《三国志·魏书·周宣传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhou-xuan",
+        "locator": "周宣传",
+        "note": "基础建档来源"
+      }
+    ]
+  },
+  {
+    "id": "guan-lu-wei-shu-source-seed",
+    "personId": "guan-lu",
+    "year": null,
+    "displayYear": "待考",
+    "type": "service",
+    "title": "《三国志·魏书》本传建档",
+    "summary": "管辂已根据《三国志·魏书·管辂传》建立基础档案；具体出生、仕历、战事、卒年等节点等待逐段整理。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-guan-lu",
+        "locator": "管辂传",
+        "note": "基础建档来源"
+      }
+    ]
   }
 ]

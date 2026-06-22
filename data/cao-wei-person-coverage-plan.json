@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "updatedAt": "2026-06-22",
-  "scope": "曹魏相关人物补全工程：以《三国志》魏书本传为主轴，以《资治通鉴》汉纪/魏纪相关年份互校。",
+  "scope": "曹魏相关人物补全工程：以《三国志》魏书本纪、后妃传、宗室传、列传、方技传为主轴，以《资治通鉴》汉纪/魏纪相关年份互校。",
   "completionDefinition": [
     "人物在 data/china-persons.json 中有唯一 id、姓名、字号、生卒或生卒未详、主政权、角色和摘要。",
     "至少有一条《三国志》或《资治通鉴》sourceRef；有本传者优先挂本传。",
@@ -12,185 +12,1217 @@
   "phases": [
     {
       "id": "wei-biography-seed",
-      "title": "魏书本传人物建档",
-      "status": "in-progress",
-      "note": "先按《三国志》魏书纪传建立人物档案，不把所有路人提及混入主档案。"
+      "title": "魏书本纪/本传/附传人物基础建档",
+      "status": "done",
+      "note": "已按《三国志·魏书》目录完成基础人物档案、来源入口和待整理年表 seed；魏书三十族群传单列为非个人材料。"
+    },
+    {
+      "id": "wei-biography-detail-pass",
+      "title": "魏书逐传生平节点细化",
+      "status": "next",
+      "note": "从曹操、曹丕、曹叡、曹魏宗室、五子良将、淮南三叛、邓艾钟会等优先级开始，逐段补原文摘录、译注、人物关系和事件回链。"
     },
     {
       "id": "zizhi-tongjian-cross-check",
       "title": "资治通鉴编年互校",
       "status": "pending",
-      "note": "按卷五十八至卷八十一，把同一人物的编年叙事补成 source_mentions。"
+      "note": "按卷五十八至卷八十一，把同一人物的编年叙事补成 source_mentions 与 person_life_events。"
     },
     {
       "id": "pei-commentary-expansion",
       "title": "裴松之注扩展人物",
       "status": "pending",
-      "note": "裴注中的别传、魏略、世语等人物先列为 secondary-mention，审校后再升格。"
+      "note": "裴注中的别传、魏略、世语等人物先列为 secondary-mention，审核后再升格。"
     }
   ],
   "currentBatches": [
     {
-      "id": "cao-wei-core-advisors-1",
-      "title": "曹魏谋臣/文臣第一批",
+      "id": "wei-shu-directory-one-shot-seed",
+      "title": "《三国志·魏书》目录人物基础导入",
       "status": "done",
       "personIds": [
+        "cao-cao",
+        "cao-pi",
+        "cao-rui",
+        "cao-fang",
+        "cao-mao",
+        "cao-huan",
+        "empress-bian",
+        "empress-zhen",
+        "empress-guo-wende",
+        "empress-mao",
+        "empress-guo-mingyuan",
+        "dong-zhuo",
+        "yuan-shao",
+        "yuan-shu",
+        "liu-biao",
+        "lu-bu",
+        "zhang-miao",
+        "zang-hong",
+        "gongsun-zan",
+        "tao-qian",
+        "zhang-yang",
+        "gongsun-du",
+        "zhang-yan",
+        "zhang-xiu",
+        "zhang-lu",
+        "xiahou-dun",
+        "xiahou-yuan",
+        "cao-ren",
+        "cao-hong",
+        "cao-xiu",
+        "cao-zhen",
+        "cao-shuang",
+        "xiahou-shang",
         "xun-yu",
         "xun-you",
-        "guo-jia",
         "jia-xu",
+        "yuan-huan",
+        "zhang-fan",
+        "liang-mao",
+        "guo-yuan",
+        "tian-chou",
+        "wang-xiu",
+        "bing-yuan",
+        "guan-ning",
+        "cui-yan",
+        "mao-jie",
+        "xu-yi",
+        "he-kui",
+        "xing-yong",
+        "bao-xun",
+        "sima-zhi",
+        "zhong-yao",
+        "zhong-yu",
+        "hua-xin",
+        "wang-lang",
+        "wang-su",
+        "cheng-yu",
+        "guo-jia",
+        "dong-zhao",
         "liu-ye",
         "jiang-ji",
-        "chen-qun",
-        "zhong-yao"
-      ]
-    },
-    {
-      "id": "cao-wei-officials-2",
-      "title": "曹魏文臣/制度人物第二批",
-      "status": "done",
-      "personIds": [
-        "dong-zhao",
         "liu-fang",
         "sun-zi",
-        "liu-yi",
+        "liu-fu",
         "sima-lang",
+        "liang-xi",
+        "zhang-ji-wei",
+        "wen-hui",
         "jia-kui",
+        "ren-jun",
+        "su-ze",
+        "du-ji",
+        "zheng-hun",
+        "cang-ci",
+        "zhang-liao",
+        "yue-jin",
+        "yu-jin",
+        "zhang-he",
+        "xu-huang",
+        "li-dian",
+        "li-tong",
+        "zang-ba",
+        "wen-pin",
+        "lv-qian",
+        "xu-chu",
+        "dian-wei",
+        "pang-de",
+        "pang-yu",
+        "yan-wen",
+        "cao-zhang",
+        "cao-zhi",
+        "cao-xiong",
+        "cao-ang",
+        "cao-shuo",
+        "cao-chong",
+        "cao-ju",
+        "cao-yu",
+        "cao-lin",
+        "cao-gun",
+        "cao-xuan",
+        "cao-jun",
+        "cao-ju-fanyang",
+        "cao-gan",
+        "cao-shang",
+        "cao-biao",
+        "cao-qin",
+        "cao-cheng",
+        "cao-zheng",
+        "cao-jing",
+        "cao-jun-fan",
+        "cao-ji",
+        "cao-hui",
+        "cao-mao-prince",
+        "cao-xie",
+        "cao-rui-prince",
+        "cao-jian",
+        "cao-lin-donghai",
+        "cao-li",
+        "cao-yong",
+        "cao-gong",
+        "cao-yan",
         "wang-can",
-        "wei-ji"
-      ]
+        "wei-ji",
+        "liu-yi",
+        "liu-shao",
+        "fu-gu",
+        "huan-jie",
+        "chen-qun",
+        "chen-tai",
+        "chen-jiao",
+        "xu-xuan",
+        "wei-zhen",
+        "lu-yu",
+        "he-qia",
+        "chang-lin",
+        "yang-jun",
+        "du-xi",
+        "zhao-yan",
+        "pei-qian",
+        "han-ji",
+        "cui-lin",
+        "gao-rou",
+        "sun-li",
+        "wang-guan",
+        "xin-pi",
+        "yang-fu",
+        "gao-tang-long",
+        "man-chong",
+        "tian-yu",
+        "qian-zhao",
+        "guo-huai",
+        "xu-miao",
+        "hu-zhi",
+        "wang-chang",
+        "wang-ji",
+        "wang-ling",
+        "guanqiu-jian",
+        "zhuge-dan",
+        "deng-ai",
+        "zhong-hui",
+        "hua-tuo",
+        "du-kui",
+        "zhu-jianping",
+        "zhou-xuan",
+        "guan-lu"
+      ],
+      "note": "覆盖魏书本纪、后妃、汉末群雄、曹魏宗室、文臣武将、方技人物；新增人物多为 stub，等待逐传细化。"
     },
     {
-      "id": "wei-shu-11-12-next",
-      "title": "魏书十一、十二士人官僚层",
-      "status": "next",
-      "candidateNames": [
-        "袁涣",
-        "张范",
-        "凉茂",
-        "国渊",
-        "田畴",
-        "王修",
-        "邴原",
-        "管宁",
-        "崔琰",
-        "毛玠",
-        "徐奕",
-        "何夔",
-        "邢颙",
-        "鲍勋",
-        "司马芝"
-      ]
-    },
-    {
-      "id": "wei-shu-16-18-next",
-      "title": "魏书十六至十八地方官与将领层",
-      "status": "next",
-      "candidateNames": [
-        "任峻",
-        "苏则",
-        "杜畿",
-        "郑浑",
-        "仓慈",
-        "吕虔",
-        "许褚",
-        "典韦",
-        "庞德",
-        "庞淯",
-        "阎温"
-      ]
+      "id": "wei-shu-non-person-sections",
+      "title": "魏书非个人材料",
+      "status": "tracked",
+      "sourceIds": [
+        "sanguozhi-wei-wuwan-xianbei-dongyi"
+      ],
+      "note": "乌丸鲜卑东夷传先作为边疆/族群资料，不进入人物表。"
     }
   ],
   "trackedPeople": [
     {
       "personId": "cao-cao",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-wudi"
     },
     {
       "personId": "cao-pi",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-wendi"
+    },
+    {
+      "personId": "cao-rui",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-mingdi"
+    },
+    {
+      "personId": "cao-fang",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-qi-wang"
+    },
+    {
+      "personId": "cao-mao",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-gaogui-xianggong"
+    },
+    {
+      "personId": "cao-huan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-chenliu-wang"
+    },
+    {
+      "personId": "empress-bian",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-empress-bian"
+    },
+    {
+      "personId": "empress-zhen",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-empress-zhen"
+    },
+    {
+      "personId": "empress-guo-wende",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-empress-guo-wende"
+    },
+    {
+      "personId": "empress-mao",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-empress-mao"
+    },
+    {
+      "personId": "empress-guo-mingyuan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-empress-guo-mingyuan"
+    },
+    {
+      "personId": "dong-zhuo",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-dong-zhuo"
+    },
+    {
+      "personId": "yuan-shao",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-yuan-shao"
+    },
+    {
+      "personId": "yuan-shu",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-yuan-shu"
+    },
+    {
+      "personId": "liu-biao",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-liu-biao"
+    },
+    {
+      "personId": "lu-bu",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-lubu"
+    },
+    {
+      "personId": "zhang-miao",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-zhang-miao"
+    },
+    {
+      "personId": "zang-hong",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-zang-hong"
+    },
+    {
+      "personId": "gongsun-zan",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-gongsun-zan"
+    },
+    {
+      "personId": "tao-qian",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-tao-qian"
+    },
+    {
+      "personId": "zhang-yang",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-zhang-yang"
+    },
+    {
+      "personId": "gongsun-du",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-gongsun-du"
+    },
+    {
+      "personId": "zhang-yan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-zhang-yan"
+    },
+    {
+      "personId": "zhang-xiu",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-zhang-xiu"
+    },
+    {
+      "personId": "zhang-lu",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-zhang-lu"
+    },
+    {
+      "personId": "xiahou-dun",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-xiahou-dun"
+    },
+    {
+      "personId": "xiahou-yuan",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-xiahou-yuan"
+    },
+    {
+      "personId": "cao-ren",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-cao-ren"
+    },
+    {
+      "personId": "cao-hong",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-hong"
+    },
+    {
+      "personId": "cao-xiu",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-cao-xiu"
+    },
+    {
+      "personId": "cao-zhen",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-cao-zhen"
+    },
+    {
+      "personId": "cao-shuang",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-shuang"
+    },
+    {
+      "personId": "xiahou-shang",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-xiahou-shang"
     },
     {
       "personId": "xun-yu",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-xun-yu"
     },
     {
       "personId": "xun-you",
       "inPersonTable": true,
-      "status": "seeded"
-    },
-    {
-      "personId": "guo-jia",
-      "inPersonTable": true,
-      "status": "seeded"
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-xun-you"
     },
     {
       "personId": "jia-xu",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-jia-xu"
     },
     {
-      "personId": "liu-ye",
+      "personId": "yuan-huan",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-yuan-huan"
     },
     {
-      "personId": "jiang-ji",
+      "personId": "zhang-fan",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-zhang-fan"
     },
     {
-      "personId": "chen-qun",
+      "personId": "liang-mao",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-liang-mao"
+    },
+    {
+      "personId": "guo-yuan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-guo-yuan"
+    },
+    {
+      "personId": "tian-chou",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-tian-chou"
+    },
+    {
+      "personId": "wang-xiu",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-wang-xiu"
+    },
+    {
+      "personId": "bing-yuan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-bing-yuan"
+    },
+    {
+      "personId": "guan-ning",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-guan-ning"
+    },
+    {
+      "personId": "cui-yan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cui-yan"
+    },
+    {
+      "personId": "mao-jie",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-mao-jie"
+    },
+    {
+      "personId": "xu-yi",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-xu-yi"
+    },
+    {
+      "personId": "he-kui",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-he-kui"
+    },
+    {
+      "personId": "xing-yong",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-xing-yong"
+    },
+    {
+      "personId": "bao-xun",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-bao-xun"
+    },
+    {
+      "personId": "sima-zhi",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-sima-zhi"
     },
     {
       "personId": "zhong-yao",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-zhong-yao"
+    },
+    {
+      "personId": "zhong-yu",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-zhong-yao"
+    },
+    {
+      "personId": "hua-xin",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-hua-xin"
+    },
+    {
+      "personId": "wang-lang",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-wang-lang"
+    },
+    {
+      "personId": "wang-su",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-wang-lang"
+    },
+    {
+      "personId": "cheng-yu",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-cheng-yu"
+    },
+    {
+      "personId": "guo-jia",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-guo-jia"
     },
     {
       "personId": "dong-zhao",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-dong-zhao"
+    },
+    {
+      "personId": "liu-ye",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-liu-ye"
+    },
+    {
+      "personId": "jiang-ji",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-jiang-ji"
     },
     {
       "personId": "liu-fang",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-liu-fang-sun-zi"
     },
     {
       "personId": "sun-zi",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-liu-fang-sun-zi"
     },
     {
-      "personId": "liu-yi",
+      "personId": "liu-fu",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-liu-fu"
     },
     {
       "personId": "sima-lang",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-sima-lang"
+    },
+    {
+      "personId": "liang-xi",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-liang-xi"
+    },
+    {
+      "personId": "zhang-ji-wei",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-zhang-ji"
+    },
+    {
+      "personId": "wen-hui",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-wen-hui"
     },
     {
       "personId": "jia-kui",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-jia-kui"
+    },
+    {
+      "personId": "ren-jun",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-ren-jun"
+    },
+    {
+      "personId": "su-ze",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-su-ze"
+    },
+    {
+      "personId": "du-ji",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-du-ji"
+    },
+    {
+      "personId": "zheng-hun",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-zheng-hun"
+    },
+    {
+      "personId": "cang-ci",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cang-ci"
+    },
+    {
+      "personId": "zhang-liao",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-zhang-liao"
+    },
+    {
+      "personId": "yue-jin",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-yue-jin"
+    },
+    {
+      "personId": "yu-jin",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-yu-jin"
+    },
+    {
+      "personId": "zhang-he",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-zhang-he"
+    },
+    {
+      "personId": "xu-huang",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-xu-huang"
+    },
+    {
+      "personId": "li-dian",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-li-dian"
+    },
+    {
+      "personId": "li-tong",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-li-tong"
+    },
+    {
+      "personId": "zang-ba",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-zang-ba"
+    },
+    {
+      "personId": "wen-pin",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-wen-pin"
+    },
+    {
+      "personId": "lv-qian",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-lv-qian"
+    },
+    {
+      "personId": "xu-chu",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-xu-chu"
+    },
+    {
+      "personId": "dian-wei",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-dian-wei"
+    },
+    {
+      "personId": "pang-de",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-pang-de"
+    },
+    {
+      "personId": "pang-yu",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-pang-yu"
+    },
+    {
+      "personId": "yan-wen",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-yan-wen"
+    },
+    {
+      "personId": "cao-zhang",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-zhang"
+    },
+    {
+      "personId": "cao-zhi",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-zhi"
+    },
+    {
+      "personId": "cao-xiong",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-xiong"
+    },
+    {
+      "personId": "cao-ang",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-ang"
+    },
+    {
+      "personId": "cao-shuo",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-shuo"
+    },
+    {
+      "personId": "cao-chong",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-chong"
+    },
+    {
+      "personId": "cao-ju",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-ju"
+    },
+    {
+      "personId": "cao-yu",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-yu"
+    },
+    {
+      "personId": "cao-lin",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-lin"
+    },
+    {
+      "personId": "cao-gun",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-gun"
+    },
+    {
+      "personId": "cao-xuan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-xuan"
+    },
+    {
+      "personId": "cao-jun",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-jun"
+    },
+    {
+      "personId": "cao-ju-fanyang",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-ju-fanyang"
+    },
+    {
+      "personId": "cao-gan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-gan"
+    },
+    {
+      "personId": "cao-shang",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-shang"
+    },
+    {
+      "personId": "cao-biao",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-biao"
+    },
+    {
+      "personId": "cao-qin",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-qin"
+    },
+    {
+      "personId": "cao-cheng",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-cheng"
+    },
+    {
+      "personId": "cao-zheng",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-zheng"
+    },
+    {
+      "personId": "cao-jing",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-jing"
+    },
+    {
+      "personId": "cao-jun-fan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-jun-fan"
+    },
+    {
+      "personId": "cao-ji",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-ji"
+    },
+    {
+      "personId": "cao-hui",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-hui"
+    },
+    {
+      "personId": "cao-mao-prince",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-mao-prince"
+    },
+    {
+      "personId": "cao-xie",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-xie"
+    },
+    {
+      "personId": "cao-rui-prince",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-rui-prince"
+    },
+    {
+      "personId": "cao-jian",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-jian"
+    },
+    {
+      "personId": "cao-lin-donghai",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-lin-donghai"
+    },
+    {
+      "personId": "cao-li",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-li"
+    },
+    {
+      "personId": "cao-yong",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-yong"
+    },
+    {
+      "personId": "cao-gong",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-gong"
+    },
+    {
+      "personId": "cao-yan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cao-yan"
     },
     {
       "personId": "wang-can",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-wang-can"
     },
     {
       "personId": "wei-ji",
       "inPersonTable": true,
-      "status": "seeded"
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-wei-ji"
+    },
+    {
+      "personId": "liu-yi",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-liu-yi"
+    },
+    {
+      "personId": "liu-shao",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-liu-shao"
+    },
+    {
+      "personId": "fu-gu",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-fu-gu"
+    },
+    {
+      "personId": "huan-jie",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-huan-jie"
+    },
+    {
+      "personId": "chen-qun",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-chen-qun"
+    },
+    {
+      "personId": "chen-tai",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-chen-qun"
+    },
+    {
+      "personId": "chen-jiao",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-chen-jiao"
+    },
+    {
+      "personId": "xu-xuan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-xu-xuan"
+    },
+    {
+      "personId": "wei-zhen",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-wei-zhen"
+    },
+    {
+      "personId": "lu-yu",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-lu-yu"
+    },
+    {
+      "personId": "he-qia",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-he-qia"
+    },
+    {
+      "personId": "chang-lin",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-chang-lin"
+    },
+    {
+      "personId": "yang-jun",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-yang-jun"
+    },
+    {
+      "personId": "du-xi",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-du-xi"
+    },
+    {
+      "personId": "zhao-yan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-zhao-yan"
+    },
+    {
+      "personId": "pei-qian",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-pei-qian"
+    },
+    {
+      "personId": "han-ji",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-han-ji"
+    },
+    {
+      "personId": "cui-lin",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-cui-lin"
+    },
+    {
+      "personId": "gao-rou",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-gao-rou"
+    },
+    {
+      "personId": "sun-li",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-sun-li"
+    },
+    {
+      "personId": "wang-guan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-wang-guan"
+    },
+    {
+      "personId": "xin-pi",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-xin-pi"
+    },
+    {
+      "personId": "yang-fu",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-yang-fu"
+    },
+    {
+      "personId": "gao-tang-long",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-gao-tang-long"
+    },
+    {
+      "personId": "man-chong",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-man-chong"
+    },
+    {
+      "personId": "tian-yu",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-tian-yu"
+    },
+    {
+      "personId": "qian-zhao",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-qian-zhao"
+    },
+    {
+      "personId": "guo-huai",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-guo-huai"
+    },
+    {
+      "personId": "xu-miao",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-xu-miao"
+    },
+    {
+      "personId": "hu-zhi",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-hu-zhi"
+    },
+    {
+      "personId": "wang-chang",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-wang-chang"
+    },
+    {
+      "personId": "wang-ji",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-wang-ji"
+    },
+    {
+      "personId": "wang-ling",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-wang-ling"
+    },
+    {
+      "personId": "guanqiu-jian",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-guanqiu-jian"
+    },
+    {
+      "personId": "zhuge-dan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-zhuge-dan"
+    },
+    {
+      "personId": "deng-ai",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-deng-ai"
+    },
+    {
+      "personId": "zhong-hui",
+      "inPersonTable": true,
+      "status": "already-seeded",
+      "sourceId": "sanguozhi-wei-zhong-hui"
+    },
+    {
+      "personId": "hua-tuo",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-hua-tuo"
+    },
+    {
+      "personId": "du-kui",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-du-kui"
+    },
+    {
+      "personId": "zhu-jianping",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-zhu-jianping"
+    },
+    {
+      "personId": "zhou-xuan",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-zhou-xuan"
+    },
+    {
+      "personId": "guan-lu",
+      "inPersonTable": true,
+      "status": "stub-seeded",
+      "sourceId": "sanguozhi-wei-guan-lu"
     }
-  ]
+  ],
+  "importSummary": {
+    "importedAt": "2026-06-22",
+    "sourceCatalogue": "https://ctext.org/sanguozhi/zhs",
+    "sourceLanguage": "简体中文原文入口（CText remap=gb）",
+    "totalWeiShuPersonEntries": 165,
+    "addedSources": 121,
+    "addedPersons": 120,
+    "updatedExistingPersons": 4,
+    "addedStubLifeEvents": 120,
+    "nonPersonSections": [
+      "sanguozhi-wei-wuwan-xianbei-dongyi"
+    ],
+    "limitation": "本次是目录级基础建档，不等于完成逐传精读；新增 stub 人物的生卒、仕历、关系、原文摘录和资治通鉴互校仍需后续补充。"
+  }
 }
