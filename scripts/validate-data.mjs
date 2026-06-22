@@ -6,6 +6,7 @@ import chinaMap from "../data/china-three-kingdoms-map.json" with { type: "json"
 import chinaPersonLifeEvents from "../data/china-person-life-events.json" with { type: "json" };
 import chinaPersonRelations from "../data/china-person-relations.json" with { type: "json" };
 import chinaPersons from "../data/china-persons.json" with { type: "json" };
+import chinaSourceMentions from "../data/china-source-mentions.json" with { type: "json" };
 import chinaSources from "../data/china-sources.json" with { type: "json" };
 import naturalEarthChinaPhysical from "../data/natural-earth-china-physical.json" with { type: "json" };
 import regions from "../data/regions-180-280.json" with { type: "json" };
@@ -16,6 +17,7 @@ const eventImportanceValues = new Set(["major", "medium", "minor"]);
 const blockLevels = new Set(["province", "commandery", "county-seat"]);
 const controlStatuses = new Set(["effective-control", "contested", "frontier", "nominal-control"]);
 const confidenceValues = new Set(["high", "medium", "low"]);
+const sourceMentionReviewStatuses = new Set(["draft", "reviewed"]);
 const personLifeEventTypes = new Set([
   "abdication",
   "birth",
@@ -331,6 +333,7 @@ for (const relation of chinaPersonRelations) {
 }
 
 assert(Array.isArray(chinaPersonLifeEvents), "China person life events must be an array");
+assert(Array.isArray(chinaSourceMentions), "China source mentions must be an array");
 const lifeEventIds = new Set();
 const lifeEventsByPersonId = new Map();
 
@@ -370,6 +373,42 @@ for (const event of events) {
   }
 }
 
+const sourceMentionIds = new Set();
+
+for (const mention of chinaSourceMentions) {
+  assert(typeof mention.id === "string" && mention.id.length > 0, "Source mention needs id");
+  assert(!sourceMentionIds.has(mention.id), `Duplicate source mention id: ${mention.id}`);
+  sourceMentionIds.add(mention.id);
+  assert(sourceIds.has(mention.sourceId), `Source mention uses unknown sourceId: ${mention.id}:${mention.sourceId}`);
+  assert(typeof mention.workTitle === "string" && mention.workTitle.length > 0, `Source mention needs workTitle: ${mention.id}`);
+  assert(typeof mention.bookTitle === "string" && mention.bookTitle.length > 0, `Source mention needs bookTitle: ${mention.id}`);
+  assert(typeof mention.chapterTitle === "string" && mention.chapterTitle.length > 0, `Source mention needs chapterTitle: ${mention.id}`);
+  assert(typeof mention.locator === "string" && mention.locator.length > 0, `Source mention needs locator: ${mention.id}`);
+  assert(Number.isInteger(mention.year) || mention.year === null, `Source mention year must be integer or null: ${mention.id}`);
+  assert(typeof mention.text === "string" && mention.text.length > 0, `Source mention needs text: ${mention.id}`);
+  assert(mention.translation === null || typeof mention.translation === "string", `Source mention translation must be string or null: ${mention.id}`);
+  assert(Array.isArray(mention.mentionedPersonIds) && mention.mentionedPersonIds.length > 0, `Source mention needs mentionedPersonIds: ${mention.id}`);
+  for (const personId of mention.mentionedPersonIds) {
+    assert(personIds.has(personId), `Source mention uses unknown mentionedPersonId: ${mention.id}:${personId}`);
+  }
+  assert(Array.isArray(mention.mentionedEventIds), `Source mention mentionedEventIds must be an array: ${mention.id}`);
+  for (const eventId of mention.mentionedEventIds) {
+    assert(eventIds.has(eventId), `Source mention uses unknown mentionedEventId: ${mention.id}:${eventId}`);
+  }
+  if ("mentionedPlaceIds" in mention) {
+    assert(Array.isArray(mention.mentionedPlaceIds), `Source mention mentionedPlaceIds must be an array: ${mention.id}`);
+    for (const placeId of mention.mentionedPlaceIds) {
+      assert(typeof placeId === "string" && placeId.length > 0, `Source mention place id must be string: ${mention.id}`);
+    }
+  }
+  assert(Array.isArray(mention.tags), `Source mention tags must be an array: ${mention.id}`);
+  for (const tag of mention.tags) {
+    assert(typeof tag === "string" && tag.length > 0, `Source mention tag must be string: ${mention.id}`);
+  }
+  assert(confidenceValues.has(mention.confidence), `Unknown source mention confidence: ${mention.id}:${mention.confidence}`);
+  assert(sourceMentionReviewStatuses.has(mention.reviewStatus), `Unknown source mention reviewStatus: ${mention.id}:${mention.reviewStatus}`);
+}
+
 for (const lifeEvent of chinaPersonLifeEvents) {
   assert(typeof lifeEvent.id === "string" && lifeEvent.id.length > 0, "Life event needs id");
   assert(!lifeEventIds.has(lifeEvent.id), `Duplicate life event id: ${lifeEvent.id}`);
@@ -387,6 +426,12 @@ for (const lifeEvent of chinaPersonLifeEvents) {
   assert(typeof lifeEvent.title === "string" && lifeEvent.title.length > 0, `Life event needs title: ${lifeEvent.id}`);
   assert(typeof lifeEvent.summary === "string" && lifeEvent.summary.length > 0, `Life event needs summary: ${lifeEvent.id}`);
   assert(Array.isArray(lifeEvent.relatedEventIds), `Life event relatedEventIds must be an array: ${lifeEvent.id}`);
+  if ("sourceMentionIds" in lifeEvent) {
+    assert(Array.isArray(lifeEvent.sourceMentionIds), `Life event sourceMentionIds must be an array: ${lifeEvent.id}`);
+    for (const mentionId of lifeEvent.sourceMentionIds) {
+      assert(sourceMentionIds.has(mentionId), `Life event uses unknown sourceMentionId: ${lifeEvent.id}:${mentionId}`);
+    }
+  }
   assert(confidenceValues.has(lifeEvent.confidence), `Unknown life event confidence: ${lifeEvent.id}`);
   validateSourceRefs(lifeEvent.sourceRefs, `${lifeEvent.id}:sourceRefs`, sourceIds);
 

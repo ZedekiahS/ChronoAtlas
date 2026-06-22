@@ -1916,6 +1916,73 @@ button.life-event-main {
   font-size: 12px;
 }
 
+.life-event-source-mentions {
+  display: grid;
+  gap: 6px;
+}
+
+.source-mention-list {
+  display: grid;
+  gap: 8px;
+  max-height: 360px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.source-mention-card {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid rgba(30, 34, 38, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.source-mention-card.compact {
+  padding: 8px;
+  background: #fbfbf7;
+}
+
+.source-mention-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.source-mention-head > span {
+  color: #8b3f2d;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.source-mention-card blockquote {
+  margin: 0;
+  padding-left: 10px;
+  border-left: 3px solid rgba(185, 79, 50, 0.32);
+  color: #30363c;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 680;
+  line-height: 1.58;
+}
+
+.source-mention-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.source-mention-tags span {
+  width: fit-content;
+  padding: 3px 6px;
+  border-radius: 999px;
+  background: rgba(30, 34, 38, 0.06);
+  color: #5b6369;
+  font-size: 11px;
+  font-weight: 820;
+}
+
 .person-event-timeline::before {
   content: "";
   position: absolute;

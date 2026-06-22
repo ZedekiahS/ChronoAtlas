@@ -679,6 +679,7 @@
     "title": "曹操出生",
     "summary": "曹操生于沛国谯县，后以宦官养子曹嵩之子身份进入东汉政治网络。",
     "relatedEventIds": [],
+    "sourceMentionIds": ["mention-sgz-wei-wudi-cao-cao-origin"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -697,6 +698,7 @@
     "title": "迎汉献帝至许",
     "summary": "曹操迎献帝至许，形成“奉天子以令不臣”的政治优势。",
     "relatedEventIds": ["china-196-cao-cao-escorts-emperor"],
+    "sourceMentionIds": ["mention-sgz-wei-wudi-cao-cao-xu"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -773,6 +775,7 @@
     "title": "官渡击败袁绍",
     "summary": "曹操在兵力劣势下守官渡、袭乌巢，扭转北方格局。",
     "relatedEventIds": ["china-200-guandu"],
+    "sourceMentionIds": ["mention-sgz-wei-wudi-cao-cao-guandu"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -904,6 +907,7 @@
     "title": "曹操去世",
     "summary": "曹操去世后，曹丕继承魏王位并在同年完成代汉。",
     "relatedEventIds": ["china-220-cao-pi-founds-wei"],
+    "sourceMentionIds": ["mention-sgz-wei-wudi-cao-cao-death"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -1186,6 +1190,7 @@
     "title": "刘备出生",
     "summary": "刘备为涿郡人，自称中山靖王之后，汉末以宗室身份起兵。",
     "relatedEventIds": [],
+    "sourceMentionIds": ["mention-sgz-shu-xianzhu-liu-bei-origin"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -1223,6 +1228,7 @@
     "title": "入徐州并接掌州事",
     "summary": "陶谦迎刘备入徐州，陶谦死后刘备一度接掌徐州，这是他第一次拥有较完整的州级政治基础。",
     "relatedEventIds": ["china-194-tao-qian-yields-xuzhou"],
+    "sourceMentionIds": ["mention-sgz-shu-xianzhu-liu-bei-xuzhou"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -1318,6 +1324,7 @@
     "title": "入主益州",
     "summary": "刘备击败刘璋并占据益州，获得建立蜀汉的根本根据地。",
     "relatedEventIds": ["china-214-liu-bei-takes-yi"],
+    "sourceMentionIds": ["mention-sgz-shu-xianzhu-liu-bei-yizhou"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -1394,6 +1401,7 @@
     "title": "白帝城托孤后去世",
     "summary": "夷陵失败后，刘备退至永安，临终托孤诸葛亮，蜀汉进入刘禅与诸葛亮辅政阶段。",
     "relatedEventIds": ["china-222-yiling"],
+    "sourceMentionIds": ["mention-sgz-shu-xianzhu-liu-bei-death"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -1490,6 +1498,7 @@
     "title": "诸葛亮出生",
     "summary": "诸葛亮为琅邪阳都人，后隐居隆中，被刘备三顾请出。",
     "relatedEventIds": [],
+    "sourceMentionIds": ["mention-sgz-shu-zhuge-liang-origin"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -1508,12 +1517,32 @@
     "title": "提出隆中对",
     "summary": "诸葛亮为刘备提出取荆、益二州、联吴抗曹、待天下有变的战略设想。",
     "relatedEventIds": ["china-207-longzhong-plan"],
+    "sourceMentionIds": ["mention-sgz-shu-zhuge-liang-longzhong"],
     "confidence": "high",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-shu-zhuge-liang",
         "locator": "诸葛亮传",
         "quote": "亮答曰：“自董卓已来，豪杰并起，跨州连郡者不可胜数。”"
+      }
+    ]
+  },
+  {
+    "id": "zhuge-liang-223-regency",
+    "personId": "zhuge-liang",
+    "year": 223,
+    "displayYear": "223",
+    "type": "politics",
+    "title": "辅政开府，领益州牧",
+    "summary": "刘备去世后，诸葛亮成为蜀汉辅政核心，封武乡侯、开府治事，并领益州牧。",
+    "relatedEventIds": [],
+    "sourceMentionIds": ["mention-sgz-shu-zhuge-liang-regency"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-zhuge-liang",
+        "locator": "建兴元年",
+        "quote": "建兴元年，封亮武乡侯，开府治事。顷之，又领益州牧。"
       }
     ]
   },
@@ -1526,6 +1555,7 @@
     "title": "卒于五丈原",
     "summary": "诸葛亮第五次北伐期间病逝于五丈原，蜀汉北伐节奏由此改变。",
     "relatedEventIds": ["china-234-wuzhang-plains"],
+    "sourceMentionIds": ["mention-sgz-shu-zhuge-liang-death"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -1623,6 +1653,7 @@
     "title": "孙权出生",
     "summary": "孙权为孙坚之子、孙策之弟，后继承江东基业。",
     "relatedEventIds": [],
+    "sourceMentionIds": ["mention-sgz-wu-wuzhu-sun-quan-origin"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -1641,6 +1672,7 @@
     "title": "继承江东基业",
     "summary": "孙策遇刺后，孙权继承江东，依托张昭、周瑜等旧臣稳定内部，完成从继承者到统治者的过渡。",
     "relatedEventIds": [],
+    "sourceMentionIds": ["mention-sgz-wu-wuzhu-sun-quan-succeeds"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -1659,6 +1691,7 @@
     "title": "决策抗曹并形成孙刘联盟",
     "summary": "曹操南下时，孙权接受周瑜、鲁肃等抗曹意见，与刘备集团联合。",
     "relatedEventIds": ["china-208-red-cliffs"],
+    "sourceMentionIds": ["mention-sgz-wu-wuzhu-sun-quan-red-cliffs"],
     "confidence": "high",
     "sourceRefs": [
       {
@@ -1751,6 +1784,7 @@
     "title": "称帝建立孙吴",
     "summary": "孙权称帝，孙吴正式与曹魏、蜀汉并列为三国政权。",
     "relatedEventIds": ["china-229-sun-quan-emperor"],
+    "sourceMentionIds": ["mention-sgz-wu-wuzhu-sun-quan-emperor"],
     "confidence": "high",
     "sourceRefs": [
       {

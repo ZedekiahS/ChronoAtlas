@@ -33,6 +33,7 @@ import chinaMapData from "../data/china-three-kingdoms-map.json";
 import chinaPersonLifeEventsData from "../data/china-person-life-events.json";
 import chinaPersonRelationsData from "../data/china-person-relations.json";
 import chinaPersonsData from "../data/china-persons.json";
+import chinaSourceMentionsData from "../data/china-source-mentions.json";
 import chinaSourcesData from "../data/china-sources.json";
 import naturalEarthChinaPhysicalData from "../data/natural-earth-china-physical.json";
 import regionsData from "../data/regions-180-280.json";
@@ -103,6 +104,24 @@ type SourceRecord = {
   url?: string;
 };
 
+type SourceMention = {
+  id: string;
+  sourceId: string;
+  workTitle: string;
+  bookTitle: string;
+  chapterTitle: string;
+  locator: string;
+  year: number | null;
+  text: string;
+  translation: string | null;
+  mentionedPersonIds: string[];
+  mentionedEventIds: string[];
+  mentionedPlaceIds?: string[];
+  tags: string[];
+  confidence: "high" | "medium" | "low";
+  reviewStatus: "draft" | "reviewed";
+};
+
 type HistoricalPerson = {
   id: string;
   name: string;
@@ -135,6 +154,7 @@ type PersonLifeEvent = {
   title: string;
   summary: string;
   relatedEventIds: string[];
+  sourceMentionIds?: string[];
   confidence: "high" | "medium" | "low";
   sourceRefs: SourceRef[];
 };
@@ -301,6 +321,7 @@ type NaturalEarthPhysical = {
 const events = eventsData as HistoricalEvent[];
 const eventImportanceDataset = eventImportanceData as EventImportanceDataset;
 const chinaSources = chinaSourcesData as SourceRecord[];
+const chinaSourceMentions = chinaSourceMentionsData as SourceMention[];
 const chinaPersons = chinaPersonsData as HistoricalPerson[];
 const chinaPersonLifeEvents = chinaPersonLifeEventsData as PersonLifeEvent[];
 const chinaPersonRelations = chinaPersonRelationsData as PersonRelation[];
@@ -313,6 +334,7 @@ const chinaBlocks = chinaBlocksDataset.blocks;
 const chinaBlockById = new Map(chinaBlocks.map((block) => [block.id, block]));
 const chinaControllerColorMap = new Map(chinaControlTimeline.controllers.map((controller) => [controller.id, controller.color]));
 const chinaSourceById = new Map(chinaSources.map((source) => [source.id, source]));
+const chinaSourceMentionById = new Map(chinaSourceMentions.map((mention) => [mention.id, mention]));
 const chinaPersonById = new Map(chinaPersons.map((person) => [person.id, person]));
 const eventImportanceById = new Map(eventImportanceDataset.records.map((record) => [record.eventId, record.importance]));
 type WorldAtlasTopology = Topology<{ countries: GeometryCollection }>;
@@ -662,7 +684,63 @@ function SourceExcerpt({ quote }: { quote?: string }) {
   );
 }
 
+function getSourceMentionRef(mention: SourceMention): SourceRef {
+  return {
+    sourceId: mention.sourceId,
+    locator: mention.locator,
+    quote: mention.text,
+  };
+}
+
+function getSourceMentionYearLabel(mention: SourceMention) {
+  return mention.year === null ? "年代不详" : `${mention.year}`;
+}
+
+function SourceMentionCard({ compact = false, mention }: { compact?: boolean; mention: SourceMention }) {
+  return (
+    <article className={`source-mention-card ${compact ? "compact" : ""}`} data-source-mention-id={mention.id}>
+      <div className="source-mention-head">
+        <span>{getSourceMentionYearLabel(mention)}</span>
+        <SourceRefLink className="source-title-link" sourceRef={getSourceMentionRef(mention)} />
+      </div>
+      <blockquote>{mention.text}</blockquote>
+      {!compact && (
+        <div className="source-mention-tags">
+          <span>{getConfidenceLabel(mention.confidence)}</span>
+          <span>{mention.reviewStatus === "reviewed" ? "已审" : "草稿"}</span>
+          {mention.tags.slice(0, 4).map((tag) => (
+            <span key={`${mention.id}-${tag}`}>{tag}</span>
+          ))}
+        </div>
+      )}
+    </article>
+  );
+}
+
+function PersonSourceMentionPanel({ mentions }: { mentions: SourceMention[] }) {
+  return (
+    <>
+      <div className="person-event-heading">
+        <BookOpen size={16} aria-hidden="true" />
+        <span>史料提及</span>
+        <strong>{mentions.length}</strong>
+      </div>
+      <div className="source-mention-list">
+        {mentions.length ? (
+          mentions.map((mention) => <SourceMentionCard key={mention.id} mention={mention} />)
+        ) : (
+          <p>待补充史料提及</p>
+        )}
+      </div>
+    </>
+  );
+}
+
 function LifeEventSources({ lifeEvent }: { lifeEvent: PersonLifeEvent }) {
+  const sourceMentions = (lifeEvent.sourceMentionIds ?? [])
+    .map((mentionId) => chinaSourceMentionById.get(mentionId))
+    .filter((mention): mention is SourceMention => Boolean(mention));
+
   return (
     <div className="life-event-source-list">
       <div className="life-event-meta">
@@ -670,7 +748,15 @@ function LifeEventSources({ lifeEvent }: { lifeEvent: PersonLifeEvent }) {
         {lifeEvent.sourceRefs.slice(0, 2).map((ref) => (
           <SourceRefLink key={`${lifeEvent.id}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
         ))}
+        {sourceMentions.length > 0 && <span>{sourceMentions.length} 条原文段落</span>}
       </div>
+      {sourceMentions.length > 0 && (
+        <div className="life-event-source-mentions">
+          {sourceMentions.map((mention) => (
+            <SourceMentionCard compact key={`${lifeEvent.id}-${mention.id}`} mention={mention} />
+          ))}
+        </div>
+      )}
       {lifeEvent.sourceRefs.some((ref) => ref.quote) && (
         <div className="life-event-excerpts">
           {lifeEvent.sourceRefs
@@ -1750,6 +1836,11 @@ function App() {
         .filter((lifeEvent) => lifeEvent.personId === selectedPerson.id)
         .sort((left, right) => getLifeEventSortValue(left) - getLifeEventSortValue(right) || left.displayYear.localeCompare(right.displayYear))
     : [];
+  const selectedPersonSourceMentions = selectedPerson
+    ? chinaSourceMentions
+        .filter((mention) => mention.mentionedPersonIds.includes(selectedPerson.id))
+        .sort((left, right) => (left.year ?? 9999) - (right.year ?? 9999) || left.locator.localeCompare(right.locator, "zh-Hans-CN"))
+    : [];
   const selectedPersonAnnualTimeline = selectedPerson ? getPersonAnnualTimeline(selectedPerson, selectedPersonLifeEvents) : [];
   const relationshipGraphNodes = selectedPerson
     ? selectedPersonRelations.slice(0, 6).map((relation, index, relations) => {
@@ -2469,6 +2560,8 @@ function App() {
                   </div>
                 </div>
 
+                <PersonSourceMentionPanel mentions={selectedPersonSourceMentions} />
+
                 <div className="person-event-heading">
                   <CalendarDays size={16} aria-hidden="true" />
                   <span>生平年表</span>
@@ -2884,6 +2977,8 @@ function App() {
                     <strong>{selectedPersonEvents.length}</strong>
                   </div>
                 </div>
+
+                <PersonSourceMentionPanel mentions={selectedPersonSourceMentions} />
 
                 <div className="person-event-heading">
                   <CalendarDays size={16} aria-hidden="true" />
