@@ -230,13 +230,58 @@ h1 {
   line-height: 1.16;
 }
 
-.world-comparison-heading > span {
+.comparison-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  min-width: min(460px, 100%);
+}
+
+.comparison-controls > span {
   max-width: 360px;
   color: #5b646b;
   font-size: 13px;
   font-weight: 750;
   line-height: 1.55;
   text-align: right;
+}
+
+.medium-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid rgba(30, 34, 38, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.76);
+  color: #343b41;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.medium-toggle strong {
+  min-width: 20px;
+  padding: 2px 5px;
+  border-radius: 999px;
+  background: rgba(30, 34, 38, 0.08);
+  color: #5b646b;
+  font-size: 11px;
+  text-align: center;
+}
+
+.medium-toggle:hover,
+.medium-toggle.active {
+  border-color: rgba(185, 79, 50, 0.38);
+  background: #ffffff;
+  color: #8b3f2d;
+}
+
+.medium-toggle.active strong {
+  background: rgba(185, 79, 50, 0.14);
+  color: #8b3f2d;
 }
 
 .comparison-grid {
@@ -335,6 +380,14 @@ h1 {
 .comparison-event-item {
   display: grid;
   gap: 3px;
+}
+
+.comparison-event-item.focus-note strong {
+  color: #30363c;
+}
+
+.detail-focus-list {
+  margin-top: 4px;
 }
 
 .comparison-event strong {
@@ -2251,7 +2304,13 @@ a.source-title-link:hover {
     flex-direction: column;
   }
 
-  .world-comparison-heading > span {
+  .comparison-controls {
+    align-items: flex-start;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .comparison-controls > span {
     max-width: none;
     text-align: left;
   }

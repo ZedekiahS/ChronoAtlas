@@ -1,4 +1,5 @@
 import events from "../data/events-180-280.sample.json" with { type: "json" };
+import eventImportance from "../data/event-importance-180-280.json" with { type: "json" };
 import chinaBlocks from "../data/china-admin-blocks-190-280.json" with { type: "json" };
 import chinaControlTimeline from "../data/china-block-control-timeline-190-280.json" with { type: "json" };
 import chinaMap from "../data/china-three-kingdoms-map.json" with { type: "json" };
@@ -11,6 +12,7 @@ import regions from "../data/regions-180-280.json" with { type: "json" };
 
 const regionIds = new Set(["china", "rome", "sasanian-persia", "india"]);
 const boundaryTypes = new Set(["effective-control", "nominal", "cultural-influence"]);
+const eventImportanceValues = new Set(["major", "medium", "minor"]);
 const blockLevels = new Set(["province", "commandery", "county-seat"]);
 const controlStatuses = new Set(["effective-control", "contested", "frontier", "nominal-control"]);
 const confidenceValues = new Set(["high", "medium", "low"]);
@@ -405,6 +407,19 @@ for (const event of events) {
   for (const relatedId of event.relatedEvents) {
     assert(eventIds.has(relatedId), `Event uses unknown relatedEvent: ${event.id}:${relatedId}`);
   }
+}
+
+assert(eventImportance.model === "event-importance", "Unexpected event importance model");
+assert(eventImportanceValues.has(eventImportance.defaultImportance), `Unknown default event importance: ${eventImportance.defaultImportance}`);
+assert(Array.isArray(eventImportance.records), "Event importance records must be an array");
+const importanceEventIds = new Set();
+
+for (const record of eventImportance.records) {
+  assert(typeof record.eventId === "string" && record.eventId.length > 0, "Event importance record needs eventId");
+  assert(!importanceEventIds.has(record.eventId), `Duplicate event importance record: ${record.eventId}`);
+  importanceEventIds.add(record.eventId);
+  assert(eventIds.has(record.eventId), `Event importance uses unknown eventId: ${record.eventId}`);
+  assert(eventImportanceValues.has(record.importance), `Unknown event importance: ${record.eventId}:${record.importance}`);
 }
 
 for (const eventId of requiredDeepDetailEventIds) {

@@ -1,0 +1,13 @@
+{
+  "model": "event-importance",
+  "defaultImportance": "major",
+  "records": [
+    { "eventId": "china-192-dong-zhuo-killed", "importance": "medium" },
+    { "eventId": "china-194-lu-bu-seizes-yan", "importance": "medium" },
+    { "eventId": "china-197-yuan-shu-declares-emperor", "importance": "medium" },
+    { "eventId": "china-199-lu-bu-defeated", "importance": "medium" },
+    { "eventId": "china-207-longzhong-plan", "importance": "medium" },
+    { "eventId": "china-215-cao-cao-takes-hanzhong", "importance": "medium" },
+    { "eventId": "india-230-kushan-decline", "importance": "medium" }
+  ]
+}

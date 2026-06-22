@@ -26,6 +26,7 @@ import {
   UsersRound,
 } from "lucide-react";
 import eventsData from "../data/events-180-280.sample.json";
+import eventImportanceData from "../data/event-importance-180-280.json";
 import chinaAdminBlocksData from "../data/china-admin-blocks-190-280.json";
 import chinaBlockControlTimelineData from "../data/china-block-control-timeline-190-280.json";
 import chinaMapData from "../data/china-three-kingdoms-map.json";
@@ -40,6 +41,7 @@ import "./styles.css";
 type Region = "china" | "rome" | "sasanian-persia" | "india";
 
 type EventCategory = "politics" | "war" | "society" | "culture" | "economy";
+type EventImportance = "major" | "medium" | "minor";
 type LonLat = [number, number];
 
 type HistoricalEvent = {
@@ -51,6 +53,7 @@ type HistoricalEvent = {
   locationName?: string | null;
   coordinates?: [number, number] | null;
   category: EventCategory;
+  importance?: EventImportance;
   summary: string;
   people: string[];
   personIds?: string[];
@@ -70,6 +73,15 @@ type EventDeepDetail = {
   impact?: string[];
   sourceNotes?: string[];
   uncertainty?: string[];
+};
+
+type EventImportanceDataset = {
+  model: "event-importance";
+  defaultImportance: EventImportance;
+  records: Array<{
+    eventId: string;
+    importance: EventImportance;
+  }>;
 };
 
 type EventDetailTab = "overview" | "background" | "process" | "impact" | "sources";
@@ -274,6 +286,7 @@ type NaturalEarthPhysical = {
 };
 
 const events = eventsData as HistoricalEvent[];
+const eventImportanceDataset = eventImportanceData as EventImportanceDataset;
 const chinaSources = chinaSourcesData as SourceRecord[];
 const chinaPersons = chinaPersonsData as HistoricalPerson[];
 const chinaPersonLifeEvents = chinaPersonLifeEventsData as PersonLifeEvent[];
@@ -288,6 +301,7 @@ const chinaBlockById = new Map(chinaBlocks.map((block) => [block.id, block]));
 const chinaControllerColorMap = new Map(chinaControlTimeline.controllers.map((controller) => [controller.id, controller.color]));
 const chinaSourceById = new Map(chinaSources.map((source) => [source.id, source]));
 const chinaPersonById = new Map(chinaPersons.map((person) => [person.id, person]));
+const eventImportanceById = new Map(eventImportanceDataset.records.map((record) => [record.eventId, record.importance]));
 type WorldAtlasTopology = Topology<{ countries: GeometryCollection }>;
 
 const atlas = countries110 as unknown as WorldAtlasTopology;
@@ -367,6 +381,13 @@ const eventDetailTabs: Array<{
 const yearMin = 190;
 const yearMax = 280;
 const worldComparisonRegionOrder: Region[] = ["china", "rome", "sasanian-persia", "india"];
+const chinaFocusPersonIds = ["cao-cao", "liu-bei", "sun-quan"];
+
+const eventImportanceLabels: Record<EventImportance, string> = {
+  major: "大型事件",
+  medium: "中型事件",
+  minor: "小型事件",
+};
 
 function isActiveInYear(event: HistoricalEvent, year: number) {
   return event.startYear <= year && event.endYear >= year;
@@ -398,6 +419,51 @@ function getPinnedYears(event: HistoricalEvent) {
 
 function sortEventsByYearThenTitle(left: HistoricalEvent, right: HistoricalEvent) {
   return left.startYear - right.startYear || left.endYear - right.endYear || left.title.localeCompare(right.title, "zh-Hans-CN");
+}
+
+function getEventImportance(event: HistoricalEvent): EventImportance {
+  return event.importance ?? eventImportanceById.get(event.id) ?? eventImportanceDataset.defaultImportance;
+}
+
+function shouldShowWorldEvent(event: HistoricalEvent, showMediumEvents: boolean) {
+  const importance = getEventImportance(event);
+  return importance === "major" || (showMediumEvents && importance === "medium");
+}
+
+function getLifeEventEndYear(lifeEvent: PersonLifeEvent) {
+  if (Number.isInteger(lifeEvent.endYear)) {
+    return lifeEvent.endYear as number;
+  }
+
+  const rangeMatch = lifeEvent.displayYear.match(/^(\d{3})-(\d{3})$/);
+  if (rangeMatch) {
+    return Number(rangeMatch[2]);
+  }
+
+  return Number.isInteger(lifeEvent.year) ? (lifeEvent.year as number) : null;
+}
+
+function isLifeEventInYear(lifeEvent: PersonLifeEvent, year: number) {
+  if (!Number.isInteger(lifeEvent.year)) {
+    return false;
+  }
+
+  const startYear = lifeEvent.year as number;
+  const endYear = getLifeEventEndYear(lifeEvent) ?? startYear;
+  return startYear <= year && endYear >= year;
+}
+
+function getChinaFocusLifeEvents(year: number) {
+  return chinaPersonLifeEvents
+    .filter((lifeEvent) => chinaFocusPersonIds.includes(lifeEvent.personId) && isLifeEventInYear(lifeEvent, year))
+    .map((lifeEvent) => ({
+      lifeEvent,
+      person: chinaPersonById.get(lifeEvent.personId),
+      rank: chinaFocusPersonIds.indexOf(lifeEvent.personId),
+    }))
+    .filter((item) => item.person)
+    .sort((left, right) => left.rank - right.rank || getLifeEventSortValue(left.lifeEvent) - getLifeEventSortValue(right.lifeEvent))
+    .slice(0, 4);
 }
 
 function eventMatchesQuery(event: HistoricalEvent, normalizedQuery: string) {
@@ -939,9 +1005,11 @@ function isChinaPolity(group: BoundaryGroup | ChinaPolity): group is ChinaPolity
   return "capitalName" in group;
 }
 
-function getRegionSummary(region: RegionInfo, regionEvents: HistoricalEvent[], year: number) {
+function getRegionSummary(region: RegionInfo, regionEvents: HistoricalEvent[], year: number, showMediumEvents: boolean) {
   const era = getRegionEra(region, year);
-  const yearEvents = regionEvents.filter((event) => isPinnedToYear(event, year)).sort(sortEventsByYearThenTitle);
+  const yearEvents = regionEvents
+    .filter((event) => isPinnedToYear(event, year) && shouldShowWorldEvent(event, showMediumEvents))
+    .sort(sortEventsByYearThenTitle);
 
   if (!yearEvents.length) {
     return `${year} 年：暂无已整理大事。${era.summary}`;
@@ -1396,6 +1464,7 @@ function App() {
   const [hoveredChinaBlockId, setHoveredChinaBlockId] = useState<string | null>(null);
   const [selectedPersonId, setSelectedPersonId] = useState<string | null>(null);
   const [personIndexFilter, setPersonIndexFilter] = useState<PersonIndexFilter>("all");
+  const [showMediumEvents, setShowMediumEvents] = useState(false);
 
   const normalizedQuery = query.trim().toLowerCase();
 
@@ -1409,7 +1478,9 @@ function App() {
 
   const currentYearRegionCounts = regions.reduce(
     (counts, region) => {
-      counts[region.id] = matchingEvents.filter((event) => event.region === region.id && isPinnedToYear(event, year)).length;
+      counts[region.id] = matchingEvents.filter(
+        (event) => event.region === region.id && isPinnedToYear(event, year) && shouldShowWorldEvent(event, showMediumEvents),
+      ).length;
       return counts;
     },
     {} as Record<Region, number>,
@@ -1417,27 +1488,29 @@ function App() {
   const timelineMarkers = useMemo(() => {
     const markers = new Map<string, { eventCount: number; region: RegionInfo; titles: string[]; year: number }>();
 
-    matchingEvents.forEach((event) => {
-      const region = regions.find((regionInfo) => regionInfo.id === event.region);
+    matchingEvents
+      .filter((event) => getEventImportance(event) === "major")
+      .forEach((event) => {
+        const region = regions.find((regionInfo) => regionInfo.id === event.region);
 
-      if (!region) {
-        return;
-      }
+        if (!region) {
+          return;
+        }
 
-      getPinnedYears(event).forEach((eventYear) => {
-        const markerKey = `${event.region}-${eventYear}`;
-        const marker = markers.get(markerKey) ?? {
-          eventCount: 0,
-          region,
-          titles: [],
-          year: eventYear,
-        };
+        getPinnedYears(event).forEach((eventYear) => {
+          const markerKey = `${event.region}-${eventYear}`;
+          const marker = markers.get(markerKey) ?? {
+            eventCount: 0,
+            region,
+            titles: [],
+            year: eventYear,
+          };
 
-        marker.eventCount += 1;
-        marker.titles.push(event.title);
-        markers.set(markerKey, marker);
+          marker.eventCount += 1;
+          marker.titles.push(event.title);
+          markers.set(markerKey, marker);
+        });
       });
-    });
 
     return [...markers.values()].sort((left, right) => left.year - right.year || left.region.label.localeCompare(right.region.label, "zh-Hans-CN"));
   }, [matchingEvents]);
@@ -1446,12 +1519,20 @@ function App() {
     .filter((region): region is RegionInfo => Boolean(region))
     .map((region) => {
       const regionEvents = matchingEvents.filter((event) => event.region === region.id);
-      const yearEvents = regionEvents.filter((event) => isPinnedToYear(event, year)).sort(sortEventsByYearThenTitle);
+      const yearEvents = regionEvents
+        .filter((event) => isPinnedToYear(event, year) && shouldShowWorldEvent(event, showMediumEvents))
+        .sort(sortEventsByYearThenTitle);
+      const hiddenMediumEvents = showMediumEvents
+        ? []
+        : regionEvents.filter((event) => isPinnedToYear(event, year) && getEventImportance(event) === "medium").sort(sortEventsByYearThenTitle);
+      const focusLifeEvents = region.id === "china" && yearEvents.length === 0 && hiddenMediumEvents.length === 0 ? getChinaFocusLifeEvents(year) : [];
 
       return {
         region,
         era: getRegionEra(region, year),
         yearEvents,
+        hiddenMediumEvents,
+        focusLifeEvents,
         eventCount: regionEvents.length,
       };
     });
@@ -1478,13 +1559,17 @@ function App() {
   const inspectedChinaBlock = hoveredChinaBlock ?? selectedChinaBlock;
   const inspectedChinaControl = inspectedChinaBlock ? getChinaBlockControl(inspectedChinaBlock.id, year) : null;
 
-  const selectedRegionEvents = (page === "world" ? matchingEvents.filter((event) => isPinnedToYear(event, year)) : visibleEvents).filter(
-    (event) => event.region === selectedRegion,
-  );
+  const selectedRegionEvents = (
+    page === "world"
+      ? matchingEvents.filter((event) => isPinnedToYear(event, year) && shouldShowWorldEvent(event, showMediumEvents))
+      : visibleEvents
+  ).filter((event) => event.region === selectedRegion);
   const filteredRegionEvents =
     selectedRegion === "china"
       ? selectedRegionEvents.filter((event) => matchesThreeKingdomsFilter(event, eventFilter))
       : selectedRegionEvents;
+  const selectedRegionFocusLifeEvents =
+    page === "world" && selectedRegion === "china" && filteredRegionEvents.length === 0 ? getChinaFocusLifeEvents(year) : [];
   const eventFilterCounts = Object.fromEntries(
     threeKingdomsFilters.map((filter) => [
       filter.id,
@@ -1882,6 +1967,7 @@ function App() {
                   inspectedRegion,
                   matchingEvents.filter((event) => event.region === inspectedRegion.id),
                   year,
+                  showMediumEvents,
                 )}
               </p>
               <div className="summary-meta">
@@ -1941,7 +2027,18 @@ function App() {
                 <p className="kicker">同年对照</p>
                 <h2>{year} 年的四大区域局势</h2>
               </div>
-              <span>只显示当前年份已整理的大事；没有记录的区域留空。</span>
+              <div className="comparison-controls">
+                <span>时间条只标大型事件；空档优先显示主角动向。</span>
+                <button
+                  className={`medium-toggle ${showMediumEvents ? "active" : ""}`}
+                  type="button"
+                  aria-pressed={showMediumEvents}
+                  onClick={() => setShowMediumEvents((current) => !current)}
+                >
+                  中型事件
+                  <strong>{showMediumEvents ? "开" : "关"}</strong>
+                </button>
+              </div>
             </div>
 
             <div className="comparison-grid">
@@ -1966,30 +2063,54 @@ function App() {
                   >
                     <div className="comparison-card-header">
                       <span>{item.region.label}</span>
-                      <strong>{item.yearEvents.length ? `${item.yearEvents.length} 件本年大事` : "本年无大事"}</strong>
+                      <strong>
+                        {item.yearEvents.length
+                          ? `${item.yearEvents.length} 件本年事件`
+                          : item.hiddenMediumEvents.length
+                            ? `${item.hiddenMediumEvents.length} 件中型事件`
+                            : item.focusLifeEvents.length
+                              ? "主角动向"
+                              : "本年无大事"}
+                      </strong>
                     </div>
                     <div className="comparison-era">
                       <small>{item.era.title}</small>
                       <p>{item.era.summary}</p>
                     </div>
                     <div className={`comparison-event ${item.yearEvents.length ? "" : "empty"}`}>
-                      <span>本年大事</span>
+                      <span>{item.yearEvents.length ? "本年事件" : item.focusLifeEvents.length ? "主角动向" : "本年大事"}</span>
                       {item.yearEvents.length ? (
                         <div className="comparison-event-list">
                           {item.yearEvents.slice(0, 3).map((event) => (
                             <div className="comparison-event-item" key={event.id}>
                               <strong>{event.title}</strong>
                               <small>
-                                {formatYearRange(event)} · {categoryLabels[event.category]}
+                                {formatYearRange(event)} · {eventImportanceLabels[getEventImportance(event)]} · {categoryLabels[event.category]}
                               </small>
                             </div>
                           ))}
                           {item.yearEvents.length > 3 && <small>另有 {item.yearEvents.length - 3} 件</small>}
                         </div>
+                      ) : item.hiddenMediumEvents.length ? (
+                        <>
+                          <strong>有中型事件可显示</strong>
+                          <small>打开“中型事件”开关查看；时间条仍只标大型事件。</small>
+                        </>
+                      ) : item.focusLifeEvents.length ? (
+                        <div className="comparison-event-list">
+                          {item.focusLifeEvents.map(({ lifeEvent, person }) => (
+                            <div className="comparison-event-item focus-note" key={lifeEvent.id}>
+                              <strong>
+                                {person?.name}：{lifeEvent.title}
+                              </strong>
+                              <small>{lifeEvent.summary}</small>
+                            </div>
+                          ))}
+                        </div>
                       ) : (
                         <>
                           <strong>暂无已整理大事</strong>
-                          <small>{item.eventCount} 个资料节点已在时间条标出</small>
+                          <small>{item.eventCount} 个资料节点已在时间条或区域页中整理</small>
                         </>
                       )}
                     </div>
@@ -2755,10 +2876,23 @@ function App() {
           <section className="event-detail empty-event-detail">
             <div className="detail-eyebrow">
               <CircleDot size={18} aria-hidden="true" />
-              <span>本年事件</span>
+              <span>{selectedRegionFocusLifeEvents.length ? "主角动向" : "本年事件"}</span>
             </div>
-            <h2>{year} 年暂无已整理大事</h2>
-            <p className="detail-summary">{selectedRegionInfo.label}在当前年份暂无已录入的大事。</p>
+            <h2>{selectedRegionFocusLifeEvents.length ? `${year} 年主角动向` : `${year} 年暂无已整理大事`}</h2>
+            {selectedRegionFocusLifeEvents.length ? (
+              <div className="comparison-event-list detail-focus-list">
+                {selectedRegionFocusLifeEvents.map(({ lifeEvent, person }) => (
+                  <article className="comparison-event-item focus-note" key={lifeEvent.id}>
+                    <strong>
+                      {person?.name}：{lifeEvent.title}
+                    </strong>
+                    <small>{lifeEvent.summary}</small>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <p className="detail-summary">{selectedRegionInfo.label}在当前年份暂无已录入的大事。</p>
+            )}
           </section>
         )}
       </aside>
