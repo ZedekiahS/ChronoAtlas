@@ -366,6 +366,7 @@ const eventDetailTabs: Array<{
 
 const yearMin = 190;
 const yearMax = 280;
+const worldComparisonRegionOrder: Region[] = ["china", "rome", "sasanian-persia", "india"];
 
 function isActiveInYear(event: HistoricalEvent, year: number) {
   return event.startYear <= year && event.endYear >= year;
@@ -379,6 +380,46 @@ function formatYearRange(event: HistoricalEvent) {
   return event.startYear === event.endYear
     ? `${event.startYear} 年`
     : `${event.startYear}-${event.endYear} 年`;
+}
+
+function getEventDistanceFromYear(event: HistoricalEvent, year: number) {
+  if (isActiveInYear(event, year)) {
+    return 0;
+  }
+
+  return Math.min(Math.abs(event.startYear - year), Math.abs(event.endYear - year));
+}
+
+function getNearestEventForYear(regionEvents: HistoricalEvent[], year: number) {
+  return [...regionEvents].sort((left, right) => {
+    const distance = getEventDistanceFromYear(left, year) - getEventDistanceFromYear(right, year);
+    return distance || left.startYear - right.startYear || left.title.localeCompare(right.title, "zh-Hans-CN");
+  })[0];
+}
+
+function eventMatchesQuery(event: HistoricalEvent, normalizedQuery: string) {
+  if (!normalizedQuery) {
+    return true;
+  }
+
+  const linkedPeople = (event.personIds ?? [])
+    .map((personId) => chinaPersonById.get(personId))
+    .filter((person): person is HistoricalPerson => Boolean(person))
+    .flatMap((person) => [person.name, person.courtesyName, person.primaryPolity, ...person.roles]);
+  const text = [
+    event.title,
+    event.summary,
+    event.locationName,
+    ...event.people,
+    ...linkedPeople,
+    ...event.polities,
+    ...event.tags,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+
+  return text.includes(normalizedQuery);
 }
 
 function formatYearSpan(startYear?: number, endYear?: number) {
@@ -898,7 +939,7 @@ function isChinaPolity(group: BoundaryGroup | ChinaPolity): group is ChinaPolity
 function getRegionSummary(region: RegionInfo, regionEvents: HistoricalEvent[], year: number) {
   const era = getRegionEra(region, year);
   const activeEvent = regionEvents.find((event) => isActiveInYear(event, year));
-  const nearEvent = activeEvent ?? regionEvents[0];
+  const nearEvent = activeEvent ?? getNearestEventForYear(regionEvents, year);
 
   if (!nearEvent) {
     return `${year} 年附近：${era.summary}`;
@@ -1356,29 +1397,13 @@ function App() {
 
   const normalizedQuery = query.trim().toLowerCase();
 
-  const visibleEvents = useMemo(() => {
-    return events.filter((event) => {
-      const matchesYear = isActiveInYear(event, year) || isNearYear(event, year);
-      const linkedPeople = (event.personIds ?? [])
-        .map((personId) => chinaPersonById.get(personId))
-        .filter((person): person is HistoricalPerson => Boolean(person))
-        .flatMap((person) => [person.name, person.courtesyName, person.primaryPolity, ...person.roles]);
-      const text = [
-        event.title,
-        event.summary,
-        event.locationName,
-        ...event.people,
-        ...linkedPeople,
-        ...event.polities,
-        ...event.tags,
-      ]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
+  const matchingEvents = useMemo(() => {
+    return events.filter((event) => eventMatchesQuery(event, normalizedQuery));
+  }, [normalizedQuery]);
 
-      return matchesYear && (!normalizedQuery || text.includes(normalizedQuery));
-    });
-  }, [normalizedQuery, year]);
+  const visibleEvents = useMemo(() => {
+    return matchingEvents.filter((event) => isActiveInYear(event, year) || isNearYear(event, year));
+  }, [matchingEvents, year]);
 
   const regionCounts = regions.reduce(
     (counts, region) => {
@@ -1387,6 +1412,22 @@ function App() {
     },
     {} as Record<Region, number>,
   );
+  const worldComparisonItems = worldComparisonRegionOrder
+    .map((regionId) => regions.find((region) => region.id === regionId))
+    .filter((region): region is RegionInfo => Boolean(region))
+    .map((region) => {
+      const regionEvents = matchingEvents.filter((event) => event.region === region.id);
+      const activeEvents = regionEvents.filter((event) => isActiveInYear(event, year));
+      const featuredEvent = getNearestEventForYear(regionEvents, year);
+
+      return {
+        region,
+        era: getRegionEra(region, year),
+        activeEvents,
+        featuredEvent,
+        eventCount: regionEvents.length,
+      };
+    });
 
   const selectedRegionInfo = regions.find((region) => region.id === selectedRegion) ?? regions[0];
   const hoverRegionInfo = regions.find((region) => region.id === hoveredRegion);
@@ -1631,7 +1672,7 @@ function App() {
                 ? "人物索引：三国人物关系与生平"
                 : page === "china"
                   ? "中国区域：三国格局"
-                  : "拖动时间，观察世界局势的同一瞬间"}
+                  : "四大区域同年对照"}
             </h1>
           </div>
           <div className="topbar-actions">
@@ -1810,7 +1851,7 @@ function App() {
               <p>
                 {getRegionSummary(
                   inspectedRegion,
-                  visibleEvents.filter((event) => event.region === inspectedRegion.id),
+                  matchingEvents.filter((event) => event.region === inspectedRegion.id),
                   year,
                 )}
               </p>
@@ -1861,6 +1902,69 @@ function App() {
               </div>
             </aside>
           )}
+          </section>
+        )}
+
+        {page === "world" && (
+          <section className="world-comparison" aria-label={`${year} 年四大区域同年对照`}>
+            <div className="world-comparison-heading">
+              <div>
+                <p className="kicker">同年对照</p>
+                <h2>{year} 年的四大区域局势</h2>
+              </div>
+              <span>当前年份决定时代背景；事件卡显示同年或最近资料节点。</span>
+            </div>
+
+            <div className="comparison-grid">
+              {worldComparisonItems.map((item) => {
+                const isSelected = item.region.id === selectedRegion;
+                const isCurrentEvent = item.featuredEvent ? isActiveInYear(item.featuredEvent, year) : false;
+                const actionLabel = item.region.id === "china" ? "进入中国三国" : "查看区域概览";
+
+                return (
+                  <article
+                    className={`comparison-card ${isSelected ? "selected" : ""}`}
+                    key={item.region.id}
+                    role="button"
+                    tabIndex={0}
+                    style={{ "--accent": item.region.accent } as React.CSSProperties}
+                    onClick={() => selectRegion(item.region.id)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        selectRegion(item.region.id);
+                      }
+                    }}
+                  >
+                    <div className="comparison-card-header">
+                      <span>{item.region.label}</span>
+                      <strong>{item.activeEvents.length ? `${item.activeEvents.length} 个当前事件` : `${item.eventCount} 个资料节点`}</strong>
+                    </div>
+                    <div className="comparison-era">
+                      <small>{item.era.title}</small>
+                      <p>{item.era.summary}</p>
+                    </div>
+                    <div className="comparison-event">
+                      <span>{isCurrentEvent ? "当前事件" : "邻近事件"}</span>
+                      {item.featuredEvent ? (
+                        <>
+                          <strong>{item.featuredEvent.title}</strong>
+                          <small>
+                            {formatYearRange(item.featuredEvent)} · {categoryLabels[item.featuredEvent.category]}
+                          </small>
+                        </>
+                      ) : (
+                        <>
+                          <strong>资料待补</strong>
+                          <small>当前搜索下没有匹配节点</small>
+                        </>
+                      )}
+                    </div>
+                    <span className="comparison-action">{actionLabel}</span>
+                  </article>
+                );
+              })}
+            </div>
           </section>
         )}
 
