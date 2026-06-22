@@ -582,6 +582,172 @@
     ]
   },
   {
+    "id": "dong-zhao",
+    "name": "董昭",
+    "courtesyName": "公仁",
+    "life": "156-236",
+    "lifeConfidence": "medium",
+    "primaryPolity": "袁绍集团 / 张杨集团 / 曹操集团 / 曹魏",
+    "roles": [
+      "谋臣",
+      "司徒",
+      "政治顾问"
+    ],
+    "summary": "先后服务袁绍、张杨、曹操与曹魏朝廷，在迎献帝、曹操进位魏公、襄樊危机和魏初朝政中多有政治谋划。",
+    "coverageStatus": "partial",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-dong-zhao",
+        "locator": "董昭传"
+      }
+    ]
+  },
+  {
+    "id": "liu-fang",
+    "name": "刘放",
+    "courtesyName": "子弃",
+    "life": "?-250",
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "机要文臣",
+      "中书监",
+      "文书顾问"
+    ],
+    "summary": "曹魏机要文臣，善为书檄诏命，与孙资长期掌管中书机密，对魏明帝以后朝政影响很大。",
+    "coverageStatus": "partial",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传"
+      }
+    ]
+  },
+  {
+    "id": "sun-zi",
+    "name": "孙资",
+    "courtesyName": "彦龙",
+    "life": "?-251",
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "机要文臣",
+      "中书令",
+      "朝政顾问"
+    ],
+    "summary": "曹魏中书重臣，与刘放并掌机要，参与魏明帝时期北边、辽东和朝廷人事判断，后卷入高平陵前后的政治转折。",
+    "coverageStatus": "partial",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "孙资附传"
+      }
+    ]
+  },
+  {
+    "id": "liu-yi",
+    "name": "刘廙",
+    "courtesyName": "恭嗣",
+    "life": "180-221",
+    "lifeConfidence": "medium",
+    "primaryPolity": "荆州刘表集团 / 曹操集团 / 曹魏",
+    "roles": [
+      "文臣",
+      "侍中",
+      "议政顾问"
+    ],
+    "summary": "南阳士人，早年与荆州刘表集团相关，后入曹操幕府，因弟事被牵连而获赦，魏初任侍中。",
+    "coverageStatus": "partial",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-yi",
+        "locator": "刘廙传"
+      }
+    ]
+  },
+  {
+    "id": "sima-lang",
+    "name": "司马朗",
+    "courtesyName": "伯达",
+    "life": "171-217",
+    "lifeConfidence": "medium",
+    "primaryPolity": "曹操集团",
+    "roles": [
+      "文臣",
+      "地方官",
+      "司马氏成员"
+    ],
+    "summary": "司马懿之兄，早年避乱迁徙，入曹操幕府后以地方治理和宽厚政风见称，建安二十二年军中疫病时去世。",
+    "coverageStatus": "partial",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-sima-lang",
+        "locator": "司马朗传"
+      }
+    ]
+  },
+  {
+    "id": "jia-kui",
+    "name": "贾逵",
+    "courtesyName": "梁道",
+    "life": "174-228",
+    "lifeConfidence": "medium",
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "地方官",
+      "将领",
+      "豫州刺史"
+    ],
+    "summary": "河东出身，早年守绛邑抗郭援，以刚烈守正著称；入魏后长期经营地方与东线军事政务。",
+    "coverageStatus": "partial",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-jia-kui",
+        "locator": "贾逵传"
+      }
+    ]
+  },
+  {
+    "id": "wang-can",
+    "name": "王粲",
+    "courtesyName": "仲宣",
+    "life": "177-217",
+    "lifeConfidence": "medium",
+    "primaryPolity": "荆州刘表集团 / 曹操集团",
+    "roles": [
+      "文臣",
+      "文学家",
+      "制度礼仪顾问"
+    ],
+    "summary": "建安七子之一，避乱荆州，刘表死后劝刘琮归曹；入曹操集团后参与魏国制度礼仪，亦以文学才名著称。",
+    "coverageStatus": "partial",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-can",
+        "locator": "王粲传"
+      }
+    ]
+  },
+  {
+    "id": "wei-ji",
+    "name": "卫觊",
+    "courtesyName": "伯儒",
+    "life": "168-229",
+    "lifeConfidence": "medium",
+    "primaryPolity": "曹操集团 / 曹魏",
+    "roles": [
+      "文臣",
+      "侍中",
+      "书法家"
+    ],
+    "summary": "河东士人，参与关中与魏初制度议论，入魏后以文章、书法和朝廷礼制事务见称。",
+    "coverageStatus": "partial",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wei-ji",
+        "locator": "卫觊传"
+      }
+    ]
+  },
+  {
     "id": "cao-pi",
     "name": "曹丕",
     "courtesyName": "子桓",

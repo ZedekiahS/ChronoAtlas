@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-06-22",
+  "scope": "曹魏相关人物补全工程：以《三国志》魏书本传为主轴，以《资治通鉴》汉纪/魏纪相关年份互校。",
+  "completionDefinition": [
+    "人物在 data/china-persons.json 中有唯一 id、姓名、字号、生卒或生卒未详、主政权、角色和摘要。",
+    "至少有一条《三国志》或《资治通鉴》sourceRef；有本传者优先挂本传。",
+    "核心人物需要 4 条以上 person_life_events；边缘提及人物至少要有来源化的提及记录或待补状态。",
+    "与大事件有关者必须回链 historical_events；与其他人物有明确关系者进入 person_relations。",
+    "coverageStatus 不得轻易标 full；未逐段核对裴注和《资治通鉴》前保持 partial。"
+  ],
+  "phases": [
+    {
+      "id": "wei-biography-seed",
+      "title": "魏书本传人物建档",
+      "status": "in-progress",
+      "note": "先按《三国志》魏书纪传建立人物档案，不把所有路人提及混入主档案。"
+    },
+    {
+      "id": "zizhi-tongjian-cross-check",
+      "title": "资治通鉴编年互校",
+      "status": "pending",
+      "note": "按卷五十八至卷八十一，把同一人物的编年叙事补成 source_mentions。"
+    },
+    {
+      "id": "pei-commentary-expansion",
+      "title": "裴松之注扩展人物",
+      "status": "pending",
+      "note": "裴注中的别传、魏略、世语等人物先列为 secondary-mention，审校后再升格。"
+    }
+  ],
+  "currentBatches": [
+    {
+      "id": "cao-wei-core-advisors-1",
+      "title": "曹魏谋臣/文臣第一批",
+      "status": "done",
+      "personIds": [
+        "xun-yu",
+        "xun-you",
+        "guo-jia",
+        "jia-xu",
+        "liu-ye",
+        "jiang-ji",
+        "chen-qun",
+        "zhong-yao"
+      ]
+    },
+    {
+      "id": "cao-wei-officials-2",
+      "title": "曹魏文臣/制度人物第二批",
+      "status": "done",
+      "personIds": [
+        "dong-zhao",
+        "liu-fang",
+        "sun-zi",
+        "liu-yi",
+        "sima-lang",
+        "jia-kui",
+        "wang-can",
+        "wei-ji"
+      ]
+    },
+    {
+      "id": "wei-shu-11-12-next",
+      "title": "魏书十一、十二士人官僚层",
+      "status": "next",
+      "candidateNames": [
+        "袁涣",
+        "张范",
+        "凉茂",
+        "国渊",
+        "田畴",
+        "王修",
+        "邴原",
+        "管宁",
+        "崔琰",
+        "毛玠",
+        "徐奕",
+        "何夔",
+        "邢颙",
+        "鲍勋",
+        "司马芝"
+      ]
+    },
+    {
+      "id": "wei-shu-16-18-next",
+      "title": "魏书十六至十八地方官与将领层",
+      "status": "next",
+      "candidateNames": [
+        "任峻",
+        "苏则",
+        "杜畿",
+        "郑浑",
+        "仓慈",
+        "吕虔",
+        "许褚",
+        "典韦",
+        "庞德",
+        "庞淯",
+        "阎温"
+      ]
+    }
+  ],
+  "trackedPeople": [
+    {
+      "personId": "cao-cao",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "cao-pi",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "xun-yu",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "xun-you",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "guo-jia",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "jia-xu",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "liu-ye",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "jiang-ji",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "chen-qun",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "zhong-yao",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "dong-zhao",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "liu-fang",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "sun-zi",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "liu-yi",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "sima-lang",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "jia-kui",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "wang-can",
+      "inPersonTable": true,
+      "status": "seeded"
+    },
+    {
+      "personId": "wei-ji",
+      "inPersonTable": true,
+      "status": "seeded"
+    }
+  ]
+}

@@ -1795,5 +1795,200 @@
         "locator": "蒋济传合肥及东线相关记载"
       }
     ]
+  },
+  {
+    "id": "cao-cao-dong-zhao-advisor",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "dong-zhao",
+    "type": "advisor",
+    "startYear": 196,
+    "endYear": 220,
+    "summary": "董昭由张杨系统转入曹操政治圈后，长期为曹操提供迎献帝、进爵魏公和军事政治谋划。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-dong-zhao",
+        "locator": "董昭传"
+      }
+    ]
+  },
+  {
+    "id": "cao-pi-dong-zhao-senior-minister",
+    "sourcePersonId": "cao-pi",
+    "targetPersonId": "dong-zhao",
+    "type": "advisor",
+    "startYear": 220,
+    "endYear": 226,
+    "summary": "曹丕称帝后董昭位列魏初高官，在朝政与对吴军事议论中继续发挥影响。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-dong-zhao",
+        "locator": "董昭传黄初相关记载"
+      }
+    ]
+  },
+  {
+    "id": "liu-fang-sun-zi-secretariat",
+    "sourcePersonId": "liu-fang",
+    "targetPersonId": "sun-zi",
+    "type": "core-ally",
+    "startYear": 220,
+    "endYear": 249,
+    "summary": "刘放、孙资并掌中书机要，是曹魏中后期诏命文书和宫廷政治的重要组合。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放孙资传"
+      }
+    ]
+  },
+  {
+    "id": "cao-pi-liu-fang-secretariat",
+    "sourcePersonId": "cao-pi",
+    "targetPersonId": "liu-fang",
+    "type": "advisor",
+    "startYear": 220,
+    "endYear": 226,
+    "summary": "刘放在曹丕时期进入秘书、中书系统，为魏初诏命文书和机要事务服务。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传黄初仕历"
+      }
+    ]
+  },
+  {
+    "id": "cao-pi-sun-zi-secretariat",
+    "sourcePersonId": "cao-pi",
+    "targetPersonId": "sun-zi",
+    "type": "advisor",
+    "startYear": 220,
+    "endYear": 226,
+    "summary": "孙资在曹丕时期与刘放同入机要系统，成为魏初文书政治的重要人物。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传孙资附载"
+      }
+    ]
+  },
+  {
+    "id": "sima-lang-sima-yi-family",
+    "sourcePersonId": "sima-lang",
+    "targetPersonId": "sima-yi",
+    "type": "family-lineage",
+    "startYear": 171,
+    "endYear": 217,
+    "summary": "司马朗为司马懿之兄，两人同属河内司马氏，是后续司马氏政治网络的重要前史。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-sima-lang",
+        "locator": "司马朗传家族相关记载"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-sima-lang-official",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "sima-lang",
+    "type": "advisor",
+    "startYear": 200,
+    "endYear": 217,
+    "summary": "司马朗在曹操集团中历任掾属与地方官，以地方治理和宽惠政风见称。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-sima-lang",
+        "locator": "司马朗传仕曹相关记载"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-jia-kui-official",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "jia-kui",
+    "type": "commander",
+    "startYear": 202,
+    "endYear": 220,
+    "summary": "贾逵早年在河东守城抗郭援，后为曹操集团地方与军事事务所用。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-jia-kui",
+        "locator": "贾逵传"
+      }
+    ]
+  },
+  {
+    "id": "cao-pi-jia-kui-east-front",
+    "sourcePersonId": "cao-pi",
+    "targetPersonId": "jia-kui",
+    "type": "commander",
+    "startYear": 220,
+    "endYear": 228,
+    "summary": "曹丕时期贾逵在豫州与东线方向承担军政事务，是魏吴边境经营的重要官员。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-jia-kui",
+        "locator": "贾逵传黄初相关记载"
+      }
+    ]
+  },
+  {
+    "id": "wang-can-liu-cong-surrender",
+    "sourcePersonId": "wang-can",
+    "targetPersonId": "liu-cong",
+    "type": "advisor",
+    "startYear": 208,
+    "endYear": 208,
+    "summary": "刘表死后，王粲劝刘琮归附曹操，是荆州士人促成归曹的一条重要线索。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-can",
+        "locator": "王粲传劝刘琮相关记载"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-wang-can-literati",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "wang-can",
+    "type": "advisor",
+    "startYear": 208,
+    "endYear": 217,
+    "summary": "王粲入曹操集团后参与魏国制度礼仪和文书事务，是建安文臣网络的重要人物。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-can",
+        "locator": "王粲传"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-wei-ji-official",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "wei-ji",
+    "type": "advisor",
+    "startYear": 200,
+    "endYear": 220,
+    "summary": "卫觊在曹操集团中参与河东、关中与魏国制度事务，是魏初文臣网络的一员。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wei-ji",
+        "locator": "卫觊传"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-liu-yi-official",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "liu-yi",
+    "type": "advisor",
+    "startYear": 208,
+    "endYear": 220,
+    "summary": "刘廙从荆州旧部背景进入曹操幕府，虽曾因亲属事受牵连，仍因才学被曹操赦用。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-yi",
+        "locator": "刘廙传"
+      }
+    ]
   }
 ]

@@ -613,5 +613,68 @@
     "citationShort": "《三国志·魏书·钟繇传》",
     "note": "钟繇本传，记录其镇抚关中、曹魏重臣仕历及后世书法名望。",
     "url": "https://ctext.org/text.pl?if=gb&node=602528&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-dong-zhao",
+    "title": "三国志·魏书·董昭传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·董昭传》",
+    "note": "董昭本传，记录其由袁绍、张杨转入曹操集团，以及迎献帝、魏公进位、魏初朝政等事。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602582&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-liu-fang-sun-zi",
+    "title": "三国志·魏书·刘放孙资传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·刘放孙资传》",
+    "note": "刘放、孙资本传，记录其文书、机要、中书权力与曹魏中后期朝局。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602613&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-sima-lang",
+    "title": "三国志·魏书·司马朗传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·司马朗传》",
+    "note": "司马朗本传，记录其早年避乱、曹操幕府仕历、地方治理和军中卒年。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602628&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-jia-kui",
+    "title": "三国志·魏书·贾逵传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·贾逵传》",
+    "note": "贾逵本传，记录其河东守城、曹魏地方治理和豫州军事政务。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602653&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-wang-can",
+    "title": "三国志·魏书·王粲传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·王粲传》",
+    "note": "王粲本传，记录其避乱荆州、劝刘琮归曹、魏国制度礼仪与建安文学。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602902&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-wei-ji",
+    "title": "三国志·魏书·卫觊传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·卫觊传》",
+    "note": "卫觊本传，记录其河东出身、关中议论、魏初制度与文章书法。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602919&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-liu-yi",
+    "title": "三国志·魏书·刘廙传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·刘廙传》",
+    "note": "刘廙本传，记录其荆州背景、入曹操幕府、牵连获赦与魏初仕历。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602924&remap=gb"
   }
 ]

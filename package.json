@@ -11,7 +11,8 @@
     "validate:db": "node --no-warnings scripts/build-history-db.mjs --check",
     "db:build": "node --no-warnings scripts/build-history-db.mjs",
     "db:export": "node --no-warnings scripts/export-history-data.mjs",
-    "db:rebuild": "npm run db:build && npm run db:export"
+    "db:rebuild": "npm run db:build && npm run db:export",
+    "coverage:cao-wei": "node --no-warnings scripts/report-cao-wei-coverage.mjs"
   },
   "dependencies": {
     "d3-geo": "^3.1.1",

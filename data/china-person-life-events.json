@@ -2177,6 +2177,761 @@
     ]
   },
   {
+    "id": "dong-zhao-156-born",
+    "personId": "dong-zhao",
+    "year": 156,
+    "displayYear": "156",
+    "type": "birth",
+    "title": "董昭出生",
+    "summary": "董昭为济阴定陶人，本传载其卒时年八十一，故可推其约生于 156 年。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-dong-zhao",
+        "locator": "董昭传卒年与年岁相关记载"
+      }
+    ]
+  },
+  {
+    "id": "dong-zhao-190-yuan-shao",
+    "personId": "dong-zhao",
+    "year": 190,
+    "displayYear": "190 前后",
+    "type": "service",
+    "title": "为袁绍参军事并治理河北郡县",
+    "summary": "董昭早年为袁绍参军事，曾领钜鹿、魏郡等郡务，以权变手段安定地方。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-dong-zhao",
+        "locator": "董昭传袁绍时期相关记载"
+      }
+    ]
+  },
+  {
+    "id": "dong-zhao-196-emperor",
+    "personId": "dong-zhao",
+    "year": 196,
+    "displayYear": "196 前后",
+    "type": "politics",
+    "title": "参与献帝东归与曹操政治连接",
+    "summary": "献帝东归前后，董昭在张杨、曹操之间活动，为曹操取得迎奉献帝的政治机会提供连接。",
+    "relatedEventIds": [
+      "china-196-cao-cao-escorts-emperor"
+    ],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-dong-zhao",
+        "locator": "董昭传献帝东归相关记载"
+      }
+    ]
+  },
+  {
+    "id": "dong-zhao-213-wei-duke",
+    "personId": "dong-zhao",
+    "year": 213,
+    "displayYear": "213 前后",
+    "type": "politics",
+    "title": "推动曹操进位魏公",
+    "summary": "董昭参与推动曹操受封魏公、建立魏国制度，是曹操从汉臣向魏国权力结构转化的重要谋臣。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-dong-zhao",
+        "locator": "董昭传魏公相关记载"
+      }
+    ]
+  },
+  {
+    "id": "dong-zhao-219-fancheng",
+    "personId": "dong-zhao",
+    "year": 219,
+    "displayYear": "219",
+    "type": "strategy",
+    "title": "襄樊危机中建议通知曹仁",
+    "summary": "关羽围樊城时，董昭建议利用孙权袭荆州消息振奋樊城守军，作为襄樊解围策略的一环。",
+    "relatedEventIds": [
+      "china-219-hanzhong-and-jingzhou-crisis"
+    ],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-dong-zhao",
+        "locator": "董昭传襄樊相关记载"
+      }
+    ]
+  },
+  {
+    "id": "dong-zhao-236-death",
+    "personId": "dong-zhao",
+    "year": 236,
+    "displayYear": "236",
+    "type": "death",
+    "title": "董昭去世",
+    "summary": "董昭于魏明帝青龙年间去世，谥定侯。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-dong-zhao",
+        "locator": "董昭传卒年相关记载"
+      }
+    ]
+  },
+  {
+    "id": "liu-fang-205-joins-cao",
+    "personId": "liu-fang",
+    "year": 205,
+    "displayYear": "205 前后",
+    "type": "service",
+    "title": "劝王松归附曹操后入幕府",
+    "summary": "曹操平定冀州、讨袁谭前后，刘放劝王松归附曹操，随后被曹操辟用。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传王松归附相关记载"
+      }
+    ]
+  },
+  {
+    "id": "liu-fang-220-secretariat",
+    "personId": "liu-fang",
+    "year": 220,
+    "displayYear": "220",
+    "type": "office",
+    "title": "魏国建立后任秘书机要",
+    "summary": "曹魏建立后，刘放与孙资进入秘书、中书系统，长期负责诏命文书和机密事务。",
+    "relatedEventIds": [
+      "china-220-cao-pi-founds-wei"
+    ],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传黄初仕历"
+      }
+    ]
+  },
+  {
+    "id": "liu-fang-226-succession",
+    "personId": "liu-fang",
+    "year": 226,
+    "displayYear": "226",
+    "type": "politics",
+    "title": "参与明帝即位前后机要",
+    "summary": "曹丕病重、曹叡即位前后，刘放、孙资在宫廷机要中具有关键影响。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传明帝即位前后相关记载"
+      }
+    ]
+  },
+  {
+    "id": "liu-fang-238-liaodong",
+    "personId": "liu-fang",
+    "year": 238,
+    "displayYear": "238",
+    "type": "strategy",
+    "title": "辽东平定后进爵",
+    "summary": "辽东公孙渊平定后，刘放、孙资因参谋功劳进爵，显示其中枢筹划地位。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传景初二年辽东相关记载"
+      }
+    ]
+  },
+  {
+    "id": "liu-fang-249-gaopingling",
+    "personId": "liu-fang",
+    "year": 249,
+    "displayYear": "249",
+    "type": "politics",
+    "title": "高平陵前后卷入朝局",
+    "summary": "高平陵政变前后，刘放、孙资因长期处于中书机要，被后世视为曹魏后期权力转移链条中的重要人物。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传嘉平前后相关记载"
+      }
+    ]
+  },
+  {
+    "id": "liu-fang-250-death",
+    "personId": "liu-fang",
+    "year": 250,
+    "displayYear": "250",
+    "type": "death",
+    "title": "刘放去世",
+    "summary": "刘放于嘉平二年前后去世，谥敬侯。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传卒年相关记载"
+      }
+    ]
+  },
+  {
+    "id": "sun-zi-220-secretariat",
+    "personId": "sun-zi",
+    "year": 220,
+    "displayYear": "220",
+    "type": "office",
+    "title": "与刘放同掌机要",
+    "summary": "孙资与刘放并入魏初秘书、中书体系，长期负责诏命文书和机要事务。",
+    "relatedEventIds": [
+      "china-220-cao-pi-founds-wei"
+    ],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传孙资附载"
+      }
+    ]
+  },
+  {
+    "id": "sun-zi-226-succession",
+    "personId": "sun-zi",
+    "year": 226,
+    "displayYear": "226",
+    "type": "politics",
+    "title": "参与明帝即位前后机要",
+    "summary": "魏明帝即位前后，孙资与刘放共同处在中书权力核心。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传明帝即位前后相关记载"
+      }
+    ]
+  },
+  {
+    "id": "sun-zi-238-liaodong",
+    "personId": "sun-zi",
+    "year": 238,
+    "displayYear": "238",
+    "type": "strategy",
+    "title": "辽东平定后进爵",
+    "summary": "景初二年辽东平定后，孙资与刘放同以参谋功劳进爵。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传景初二年辽东相关记载"
+      }
+    ]
+  },
+  {
+    "id": "sun-zi-249-gaopingling",
+    "personId": "sun-zi",
+    "year": 249,
+    "displayYear": "249",
+    "type": "politics",
+    "title": "高平陵前后卷入朝局",
+    "summary": "高平陵前后，孙资因其中书旧臣地位与刘放同被置于曹魏权力转折的叙述中。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传嘉平前后相关记载"
+      }
+    ]
+  },
+  {
+    "id": "sun-zi-251-death",
+    "personId": "sun-zi",
+    "year": 251,
+    "displayYear": "251 前后",
+    "type": "death",
+    "title": "孙资去世",
+    "summary": "孙资在嘉平年间去世，卒年第一版暂按本传与后世系年作近似处理。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-fang-sun-zi",
+        "locator": "刘放传孙资卒年相关记载"
+      }
+    ]
+  },
+  {
+    "id": "liu-yi-180-born",
+    "personId": "liu-yi",
+    "year": 180,
+    "displayYear": "180",
+    "type": "birth",
+    "title": "刘廙出生",
+    "summary": "刘廙为南阳安众人，约生于建安以前的荆州士人网络中。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-yi",
+        "locator": "刘廙传年岁相关记载"
+      }
+    ]
+  },
+  {
+    "id": "liu-yi-208-jingzhou",
+    "personId": "liu-yi",
+    "year": 208,
+    "displayYear": "208 前后",
+    "type": "service",
+    "title": "由荆州进入曹操集团",
+    "summary": "曹操平荆州前后，刘廙脱离刘表旧部背景，进入曹操政治体系。",
+    "relatedEventIds": [
+      "china-208-red-cliffs"
+    ],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-yi",
+        "locator": "刘廙传荆州与入曹相关记载"
+      }
+    ]
+  },
+  {
+    "id": "liu-yi-215-pardoned",
+    "personId": "liu-yi",
+    "year": 215,
+    "displayYear": "215 前后",
+    "type": "politics",
+    "title": "因亲属牵连获曹操赦免",
+    "summary": "刘廙因弟刘伟等事受到牵连，曹操念其才学而赦免，改署丞相仓曹属。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-yi",
+        "locator": "刘廙传牵连获赦相关记载"
+      }
+    ]
+  },
+  {
+    "id": "liu-yi-220-attendant",
+    "personId": "liu-yi",
+    "year": 220,
+    "displayYear": "220",
+    "type": "office",
+    "title": "魏初任侍中",
+    "summary": "曹丕继魏王、建立曹魏前后，刘廙任侍中并赐爵关内侯。",
+    "relatedEventIds": [
+      "china-220-cao-pi-founds-wei"
+    ],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-yi",
+        "locator": "刘廙传黄初仕历"
+      }
+    ]
+  },
+  {
+    "id": "liu-yi-221-death",
+    "personId": "liu-yi",
+    "year": 221,
+    "displayYear": "221",
+    "type": "death",
+    "title": "刘廙去世",
+    "summary": "刘廙于魏初去世，年四十二左右。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-yi",
+        "locator": "刘廙传卒年相关记载"
+      }
+    ]
+  },
+  {
+    "id": "sima-lang-171-born",
+    "personId": "sima-lang",
+    "year": 171,
+    "displayYear": "171",
+    "type": "birth",
+    "title": "司马朗出生",
+    "summary": "司马朗为河内温县司马氏成员，司马懿之兄。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-sima-lang",
+        "locator": "司马朗传年岁相关记载"
+      }
+    ]
+  },
+  {
+    "id": "sima-lang-190-refuge",
+    "personId": "sima-lang",
+    "year": 190,
+    "displayYear": "190 前后",
+    "type": "service",
+    "title": "率宗族避乱迁徙",
+    "summary": "董卓之乱前后，司马朗判断洛阳、关中局势险恶，率宗族避乱迁徙。",
+    "relatedEventIds": [
+      "china-190-coalition-against-dong-zhuo"
+    ],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-sima-lang",
+        "locator": "司马朗传避乱相关记载"
+      }
+    ]
+  },
+  {
+    "id": "sima-lang-200-cao-service",
+    "personId": "sima-lang",
+    "year": 200,
+    "displayYear": "200 前后",
+    "type": "service",
+    "title": "进入曹操幕府",
+    "summary": "司马朗后来为曹操所用，历任掾属与地方官，以宽厚务实见称。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-sima-lang",
+        "locator": "司马朗传仕曹相关记载"
+      }
+    ]
+  },
+  {
+    "id": "sima-lang-215-local-governance",
+    "personId": "sima-lang",
+    "year": 215,
+    "displayYear": "215 前后",
+    "type": "office",
+    "title": "地方治理以宽惠著称",
+    "summary": "司马朗在地方任上重视抚恤百姓、约束吏治，形成与司马氏政治网络相连的早期官声。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-sima-lang",
+        "locator": "司马朗传地方治理相关记载"
+      }
+    ]
+  },
+  {
+    "id": "sima-lang-217-death",
+    "personId": "sima-lang",
+    "year": 217,
+    "displayYear": "217",
+    "type": "death",
+    "title": "军中疫病去世",
+    "summary": "司马朗随军时遭遇疫病，亲自巡行医药，最终病卒。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-sima-lang",
+        "locator": "司马朗传卒年相关记载"
+      }
+    ]
+  },
+  {
+    "id": "jia-kui-174-born",
+    "personId": "jia-kui",
+    "year": 174,
+    "displayYear": "174",
+    "type": "birth",
+    "title": "贾逵出生",
+    "summary": "贾逵为河东襄陵人，少有将率之志。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-jia-kui",
+        "locator": "贾逵传年少事迹"
+      }
+    ]
+  },
+  {
+    "id": "jia-kui-202-jiangyi",
+    "personId": "jia-kui",
+    "year": 202,
+    "displayYear": "202 前后",
+    "type": "campaign",
+    "title": "守绛邑抗郭援",
+    "summary": "郭援攻河东时，贾逵坚守绛邑，被俘后不屈，以守正刚烈著称。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-jia-kui",
+        "locator": "贾逵传郭援攻河东相关记载"
+      }
+    ]
+  },
+  {
+    "id": "jia-kui-220-wei-office",
+    "personId": "jia-kui",
+    "year": 220,
+    "displayYear": "220 前后",
+    "type": "office",
+    "title": "曹魏建立后参与地方军政",
+    "summary": "曹魏建立后，贾逵继续在地方与军事岗位任职，成为魏初地方治理的重要人物。",
+    "relatedEventIds": [
+      "china-220-cao-pi-founds-wei"
+    ],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-jia-kui",
+        "locator": "贾逵传黄初仕历"
+      }
+    ]
+  },
+  {
+    "id": "jia-kui-222-east-front",
+    "personId": "jia-kui",
+    "year": 222,
+    "displayYear": "222 前后",
+    "type": "strategy",
+    "title": "东线军事政务活跃",
+    "summary": "曹魏与孙吴交兵前后，贾逵在豫州、东线方向参与防御和军政调度。",
+    "relatedEventIds": [
+      "china-222-yiling"
+    ],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-jia-kui",
+        "locator": "贾逵传东线相关记载"
+      }
+    ]
+  },
+  {
+    "id": "jia-kui-228-death",
+    "personId": "jia-kui",
+    "year": 228,
+    "displayYear": "228",
+    "type": "death",
+    "title": "贾逵去世",
+    "summary": "贾逵于太和年间去世，身后继续以刚直和治军治政见称。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-jia-kui",
+        "locator": "贾逵传卒年相关记载"
+      }
+    ]
+  },
+  {
+    "id": "wang-can-177-born",
+    "personId": "wang-can",
+    "year": 177,
+    "displayYear": "177",
+    "type": "birth",
+    "title": "王粲出生",
+    "summary": "王粲为山阳高平人，出身名族，少有文才。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-can",
+        "locator": "王粲传年少事迹"
+      }
+    ]
+  },
+  {
+    "id": "wang-can-190-changan",
+    "personId": "wang-can",
+    "year": 190,
+    "displayYear": "190 前后",
+    "type": "service",
+    "title": "长安乱局中受蔡邕赏识",
+    "summary": "献帝西迁前后，王粲至长安，蔡邕见而奇之，显示其早年文名。",
+    "relatedEventIds": [
+      "china-190-coalition-against-dong-zhuo"
+    ],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-can",
+        "locator": "王粲传蔡邕赏识相关记载"
+      }
+    ]
+  },
+  {
+    "id": "wang-can-194-jingzhou",
+    "personId": "wang-can",
+    "year": 194,
+    "displayYear": "194 前后",
+    "type": "service",
+    "title": "避乱荆州依刘表",
+    "summary": "中原丧乱中，王粲流寓荆州，依附刘表，但未被重用。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-can",
+        "locator": "王粲传依刘表相关记载"
+      }
+    ]
+  },
+  {
+    "id": "wang-can-208-liu-cong",
+    "personId": "wang-can",
+    "year": 208,
+    "displayYear": "208",
+    "type": "politics",
+    "title": "劝刘琮归曹",
+    "summary": "刘表死后，王粲劝刘琮归附曹操，使荆州士人和制度资源转入曹操集团。",
+    "relatedEventIds": [
+      "china-208-red-cliffs"
+    ],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-can",
+        "locator": "王粲传劝刘琮相关记载"
+      }
+    ]
+  },
+  {
+    "id": "wang-can-213-wei-rituals",
+    "personId": "wang-can",
+    "year": 213,
+    "displayYear": "213 前后",
+    "type": "politics",
+    "title": "参与魏国制度礼仪",
+    "summary": "魏国既建后，王粲任侍中，参与制度礼仪整理和文章制作。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-can",
+        "locator": "王粲传魏国制度礼仪相关记载"
+      }
+    ]
+  },
+  {
+    "id": "wang-can-217-death",
+    "personId": "wang-can",
+    "year": 217,
+    "displayYear": "217",
+    "type": "death",
+    "title": "王粲去世",
+    "summary": "王粲于建安二十二年去世，是建安文学群体中最重要的人物之一。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wang-can",
+        "locator": "王粲传卒年相关记载"
+      }
+    ]
+  },
+  {
+    "id": "wei-ji-168-born",
+    "personId": "wei-ji",
+    "year": 168,
+    "displayYear": "168",
+    "type": "birth",
+    "title": "卫觊出生",
+    "summary": "卫觊为河东安邑人，出身河东士人网络。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wei-ji",
+        "locator": "卫觊传年岁相关记载"
+      }
+    ]
+  },
+  {
+    "id": "wei-ji-200-guanzhong",
+    "personId": "wei-ji",
+    "year": 200,
+    "displayYear": "200 前后",
+    "type": "strategy",
+    "title": "参与关中形势议论",
+    "summary": "曹操经营关中、西线时，卫觊参与有关河东、关中秩序与地方治理的议论。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wei-ji",
+        "locator": "卫觊传关中相关记载"
+      }
+    ]
+  },
+  {
+    "id": "wei-ji-213-wei-institutions",
+    "personId": "wei-ji",
+    "year": 213,
+    "displayYear": "213 前后",
+    "type": "politics",
+    "title": "参与魏国制度建设",
+    "summary": "魏国建立前后，卫觊参与曹操集团制度、礼仪与文书事务。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wei-ji",
+        "locator": "卫觊传魏国制度相关记载"
+      }
+    ]
+  },
+  {
+    "id": "wei-ji-220-wei-office",
+    "personId": "wei-ji",
+    "year": 220,
+    "displayYear": "220",
+    "type": "office",
+    "title": "魏初位列朝臣",
+    "summary": "曹魏建立后，卫觊以文臣身份参与朝廷事务，与魏初制度建设相关。",
+    "relatedEventIds": [
+      "china-220-cao-pi-founds-wei"
+    ],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wei-ji",
+        "locator": "卫觊传黄初仕历"
+      }
+    ]
+  },
+  {
+    "id": "wei-ji-229-death",
+    "personId": "wei-ji",
+    "year": 229,
+    "displayYear": "229",
+    "type": "death",
+    "title": "卫觊去世",
+    "summary": "卫觊于魏明帝时期去世，谥敬侯。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-wei-ji",
+        "locator": "卫觊传卒年相关记载"
+      }
+    ]
+  },
+  {
     "id": "cao-pi-187-born",
     "personId": "cao-pi",
     "year": 187,
