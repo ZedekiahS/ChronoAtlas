@@ -124,6 +124,37 @@
       }
     },
     {
+      "id": "liu-cong",
+      "name": "刘琮",
+      "courtesyName": null,
+      "life": "?-?",
+      "primaryPolity": "荆州刘表集团 / 曹魏",
+      "summary": "刘表少子，建安十三年刘表卒后被拥为继承人，曹操南下时举荆州归降，直接改变赤壁前局势。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 2,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 208,
+      "lastRecordedYear": 208,
+      "sourceIds": [
+        "sanguozhi-wei-liu-biao"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-liu-biao",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "liu-zhang",
       "name": "刘璋",
       "courtesyName": "季玉",
@@ -491,6 +522,70 @@
       }
     },
     {
+      "id": "xiahou-dun",
+      "name": "夏侯惇",
+      "courtesyName": "元让",
+      "life": "?-220",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "沛国谯人，早随曹操起兵，长期承担军事和州郡事务，曹丕受禅前后位至大将军。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 194,
+      "lastRecordedYear": 220,
+      "sourceIds": [
+        "sanguozhi-wei-xiahou-dun"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-xiahou-dun",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "xiahou-yuan",
+      "name": "夏侯渊",
+      "courtesyName": "妙才",
+      "life": "?-219",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "夏侯惇族弟，随曹操起兵，官渡后督运军粮，长期负责关中、凉州、汉中方向，219 年定军山为黄忠所杀。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 200,
+      "lastRecordedYear": 219,
+      "sourceIds": [
+        "sanguozhi-shu-zhang-fei",
+        "sanguozhi-wei-wudi",
+        "sanguozhi-wei-xiahou-yuan"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-xiahou-yuan",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "jiang-wei",
       "name": "姜维",
       "courtesyName": "伯约",
@@ -521,6 +616,38 @@
           },
           {
             "sourceId": "zizhi-tongjian-78",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sun-jian",
+      "name": "孙坚",
+      "courtesyName": "文台",
+      "life": "155-191",
+      "primaryPolity": "东汉 / 孙坚集团",
+      "summary": "吴郡富春人，讨黄巾、讨董卓中成名，后与刘表作战时死于襄阳方向，是孙策、孙权江东基业的前史核心。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 155,
+      "lastRecordedYear": 191,
+      "sourceIds": [
+        "sanguozhi-wu-sun-jian",
+        "zizhi-tongjian-59"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wu-sun-jian",
             "status": "partial"
           }
         ]
@@ -599,6 +726,38 @@
           },
           {
             "sourceId": "zizhi-tongjian-81",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sun-ce",
+      "name": "孙策",
+      "courtesyName": "伯符",
+      "life": "175-200",
+      "primaryPolity": "孙策集团 / 江东",
+      "summary": "孙坚长子，依附袁术后承继父部曲，渡江开拓江东诸郡，200 年遇刺身亡，将基业交给孙权。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 2,
+      "reviewedSourceMentionCount": 2,
+      "firstRecordedYear": 175,
+      "lastRecordedYear": 200,
+      "sourceIds": [
+        "sanguozhi-wu-sun-ce",
+        "sanguozhi-wu-wuzhu"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wu-sun-ce",
             "status": "partial"
           }
         ]
@@ -706,6 +865,70 @@
           },
           {
             "sourceId": "zizhi-tongjian-58",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhang-liao",
+      "name": "张辽",
+      "courtesyName": "文远",
+      "life": "169-222",
+      "primaryPolity": "吕布集团 / 曹魏",
+      "summary": "雁门马邑人，先后从丁原、董卓、吕布，199 年下邳后归曹操，215 年合肥大破孙权军，是曹魏东线名将。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 169,
+      "lastRecordedYear": 222,
+      "sourceIds": [
+        "sanguozhi-wei-zhang-liao",
+        "sanguozhi-wu-wuzhu"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhang-liao",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhang-miao",
+      "name": "张邈",
+      "courtesyName": "孟卓",
+      "life": "?-195",
+      "primaryPolity": "陈留张邈集团",
+      "summary": "东平寿张人，早与曹操、袁绍相友并参与讨董；194 年与陈宫迎吕布入兖州，随后败亡。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 190,
+      "lastRecordedYear": 195,
+      "sourceIds": [
+        "sanguozhi-wei-wudi",
+        "sanguozhi-wei-zhang-miao"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhang-miao",
             "status": "partial"
           }
         ]
@@ -899,6 +1122,37 @@
       }
     },
     {
+      "id": "cao-ren",
+      "name": "曹仁",
+      "courtesyName": "子孝",
+      "life": "168-223",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "曹操从弟，早随曹操征伐，屡任方面统帅，江陵、襄樊等战事中承担曹魏南线防御重任。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 168,
+      "lastRecordedYear": 223,
+      "sourceIds": [
+        "sanguozhi-wei-cao-ren"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cao-ren",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "cao-cao",
       "name": "曹操",
       "courtesyName": "孟德",
@@ -937,6 +1191,38 @@
           },
           {
             "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "li-dian",
+      "name": "李典",
+      "courtesyName": "曼成",
+      "life": "?-?",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "山阳钜野人，早年随曹操集团征战，合肥之战中与张辽、乐进协同击破孙权军。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 2,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 215,
+      "lastRecordedYear": 215,
+      "sourceIds": [
+        "sanguozhi-wei-li-dian",
+        "sanguozhi-wu-wuzhu"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-li-dian",
             "status": "partial"
           }
         ]
@@ -1154,6 +1440,71 @@
           },
           {
             "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheng-yu",
+      "name": "程昱",
+      "courtesyName": "仲德",
+      "life": "141-220",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "东郡东阿人，兖州危机中与荀彧等守住鄄城、东阿等地，是曹操早期根据地得以保全的重要谋臣。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 141,
+      "lastRecordedYear": 220,
+      "sourceIds": [
+        "sanguozhi-wei-cheng-yu",
+        "sanguozhi-wei-wudi"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-cheng-yu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cheng-pu",
+      "name": "程普",
+      "courtesyName": "德谋",
+      "life": "?-?",
+      "primaryPolity": "孙坚集团 / 孙吴",
+      "summary": "右北平土垠人，历事孙坚、孙策、孙权三代，赤壁之战时与周瑜分任左右督，是江东早期宿将。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 2,
+      "reviewedSourceMentionCount": 2,
+      "firstRecordedYear": 190,
+      "lastRecordedYear": 208,
+      "sourceIds": [
+        "sanguozhi-shu-xianzhu",
+        "sanguozhi-wu-cheng-pu",
+        "sanguozhi-wu-wuzhu"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wu-cheng-pu",
             "status": "partial"
           }
         ]
@@ -1611,12 +1962,13 @@
       "summary": "初与曹操有交集，后与张邈等迎吕布入兖州，成为吕布集团重要谋士；下邳败亡后被曹操处死。",
       "coverageStatus": "partial",
       "lifeEventCount": 3,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
       "firstRecordedYear": 194,
       "lastRecordedYear": 199,
       "sourceIds": [
         "sanguozhi-wei-lubu",
+        "sanguozhi-wei-wudi",
         "zizhi-tongjian-59"
       ],
       "coverage": {
@@ -1717,6 +2069,37 @@
       }
     },
     {
+      "id": "ma-su",
+      "name": "马谡",
+      "courtesyName": "幼常",
+      "life": "190-228",
+      "primaryPolity": "蜀汉",
+      "summary": "襄阳宜城人，马良之弟，以才器和谈兵受诸葛亮器重；228 年街亭失守后被处置，是蜀汉第一次北伐失败的关键人物。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 190,
+      "lastRecordedYear": 228,
+      "sourceIds": [
+        "sanguozhi-shu-ma-liang"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-ma-liang",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "ma-chao",
       "name": "马超",
       "courtesyName": "孟起",
@@ -1789,6 +2172,39 @@
           },
           {
             "sourceId": "sanguozhi-wei-zhang-he",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wei-yan",
+      "name": "魏延",
+      "courtesyName": "文长",
+      "life": "?-234",
+      "primaryPolity": "刘备集团 / 蜀汉",
+      "summary": "义阳人，随刘备入蜀，219 年被拔为汉中都督，后长期随诸葛亮北伐，234 年诸葛亮死后与杨仪冲突败亡。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 3,
+      "reviewedSourceMentionCount": 3,
+      "firstRecordedYear": 219,
+      "lastRecordedYear": 234,
+      "sourceIds": [
+        "sanguozhi-shu-wei-yan",
+        "sanguozhi-shu-xianzhu",
+        "sanguozhi-shu-zhuge-liang"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-wei-yan",
             "status": "partial"
           }
         ]

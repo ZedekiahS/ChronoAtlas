@@ -352,5 +352,122 @@
     "type": "official-history",
     "citationShort": "《晋书》杜预、王濬传",
     "note": "记录西晋灭吴前后荆州、益州水陆并进部署和主要将领事迹。"
+  },
+  {
+    "id": "sanguozhi-wei-zhang-liao",
+    "title": "三国志·魏书·张辽传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·张辽传》",
+    "note": "张辽主传，记录其从丁原、董卓、吕布到归曹，以及合肥战事和去世。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602710&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-xiahou-dun",
+    "title": "三国志·魏书·夏侯惇传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·夏侯惇传》",
+    "note": "夏侯惇主传，记录其早年从曹操征伐、濮阳守备与曹魏初年的地位。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602330&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-xiahou-yuan",
+    "title": "三国志·魏书·夏侯渊传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·夏侯渊传》",
+    "note": "夏侯渊主传，记录其随曹操起兵、督运军粮、西线作战和定军山败亡。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602336&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cao-ren",
+    "title": "三国志·魏书·曹仁传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·曹仁传》",
+    "note": "曹仁主传，记录其从曹操起兵、征徐州、守江陵和襄樊等战事。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602347&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-li-dian",
+    "title": "三国志·魏书·李典传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·李典传》",
+    "note": "李典主传，记录其山阳钜野出身、从曹操征伐和合肥战事。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602744&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-cheng-yu",
+    "title": "三国志·魏书·程昱传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·程昱传》",
+    "note": "程昱主传，记录其东阿守城、兖州危机中保全根据地和曹魏任职。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602564&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zhang-miao",
+    "title": "三国志·魏书·张邈传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·张邈传》",
+    "note": "张邈主传，记录其与曹操、袁绍关系，讨董、陈留太守和迎吕布入兖州。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602269&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-liu-biao",
+    "title": "三国志·魏书·刘表传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·刘表传》",
+    "note": "刘表传，记录荆州刘表集团、刘琦刘琮继承问题和建安十三年降曹。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602253&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wu-sun-jian",
+    "title": "三国志·吴书·孙坚传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·吴书·孙坚传》",
+    "note": "孙坚主传，记录其讨黄巾、讨董卓、江东孙氏基业前史和襄阳战死。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603890&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wu-sun-ce",
+    "title": "三国志·吴书·孙策传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·吴书·孙策传》",
+    "note": "孙策主传，记录其承继孙坚部曲、依附袁术、开拓江东和遇刺早亡。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603898&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wu-cheng-pu",
+    "title": "三国志·吴书·程普传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·吴书·程普传》",
+    "note": "程普主传，记录其随孙坚、孙策、孙权三代作战和赤壁时任右督。",
+    "url": "https://ctext.org/text.pl?if=gb&node=604240&remap=gb"
+  },
+  {
+    "id": "sanguozhi-shu-ma-liang",
+    "title": "三国志·蜀书·马良传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·蜀书·马良传》",
+    "note": "马良传附马谡事迹，记录马氏兄弟、马谡受诸葛亮器重和街亭失败。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603623&remap=gb"
+  },
+  {
+    "id": "sanguozhi-shu-wei-yan",
+    "title": "三国志·蜀书·魏延传",
+    "author": "陈寿",
+    "type": "official-history",
+    "citationShort": "《三国志·蜀书·魏延传》",
+    "note": "魏延主传，记录其随刘备入蜀、镇守汉中、随诸葛亮北伐和五丈原后败亡。",
+    "url": "https://ctext.org/text.pl?if=gb&node=603669&remap=gb"
   }
 ]

@@ -3639,5 +3639,748 @@
         "quote": "五年，率诸军北驻汉中，临发，上疏曰。"
       }
     ]
+  },
+  {
+    "id": "zhang-liao-169-born",
+    "personId": "zhang-liao",
+    "year": 169,
+    "displayYear": "169",
+    "type": "birth",
+    "title": "张辽出生",
+    "summary": "据张辽随吕布东奔徐州时“时年二十八”推算，张辽约生于 169 年。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-liao",
+        "locator": "张辽传",
+        "quote": "从布东奔徐州，领鲁相，时年二十八。"
+      }
+    ]
+  },
+  {
+    "id": "zhang-liao-199-surrender",
+    "personId": "zhang-liao",
+    "year": 199,
+    "displayYear": "199",
+    "type": "turning-point",
+    "title": "下邳后率众降曹",
+    "summary": "曹操攻破吕布于下邳后，张辽率部归降，被拜中郎将、赐爵关内侯。",
+    "relatedEventIds": ["china-199-lu-bu-defeated"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-liao",
+        "locator": "张辽传",
+        "quote": "太祖破吕布于下邳，辽将其众降，拜中郎将，赐爵关内侯。"
+      }
+    ]
+  },
+  {
+    "id": "zhang-liao-215-hefei",
+    "personId": "zhang-liao",
+    "year": 215,
+    "displayYear": "215",
+    "type": "campaign",
+    "title": "合肥击破孙权军",
+    "summary": "孙权围合肥时，张辽与李典等守军出击，成为曹魏东线防御的代表性战绩。",
+    "relatedEventIds": [],
+    "sourceMentionIds": ["mention-sgz-wu-wuzhu-sun-quan-hefei"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-liao",
+        "locator": "张辽传合肥战事"
+      },
+      {
+        "sourceId": "sanguozhi-wu-wuzhu",
+        "locator": "建安二十年八月"
+      }
+    ]
+  },
+  {
+    "id": "zhang-liao-222-death",
+    "personId": "zhang-liao",
+    "year": 222,
+    "displayYear": "222",
+    "type": "death",
+    "title": "张辽去世",
+    "summary": "黄初三年，张辽去世，曹魏追念其合肥功绩。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-liao",
+        "locator": "张辽传"
+      }
+    ]
+  },
+  {
+    "id": "xiahou-yuan-unknown-birth",
+    "personId": "xiahou-yuan",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "夏侯渊早年纪年不详",
+    "summary": "夏侯渊早年事迹以随曹操起兵为可追踪起点，生年不详。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xiahou-yuan",
+        "locator": "夏侯渊传"
+      }
+    ]
+  },
+  {
+    "id": "xiahou-yuan-200-guandu-supply",
+    "personId": "xiahou-yuan",
+    "year": 200,
+    "displayYear": "200",
+    "type": "service",
+    "title": "官渡后督运军粮",
+    "summary": "官渡战后，夏侯渊督兖、豫、徐州军粮，帮助曹军恢复供给。",
+    "relatedEventIds": ["china-200-guandu"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xiahou-yuan",
+        "locator": "夏侯渊传",
+        "quote": "绍破，使督兖、豫、徐州军粮；时军食少，渊传馈相继，军以复振。"
+      }
+    ]
+  },
+  {
+    "id": "xiahou-yuan-219-death",
+    "personId": "xiahou-yuan",
+    "year": 219,
+    "displayYear": "219",
+    "type": "death",
+    "title": "定军山战死",
+    "summary": "汉中战局中，夏侯渊在定军山为黄忠所杀，曹魏汉中防线受到重创。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xiahou-yuan",
+        "locator": "夏侯渊传"
+      },
+      {
+        "sourceId": "sanguozhi-shu-zhang-fei",
+        "locator": "黄忠传"
+      }
+    ]
+  },
+  {
+    "id": "ma-su-190-born",
+    "personId": "ma-su",
+    "year": 190,
+    "displayYear": "190",
+    "type": "birth",
+    "title": "马谡出生",
+    "summary": "马谡为襄阳宜城人，马良之弟，生年据后世通行纪年暂定为 190 年。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-ma-liang",
+        "locator": "马良传附马谡"
+      }
+    ]
+  },
+  {
+    "id": "ma-su-223-liu-bei-warning",
+    "personId": "ma-su",
+    "year": 223,
+    "displayYear": "223",
+    "type": "politics",
+    "title": "刘备临终提醒不可大用",
+    "summary": "刘备临终对诸葛亮评价马谡“言过其实，不可大用”，成为后续街亭事件的重要前史。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-ma-liang",
+        "locator": "马良传附马谡",
+        "quote": "先主临薨谓亮曰：“马谡言过其实，不可大用，君其察之！”"
+      }
+    ]
+  },
+  {
+    "id": "ma-su-228-jieting",
+    "personId": "ma-su",
+    "year": 228,
+    "displayYear": "228",
+    "type": "campaign",
+    "title": "街亭失守后被处置",
+    "summary": "诸葛亮第一次北伐时，马谡违亮节度，举动失宜，街亭失守后被下狱处置。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-ma-liang",
+        "locator": "马良传附马谡",
+        "quote": "谡违亮节度，举动失宜，大为郃所破。亮进无所据，退军还汉中。谡下狱物故。"
+      }
+    ]
+  },
+  {
+    "id": "sun-ce-175-born",
+    "personId": "sun-ce",
+    "year": 175,
+    "displayYear": "175",
+    "type": "birth",
+    "title": "孙策出生",
+    "summary": "孙策为孙坚长子，字伯符，后承继父部曲开拓江东。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-sun-ce",
+        "locator": "孙策传"
+      }
+    ]
+  },
+  {
+    "id": "sun-ce-194-yuan-shu",
+    "personId": "sun-ce",
+    "year": 194,
+    "displayYear": "194",
+    "type": "service",
+    "title": "依附袁术并承继父部曲",
+    "summary": "孙策从袁术，袁术以孙坚旧部还给孙策，成为其江东扩张的军事基础。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-sun-ce",
+        "locator": "孙策传",
+        "quote": "兴平元年，从袁术。术甚奇之，以坚部曲还策。"
+      }
+    ]
+  },
+  {
+    "id": "sun-ce-200-death",
+    "personId": "sun-ce",
+    "year": 200,
+    "displayYear": "200",
+    "type": "death",
+    "title": "遇刺身亡并托付孙权",
+    "summary": "孙策遇刺后伤重去世，将江东基业托付给弟弟孙权。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-sun-ce",
+        "locator": "孙策传"
+      },
+      {
+        "sourceId": "sanguozhi-wu-wuzhu",
+        "locator": "建安五年孙策卒后"
+      }
+    ]
+  },
+  {
+    "id": "cheng-pu-unknown-birth",
+    "personId": "cheng-pu",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "右北平土垠人",
+    "summary": "程普为右北平土垠人，早年为州郡吏，生年不详。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-cheng-pu",
+        "locator": "程普传",
+        "quote": "程普字德谋，右北平土垠人也。"
+      }
+    ]
+  },
+  {
+    "id": "cheng-pu-190-sun-jian",
+    "personId": "cheng-pu",
+    "year": 190,
+    "displayYear": "190 前后",
+    "type": "campaign",
+    "title": "随孙坚征伐",
+    "summary": "程普早年随孙坚讨黄巾、破董卓于阳人，屡经攻城野战。",
+    "relatedEventIds": ["china-190-coalition-against-dong-zhuo"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-cheng-pu",
+        "locator": "程普传",
+        "quote": "从孙坚征伐，讨黄巾于宛、邓，破董卓于阳人，攻城野战，身被创夷。"
+      }
+    ]
+  },
+  {
+    "id": "cheng-pu-208-red-cliffs",
+    "personId": "cheng-pu",
+    "year": 208,
+    "displayYear": "208",
+    "type": "campaign",
+    "title": "赤壁之战任右督",
+    "summary": "赤壁之战中，程普与周瑜分任左右督，率军与刘备并力击破曹操。",
+    "relatedEventIds": ["china-208-red-cliffs"],
+    "sourceMentionIds": ["mention-sgz-wu-wuzhu-sun-quan-red-cliffs", "mention-sgz-shu-xianzhu-liu-bei-red-cliffs"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-cheng-pu",
+        "locator": "程普传"
+      },
+      {
+        "sourceId": "sanguozhi-wu-wuzhu",
+        "locator": "建安十三年"
+      }
+    ]
+  },
+  {
+    "id": "li-dian-unknown-birth",
+    "personId": "li-dian",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "山阳钜野人",
+    "summary": "李典为山阳钜野人，早期随曹操集团征战，生卒年暂不定。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-li-dian",
+        "locator": "李典传",
+        "quote": "李典字曼成，山阳钜野人也。"
+      }
+    ]
+  },
+  {
+    "id": "li-dian-215-hefei",
+    "personId": "li-dian",
+    "year": 215,
+    "displayYear": "215",
+    "type": "campaign",
+    "title": "合肥协同击退孙权",
+    "summary": "孙权围合肥时，李典与张辽等协同出击击退孙权军。",
+    "relatedEventIds": [],
+    "sourceMentionIds": ["mention-sgz-wu-wuzhu-sun-quan-hefei"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-li-dian",
+        "locator": "李典传"
+      },
+      {
+        "sourceId": "sanguozhi-wu-wuzhu",
+        "locator": "建安二十年八月"
+      }
+    ]
+  },
+  {
+    "id": "xiahou-dun-unknown-birth",
+    "personId": "xiahou-dun",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "沛国谯人，早随曹操",
+    "summary": "夏侯惇为沛国谯人，曹操初起时即常为裨将从征伐，生年不详。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xiahou-dun",
+        "locator": "夏侯惇传"
+      }
+    ]
+  },
+  {
+    "id": "xiahou-dun-194-puyang",
+    "personId": "xiahou-dun",
+    "year": 194,
+    "displayYear": "194",
+    "type": "campaign",
+    "title": "濮阳守备与兖州危机",
+    "summary": "张邈迎吕布入兖州时，夏侯惇赴鄄城方向支援曹操家属和据点。",
+    "relatedEventIds": ["china-194-lu-bu-seizes-yan"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xiahou-dun",
+        "locator": "夏侯惇传"
+      }
+    ]
+  },
+  {
+    "id": "xiahou-dun-220-death",
+    "personId": "xiahou-dun",
+    "year": 220,
+    "displayYear": "220",
+    "type": "death",
+    "title": "夏侯惇去世",
+    "summary": "曹丕即王位后，夏侯惇位至大将军，同年去世。",
+    "relatedEventIds": ["china-220-cao-pi-founds-wei"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xiahou-dun",
+        "locator": "夏侯惇传"
+      }
+    ]
+  },
+  {
+    "id": "cao-ren-168-born",
+    "personId": "cao-ren",
+    "year": 168,
+    "displayYear": "168",
+    "type": "birth",
+    "title": "曹仁出生",
+    "summary": "曹仁为曹操从弟，后成为曹魏宗亲方面统帅。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-ren",
+        "locator": "曹仁传"
+      }
+    ]
+  },
+  {
+    "id": "cao-ren-194-xuzhou",
+    "personId": "cao-ren",
+    "year": 194,
+    "displayYear": "194 前后",
+    "type": "campaign",
+    "title": "随曹操征徐州",
+    "summary": "曹仁随曹操征徐州，常督骑为军前锋，成为曹操早期骑兵将领。",
+    "relatedEventIds": ["china-194-tao-qian-yields-xuzhou"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-ren",
+        "locator": "曹仁传",
+        "quote": "从征徐州，仁常督骑，为军前锋。"
+      }
+    ]
+  },
+  {
+    "id": "cao-ren-223-death",
+    "personId": "cao-ren",
+    "year": 223,
+    "displayYear": "223",
+    "type": "death",
+    "title": "曹仁去世",
+    "summary": "曹仁在曹魏建立后继续任宗亲重将，223 年去世。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-ren",
+        "locator": "曹仁传"
+      }
+    ]
+  },
+  {
+    "id": "zhang-miao-unknown-birth",
+    "personId": "zhang-miao",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "东平寿张人",
+    "summary": "张邈为东平寿张人，少以侠闻，早年与曹操、袁绍相友，生年不详。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-miao",
+        "locator": "张邈传"
+      }
+    ]
+  },
+  {
+    "id": "zhang-miao-190-coalition",
+    "personId": "zhang-miao",
+    "year": 190,
+    "displayYear": "190",
+    "type": "politics",
+    "title": "与曹操首举义兵讨董",
+    "summary": "董卓之乱时，张邈作为陈留太守参与关东联军，与曹操关系密切。",
+    "relatedEventIds": ["china-190-coalition-against-dong-zhuo"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-miao",
+        "locator": "张邈传"
+      }
+    ]
+  },
+  {
+    "id": "zhang-miao-194-betrayal",
+    "personId": "zhang-miao",
+    "year": 194,
+    "displayYear": "194",
+    "type": "turning-point",
+    "title": "迎吕布入兖州",
+    "summary": "曹操征陶谦期间，张邈与陈宫迎吕布入兖州，使曹操早期根据地陷入危机。",
+    "relatedEventIds": ["china-194-lu-bu-seizes-yan"],
+    "sourceMentionIds": ["mention-sgz-wei-wudi-cao-cao-yanzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-miao",
+        "locator": "张邈传"
+      }
+    ]
+  },
+  {
+    "id": "zhang-miao-195-death",
+    "personId": "zhang-miao",
+    "year": 195,
+    "displayYear": "195 前后",
+    "type": "death",
+    "title": "败亡",
+    "summary": "兖州局势逆转后，张邈势力败亡，张邈本人在求援途中被部下所杀。",
+    "relatedEventIds": ["china-194-lu-bu-seizes-yan"],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhang-miao",
+        "locator": "张邈传"
+      }
+    ]
+  },
+  {
+    "id": "cheng-yu-141-born",
+    "personId": "cheng-yu",
+    "year": 141,
+    "displayYear": "141",
+    "type": "birth",
+    "title": "程昱出生",
+    "summary": "程昱为东郡东阿人，字仲德，后成为曹操早期重要谋臣。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cheng-yu",
+        "locator": "程昱传"
+      }
+    ]
+  },
+  {
+    "id": "cheng-yu-194-yan",
+    "personId": "cheng-yu",
+    "year": 194,
+    "displayYear": "194",
+    "type": "service",
+    "title": "兖州危机中保东阿",
+    "summary": "张邈、陈宫迎吕布入兖州时，程昱与荀彧等保鄄城、范、东阿，使曹操得以回军恢复根据地。",
+    "relatedEventIds": ["china-194-lu-bu-seizes-yan"],
+    "sourceMentionIds": ["mention-sgz-wei-wudi-cao-cao-yanzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cheng-yu",
+        "locator": "程昱传"
+      }
+    ]
+  },
+  {
+    "id": "cheng-yu-220-death",
+    "personId": "cheng-yu",
+    "year": 220,
+    "displayYear": "220",
+    "type": "death",
+    "title": "程昱去世",
+    "summary": "程昱在曹魏建立前后去世，年八十。",
+    "relatedEventIds": ["china-220-cao-pi-founds-wei"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cheng-yu",
+        "locator": "程昱传"
+      }
+    ]
+  },
+  {
+    "id": "liu-cong-unknown-birth",
+    "personId": "liu-cong",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "刘表少子",
+    "summary": "刘琮为刘表少子，生年不详，主要事迹集中于刘表卒后继承荆州与降曹。",
+    "relatedEventIds": [],
+    "confidence": "low",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-biao",
+        "locator": "刘表传刘琮相关记载"
+      }
+    ]
+  },
+  {
+    "id": "liu-cong-208-surrender",
+    "personId": "liu-cong",
+    "year": 208,
+    "displayYear": "208",
+    "type": "turning-point",
+    "title": "继承荆州并举州降曹",
+    "summary": "刘表去世后，刘琮被拥立为继承人；曹操南下至襄阳时，刘琮举州归降。",
+    "relatedEventIds": ["china-208-red-cliffs"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-biao",
+        "locator": "刘表传",
+        "quote": "太祖军到襄阳，琮举州降。备走奔夏口。"
+      }
+    ]
+  },
+  {
+    "id": "sun-jian-155-born",
+    "personId": "sun-jian",
+    "year": 155,
+    "displayYear": "155",
+    "type": "birth",
+    "title": "孙坚出生",
+    "summary": "孙坚为吴郡富春人，字文台，后成为江东孙氏政治军事基业的奠基者。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-sun-jian",
+        "locator": "孙坚传"
+      }
+    ]
+  },
+  {
+    "id": "sun-jian-184-yellow-turban",
+    "personId": "sun-jian",
+    "year": 184,
+    "displayYear": "184",
+    "type": "campaign",
+    "title": "参与讨黄巾",
+    "summary": "黄巾起义爆发后，孙坚随朱儁等讨击黄巾，因战功被拜别部司马。",
+    "relatedEventIds": ["china-184-yellow-turban-rebellion"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-sun-jian",
+        "locator": "孙坚传"
+      }
+    ]
+  },
+  {
+    "id": "sun-jian-190-coalition",
+    "personId": "sun-jian",
+    "year": 190,
+    "displayYear": "190-191",
+    "type": "campaign",
+    "title": "讨董卓并进逼洛阳",
+    "summary": "关东讨董期间，孙坚为袁术前锋方向的重要战力，在阳人等地击破董卓军。",
+    "relatedEventIds": ["china-190-coalition-against-dong-zhuo"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-sun-jian",
+        "locator": "孙坚传"
+      },
+      {
+        "sourceId": "zizhi-tongjian-59",
+        "locator": "初平元年至二年"
+      }
+    ]
+  },
+  {
+    "id": "sun-jian-191-death",
+    "personId": "sun-jian",
+    "year": 191,
+    "displayYear": "191",
+    "type": "death",
+    "title": "襄阳方向战死",
+    "summary": "孙坚攻刘表方向时遇黄祖部曲，死于襄阳战事，其旧部和政治遗产后来由孙策继承。",
+    "relatedEventIds": [],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wu-sun-jian",
+        "locator": "孙坚传"
+      }
+    ]
+  },
+  {
+    "id": "wei-yan-unknown-birth",
+    "personId": "wei-yan",
+    "year": null,
+    "displayYear": "生年不详",
+    "type": "birth",
+    "title": "义阳人，早随刘备入蜀",
+    "summary": "魏延为义阳人，以部曲随刘备入蜀，生年不详。",
+    "relatedEventIds": [],
+    "confidence": "medium",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-wei-yan",
+        "locator": "魏延传"
+      }
+    ]
+  },
+  {
+    "id": "wei-yan-219-hanzhong",
+    "personId": "wei-yan",
+    "year": 219,
+    "displayYear": "219",
+    "type": "office",
+    "title": "拔为汉中都督",
+    "summary": "刘备称汉中王后，出乎众议拔魏延为督汉中镇远将军、领汉中太守。",
+    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-wei-yan",
+        "locator": "魏延传",
+        "quote": "先主乃拔延为督汉中镇远将军，领汉中太守，一军尽惊。"
+      }
+    ]
+  },
+  {
+    "id": "wei-yan-227-northern-expeditions",
+    "personId": "wei-yan",
+    "year": 227,
+    "endYear": 234,
+    "displayYear": "227-234",
+    "type": "campaign",
+    "title": "随诸葛亮北伐",
+    "summary": "诸葛亮驻汉中后，魏延为督前部、丞相司马等，多次随军北伐并提出异道进兵设想。",
+    "relatedEventIds": ["china-234-wuzhang-plains"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-wei-yan",
+        "locator": "魏延传"
+      },
+      {
+        "sourceId": "sanguozhi-shu-zhuge-liang",
+        "locator": "诸葛亮北伐相关记载"
+      }
+    ]
+  },
+  {
+    "id": "wei-yan-234-death",
+    "personId": "wei-yan",
+    "year": 234,
+    "displayYear": "234",
+    "type": "death",
+    "title": "五丈原后败亡",
+    "summary": "诸葛亮死后，魏延与杨仪冲突，最终败亡并被诛。",
+    "relatedEventIds": ["china-234-wuzhang-plains"],
+    "confidence": "high",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-shu-wei-yan",
+        "locator": "魏延传"
+      }
+    ]
   }
 ]
