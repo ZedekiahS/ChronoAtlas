@@ -150,6 +150,19 @@ type PersonRelation = {
   sourceRefs: SourceRef[];
 };
 
+type FocusLifeEvent = {
+  inferred: boolean;
+  lifeEvent: PersonLifeEvent;
+  person: HistoricalPerson;
+  rank: number;
+};
+
+type PersonAnnualTimelineItem = {
+  activities: PersonLifeEvent[];
+  inferredFrom?: PersonLifeEvent;
+  year: number;
+};
+
 type Page = "world" | "china" | "people";
 type ChinaMapMode = "political" | "terrain" | "three-d";
 type ThreeKingdomsFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "war" | "politics";
@@ -381,7 +394,7 @@ const eventDetailTabs: Array<{
 const yearMin = 190;
 const yearMax = 280;
 const worldComparisonRegionOrder: Region[] = ["china", "rome", "sasanian-persia", "india"];
-const chinaFocusPersonIds = ["cao-cao", "liu-bei", "sun-quan"];
+const chinaFocusPersonIds = ["cao-cao", "sun-quan", "liu-bei"];
 
 const eventImportanceLabels: Record<EventImportance, string> = {
   major: "大型事件",
@@ -453,17 +466,117 @@ function isLifeEventInYear(lifeEvent: PersonLifeEvent, year: number) {
   return startYear <= year && endYear >= year;
 }
 
+function getLifeEventStartYear(lifeEvent: PersonLifeEvent) {
+  return Number.isInteger(lifeEvent.year) ? (lifeEvent.year as number) : null;
+}
+
+function getRelevantLifeEventForYear(personId: string, year: number): FocusLifeEvent | null {
+  const person = chinaPersonById.get(personId);
+
+  if (!person) {
+    return null;
+  }
+
+  const personLifeEvents = chinaPersonLifeEvents
+    .filter((lifeEvent) => lifeEvent.personId === personId && Number.isInteger(lifeEvent.year))
+    .sort((left, right) => getLifeEventSortValue(left) - getLifeEventSortValue(right) || left.displayYear.localeCompare(right.displayYear));
+  const activeLifeEvent = personLifeEvents.find((lifeEvent) => isLifeEventInYear(lifeEvent, year));
+
+  if (activeLifeEvent) {
+    return {
+      inferred: false,
+      lifeEvent: activeLifeEvent,
+      person,
+      rank: chinaFocusPersonIds.indexOf(personId),
+    };
+  }
+
+  const previousLifeEvent = [...personLifeEvents]
+    .reverse()
+    .find((lifeEvent) => {
+      const startYear = getLifeEventStartYear(lifeEvent);
+      const endYear = getLifeEventEndYear(lifeEvent) ?? startYear;
+      return (
+        startYear !== null &&
+        endYear !== null &&
+        endYear < year &&
+        year - endYear <= 10 &&
+        !["birth", "death", "later-tradition"].includes(lifeEvent.type)
+      );
+    });
+
+  if (!previousLifeEvent) {
+    return null;
+  }
+
+  return {
+    inferred: true,
+    lifeEvent: previousLifeEvent,
+    person,
+    rank: chinaFocusPersonIds.indexOf(personId),
+  };
+}
+
 function getChinaFocusLifeEvents(year: number) {
-  return chinaPersonLifeEvents
-    .filter((lifeEvent) => chinaFocusPersonIds.includes(lifeEvent.personId) && isLifeEventInYear(lifeEvent, year))
-    .map((lifeEvent) => ({
-      lifeEvent,
-      person: chinaPersonById.get(lifeEvent.personId),
-      rank: chinaFocusPersonIds.indexOf(lifeEvent.personId),
-    }))
-    .filter((item) => item.person)
+  return chinaFocusPersonIds
+    .map((personId) => getRelevantLifeEventForYear(personId, year))
+    .filter((item): item is FocusLifeEvent => Boolean(item))
     .sort((left, right) => left.rank - right.rank || getLifeEventSortValue(left.lifeEvent) - getLifeEventSortValue(right.lifeEvent))
-    .slice(0, 4);
+    .slice(0, 3);
+}
+
+function getPersonLifeRange(person: HistoricalPerson, lifeEvents: PersonLifeEvent[]) {
+  const lifeMatch = person.life?.match(/^(\d{1,4}|\?)-(\d{1,4}|\?)$/);
+  const knownYears = lifeEvents
+    .flatMap((lifeEvent) => [getLifeEventStartYear(lifeEvent), getLifeEventEndYear(lifeEvent)])
+    .filter((item): item is number => Number.isInteger(item));
+  const parsedStart = lifeMatch?.[1] && lifeMatch[1] !== "?" ? Number(lifeMatch[1]) : null;
+  const parsedEnd = lifeMatch?.[2] && lifeMatch[2] !== "?" ? Number(lifeMatch[2]) : null;
+  const startYear = parsedStart ?? (knownYears.length ? Math.min(...knownYears) : null);
+  const endYear = parsedEnd ?? (knownYears.length ? Math.max(...knownYears) : null);
+
+  if (startYear === null || endYear === null || startYear > endYear) {
+    return null;
+  }
+
+  return { startYear, endYear };
+}
+
+function getPersonAnnualTimeline(person: HistoricalPerson, lifeEvents: PersonLifeEvent[]) {
+  const range = getPersonLifeRange(person, lifeEvents);
+
+  if (!range) {
+    return [];
+  }
+
+  const sortedLifeEvents = [...lifeEvents].sort(
+    (left, right) => getLifeEventSortValue(left) - getLifeEventSortValue(right) || left.displayYear.localeCompare(right.displayYear),
+  );
+  const items: PersonAnnualTimelineItem[] = [];
+
+  for (let year = range.startYear; year <= range.endYear; year += 1) {
+    const activities = sortedLifeEvents.filter((lifeEvent) => isLifeEventInYear(lifeEvent, year));
+    const inferredFrom =
+      activities.length > 0
+        ? undefined
+        : [...sortedLifeEvents]
+            .reverse()
+            .find((lifeEvent) => {
+              const startYear = getLifeEventStartYear(lifeEvent);
+              const endYear = getLifeEventEndYear(lifeEvent) ?? startYear;
+              return (
+                startYear !== null &&
+                endYear !== null &&
+                endYear < year &&
+                year - endYear <= 10 &&
+                !["birth", "death", "later-tradition"].includes(lifeEvent.type)
+              );
+            });
+
+    items.push({ activities, inferredFrom, year });
+  }
+
+  return items;
 }
 
 function eventMatchesQuery(event: HistoricalEvent, normalizedQuery: string) {
@@ -1012,7 +1125,7 @@ function getRegionSummary(region: RegionInfo, regionEvents: HistoricalEvent[], y
     .sort(sortEventsByYearThenTitle);
 
   if (!yearEvents.length) {
-    return `${year} 年：暂无已整理大事。${era.summary}`;
+    return `${year} 年背景：${era.summary}`;
   }
 
   return `${year} 年：${yearEvents.map((event) => event.title).join("；")}。${era.summary}`;
@@ -1542,6 +1655,23 @@ function App() {
   const summaryRegionInfo = regions.find((region) => region.id === summaryRegion);
   const inspectedRegion = hoverRegionInfo ?? summaryRegionInfo;
   const inspectedEra = inspectedRegion ? getRegionEra(inspectedRegion, year) : null;
+  const inspectedRegionCurrentEventCount = inspectedRegion ? (currentYearRegionCounts[inspectedRegion.id] ?? 0) : 0;
+  const inspectedRegionHiddenMediumCount =
+    inspectedRegion && !showMediumEvents
+      ? matchingEvents.filter(
+          (event) =>
+            event.region === inspectedRegion.id &&
+            isPinnedToYear(event, year) &&
+            getEventImportance(event) === "medium",
+        ).length
+      : 0;
+  const inspectedRegionMetaLabel = inspectedRegionCurrentEventCount
+    ? `${inspectedRegionCurrentEventCount} 个本年事件`
+    : inspectedRegionHiddenMediumCount
+      ? `${inspectedRegionHiddenMediumCount} 个中型事件`
+      : inspectedRegion?.id === "china"
+        ? "曹孙刘动向"
+        : "时代背景";
   const selectedRegionEra = getRegionEra(selectedRegionInfo, year);
   const chinaRegionInfo = regions.find((region) => region.id === "china")!;
   const chinaRegionEra = getRegionEra(chinaRegionInfo, year);
@@ -1564,12 +1694,28 @@ function App() {
       ? matchingEvents.filter((event) => isPinnedToYear(event, year) && shouldShowWorldEvent(event, showMediumEvents))
       : visibleEvents
   ).filter((event) => event.region === selectedRegion);
+  const selectedRegionHiddenMediumEvents =
+    page === "world" && !showMediumEvents
+      ? matchingEvents
+          .filter(
+            (event) =>
+              event.region === selectedRegion &&
+              isPinnedToYear(event, year) &&
+              getEventImportance(event) === "medium",
+          )
+          .sort(sortEventsByYearThenTitle)
+      : [];
   const filteredRegionEvents =
     selectedRegion === "china"
       ? selectedRegionEvents.filter((event) => matchesThreeKingdomsFilter(event, eventFilter))
       : selectedRegionEvents;
   const selectedRegionFocusLifeEvents =
-    page === "world" && selectedRegion === "china" && filteredRegionEvents.length === 0 ? getChinaFocusLifeEvents(year) : [];
+    page === "world" &&
+    selectedRegion === "china" &&
+    filteredRegionEvents.length === 0 &&
+    selectedRegionHiddenMediumEvents.length === 0
+      ? getChinaFocusLifeEvents(year)
+      : [];
   const eventFilterCounts = Object.fromEntries(
     threeKingdomsFilters.map((filter) => [
       filter.id,
@@ -1604,6 +1750,7 @@ function App() {
         .filter((lifeEvent) => lifeEvent.personId === selectedPerson.id)
         .sort((left, right) => getLifeEventSortValue(left) - getLifeEventSortValue(right) || left.displayYear.localeCompare(right.displayYear))
     : [];
+  const selectedPersonAnnualTimeline = selectedPerson ? getPersonAnnualTimeline(selectedPerson, selectedPersonLifeEvents) : [];
   const relationshipGraphNodes = selectedPerson
     ? selectedPersonRelations.slice(0, 6).map((relation, index, relations) => {
         const isSource = relation.sourcePersonId === selectedPerson.id;
@@ -1972,7 +2119,7 @@ function App() {
               </p>
               <div className="summary-meta">
                 <span>{inspectedEra.title}</span>
-                <strong>{currentYearRegionCounts[inspectedRegion.id]} 个本年事件</strong>
+                <strong>{inspectedRegionMetaLabel}</strong>
               </div>
             </aside>
           )}
@@ -2069,8 +2216,8 @@ function App() {
                           : item.hiddenMediumEvents.length
                             ? `${item.hiddenMediumEvents.length} 件中型事件`
                             : item.focusLifeEvents.length
-                              ? "主角动向"
-                              : "本年无大事"}
+                              ? "曹孙刘动向"
+                              : "时代背景"}
                       </strong>
                     </div>
                     <div className="comparison-era">
@@ -2078,7 +2225,15 @@ function App() {
                       <p>{item.era.summary}</p>
                     </div>
                     <div className={`comparison-event ${item.yearEvents.length ? "" : "empty"}`}>
-                      <span>{item.yearEvents.length ? "本年事件" : item.focusLifeEvents.length ? "主角动向" : "本年大事"}</span>
+                      <span>
+                        {item.yearEvents.length
+                          ? "本年事件"
+                          : item.hiddenMediumEvents.length
+                            ? "中型事件"
+                            : item.focusLifeEvents.length
+                              ? "曹孙刘动向"
+                              : "时代背景"}
+                      </span>
                       {item.yearEvents.length ? (
                         <div className="comparison-event-list">
                           {item.yearEvents.slice(0, 3).map((event) => (
@@ -2098,19 +2253,22 @@ function App() {
                         </>
                       ) : item.focusLifeEvents.length ? (
                         <div className="comparison-event-list">
-                          {item.focusLifeEvents.map(({ lifeEvent, person }) => (
+                          {item.focusLifeEvents.map(({ inferred, lifeEvent, person }) => (
                             <div className="comparison-event-item focus-note" key={lifeEvent.id}>
                               <strong>
-                                {person?.name}：{lifeEvent.title}
+                                {person.name}：{lifeEvent.title}
                               </strong>
-                              <small>{lifeEvent.summary}</small>
+                              <small>
+                                {inferred ? "延续上一阶段：" : ""}
+                                {lifeEvent.summary}
+                              </small>
                             </div>
                           ))}
                         </div>
                       ) : (
                         <>
-                          <strong>暂无已整理大事</strong>
-                          <small>{item.eventCount} 个资料节点已在时间条或区域页中整理</small>
+                          <strong>{item.era.title}</strong>
+                          <small>{item.era.summary}</small>
                         </>
                       )}
                     </div>
@@ -2254,6 +2412,47 @@ function App() {
                   {selectedPerson.roles.map((role) => (
                     <span key={role}>{role}</span>
                   ))}
+                </div>
+                <div className="person-annual-panel">
+                  <div className="person-event-heading">
+                    <CalendarDays size={16} aria-hidden="true" />
+                    <span>逐年年表</span>
+                    <strong>{selectedPersonAnnualTimeline.length}</strong>
+                  </div>
+                  <div className="person-annual-timeline">
+                    {selectedPersonAnnualTimeline.length ? (
+                      selectedPersonAnnualTimeline.map((item) => (
+                        <div
+                          className={`person-annual-row ${item.activities.length ? "recorded" : item.inferredFrom ? "inferred" : "unknown"}`}
+                          key={`${selectedPerson.id}-${item.year}`}
+                        >
+                          <span>{item.year}</span>
+                          <div>
+                            {item.activities.length ? (
+                              item.activities.map((lifeEvent) => (
+                                <p key={lifeEvent.id}>
+                                  <strong>{lifeEvent.title}</strong>
+                                  {lifeEvent.summary}
+                                </p>
+                              ))
+                            ) : item.inferredFrom ? (
+                              <p>
+                                <strong>延续：{item.inferredFrom.title}</strong>
+                                {item.inferredFrom.summary}
+                              </p>
+                            ) : (
+                              <p>
+                                <strong>史料未详</strong>
+                                当前资料库尚未整理这一年的明确事迹。
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <p>待补充逐年年表</p>
+                    )}
+                  </div>
                 </div>
                 <div className="person-stats">
                   <div>
@@ -2431,8 +2630,28 @@ function App() {
                   <span>{event.summary}</span>
                 </button>
               ))
+            ) : selectedRegionHiddenMediumEvents.length ? (
+              <div className="empty-state event-stack-note">
+                {selectedRegionHiddenMediumEvents.length} 个中型事件已折叠，打开中型事件开关后显示。
+              </div>
+            ) : selectedRegionFocusLifeEvents.length ? (
+              <div className="comparison-event-list event-stack-focus">
+                {selectedRegionFocusLifeEvents.map(({ inferred, lifeEvent, person }) => (
+                  <article className="comparison-event-item focus-note" key={lifeEvent.id}>
+                    <strong>
+                      {person.name}：{lifeEvent.title}
+                    </strong>
+                    <small>
+                      {inferred ? "延续上一阶段：" : ""}
+                      {lifeEvent.summary}
+                    </small>
+                  </article>
+                ))}
+              </div>
             ) : (
-              <div className="empty-state">当前筛选下暂无事件</div>
+              <div className="empty-state event-stack-note">
+                {selectedRegionEra.title}：{selectedRegionEra.summary}
+              </div>
             )}
           </div>
           </section>
@@ -2876,22 +3095,41 @@ function App() {
           <section className="event-detail empty-event-detail">
             <div className="detail-eyebrow">
               <CircleDot size={18} aria-hidden="true" />
-              <span>{selectedRegionFocusLifeEvents.length ? "主角动向" : "本年事件"}</span>
+              <span>
+                {selectedRegionFocusLifeEvents.length
+                  ? "曹孙刘动向"
+                  : selectedRegionHiddenMediumEvents.length
+                    ? "中型事件"
+                    : "时代背景"}
+              </span>
             </div>
-            <h2>{selectedRegionFocusLifeEvents.length ? `${year} 年主角动向` : `${year} 年暂无已整理大事`}</h2>
+            <h2>
+              {selectedRegionFocusLifeEvents.length
+                ? `${year} 年曹孙刘动向`
+                : selectedRegionHiddenMediumEvents.length
+                  ? `${year} 年中型事件已折叠`
+                  : `${year} 年${selectedRegionEra.title}`}
+            </h2>
             {selectedRegionFocusLifeEvents.length ? (
               <div className="comparison-event-list detail-focus-list">
-                {selectedRegionFocusLifeEvents.map(({ lifeEvent, person }) => (
+                {selectedRegionFocusLifeEvents.map(({ inferred, lifeEvent, person }) => (
                   <article className="comparison-event-item focus-note" key={lifeEvent.id}>
                     <strong>
-                      {person?.name}：{lifeEvent.title}
+                      {person.name}：{lifeEvent.title}
                     </strong>
-                    <small>{lifeEvent.summary}</small>
+                    <small>
+                      {inferred ? "延续上一阶段：" : ""}
+                      {lifeEvent.summary}
+                    </small>
                   </article>
                 ))}
               </div>
+            ) : selectedRegionHiddenMediumEvents.length ? (
+              <p className="detail-summary">
+                {selectedRegionHiddenMediumEvents.length} 个中型事件暂未展开，打开中型事件开关后在本年对照中显示。
+              </p>
             ) : (
-              <p className="detail-summary">{selectedRegionInfo.label}在当前年份暂无已录入的大事。</p>
+              <p className="detail-summary">{selectedRegionEra.summary}</p>
             )}
           </section>
         )}

@@ -1,13 +1,21 @@
 {
   "model": "event-importance",
-  "defaultImportance": "major",
+  "defaultImportance": "medium",
   "records": [
-    { "eventId": "china-192-dong-zhuo-killed", "importance": "medium" },
-    { "eventId": "china-194-lu-bu-seizes-yan", "importance": "medium" },
-    { "eventId": "china-197-yuan-shu-declares-emperor", "importance": "medium" },
-    { "eventId": "china-199-lu-bu-defeated", "importance": "medium" },
-    { "eventId": "china-207-longzhong-plan", "importance": "medium" },
-    { "eventId": "china-215-cao-cao-takes-hanzhong", "importance": "medium" },
-    { "eventId": "india-230-kushan-decline", "importance": "medium" }
+    { "eventId": "china-184-yellow-turban-rebellion", "importance": "major" },
+    { "eventId": "china-189-dong-zhuo-enters-luoyang", "importance": "major" },
+    { "eventId": "china-200-guandu", "importance": "major" },
+    { "eventId": "china-208-red-cliffs", "importance": "major" },
+    { "eventId": "china-220-cao-pi-founds-wei", "importance": "major" },
+    { "eventId": "china-221-liu-bei-founds-shu", "importance": "major" },
+    { "eventId": "china-222-yiling", "importance": "major" },
+    { "eventId": "china-229-sun-quan-emperor", "importance": "major" },
+    { "eventId": "china-263-shu-han-conquered", "importance": "major" },
+    { "eventId": "china-265-jin-replaces-wei", "importance": "major" },
+    { "eventId": "china-280-jin-conquers-wu", "importance": "major" },
+    { "eventId": "rome-193-year-of-five-emperors", "importance": "major" },
+    { "eventId": "sasanian-224-ardashir-defeats-parthians", "importance": "major" },
+    { "eventId": "rome-235-start-third-century-crisis", "importance": "major" },
+    { "eventId": "rome-sasanian-260-valerian-captured", "importance": "major" }
   ]
 }
