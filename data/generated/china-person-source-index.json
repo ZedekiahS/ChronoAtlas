@@ -188,6 +188,37 @@
       }
     },
     {
+      "id": "liu-ye",
+      "name": "刘晔",
+      "courtesyName": "子扬",
+      "life": "?-234",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "淮南出身的曹魏谋臣，早年在江淮乱局中显名，入曹操幕府后多次参与对汉中、孙权和边境形势的判断。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 5,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 190,
+      "lastRecordedYear": 234,
+      "sourceIds": [
+        "sanguozhi-wei-liu-ye"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-liu-ye",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
       "id": "liu-cong",
       "name": "刘琮",
       "courtesyName": null,
@@ -1800,14 +1831,14 @@
       "primaryPolity": "曹操集团 / 东汉朝廷",
       "summary": "曹操最重要的中枢谋臣之一，参与迎献帝、守许与官渡战略判断，后因魏公问题与曹操产生裂痕。",
       "coverageStatus": "partial",
-      "lifeEventCount": 4,
+      "lifeEventCount": 6,
       "sourceMentionCount": 2,
       "reviewedSourceMentionCount": 2,
       "firstRecordedYear": 163,
       "lastRecordedYear": 212,
       "sourceIds": [
         "sanguozhi-wei-wudi",
-        "sanguozhi-wei-xun-yu-jia-xu"
+        "sanguozhi-wei-xun-yu"
       ],
       "coverage": {
         "status": "partial",
@@ -1818,7 +1849,7 @@
         },
         "sources": [
           {
-            "sourceId": "sanguozhi-wei-xun-yu-jia-xu",
+            "sourceId": "sanguozhi-wei-xun-yu",
             "status": "partial"
           },
           {
@@ -1834,15 +1865,15 @@
       "courtesyName": "公达",
       "life": "157-214",
       "primaryPolity": "曹操集团",
-      "summary": "曹操军中谋主，参与下邳、官渡等关键战役谋划，以临战计策见长。",
+      "summary": "曹操军中谋主，参与下邳、白马、官渡等关键战役谋划，以临战计策见长。",
       "coverageStatus": "partial",
-      "lifeEventCount": 4,
+      "lifeEventCount": 6,
       "sourceMentionCount": 0,
       "reviewedSourceMentionCount": 0,
       "firstRecordedYear": 157,
       "lastRecordedYear": 214,
       "sourceIds": [
-        "sanguozhi-wei-xun-yu-jia-xu",
+        "sanguozhi-wei-xun-you",
         "zizhi-tongjian-63"
       ],
       "coverage": {
@@ -1854,7 +1885,7 @@
         },
         "sources": [
           {
-            "sourceId": "sanguozhi-wei-xun-yu-jia-xu",
+            "sourceId": "sanguozhi-wei-xun-you",
             "status": "partial"
           },
           {
@@ -1895,6 +1926,37 @@
           },
           {
             "sourceId": "zizhi-tongjian-59",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiang-ji",
+      "name": "蒋济",
+      "courtesyName": "子通",
+      "life": "?-249",
+      "primaryPolity": "曹魏",
+      "summary": "曹魏中后期重臣，早年以合肥疑兵计见称，后长期参与军政奏议，并卷入高平陵前后的朝局转折。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 5,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 208,
+      "lastRecordedYear": 249,
+      "sourceIds": [
+        "sanguozhi-wei-jiang-ji"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-jiang-ji",
             "status": "partial"
           }
         ]
@@ -2063,13 +2125,13 @@
       "primaryPolity": "凉州军 / 张绣集团 / 曹魏",
       "summary": "先后服务凉州军、张绣和曹操集团，199 年随张绣归曹，后在曹魏中枢以谨慎谋略著称。",
       "coverageStatus": "partial",
-      "lifeEventCount": 4,
+      "lifeEventCount": 8,
       "sourceMentionCount": 0,
       "reviewedSourceMentionCount": 0,
       "firstRecordedYear": 147,
       "lastRecordedYear": 223,
       "sourceIds": [
-        "sanguozhi-wei-xun-yu-jia-xu"
+        "sanguozhi-wei-jia-xu"
       ],
       "coverage": {
         "status": "partial",
@@ -2080,7 +2142,7 @@
         },
         "sources": [
           {
-            "sourceId": "sanguozhi-wei-xun-yu-jia-xu",
+            "sourceId": "sanguozhi-wei-jia-xu",
             "status": "partial"
           },
           {
@@ -2134,7 +2196,7 @@
       "primaryPolity": "曹操集团",
       "summary": "曹操早期重要谋士，参与对吕布、袁绍及河北后续战事判断，207 年北征乌桓后不久去世。",
       "coverageStatus": "partial",
-      "lifeEventCount": 4,
+      "lifeEventCount": 6,
       "sourceMentionCount": 0,
       "reviewedSourceMentionCount": 0,
       "firstRecordedYear": 170,
@@ -2192,6 +2254,37 @@
           },
           {
             "sourceId": "zizhi-tongjian-78",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhong-yao",
+      "name": "钟繇",
+      "courtesyName": "元常",
+      "life": "151-230",
+      "primaryPolity": "东汉朝廷 / 曹魏",
+      "summary": "曹操集团在关中方向的重要重臣，长期镇抚关中并维系西线秩序；入魏后位至太傅，亦以书法名重后世。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 6,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 151,
+      "lastRecordedYear": 230,
+      "sourceIds": [
+        "sanguozhi-wei-zhong-yao"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhong-yao",
             "status": "partial"
           }
         ]
@@ -2267,6 +2360,37 @@
           },
           {
             "sourceId": "zizhi-tongjian-59",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "chen-qun",
+      "name": "陈群",
+      "courtesyName": "长文",
+      "life": "?-237",
+      "primaryPolity": "刘备集团 / 曹魏",
+      "summary": "颍川名士，早年曾为刘备别驾，后入曹操幕府；曹丕时期创设九品官人法，明帝初与曹真、司马懿等同受遗诏辅政。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 6,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 194,
+      "lastRecordedYear": 237,
+      "sourceIds": [
+        "sanguozhi-wei-chen-qun"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-chen-qun",
             "status": "partial"
           }
         ]

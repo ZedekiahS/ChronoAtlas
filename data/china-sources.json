@@ -294,11 +294,11 @@
   },
   {
     "id": "sanguozhi-wei-guo-jia",
-    "title": "三国志·魏书·程郭董刘蒋刘传",
+    "title": "三国志·魏书·郭嘉传",
     "author": "陈寿撰，裴松之注",
     "type": "official-history",
-    "citationShort": "《三国志》卷十四",
-    "note": "记录郭嘉、程昱等曹操集团谋臣的传记材料。",
+    "citationShort": "《三国志·魏书·郭嘉传》",
+    "note": "郭嘉本传，记录其入曹操幕府、下邳与河北战略判断、北征乌桓前后事迹。",
     "url": "https://ctext.org/text.pl?if=gb&node=602573&remap=gb"
   },
   {
@@ -550,5 +550,68 @@
     "citationShort": "《三国志·魏书·李通传》",
     "note": "李通主传，记录其汝南地方武装、归曹、征张绣和江陵方向战事。",
     "url": "https://ctext.org/text.pl?if=gb&node=602750&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-xun-yu",
+    "title": "三国志·魏书·荀彧传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·荀彧传》",
+    "note": "荀彧本传，记录其从袁绍转投曹操、迎奉献帝、官渡战略与魏公争议。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602398&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-xun-you",
+    "title": "三国志·魏书·荀攸传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·荀攸传》",
+    "note": "荀攸本传，记录其军谋、下邳与官渡相关谋划。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602412&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-jia-xu",
+    "title": "三国志·魏书·贾诩传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·贾诩传》",
+    "note": "贾诩本传，记录其凉州、张绣、曹魏时期的谋略与仕历。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602422&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-liu-ye",
+    "title": "三国志·魏书·刘晔传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·刘晔传》",
+    "note": "刘晔本传，记录其淮南活动、入曹操幕府以及对汉中、孙权等形势的判断。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602594&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-jiang-ji",
+    "title": "三国志·魏书·蒋济传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·蒋济传》",
+    "note": "蒋济本传，记录其合肥疑兵、魏廷奏议、军事政务与高平陵前后活动。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602604&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-chen-qun",
+    "title": "三国志·魏书·陈群传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·陈群传》",
+    "note": "陈群本传，记录其早年仕历、九品官人法、辅政与劝谏。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602952&remap=gb"
+  },
+  {
+    "id": "sanguozhi-wei-zhong-yao",
+    "title": "三国志·魏书·钟繇传",
+    "author": "陈寿撰，裴松之注",
+    "type": "official-history",
+    "citationShort": "《三国志·魏书·钟繇传》",
+    "note": "钟繇本传，记录其镇抚关中、曹魏重臣仕历及后世书法名望。",
+    "url": "https://ctext.org/text.pl?if=gb&node=602528&remap=gb"
   }
 ]

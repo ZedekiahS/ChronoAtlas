@@ -609,7 +609,7 @@
     "summary": "荀彧辅佐曹操经营许都和北方战略，官渡相持时坚持不可轻退。",
     "sourceRefs": [
       {
-        "sourceId": "sanguozhi-wei-xun-yu-jia-xu",
+        "sourceId": "sanguozhi-wei-xun-yu",
         "locator": "荀彧传"
       }
     ]
@@ -624,7 +624,7 @@
     "summary": "荀攸为曹操军中谋主，在下邳、官渡等战役中参与具体军略。",
     "sourceRefs": [
       {
-        "sourceId": "sanguozhi-wei-xun-yu-jia-xu",
+        "sourceId": "sanguozhi-wei-xun-you",
         "locator": "荀攸传"
       }
     ]
@@ -654,7 +654,7 @@
     "summary": "贾诩随张绣归曹后进入曹操集团，在军政和继嗣问题上多有谨慎建议。",
     "sourceRefs": [
       {
-        "sourceId": "sanguozhi-wei-xun-yu-jia-xu",
+        "sourceId": "sanguozhi-wei-jia-xu",
         "locator": "贾诩传"
       }
     ]
@@ -1024,7 +1024,9 @@
     "startYear": 199,
     "endYear": 220,
     "summary": "张辽在下邳后归曹操，后成为曹魏东线重要将领。",
-    "relatedEventIds": ["china-199-lu-bu-defeated"],
+    "relatedEventIds": [
+      "china-199-lu-bu-defeated"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-zhang-liao",
@@ -1040,7 +1042,9 @@
     "startYear": 190,
     "endYear": 219,
     "summary": "夏侯渊随曹操起兵并长期负责西线和军粮事务，是曹操宗亲系统中的重要将领。",
-    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "relatedEventIds": [
+      "china-219-hanzhong-and-jingzhou-crisis"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-xiahou-yuan",
@@ -1076,7 +1080,9 @@
     "startYear": 200,
     "endYear": 210,
     "summary": "程普历事孙坚、孙策、孙权三代，孙权时期在赤壁任右督。",
-    "relatedEventIds": ["china-208-red-cliffs"],
+    "relatedEventIds": [
+      "china-208-red-cliffs"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wu-cheng-pu",
@@ -1112,7 +1118,10 @@
     "startYear": 190,
     "endYear": 195,
     "summary": "张邈早年与曹操相友并共同讨董，后在兖州危机中迎吕布入境，与曹操决裂。",
-    "relatedEventIds": ["china-190-coalition-against-dong-zhuo", "china-194-lu-bu-seizes-yan"],
+    "relatedEventIds": [
+      "china-190-coalition-against-dong-zhuo",
+      "china-194-lu-bu-seizes-yan"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-zhang-miao",
@@ -1128,7 +1137,9 @@
     "startYear": 194,
     "endYear": 220,
     "summary": "程昱在兖州危机中保全曹操根据地，之后长期为曹操集团谋臣。",
-    "relatedEventIds": ["china-194-lu-bu-seizes-yan"],
+    "relatedEventIds": [
+      "china-194-lu-bu-seizes-yan"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cheng-yu",
@@ -1144,7 +1155,9 @@
     "startYear": 208,
     "endYear": 208,
     "summary": "刘琮为刘表少子，刘表死后被荆州集团拥为继承人。",
-    "relatedEventIds": ["china-208-red-cliffs"],
+    "relatedEventIds": [
+      "china-208-red-cliffs"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-liu-biao",
@@ -1160,7 +1173,9 @@
     "startYear": 208,
     "endYear": 208,
     "summary": "曹操南下襄阳时，刘琮举州归降，导致刘备南撤并触发赤壁前局势。",
-    "relatedEventIds": ["china-208-red-cliffs"],
+    "relatedEventIds": [
+      "china-208-red-cliffs"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-liu-biao",
@@ -1180,7 +1195,10 @@
     "startYear": 214,
     "endYear": 223,
     "summary": "魏延随刘备入蜀并因战功升迁，219 年被刘备拔为汉中都督。",
-    "relatedEventIds": ["china-214-liu-bei-takes-yi", "china-219-hanzhong-and-jingzhou-crisis"],
+    "relatedEventIds": [
+      "china-214-liu-bei-takes-yi",
+      "china-219-hanzhong-and-jingzhou-crisis"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-shu-wei-yan",
@@ -1196,7 +1214,9 @@
     "startYear": 227,
     "endYear": 234,
     "summary": "诸葛亮北驻汉中后，魏延任前部和丞相司马等职，随其多次北伐。",
-    "relatedEventIds": ["china-234-wuzhang-plains"],
+    "relatedEventIds": [
+      "china-234-wuzhang-plains"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-shu-wei-yan",
@@ -1216,7 +1236,10 @@
     "startYear": 190,
     "endYear": 218,
     "summary": "乐进早年以胆烈从曹操，长期作为曹军先登将领参与中原、河北和东线战事。",
-    "relatedEventIds": ["china-190-coalition-against-dong-zhuo", "china-200-guandu"],
+    "relatedEventIds": [
+      "china-190-coalition-against-dong-zhuo",
+      "china-200-guandu"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-yue-jin",
@@ -1232,7 +1255,10 @@
     "startYear": 194,
     "endYear": 219,
     "summary": "于禁经王朗推荐入曹操军，以军纪和战功成为曹魏名将，至襄樊败降前长期服属曹操集团。",
-    "relatedEventIds": ["china-194-lu-bu-seizes-yan", "china-219-hanzhong-and-jingzhou-crisis"],
+    "relatedEventIds": [
+      "china-194-lu-bu-seizes-yan",
+      "china-219-hanzhong-and-jingzhou-crisis"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-yu-jin",
@@ -1248,7 +1274,10 @@
     "startYear": 196,
     "endYear": 220,
     "summary": "徐晃由杨奉部转归曹操，成为曹操集团后期多战线的重要将领。",
-    "relatedEventIds": ["china-196-cao-cao-escorts-emperor", "china-219-hanzhong-and-jingzhou-crisis"],
+    "relatedEventIds": [
+      "china-196-cao-cao-escorts-emperor",
+      "china-219-hanzhong-and-jingzhou-crisis"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-xu-huang",
@@ -1264,7 +1293,10 @@
     "startYear": 200,
     "endYear": 231,
     "summary": "张辽、乐进、于禁、张郃、徐晃在后世常合称曹魏五子良将，是曹操集团外姓将领体系的核心代表。",
-    "relatedEventIds": ["china-200-guandu", "china-219-hanzhong-and-jingzhou-crisis"],
+    "relatedEventIds": [
+      "china-200-guandu",
+      "china-219-hanzhong-and-jingzhou-crisis"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-zhang-he",
@@ -1316,7 +1348,9 @@
     "startYear": 219,
     "endYear": 219,
     "summary": "于禁督七军救援被关羽围困的曹仁，兵败投降使曹魏襄樊战局一度危急。",
-    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "relatedEventIds": [
+      "china-219-hanzhong-and-jingzhou-crisis"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-yu-jin",
@@ -1336,7 +1370,9 @@
     "startYear": 219,
     "endYear": 219,
     "summary": "徐晃在襄樊战事中击破关羽围营，解曹仁樊城之围。",
-    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "relatedEventIds": [
+      "china-219-hanzhong-and-jingzhou-crisis"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-xu-huang",
@@ -1356,7 +1392,9 @@
     "startYear": 219,
     "endYear": 219,
     "summary": "满宠在襄樊战事中劝曹仁坚守樊城，帮助稳定曹魏南线防御。",
-    "relatedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
+    "relatedEventIds": [
+      "china-219-hanzhong-and-jingzhou-crisis"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-man-chong",
@@ -1376,7 +1414,10 @@
     "startYear": 220,
     "endYear": 226,
     "summary": "曹丕时期，曹休被委以东南对吴方向军权，是曹魏宗亲都督体系的重要人物。",
-    "relatedEventIds": ["china-220-cao-pi-founds-wei", "china-222-yiling"],
+    "relatedEventIds": [
+      "china-220-cao-pi-founds-wei",
+      "china-222-yiling"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-xiu",
@@ -1396,7 +1437,9 @@
     "startYear": 220,
     "endYear": 226,
     "summary": "曹丕时期，曹真为镇西将军、都督雍凉，负责曹魏西线军政。",
-    "relatedEventIds": ["china-220-cao-pi-founds-wei"],
+    "relatedEventIds": [
+      "china-220-cao-pi-founds-wei"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-zhen",
@@ -1436,7 +1479,9 @@
     "startYear": 208,
     "endYear": 208,
     "summary": "文聘原属刘表集团，刘琮举州降曹后才归曹操，并以不能保全荆州为惭。",
-    "relatedEventIds": ["china-208-red-cliffs"],
+    "relatedEventIds": [
+      "china-208-red-cliffs"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-wen-pin",
@@ -1456,7 +1501,9 @@
     "startYear": 208,
     "endYear": 220,
     "summary": "文聘归曹后被曹操厚礼对待，并任江夏太守承担荆州、江夏方向边事。",
-    "relatedEventIds": ["china-208-red-cliffs"],
+    "relatedEventIds": [
+      "china-208-red-cliffs"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-wen-pin",
@@ -1476,7 +1523,10 @@
     "startYear": 199,
     "endYear": 220,
     "summary": "臧霸归曹后控制青徐东方力量，使曹操在官渡前后得以专注河北战场。",
-    "relatedEventIds": ["china-199-lu-bu-defeated", "china-200-guandu"],
+    "relatedEventIds": [
+      "china-199-lu-bu-defeated",
+      "china-200-guandu"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-zang-ba",
@@ -1492,7 +1542,9 @@
     "startYear": 209,
     "endYear": 222,
     "summary": "臧霸与张辽多次同处曹魏东线对吴作战体系，形成青徐、合肥方向联动。",
-    "relatedEventIds": ["china-222-yiling"],
+    "relatedEventIds": [
+      "china-222-yiling"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-zang-ba",
@@ -1512,11 +1564,235 @@
     "startYear": 190,
     "endYear": 209,
     "summary": "李通以汝南地方武装归曹操，在张绣、刘表、荆州方向战事中为曹操集团效力。",
-    "relatedEventIds": ["china-208-red-cliffs"],
+    "relatedEventIds": [
+      "china-208-red-cliffs"
+    ],
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-li-tong",
         "locator": "李通传"
+      }
+    ]
+  },
+  {
+    "id": "xun-yu-guo-jia-recommendation",
+    "sourcePersonId": "xun-yu",
+    "targetPersonId": "guo-jia",
+    "type": "advisor",
+    "startYear": 196,
+    "endYear": 196,
+    "summary": "荀彧向曹操举荐郭嘉，使郭嘉进入曹操早期谋臣核心圈。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-guo-jia",
+        "locator": "郭嘉传荀彧举荐相关记载"
+      }
+    ]
+  },
+  {
+    "id": "xun-yu-xun-you-yingchuan-network",
+    "sourcePersonId": "xun-yu",
+    "targetPersonId": "xun-you",
+    "type": "core-ally",
+    "startYear": 196,
+    "endYear": 212,
+    "summary": "荀彧、荀攸同出颍川荀氏，分别承担许都中枢与军中谋划，是曹操早期谋臣网络的两条主线。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xun-yu",
+        "locator": "荀彧传"
+      },
+      {
+        "sourceId": "sanguozhi-wei-xun-you",
+        "locator": "荀攸传"
+      }
+    ]
+  },
+  {
+    "id": "xun-you-guo-jia-xiapi-strategy",
+    "sourcePersonId": "xun-you",
+    "targetPersonId": "guo-jia",
+    "type": "core-ally",
+    "startYear": 199,
+    "endYear": 199,
+    "summary": "下邳攻吕布时，荀攸、郭嘉共同参与判断吕布军心与继续进攻的必要性。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-xun-you",
+        "locator": "荀攸传下邳相关记载"
+      },
+      {
+        "sourceId": "sanguozhi-wei-guo-jia",
+        "locator": "郭嘉传下邳相关记载"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-liu-ye-advisor",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "liu-ye",
+    "type": "advisor",
+    "startYear": 200,
+    "endYear": 220,
+    "summary": "刘晔进入曹操集团后，长期就汉中、孙权、边境形势等问题提供判断。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-ye",
+        "locator": "刘晔传"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-zhong-yao-guanzhong",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "zhong-yao",
+    "type": "commander",
+    "startYear": 196,
+    "endYear": 220,
+    "summary": "钟繇长期承担关中和司隶方向事务，是曹操维系西线秩序的重要重臣。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhong-yao",
+        "locator": "钟繇传关中相关记载"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-chen-qun-official",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "chen-qun",
+    "type": "advisor",
+    "startYear": 198,
+    "endYear": 220,
+    "summary": "陈群入曹操幕府后，多次参与选任、刑制与军政议论，逐步进入制度核心。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chen-qun",
+        "locator": "陈群传"
+      }
+    ]
+  },
+  {
+    "id": "cao-pi-chen-qun-nine-rank",
+    "sourcePersonId": "cao-pi",
+    "targetPersonId": "chen-qun",
+    "type": "advisor",
+    "startYear": 220,
+    "endYear": 226,
+    "summary": "曹丕称帝前后采用陈群所建九品官人法，使陈群成为魏初选官制度的关键设计者。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chen-qun",
+        "locator": "陈群传九品官人法相关记载"
+      }
+    ]
+  },
+  {
+    "id": "cao-pi-jia-xu-succession-advice",
+    "sourcePersonId": "cao-pi",
+    "targetPersonId": "jia-xu",
+    "type": "advisor",
+    "startYear": 217,
+    "endYear": 223,
+    "summary": "贾诩在立嗣与称帝后对外战略问题上以谨慎判断影响曹丕。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-jia-xu",
+        "locator": "贾诩传立嗣与黄初问对相关记载"
+      }
+    ]
+  },
+  {
+    "id": "cao-pi-zhong-yao-senior-minister",
+    "sourcePersonId": "cao-pi",
+    "targetPersonId": "zhong-yao",
+    "type": "advisor",
+    "startYear": 220,
+    "endYear": 226,
+    "summary": "曹丕建立曹魏后，钟繇以汉魏旧臣资望位列中枢，为魏初朝廷秩序提供元老支撑。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-zhong-yao",
+        "locator": "钟繇传黄初仕历"
+      }
+    ]
+  },
+  {
+    "id": "chen-qun-cao-zhen-regency",
+    "sourcePersonId": "chen-qun",
+    "targetPersonId": "cao-zhen",
+    "type": "regency",
+    "startYear": 226,
+    "endYear": 237,
+    "summary": "曹丕遗诏辅政后，陈群与曹真同处明帝初年的辅政中枢。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chen-qun",
+        "locator": "陈群传受遗诏辅政"
+      },
+      {
+        "sourceId": "sanguozhi-wei-cao-zhen",
+        "locator": "曹真传辅政相关记载"
+      }
+    ]
+  },
+  {
+    "id": "chen-qun-sima-yi-regency",
+    "sourcePersonId": "chen-qun",
+    "targetPersonId": "sima-yi",
+    "type": "regency",
+    "startYear": 226,
+    "endYear": 237,
+    "summary": "陈群与司马懿同受曹丕遗诏辅政，体现魏明帝初年宗室、士族与军政重臣共治的结构。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chen-qun",
+        "locator": "陈群传受遗诏辅政"
+      }
+    ]
+  },
+  {
+    "id": "jiang-ji-sima-yi-gaopingling",
+    "sourcePersonId": "jiang-ji",
+    "targetPersonId": "sima-yi",
+    "type": "court-control",
+    "startYear": 249,
+    "endYear": 249,
+    "summary": "高平陵政变时，蒋济站在司马懿一侧参与朝局处置，并劝曹爽放弃抵抗。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-jiang-ji",
+        "locator": "蒋济传高平陵相关记载"
+      }
+    ]
+  },
+  {
+    "id": "liu-ye-cao-pi-advisor",
+    "sourcePersonId": "liu-ye",
+    "targetPersonId": "cao-pi",
+    "type": "advisor",
+    "startYear": 220,
+    "endYear": 234,
+    "summary": "曹丕时期，刘晔继续参与对孙权称臣、吴蜀形势等问题的战略判断。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-liu-ye",
+        "locator": "刘晔传黄初前后相关记载"
+      }
+    ]
+  },
+  {
+    "id": "jiang-ji-cao-cao-hefei",
+    "sourcePersonId": "jiang-ji",
+    "targetPersonId": "cao-cao",
+    "type": "advisor",
+    "startYear": 208,
+    "endYear": 220,
+    "summary": "蒋济在合肥防御和东线形势判断中为曹操集团提供地方经验与军政建议。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-jiang-ji",
+        "locator": "蒋济传合肥及东线相关记载"
       }
     ]
   }
