@@ -1,0 +1,1860 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": "db/chronoatlas.sqlite",
+  "purpose": "前端人物索引和覆盖度概览；完整原文与传记节点仍保存在数据库和源 JSON 中。",
+  "persons": [
+    {
+      "id": "gongsun-zan",
+      "name": "公孙瓒",
+      "courtesyName": "伯圭",
+      "life": "?-199",
+      "primaryPolity": "公孙瓒集团",
+      "summary": "在幽州、冀北与袁绍长期争夺，199 年败亡后河北格局转向袁绍主导。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 2,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 199,
+      "lastRecordedYear": 199,
+      "sourceIds": [
+        "sanguozhi-wei-gongsun-zan",
+        "sanguozhi-wei-yuan-shao"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-gongsun-zan",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-59",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "guan-yu",
+      "name": "关羽",
+      "courtesyName": "云长",
+      "life": "?-220",
+      "primaryPolity": "刘备集团 / 蜀汉",
+      "summary": "刘备集团核心将领，镇守荆州并北伐襄樊，219 年因孙吴袭取荆州而败亡。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 200,
+      "lastRecordedYear": 219,
+      "sourceIds": [
+        "sanguozhi-shu-guan-yu",
+        "zizhi-tongjian-67"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-guan-yu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-67",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "liu-bei",
+      "name": "刘备",
+      "courtesyName": "玄德",
+      "life": "161-223",
+      "primaryPolity": "蜀汉",
+      "summary": "以汉室宗亲身份起兵，早年辗转徐州、许都、荆州，赤壁后取得立足空间，入主益州并夺汉中，221 年称帝建立蜀汉，夷陵败后托孤而终。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 12,
+      "sourceMentionCount": 6,
+      "reviewedSourceMentionCount": 6,
+      "firstRecordedYear": 161,
+      "lastRecordedYear": 223,
+      "sourceIds": [
+        "sanguozhi-shu-xianzhu",
+        "sanguozhi-shu-zhuge-liang",
+        "sanguozhi-wei-lubu",
+        "sanguozhi-wu-wuzhu",
+        "sanguozhi-wu-zhou-yu",
+        "zizhi-tongjian-58",
+        "zizhi-tongjian-59",
+        "zizhi-tongjian-65",
+        "zizhi-tongjian-67",
+        "zizhi-tongjian-69",
+        "zizhi-tongjian-70"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-xianzhu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-69",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "liu-zhang",
+      "name": "刘璋",
+      "courtesyName": "季玉",
+      "life": "?-219",
+      "primaryPolity": "益州刘璋集团",
+      "summary": "继承益州割据格局，后邀请刘备入蜀，214 年向刘备投降。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 214,
+      "lastRecordedYear": 219,
+      "sourceIds": [
+        "sanguozhi-shu-xianzhu",
+        "zizhi-tongjian-67"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-xianzhu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-67",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "liu-shan",
+      "name": "刘禅",
+      "courtesyName": "公嗣",
+      "life": "207-271",
+      "primaryPolity": "蜀汉",
+      "summary": "刘备之子，223 年即位，263 年向邓艾投降，蜀汉灭亡。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 207,
+      "lastRecordedYear": 271,
+      "sourceIds": [
+        "sanguozhi-shu-houzhu",
+        "sanguozhi-shu-zhuge-liang",
+        "zizhi-tongjian-78"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-houzhu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-78",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "liu-biao",
+      "name": "刘表",
+      "courtesyName": "景升",
+      "life": "142-208",
+      "primaryPolity": "荆州刘表集团",
+      "summary": "长期据有荆州，维持长江中游相对稳定，其死后荆州成为曹操、刘备、孙权争夺焦点。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 2,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 142,
+      "lastRecordedYear": 208,
+      "sourceIds": [
+        "sanguozhi-shu-xianzhu",
+        "zizhi-tongjian-65"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-xianzhu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-65",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sima-yi",
+      "name": "司马懿",
+      "courtesyName": "仲达",
+      "life": "179-251",
+      "primaryPolity": "曹魏 / 司马氏",
+      "summary": "曹魏后期重臣，多次与诸葛亮对峙，249 年高平陵之变后司马氏控制魏政。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 179,
+      "lastRecordedYear": 251,
+      "sourceIds": [
+        "sanguozhi-shu-zhuge-liang",
+        "zizhi-tongjian-72",
+        "zizhi-tongjian-78"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "zizhi-tongjian-72",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-78",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sima-zhao",
+      "name": "司马昭",
+      "courtesyName": "子上",
+      "life": "211-265",
+      "primaryPolity": "曹魏 / 司马氏",
+      "summary": "司马懿之子，曹魏后期实际掌权者，主持灭蜀战略，其子司马炎最终代魏称帝。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 211,
+      "lastRecordedYear": 265,
+      "sourceIds": [
+        "jinshu-wudi",
+        "zizhi-tongjian-78"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "jinshu-wudi",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-78",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sima-yan",
+      "name": "司马炎",
+      "courtesyName": "安世",
+      "life": "236-290",
+      "primaryPolity": "西晋",
+      "summary": "司马昭之子，265 年代魏称帝，280 年灭吴完成统一。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 236,
+      "lastRecordedYear": 290,
+      "sourceIds": [
+        "jinshu-wudi",
+        "zizhi-tongjian-78",
+        "zizhi-tongjian-81"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "jinshu-wudi",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-81",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lu-bu",
+      "name": "吕布",
+      "courtesyName": "奉先",
+      "life": "?-199",
+      "primaryPolity": "吕布集团",
+      "summary": "先后依附董卓、袁绍、刘备等势力，194 年袭取兖州，后据徐州，下邳败亡。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 5,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 192,
+      "lastRecordedYear": 199,
+      "sourceIds": [
+        "sanguozhi-wei-lubu",
+        "zizhi-tongjian-59",
+        "zizhi-tongjian-62"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-lubu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-59",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lu-meng",
+      "name": "吕蒙",
+      "courtesyName": "子明",
+      "life": "178-220",
+      "primaryPolity": "孙吴",
+      "summary": "孙权集团重要将领，继鲁肃后主持荆州方向，219 年袭取荆州导致关羽败亡。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 178,
+      "lastRecordedYear": 220,
+      "sourceIds": [
+        "sanguozhi-wu-zhou-yu",
+        "zizhi-tongjian-67"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wu-zhou-yu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-67",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhou-yu",
+      "name": "周瑜",
+      "courtesyName": "公瑾",
+      "life": "175-210",
+      "primaryPolity": "孙吴",
+      "summary": "江东核心统帅，赤壁之战中与刘备集团联合作战，阻止曹操南下。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 175,
+      "lastRecordedYear": 210,
+      "sourceIds": [
+        "sanguozhi-wu-wuzhu",
+        "sanguozhi-wu-zhou-yu",
+        "zizhi-tongjian-65"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wu-zhou-yu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-65",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "shi-xie",
+      "name": "士燮",
+      "courtesyName": "威彦",
+      "life": "137-226",
+      "primaryPolity": "交州士氏 / 孙吴",
+      "summary": "长期控制交州，以贡纳和子弟入质维持对孙权的名义臣属；其死后士氏独立地位削弱，交州逐渐纳入孙吴直接经营。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 137,
+      "lastRecordedYear": 226,
+      "sourceIds": [
+        "sanguozhi-wu-lu-dai",
+        "sanguozhi-wu-shi-xie"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wu-lu-dai",
+            "status": "partial"
+          },
+          {
+            "sourceId": "sanguozhi-wu-shi-xie",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jiang-wei",
+      "name": "姜维",
+      "courtesyName": "伯约",
+      "life": "202-264",
+      "primaryPolity": "蜀汉",
+      "summary": "魏降蜀后成为蜀汉后期重要将领，灭蜀战争中退守剑阁，后参与钟会之乱失败。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 202,
+      "lastRecordedYear": 264,
+      "sourceIds": [
+        "sanguozhi-shu-houzhu",
+        "zizhi-tongjian-78"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-houzhu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-78",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sun-quan",
+      "name": "孙权",
+      "courtesyName": "仲谋",
+      "life": "182-252",
+      "primaryPolity": "孙吴",
+      "summary": "孙策死后继承江东基业，依托江东士族与周瑜、鲁肃等臣僚稳固统治；赤壁联合刘备抗曹，后取荆州、守江淮，229 年称帝建立孙吴。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 9,
+      "sourceMentionCount": 4,
+      "reviewedSourceMentionCount": 4,
+      "firstRecordedYear": 182,
+      "lastRecordedYear": 252,
+      "sourceIds": [
+        "sanguozhi-wu-lu-dai",
+        "sanguozhi-wu-shi-xie",
+        "sanguozhi-wu-wuzhu",
+        "sanguozhi-wu-zhou-yu",
+        "zizhi-tongjian-67",
+        "zizhi-tongjian-69",
+        "zizhi-tongjian-70"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wu-wuzhu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-69",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sun-hao",
+      "name": "孙皓",
+      "courtesyName": "元宗",
+      "life": "242-284",
+      "primaryPolity": "孙吴",
+      "summary": "孙权之孙，264 年即位，吴末政治日益失序，280 年向西晋投降，孙吴灭亡。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 242,
+      "lastRecordedYear": 284,
+      "sourceIds": [
+        "sanguozhi-wu-sun-hao",
+        "zizhi-tongjian-81"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wu-sun-hao",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-81",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "shen-pei",
+      "name": "审配",
+      "courtesyName": "正南",
+      "life": "?-204",
+      "primaryPolity": "袁绍集团",
+      "summary": "袁绍集团核心僚佐，袁氏内争中守邺，204 年邺城陷落后被杀。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 2,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 204,
+      "lastRecordedYear": 204,
+      "sourceIds": [
+        "sanguozhi-wei-yuan-shao"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-yuan-shao",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pang-tong",
+      "name": "庞统",
+      "courtesyName": "士元",
+      "life": "179-214",
+      "primaryPolity": "刘备集团",
+      "summary": "荆州名士，赤壁后进入刘备集团，参与取益州谋划，214 年攻雒城时中流矢而卒。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 179,
+      "lastRecordedYear": 214,
+      "sourceIds": [
+        "sanguozhi-shu-pangtong-fa-zheng",
+        "zizhi-tongjian-67"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-pangtong-fa-zheng",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-67",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhang-jiao",
+      "name": "张角",
+      "courtesyName": null,
+      "life": "?-184",
+      "primaryPolity": "太平道 / 黄巾军",
+      "summary": "太平道领袖，发动黄巾起义，成为东汉末年地方军事化和群雄割据的起点之一。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 2,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 184,
+      "lastRecordedYear": 184,
+      "sourceIds": [
+        "houhanshu-huangfu-song",
+        "zizhi-tongjian-58"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "houhanshu-huangfu-song",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-58",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhang-he",
+      "name": "张郃",
+      "courtesyName": "儁乂",
+      "life": "?-231",
+      "primaryPolity": "袁绍集团 / 曹魏",
+      "summary": "初属韩馥、袁绍，官渡之战中归降曹操，后成为曹魏重要将领，231 年在木门中箭而卒。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 200,
+      "lastRecordedYear": 231,
+      "sourceIds": [
+        "sanguozhi-wei-yuan-shao",
+        "sanguozhi-wei-zhang-he"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "literary-hebei-four-pillars",
+            "status": "partial"
+          },
+          {
+            "sourceId": "sanguozhi-wei-yuan-shao",
+            "status": "partial"
+          },
+          {
+            "sourceId": "sanguozhi-wei-zhang-he",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhang-fei",
+      "name": "张飞",
+      "courtesyName": "益德",
+      "life": "?-221",
+      "primaryPolity": "刘备集团 / 蜀汉",
+      "summary": "刘备集团早期核心将领，长期参与刘备转战和入蜀作战。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 214,
+      "lastRecordedYear": 221,
+      "sourceIds": [
+        "sanguozhi-shu-xianzhu",
+        "sanguozhi-shu-zhang-fei"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-xianzhu",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhang-lu",
+      "name": "张鲁",
+      "courtesyName": "公祺",
+      "life": "?-216",
+      "primaryPolity": "汉中张鲁集团",
+      "summary": "长期控制汉中，215 年降曹操，汉中随后成为曹刘争夺核心区域。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 215,
+      "lastRecordedYear": 216,
+      "sourceIds": [
+        "sanguozhi-wei-zhang-lu",
+        "zizhi-tongjian-67"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-zhang-lu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-67",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wen-chou",
+      "name": "文丑",
+      "courtesyName": null,
+      "life": "?-200",
+      "primaryPolity": "袁绍集团",
+      "summary": "袁绍麾下名将，官渡前哨战中在延津方向败亡，与颜良常并称为袁绍军中勇将。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 200,
+      "lastRecordedYear": 200,
+      "sourceIds": [
+        "literary-hebei-four-pillars",
+        "sanguozhi-wei-yuan-shao",
+        "zizhi-tongjian-63"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "literary-hebei-four-pillars",
+            "status": "partial"
+          },
+          {
+            "sourceId": "sanguozhi-wei-yuan-shao",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-pi",
+      "name": "曹丕",
+      "courtesyName": "子桓",
+      "life": "187-226",
+      "primaryPolity": "曹魏",
+      "summary": "曹操之子，220 年受汉献帝禅让称帝，建立曹魏。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 187,
+      "lastRecordedYear": 226,
+      "sourceIds": [
+        "houhanshu-xiandi",
+        "sanguozhi-wei-wendi"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "houhanshu-xiandi",
+            "status": "partial"
+          },
+          {
+            "sourceId": "sanguozhi-wei-wendi",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cao-cao",
+      "name": "曹操",
+      "courtesyName": "孟德",
+      "life": "155-220",
+      "primaryPolity": "曹操集团 / 曹魏",
+      "summary": "从讨董、兖州危机中起势，迎汉献帝至许后掌握朝廷名义，击败吕布、袁绍并统一北方，晚年进爵魏公、魏王，奠定曹魏政权基础。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 13,
+      "sourceMentionCount": 5,
+      "reviewedSourceMentionCount": 5,
+      "firstRecordedYear": 155,
+      "lastRecordedYear": 220,
+      "sourceIds": [
+        "houhanshu-xiandi",
+        "sanguozhi-wei-lubu",
+        "sanguozhi-wei-wudi",
+        "sanguozhi-wei-zhang-lu",
+        "sanguozhi-wu-wuzhu",
+        "zizhi-tongjian-59",
+        "zizhi-tongjian-63",
+        "zizhi-tongjian-65",
+        "zizhi-tongjian-67"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-wudi",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "du-yu",
+      "name": "杜预",
+      "courtesyName": "元凯",
+      "life": "222-285",
+      "primaryPolity": "西晋",
+      "summary": "西晋荆州方面统帅，参与制定灭吴战略并推进江陵、荆州方向作战，亦以《春秋左氏经传集解》著称。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 222,
+      "lastRecordedYear": 285,
+      "sourceIds": [
+        "jinshu-wang-jun-du-yu",
+        "zizhi-tongjian-81"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "jinshu-wang-jun-du-yu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-81",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "han-xiandi",
+      "name": "汉献帝",
+      "courtesyName": null,
+      "life": "181-234",
+      "primaryPolity": "东汉",
+      "summary": "东汉末代皇帝，先后受董卓、李傕郭汜、曹操集团控制，220 年禅位于曹丕。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 5,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 181,
+      "lastRecordedYear": 234,
+      "sourceIds": [
+        "houhanshu-xiandi",
+        "sanguozhi-wei-wendi",
+        "sanguozhi-wei-wudi"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "houhanshu-xiandi",
+            "status": "partial"
+          },
+          {
+            "sourceId": "sanguozhi-wei-wendi",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ju-shou",
+      "name": "沮授",
+      "courtesyName": null,
+      "life": "?-200?",
+      "primaryPolity": "袁绍集团",
+      "summary": "袁绍重要谋臣，多次提出稳健策略，官渡失败后被曹操俘获，拒绝归附，结局记载略有不确定。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 200,
+      "lastRecordedYear": 200,
+      "sourceIds": [
+        "sanguozhi-wei-yuan-shao",
+        "zizhi-tongjian-63"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-yuan-shao",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fa-zheng",
+      "name": "法正",
+      "courtesyName": "孝直",
+      "life": "176-220",
+      "primaryPolity": "刘璋集团 / 刘备集团",
+      "summary": "原属刘璋，后协助刘备入主益州，并在汉中之战中提出关键战略建议，是刘备前期最重要谋臣之一。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 176,
+      "lastRecordedYear": 220,
+      "sourceIds": [
+        "sanguozhi-shu-pangtong-fa-zheng",
+        "zizhi-tongjian-67"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-pangtong-fa-zheng",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-67",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wang-jun",
+      "name": "王濬",
+      "courtesyName": "士治",
+      "life": "206-286",
+      "primaryPolity": "西晋",
+      "summary": "西晋益州方面将领，长期营造楼船，280 年顺江东下入建业，是灭吴战役关键统帅。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 206,
+      "lastRecordedYear": 286,
+      "sourceIds": [
+        "jinshu-wang-jun-du-yu",
+        "zizhi-tongjian-81"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "jinshu-wang-jun-du-yu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-81",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tian-feng",
+      "name": "田丰",
+      "courtesyName": "元皓",
+      "life": "?-200",
+      "primaryPolity": "袁绍集团",
+      "summary": "袁绍谋士，主张审慎用兵并多次进谏，官渡前后被袁绍囚禁，战败后遇害。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 2,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 200,
+      "lastRecordedYear": 200,
+      "sourceIds": [
+        "sanguozhi-wei-yuan-shao",
+        "zizhi-tongjian-63"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-yuan-shao",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "xun-yu",
+      "name": "荀彧",
+      "courtesyName": "文若",
+      "life": "163-212",
+      "primaryPolity": "曹操集团 / 东汉朝廷",
+      "summary": "曹操最重要的中枢谋臣之一，参与迎献帝、守许与官渡战略判断，后因魏公问题与曹操产生裂痕。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 163,
+      "lastRecordedYear": 212,
+      "sourceIds": [
+        "sanguozhi-wei-wudi",
+        "sanguozhi-wei-xun-yu-jia-xu"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-xun-yu-jia-xu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "xun-you",
+      "name": "荀攸",
+      "courtesyName": "公达",
+      "life": "157-214",
+      "primaryPolity": "曹操集团",
+      "summary": "曹操军中谋主，参与下邳、官渡等关键战役谋划，以临战计策见长。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 157,
+      "lastRecordedYear": 214,
+      "sourceIds": [
+        "sanguozhi-wei-xun-yu-jia-xu",
+        "zizhi-tongjian-63"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-xun-yu-jia-xu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dong-zhuo",
+      "name": "董卓",
+      "courtesyName": "仲颖",
+      "life": "?-192",
+      "primaryPolity": "东汉朝廷 / 凉州军",
+      "summary": "凉州军阀，189 年入洛阳控制朝廷，废立皇帝并迁都长安，引发关东诸军讨伐。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 189,
+      "lastRecordedYear": 192,
+      "sourceIds": [
+        "houhanshu-dong-zhuo",
+        "zizhi-tongjian-59"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "houhanshu-dong-zhuo",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-59",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "yuan-shu",
+      "name": "袁术",
+      "courtesyName": "公路",
+      "life": "?-199",
+      "primaryPolity": "袁术集团",
+      "summary": "控制淮南一带，197 年称帝导致政治孤立，势力迅速瓦解。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 197,
+      "lastRecordedYear": 199,
+      "sourceIds": [
+        "sanguozhi-shu-xianzhu",
+        "sanguozhi-wei-yuan-shu",
+        "zizhi-tongjian-59"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-yuan-shu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-59",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "yuan-shao",
+      "name": "袁绍",
+      "courtesyName": "本初",
+      "life": "?-202",
+      "primaryPolity": "袁绍集团",
+      "summary": "汝南袁氏出身，控制河北四州，是官渡之战前北方最强势力之一。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 5,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 190,
+      "lastRecordedYear": 202,
+      "sourceIds": [
+        "sanguozhi-wei-gongsun-zan",
+        "sanguozhi-wei-wudi",
+        "sanguozhi-wei-yuan-shao",
+        "zizhi-tongjian-59",
+        "zizhi-tongjian-63"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-yuan-shao",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "xu-you",
+      "name": "许攸",
+      "courtesyName": "子远",
+      "life": "生卒未详",
+      "primaryPolity": "袁绍集团 / 曹操集团",
+      "summary": "袁绍旧友和谋士，官渡相持时投奔曹操，提供袁军粮秣情报，是乌巢转折的重要人物。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 200,
+      "lastRecordedYear": 200,
+      "sourceIds": [
+        "sanguozhi-wei-wudi",
+        "sanguozhi-wei-yuan-shao",
+        "zizhi-tongjian-63"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-wudi",
+            "status": "partial"
+          },
+          {
+            "sourceId": "sanguozhi-wei-yuan-shao",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhuge-liang",
+      "name": "诸葛亮",
+      "courtesyName": "孔明",
+      "life": "181-234",
+      "primaryPolity": "蜀汉",
+      "summary": "提出隆中对，辅佐刘备、刘禅，主持蜀汉政务并多次北伐，234 年卒于五丈原。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 5,
+      "reviewedSourceMentionCount": 5,
+      "firstRecordedYear": 181,
+      "lastRecordedYear": 234,
+      "sourceIds": [
+        "sanguozhi-shu-xianzhu",
+        "sanguozhi-shu-zhuge-liang",
+        "zizhi-tongjian-72"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-zhuge-liang",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-72",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "jia-xu",
+      "name": "贾诩",
+      "courtesyName": "文和",
+      "life": "147-223",
+      "primaryPolity": "凉州军 / 张绣集团 / 曹魏",
+      "summary": "先后服务凉州军、张绣和曹操集团，199 年随张绣归曹，后在曹魏中枢以谨慎谋略著称。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 147,
+      "lastRecordedYear": 223,
+      "sourceIds": [
+        "sanguozhi-wei-xun-yu-jia-xu"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-xun-yu-jia-xu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "deng-ai",
+      "name": "邓艾",
+      "courtesyName": "士载",
+      "life": "197-264",
+      "primaryPolity": "曹魏",
+      "summary": "魏将，263 年率军偷渡阴平入蜀，迫使刘禅投降。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 197,
+      "lastRecordedYear": 264,
+      "sourceIds": [
+        "sanguozhi-shu-houzhu",
+        "zizhi-tongjian-78"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-houzhu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-78",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "guo-jia",
+      "name": "郭嘉",
+      "courtesyName": "奉孝",
+      "life": "170-207",
+      "primaryPolity": "曹操集团",
+      "summary": "曹操早期重要谋士，参与对吕布、袁绍及河北后续战事判断，207 年北征乌桓后不久去世。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 170,
+      "lastRecordedYear": 207,
+      "sourceIds": [
+        "sanguozhi-wei-guo-jia",
+        "zizhi-tongjian-63"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-guo-jia",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-63",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "zhong-hui",
+      "name": "钟会",
+      "courtesyName": "士季",
+      "life": "225-264",
+      "primaryPolity": "曹魏",
+      "summary": "魏将，263 年率主力攻蜀，与邓艾分进合击，后在成都发动叛乱失败。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 225,
+      "lastRecordedYear": 264,
+      "sourceIds": [
+        "zizhi-tongjian-78"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-houzhu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-78",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lu-xun",
+      "name": "陆逊",
+      "courtesyName": "伯言",
+      "life": "183-245",
+      "primaryPolity": "孙吴",
+      "summary": "参与孙吴袭取荆州，222 年在夷陵之战击败刘备，后为吴国重臣。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 4,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 183,
+      "lastRecordedYear": 245,
+      "sourceIds": [
+        "sanguozhi-wu-lu-xun",
+        "zizhi-tongjian-67",
+        "zizhi-tongjian-70"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wu-lu-xun",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-70",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "chen-gong",
+      "name": "陈宫",
+      "courtesyName": "公台",
+      "life": "?-199",
+      "primaryPolity": "吕布集团",
+      "summary": "初与曹操有交集，后与张邈等迎吕布入兖州，成为吕布集团重要谋士；下邳败亡后被曹操处死。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 194,
+      "lastRecordedYear": 199,
+      "sourceIds": [
+        "sanguozhi-wei-lubu",
+        "zizhi-tongjian-59"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wei-lubu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-59",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tao-qian",
+      "name": "陶谦",
+      "courtesyName": "恭祖",
+      "life": "132-194",
+      "primaryPolity": "徐州陶谦集团",
+      "summary": "东汉末年据徐州，曾与曹操发生冲突；临终前徐州转由刘备接掌，是刘备早期获得州级政治基础的关键节点。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 2,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 132,
+      "lastRecordedYear": 194,
+      "sourceIds": [
+        "sanguozhi-shu-xianzhu",
+        "sanguozhi-wei-tao-qian"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-xianzhu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "sanguozhi-wei-tao-qian",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "yan-liang",
+      "name": "颜良",
+      "courtesyName": null,
+      "life": "?-200",
+      "primaryPolity": "袁绍集团",
+      "summary": "袁绍麾下大将，200 年进攻白马时被关羽斩杀。其列入“河北四庭柱”属于后世通俗归类，不是汉末正式称号。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 200,
+      "lastRecordedYear": 200,
+      "sourceIds": [
+        "literary-hebei-four-pillars",
+        "sanguozhi-shu-guan-yu",
+        "sanguozhi-wei-yuan-shao",
+        "zizhi-tongjian-63"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "literary-hebei-four-pillars",
+            "status": "partial"
+          },
+          {
+            "sourceId": "sanguozhi-shu-guan-yu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "sanguozhi-wei-yuan-shao",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ma-chao",
+      "name": "马超",
+      "courtesyName": "孟起",
+      "life": "176-222",
+      "primaryPolity": "关中军阀 / 刘备集团",
+      "summary": "凉州、关中军阀马腾之子，先与曹操对抗，后归附刘备，参与刘备入主益州后的政权建构。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 176,
+      "lastRecordedYear": 222,
+      "sourceIds": [
+        "sanguozhi-shu-xianzhu",
+        "sanguozhi-shu-zhang-fei",
+        "zizhi-tongjian-67"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-zhang-fei",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-67",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gao-lan",
+      "name": "高览",
+      "courtesyName": null,
+      "life": "生卒未详",
+      "primaryPolity": "袁绍集团 / 曹操集团",
+      "summary": "袁绍部将，官渡之战中与张郃相关的降曹记载相连；后续仕历不详。其“四庭柱”身份属后世传统归类。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 200,
+      "lastRecordedYear": 200,
+      "sourceIds": [
+        "literary-hebei-four-pillars",
+        "sanguozhi-wei-yuan-shao",
+        "sanguozhi-wei-zhang-he"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "literary-hebei-four-pillars",
+            "status": "partial"
+          },
+          {
+            "sourceId": "sanguozhi-wei-yuan-shao",
+            "status": "partial"
+          },
+          {
+            "sourceId": "sanguozhi-wei-zhang-he",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lu-su",
+      "name": "鲁肃",
+      "courtesyName": "子敬",
+      "life": "172-217",
+      "primaryPolity": "孙吴",
+      "summary": "主张联刘抗曹，赤壁前后在孙刘关系和荆州安排中作用突出。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
+      "firstRecordedYear": 172,
+      "lastRecordedYear": 217,
+      "sourceIds": [
+        "sanguozhi-wu-wuzhu",
+        "sanguozhi-wu-zhou-yu",
+        "zizhi-tongjian-65"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-wu-zhou-yu",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-65",
+            "status": "partial"
+          }
+        ]
+      }
+    },
+    {
+      "id": "huang-zhong",
+      "name": "黄忠",
+      "courtesyName": "汉升",
+      "life": "?-220",
+      "primaryPolity": "刘表集团 / 刘备集团",
+      "summary": "原为荆州将领，归刘备后参与入蜀和汉中战事，定军山斩夏侯渊成为汉中战局转折点。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 3,
+      "sourceMentionCount": 0,
+      "reviewedSourceMentionCount": 0,
+      "firstRecordedYear": 219,
+      "lastRecordedYear": 220,
+      "sourceIds": [
+        "sanguozhi-shu-zhang-fei",
+        "zizhi-tongjian-67"
+      ],
+      "coverage": {
+        "status": "partial",
+        "lastReviewedAt": null,
+        "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
+        "raw": {
+          "generatedFrom": "china-persons.json"
+        },
+        "sources": [
+          {
+            "sourceId": "sanguozhi-shu-zhang-fei",
+            "status": "partial"
+          },
+          {
+            "sourceId": "zizhi-tongjian-67",
+            "status": "partial"
+          }
+        ]
+      }
+    }
+  ]
+}

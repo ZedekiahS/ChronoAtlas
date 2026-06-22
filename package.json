@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "validate:data": "node scripts/validate-data.mjs"
+    "validate:data": "node scripts/validate-data.mjs && npm run validate:db",
+    "validate:db": "node --no-warnings scripts/build-history-db.mjs --check",
+    "db:build": "node --no-warnings scripts/build-history-db.mjs",
+    "db:export": "node --no-warnings scripts/export-history-data.mjs",
+    "db:rebuild": "npm run db:build && npm run db:export"
   },
   "dependencies": {
     "d3-geo": "^3.1.1",
