@@ -382,19 +382,22 @@ function formatYearRange(event: HistoricalEvent) {
     : `${event.startYear}-${event.endYear} 年`;
 }
 
-function getEventDistanceFromYear(event: HistoricalEvent, year: number) {
-  if (isActiveInYear(event, year)) {
-    return 0;
-  }
-
-  return Math.min(Math.abs(event.startYear - year), Math.abs(event.endYear - year));
+function isPinnedToYear(event: HistoricalEvent, year: number) {
+  return event.startYear === year || event.endYear === year;
 }
 
-function getNearestEventForYear(regionEvents: HistoricalEvent[], year: number) {
-  return [...regionEvents].sort((left, right) => {
-    const distance = getEventDistanceFromYear(left, year) - getEventDistanceFromYear(right, year);
-    return distance || left.startYear - right.startYear || left.title.localeCompare(right.title, "zh-Hans-CN");
-  })[0];
+function getPinnedYears(event: HistoricalEvent) {
+  const years = [event.startYear];
+
+  if (event.endYear !== event.startYear) {
+    years.push(event.endYear);
+  }
+
+  return years.filter((eventYear) => eventYear >= yearMin && eventYear <= yearMax);
+}
+
+function sortEventsByYearThenTitle(left: HistoricalEvent, right: HistoricalEvent) {
+  return left.startYear - right.startYear || left.endYear - right.endYear || left.title.localeCompare(right.title, "zh-Hans-CN");
 }
 
 function eventMatchesQuery(event: HistoricalEvent, normalizedQuery: string) {
@@ -938,14 +941,13 @@ function isChinaPolity(group: BoundaryGroup | ChinaPolity): group is ChinaPolity
 
 function getRegionSummary(region: RegionInfo, regionEvents: HistoricalEvent[], year: number) {
   const era = getRegionEra(region, year);
-  const activeEvent = regionEvents.find((event) => isActiveInYear(event, year));
-  const nearEvent = activeEvent ?? getNearestEventForYear(regionEvents, year);
+  const yearEvents = regionEvents.filter((event) => isPinnedToYear(event, year)).sort(sortEventsByYearThenTitle);
 
-  if (!nearEvent) {
-    return `${year} 年附近：${era.summary}`;
+  if (!yearEvents.length) {
+    return `${year} 年：暂无已整理大事。${era.summary}`;
   }
 
-  return `${year} 年附近：${nearEvent.title}。${era.summary}`;
+  return `${year} 年：${yearEvents.map((event) => event.title).join("；")}。${era.summary}`;
 }
 
 function WorldMap({
@@ -1405,26 +1407,51 @@ function App() {
     return matchingEvents.filter((event) => isActiveInYear(event, year) || isNearYear(event, year));
   }, [matchingEvents, year]);
 
-  const regionCounts = regions.reduce(
+  const currentYearRegionCounts = regions.reduce(
     (counts, region) => {
-      counts[region.id] = visibleEvents.filter((event) => event.region === region.id).length;
+      counts[region.id] = matchingEvents.filter((event) => event.region === region.id && isPinnedToYear(event, year)).length;
       return counts;
     },
     {} as Record<Region, number>,
   );
+  const timelineMarkers = useMemo(() => {
+    const markers = new Map<string, { eventCount: number; region: RegionInfo; titles: string[]; year: number }>();
+
+    matchingEvents.forEach((event) => {
+      const region = regions.find((regionInfo) => regionInfo.id === event.region);
+
+      if (!region) {
+        return;
+      }
+
+      getPinnedYears(event).forEach((eventYear) => {
+        const markerKey = `${event.region}-${eventYear}`;
+        const marker = markers.get(markerKey) ?? {
+          eventCount: 0,
+          region,
+          titles: [],
+          year: eventYear,
+        };
+
+        marker.eventCount += 1;
+        marker.titles.push(event.title);
+        markers.set(markerKey, marker);
+      });
+    });
+
+    return [...markers.values()].sort((left, right) => left.year - right.year || left.region.label.localeCompare(right.region.label, "zh-Hans-CN"));
+  }, [matchingEvents]);
   const worldComparisonItems = worldComparisonRegionOrder
     .map((regionId) => regions.find((region) => region.id === regionId))
     .filter((region): region is RegionInfo => Boolean(region))
     .map((region) => {
       const regionEvents = matchingEvents.filter((event) => event.region === region.id);
-      const activeEvents = regionEvents.filter((event) => isActiveInYear(event, year));
-      const featuredEvent = getNearestEventForYear(regionEvents, year);
+      const yearEvents = regionEvents.filter((event) => isPinnedToYear(event, year)).sort(sortEventsByYearThenTitle);
 
       return {
         region,
         era: getRegionEra(region, year),
-        activeEvents,
-        featuredEvent,
+        yearEvents,
         eventCount: regionEvents.length,
       };
     });
@@ -1451,7 +1478,9 @@ function App() {
   const inspectedChinaBlock = hoveredChinaBlock ?? selectedChinaBlock;
   const inspectedChinaControl = inspectedChinaBlock ? getChinaBlockControl(inspectedChinaBlock.id, year) : null;
 
-  const selectedRegionEvents = visibleEvents.filter((event) => event.region === selectedRegion);
+  const selectedRegionEvents = (page === "world" ? matchingEvents.filter((event) => isPinnedToYear(event, year)) : visibleEvents).filter(
+    (event) => event.region === selectedRegion,
+  );
   const filteredRegionEvents =
     selectedRegion === "china"
       ? selectedRegionEvents.filter((event) => matchesThreeKingdomsFilter(event, eventFilter))
@@ -1857,7 +1886,7 @@ function App() {
               </p>
               <div className="summary-meta">
                 <span>{inspectedEra.title}</span>
-                <strong>{regionCounts[inspectedRegion.id]} 个事件</strong>
+                <strong>{currentYearRegionCounts[inspectedRegion.id]} 个本年事件</strong>
               </div>
             </aside>
           )}
@@ -1912,13 +1941,12 @@ function App() {
                 <p className="kicker">同年对照</p>
                 <h2>{year} 年的四大区域局势</h2>
               </div>
-              <span>当前年份决定时代背景；事件卡显示同年或最近资料节点。</span>
+              <span>只显示当前年份已整理的大事；没有记录的区域留空。</span>
             </div>
 
             <div className="comparison-grid">
               {worldComparisonItems.map((item) => {
                 const isSelected = item.region.id === selectedRegion;
-                const isCurrentEvent = item.featuredEvent ? isActiveInYear(item.featuredEvent, year) : false;
                 const actionLabel = item.region.id === "china" ? "进入中国三国" : "查看区域概览";
 
                 return (
@@ -1938,25 +1966,30 @@ function App() {
                   >
                     <div className="comparison-card-header">
                       <span>{item.region.label}</span>
-                      <strong>{item.activeEvents.length ? `${item.activeEvents.length} 个当前事件` : `${item.eventCount} 个资料节点`}</strong>
+                      <strong>{item.yearEvents.length ? `${item.yearEvents.length} 件本年大事` : "本年无大事"}</strong>
                     </div>
                     <div className="comparison-era">
                       <small>{item.era.title}</small>
                       <p>{item.era.summary}</p>
                     </div>
-                    <div className="comparison-event">
-                      <span>{isCurrentEvent ? "当前事件" : "邻近事件"}</span>
-                      {item.featuredEvent ? (
-                        <>
-                          <strong>{item.featuredEvent.title}</strong>
-                          <small>
-                            {formatYearRange(item.featuredEvent)} · {categoryLabels[item.featuredEvent.category]}
-                          </small>
-                        </>
+                    <div className={`comparison-event ${item.yearEvents.length ? "" : "empty"}`}>
+                      <span>本年大事</span>
+                      {item.yearEvents.length ? (
+                        <div className="comparison-event-list">
+                          {item.yearEvents.slice(0, 3).map((event) => (
+                            <div className="comparison-event-item" key={event.id}>
+                              <strong>{event.title}</strong>
+                              <small>
+                                {formatYearRange(event)} · {categoryLabels[event.category]}
+                              </small>
+                            </div>
+                          ))}
+                          {item.yearEvents.length > 3 && <small>另有 {item.yearEvents.length - 3} 件</small>}
+                        </div>
                       ) : (
                         <>
-                          <strong>资料待补</strong>
-                          <small>当前搜索下没有匹配节点</small>
+                          <strong>暂无已整理大事</strong>
+                          <small>{item.eventCount} 个资料节点已在时间条标出</small>
                         </>
                       )}
                     </div>
@@ -1985,22 +2018,59 @@ function App() {
               <span>{year}</span>
               <small>CE</small>
             </div>
-            <input
-              aria-label="选择年份"
-              type="range"
-              min={yearMin}
-              max={yearMax}
-              step={1}
-              value={year}
-              onInput={(event) => setYear(Number(event.currentTarget.value))}
-              onChange={(event) => setYear(Number(event.target.value))}
-            />
+            <div className="timeline-track">
+              {page === "world" && (
+                <div className="timeline-marker-layer" aria-hidden="true">
+                  {timelineMarkers.map((marker) => {
+                    const regionIndex = Math.max(0, worldComparisonRegionOrder.indexOf(marker.region.id));
+                    const offset = ((marker.year - yearMin) / (yearMax - yearMin)) * 100;
+
+                    return (
+                      <span
+                        className="timeline-marker"
+                        key={`${marker.region.id}-${marker.year}`}
+                        style={
+                          {
+                            "--marker-color": marker.region.accent,
+                            "--marker-row": regionIndex,
+                            left: `${offset}%`,
+                          } as React.CSSProperties
+                        }
+                        title={`${marker.year} 年 · ${marker.region.label} · ${marker.titles.slice(0, 2).join("、")}${
+                          marker.eventCount > 2 ? `等 ${marker.eventCount} 件` : ""
+                        }`}
+                      />
+                    );
+                  })}
+                </div>
+              )}
+              <input
+                aria-label="选择年份"
+                type="range"
+                min={yearMin}
+                max={yearMax}
+                step={1}
+                value={year}
+                onInput={(event) => setYear(Number(event.currentTarget.value))}
+                onChange={(event) => setYear(Number(event.target.value))}
+              />
+            </div>
             <div className="range-labels">
               <span>190</span>
               <span>220</span>
               <span>260</span>
               <span>280</span>
             </div>
+            {page === "world" && (
+              <div className="timeline-region-legend" aria-label="区域颜色">
+                {worldComparisonItems.map((item) => (
+                  <span key={item.region.id} style={{ "--accent": item.region.accent } as React.CSSProperties}>
+                    <i aria-hidden="true" />
+                    {item.region.label}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
           <button
             className="icon-button"
@@ -2274,7 +2344,7 @@ function App() {
           </section>
         )}
 
-        {page !== "people" && (
+        {page !== "people" && filteredRegionEvents.length > 0 && (
           <section className="event-detail">
           <div className="detail-eyebrow">
             <CircleDot size={18} aria-hidden="true" />
@@ -2678,6 +2748,17 @@ function App() {
               )}
             </div>
           </section>
+          </section>
+        )}
+
+        {page !== "people" && filteredRegionEvents.length === 0 && (
+          <section className="event-detail empty-event-detail">
+            <div className="detail-eyebrow">
+              <CircleDot size={18} aria-hidden="true" />
+              <span>本年事件</span>
+            </div>
+            <h2>{year} 年暂无已整理大事</h2>
+            <p className="detail-summary">{selectedRegionInfo.label}在当前年份暂无已录入的大事。</p>
           </section>
         )}
       </aside>
