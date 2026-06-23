@@ -2166,5 +2166,1461 @@
     ],
     "confidence": "high",
     "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-qi-wang-235-qi-wang",
+    "sourceId": "sanguozhi-wei-qi-wang",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "齐王纪",
+    "locator": "青龙三年",
+    "year": 235,
+    "text": "青龙三年，立为齐王。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-fang"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "齐王",
+      "宗室继嗣"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-qi-wang-239-enthroned",
+    "sourceId": "sanguozhi-wei-qi-wang",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "齐王纪",
+    "locator": "景初三年正月",
+    "year": 239,
+    "text": "景初三年正月丁亥朔，帝甚病，乃立为皇太子。是日，即皇帝位，大赦。尊皇后曰皇太后。大将军曹爽、太尉司马宣王辅政。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-fang",
+      "cao-rui",
+      "cao-shuang",
+      "sima-yi"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "即位",
+      "辅政",
+      "曹爽",
+      "司马懿"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-qi-wang-249-gaopingling",
+    "sourceId": "sanguozhi-wei-qi-wang",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "齐王纪",
+    "locator": "嘉平元年春正月",
+    "year": 249,
+    "text": "嘉平元年春正月甲午，车驾谒高平陵。太傅司马宣王奏免大将军曹爽、爽弟中领军羲、武卫将军训、散骑常侍彦官，以侯就第。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-fang",
+      "cao-shuang",
+      "sima-yi"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "高平陵",
+      "司马氏",
+      "曹爽"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-qi-wang-254-deposed",
+    "sourceId": "sanguozhi-wei-qi-wang",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "齐王纪",
+    "locator": "嘉平六年九月",
+    "year": 254,
+    "text": "秋九月，大将军司马景王将谋废帝，以闻皇太后。甲戌，太后令曰：皇帝芳春秋已长，不亲万机……遣芳归藩于齐，以避皇位。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-fang",
+      "cao-mao",
+      "empress-guo-mingyuan"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "废立",
+      "司马师",
+      "齐王"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-gaogui-xianggong-244-gaogui",
+    "sourceId": "sanguozhi-wei-gaogui-xianggong",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "高贵乡公纪",
+    "locator": "正始五年",
+    "year": 244,
+    "text": "高贵乡公讳髦，字彦士，文帝孙，东海定王霖子也。正始五年，封歘县高贵乡公。少好学，夙成。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-mao",
+      "cao-pi",
+      "cao-lin-donghai"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "高贵乡公",
+      "好学"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-gaogui-xianggong-254-enthroned",
+    "sourceId": "sanguozhi-wei-gaogui-xianggong",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "高贵乡公纪",
+    "locator": "正元元年十月",
+    "year": 254,
+    "text": "齐王废，公卿议迎立公。十月己丑，公至于玄武馆……其日即皇帝位于太极前殿。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-mao",
+      "cao-fang"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "即位",
+      "废立",
+      "洛阳"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-gaogui-xianggong-260-sima-zhao",
+    "sourceId": "sanguozhi-wei-gaogui-xianggong",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "高贵乡公纪",
+    "locator": "甘露五年五月",
+    "year": 260,
+    "text": "帝见威权日去，不胜其忿。乃召侍中王沈、尚书王经、散骑常侍王业，谓曰：“司马昭之心，路人所知也。吾不能坐受废辱，今日当与卿等自出讨之。”",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-mao",
+      "sima-zhao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "司马昭",
+      "王经",
+      "反抗"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-gaogui-xianggong-260-death",
+    "sourceId": "sanguozhi-wei-gaogui-xianggong",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "高贵乡公纪",
+    "locator": "甘露五年五月",
+    "year": 260,
+    "text": "中护军贾充又逆帝战于南阙下，帝自用剑。众欲退，太子舍人成济问充曰：“事急矣。当云何？”充曰：“畜养汝等，正谓今日。今日之事，无所问也。”济即前刺帝，刃出于背。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-mao",
+      "sima-zhao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "被弑",
+      "贾充",
+      "成济"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-chenliu-wang-258-changdao",
+    "sourceId": "sanguozhi-wei-chenliu-wang",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "陈留王",
+    "locator": "甘露三年",
+    "year": 258,
+    "text": "陈留王讳奂，字景明，武帝孙，燕王宇子也。甘露三年，封安次县常道乡公。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-huan",
+      "cao-cao",
+      "cao-yu"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "常道乡公",
+      "燕王宇"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-chenliu-wang-260-enthroned",
+    "sourceId": "sanguozhi-wei-chenliu-wang",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "陈留王",
+    "locator": "甘露五年六月",
+    "year": 260,
+    "text": "高贵乡公卒，公卿议迎立公。六月甲寅，入于洛阳，见皇太后，是日即皇帝位于太极前殿，大赦，改年。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-huan",
+      "cao-mao",
+      "empress-guo-mingyuan"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "即位",
+      "曹髦",
+      "洛阳"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-chenliu-wang-263-shu-surrender",
+    "sourceId": "sanguozhi-wei-chenliu-wang",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "陈留王",
+    "locator": "景元四年十一月",
+    "year": 263,
+    "text": "自邓艾、锺会率众伐蜀，所至辄克。是月，蜀主刘禅诣艾降，巴蜀皆平。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-huan",
+      "deng-ai",
+      "zhong-hui",
+      "liu-shan"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "灭蜀",
+      "邓艾",
+      "钟会",
+      "刘禅"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-chenliu-wang-265-abdication",
+    "sourceId": "sanguozhi-wei-chenliu-wang",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "陈留王",
+    "locator": "咸熙二年十二月",
+    "year": 265,
+    "text": "十二月壬戌，天禄永终，历数在晋。诏群公卿士具仪设坛于南郊，使使者奉皇帝玺绶册，禅位于晋嗣王，如汉魏故事。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-huan",
+      "sima-yan"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "禅让",
+      "西晋",
+      "曹魏灭亡"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-ren-early",
+    "sourceId": "sanguozhi-wei-cao-ren",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹仁传",
+    "locator": "本传开篇",
+    "year": null,
+    "text": "曹仁字子孝，太祖从弟也。少好弓马弋猎……遂从太祖，为别部司马，行厉锋校尉。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-ren",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗亲将领",
+      "从弟",
+      "骑兵"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-ren-208-jiangling",
+    "sourceId": "sanguozhi-wei-cao-ren",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹仁传",
+    "locator": "平荆州后",
+    "year": 208,
+    "text": "从平荆州，以仁行征南将军，留屯江陵，拒吴将周瑜。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-ren",
+      "zhou-yu"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "江陵",
+      "周瑜",
+      "南线"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-ren-219-fancheng",
+    "sourceId": "sanguozhi-wei-cao-ren",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹仁传",
+    "locator": "关羽攻樊",
+    "year": 219,
+    "text": "关羽攻樊，时汉水暴溢，于禁等七军皆没，禁降羽。仁人马数千人守城，城不没者数板……徐晃救至，水亦稍减，晃从外击羽，仁得溃围出，羽退走。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-ren",
+      "guan-yu",
+      "yu-jin",
+      "xu-huang"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "襄樊",
+      "关羽",
+      "徐晃"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-ren-222-grand-marshal",
+    "sourceId": "sanguozhi-wei-cao-ren",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹仁传",
+    "locator": "文帝时期",
+    "year": 222,
+    "text": "文帝遣使即拜仁大将军。又诏仁移屯临颍，迁大司马，复督诸军据乌江，还屯合肥。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-ren",
+      "cao-pi"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "大将军",
+      "大司马"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-ren-223-death",
+    "sourceId": "sanguozhi-wei-cao-ren",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹仁传",
+    "locator": "黄初四年",
+    "year": 223,
+    "text": "黄初四年薨，谥曰忠侯。魏书曰：仁时年五十六。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-ren"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "死亡",
+      "忠侯"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-hong-190-save-cao-cao",
+    "sourceId": "sanguozhi-wei-cao-hong",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹洪传",
+    "locator": "讨董卓荥阳败后",
+    "year": 190,
+    "text": "太祖失马，贼追甚急，洪下，以马授太祖，太祖辞让，洪曰：“天下可无洪，不可无君。”遂步从到汴水。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-hong",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "救曹操",
+      "讨董卓",
+      "荥阳"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-hong-194-yan-zhou",
+    "sourceId": "sanguozhi-wei-cao-hong",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹洪传",
+    "locator": "张邈迎吕布",
+    "year": 194,
+    "text": "太祖征徐州，张邈举兖州叛迎吕布。时大饥荒，洪将兵在前，先据东平、范，聚粮谷以继军。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-hong",
+      "cao-cao",
+      "zhang-miao",
+      "lu-bu"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "兖州",
+      "吕布",
+      "军粮"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-hong-226-later-office",
+    "sourceId": "sanguozhi-wei-cao-hong",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹洪传",
+    "locator": "明帝即位后",
+    "year": 226,
+    "text": "明帝即位，拜后将军，更封乐城侯，邑千户，位特进，复拜骠骑将军。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-hong",
+      "cao-rui"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "后将军",
+      "骠骑将军"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-hong-232-death",
+    "sourceId": "sanguozhi-wei-cao-hong",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹洪传",
+    "locator": "太和六年",
+    "year": 232,
+    "text": "太和六年薨，谥曰恭侯。子馥，嗣侯。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-hong"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "死亡",
+      "恭侯"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-xiu-early-qianliju",
+    "sourceId": "sanguozhi-wei-cao-xiu",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹休传",
+    "locator": "早年归曹操",
+    "year": null,
+    "text": "太祖谓左右曰：“此吾家千里驹也。”使与文帝同止，见待如子。常从征伐，使领虎豹骑宿卫。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-xiu",
+      "cao-cao",
+      "cao-pi"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "千里驹",
+      "虎豹骑",
+      "宗亲"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-xiu-218-xiabian",
+    "sourceId": "sanguozhi-wei-cao-xiu",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹休传",
+    "locator": "刘备遣吴兰屯下辩",
+    "year": 218,
+    "text": "刘备遣将吴兰屯下辩，太祖遣曹洪征之，以休为骑都尉，参洪军事。太祖谓休曰：“汝虽参军，其实帅也。”",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-xiu",
+      "cao-hong",
+      "cao-cao",
+      "liu-bei"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "下辩",
+      "曹洪",
+      "刘备"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-xiu-220-east-command",
+    "sourceId": "sanguozhi-wei-cao-xiu",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹休传",
+    "locator": "文帝即王位后",
+    "year": 220,
+    "text": "文帝即王位，为领军将军，录前后功，封东阳亭侯。夏侯敦薨，以休为镇南将军，假节都督诸军事。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-xiu",
+      "cao-pi",
+      "xiahou-dun"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "镇南将军",
+      "东线"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-xiu-228-shiting",
+    "sourceId": "sanguozhi-wei-cao-xiu",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹休传",
+    "locator": "太和二年",
+    "year": 228,
+    "text": "太和二年，帝为二道征吴……贼将伪降，休深入，战不利，退还宿石亭。军夜惊，士卒乱，弃甲兵辎重甚多……休因此痈发背薨，谥曰壮侯。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-xiu",
+      "cao-rui"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "石亭",
+      "伐吴",
+      "死亡"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-zhen-early-adopted",
+    "sourceId": "sanguozhi-wei-cao-zhen",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹真传",
+    "locator": "本传开篇",
+    "year": null,
+    "text": "太祖哀真少孤，收养与诸子同，使与文帝共止……太祖壮其鸷勇，使将虎豹骑。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-zhen",
+      "cao-cao",
+      "cao-pi"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "收养",
+      "虎豹骑",
+      "宗亲"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-zhen-219-hanzhong",
+    "sourceId": "sanguozhi-wei-cao-zhen",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹真传",
+    "locator": "夏侯渊没于阳平后",
+    "year": 219,
+    "text": "是时，夏侯渊没于阳平，太祖忧之。以真为征蜀护军，督徐晃等破刘备别将高详于阳平。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-zhen",
+      "xiahou-yuan",
+      "cao-cao",
+      "xu-huang",
+      "liu-bei"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "汉中",
+      "征蜀护军",
+      "阳平"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-zhen-220-west-command",
+    "sourceId": "sanguozhi-wei-cao-zhen",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹真传",
+    "locator": "文帝即王位",
+    "year": 220,
+    "text": "文帝即王位，以真为镇西将军，假节都督雍、凉州诸军事。录前后功，进封东乡侯。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-zhen",
+      "cao-pi"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "雍凉",
+      "镇西将军"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-zhen-226-regency",
+    "sourceId": "sanguozhi-wei-cao-zhen",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹真传",
+    "locator": "黄初七年",
+    "year": 226,
+    "text": "七年，文帝寝疾，真与陈群、司马宣王等受遗诏辅政。明帝即位，进封邵陵侯……迁大将军。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-zhen",
+      "cao-pi",
+      "cao-rui",
+      "chen-qun",
+      "sima-yi"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "辅政",
+      "大将军"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-zhen-228-qishan",
+    "sourceId": "sanguozhi-wei-cao-zhen",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹真传",
+    "locator": "诸葛亮围祁山",
+    "year": 228,
+    "text": "诸葛亮围祁山，南安、天水、安定三郡反应亮。帝遣真督诸军军郿，遣张合击亮将马谡，大破之。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-zhen",
+      "zhuge-liang",
+      "zhang-he"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "诸葛亮北伐",
+      "祁山",
+      "张郃"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-zhen-230-southern-campaign",
+    "sourceId": "sanguozhi-wei-cao-zhen",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹真传",
+    "locator": "太和四年",
+    "year": 230,
+    "text": "真以“蜀连出侵边境，宜遂伐之。数道并入，可大克也”。帝从其计……真以八月发长安，从子午道南入……会大霖雨三十馀日，或栈道断绝，诏真还军。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-zhen",
+      "cao-rui",
+      "sima-yi"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "伐蜀",
+      "子午道",
+      "撤军"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-zhen-231-death",
+    "sourceId": "sanguozhi-wei-cao-zhen",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "曹真传",
+    "locator": "太和五年前后",
+    "year": 231,
+    "text": "真病还洛阳，帝自幸其第省疾。真薨，谥曰元侯。子爽嗣。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-zhen",
+      "cao-rui",
+      "cao-shuang"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "死亡",
+      "曹爽",
+      "元侯"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-xiong-record",
+    "sourceId": "sanguozhi-wei-cao-xiong",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "萧怀王熊传",
+    "locator": "本传",
+    "year": 221,
+    "text": "萧怀王熊，早薨。黄初二年追封谥萧怀公。太和三年，又追封爵为王。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-xiong",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-shuo-record",
+    "sourceId": "sanguozhi-wei-cao-shuo",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "相殇王铄传",
+    "locator": "本传",
+    "year": 229,
+    "text": "相殇王铄，早薨，太和三年追封谥。青龙元年，子愍王潜嗣，其年薨。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-shuo",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-ju-record",
+    "sourceId": "sanguozhi-wei-cao-ju",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "彭城王据传",
+    "locator": "本传",
+    "year": 211,
+    "text": "彭城王据，建安十六年封范阳侯。二十二年，徙封宛侯。黄初二年，进爵为公。三年，为章陵王……太和六年，改封诸王，皆以郡为国，据复封彭城。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-ju",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-yu-record",
+    "sourceId": "sanguozhi-wei-cao-yu",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "燕王宇传",
+    "locator": "本传",
+    "year": 211,
+    "text": "燕王宇字彭祖。建安十六年，封都乡侯……太和六年，改封燕王。明帝少与宇同止，常爱异之……冬十二月，明帝疾笃，拜宇为大将军，属以后事。受署四日，宇深固让；帝意亦变，遂免宇官。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-yu",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-lin-record",
+    "sourceId": "sanguozhi-wei-cao-lin",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "沛穆王林传",
+    "locator": "本传",
+    "year": 211,
+    "text": "沛穆王林，建安十六年封饶阳侯……太和六年，改封沛。景初、正元、景元中，累增邑，并前四千七百户。林薨，子纬嗣。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-lin",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-gun-record",
+    "sourceId": "sanguozhi-wei-cao-gun",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "中山恭王衮传",
+    "locator": "本传",
+    "year": 216,
+    "text": "中山恭王衮，建安二十一年封平乡侯。少好学，年十余岁能属文……每兄弟游娱，衮独谭思经典。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-gun",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-xuan-record",
+    "sourceId": "sanguozhi-wei-cao-xuan",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "济阳怀王玹传",
+    "locator": "本传",
+    "year": 211,
+    "text": "济阳怀王玹，建安十六年封西乡侯。早薨，无子。二十年，以沛王林子赞袭玹爵邑，早薨，无子。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-xuan",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-jun-record",
+    "sourceId": "sanguozhi-wei-cao-jun",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "陈留恭王峻传",
+    "locator": "本传",
+    "year": 216,
+    "text": "陈留恭王峻字子安，建安二十一年封郿侯。二十二年，徙封襄邑。黄初二年，进爵为公。三年，为陈留王……甘露四年薨。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-jun",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-ju-fanyang-record",
+    "sourceId": "sanguozhi-wei-cao-ju-fanyang",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "范阳闵王矩传",
+    "locator": "本传",
+    "year": 217,
+    "text": "范阳闵王矩，早薨，无子。建安二十二年，以樊安公均子敏奉矩后，封临晋侯。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-ju-fanyang",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-gan-record",
+    "sourceId": "sanguozhi-wei-cao-gan",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "赵王干传",
+    "locator": "本传",
+    "year": 215,
+    "text": "赵王干，建安二十年封高平亭侯……太和六年，改封赵王。干母有宠于太祖。及文帝为嗣，干母有力。文帝临崩，有遗诏，是以明帝常加恩意。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-gan",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-shang-record",
+    "sourceId": "sanguozhi-wei-cao-shang",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "临邑殇公子上传",
+    "locator": "本传",
+    "year": 231,
+    "text": "临邑殇公子上，早薨。太和五年，追封谥。无后。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-shang",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-biao-record",
+    "sourceId": "sanguozhi-wei-cao-biao",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "楚王彪传",
+    "locator": "本传",
+    "year": 216,
+    "text": "楚王彪字朱虎。建安二十一年，封寿春侯……嘉平元年，兖州刺史令狐愚与太尉王凌谋迎彪都许昌。语在凌传。乃遣傅及侍御史就国案验……使自图焉。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-biao",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-qin-record",
+    "sourceId": "sanguozhi-wei-cao-qin",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "刚殇公子勤传",
+    "locator": "本传",
+    "year": 231,
+    "text": "刚殇公子勤，早薨。太和五年追封谥。无后。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-qin",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-cheng-record",
+    "sourceId": "sanguozhi-wei-cao-cheng",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "谷城殇公子乘传",
+    "locator": "本传",
+    "year": 231,
+    "text": "谷城殇公子乘，早薨。太和五年追封谥。无后。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-cheng",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-zheng-record",
+    "sourceId": "sanguozhi-wei-cao-zheng",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "郿戴公子整传",
+    "locator": "本传",
+    "year": 217,
+    "text": "郿戴公子整，奉从叔父郎中绍后。建安二十二年，封郿侯。二十三年薨。无子。黄初二年追进爵，谥曰戴公。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-zheng",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-jing-record",
+    "sourceId": "sanguozhi-wei-cao-jing",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "灵殇公子京传",
+    "locator": "本传",
+    "year": 231,
+    "text": "灵殇公子京，早薨。太和五年追封谥。无后。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-jing",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-jun-fan-record",
+    "sourceId": "sanguozhi-wei-cao-jun-fan",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "樊安公均传",
+    "locator": "本传",
+    "year": 217,
+    "text": "樊安公均，奉叔父蓟恭公彬后。建安二十二年，封樊侯。二十四年薨。子抗嗣。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-jun-fan",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-ji-record",
+    "sourceId": "sanguozhi-wei-cao-ji",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "广宗殇公子棘传",
+    "locator": "本传",
+    "year": 231,
+    "text": "广宗殇公子棘，早薨。太和五年追封谥。无后。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-ji",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-hui-record",
+    "sourceId": "sanguozhi-wei-cao-hui",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "东平灵王徽传",
+    "locator": "本传",
+    "year": 217,
+    "text": "东平灵王徽，奉叔公朗陵哀侯王后。建安二十二年，封历城侯……太和六年，改封东平。青龙二年，徽使官属檛寿张县吏，为有司所奏。诏削县一，户五百。其年复所削县。正始三年薨。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-hui",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-mao-prince-record",
+    "sourceId": "sanguozhi-wei-cao-mao-prince",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "乐陵王茂传",
+    "locator": "本传",
+    "year": 217,
+    "text": "乐陵王茂，建安二十二年封万岁亭侯……茂性慠佷，少无宠于太祖。及文帝世，又独不王。太和元年，徙封聊城公，其年为王。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-mao-prince",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-xie-record",
+    "sourceId": "sanguozhi-wei-cao-xie",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "赞哀王协传",
+    "locator": "本传",
+    "year": 231,
+    "text": "赞哀王协，早薨。太和五年追封谥曰经殇公。青龙二年，更追改号谥。三年，子殇王寻嗣。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-xie",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-rui-prince-record",
+    "sourceId": "sanguozhi-wei-cao-rui-prince",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "北海悼王蕤传",
+    "locator": "本传",
+    "year": 226,
+    "text": "北海悼王蕤，黄初七年，明帝即位，立为阳平县王。太和六年，改封北海。青龙元年薨。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-rui-prince",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-jian-record",
+    "sourceId": "sanguozhi-wei-cao-jian",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "东武阳怀王鉴传",
+    "locator": "本传",
+    "year": 225,
+    "text": "东武阳怀王鉴，黄初六年立。其年薨。青龙三年赐谥。无子。国除。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-jian",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-lin-donghai-record",
+    "sourceId": "sanguozhi-wei-cao-lin-donghai",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "东海定王霖传",
+    "locator": "本传",
+    "year": 222,
+    "text": "东海定王霖，黄初三年立为河东王。六年，改封馆陶县。明帝即位，以先帝遗意，爱宠霖异于诸国。而霖性粗暴，闺门之内，婢妾之间，多所残害。太和六年，改封东海。嘉平元年薨……高贵乡公髦，霖之子也，入继大宗。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-lin-donghai",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-li-record",
+    "sourceId": "sanguozhi-wei-cao-li",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "元城哀王礼传",
+    "locator": "本传",
+    "year": 221,
+    "text": "元城哀王礼，黄初二年封秦公，以京兆郡为国。三年，改为京兆王。六年，改封元城王。太和三年薨。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-li",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-yong-record",
+    "sourceId": "sanguozhi-wei-cao-yong",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "邯郸怀王邕传",
+    "locator": "本传",
+    "year": 221,
+    "text": "邯郸怀王邕，黄初二年封淮南公，以九江郡为国。三年，进为淮南王。四年，改封陈。六年，改封邯郸。太和三年薨。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-yong",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-gong-record",
+    "sourceId": "sanguozhi-wei-cao-gong",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "清河悼王贡传",
+    "locator": "本传",
+    "year": 222,
+    "text": "清河悼王贡，黄初三年封。四年薨。无子。国除。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-gong",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-cao-yan-record",
+    "sourceId": "sanguozhi-wei-cao-yan",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "广平哀王俨传",
+    "locator": "本传",
+    "year": 222,
+    "text": "广平哀王俨，黄初三年封。四年薨。无子。国除。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-yan",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "宗室",
+      "封国",
+      "武文世王公传"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
   }
 ]

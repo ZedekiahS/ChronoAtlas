@@ -2133,5 +2133,165 @@
         "quote": "明帝崩，齐王即位，加爽侍中，改封武安侯。"
       }
     ]
+  },
+  {
+    "id": "cao-cao-cao-ren-clan",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "cao-ren",
+    "type": "clan-general",
+    "startYear": 190,
+    "endYear": 223,
+    "summary": "曹仁为曹操从弟，是曹操集团和曹魏早期最重要的宗亲方面统帅之一。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-ren",
+        "locator": "本传开篇",
+        "quote": "曹仁字子孝，太祖从弟也。"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-cao-hong-clan",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "cao-hong",
+    "type": "clan-general",
+    "startYear": 190,
+    "endYear": 232,
+    "summary": "曹洪为曹操从弟，荥阳败后曾让马救曹操，后长期为曹魏宗亲重臣。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-hong",
+        "locator": "本传开篇",
+        "quote": "曹洪字子廉，太祖从弟也。"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-cao-xiu-clan",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "cao-xiu",
+    "type": "clan-general",
+    "startYear": 190,
+    "endYear": 228,
+    "summary": "曹休为曹操族子，少孤北归后受曹操赏识，被称为“吾家千里驹”。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-xiu",
+        "locator": "早年归曹操",
+        "quote": "太祖谓左右曰：“此吾家千里驹也。”"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-cao-zhen-clan",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "cao-zhen",
+    "type": "adoptive-clan",
+    "startYear": 190,
+    "endYear": 220,
+    "summary": "曹真少孤后被曹操收养，与曹丕同处，成为曹魏西线宗亲将领。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhen",
+        "locator": "本传开篇",
+        "quote": "太祖哀真少孤，收养与诸子同，使与文帝共止。"
+      }
+    ]
+  },
+  {
+    "id": "cao-pi-cao-fang-succession",
+    "sourcePersonId": "cao-pi",
+    "targetPersonId": "cao-fang",
+    "type": "dynastic-successor",
+    "startYear": 239,
+    "endYear": 254,
+    "summary": "曹芳为曹魏第三代以后少帝，承魏明帝后即位，名义上延续曹丕所开曹魏帝统。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-qi-wang",
+        "locator": "景初三年正月",
+        "quote": "景初三年正月丁亥朔，帝甚病，乃立为皇太子。是日，即皇帝位。"
+      }
+    ]
+  },
+  {
+    "id": "cao-lin-donghai-cao-mao-family",
+    "sourcePersonId": "cao-lin-donghai",
+    "targetPersonId": "cao-mao",
+    "type": "family",
+    "startYear": 241,
+    "endYear": 260,
+    "summary": "曹髦为东海定王曹霖之子，曹芳被废后入继帝位。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-gaogui-xianggong",
+        "locator": "本纪开篇",
+        "quote": "高贵乡公讳髦，字彦士，文帝孙，东海定王霖子也。"
+      }
+    ]
+  },
+  {
+    "id": "cao-yu-cao-huan-family",
+    "sourcePersonId": "cao-yu",
+    "targetPersonId": "cao-huan",
+    "type": "family",
+    "startYear": 246,
+    "endYear": 302,
+    "summary": "曹奂为燕王曹宇之子，曹髦死后入继曹魏帝位，后禅位于晋。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chenliu-wang",
+        "locator": "本纪开篇",
+        "quote": "陈留王讳奂，字景明，武帝孙，燕王宇子也。"
+      }
+    ]
+  },
+  {
+    "id": "cao-mao-sima-zhao-conflict",
+    "sourcePersonId": "cao-mao",
+    "targetPersonId": "sima-zhao",
+    "type": "political-conflict",
+    "startYear": 260,
+    "endYear": 260,
+    "summary": "曹髦因不满司马昭权势日盛而亲自出讨，最终被弑。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-gaogui-xianggong",
+        "locator": "甘露五年五月",
+        "quote": "司马昭之心，路人所知也。吾不能坐受废辱，今日当与卿等自出讨之。"
+      }
+    ]
+  },
+  {
+    "id": "cao-huan-sima-yan-abdication",
+    "sourcePersonId": "cao-huan",
+    "targetPersonId": "sima-yan",
+    "type": "abdication",
+    "startYear": 265,
+    "endYear": 265,
+    "summary": "曹奂咸熙二年禅位于晋王司马炎，曹魏结束。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-chenliu-wang",
+        "locator": "咸熙二年十二月",
+        "quote": "使使者奉皇帝玺绶册，禅位于晋嗣王，如汉魏故事。"
+      }
+    ]
+  },
+  {
+    "id": "cao-biao-wang-ling-plot",
+    "sourcePersonId": "cao-biao",
+    "targetPersonId": "wang-ling",
+    "type": "political-plot",
+    "startYear": 249,
+    "endYear": 251,
+    "summary": "王凌与令狐愚曾谋迎楚王曹彪都许昌，案发后曹彪被迫自尽。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-biao",
+        "locator": "嘉平元年",
+        "quote": "嘉平元年，兖州刺史令狐愚与太尉王凌谋迎彪都许昌。"
+      }
+    ]
   }
 ]

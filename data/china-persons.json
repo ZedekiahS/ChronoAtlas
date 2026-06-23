@@ -1515,16 +1515,19 @@
     "life": "168-223",
     "primaryPolity": "曹操集团 / 曹魏",
     "roles": [
-      "将领",
-      "曹魏宗亲统帅"
+      "曹魏宗室",
+      "大司马",
+      "征南将军",
+      "方面统帅"
     ],
-    "summary": "曹操从弟，早随曹操征伐，屡任方面统帅，江陵、襄樊等战事中承担曹魏南线防御重任。",
+    "summary": "曹仁，字子孝，曹操从弟。早年从曹操征伐，赤壁后守江陵，219 年襄樊危机中坚守樊城，曹丕时期拜大将军、迁大司马。",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-ren",
         "locator": "曹仁传"
       }
-    ]
+    ],
+    "coverageStatus": "partial"
   },
   {
     "id": "zhang-miao",
@@ -1681,16 +1684,19 @@
     "life": "?-228",
     "primaryPolity": "曹操集团 / 曹魏",
     "roles": [
-      "宗亲将领",
-      "东线都督"
+      "曹魏宗室",
+      "大司马",
+      "征东将军",
+      "东线统帅"
     ],
-    "summary": "曹魏宗亲，早年归曹操，被视为“千里驹”；曹丕、曹叡时期主持东线伐吴，228 年石亭战败后去世。",
+    "summary": "曹休，字文烈，曹操族子。少孤归曹操，被称为“千里驹”，曹丕、曹叡时期长期主持东南对吴方向，228 年石亭战败后病逝。",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-xiu",
         "locator": "曹休传"
       }
-    ]
+    ],
+    "coverageStatus": "partial"
   },
   {
     "id": "cao-zhen",
@@ -1699,17 +1705,20 @@
     "life": "?-231",
     "primaryPolity": "曹操集团 / 曹魏",
     "roles": [
-      "宗亲将领",
-      "西线都督",
+      "曹魏宗室",
+      "大司马",
+      "大将军",
+      "西线统帅",
       "辅政大臣"
     ],
-    "summary": "曹操族子，少孤后由曹操抚养，掌虎豹骑并长期负责雍凉、关中、西线军事，曹叡初年为辅政重臣。",
+    "summary": "曹真，字子丹，曹操族子，少孤后由曹操收养。曹丕时期都督雍凉，文帝临终受遗诏辅政；明帝时任大将军、大司马，应对诸葛亮北伐并主持西线军政。",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-zhen",
         "locator": "曹真传"
       }
-    ]
+    ],
+    "coverageStatus": "partial"
   },
   {
     "id": "man-chong",
@@ -1814,10 +1823,11 @@
     "primaryPolity": "曹魏",
     "roles": [
       "皇帝",
-      "魏书本纪人物"
+      "曹魏少帝",
+      "齐王"
     ],
-    "summary": "曹芳见于《三国志·魏书·齐王纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹芳，字兰卿，魏明帝养子。239 年即位后先由曹爽、司马懿辅政，高平陵政变后司马氏掌权，254 年被司马师废为齐王。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-qi-wang",
@@ -1833,10 +1843,11 @@
     "primaryPolity": "曹魏",
     "roles": [
       "皇帝",
-      "魏书本纪人物"
+      "曹魏少帝",
+      "高贵乡公"
     ],
-    "summary": "曹髦见于《三国志·魏书·高贵乡公纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹髦，字彦士，曹丕之孙、东海定王曹霖之子。254 年曹芳被废后即位，260 年因不满司马昭专权亲自出讨，被贾充部下成济弑杀。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-gaogui-xianggong",
@@ -1852,10 +1863,11 @@
     "primaryPolity": "曹魏",
     "roles": [
       "皇帝",
-      "魏书本纪人物"
+      "曹魏元帝",
+      "陈留王"
     ],
-    "summary": "曹奂见于《三国志·魏书·陈留王纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹奂，字景明，曹操之孙、燕王曹宇之子。260 年曹髦死后即位，263 年魏灭蜀汉，265 年禅位于司马炎，曹魏由此结束。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-chenliu-wang",
@@ -2060,11 +2072,12 @@
     "life": "?-232",
     "primaryPolity": "曹操集团 / 曹魏",
     "roles": [
-      "曹魏将领",
-      "魏书列传人物"
+      "曹魏宗室",
+      "骠骑将军",
+      "曹操从弟"
     ],
-    "summary": "曹洪见于《三国志·魏书·曹洪传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹洪，字子廉，曹操从弟。讨董卓败后让马救曹操，兖州危机中聚粮继军，明帝时复拜后将军、骠骑将军，232 年去世。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-hong",
@@ -2805,10 +2818,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "萧怀王"
     ],
-    "summary": "曹熊见于《三国志·魏书·萧怀王熊传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹熊，曹操子，早逝。魏文帝黄初二年追封萧怀公，魏明帝太和三年又追进为萧怀王。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-xiong",
@@ -2844,10 +2857,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "相殇王"
     ],
-    "summary": "曹铄见于《三国志·魏书·相殇王铄传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹铄，曹操子，早逝。魏明帝太和三年追封谥，后嗣曹潜、曹偃相继承袭，终因无子国除。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-shuo",
@@ -2883,10 +2896,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "彭城王"
     ],
-    "summary": "曹据见于《三国志·魏书·彭城王据传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹据，曹操子，建安十六年封范阳侯，曹丕、曹叡时期多次徙封，最终复封彭城王；景初元年因私作禁物被削户。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-ju",
@@ -2902,10 +2915,11 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "燕王",
+      "短期辅政候选"
     ],
-    "summary": "曹宇见于《三国志·魏书·燕王宇传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹宇，字彭祖，曹操子。太和六年改封燕王，曹叡末年曾短暂被拜为大将军、托以后事，后被免；其子曹奂后来入继帝位。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-yu",
@@ -2921,10 +2935,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "沛穆王"
     ],
-    "summary": "曹林见于《三国志·魏书·沛穆王林传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹林，曹操子，建安十六年封饶阳侯，曹魏建国后屡次徙封，太和六年改封沛王，薨后谥穆。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-lin",
@@ -2940,10 +2954,11 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "中山恭王",
+      "好学宗室"
     ],
-    "summary": "曹衮见于《三国志·魏书·中山恭王衮传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹衮，曹操子，中山恭王。少好学、能属文，传称其尚约俭、谨慎自守，是武文世王公传中事迹较丰富的宗室王之一。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-gun",
@@ -2959,10 +2974,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "济阳怀王"
     ],
-    "summary": "曹玹见于《三国志·魏书·济阳怀王玹传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹玹，曹操子，建安十六年封西乡侯，早逝无子；太和年间追进爵号为济阳怀王。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-xuan",
@@ -2978,10 +2993,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "陈留恭王"
     ],
-    "summary": "曹峻见于《三国志·魏书·陈留恭王峻传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹峻，字子安，曹操子。建安二十一年封郿侯，黄初三年为陈留王，太和六年复封陈留，甘露四年去世。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-jun",
@@ -2997,10 +3012,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "范阳闵王"
     ],
-    "summary": "曹矩见于《三国志·魏书·范阳闵王矩传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹矩，曹操子，早逝无子。建安二十二年以曹敏奉其后，太和六年追进号为范阳闵王。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-ju-fanyang",
@@ -3016,10 +3031,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "赵王"
     ],
-    "summary": "曹干见于《三国志·魏书·赵王干传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹干，曹操子，一名良。幼年丧母，又逢曹操病笃，曹丕因遗命亲待甚厚；太和六年改封赵王。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-gan",
@@ -3035,10 +3050,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "临邑殇公子"
     ],
-    "summary": "曹上见于《三国志·魏书·临邑殇公子上传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹上，曹操子，早逝无后；太和五年追封谥为临邑殇公子。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-shang",
@@ -3054,10 +3069,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "楚王"
     ],
-    "summary": "曹彪见于《三国志·魏书·楚王彪传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹彪，字朱虎，曹操子。历封寿春侯、弋阳王、吴王、白马王、楚王；251 年因王凌、令狐愚谋立案被赐死。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-biao",
@@ -3073,10 +3088,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "刚殇公子"
     ],
-    "summary": "曹勤见于《三国志·魏书·刚殇公子勤传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹勤，曹操子，早逝无后；太和五年追封谥为刚殇公子。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-qin",
@@ -3092,10 +3107,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "谷城殇公子"
     ],
-    "summary": "曹乘见于《三国志·魏书·谷城殇公子乘传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹乘，曹操子，早逝无后；太和五年追封谥为谷城殇公子。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-cheng",
@@ -3111,10 +3126,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "郿戴公子"
     ],
-    "summary": "曹整见于《三国志·魏书·郿戴公子整传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹整，曹操子，奉从叔父曹绍后。建安二十二年封郿侯，二十三年去世无子，黄初二年追进爵、谥戴公。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-zheng",
@@ -3130,10 +3145,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "灵殇公子"
     ],
-    "summary": "曹京见于《三国志·魏书·灵殇公子京传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹京，曹操子，早逝无后；太和五年追封谥为灵殇公子。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-jing",
@@ -3149,10 +3164,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "樊安公"
     ],
-    "summary": "曹均见于《三国志·魏书·樊安公均传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹均，曹操子，奉叔父蓟恭公曹彬后。建安二十二年封樊侯，建安二十四年去世，后追进公爵。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-jun-fan",
@@ -3168,10 +3183,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "广宗殇公子"
     ],
-    "summary": "曹棘见于《三国志·魏书·广宗殇公子棘传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹棘，曹操子，早逝无后；太和五年追封谥为广宗殇公子。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-ji",
@@ -3187,10 +3202,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "东平灵王"
     ],
-    "summary": "曹徽见于《三国志·魏书·东平灵王徽传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹徽，曹操子，奉叔公朗陵哀侯后。历封历城侯、庐江王、寿张王，太和六年改封东平王，正始三年去世。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-hui",
@@ -3206,10 +3221,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "乐陵王"
     ],
-    "summary": "曹茂见于《三国志·魏书·乐陵王茂传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹茂，曹操子。传称其性慠佷、少无宠于曹操，曹丕时独不王；曹叡时封聊城王，后徙封乐陵王。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-mao-prince",
@@ -3225,10 +3240,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "赞哀王"
     ],
-    "summary": "曹协见于《三国志·魏书·赞哀王协传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹协，曹丕子，早逝。太和五年追封经殇公，青龙二年追改号谥为赞哀王。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-xie",
@@ -3244,10 +3259,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "北海悼王"
     ],
-    "summary": "曹蕤见于《三国志·魏书·北海悼王蕤传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹蕤，曹丕子。黄初七年魏明帝即位后立为阳平县王，太和六年改封北海，青龙元年去世。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-rui-prince",
@@ -3263,10 +3278,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "东武阳怀王"
     ],
-    "summary": "曹鉴见于《三国志·魏书·东武阳怀王鉴传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹鉴，曹丕子。黄初六年立为东武阳王，当年去世，青龙三年赐谥，无子国除。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-jian",
@@ -3282,10 +3297,11 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "东海定王",
+      "曹髦之父"
     ],
-    "summary": "曹霖见于《三国志·魏书·东海定王霖传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹霖，曹丕子，东海定王。黄初三年立为河东王，太和六年改封东海，嘉平元年去世；其子曹髦后入继曹魏帝位。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-lin-donghai",
@@ -3301,10 +3317,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "元城哀王"
     ],
-    "summary": "曹礼见于《三国志·魏书·元城哀王礼传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹礼，曹丕子。黄初二年封秦公，以京兆郡为国，后改封京兆王、元城王，太和三年去世。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-li",
@@ -3320,10 +3336,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "邯郸怀王"
     ],
-    "summary": "曹邕见于《三国志·魏书·邯郸怀王邕传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹邕，曹丕子。黄初二年封淮南公，后进淮南王，改封陈、邯郸，太和三年去世。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-yong",
@@ -3339,10 +3355,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "清河悼王"
     ],
-    "summary": "曹贡见于《三国志·魏书·清河悼王贡传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹贡，曹丕子，黄初三年封清河王，黄初四年去世，无子国除。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-gong",
@@ -3358,10 +3374,10 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "广平哀王"
     ],
-    "summary": "曹俨见于《三国志·魏书·广平哀王俨传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹俨，曹丕子，黄初三年封广平王，黄初四年去世，无子国除。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-yan",
