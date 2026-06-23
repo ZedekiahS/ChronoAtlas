@@ -44,12 +44,13 @@
       "summary": "泰山钜平人，早随鲍信，后归曹操；以军纪严整著称，219 年襄樊战事中为关羽所俘并投降。",
       "coverageStatus": "partial",
       "lifeEventCount": 5,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
       "firstRecordedYear": 194,
       "lastRecordedYear": 221,
       "sourceIds": [
         "sanguozhi-shu-guan-yu",
+        "sanguozhi-wei-wendi",
         "sanguozhi-wei-yu-jin"
       ],
       "coverage": {
@@ -898,12 +899,14 @@
       "summary": "曹魏后期重臣，多次与诸葛亮对峙，249 年高平陵之变后司马氏控制魏政。",
       "coverageStatus": "partial",
       "lifeEventCount": 3,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 4,
+      "reviewedSourceMentionCount": 4,
       "firstRecordedYear": 179,
       "lastRecordedYear": 251,
       "sourceIds": [
         "sanguozhi-shu-zhuge-liang",
+        "sanguozhi-wei-mingdi",
+        "sanguozhi-wei-wendi",
         "zizhi-tongjian-72",
         "zizhi-tongjian-78"
       ],
@@ -1505,12 +1508,13 @@
       "summary": "孙策死后继承江东基业，依托江东士族与周瑜、鲁肃等臣僚稳固统治；赤壁联合刘备抗曹，后取荆州、守江淮，229 年称帝建立孙吴。",
       "coverageStatus": "partial",
       "lifeEventCount": 9,
-      "sourceMentionCount": 10,
-      "reviewedSourceMentionCount": 10,
+      "sourceMentionCount": 11,
+      "reviewedSourceMentionCount": 11,
       "firstRecordedYear": 182,
       "lastRecordedYear": 252,
       "sourceIds": [
         "sanguozhi-shu-xianzhu",
+        "sanguozhi-wei-wendi",
         "sanguozhi-wu-lu-dai",
         "sanguozhi-wu-shi-xie",
         "sanguozhi-wu-wuzhu",
@@ -1996,11 +2000,12 @@
       "summary": "张绣见于《三国志·魏书·张绣传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
       "coverageStatus": "stub",
       "lifeEventCount": 1,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
       "firstRecordedYear": null,
       "lastRecordedYear": null,
       "sourceIds": [
+        "sanguozhi-wei-wudi",
         "sanguozhi-wei-zhang-xiu"
       ],
       "coverage": {
@@ -2094,11 +2099,12 @@
       "summary": "雁门马邑人，先后从丁原、董卓、吕布，199 年下邳后归曹操，215 年合肥大破孙权军，是曹魏东线名将。",
       "coverageStatus": "partial",
       "lifeEventCount": 4,
-      "sourceMentionCount": 1,
-      "reviewedSourceMentionCount": 1,
+      "sourceMentionCount": 2,
+      "reviewedSourceMentionCount": 2,
       "firstRecordedYear": 169,
       "lastRecordedYear": 222,
       "sourceIds": [
+        "sanguozhi-wei-wudi",
         "sanguozhi-wei-zhang-liao",
         "sanguozhi-wu-wuzhu"
       ],
@@ -2158,11 +2164,12 @@
       "summary": "初属韩馥、袁绍，官渡之战中归降曹操，后成为曹魏重要将领，231 年在木门中箭而卒。",
       "coverageStatus": "partial",
       "lifeEventCount": 4,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
       "firstRecordedYear": 200,
       "lastRecordedYear": 231,
       "sourceIds": [
+        "sanguozhi-wei-mingdi",
         "sanguozhi-wei-yuan-shao",
         "sanguozhi-wei-zhang-he"
       ],
@@ -2494,13 +2501,14 @@
       "primaryPolity": "曹魏",
       "summary": "曹操之子，220 年受汉献帝禅让称帝，建立曹魏。",
       "coverageStatus": "partial",
-      "lifeEventCount": 3,
-      "sourceMentionCount": 1,
-      "reviewedSourceMentionCount": 1,
+      "lifeEventCount": 9,
+      "sourceMentionCount": 11,
+      "reviewedSourceMentionCount": 11,
       "firstRecordedYear": 187,
       "lastRecordedYear": 226,
       "sourceIds": [
         "houhanshu-xiandi",
+        "sanguozhi-wei-mingdi",
         "sanguozhi-wei-wendi",
         "sanguozhi-wu-wuzhu"
       ],
@@ -2625,12 +2633,13 @@
       "summary": "曹魏宗亲，早年归曹操，被视为“千里驹”；曹丕、曹叡时期主持东线伐吴，228 年石亭战败后去世。",
       "coverageStatus": "partial",
       "lifeEventCount": 4,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
       "firstRecordedYear": 220,
       "lastRecordedYear": 228,
       "sourceIds": [
-        "sanguozhi-wei-cao-xiu"
+        "sanguozhi-wei-cao-xiu",
+        "sanguozhi-wei-wendi"
       ],
       "coverage": {
         "status": "partial",
@@ -2777,18 +2786,19 @@
       "courtesyName": "元仲",
       "life": "204-239",
       "primaryPolity": "曹魏",
-      "summary": "曹叡见于《三国志·魏书·明帝纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-      "coverageStatus": "stub",
-      "lifeEventCount": 1,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
-      "firstRecordedYear": null,
-      "lastRecordedYear": null,
+      "summary": "曹丕之子，魏明帝。226 年即位，统治期间应对诸葛亮北伐、孙吴压力和辽东公孙渊问题，239 年去世后曹芳继位。",
+      "coverageStatus": "partial",
+      "lifeEventCount": 7,
+      "sourceMentionCount": 8,
+      "reviewedSourceMentionCount": 8,
+      "firstRecordedYear": 204,
+      "lastRecordedYear": 239,
       "sourceIds": [
-        "sanguozhi-wei-mingdi"
+        "sanguozhi-wei-mingdi",
+        "sanguozhi-wei-wendi"
       ],
       "coverage": {
-        "status": "stub",
+        "status": "partial",
         "lastReviewedAt": null,
         "notes": "由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。",
         "raw": {
@@ -3089,15 +3099,17 @@
       "primaryPolity": "曹操集团 / 曹魏",
       "summary": "从讨董、兖州危机中起势，迎汉献帝至许后掌握朝廷名义，击败吕布、袁绍并统一北方，晚年进爵魏公、魏王，奠定曹魏政权基础。",
       "coverageStatus": "partial",
-      "lifeEventCount": 13,
-      "sourceMentionCount": 16,
-      "reviewedSourceMentionCount": 16,
+      "lifeEventCount": 21,
+      "sourceMentionCount": 26,
+      "reviewedSourceMentionCount": 26,
       "firstRecordedYear": 155,
       "lastRecordedYear": 220,
       "sourceIds": [
         "houhanshu-xiandi",
         "sanguozhi-shu-xianzhu",
         "sanguozhi-wei-lubu",
+        "sanguozhi-wei-mingdi",
+        "sanguozhi-wei-wendi",
         "sanguozhi-wei-wudi",
         "sanguozhi-wei-zhang-lu",
         "sanguozhi-wu-wuzhu",
@@ -3165,12 +3177,13 @@
       "summary": "曹昂见于《三国志·魏书·丰愍王昂传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
       "coverageStatus": "stub",
       "lifeEventCount": 1,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
       "firstRecordedYear": null,
       "lastRecordedYear": null,
       "sourceIds": [
-        "sanguozhi-wei-cao-ang"
+        "sanguozhi-wei-cao-ang",
+        "sanguozhi-wei-wudi"
       ],
       "coverage": {
         "status": "stub",
@@ -3351,12 +3364,13 @@
       "summary": "曹爽见于《三国志·魏书·曹爽传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
       "coverageStatus": "stub",
       "lifeEventCount": 1,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
       "firstRecordedYear": null,
       "lastRecordedYear": null,
       "sourceIds": [
-        "sanguozhi-wei-cao-shuang"
+        "sanguozhi-wei-cao-shuang",
+        "sanguozhi-wei-mingdi"
       ],
       "coverage": {
         "status": "stub",
@@ -3413,12 +3427,14 @@
       "summary": "曹操族子，少孤后由曹操抚养，掌虎豹骑并长期负责雍凉、关中、西线军事，曹叡初年为辅政重臣。",
       "coverageStatus": "partial",
       "lifeEventCount": 5,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 2,
+      "reviewedSourceMentionCount": 2,
       "firstRecordedYear": 219,
       "lastRecordedYear": 231,
       "sourceIds": [
-        "sanguozhi-wei-cao-zhen"
+        "sanguozhi-wei-cao-zhen",
+        "sanguozhi-wei-mingdi",
+        "sanguozhi-wei-wendi"
       ],
       "coverage": {
         "status": "partial",
@@ -3506,11 +3522,12 @@
       "summary": "曹芳见于《三国志·魏书·齐王纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
       "coverageStatus": "stub",
       "lifeEventCount": 1,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
       "firstRecordedYear": null,
       "lastRecordedYear": null,
       "sourceIds": [
+        "sanguozhi-wei-mingdi",
         "sanguozhi-wei-qi-wang"
       ],
       "coverage": {
@@ -4256,8 +4273,8 @@
       "summary": "东汉末代皇帝，先后受董卓、李傕郭汜、曹操集团控制，220 年禅位于曹丕。",
       "coverageStatus": "partial",
       "lifeEventCount": 5,
-      "sourceMentionCount": 1,
-      "reviewedSourceMentionCount": 1,
+      "sourceMentionCount": 2,
+      "reviewedSourceMentionCount": 2,
       "firstRecordedYear": 181,
       "lastRecordedYear": 234,
       "sourceIds": [
@@ -4742,12 +4759,13 @@
       "summary": "甄皇后见于《三国志·魏书·文昭甄皇后传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
       "coverageStatus": "stub",
       "lifeEventCount": 1,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
       "firstRecordedYear": null,
       "lastRecordedYear": null,
       "sourceIds": [
-        "sanguozhi-wei-empress-zhen"
+        "sanguozhi-wei-empress-zhen",
+        "sanguozhi-wei-mingdi"
       ],
       "coverage": {
         "status": "stub",
@@ -5194,12 +5212,13 @@
       "summary": "凉州军阀，189 年入洛阳控制朝廷，废立皇帝并迁都长安，引发关东诸军讨伐。",
       "coverageStatus": "partial",
       "lifeEventCount": 3,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
       "firstRecordedYear": 189,
       "lastRecordedYear": 192,
       "sourceIds": [
         "houhanshu-dong-zhuo",
+        "sanguozhi-wei-wudi",
         "zizhi-tongjian-59"
       ],
       "coverage": {
@@ -5507,13 +5526,14 @@
       "summary": "提出隆中对，辅佐刘备、刘禅，主持蜀汉政务并多次北伐，234 年卒于五丈原。",
       "coverageStatus": "partial",
       "lifeEventCount": 8,
-      "sourceMentionCount": 13,
-      "reviewedSourceMentionCount": 13,
+      "sourceMentionCount": 15,
+      "reviewedSourceMentionCount": 15,
       "firstRecordedYear": 181,
       "lastRecordedYear": 234,
       "sourceIds": [
         "sanguozhi-shu-xianzhu",
         "sanguozhi-shu-zhuge-liang",
+        "sanguozhi-wei-mingdi",
         "zizhi-tongjian-72"
       ],
       "coverage": {
@@ -6234,12 +6254,13 @@
       "summary": "颍川名士，早年曾为刘备别驾，后入曹操幕府；曹丕时期创设九品官人法，明帝初与曹真、司马懿等同受遗诏辅政。",
       "coverageStatus": "partial",
       "lifeEventCount": 6,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
       "firstRecordedYear": 194,
       "lastRecordedYear": 237,
       "sourceIds": [
-        "sanguozhi-wei-chen-qun"
+        "sanguozhi-wei-chen-qun",
+        "sanguozhi-wei-wendi"
       ],
       "coverage": {
         "status": "partial",
@@ -6405,13 +6426,14 @@
       "summary": "凉州、关中军阀马腾之子，先与曹操对抗，后归附刘备，参与刘备入主益州后的政权建构。",
       "coverageStatus": "partial",
       "lifeEventCount": 3,
-      "sourceMentionCount": 2,
-      "reviewedSourceMentionCount": 2,
+      "sourceMentionCount": 3,
+      "reviewedSourceMentionCount": 3,
       "firstRecordedYear": 176,
       "lastRecordedYear": 222,
       "sourceIds": [
         "sanguozhi-shu-xianzhu",
         "sanguozhi-shu-zhang-fei",
+        "sanguozhi-wei-wudi",
         "zizhi-tongjian-67"
       ],
       "coverage": {

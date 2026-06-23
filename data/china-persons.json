@@ -1794,10 +1794,11 @@
     "primaryPolity": "曹魏",
     "roles": [
       "皇帝",
-      "魏书本纪人物"
+      "魏明帝",
+      "曹魏第二代皇帝"
     ],
-    "summary": "曹叡见于《三国志·魏书·明帝纪》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹丕之子，魏明帝。226 年即位，统治期间应对诸葛亮北伐、孙吴压力和辽东公孙渊问题，239 年去世后曹芳继位。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-mingdi",

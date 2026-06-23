@@ -9,10 +9,18 @@
     "year": 155,
     "text": "太祖武皇帝，沛国谯人也，姓曹，讳操，字孟德，汉相国参之后。",
     "translation": null,
-    "mentionedPersonIds": ["cao-cao"],
+    "mentionedPersonIds": [
+      "cao-cao"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["qiao"],
-    "tags": ["出身", "籍贯", "名讳"],
+    "mentionedPlaceIds": [
+      "qiao"
+    ],
+    "tags": [
+      "出身",
+      "籍贯",
+      "名讳"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -26,10 +34,22 @@
     "year": 196,
     "text": "太祖将迎天子，诸将或疑，荀彧、程昱劝之，乃遣曹洪将兵西迎。",
     "translation": null,
-    "mentionedPersonIds": ["cao-cao", "han-xiandi", "xun-yu"],
-    "mentionedEventIds": ["china-196-cao-cao-escorts-emperor"],
-    "mentionedPlaceIds": ["xu"],
-    "tags": ["许都", "献帝", "政治合法性"],
+    "mentionedPersonIds": [
+      "cao-cao",
+      "han-xiandi",
+      "xun-yu"
+    ],
+    "mentionedEventIds": [
+      "china-196-cao-cao-escorts-emperor"
+    ],
+    "mentionedPlaceIds": [
+      "xu"
+    ],
+    "tags": [
+      "许都",
+      "献帝",
+      "政治合法性"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -43,10 +63,22 @@
     "year": 200,
     "text": "公乃留曹洪守，自将步骑五千人夜往，会明至。公急击之，琼退保营，遂攻之。",
     "translation": null,
-    "mentionedPersonIds": ["cao-cao", "yuan-shao"],
-    "mentionedEventIds": ["china-200-guandu"],
-    "mentionedPlaceIds": ["guandu", "wuchao"],
-    "tags": ["官渡", "乌巢", "夜袭"],
+    "mentionedPersonIds": [
+      "cao-cao",
+      "yuan-shao"
+    ],
+    "mentionedEventIds": [
+      "china-200-guandu"
+    ],
+    "mentionedPlaceIds": [
+      "guandu",
+      "wuchao"
+    ],
+    "tags": [
+      "官渡",
+      "乌巢",
+      "夜袭"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -60,10 +92,20 @@
     "year": 220,
     "text": "庚子，王崩于洛阳，年六十六。",
     "translation": null,
-    "mentionedPersonIds": ["cao-cao"],
-    "mentionedEventIds": ["china-220-cao-pi-founds-wei"],
-    "mentionedPlaceIds": ["luoyang"],
-    "tags": ["死亡", "洛阳", "魏王"],
+    "mentionedPersonIds": [
+      "cao-cao"
+    ],
+    "mentionedEventIds": [
+      "china-220-cao-pi-founds-wei"
+    ],
+    "mentionedPlaceIds": [
+      "luoyang"
+    ],
+    "tags": [
+      "死亡",
+      "洛阳",
+      "魏王"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -77,10 +119,18 @@
     "year": 161,
     "text": "先主姓刘，讳备，字玄德，涿郡涿县人，汉景帝子中山靖王胜之后也。",
     "translation": null,
-    "mentionedPersonIds": ["liu-bei"],
+    "mentionedPersonIds": [
+      "liu-bei"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["zhuo"],
-    "tags": ["出身", "宗室", "涿郡"],
+    "mentionedPlaceIds": [
+      "zhuo"
+    ],
+    "tags": [
+      "出身",
+      "宗室",
+      "涿郡"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -94,10 +144,22 @@
     "year": 194,
     "text": "孔融谓先主曰：“袁公路岂忧国忘家者邪？冢中枯骨，何足介意。”先主遂领徐州。",
     "translation": null,
-    "mentionedPersonIds": ["liu-bei", "tao-qian", "yuan-shu"],
-    "mentionedEventIds": ["china-194-tao-qian-yields-xuzhou"],
-    "mentionedPlaceIds": ["xu-zhou"],
-    "tags": ["徐州", "陶谦", "刘备早期根据地"],
+    "mentionedPersonIds": [
+      "liu-bei",
+      "tao-qian",
+      "yuan-shu"
+    ],
+    "mentionedEventIds": [
+      "china-194-tao-qian-yields-xuzhou"
+    ],
+    "mentionedPlaceIds": [
+      "xu-zhou"
+    ],
+    "tags": [
+      "徐州",
+      "陶谦",
+      "刘备早期根据地"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -111,10 +173,23 @@
     "year": 214,
     "text": "先主遣人迎超，超将兵径到城下。城中震怖，璋即稽服。",
     "translation": null,
-    "mentionedPersonIds": ["liu-bei", "liu-zhang", "ma-chao"],
-    "mentionedEventIds": ["china-214-liu-bei-takes-yi"],
-    "mentionedPlaceIds": ["chengdu", "yi-zhou"],
-    "tags": ["益州", "成都", "刘璋"],
+    "mentionedPersonIds": [
+      "liu-bei",
+      "liu-zhang",
+      "ma-chao"
+    ],
+    "mentionedEventIds": [
+      "china-214-liu-bei-takes-yi"
+    ],
+    "mentionedPlaceIds": [
+      "chengdu",
+      "yi-zhou"
+    ],
+    "tags": [
+      "益州",
+      "成都",
+      "刘璋"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -128,10 +203,21 @@
     "year": 223,
     "text": "先主病笃，托孤于丞相亮，尚书令李严为副。夏四月癸巳，先主殂于永安宫，时年六十三。",
     "translation": null,
-    "mentionedPersonIds": ["liu-bei", "zhuge-liang"],
-    "mentionedEventIds": ["china-222-yiling"],
-    "mentionedPlaceIds": ["yongan"],
-    "tags": ["死亡", "白帝城", "托孤"],
+    "mentionedPersonIds": [
+      "liu-bei",
+      "zhuge-liang"
+    ],
+    "mentionedEventIds": [
+      "china-222-yiling"
+    ],
+    "mentionedPlaceIds": [
+      "yongan"
+    ],
+    "tags": [
+      "死亡",
+      "白帝城",
+      "托孤"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -145,10 +231,19 @@
     "year": 182,
     "text": "孙权字仲谋。兄策既定诸郡，时权年十五，以为阳羡长。",
     "translation": null,
-    "mentionedPersonIds": ["sun-quan", "sun-ce"],
+    "mentionedPersonIds": [
+      "sun-quan",
+      "sun-ce"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["yangxian"],
-    "tags": ["出身", "孙策", "阳羡长"],
+    "mentionedPlaceIds": [
+      "yangxian"
+    ],
+    "tags": [
+      "出身",
+      "孙策",
+      "阳羡长"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -162,10 +257,19 @@
     "year": 200,
     "text": "五年，策薨，以事授权，权哭未及息。张昭谓权曰：“此宁哭时邪？”乃改易权服，扶令上马，使出巡军。",
     "translation": null,
-    "mentionedPersonIds": ["sun-quan", "sun-ce"],
+    "mentionedPersonIds": [
+      "sun-quan",
+      "sun-ce"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["jiangdong"],
-    "tags": ["继位", "江东", "孙策"],
+    "mentionedPlaceIds": [
+      "jiangdong"
+    ],
+    "tags": [
+      "继位",
+      "江东",
+      "孙策"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -179,10 +283,25 @@
     "year": 208,
     "text": "惟瑜、肃执拒之议，意与权同。瑜、普为左右督，各领万人，与备俱进，遇于赤壁，大破曹公军。",
     "translation": null,
-    "mentionedPersonIds": ["sun-quan", "zhou-yu", "lu-su", "liu-bei", "cao-cao", "cheng-pu"],
-    "mentionedEventIds": ["china-208-red-cliffs"],
-    "mentionedPlaceIds": ["red-cliffs"],
-    "tags": ["赤壁", "抗曹", "孙刘联盟"],
+    "mentionedPersonIds": [
+      "sun-quan",
+      "zhou-yu",
+      "lu-su",
+      "liu-bei",
+      "cao-cao",
+      "cheng-pu"
+    ],
+    "mentionedEventIds": [
+      "china-208-red-cliffs"
+    ],
+    "mentionedPlaceIds": [
+      "red-cliffs"
+    ],
+    "tags": [
+      "赤壁",
+      "抗曹",
+      "孙刘联盟"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -196,10 +315,20 @@
     "year": 229,
     "text": "黄龙元年春，公卿百司皆劝权正尊号。夏四月，夏口、武昌并言黄龙、凤凰见。丙申，南郊即皇帝位。",
     "translation": null,
-    "mentionedPersonIds": ["sun-quan"],
-    "mentionedEventIds": ["china-229-sun-quan-emperor"],
-    "mentionedPlaceIds": ["wuchang"],
-    "tags": ["称帝", "孙吴", "黄龙元年"],
+    "mentionedPersonIds": [
+      "sun-quan"
+    ],
+    "mentionedEventIds": [
+      "china-229-sun-quan-emperor"
+    ],
+    "mentionedPlaceIds": [
+      "wuchang"
+    ],
+    "tags": [
+      "称帝",
+      "孙吴",
+      "黄龙元年"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -213,10 +342,18 @@
     "year": 181,
     "text": "诸葛亮字孔明，琅邪阳都人也。汉司隶校尉诸葛丰后也。",
     "translation": null,
-    "mentionedPersonIds": ["zhuge-liang"],
+    "mentionedPersonIds": [
+      "zhuge-liang"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["yangdu"],
-    "tags": ["出身", "琅邪", "孔明"],
+    "mentionedPlaceIds": [
+      "yangdu"
+    ],
+    "tags": [
+      "出身",
+      "琅邪",
+      "孔明"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -230,10 +367,21 @@
     "year": 207,
     "text": "徐庶曰：“此人可就见，不可屈致也。将军宜枉驾顾之。”由是先主遂诣亮，凡三往，乃见。",
     "translation": null,
-    "mentionedPersonIds": ["zhuge-liang", "liu-bei"],
-    "mentionedEventIds": ["china-207-longzhong-plan"],
-    "mentionedPlaceIds": ["longzhong"],
-    "tags": ["三顾", "隆中", "出山"],
+    "mentionedPersonIds": [
+      "zhuge-liang",
+      "liu-bei"
+    ],
+    "mentionedEventIds": [
+      "china-207-longzhong-plan"
+    ],
+    "mentionedPlaceIds": [
+      "longzhong"
+    ],
+    "tags": [
+      "三顾",
+      "隆中",
+      "出山"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -247,10 +395,20 @@
     "year": 223,
     "text": "建兴元年，封亮武乡侯，开府治事。顷之，又领益州牧。",
     "translation": null,
-    "mentionedPersonIds": ["zhuge-liang", "liu-shan"],
+    "mentionedPersonIds": [
+      "zhuge-liang",
+      "liu-shan"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["chengdu", "yi-zhou"],
-    "tags": ["辅政", "益州牧", "武乡侯"],
+    "mentionedPlaceIds": [
+      "chengdu",
+      "yi-zhou"
+    ],
+    "tags": [
+      "辅政",
+      "益州牧",
+      "武乡侯"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -264,10 +422,20 @@
     "year": 234,
     "text": "相持百馀日。其年八月，亮疾病，卒于军，时年五十四。",
     "translation": null,
-    "mentionedPersonIds": ["zhuge-liang"],
-    "mentionedEventIds": ["china-234-wuzhang-plains"],
-    "mentionedPlaceIds": ["wuzhang-plains"],
-    "tags": ["五丈原", "北伐", "死亡"],
+    "mentionedPersonIds": [
+      "zhuge-liang"
+    ],
+    "mentionedEventIds": [
+      "china-234-wuzhang-plains"
+    ],
+    "mentionedPlaceIds": [
+      "wuzhang-plains"
+    ],
+    "tags": [
+      "五丈原",
+      "北伐",
+      "死亡"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -281,10 +449,23 @@
     "year": 190,
     "text": "初平元年春正月，后将军袁术、冀州牧韩馥、豫州刺史孔伷、兖州刺史刘岱、河内太守王匡、勃海太守袁绍、陈留太守张邈、东郡太守桥瑁、山阳太守袁遗、济北相鲍信同时俱起兵，众各数万，推绍为盟主。太祖行奋武将军。",
     "translation": null,
-    "mentionedPersonIds": ["cao-cao", "yuan-shao", "yuan-shu"],
-    "mentionedEventIds": ["china-190-coalition-against-dong-zhuo"],
-    "mentionedPlaceIds": ["chenliu", "suanzao"],
-    "tags": ["讨董", "关东联军", "奋武将军"],
+    "mentionedPersonIds": [
+      "cao-cao",
+      "yuan-shao",
+      "yuan-shu"
+    ],
+    "mentionedEventIds": [
+      "china-190-coalition-against-dong-zhuo"
+    ],
+    "mentionedPlaceIds": [
+      "chenliu",
+      "suanzao"
+    ],
+    "tags": [
+      "讨董",
+      "关东联军",
+      "奋武将军"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -298,10 +479,25 @@
     "year": 194,
     "text": "会张邈与陈宫叛，迎吕布，郡县皆应。荀彧、程昱保鄄城，范、东阿二县固守，太祖乃引军还。",
     "translation": null,
-    "mentionedPersonIds": ["cao-cao", "lu-bu", "xun-yu", "zhang-miao", "chen-gong", "cheng-yu"],
+    "mentionedPersonIds": [
+      "cao-cao",
+      "lu-bu",
+      "xun-yu",
+      "zhang-miao",
+      "chen-gong",
+      "cheng-yu"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["yan-zhou", "juancheng", "dong-e"],
-    "tags": ["兖州危机", "吕布", "根据地"],
+    "mentionedPlaceIds": [
+      "yan-zhou",
+      "juancheng",
+      "dong-e"
+    ],
+    "tags": [
+      "兖州危机",
+      "吕布",
+      "根据地"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -315,10 +511,22 @@
     "year": 199,
     "text": "九月，公东征布。冬十月，屠彭城，获其相侯谐。进至下邳，布自将骑逆击，大破之。月余，布将宋宪、魏续等执陈宫，举城降，生禽布、宫，皆杀之。",
     "translation": null,
-    "mentionedPersonIds": ["cao-cao", "lu-bu"],
-    "mentionedEventIds": ["china-196-lu-bu-seizes-xuzhou"],
-    "mentionedPlaceIds": ["xiapi", "pengcheng"],
-    "tags": ["下邳", "吕布之死", "徐州"],
+    "mentionedPersonIds": [
+      "cao-cao",
+      "lu-bu"
+    ],
+    "mentionedEventIds": [
+      "china-196-lu-bu-seizes-xuzhou"
+    ],
+    "mentionedPlaceIds": [
+      "xiapi",
+      "pengcheng"
+    ],
+    "tags": [
+      "下邳",
+      "吕布之死",
+      "徐州"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -332,10 +540,22 @@
     "year": 208,
     "text": "公至赤壁，与备战，不利。于是大疫，吏士多死者，乃引军还。备遂有荆州、江南诸郡。",
     "translation": null,
-    "mentionedPersonIds": ["cao-cao", "liu-bei"],
-    "mentionedEventIds": ["china-208-red-cliffs"],
-    "mentionedPlaceIds": ["red-cliffs", "jing-zhou"],
-    "tags": ["赤壁", "南征", "疫病"],
+    "mentionedPersonIds": [
+      "cao-cao",
+      "liu-bei"
+    ],
+    "mentionedEventIds": [
+      "china-208-red-cliffs"
+    ],
+    "mentionedPlaceIds": [
+      "red-cliffs",
+      "jing-zhou"
+    ],
+    "tags": [
+      "赤壁",
+      "南征",
+      "疫病"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -349,10 +569,18 @@
     "year": 213,
     "text": "夏五月丙申，天子使御史大夫郗虑持节策命公为魏公，加九锡。",
     "translation": null,
-    "mentionedPersonIds": ["cao-cao"],
+    "mentionedPersonIds": [
+      "cao-cao"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["ye"],
-    "tags": ["魏公", "九锡", "爵位"],
+    "mentionedPlaceIds": [
+      "ye"
+    ],
+    "tags": [
+      "魏公",
+      "九锡",
+      "爵位"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -366,10 +594,23 @@
     "year": 215,
     "text": "三月，公西征张鲁，至陈仓。秋七月，公至阳平。公军入南郑，尽得鲁府库珍宝。巴、汉皆降。复汉宁郡为汉中。",
     "translation": null,
-    "mentionedPersonIds": ["cao-cao", "zhang-lu"],
-    "mentionedEventIds": ["china-215-cao-cao-takes-hanzhong"],
-    "mentionedPlaceIds": ["hanzhong", "nanzheng", "yangping"],
-    "tags": ["汉中", "张鲁", "南郑"],
+    "mentionedPersonIds": [
+      "cao-cao",
+      "zhang-lu"
+    ],
+    "mentionedEventIds": [
+      "china-215-cao-cao-takes-hanzhong"
+    ],
+    "mentionedPlaceIds": [
+      "hanzhong",
+      "nanzheng",
+      "yangping"
+    ],
+    "tags": [
+      "汉中",
+      "张鲁",
+      "南郑"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -383,10 +624,18 @@
     "year": 216,
     "text": "夏五月，天子进公爵为魏王。",
     "translation": null,
-    "mentionedPersonIds": ["cao-cao"],
+    "mentionedPersonIds": [
+      "cao-cao"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["ye"],
-    "tags": ["魏王", "爵位", "曹魏前史"],
+    "mentionedPlaceIds": [
+      "ye"
+    ],
+    "tags": [
+      "魏王",
+      "爵位",
+      "曹魏前史"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -400,10 +649,24 @@
     "year": 219,
     "text": "夏侯渊与刘备战于阳平，为备所杀。三月，王自长安出斜谷，军遮要以临汉中，遂至阳平。备因险拒守。夏五月，引军还长安。",
     "translation": null,
-    "mentionedPersonIds": ["cao-cao", "liu-bei", "xiahou-yuan"],
-    "mentionedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
-    "mentionedPlaceIds": ["hanzhong", "yangping", "chang-an"],
-    "tags": ["汉中", "刘备", "退兵"],
+    "mentionedPersonIds": [
+      "cao-cao",
+      "liu-bei",
+      "xiahou-yuan"
+    ],
+    "mentionedEventIds": [
+      "china-219-hanzhong-and-jingzhou-crisis"
+    ],
+    "mentionedPlaceIds": [
+      "hanzhong",
+      "yangping",
+      "chang-an"
+    ],
+    "tags": [
+      "汉中",
+      "刘备",
+      "退兵"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -417,10 +680,20 @@
     "year": 184,
     "text": "灵帝末，黄巾起，州郡各举义兵，先主率其属从校尉邹靖讨黄巾贼有功，除安喜尉。",
     "translation": null,
-    "mentionedPersonIds": ["liu-bei"],
-    "mentionedEventIds": ["china-184-yellow-turban-rebellion"],
-    "mentionedPlaceIds": ["anxi"],
-    "tags": ["黄巾", "起兵", "安喜尉"],
+    "mentionedPersonIds": [
+      "liu-bei"
+    ],
+    "mentionedEventIds": [
+      "china-184-yellow-turban-rebellion"
+    ],
+    "mentionedPlaceIds": [
+      "anxi"
+    ],
+    "tags": [
+      "黄巾",
+      "起兵",
+      "安喜尉"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -434,10 +707,21 @@
     "year": 201,
     "text": "曹公既破先主，先主奔荆州。表厚待之，益其兵，使屯新野。",
     "translation": null,
-    "mentionedPersonIds": ["liu-bei", "cao-cao", "liu-biao"],
+    "mentionedPersonIds": [
+      "liu-bei",
+      "cao-cao",
+      "liu-biao"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["jing-zhou", "xinye"],
-    "tags": ["荆州", "刘表", "新野"],
+    "mentionedPlaceIds": [
+      "jing-zhou",
+      "xinye"
+    ],
+    "tags": [
+      "荆州",
+      "刘表",
+      "新野"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -451,10 +735,25 @@
     "year": 208,
     "text": "先主遣诸葛亮自结于孙权，权遣周瑜、程普等水军数万，与先主并力，与曹公战于赤壁，大破之，焚其舟船。",
     "translation": null,
-    "mentionedPersonIds": ["liu-bei", "zhuge-liang", "sun-quan", "zhou-yu", "cao-cao", "cheng-pu"],
-    "mentionedEventIds": ["china-208-red-cliffs"],
-    "mentionedPlaceIds": ["red-cliffs"],
-    "tags": ["赤壁", "孙刘联盟", "诸葛亮使吴"],
+    "mentionedPersonIds": [
+      "liu-bei",
+      "zhuge-liang",
+      "sun-quan",
+      "zhou-yu",
+      "cao-cao",
+      "cheng-pu"
+    ],
+    "mentionedEventIds": [
+      "china-208-red-cliffs"
+    ],
+    "mentionedPlaceIds": [
+      "red-cliffs"
+    ],
+    "tags": [
+      "赤壁",
+      "孙刘联盟",
+      "诸葛亮使吴"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -468,10 +767,27 @@
     "year": 219,
     "text": "先主遂有汉中。秋，群下上先主为汉中王，表于汉帝。遂于沔阳设坛场，陈兵列众，群臣陪位，读奏讫，御王冠于先主。",
     "translation": null,
-    "mentionedPersonIds": ["liu-bei", "zhuge-liang", "guan-yu", "zhang-fei", "ma-chao", "huang-zhong", "wei-yan"],
-    "mentionedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
-    "mentionedPlaceIds": ["hanzhong", "mianyang"],
-    "tags": ["汉中王", "汉中", "称王"],
+    "mentionedPersonIds": [
+      "liu-bei",
+      "zhuge-liang",
+      "guan-yu",
+      "zhang-fei",
+      "ma-chao",
+      "huang-zhong",
+      "wei-yan"
+    ],
+    "mentionedEventIds": [
+      "china-219-hanzhong-and-jingzhou-crisis"
+    ],
+    "mentionedPlaceIds": [
+      "hanzhong",
+      "mianyang"
+    ],
+    "tags": [
+      "汉中王",
+      "汉中",
+      "称王"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -485,10 +801,22 @@
     "year": 221,
     "text": "即皇帝位于成都武担之南。章武元年夏四月，大赦，改年。以诸葛亮为丞相，许靖为司徒。",
     "translation": null,
-    "mentionedPersonIds": ["liu-bei", "zhuge-liang"],
-    "mentionedEventIds": ["china-221-liu-bei-founds-shu"],
-    "mentionedPlaceIds": ["chengdu", "wudan"],
-    "tags": ["称帝", "章武", "蜀汉"],
+    "mentionedPersonIds": [
+      "liu-bei",
+      "zhuge-liang"
+    ],
+    "mentionedEventIds": [
+      "china-221-liu-bei-founds-shu"
+    ],
+    "mentionedPlaceIds": [
+      "chengdu",
+      "wudan"
+    ],
+    "tags": [
+      "称帝",
+      "章武",
+      "蜀汉"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -502,10 +830,23 @@
     "year": 222,
     "text": "二年春正月，先主军还秭归。二月，先主自秭归率诸将进军，缘山截岭，于夷道猇亭驻营。后十余日，陆议大破先主军于猇亭。",
     "translation": null,
-    "mentionedPersonIds": ["liu-bei", "lu-xun"],
-    "mentionedEventIds": ["china-222-yiling"],
-    "mentionedPlaceIds": ["zigui", "yiling", "xiaoting"],
-    "tags": ["夷陵", "猇亭", "陆逊"],
+    "mentionedPersonIds": [
+      "liu-bei",
+      "lu-xun"
+    ],
+    "mentionedEventIds": [
+      "china-222-yiling"
+    ],
+    "mentionedPlaceIds": [
+      "zigui",
+      "yiling",
+      "xiaoting"
+    ],
+    "tags": [
+      "夷陵",
+      "猇亭",
+      "陆逊"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -519,10 +860,20 @@
     "year": 215,
     "text": "八月，孙权围合肥，张辽、李典击破之。",
     "translation": null,
-    "mentionedPersonIds": ["sun-quan", "zhang-liao", "li-dian"],
+    "mentionedPersonIds": [
+      "sun-quan",
+      "zhang-liao",
+      "li-dian"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["hefei"],
-    "tags": ["合肥", "张辽", "东线战事"],
+    "mentionedPlaceIds": [
+      "hefei"
+    ],
+    "tags": [
+      "合肥",
+      "张辽",
+      "东线战事"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -536,10 +887,22 @@
     "year": 219,
     "text": "孙权遣使上书，以讨关羽自效。权击斩羽，传其首。",
     "translation": null,
-    "mentionedPersonIds": ["sun-quan", "guan-yu", "cao-cao"],
-    "mentionedEventIds": ["china-219-hanzhong-and-jingzhou-crisis"],
-    "mentionedPlaceIds": ["jing-zhou"],
-    "tags": ["荆州", "关羽", "孙刘破裂"],
+    "mentionedPersonIds": [
+      "sun-quan",
+      "guan-yu",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [
+      "china-219-hanzhong-and-jingzhou-crisis"
+    ],
+    "mentionedPlaceIds": [
+      "jing-zhou"
+    ],
+    "tags": [
+      "荆州",
+      "关羽",
+      "孙刘破裂"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -553,10 +916,21 @@
     "year": 222,
     "text": "黄武元年，魏文帝策命权为吴王，加九锡。权遂改年，临江拒守。",
     "translation": null,
-    "mentionedPersonIds": ["sun-quan", "cao-pi"],
-    "mentionedEventIds": ["china-222-yiling"],
-    "mentionedPlaceIds": ["jiangdong"],
-    "tags": ["吴王", "黄武", "魏吴关系"],
+    "mentionedPersonIds": [
+      "sun-quan",
+      "cao-pi"
+    ],
+    "mentionedEventIds": [
+      "china-222-yiling"
+    ],
+    "mentionedPlaceIds": [
+      "jiangdong"
+    ],
+    "tags": [
+      "吴王",
+      "黄武",
+      "魏吴关系"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -570,10 +944,19 @@
     "year": 223,
     "text": "十二月，权使太中大夫郑泉聘刘备于白帝，始复通也。二年冬十一月，蜀使中郎将邓芝来聘。自是之后，聘使往来以为常。",
     "translation": null,
-    "mentionedPersonIds": ["sun-quan", "liu-bei"],
+    "mentionedPersonIds": [
+      "sun-quan",
+      "liu-bei"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["baidi"],
-    "tags": ["吴蜀复交", "白帝", "外交"],
+    "mentionedPlaceIds": [
+      "baidi"
+    ],
+    "tags": [
+      "吴蜀复交",
+      "白帝",
+      "外交"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -587,10 +970,19 @@
     "year": 252,
     "text": "二年春正月，立故太子和为南阳王。二月，大赦，改元为神凤。夏四月，权薨，时年七十一，谥曰大皇帝。秋七月，葬蒋陵。",
     "translation": null,
-    "mentionedPersonIds": ["sun-quan"],
+    "mentionedPersonIds": [
+      "sun-quan"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["jianye", "jiangling"],
-    "tags": ["去世", "神凤", "吴大帝"],
+    "mentionedPlaceIds": [
+      "jianye",
+      "jiangling"
+    ],
+    "tags": [
+      "去世",
+      "神凤",
+      "吴大帝"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -604,10 +996,21 @@
     "year": 214,
     "text": "后备又西取益州。益州既定，以亮为军师将军。",
     "translation": null,
-    "mentionedPersonIds": ["zhuge-liang", "liu-bei"],
-    "mentionedEventIds": ["china-214-liu-bei-takes-yi"],
-    "mentionedPlaceIds": ["yi-zhou"],
-    "tags": ["益州", "军师将军", "任官"],
+    "mentionedPersonIds": [
+      "zhuge-liang",
+      "liu-bei"
+    ],
+    "mentionedEventIds": [
+      "china-214-liu-bei-takes-yi"
+    ],
+    "mentionedPlaceIds": [
+      "yi-zhou"
+    ],
+    "tags": [
+      "益州",
+      "军师将军",
+      "任官"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -621,10 +1024,21 @@
     "year": 221,
     "text": "备称尊号，拜亮为丞相，录尚书事。",
     "translation": null,
-    "mentionedPersonIds": ["zhuge-liang", "liu-bei"],
-    "mentionedEventIds": ["china-221-liu-bei-founds-shu"],
-    "mentionedPlaceIds": ["chengdu"],
-    "tags": ["丞相", "录尚书事", "蜀汉建国"],
+    "mentionedPersonIds": [
+      "zhuge-liang",
+      "liu-bei"
+    ],
+    "mentionedEventIds": [
+      "china-221-liu-bei-founds-shu"
+    ],
+    "mentionedPlaceIds": [
+      "chengdu"
+    ],
+    "tags": [
+      "丞相",
+      "录尚书事",
+      "蜀汉建国"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -638,10 +1052,18 @@
     "year": 225,
     "text": "三年春，亮率众南征。其秋悉平。军资所出，国以富饶。乃治戎讲武，以俟大举。",
     "translation": null,
-    "mentionedPersonIds": ["zhuge-liang"],
+    "mentionedPersonIds": [
+      "zhuge-liang"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["nanzhong"],
-    "tags": ["南征", "南中", "治戎讲武"],
+    "mentionedPlaceIds": [
+      "nanzhong"
+    ],
+    "tags": [
+      "南征",
+      "南中",
+      "治戎讲武"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -655,10 +1077,19 @@
     "year": 227,
     "text": "五年，率诸军北驻汉中，临发，上疏曰：“先帝创业未半，而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。”",
     "translation": null,
-    "mentionedPersonIds": ["zhuge-liang", "wei-yan"],
+    "mentionedPersonIds": [
+      "zhuge-liang",
+      "wei-yan"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["hanzhong"],
-    "tags": ["北驻汉中", "出师表", "北伐准备"],
+    "mentionedPlaceIds": [
+      "hanzhong"
+    ],
+    "tags": [
+      "北驻汉中",
+      "出师表",
+      "北伐准备"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   },
@@ -672,10 +1103,611 @@
     "year": 227,
     "text": "今南方已定，兵甲已足，当奖率三军，北定中原，庶竭驽钝，攘除奸凶，兴复汉室，还于旧都。",
     "translation": null,
-    "mentionedPersonIds": ["zhuge-liang", "wei-yan"],
+    "mentionedPersonIds": [
+      "zhuge-liang",
+      "wei-yan"
+    ],
     "mentionedEventIds": [],
-    "mentionedPlaceIds": ["nanzhong", "central-plains"],
-    "tags": ["出师表", "兴复汉室", "北定中原"],
+    "mentionedPlaceIds": [
+      "nanzhong",
+      "central-plains"
+    ],
+    "tags": [
+      "出师表",
+      "兴复汉室",
+      "北定中原"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wudi-cao-cao-xiaolian",
+    "sourceId": "sanguozhi-wei-wudi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "武帝纪",
+    "locator": "年二十",
+    "year": 174,
+    "text": "年二十，举孝廉为郎，除洛阳北部尉，迁顿丘令。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [
+      "luoyang",
+      "dunqiu"
+    ],
+    "tags": [
+      "仕宦起点",
+      "洛阳北部尉"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wudi-cao-cao-yellow-turban",
+    "sourceId": "sanguozhi-wei-wudi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "武帝纪",
+    "locator": "光和末",
+    "year": 184,
+    "text": "光和末，黄巾起。拜骑都尉，讨颍川贼。迁为济南相。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-cao"
+    ],
+    "mentionedEventIds": [
+      "china-184-yellow-turban-rebellion"
+    ],
+    "mentionedPlaceIds": [
+      "yingchuan",
+      "jinan"
+    ],
+    "tags": [
+      "黄巾",
+      "骑都尉",
+      "济南相"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wudi-cao-cao-dong-zhuo-east",
+    "sourceId": "sanguozhi-wei-wudi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "武帝纪",
+    "locator": "中平六年",
+    "year": 189,
+    "text": "卓表太祖为骁骑校尉，欲与计事。太祖乃变易姓名，间行东归。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-cao",
+      "dong-zhuo"
+    ],
+    "mentionedEventIds": [
+      "china-189-dong-zhuo-enters-luoyang"
+    ],
+    "mentionedPlaceIds": [
+      "luoyang"
+    ],
+    "tags": [
+      "董卓",
+      "东归",
+      "起兵前夜"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wudi-cao-cao-yanzhou-qingzhou",
+    "sourceId": "sanguozhi-wei-wudi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "武帝纪",
+    "locator": "初平三年",
+    "year": 192,
+    "text": "信乃与州吏万潜等至东郡迎太祖领兖州牧。冬，受降卒三十馀万，男女百馀万口，收其精锐者，号为青州兵。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [
+      "yan-zhou",
+      "dong-commandery",
+      "qing-zhou"
+    ],
+    "tags": [
+      "兖州牧",
+      "青州兵",
+      "根据地"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wudi-cao-cao-wan-defeat",
+    "sourceId": "sanguozhi-wei-wudi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "武帝纪",
+    "locator": "建安二年",
+    "year": 197,
+    "text": "二年春正月，公到宛。张绣降，旣而悔之，复反。公与战，军败，为流矢所中，长子昂、弟子安民遇害。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-cao",
+      "zhang-xiu",
+      "cao-ang"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [
+      "wan"
+    ],
+    "tags": [
+      "宛城",
+      "张绣",
+      "曹昂"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wudi-cao-cao-white-wolf",
+    "sourceId": "sanguozhi-wei-wudi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "武帝纪",
+    "locator": "建安十二年八月",
+    "year": 207,
+    "text": "八月，登白狼山，卒与虏遇，衆甚盛。公登高，望虏陈不整，乃纵兵击之，使张辽为先锋，虏衆大崩。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-cao",
+      "zhang-liao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [
+      "white-wolf-mountain",
+      "liucheng"
+    ],
+    "tags": [
+      "乌桓",
+      "白狼山",
+      "河北收束"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wudi-cao-cao-tongguan",
+    "sourceId": "sanguozhi-wei-wudi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "武帝纪",
+    "locator": "建安十六年",
+    "year": 211,
+    "text": "超等屯潼关，公勑诸将：“关西兵精悍，坚壁勿与战。”秋七月，公西征。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-cao",
+      "ma-chao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [
+      "tongguan",
+      "guanzhong"
+    ],
+    "tags": [
+      "潼关",
+      "马超",
+      "关中"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wendi-cao-pi-heir",
+    "sourceId": "sanguozhi-wei-wendi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "文帝纪",
+    "locator": "建安二十二年",
+    "year": 217,
+    "text": "建安十六年，为五官中郎将、副丞相。二十二年，立为魏太子。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-pi",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "继承",
+      "魏太子",
+      "五官中郎将"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wendi-cao-pi-birth",
+    "sourceId": "sanguozhi-wei-wendi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "文帝纪",
+    "locator": "文帝纪开篇",
+    "year": 187,
+    "text": "文皇帝讳丕，字子桓，武帝太子也。中平四年冬，生于谯。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-pi"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [
+      "qiao"
+    ],
+    "tags": [
+      "出生",
+      "名讳",
+      "籍贯"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wendi-cao-pi-succeeds",
+    "sourceId": "sanguozhi-wei-wendi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "文帝纪",
+    "locator": "建安二十五年",
+    "year": 220,
+    "text": "太祖崩，嗣位为丞相、魏王。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-pi",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [
+      "luoyang"
+    ],
+    "tags": [
+      "继位",
+      "魏王",
+      "丞相"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wendi-cao-pi-abdication",
+    "sourceId": "sanguozhi-wei-wendi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "文帝纪",
+    "locator": "黄初元年",
+    "year": 220,
+    "text": "乃为坛于繁阳。庚午，王升坛即阼，百官陪位。事讫，降坛，视燎成礼而反。改延康为黄初，大赦。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-pi",
+      "han-xiandi"
+    ],
+    "mentionedEventIds": [
+      "china-220-cao-pi-founds-wei"
+    ],
+    "mentionedPlaceIds": [
+      "fanyang"
+    ],
+    "tags": [
+      "受禅",
+      "黄初",
+      "曹魏建立"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wendi-cao-pi-sun-quan",
+    "sourceId": "sanguozhi-wei-wendi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "文帝纪",
+    "locator": "黄初二年八月",
+    "year": 221,
+    "text": "秋八月，孙权遣使奉章，并遣于禁等还。丁巳，使太常邢贞持节拜权为大将军，封吴王，加九锡。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-pi",
+      "sun-quan",
+      "yu-jin"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "孙权",
+      "吴王",
+      "魏吴关系"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wendi-cao-pi-south-campaign",
+    "sourceId": "sanguozhi-wei-wendi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "文帝纪",
+    "locator": "黄初三年",
+    "year": 222,
+    "text": "六月辛亥，治兵于东郊。庚午，遂南征。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-pi"
+    ],
+    "mentionedEventIds": [
+      "china-222-yiling"
+    ],
+    "mentionedPlaceIds": [
+      "xuchang"
+    ],
+    "tags": [
+      "南征",
+      "魏吴战争",
+      "夷陵后局势"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wendi-cao-pi-guangling",
+    "sourceId": "sanguozhi-wei-wendi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "文帝纪",
+    "locator": "黄初六年",
+    "year": 225,
+    "text": "冬十月，行幸广陵故城，临江观兵，戎卒十馀万，旌旗数百里。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-pi"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [
+      "guangling",
+      "yangtze"
+    ],
+    "tags": [
+      "广陵",
+      "观兵",
+      "魏吴前线"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-wendi-cao-pi-death",
+    "sourceId": "sanguozhi-wei-wendi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "文帝纪",
+    "locator": "黄初七年五月",
+    "year": 226,
+    "text": "夏五月丙辰，帝疾笃，召中军大将军曹真、镇军大将军陈羣、征东大将军曹休、抚军大将军司马宣王，并受遗诏辅嗣主。丁巳，帝崩于嘉福殿，时年四十。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-pi",
+      "cao-zhen",
+      "chen-qun",
+      "cao-xiu",
+      "sima-yi",
+      "cao-rui"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [
+      "luoyang"
+    ],
+    "tags": [
+      "死亡",
+      "辅政",
+      "曹叡即位"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-mingdi-cao-rui-origin",
+    "sourceId": "sanguozhi-wei-mingdi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "明帝纪",
+    "locator": "明帝纪开篇",
+    "year": 204,
+    "text": "明皇帝讳睿，字元仲，文帝太子也。生而太祖爱之，常令在左右。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-rui",
+      "cao-pi",
+      "cao-cao"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "出生",
+      "名讳",
+      "曹魏皇室"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-mingdi-cao-rui-enfeoffment",
+    "sourceId": "sanguozhi-wei-mingdi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "明帝纪",
+    "locator": "黄初年间",
+    "year": 220,
+    "text": "年十五，封武德侯，黄初二年为齐公，三年为平原王。以其母诛，故未建为嗣。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-rui",
+      "empress-zhen"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [],
+    "tags": [
+      "封爵",
+      "继承",
+      "甄后"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-mingdi-cao-rui-accession",
+    "sourceId": "sanguozhi-wei-mingdi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "明帝纪",
+    "locator": "黄初七年五月",
+    "year": 226,
+    "text": "七年夏五月，帝病笃，乃立为皇太子。丁巳，即皇帝位，大赦。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-rui",
+      "cao-pi"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [
+      "luoyang"
+    ],
+    "tags": [
+      "即位",
+      "皇太子",
+      "大赦"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-mingdi-cao-rui-zhuge-228",
+    "sourceId": "sanguozhi-wei-mingdi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "明帝纪",
+    "locator": "太和二年",
+    "year": 228,
+    "text": "蜀大将诸葛亮寇边，天水、南安、安定三郡吏民叛应亮。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-rui",
+      "zhuge-liang",
+      "zhang-he",
+      "cao-zhen"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [
+      "tianshui",
+      "nan-an",
+      "anding"
+    ],
+    "tags": [
+      "诸葛亮北伐",
+      "关陇",
+      "街亭"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-mingdi-cao-rui-wuzhang",
+    "sourceId": "sanguozhi-wei-mingdi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "明帝纪",
+    "locator": "青龙二年",
+    "year": 234,
+    "text": "是月，诸葛亮出斜谷，屯渭南，司马宣王率诸军拒之。会亮卒，其军退还。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-rui",
+      "zhuge-liang",
+      "sima-yi"
+    ],
+    "mentionedEventIds": [
+      "china-234-wuzhang-plains"
+    ],
+    "mentionedPlaceIds": [
+      "xiegu",
+      "weinan",
+      "wuzhang-plains"
+    ],
+    "tags": [
+      "五丈原",
+      "诸葛亮卒",
+      "司马懿"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-mingdi-cao-rui-liaodong",
+    "sourceId": "sanguozhi-wei-mingdi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "明帝纪",
+    "locator": "景初二年",
+    "year": 238,
+    "text": "丙寅，司马宣王围公孙渊于襄平，大破之，传渊首于京都，海东诸郡平。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-rui",
+      "sima-yi"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [
+      "xiangping",
+      "liaodong"
+    ],
+    "tags": [
+      "辽东",
+      "公孙渊",
+      "司马懿"
+    ],
+    "confidence": "high",
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mention-sgz-wei-mingdi-cao-rui-death",
+    "sourceId": "sanguozhi-wei-mingdi",
+    "workTitle": "三国志",
+    "bookTitle": "魏书",
+    "chapterTitle": "明帝纪",
+    "locator": "景初三年正月",
+    "year": 239,
+    "text": "即日，帝崩于嘉福殿，魏书曰：殡于九龙前殿。时年三十六。",
+    "translation": null,
+    "mentionedPersonIds": [
+      "cao-rui",
+      "cao-fang",
+      "cao-shuang",
+      "sima-yi"
+    ],
+    "mentionedEventIds": [],
+    "mentionedPlaceIds": [
+      "luoyang"
+    ],
+    "tags": [
+      "死亡",
+      "曹芳",
+      "辅政"
+    ],
     "confidence": "high",
     "reviewStatus": "reviewed"
   }

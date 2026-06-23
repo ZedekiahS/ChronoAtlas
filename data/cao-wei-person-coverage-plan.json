@@ -19,8 +19,8 @@
     {
       "id": "wei-biography-detail-pass",
       "title": "魏书逐传生平节点细化",
-      "status": "next",
-      "note": "从曹操、曹丕、曹叡、曹魏宗室、五子良将、淮南三叛、邓艾钟会等优先级开始，逐段补原文摘录、译注、人物关系和事件回链。"
+      "status": "in-progress",
+      "note": "已完成曹操、曹丕、曹叡三代本纪第一轮年谱与原文摘录；下一步继续逐段补关系和资治通鉴互校。"
     },
     {
       "id": "zizhi-tongjian-cross-check",
@@ -217,6 +217,17 @@
         "sanguozhi-wei-wuwan-xianbei-dongyi"
       ],
       "note": "乌丸鲜卑东夷传先作为边疆/族群资料，不进入人物表。"
+    },
+    {
+      "id": "wei-ruler-annals-pass-1",
+      "title": "曹操、曹丕、曹叡本纪年谱第一轮",
+      "status": "done",
+      "personIds": [
+        "cao-cao",
+        "cao-pi",
+        "cao-rui"
+      ],
+      "note": "补充三代本纪关键生平节点与《三国志·魏书》原文摘录；曹叡从 stub 升为 partial。"
     }
   ],
   "trackedPeople": [
@@ -1224,5 +1235,61 @@
       "sanguozhi-wei-wuwan-xianbei-dongyi"
     ],
     "limitation": "本次是目录级基础建档，不等于完成逐传精读；新增 stub 人物的生卒、仕历、关系、原文摘录和资治通鉴互校仍需后续补充。"
+  },
+  "rulerAnnalsPass1": {
+    "updatedAt": "2026-06-22",
+    "sourceIds": [
+      "sanguozhi-wei-wudi",
+      "sanguozhi-wei-wendi",
+      "sanguozhi-wei-mingdi"
+    ],
+    "sourceMentionIds": [
+      "mention-sgz-wei-wudi-cao-cao-xiaolian",
+      "mention-sgz-wei-wudi-cao-cao-yellow-turban",
+      "mention-sgz-wei-wudi-cao-cao-dong-zhuo-east",
+      "mention-sgz-wei-wudi-cao-cao-yanzhou-qingzhou",
+      "mention-sgz-wei-wudi-cao-cao-wan-defeat",
+      "mention-sgz-wei-wudi-cao-cao-white-wolf",
+      "mention-sgz-wei-wudi-cao-cao-tongguan",
+      "mention-sgz-wei-wendi-cao-pi-heir",
+      "mention-sgz-wei-wendi-cao-pi-birth",
+      "mention-sgz-wei-wendi-cao-pi-succeeds",
+      "mention-sgz-wei-wendi-cao-pi-abdication",
+      "mention-sgz-wei-wendi-cao-pi-sun-quan",
+      "mention-sgz-wei-wendi-cao-pi-south-campaign",
+      "mention-sgz-wei-wendi-cao-pi-guangling",
+      "mention-sgz-wei-wendi-cao-pi-death",
+      "mention-sgz-wei-mingdi-cao-rui-origin",
+      "mention-sgz-wei-mingdi-cao-rui-enfeoffment",
+      "mention-sgz-wei-mingdi-cao-rui-accession",
+      "mention-sgz-wei-mingdi-cao-rui-zhuge-228",
+      "mention-sgz-wei-mingdi-cao-rui-wuzhang",
+      "mention-sgz-wei-mingdi-cao-rui-liaodong",
+      "mention-sgz-wei-mingdi-cao-rui-death"
+    ],
+    "lifeEventIds": [
+      "cao-cao-174-xiaolian",
+      "cao-cao-184-yellow-turban",
+      "cao-cao-189-dong-zhuo-east",
+      "cao-cao-192-yanzhou-qingzhou",
+      "cao-cao-197-wan-defeat",
+      "cao-cao-207-white-wolf",
+      "cao-cao-211-tongguan",
+      "cao-cao-217-cao-pi-heir",
+      "cao-pi-211-wuguan",
+      "cao-pi-217-heir",
+      "cao-pi-220-succeeds-wei-king",
+      "cao-pi-221-sun-quan-vassal",
+      "cao-pi-222-south-campaign",
+      "cao-pi-225-guangling",
+      "cao-rui-204-born",
+      "cao-rui-220-enfeoffment",
+      "cao-rui-226-accession",
+      "cao-rui-228-zhuge-liang-first-northern-expedition",
+      "cao-rui-234-wuzhang",
+      "cao-rui-238-liaodong",
+      "cao-rui-239-death"
+    ],
+    "limitation": "本轮选择本纪关键节点，不等于曹操、曹丕、曹叡完整逐年精读；未涉及的年份后续继续从本纪、裴注和资治通鉴补齐。"
   }
 }
