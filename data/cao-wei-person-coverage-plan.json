@@ -20,7 +20,7 @@
       "id": "wei-biography-detail-pass",
       "title": "魏书逐传生平节点细化",
       "status": "in-progress",
-      "note": "已完成曹操、曹丕、曹叡三代本纪第一轮年谱与原文摘录；下一步继续逐段补关系和资治通鉴互校。"
+      "note": "已完成曹操、曹丕、曹叡三代本纪第一轮，以及曹彰、曹植、曹冲、曹昂、曹爽宗室线第一轮。"
     },
     {
       "id": "zizhi-tongjian-cross-check",
@@ -228,6 +228,19 @@
         "cao-rui"
       ],
       "note": "补充三代本纪关键生平节点与《三国志·魏书》原文摘录；曹叡从 stub 升为 partial。"
+    },
+    {
+      "id": "wei-cao-clan-pass-1",
+      "title": "曹魏宗室线第一轮：曹彰、曹植、曹冲、曹昂、曹爽",
+      "status": "done",
+      "personIds": [
+        "cao-zhang",
+        "cao-zhi",
+        "cao-chong",
+        "cao-ang",
+        "cao-shuang"
+      ],
+      "note": "补充宗室人物的传记性格、关键生平、原文摘录和基础亲属/辅政关系。"
     }
   ],
   "trackedPeople": [
@@ -1291,5 +1304,70 @@
       "cao-rui-239-death"
     ],
     "limitation": "本轮选择本纪关键节点，不等于曹操、曹丕、曹叡完整逐年精读；未涉及的年份后续继续从本纪、裴注和资治通鉴补齐。"
+  },
+  "caoClanPass1": {
+    "updatedAt": "2026-06-22",
+    "sourceIds": [
+      "sanguozhi-wei-cao-zhang",
+      "sanguozhi-wei-cao-zhi",
+      "sanguozhi-wei-cao-chong",
+      "sanguozhi-wei-cao-ang",
+      "sanguozhi-wei-cao-shuang"
+    ],
+    "sourceMentionIds": [
+      "mention-sgz-wei-cao-zhang-early",
+      "mention-sgz-wei-cao-zhang-daijun",
+      "mention-sgz-wei-cao-zhang-death",
+      "mention-sgz-wei-cao-zhi-talent",
+      "mention-sgz-wei-cao-zhi-copper-terrace",
+      "mention-sgz-wei-cao-zhi-succession",
+      "mention-sgz-wei-cao-zhi-demotion",
+      "mention-sgz-wei-cao-zhi-death",
+      "mention-sgz-wei-cao-chong-talent",
+      "mention-sgz-wei-cao-chong-elephant",
+      "mention-sgz-wei-cao-chong-mercy",
+      "mention-sgz-wei-cao-chong-death",
+      "mention-sgz-wei-cao-ang-life-death",
+      "mention-sgz-wei-cao-shuang-early-regency",
+      "mention-sgz-wei-cao-shuang-power",
+      "mention-sgz-wei-cao-shuang-shu-campaign",
+      "mention-sgz-wei-cao-shuang-gaoping",
+      "mention-sgz-wei-cao-shuang-death"
+    ],
+    "lifeEventIds": [
+      "cao-zhang-early-martial",
+      "cao-zhang-218-daijun",
+      "cao-zhang-222-rencheng",
+      "cao-zhang-223-death",
+      "cao-zhi-192-birth",
+      "cao-zhi-early-literary-talent",
+      "cao-zhi-210-copper-terrace",
+      "cao-zhi-217-succession-rivalry",
+      "cao-zhi-221-demotion",
+      "cao-zhi-232-death",
+      "cao-chong-196-birth",
+      "cao-chong-early-talent",
+      "cao-chong-elephant",
+      "cao-chong-mercy",
+      "cao-chong-208-death",
+      "cao-ang-early-xiaolian",
+      "cao-ang-197-death",
+      "cao-shuang-239-regency",
+      "cao-shuang-240-power-network",
+      "cao-shuang-244-shu-campaign",
+      "cao-shuang-249-gaopingling",
+      "cao-shuang-249-death"
+    ],
+    "relationIds": [
+      "cao-cao-cao-ang-family",
+      "cao-cao-cao-zhang-family",
+      "cao-cao-cao-zhi-family",
+      "cao-cao-cao-chong-family",
+      "cao-pi-cao-zhi-succession-rivalry",
+      "cao-zhen-cao-shuang-family",
+      "cao-shuang-sima-yi-regency-rivalry",
+      "cao-shuang-cao-fang-regency"
+    ],
+    "limitation": "本轮先按《三国志·魏书》本传建立宗室线骨架；曹植诗文、曹爽高平陵相关《资治通鉴》互校和裴注扩展仍待后续。"
   }
 }

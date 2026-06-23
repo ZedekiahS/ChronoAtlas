@@ -2079,11 +2079,12 @@
     "life": "?-249",
     "primaryPolity": "曹操集团 / 曹魏",
     "roles": [
-      "曹魏将领",
-      "魏书列传人物"
+      "曹魏宗室",
+      "大将军",
+      "辅政大臣"
     ],
-    "summary": "曹爽见于《三国志·魏书·曹爽传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹真之子，明帝末年受遗诏与司马懿同辅少主曹芳。正始年间权势极盛，244 年伐蜀失利，249 年高平陵政变后被诛。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-shuang",
@@ -2764,10 +2765,11 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "任城王",
+      "北中郎将"
     ],
-    "summary": "曹彰见于《三国志·魏书·任城威王彰传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹操子，字子文，以武勇见称。建安二十三年北征代郡乌丸有功，黄初三年立任城王，次年入朝病逝。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-zhang",
@@ -2783,10 +2785,11 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "陈思王",
+      "文学家"
     ],
-    "summary": "曹植见于《三国志·魏书·陈思王植传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹操子，字子建，建安文学代表人物。因才华受曹操赏识并卷入继承竞争，曹丕即位后屡遭贬徙，太和六年封陈王后病逝。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-zhi",
@@ -2821,10 +2824,11 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "曹操长子",
+      "孝廉"
     ],
-    "summary": "曹昂见于《三国志·魏书·丰愍王昂传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹操长子，字子修，弱冠举孝廉。建安二年随曹操南征宛城，张绣复叛时遇害。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-ang",
@@ -2859,10 +2863,11 @@
     "primaryPolity": "曹魏",
     "roles": [
       "曹魏宗室",
-      "魏书宗室传人物"
+      "邓哀王",
+      "早慧宗室"
     ],
-    "summary": "曹冲见于《三国志·魏书·邓哀王冲传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
-    "coverageStatus": "stub",
+    "summary": "曹操子，字仓舒，幼年早慧，以称象和为库吏解罪等故事见称。建安十三年十三岁病逝，曹操深为哀痛。",
+    "coverageStatus": "partial",
     "sourceRefs": [
       {
         "sourceId": "sanguozhi-wei-cao-chong",

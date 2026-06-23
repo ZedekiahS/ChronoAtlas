@@ -1990,5 +1990,148 @@
         "locator": "刘廙传"
       }
     ]
+  },
+  {
+    "id": "cao-cao-cao-ang-family",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "cao-ang",
+    "type": "family",
+    "startYear": 197,
+    "endYear": 197,
+    "summary": "曹昂为曹操长子，随曹操南征宛城时为张绣所害。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-ang",
+        "locator": "本传",
+        "quote": "丰愍王昂字子修。弱冠举孝廉。随太祖南征，为张绣所害。"
+      },
+      {
+        "sourceId": "sanguozhi-wei-wudi",
+        "locator": "建安二年",
+        "quote": "长子昂、弟子安民遇害。"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-cao-zhang-family",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "cao-zhang",
+    "type": "family",
+    "startYear": 218,
+    "endYear": 223,
+    "summary": "曹彰为曹操子，以武勇见长，受曹操命北征代郡乌丸。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhang",
+        "locator": "建安二十三年",
+        "quote": "二十三年，代郡乌丸反，以彰为北中郎将，行骁骑将军。"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-cao-zhi-family",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "cao-zhi",
+    "type": "family",
+    "startYear": 192,
+    "endYear": 220,
+    "summary": "曹植为曹操子，以文学才华受曹操特别赏识，一度卷入魏太子继承竞争。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhi",
+        "locator": "建安二十二年前后",
+        "quote": "太祖狐疑，几为太子者数矣。"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao-cao-chong-family",
+    "sourcePersonId": "cao-cao",
+    "targetPersonId": "cao-chong",
+    "type": "family",
+    "startYear": 196,
+    "endYear": 208,
+    "summary": "曹冲为曹操子，早慧仁爱，建安十三年早逝，曹操深为哀痛。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-chong",
+        "locator": "建安十三年",
+        "quote": "年十三，建安十三年疾病，太祖亲为请命。及亡，哀甚。"
+      }
+    ]
+  },
+  {
+    "id": "cao-pi-cao-zhi-succession-rivalry",
+    "sourcePersonId": "cao-pi",
+    "targetPersonId": "cao-zhi",
+    "type": "succession-rival",
+    "startYear": 211,
+    "endYear": 221,
+    "summary": "曹丕与曹植围绕魏太子地位形成继承竞争；曹丕胜出后，曹植在黄初年间受到宗室法制约束和贬爵。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-zhi",
+        "locator": "建安二十二年前后",
+        "quote": "太祖狐疑，几为太子者数矣。而植任性而行，不自雕励，饮酒不节。"
+      },
+      {
+        "sourceId": "sanguozhi-wei-cao-zhi",
+        "locator": "黄初二年",
+        "quote": "帝以太后故，贬爵安乡侯。"
+      }
+    ]
+  },
+  {
+    "id": "cao-zhen-cao-shuang-family",
+    "sourcePersonId": "cao-zhen",
+    "targetPersonId": "cao-shuang",
+    "type": "family-successor",
+    "startYear": 239,
+    "endYear": 249,
+    "summary": "曹爽为曹真之子，明帝末年受遗诏辅政，是曹真宗室军政地位在正始初年的延续。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-shuang",
+        "locator": "明帝末年",
+        "quote": "拜大将军，假节钺，都督中外诸军事，录尚书事。"
+      }
+    ]
+  },
+  {
+    "id": "cao-shuang-sima-yi-regency-rivalry",
+    "sourcePersonId": "cao-shuang",
+    "targetPersonId": "sima-yi",
+    "type": "regency-rival",
+    "startYear": 239,
+    "endYear": 249,
+    "summary": "曹爽与司马懿同受明帝遗诏辅少主，后曹爽转司马懿为太傅以夺实权，最终在高平陵政变中败亡。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-shuang",
+        "locator": "明帝末年",
+        "quote": "与太尉司马宣王并受遗诏辅少主。"
+      },
+      {
+        "sourceId": "sanguozhi-wei-cao-shuang",
+        "locator": "正始十年正月",
+        "quote": "宣王部勒兵马，先据武库，遂出屯洛水浮桥。"
+      }
+    ]
+  },
+  {
+    "id": "cao-shuang-cao-fang-regency",
+    "sourcePersonId": "cao-shuang",
+    "targetPersonId": "cao-fang",
+    "type": "regent",
+    "startYear": 239,
+    "endYear": 249,
+    "summary": "曹爽在齐王曹芳即位后以大将军、录尚书事辅政，实际控制曹魏中枢多年。",
+    "sourceRefs": [
+      {
+        "sourceId": "sanguozhi-wei-cao-shuang",
+        "locator": "齐王即位",
+        "quote": "明帝崩，齐王即位，加爽侍中，改封武安侯。"
+      }
+    ]
   }
 ]
