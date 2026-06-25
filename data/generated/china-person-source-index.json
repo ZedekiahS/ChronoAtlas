@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFrom": "db/chronoatlas.sqlite",
-  "purpose": "前端人物索引和覆盖度概览；完整原文与传记节点仍保存在数据库和源 JSON 中。",
+  "purpose": "前端人物索引和覆盖度概览；完整原文、摘录标签和引用关系保存在 SQLite 数据库中。",
   "persons": [
     {
       "id": "yue-jin",
@@ -609,8 +609,8 @@
       "summary": "刘备之子，223 年即位，263 年向邓艾投降，蜀汉灭亡。",
       "coverageStatus": "partial",
       "lifeEventCount": 4,
-      "sourceMentionCount": 2,
-      "reviewedSourceMentionCount": 2,
+      "sourceMentionCount": 3,
+      "reviewedSourceMentionCount": 3,
       "firstRecordedYear": 207,
       "lastRecordedYear": 271,
       "sourceIds": [
@@ -905,8 +905,8 @@
       "summary": "曹魏后期重臣，多次与诸葛亮对峙，249 年高平陵之变后司马氏控制魏政。",
       "coverageStatus": "partial",
       "lifeEventCount": 3,
-      "sourceMentionCount": 10,
-      "reviewedSourceMentionCount": 10,
+      "sourceMentionCount": 14,
+      "reviewedSourceMentionCount": 14,
       "firstRecordedYear": 179,
       "lastRecordedYear": 251,
       "sourceIds": [
@@ -917,6 +917,7 @@
         "sanguozhi-wei-qi-wang",
         "sanguozhi-wei-wendi",
         "zizhi-tongjian-72",
+        "zizhi-tongjian-75",
         "zizhi-tongjian-78"
       ],
       "coverage": {
@@ -947,13 +948,14 @@
       "summary": "司马懿之子，曹魏后期实际掌权者，主持灭蜀战略，其子司马炎最终代魏称帝。",
       "coverageStatus": "partial",
       "lifeEventCount": 3,
-      "sourceMentionCount": 2,
-      "reviewedSourceMentionCount": 2,
+      "sourceMentionCount": 4,
+      "reviewedSourceMentionCount": 4,
       "firstRecordedYear": 211,
       "lastRecordedYear": 265,
       "sourceIds": [
         "jinshu-wudi",
         "sanguozhi-wei-gaogui-xianggong",
+        "zizhi-tongjian-77",
         "zizhi-tongjian-78"
       ],
       "coverage": {
@@ -1455,8 +1457,8 @@
       "summary": "魏降蜀后成为蜀汉后期重要将领，灭蜀战争中退守剑阁，后参与钟会之乱失败。",
       "coverageStatus": "partial",
       "lifeEventCount": 3,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
+      "sourceMentionCount": 1,
+      "reviewedSourceMentionCount": 1,
       "firstRecordedYear": 202,
       "lastRecordedYear": 264,
       "sourceIds": [
@@ -2885,12 +2887,13 @@
       "summary": "曹奂，字景明，曹操之孙、燕王曹宇之子。260 年曹髦死后即位，263 年魏灭蜀汉，265 年禅位于司马炎，曹魏由此结束。",
       "coverageStatus": "partial",
       "lifeEventCount": 4,
-      "sourceMentionCount": 4,
-      "reviewedSourceMentionCount": 4,
+      "sourceMentionCount": 5,
+      "reviewedSourceMentionCount": 5,
       "firstRecordedYear": 258,
       "lastRecordedYear": 265,
       "sourceIds": [
-        "sanguozhi-wei-chenliu-wang"
+        "sanguozhi-wei-chenliu-wang",
+        "zizhi-tongjian-78"
       ],
       "coverage": {
         "status": "partial",
@@ -3010,12 +3013,13 @@
       "summary": "曹彪，字朱虎，曹操子。历封寿春侯、弋阳王、吴王、白马王、楚王；251 年因王凌、令狐愚谋立案被赐死。",
       "coverageStatus": "partial",
       "lifeEventCount": 1,
-      "sourceMentionCount": 1,
-      "reviewedSourceMentionCount": 1,
+      "sourceMentionCount": 3,
+      "reviewedSourceMentionCount": 3,
       "firstRecordedYear": 216,
       "lastRecordedYear": 251,
       "sourceIds": [
-        "sanguozhi-wei-cao-biao"
+        "sanguozhi-wei-cao-biao",
+        "zizhi-tongjian-75"
       ],
       "coverage": {
         "status": "partial",
@@ -3436,15 +3440,16 @@
       "summary": "曹真之子，明帝末年受遗诏与司马懿同辅少主曹芳。正始年间权势极盛，244 年伐蜀失利，249 年高平陵政变后被诛。",
       "coverageStatus": "partial",
       "lifeEventCount": 5,
-      "sourceMentionCount": 9,
-      "reviewedSourceMentionCount": 9,
+      "sourceMentionCount": 11,
+      "reviewedSourceMentionCount": 11,
       "firstRecordedYear": 239,
       "lastRecordedYear": 249,
       "sourceIds": [
         "sanguozhi-wei-cao-shuang",
         "sanguozhi-wei-cao-zhen",
         "sanguozhi-wei-mingdi",
-        "sanguozhi-wei-qi-wang"
+        "sanguozhi-wei-qi-wang",
+        "zizhi-tongjian-75"
       ],
       "coverage": {
         "status": "partial",
@@ -3596,15 +3601,17 @@
       "summary": "曹芳，字兰卿，魏明帝养子。239 年即位后先由曹爽、司马懿辅政，高平陵政变后司马氏掌权，254 年被司马师废为齐王。",
       "coverageStatus": "partial",
       "lifeEventCount": 4,
-      "sourceMentionCount": 8,
-      "reviewedSourceMentionCount": 8,
+      "sourceMentionCount": 11,
+      "reviewedSourceMentionCount": 11,
       "firstRecordedYear": 235,
       "lastRecordedYear": 254,
       "sourceIds": [
         "sanguozhi-wei-cao-shuang",
         "sanguozhi-wei-gaogui-xianggong",
         "sanguozhi-wei-mingdi",
-        "sanguozhi-wei-qi-wang"
+        "sanguozhi-wei-qi-wang",
+        "zizhi-tongjian-75",
+        "zizhi-tongjian-76"
       ],
       "coverage": {
         "status": "partial",
@@ -3879,14 +3886,16 @@
       "summary": "曹髦，字彦士，曹丕之孙、东海定王曹霖之子。254 年曹芳被废后即位，260 年因不满司马昭专权亲自出讨，被贾充部下成济弑杀。",
       "coverageStatus": "partial",
       "lifeEventCount": 4,
-      "sourceMentionCount": 6,
-      "reviewedSourceMentionCount": 6,
+      "sourceMentionCount": 9,
+      "reviewedSourceMentionCount": 9,
       "firstRecordedYear": 244,
       "lastRecordedYear": 260,
       "sourceIds": [
         "sanguozhi-wei-chenliu-wang",
         "sanguozhi-wei-gaogui-xianggong",
-        "sanguozhi-wei-qi-wang"
+        "sanguozhi-wei-qi-wang",
+        "zizhi-tongjian-76",
+        "zizhi-tongjian-77"
       ],
       "coverage": {
         "status": "partial",
@@ -4584,13 +4593,14 @@
       "primaryPolity": "曹操集团 / 曹魏",
       "summary": "王凌见于《三国志·魏书·王凌传》。本轮先建立人物档案、原文入口和待整理状态，详细生平节点将按本传、裴注与《资治通鉴》逐段补齐。",
       "coverageStatus": "stub",
-      "lifeEventCount": 1,
-      "sourceMentionCount": 0,
-      "reviewedSourceMentionCount": 0,
-      "firstRecordedYear": null,
-      "lastRecordedYear": null,
+      "lifeEventCount": 2,
+      "sourceMentionCount": 3,
+      "reviewedSourceMentionCount": 3,
+      "firstRecordedYear": 249,
+      "lastRecordedYear": 251,
       "sourceIds": [
-        "sanguozhi-wei-wang-ling"
+        "sanguozhi-wei-wang-ling",
+        "zizhi-tongjian-75"
       ],
       "coverage": {
         "status": "stub",
@@ -5803,8 +5813,8 @@
       "summary": "魏将，263 年率军偷渡阴平入蜀，迫使刘禅投降。",
       "coverageStatus": "partial",
       "lifeEventCount": 3,
-      "sourceMentionCount": 1,
-      "reviewedSourceMentionCount": 1,
+      "sourceMentionCount": 3,
+      "reviewedSourceMentionCount": 3,
       "firstRecordedYear": 197,
       "lastRecordedYear": 264,
       "sourceIds": [
@@ -6068,8 +6078,8 @@
       "summary": "魏将，263 年率主力攻蜀，与邓艾分进合击，后在成都发动叛乱失败。",
       "coverageStatus": "partial",
       "lifeEventCount": 3,
-      "sourceMentionCount": 1,
-      "reviewedSourceMentionCount": 1,
+      "sourceMentionCount": 3,
+      "reviewedSourceMentionCount": 3,
       "firstRecordedYear": 225,
       "lastRecordedYear": 264,
       "sourceIds": [

@@ -1,112 +1,8511 @@
 {
   "schemaVersion": 1,
   "model": "china-block-control-timeline",
-  "range": [190, 280],
-  "keyYears": [190, 195, 200, 208, 220, 229, 234, 263, 265, 280],
+  "range": [
+    190,
+    280
+  ],
+  "keyYears": [
+    190,
+    195,
+    200,
+    208,
+    215,
+    220,
+    228,
+    234,
+    249,
+    260,
+    263,
+    266,
+    280
+  ],
   "controllers": [
-    { "id": "袁绍", "color": "#7b63a8" },
-    { "id": "袁术", "color": "#b9872c" },
-    { "id": "曹操", "color": "#9d5238" },
-    { "id": "刘表", "color": "#4f7f9d" },
-    { "id": "吕布", "color": "#8a4f87" },
-    { "id": "公孙瓒", "color": "#6277ad" },
-    { "id": "张鲁", "color": "#8d7435" },
-    { "id": "刘璋", "color": "#6f9659" },
-    { "id": "曹魏", "color": "#b65a3a" },
-    { "id": "蜀汉", "color": "#c19a3c" },
-    { "id": "孙吴", "color": "#3f8b78" },
-    { "id": "西晋", "color": "#8b99a5" },
-    { "id": "陶谦", "color": "#7d8b6f" },
-    { "id": "关中军阀", "color": "#9a7a5d" },
-    { "id": "马腾韩遂", "color": "#9a8f50" },
-    { "id": "士燮", "color": "#5c927e" },
-    { "id": "辽东公孙氏", "color": "#6d86a4" }
+    {
+      "id": "公孙氏",
+      "color": "#6d88a8"
+    },
+    {
+      "id": "公孙瓒",
+      "color": "#6878b0"
+    },
+    {
+      "id": "刘璋",
+      "color": "#6f9659"
+    },
+    {
+      "id": "刘表",
+      "color": "#5088a0"
+    },
+    {
+      "id": "南中叛军",
+      "color": "#8a6a50"
+    },
+    {
+      "id": "吕布",
+      "color": "#905880"
+    },
+    {
+      "id": "士燮",
+      "color": "#508870"
+    },
+    {
+      "id": "孙吴",
+      "color": "#408870"
+    },
+    {
+      "id": "张鲁",
+      "color": "#8d7435"
+    },
+    {
+      "id": "曹操",
+      "color": "#9d5238"
+    },
+    {
+      "id": "曹魏",
+      "color": "#b0653a"
+    },
+    {
+      "id": "李傕郭汜",
+      "color": "#9a6a4d"
+    },
+    {
+      "id": "蛮族",
+      "color": "#6a6050"
+    },
+    {
+      "id": "蜀汉",
+      "color": "#c4a040"
+    },
+    {
+      "id": "袁术",
+      "color": "#c09040"
+    },
+    {
+      "id": "袁绍",
+      "color": "#8b6cb8"
+    },
+    {
+      "id": "西域",
+      "color": "#5a6060"
+    },
+    {
+      "id": "西晋",
+      "color": "#7a858a"
+    },
+    {
+      "id": "陶谦",
+      "color": "#7d8b6f"
+    },
+    {
+      "id": "马腾韩遂",
+      "color": "#a08850"
+    },
+    {
+      "id": "鲜卑",
+      "color": "#5a5040"
+    }
   ],
   "records": [
-    { "blockId": "liang-zhou", "startYear": 190, "endYear": 213, "controller": "马腾韩遂", "status": "frontier", "confidence": "low", "sources": ["三国志魏书马超传", "资治通鉴凉州关中相关纪年"] },
-    { "blockId": "liang-zhou", "startYear": 214, "endYear": 219, "controller": "曹操", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书武帝纪", "资治通鉴建安后期"] },
-    { "blockId": "liang-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
-    { "blockId": "liang-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "frontier", "confidence": "medium", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "bing-zhou", "startYear": 190, "endYear": 205, "controller": "袁绍", "status": "frontier", "confidence": "low", "sources": ["三国志魏书袁绍传", "资治通鉴并州相关纪年"] },
-    { "blockId": "bing-zhou", "startYear": 206, "endYear": 219, "controller": "曹操", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书武帝纪", "资治通鉴建安年间"] },
-    { "blockId": "bing-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
-    { "blockId": "bing-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "frontier", "confidence": "medium", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "you-zhou", "startYear": 190, "endYear": 198, "controller": "公孙瓒", "status": "contested", "confidence": "medium", "sources": ["三国志魏书公孙瓒传", "资治通鉴初平至建安年间"] },
-    { "blockId": "you-zhou", "startYear": 199, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴建安四年以后"] },
-    { "blockId": "you-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
-    { "blockId": "you-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "liaodong", "startYear": 190, "endYear": 237, "controller": "辽东公孙氏", "status": "nominal-control", "confidence": "medium", "sources": ["三国志魏书公孙度传", "资治通鉴辽东相关纪年"] },
-    { "blockId": "liaodong", "startYear": 238, "endYear": 264, "controller": "曹魏", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书明帝纪", "资治通鉴景初二年"] },
-    { "blockId": "liaodong", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "frontier", "confidence": "medium", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "ji-zhou", "startYear": 190, "endYear": 199, "controller": "袁绍", "status": "effective-control", "confidence": "medium", "sources": ["三国志魏书袁绍传", "资治通鉴初平至建安年间"] },
-    { "blockId": "ji-zhou", "startYear": 200, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴官渡以后纪年"] },
-    { "blockId": "ji-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
-    { "blockId": "ji-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "qing-zhou", "startYear": 190, "endYear": 199, "controller": "袁绍", "status": "contested", "confidence": "medium", "sources": ["三国志魏书袁绍传", "资治通鉴初平至建安年间"] },
-    { "blockId": "qing-zhou", "startYear": 200, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴官渡以后纪年"] },
-    { "blockId": "qing-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
-    { "blockId": "qing-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "yong-zhou", "startYear": 190, "endYear": 211, "controller": "马腾韩遂", "status": "frontier", "confidence": "low", "sources": ["三国志魏书马超传", "资治通鉴关中相关纪年"] },
-    { "blockId": "yong-zhou", "startYear": 212, "endYear": 219, "controller": "曹操", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书武帝纪", "资治通鉴潼关以后纪年"] },
-    { "blockId": "yong-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "frontier", "confidence": "medium", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
-    { "blockId": "yong-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "frontier", "confidence": "medium", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "sili", "startYear": 190, "endYear": 195, "controller": "关中军阀", "status": "contested", "confidence": "medium", "sources": ["后汉书董卓传", "资治通鉴初平至兴平年间"] },
-    { "blockId": "sili", "startYear": 196, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴建安年间"] },
-    { "blockId": "sili", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
-    { "blockId": "sili", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "yan-zhou", "startYear": 190, "endYear": 193, "controller": "曹操", "status": "effective-control", "confidence": "medium", "sources": ["三国志魏书武帝纪", "资治通鉴初平年间"] },
-    { "blockId": "yan-zhou", "startYear": 194, "endYear": 195, "controller": "吕布", "status": "contested", "confidence": "high", "sources": ["三国志魏书吕布传", "资治通鉴兴平年间"] },
-    { "blockId": "yan-zhou", "startYear": 196, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴建安年间"] },
-    { "blockId": "yan-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
-    { "blockId": "yan-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "yu-zhou", "startYear": 190, "endYear": 197, "controller": "袁术", "status": "contested", "confidence": "medium", "sources": ["三国志魏书袁术传", "资治通鉴初平至建安二年"] },
-    { "blockId": "yu-zhou", "startYear": 198, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴建安年间"] },
-    { "blockId": "yu-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
-    { "blockId": "yu-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "xu-zhou", "startYear": 190, "endYear": 194, "controller": "陶谦", "status": "effective-control", "confidence": "medium", "sources": ["三国志魏书陶谦传", "资治通鉴初平年间"] },
-    { "blockId": "xu-zhou", "startYear": 195, "endYear": 198, "controller": "吕布", "status": "contested", "confidence": "high", "sources": ["三国志魏书吕布传", "资治通鉴建安元年至三年"] },
-    { "blockId": "xu-zhou", "startYear": 199, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴下邳以后纪年"] },
-    { "blockId": "xu-zhou", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
-    { "blockId": "xu-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "hanzhong", "startYear": 190, "endYear": 214, "controller": "张鲁", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书张鲁传", "资治通鉴汉中相关纪年"] },
-    { "blockId": "hanzhong", "startYear": 215, "endYear": 218, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴建安二十年"] },
-    { "blockId": "hanzhong", "startYear": 219, "endYear": 262, "controller": "蜀汉", "status": "effective-control", "confidence": "high", "sources": ["三国志蜀书先主传", "三国志蜀书后主传", "中国历史地图集三国图幅参考"] },
-    { "blockId": "hanzhong", "startYear": 263, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书陈留王纪", "资治通鉴景元四年"] },
-    { "blockId": "hanzhong", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "huainan", "startYear": 190, "endYear": 198, "controller": "袁术", "status": "effective-control", "confidence": "medium", "sources": ["三国志魏书袁术传", "资治通鉴淮南相关纪年"] },
-    { "blockId": "huainan", "startYear": 199, "endYear": 219, "controller": "曹操", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书武帝纪", "资治通鉴袁术死后相关纪年"] },
-    { "blockId": "huainan", "startYear": 220, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书文帝纪", "中国历史地图集三国图幅参考"] },
-    { "blockId": "huainan", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "yi-zhou", "startYear": 190, "endYear": 213, "controller": "刘璋", "status": "effective-control", "confidence": "high", "sources": ["三国志蜀书先主传", "资治通鉴益州相关纪年"] },
-    { "blockId": "yi-zhou", "startYear": 214, "endYear": 262, "controller": "蜀汉", "status": "effective-control", "confidence": "high", "sources": ["三国志蜀书先主传", "三国志蜀书后主传", "中国历史地图集三国图幅参考"] },
-    { "blockId": "yi-zhou", "startYear": 263, "endYear": 264, "controller": "曹魏", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书陈留王纪", "资治通鉴景元四年"] },
-    { "blockId": "yi-zhou", "startYear": 265, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] },
-
-    { "blockId": "jing-zhou", "startYear": 190, "endYear": 207, "controller": "刘表", "status": "effective-control", "confidence": "high", "sources": ["三国志魏书刘表传", "资治通鉴荆州相关纪年"] },
-    { "blockId": "jing-zhou", "startYear": 208, "endYear": 219, "controller": "孙吴", "status": "contested", "confidence": "medium", "sources": ["三国志蜀书先主传", "三国志吴书吴主传", "资治通鉴赤壁至荆州争夺"] },
-    { "blockId": "jing-zhou", "startYear": 220, "endYear": 279, "controller": "孙吴", "status": "effective-control", "confidence": "medium", "sources": ["三国志吴书吴主传", "中国历史地图集三国图幅参考"] },
-    { "blockId": "jing-zhou", "startYear": 280, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "资治通鉴太康元年"] },
-
-    { "blockId": "yang-zhou", "startYear": 190, "endYear": 196, "controller": "袁术", "status": "contested", "confidence": "medium", "sources": ["三国志魏书袁术传", "资治通鉴初平至建安元年"] },
-    { "blockId": "yang-zhou", "startYear": 197, "endYear": 219, "controller": "孙吴", "status": "effective-control", "confidence": "medium", "sources": ["三国志吴书孙策传", "三国志吴书吴主传", "资治通鉴江东相关纪年"] },
-    { "blockId": "yang-zhou", "startYear": 220, "endYear": 279, "controller": "孙吴", "status": "effective-control", "confidence": "high", "sources": ["三国志吴书吴主传", "中国历史地图集三国图幅参考"] },
-    { "blockId": "yang-zhou", "startYear": 280, "endYear": 280, "controller": "西晋", "status": "effective-control", "confidence": "high", "sources": ["晋书武帝纪", "资治通鉴太康元年"] },
-
-    { "blockId": "jiao-zhou", "startYear": 190, "endYear": 219, "controller": "士燮", "status": "nominal-control", "confidence": "medium", "sources": ["三国志吴书士燮传", "资治通鉴交州相关纪年"] },
-    { "blockId": "jiao-zhou", "startYear": 220, "endYear": 279, "controller": "孙吴", "status": "nominal-control", "confidence": "medium", "sources": ["三国志吴书士燮传", "中国历史地图集三国图幅参考"] },
-    { "blockId": "jiao-zhou", "startYear": 280, "endYear": 280, "controller": "西晋", "status": "nominal-control", "confidence": "medium", "sources": ["晋书武帝纪", "中国历史地图集西晋图幅参考"] }
+    {
+      "blockId": "武威郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "武威郡",
+      "startYear": 214,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "武威郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "武威郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "张掖郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "张掖郡",
+      "startYear": 214,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "张掖郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "张掖郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "酒泉郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "酒泉郡",
+      "startYear": 214,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "酒泉郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "酒泉郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "敦煌郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "敦煌郡",
+      "startYear": 214,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "敦煌郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "敦煌郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "西平郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "西平郡",
+      "startYear": 214,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "西平郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "西平郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "西海郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "西海郡",
+      "startYear": 214,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "西海郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "西海郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "金城郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "金城郡",
+      "startYear": 214,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "金城郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "金城郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "太原郡",
+      "startYear": 190,
+      "endYear": 205,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "太原郡",
+      "startYear": 206,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "太原郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "太原郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "上党郡",
+      "startYear": 190,
+      "endYear": 205,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "上党郡",
+      "startYear": 206,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "上党郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "上党郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "雁门郡",
+      "startYear": 190,
+      "endYear": 205,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "雁门郡",
+      "startYear": 206,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "雁门郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "雁门郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新兴郡",
+      "startYear": 190,
+      "endYear": 205,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新兴郡",
+      "startYear": 206,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新兴郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新兴郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐平郡",
+      "startYear": 190,
+      "endYear": 205,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐平郡",
+      "startYear": 206,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐平郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐平郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "西河郡",
+      "startYear": 190,
+      "endYear": 205,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "西河郡",
+      "startYear": 206,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "西河郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "西河郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "代郡",
+      "startYear": 190,
+      "endYear": 198,
+      "controller": "公孙瓒",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "代郡",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "代郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "代郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "上谷郡",
+      "startYear": 190,
+      "endYear": 198,
+      "controller": "公孙瓒",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "上谷郡",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "上谷郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "上谷郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "范阳郡",
+      "startYear": 190,
+      "endYear": 198,
+      "controller": "公孙瓒",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "范阳郡",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "范阳郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "范阳郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "燕国",
+      "startYear": 190,
+      "endYear": 198,
+      "controller": "公孙瓒",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "燕国",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "燕国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "燕国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "渔阳郡",
+      "startYear": 190,
+      "endYear": 198,
+      "controller": "公孙瓒",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "渔阳郡",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "渔阳郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "渔阳郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "右北平郡",
+      "startYear": 190,
+      "endYear": 198,
+      "controller": "公孙瓒",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "右北平郡",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "右北平郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "右北平郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "辽西郡",
+      "startYear": 190,
+      "endYear": 198,
+      "controller": "公孙瓒",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "辽西郡",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "辽西郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "辽西郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "辽东郡",
+      "startYear": 190,
+      "endYear": 237,
+      "controller": "公孙氏",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "辽东郡",
+      "startYear": 238,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "辽东郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "玄菟郡",
+      "startYear": 190,
+      "endYear": 237,
+      "controller": "公孙氏",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "玄菟郡",
+      "startYear": 238,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "玄菟郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐浪郡",
+      "startYear": 190,
+      "endYear": 237,
+      "controller": "公孙氏",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐浪郡",
+      "startYear": 238,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐浪郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "带方郡",
+      "startYear": 190,
+      "endYear": 237,
+      "controller": "公孙氏",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "带方郡",
+      "startYear": 238,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "带方郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "昌黎郡",
+      "startYear": 190,
+      "endYear": 237,
+      "controller": "公孙氏",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "昌黎郡",
+      "startYear": 238,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "昌黎郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "魏郡",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "魏郡",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "魏郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "魏郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "清河郡",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "清河郡",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "清河郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "清河郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巨鹿郡",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巨鹿郡",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巨鹿郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巨鹿郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "渤海郡",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "渤海郡",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "渤海郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "渤海郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河间郡",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河间郡",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河间郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河间郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "安平郡",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "安平郡",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "安平郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "安平郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "平原郡",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "平原郡",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "平原郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "平原郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐陵国",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐陵国",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐陵国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐陵国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "赵国",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "赵国",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "赵国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "赵国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "常山郡",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "常山郡",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "常山郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "常山郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "中山国",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "中山国",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "中山国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "中山国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广平郡",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广平郡",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广平郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广平郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "阳平郡",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "阳平郡",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "阳平郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "阳平郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东莱郡",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东莱郡",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东莱郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东莱郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "北海国",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "北海国",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "北海国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "北海国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济南国",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济南国",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济南国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济南国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "齐国",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "齐国",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "齐国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "齐国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐安郡",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐安郡",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐安郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乐安郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "城阳郡",
+      "startYear": 190,
+      "endYear": 199,
+      "controller": "袁绍",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "城阳郡",
+      "startYear": 200,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "城阳郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "城阳郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "京兆郡",
+      "startYear": 190,
+      "endYear": 211,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "京兆郡",
+      "startYear": 212,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "京兆郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "京兆郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "冯翊郡",
+      "startYear": 190,
+      "endYear": 211,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "冯翊郡",
+      "startYear": 212,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "冯翊郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "冯翊郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "扶风郡",
+      "startYear": 190,
+      "endYear": 211,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "扶风郡",
+      "startYear": 212,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "扶风郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "扶风郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "北地郡",
+      "startYear": 190,
+      "endYear": 211,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "北地郡",
+      "startYear": 212,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "北地郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "北地郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新平郡",
+      "startYear": 190,
+      "endYear": 211,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新平郡",
+      "startYear": 212,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新平郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新平郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "安定郡",
+      "startYear": 190,
+      "endYear": 211,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "安定郡",
+      "startYear": 212,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "安定郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "安定郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广魏郡",
+      "startYear": 190,
+      "endYear": 211,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广魏郡",
+      "startYear": 212,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广魏郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广魏郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "天水郡",
+      "startYear": 190,
+      "endYear": 211,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "天水郡",
+      "startYear": 212,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "天水郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "天水郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南安郡",
+      "startYear": 190,
+      "endYear": 211,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南安郡",
+      "startYear": 212,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南安郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南安郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "陇西郡",
+      "startYear": 190,
+      "endYear": 211,
+      "controller": "马腾韩遂",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "陇西郡",
+      "startYear": 212,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "陇西郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "陇西郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河南尹",
+      "startYear": 190,
+      "endYear": 195,
+      "controller": "李傕郭汜",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河南尹",
+      "startYear": 196,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河南尹",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河南尹",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河内郡",
+      "startYear": 190,
+      "endYear": 195,
+      "controller": "李傕郭汜",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河内郡",
+      "startYear": 196,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河内郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河内郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河东郡",
+      "startYear": 190,
+      "endYear": 195,
+      "controller": "李傕郭汜",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河东郡",
+      "startYear": 196,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河东郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "河东郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "弘农郡",
+      "startYear": 190,
+      "endYear": 195,
+      "controller": "李傕郭汜",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "弘农郡",
+      "startYear": 196,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "弘农郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "弘农郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "平阳郡",
+      "startYear": 190,
+      "endYear": 195,
+      "controller": "李傕郭汜",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "平阳郡",
+      "startYear": 196,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "平阳郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "平阳郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "陈留国",
+      "startYear": 190,
+      "endYear": 193,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "陈留国",
+      "startYear": 194,
+      "endYear": 195,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "陈留国",
+      "startYear": 196,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "陈留国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "陈留国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东郡",
+      "startYear": 190,
+      "endYear": 193,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东郡",
+      "startYear": 194,
+      "endYear": 195,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东郡",
+      "startYear": 196,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济阴郡",
+      "startYear": 190,
+      "endYear": 193,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济阴郡",
+      "startYear": 194,
+      "endYear": 195,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济阴郡",
+      "startYear": 196,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济阴郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济阴郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "山阳郡",
+      "startYear": 190,
+      "endYear": 193,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "山阳郡",
+      "startYear": 194,
+      "endYear": 195,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "山阳郡",
+      "startYear": 196,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "山阳郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "山阳郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "任城郡",
+      "startYear": 190,
+      "endYear": 193,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "任城郡",
+      "startYear": 194,
+      "endYear": 195,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "任城郡",
+      "startYear": 196,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "任城郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "任城郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "泰山郡",
+      "startYear": 190,
+      "endYear": 193,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "泰山郡",
+      "startYear": 194,
+      "endYear": 195,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "泰山郡",
+      "startYear": 196,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "泰山郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "泰山郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济北国",
+      "startYear": 190,
+      "endYear": 193,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济北国",
+      "startYear": 194,
+      "endYear": 195,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济北国",
+      "startYear": 196,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济北国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "济北国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东平国",
+      "startYear": 190,
+      "endYear": 193,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东平国",
+      "startYear": 194,
+      "endYear": 195,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东平国",
+      "startYear": 196,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东平国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东平国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "颍川郡",
+      "startYear": 190,
+      "endYear": 197,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "颍川郡",
+      "startYear": 198,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "颍川郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "颍川郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汝南郡",
+      "startYear": 190,
+      "endYear": 197,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汝南郡",
+      "startYear": 198,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汝南郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汝南郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "陈郡",
+      "startYear": 190,
+      "endYear": 197,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "陈郡",
+      "startYear": 198,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "陈郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "陈郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "梁国",
+      "startYear": 190,
+      "endYear": 197,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "梁国",
+      "startYear": 198,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "梁国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "梁国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "沛国",
+      "startYear": 190,
+      "endYear": 197,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "沛国",
+      "startYear": 198,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "沛国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "沛国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "谯郡",
+      "startYear": 190,
+      "endYear": 197,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "谯郡",
+      "startYear": 198,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "谯郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "谯郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "鲁郡",
+      "startYear": 190,
+      "endYear": 197,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "鲁郡",
+      "startYear": 198,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "鲁郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "鲁郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "安丰郡",
+      "startYear": 190,
+      "endYear": 197,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "安丰郡",
+      "startYear": 198,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "安丰郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "安丰郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "弋阳郡",
+      "startYear": 190,
+      "endYear": 197,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "弋阳郡",
+      "startYear": 198,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "弋阳郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "弋阳郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "彭城国",
+      "startYear": 190,
+      "endYear": 194,
+      "controller": "陶谦",
+      "status": "frontier",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "彭城国",
+      "startYear": 195,
+      "endYear": 198,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "彭城国",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "彭城国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "彭城国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "下邳郡",
+      "startYear": 190,
+      "endYear": 194,
+      "controller": "陶谦",
+      "status": "frontier",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "下邳郡",
+      "startYear": 195,
+      "endYear": 198,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "下邳郡",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "下邳郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "下邳郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东海国",
+      "startYear": 190,
+      "endYear": 194,
+      "controller": "陶谦",
+      "status": "frontier",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东海国",
+      "startYear": 195,
+      "endYear": 198,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东海国",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东海国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东海国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广陵郡",
+      "startYear": 190,
+      "endYear": 194,
+      "controller": "陶谦",
+      "status": "frontier",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广陵郡",
+      "startYear": 195,
+      "endYear": 198,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广陵郡",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广陵郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广陵郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东莞郡",
+      "startYear": 190,
+      "endYear": 194,
+      "controller": "陶谦",
+      "status": "frontier",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东莞郡",
+      "startYear": 195,
+      "endYear": 198,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东莞郡",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东莞郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东莞郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "琅琊国",
+      "startYear": 190,
+      "endYear": 194,
+      "controller": "陶谦",
+      "status": "frontier",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "琅琊国",
+      "startYear": 195,
+      "endYear": 198,
+      "controller": "吕布",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "琅琊国",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "琅琊国",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "琅琊国",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "淮南郡",
+      "startYear": 190,
+      "endYear": 198,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "淮南郡",
+      "startYear": 199,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "淮南郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "淮南郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "蜀郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "蜀郡",
+      "startYear": 214,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "蜀郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "蜀郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广汉郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广汉郡",
+      "startYear": 214,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广汉郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "广汉郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "犍为郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "犍为郡",
+      "startYear": 214,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "犍为郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "犍为郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "梓潼郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "梓潼郡",
+      "startYear": 214,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "梓潼郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "梓潼郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巴西郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巴西郡",
+      "startYear": 214,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巴西郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巴西郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巴郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巴郡",
+      "startYear": 214,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巴郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巴郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巴东郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巴东郡",
+      "startYear": 214,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巴东郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "巴东郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "江阳郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "江阳郡",
+      "startYear": 214,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "江阳郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "江阳郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汉嘉郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汉嘉郡",
+      "startYear": 215,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汉嘉郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汉嘉郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "涪陵郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "涪陵郡",
+      "startYear": 215,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "涪陵郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "涪陵郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "牂柯郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "牂柯郡",
+      "startYear": 217,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "牂柯郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "牂柯郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "越嶲郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "越嶲郡",
+      "startYear": 215,
+      "endYear": 219,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "越嶲郡",
+      "startYear": 220,
+      "endYear": 224,
+      "controller": "南中叛军",
+      "status": "contested",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "越嶲郡",
+      "startYear": 225,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "越嶲郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "越嶲郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "朱提郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "朱提郡",
+      "startYear": 216,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "朱提郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "朱提郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "建宁郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "建宁郡",
+      "startYear": 214,
+      "endYear": 224,
+      "controller": "南中叛军",
+      "status": "contested",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "建宁郡",
+      "startYear": 225,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "建宁郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "建宁郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "云南郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "云南郡",
+      "startYear": 214,
+      "endYear": 224,
+      "controller": "南中叛军",
+      "status": "contested",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "云南郡",
+      "startYear": 225,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "云南郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "云南郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "兴古郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "兴古郡",
+      "startYear": 214,
+      "endYear": 224,
+      "controller": "南中叛军",
+      "status": "contested",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "兴古郡",
+      "startYear": 225,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "兴古郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "兴古郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "永昌郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "永昌郡",
+      "startYear": 214,
+      "endYear": 224,
+      "controller": "南中叛军",
+      "status": "contested",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "永昌郡",
+      "startYear": 225,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "永昌郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "永昌郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汶山郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汶山郡",
+      "startYear": 214,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汶山郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汶山郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东广汉郡",
+      "startYear": 190,
+      "endYear": 213,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东广汉郡",
+      "startYear": 214,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东广汉郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "东广汉郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "武都郡",
+      "startYear": 190,
+      "endYear": 214,
+      "controller": "张鲁",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "武都郡",
+      "startYear": 215,
+      "endYear": 218,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "武都郡",
+      "startYear": 219,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "武都郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "武都郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "阴平郡",
+      "startYear": 190,
+      "endYear": 214,
+      "controller": "张鲁",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "阴平郡",
+      "startYear": 215,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "阴平郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "阴平郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汉中郡",
+      "startYear": 190,
+      "endYear": 214,
+      "controller": "张鲁",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汉中郡",
+      "startYear": 215,
+      "endYear": 218,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汉中郡",
+      "startYear": 219,
+      "endYear": 262,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汉中郡",
+      "startYear": 263,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汉中郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南阳郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南阳郡",
+      "startYear": 208,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南阳郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南阳郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "襄阳郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "襄阳郡",
+      "startYear": 208,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "襄阳郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "襄阳郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南乡郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南乡郡",
+      "startYear": 208,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南乡郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南乡郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新城郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新城郡",
+      "startYear": 208,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新城郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新城郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "魏兴郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "魏兴郡",
+      "startYear": 208,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "魏兴郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "魏兴郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "上庸郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "上庸郡",
+      "startYear": 208,
+      "endYear": 219,
+      "controller": "曹操",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "上庸郡",
+      "startYear": 220,
+      "endYear": 264,
+      "controller": "曹魏",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "上庸郡",
+      "startYear": 265,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南郡",
+      "startYear": 208,
+      "endYear": 219,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "宜都郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "宜都郡",
+      "startYear": 208,
+      "endYear": 219,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "宜都郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "宜都郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "建平郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "建平郡",
+      "startYear": 208,
+      "endYear": 219,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "建平郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "建平郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "江夏郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "江夏郡",
+      "startYear": 208,
+      "endYear": 219,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "江夏郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "江夏郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "武陵郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "武陵郡",
+      "startYear": 208,
+      "endYear": 214,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "武陵郡",
+      "startYear": 215,
+      "endYear": 219,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "武陵郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "武陵郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "长沙郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "长沙郡",
+      "startYear": 208,
+      "endYear": 214,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "长沙郡",
+      "startYear": 215,
+      "endYear": 219,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "长沙郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "长沙郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "零陵郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "零陵郡",
+      "startYear": 208,
+      "endYear": 214,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "零陵郡",
+      "startYear": 215,
+      "endYear": 219,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "零陵郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "零陵郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "桂阳郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "桂阳郡",
+      "startYear": 208,
+      "endYear": 214,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "桂阳郡",
+      "startYear": 215,
+      "endYear": 219,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "桂阳郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "桂阳郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "衡阳郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "衡阳郡",
+      "startYear": 208,
+      "endYear": 214,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "衡阳郡",
+      "startYear": 215,
+      "endYear": 219,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "衡阳郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "衡阳郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "湘东郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "湘东郡",
+      "startYear": 208,
+      "endYear": 214,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "湘东郡",
+      "startYear": 215,
+      "endYear": 219,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "湘东郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "湘东郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "临贺郡",
+      "startYear": 190,
+      "endYear": 207,
+      "controller": "刘表",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "临贺郡",
+      "startYear": 208,
+      "endYear": 214,
+      "controller": "蜀汉",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "临贺郡",
+      "startYear": 215,
+      "endYear": 219,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "临贺郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "临贺郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "丹阳郡",
+      "startYear": 190,
+      "endYear": 196,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "丹阳郡",
+      "startYear": 197,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "丹阳郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "吴郡",
+      "startYear": 190,
+      "endYear": 196,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "吴郡",
+      "startYear": 197,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "吴郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "会稽郡",
+      "startYear": 190,
+      "endYear": 196,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "会稽郡",
+      "startYear": 197,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "会稽郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "建安郡",
+      "startYear": 190,
+      "endYear": 196,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "建安郡",
+      "startYear": 197,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "建安郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "豫章郡",
+      "startYear": 190,
+      "endYear": 196,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "豫章郡",
+      "startYear": 197,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "豫章郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "临海郡",
+      "startYear": 190,
+      "endYear": 196,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "临海郡",
+      "startYear": 197,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "临海郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "临川郡",
+      "startYear": 190,
+      "endYear": 196,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "临川郡",
+      "startYear": 197,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "临川郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新都郡",
+      "startYear": 190,
+      "endYear": 196,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新都郡",
+      "startYear": 197,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "新都郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "庐陵郡",
+      "startYear": 190,
+      "endYear": 196,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "庐陵郡",
+      "startYear": 197,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "庐陵郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "鄱阳郡",
+      "startYear": 190,
+      "endYear": 196,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "鄱阳郡",
+      "startYear": 197,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "鄱阳郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "蕲春郡",
+      "startYear": 190,
+      "endYear": 196,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "蕲春郡",
+      "startYear": 197,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "蕲春郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "庐江郡",
+      "startYear": 190,
+      "endYear": 196,
+      "controller": "袁术",
+      "status": "contested",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "庐江郡",
+      "startYear": 197,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "庐江郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "毗陵典农校尉",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "毗陵典农校尉",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "交趾郡",
+      "startYear": 190,
+      "endYear": 219,
+      "controller": "士燮",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "交趾郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "交趾郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "日南郡",
+      "startYear": 190,
+      "endYear": 219,
+      "controller": "士燮",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "日南郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "日南郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "九真郡",
+      "startYear": 190,
+      "endYear": 219,
+      "controller": "士燮",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "九真郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "九真郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "合浦郡",
+      "startYear": 190,
+      "endYear": 219,
+      "controller": "士燮",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "合浦郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "合浦郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南海郡",
+      "startYear": 190,
+      "endYear": 219,
+      "controller": "士燮",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南海郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "南海郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "苍梧郡",
+      "startYear": 190,
+      "endYear": 219,
+      "controller": "士燮",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "苍梧郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "苍梧郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "郁林郡",
+      "startYear": 190,
+      "endYear": 219,
+      "controller": "士燮",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "郁林郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "郁林郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "高凉郡",
+      "startYear": 190,
+      "endYear": 219,
+      "controller": "士燮",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "高凉郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "高凉郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "朱崖郡",
+      "startYear": 190,
+      "endYear": 219,
+      "controller": "士燮",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "朱崖郡",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "朱崖郡",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "朱崖洲",
+      "startYear": 190,
+      "endYear": 219,
+      "controller": "士燮",
+      "status": "nominal-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "朱崖洲",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "朱崖洲",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "乌孙",
+      "startYear": 190,
+      "endYear": 280,
+      "controller": "蛮族",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "扶余、高句丽、挹娄、",
+      "startYear": 190,
+      "endYear": 280,
+      "controller": "蛮族",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "濊貊",
+      "startYear": 190,
+      "endYear": 280,
+      "controller": "蛮族",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "羌、马儿敢、邓麻、象",
+      "startYear": 190,
+      "endYear": 280,
+      "controller": "蛮族",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "羌胡",
+      "startYear": 190,
+      "endYear": 280,
+      "controller": "蛮族",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "鲜卑",
+      "startYear": 190,
+      "endYear": 280,
+      "controller": "鲜卑",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "西域长史府",
+      "startYear": 190,
+      "endYear": 280,
+      "controller": "西域",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "抚夷护军",
+      "startYear": 190,
+      "endYear": 280,
+      "controller": "西域",
+      "status": "frontier",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "夷洲",
+      "startYear": 230,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "夷洲",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "扬州-吴",
+      "startYear": 220,
+      "endYear": 279,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "扬州-吴",
+      "startYear": 280,
+      "endYear": 280,
+      "controller": "西晋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "汉嘉郡",
+      "startYear": 214,
+      "endYear": 214,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "牂柯郡",
+      "startYear": 214,
+      "endYear": 216,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "越嶲郡",
+      "startYear": 214,
+      "endYear": 214,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "朱提郡",
+      "startYear": 214,
+      "endYear": 215,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "夷洲",
+      "startYear": 190,
+      "endYear": 229,
+      "controller": "士燮",
+      "status": "nominal-control",
+      "confidence": "low",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "毗陵典农校尉",
+      "startYear": 190,
+      "endYear": 219,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "扬州-吴",
+      "startYear": 190,
+      "endYear": 219,
+      "controller": "孙吴",
+      "status": "effective-control",
+      "confidence": "medium",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    },
+    {
+      "blockId": "朱提郡",
+      "startYear": 214,
+      "endYear": 214,
+      "controller": "刘璋",
+      "status": "effective-control",
+      "confidence": "high",
+      "sources": [
+        "QGIS 262CE commandery timeline",
+        "三国志",
+        "资治通鉴",
+        "晋书"
+      ]
+    }
   ]
 }

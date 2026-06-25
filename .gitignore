@@ -10,3 +10,6 @@ Thumbs.db
 db/*.sqlite
 db/*.sqlite-*
 db/.chronoatlas-check.sqlite
+data/import-drafts/
+demos/
+data/backups/

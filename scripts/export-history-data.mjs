@@ -90,6 +90,104 @@ function getPersonCoverage(db, personId) {
   };
 }
 
+function getSourceRefsForPerson(db, personId) {
+  const rows = db.prepare(`
+    SELECT DISTINCT source_id
+    FROM coverage_status_sources
+    WHERE person_id = ? AND corpus_id = 'china-three-kingdoms'
+    ORDER BY source_id
+  `).all(personId);
+
+  return rows.map((row) => ({
+    sourceId: row.source_id,
+    locator: "人物档案"
+  }));
+}
+
+function getRolesByPersonId(db) {
+  const rows = db.prepare(`
+    SELECT person_id, role
+    FROM person_roles
+    ORDER BY person_id, sort_order
+  `).all();
+  const rolesByPersonId = new Map();
+  for (const row of rows) {
+    const roles = rolesByPersonId.get(row.person_id) ?? [];
+    roles.push(row.role);
+    rolesByPersonId.set(row.person_id, roles);
+  }
+  return rolesByPersonId;
+}
+
+function getRelatedEventIdsByLifeEventId(db) {
+  const rows = db.prepare(`
+    SELECT life_event_id, event_id
+    FROM person_life_event_historical_events
+    ORDER BY life_event_id, sort_order
+  `).all();
+  const eventIdsByLifeEventId = new Map();
+  for (const row of rows) {
+    const eventIds = eventIdsByLifeEventId.get(row.life_event_id) ?? [];
+    eventIds.push(row.event_id);
+    eventIdsByLifeEventId.set(row.life_event_id, eventIds);
+  }
+  return eventIdsByLifeEventId;
+}
+
+function getSourceRefsByLifeEventId(db) {
+  const rows = db.prepare(`
+    SELECT life_event_id, source_id, locator
+    FROM person_life_event_source_refs
+    ORDER BY life_event_id, source_id, locator
+  `).all();
+  const refsByLifeEventId = new Map();
+  for (const row of rows) {
+    const refs = refsByLifeEventId.get(row.life_event_id) ?? [];
+    refs.push({
+      sourceId: row.source_id,
+      locator: row.locator
+    });
+    refsByLifeEventId.set(row.life_event_id, refs);
+  }
+  return refsByLifeEventId;
+}
+
+function getSourceMentionCountsByLifeEventId(db) {
+  const rows = db.prepare(`
+    SELECT life_event_id, COUNT(*) AS count
+    FROM person_life_event_source_mentions
+    GROUP BY life_event_id
+  `).all();
+  return new Map(rows.map((row) => [row.life_event_id, row.count]));
+}
+
+function getSourceRefsByRelationId(db) {
+  const rows = db.prepare(`
+    SELECT relation_id, source_id, locator
+    FROM person_relation_source_refs
+    ORDER BY relation_id, source_id, locator
+  `).all();
+  const refsByRelationId = new Map();
+  for (const row of rows) {
+    const refs = refsByRelationId.get(row.relation_id) ?? [];
+    refs.push({
+      sourceId: row.source_id,
+      locator: row.locator
+    });
+    refsByRelationId.set(row.relation_id, refs);
+  }
+  return refsByRelationId;
+}
+
+function getSourceMentionCountsByPersonId(db) {
+  const rows = db.prepare(`
+    SELECT smp.person_id, COUNT(*) AS count
+    FROM source_mention_people smp
+    GROUP BY smp.person_id
+  `).all();
+  return new Map(rows.map((row) => [row.person_id, row.count]));
+}
+
 async function main() {
   if (!existsSync(dbPath)) {
     throw new Error("Missing db/chronoatlas.sqlite. Run npm run db:build first.");
@@ -128,13 +226,14 @@ async function main() {
     const payload = {
       schemaVersion: 1,
       generatedFrom: "db/chronoatlas.sqlite",
-      purpose: "前端人物索引和覆盖度概览；完整原文与传记节点仍保存在数据库和源 JSON 中。",
+      purpose: "前端人物索引和覆盖度概览；完整原文、摘录标签和引用关系保存在 SQLite 数据库中。",
       persons: personIndex
     };
 
     await mkdir(path.dirname(outputPath), { recursive: true });
     await writeFile(outputPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
     console.log(`Exported ${path.relative(rootDir, outputPath)}`);
+
   } finally {
     db.close();
   }

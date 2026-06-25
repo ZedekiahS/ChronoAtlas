@@ -13,6 +13,8 @@
     { "eventId": "china-263-shu-han-conquered", "importance": "major" },
     { "eventId": "china-265-jin-replaces-wei", "importance": "major" },
     { "eventId": "china-280-jin-conquers-wu", "importance": "major" },
+    { "eventId": "china-291-eight-princes-war", "importance": "major" },
+    { "eventId": "china-304-five-barbarians-begin", "importance": "major" },
     { "eventId": "rome-193-year-of-five-emperors", "importance": "major" },
     { "eventId": "sasanian-224-ardashir-defeats-parthians", "importance": "major" },
     { "eventId": "rome-235-start-third-century-crisis", "importance": "major" },

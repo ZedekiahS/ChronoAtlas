@@ -1,4 +1,4 @@
-import { StrictMode, useEffect, useMemo, useRef, useState } from "react";
+import { StrictMode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { geoGraticule10, geoNaturalEarth1, geoPath } from "d3-geo";
 import { curveLinearClosed, line } from "d3-shape";
@@ -14,8 +14,8 @@ import {
   ChevronLeft,
   ChevronRight,
   CircleDot,
-  X,
   Compass,
+  Grid3x3,
   Info,
   Layers,
   Link2,
@@ -24,11 +24,13 @@ import {
   Network,
   Search,
   UsersRound,
+  X,
 } from "lucide-react";
 import eventsData from "../data/events-180-280.sample.json";
 import eventImportanceData from "../data/event-importance-180-280.json";
 import chinaAdminBlocksData from "../data/china-admin-blocks-190-280.json";
 import chinaBlockControlTimelineData from "../data/china-block-control-timeline-190-280.json";
+import chinaCommanderySupplementalBlocksData from "../data/china-commandery-supplemental-blocks.json";
 import chinaMapData from "../data/china-three-kingdoms-map.json";
 import chinaPersonLifeEventsData from "../data/china-person-life-events.json";
 import chinaPersonRelationsData from "../data/china-person-relations.json";
@@ -183,8 +185,8 @@ type PersonAnnualTimelineItem = {
   year: number;
 };
 
-type Page = "world" | "china" | "people";
-type ChinaMapMode = "political" | "terrain" | "three-d";
+type Page = "world" | "china" | "rome" | "people";
+type ChinaMapMode = "political" | "terrain" | "three-d" | "commandery";
 type ThreeKingdomsFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "war" | "politics";
 type PersonIndexFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han";
 
@@ -221,6 +223,32 @@ type ChinaPolity = BoundaryGroup & {
   capital: LonLat;
   center: LonLat;
   summary: string;
+};
+
+type RomanProvince = {
+  id: number;
+  n: string;
+  x: number;
+  y: number;
+  g: LonLat[][];
+  family: string;
+};
+
+type RomanControlRecord = {
+  pid: number;
+  start: number;
+  end: number;
+  ctrl: string;
+  color: string;
+};
+
+type FrontendRomanControlDb = {
+  physical?: {
+    coast?: LonLat[][];
+    rivers?: LonLat[][];
+  };
+  provinces: RomanProvince[];
+  timeline: RomanControlRecord[];
 };
 
 type ChinaMapLayer = {
@@ -261,6 +289,7 @@ type ChinaBlockGeometry = {
 type ChinaBlock = {
   id: string;
   name: string;
+  controlBlockId?: string;
   level: ChinaBlockLevel;
   parent: string | null;
   center: LonLat;
@@ -326,11 +355,13 @@ const chinaPersons = chinaPersonsData as HistoricalPerson[];
 const chinaPersonLifeEvents = chinaPersonLifeEventsData as PersonLifeEvent[];
 const chinaPersonRelations = chinaPersonRelationsData as PersonRelation[];
 const chinaBlocksDataset = chinaAdminBlocksData as unknown as ChinaAdminBlocksDataset;
+const chinaCommanderySupplementalBlocksDataset = chinaCommanderySupplementalBlocksData as unknown as ChinaAdminBlocksDataset;
 const chinaControlTimeline = chinaBlockControlTimelineData as unknown as ChinaControlTimeline;
 const chinaMap = chinaMapData as ChinaMapLayer;
 const naturalEarthChinaPhysical = naturalEarthChinaPhysicalData as NaturalEarthPhysical;
+const emptyRomanControlDb: FrontendRomanControlDb = { provinces: [], timeline: [] };
 const regions = regionsData as unknown as RegionInfo[];
-const chinaBlocks = chinaBlocksDataset.blocks;
+const chinaBlocks = [...chinaBlocksDataset.blocks, ...chinaCommanderySupplementalBlocksDataset.blocks];
 const chinaBlockById = new Map(chinaBlocks.map((block) => [block.id, block]));
 const chinaControllerColorMap = new Map(chinaControlTimeline.controllers.map((controller) => [controller.id, controller.color]));
 const chinaSourceById = new Map(chinaSources.map((source) => [source.id, source]));
@@ -371,6 +402,7 @@ const chinaMapModes: Array<{
   { id: "political", label: "控制", Icon: Layers },
   { id: "terrain", label: "地形", Icon: Mountain },
   { id: "three-d", label: "3D", Icon: Box },
+  { id: "commandery", label: "郡界拼图", Icon: Grid3x3 },
 ];
 
 const threeKingdomsFilters: Array<{
@@ -414,7 +446,7 @@ const eventDetailTabs: Array<{
 ];
 
 const yearMin = 190;
-const yearMax = 280;
+const yearMax = 310;
 const worldComparisonRegionOrder: Region[] = ["china", "rome", "sasanian-persia", "india"];
 const chinaFocusPersonIds = ["cao-cao", "sun-quan", "liu-bei"];
 
@@ -1106,6 +1138,10 @@ function getChinaBlockControl(blockId: string, year: number) {
   );
 }
 
+function getChinaBlockControlId(block: ChinaBlock) {
+  return block.controlBlockId ?? block.id;
+}
+
 function getChinaControllerColor(controller?: string | null) {
   return controller ? (chinaControllerColorMap.get(controller) ?? "#7d8578") : "#7d8578";
 }
@@ -1446,6 +1482,297 @@ function ChinaTerrain3DMap({ onClearSummary }: { onClearSummary: () => void }) {
   );
 }
 
+// Demo-matched linear projection: lon 89→0, 136→100; lat 55→0, 16→80
+function cmdProject(lon: number, lat: number): [number, number] {
+  return [((lon - 89) / (136 - 89)) * 100, ((55 - lat) / (55 - 16)) * 80];
+}
+
+function getCommanderyCentroid(block: ChinaBlock): [number, number] | null {
+  const ring = block.geometry.coordinates[0];
+  if (!ring || ring.length < 4) {
+    return null;
+  }
+
+  const step = Math.max(1, Math.floor(ring.length / 5));
+  let cx = 0;
+  let cy = 0;
+  let count = 0;
+
+  for (let index = 0; index < ring.length; index += step) {
+    const projected = cmdProject(ring[index][0], ring[index][1]);
+    cx += projected[0];
+    cy += projected[1];
+    count += 1;
+  }
+
+  if (count === 0) {
+    return null;
+  }
+
+  return [cx / count, cy / count];
+}
+
+function getCommanderyArea(block: ChinaBlock): number {
+  const ring = block.geometry.coordinates[0];
+  if (!ring || ring.length < 3) {
+    return 0;
+  }
+
+  const projected = ring.map((point) => cmdProject(point[0], point[1]));
+
+  if (projected.length < 3) {
+    return 0;
+  }
+
+  let area = 0;
+  for (let index = 0; index < projected.length; index += 1) {
+    const nextIndex = (index + 1) % projected.length;
+    area += projected[index][0] * projected[nextIndex][1];
+    area -= projected[nextIndex][0] * projected[index][1];
+  }
+
+  return Math.abs(area) / 2;
+}
+
+const PUZZLE_VIEWBOX = "0 0 100 80";
+
+function ChinaCommanderyPuzzleMap({
+  activeBlockId,
+  hoveredBlockId,
+  onSelectBlock,
+  onHoverBlock,
+  onClearSummary,
+  year,
+}: {
+  activeBlockId: string | null;
+  hoveredBlockId: string | null;
+  onSelectBlock: (blockId: string) => void;
+  onHoverBlock: (blockId: string | null) => void;
+  onClearSummary: () => void;
+  year: number;
+}) {
+  const svgRef = useRef<SVGSVGElement | null>(null);
+  const [puzzleViewBox, setPuzzleViewBox] = useState(PUZZLE_VIEWBOX);
+  const [tooltip, setTooltip] = useState<{ x: number; y: number; blockId: string } | null>(null);
+
+  // Pre-cache projected path strings (same approach as demo's geoCache)
+  const pathCache = useMemo(() => {
+    const cache = new Map<string, string>();
+
+    chinaBlocks.forEach((block) => {
+      let pathString = "";
+
+      block.geometry.coordinates.forEach((ring) => {
+        if (ring.length < 3) {
+          return;
+        }
+
+        pathString += `M${ring
+          .map((point) => {
+            const projected = cmdProject(point[0], point[1]);
+            return `${projected[0].toFixed(2)},${projected[1].toFixed(2)}`;
+          })
+          .join("L")}Z`;
+      });
+
+      cache.set(block.id, pathString);
+    });
+
+    return cache;
+  }, []);
+
+  const blockEntries = useMemo(
+    () =>
+      chinaBlocks.map((block) => ({
+        block,
+        control: getChinaBlockControl(getChinaBlockControlId(block), year),
+      })),
+    [year],
+  );
+
+  const labeledBlockIds = useMemo(() => {
+    const withArea = blockEntries
+      .map((entry) => ({ id: entry.block.id, area: getCommanderyArea(entry.block) }))
+      .filter((entry) => entry.area > 0)
+      .sort((left, right) => right.area - left.area);
+
+    return new Set(withArea.slice(0, 25).map((entry) => entry.id));
+  }, [blockEntries]);
+
+  const labelEntries = useMemo(
+    () =>
+      blockEntries
+        .filter((entry) => labeledBlockIds.has(entry.block.id))
+        .map((entry) => {
+          const centroid = getCommanderyCentroid(entry.block);
+
+          return {
+            blockId: entry.block.id,
+            name: entry.block.name,
+            controller: entry.control?.controller ?? null,
+            centroid,
+          };
+        })
+        .filter((entry) => entry.centroid !== null),
+    [blockEntries, labeledBlockIds],
+  );
+
+  const yearControllers = useMemo(() => {
+    const controllerSet = new Map<string, string>();
+
+    blockEntries.forEach(({ control }) => {
+      if (control?.controller && !controllerSet.has(control.controller)) {
+        controllerSet.set(control.controller, getChinaControllerColor(control.controller));
+      }
+    });
+
+    return Array.from(controllerSet.entries()).sort((left, right) => left[0].localeCompare(right[0], "zh-Hans-CN"));
+  }, [blockEntries]);
+
+  const handleWheel = useCallback((event: React.WheelEvent) => {
+    event.preventDefault();
+
+    const svgElement = svgRef.current;
+    if (!svgElement) {
+      return;
+    }
+
+    const scale = event.deltaY > 0 ? 1.1 : 0.9;
+    const viewBox = svgElement.viewBox.baseVal;
+    const centerX = viewBox.x + viewBox.width / 2;
+    const centerY = viewBox.y + viewBox.height / 2;
+    const width = viewBox.width * scale;
+    const height = viewBox.height * scale;
+    setPuzzleViewBox(`${(centerX - width / 2).toFixed(1)} ${(centerY - height / 2).toFixed(1)} ${width.toFixed(1)} ${height.toFixed(1)}`);
+  }, []);
+
+  const handleMouseMove = useCallback((event: React.MouseEvent<SVGSVGElement>) => {
+    const element = (event.target as Element).closest("[data-block-id]");
+    if (!element) {
+      setTooltip(null);
+      return;
+    }
+
+    const blockId = element.getAttribute("data-block-id");
+    if (!blockId) {
+      setTooltip(null);
+      return;
+    }
+
+    const rect = svgRef.current?.getBoundingClientRect();
+    if (!rect) {
+      return;
+    }
+
+    setTooltip({
+      x: event.clientX - rect.left + 14,
+      y: event.clientY - rect.top - 35,
+      blockId,
+    });
+  }, []);
+
+  const tooltipBlock = tooltip ? (chinaBlockById.get(tooltip.blockId) ?? null) : null;
+  const tooltipControl = tooltipBlock ? getChinaBlockControl(getChinaBlockControlId(tooltipBlock), year) : null;
+
+  return (
+    <div className="map-frame map-mode-commandery">
+      <svg
+        ref={svgRef}
+        className="commandery-puzzle-svg"
+        viewBox={puzzleViewBox}
+        width="100%"
+        height="100%"
+        preserveAspectRatio="xMidYMid meet"
+        role="img"
+        aria-label="157郡拼图"
+        onClick={onClearSummary}
+        onWheel={handleWheel}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={() => setTooltip(null)}
+      >
+        <rect x="0" y="0" width="100" height="80" fill="#1a2228" />
+
+        {blockEntries.map(({ block }) => {
+          const blockPath = pathCache.get(block.id);
+          if (!blockPath) {
+            return null;
+          }
+
+          return (
+            <path
+              className="cmd-gap-fill"
+              d={blockPath}
+              fill="none"
+              key={`${block.id}-gap-fill`}
+            />
+          );
+        })}
+
+        {blockEntries.map(({ block, control }) => {
+          const blockPath = pathCache.get(block.id);
+          if (!blockPath) {
+            return null;
+          }
+
+          const color = getChinaControllerColor(control?.controller);
+          const isActive = activeBlockId === block.id;
+          const isHovered = hoveredBlockId === block.id;
+
+          return (
+            <path
+              className={`cmd ${isActive ? "active" : ""} ${isHovered ? "hovered" : ""}`}
+              d={blockPath}
+              data-block-id={block.id}
+              fill={color}
+              key={block.id}
+              onFocus={() => onHoverBlock(block.id)}
+              onBlur={() => onHoverBlock(null)}
+              onMouseEnter={() => onHoverBlock(block.id)}
+              onMouseLeave={() => onHoverBlock(null)}
+              onClick={(event) => {
+                event.stopPropagation();
+                onSelectBlock(block.id);
+              }}
+              tabIndex={0}
+              role="button"
+              aria-label={`选择郡县: ${block.name}`}
+            />
+          );
+        })}
+
+        {labelEntries.map((entry) => (
+          <text
+            className="cmd-label-text"
+            key={`${entry.blockId}-label`}
+            x={entry.centroid![0]}
+            y={entry.centroid![1] + 0.5}
+            textAnchor="middle"
+          >
+            {entry.name}
+          </text>
+        ))}
+      </svg>
+
+      {tooltip && tooltipBlock && (
+        <div className="cmd-tip" style={{ left: tooltip.x, top: tooltip.y }}>
+          <b>{tooltipBlock.name}</b>
+          <br />
+          <span>{tooltipControl?.controller ?? "未知"} · {tooltipBlock.parent ?? tooltipBlock.name}</span>
+        </div>
+      )}
+
+      <div className="cmd-legend">
+        {yearControllers.map(([name, color]) => (
+          <span key={name}>
+            <i style={{ background: color }} />
+            {name}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ChinaRegionMap({
   activeBlockId,
   hoveredBlockId,
@@ -1465,11 +1792,24 @@ function ChinaRegionMap({
 }) {
   const blockEntries = chinaBlocks.map((block) => ({
     block,
-    control: getChinaBlockControl(block.id, year),
+    control: getChinaBlockControl(getChinaBlockControlId(block), year),
   }));
 
   if (mapMode === "three-d") {
     return <ChinaTerrain3DMap onClearSummary={onClearSummary} />;
+  }
+
+  if (mapMode === "commandery") {
+    return (
+      <ChinaCommanderyPuzzleMap
+        activeBlockId={activeBlockId}
+        hoveredBlockId={hoveredBlockId}
+        onSelectBlock={onSelectBlock}
+        onHoverBlock={onHoverBlock}
+        onClearSummary={onClearSummary}
+        year={year}
+      />
+    );
   }
 
   return (
@@ -1648,11 +1988,154 @@ function ChinaRegionMap({
   );
 }
 
+const romanViewBox = "0 0 100 68";
+
+function projectRomanPoint([lon, lat]: LonLat) {
+  return [((lon + 13) / (49 + 13)) * 100, ((58 - lat) / (58 - 16)) * 68] as [number, number];
+}
+
+function getRomanPath(rings: LonLat[][]) {
+  return rings
+    .map((ring) => {
+      if (ring.length < 3) {
+        return "";
+      }
+
+      return `M${ring
+        .map((point) => {
+          const projected = projectRomanPoint(point);
+          return `${projected[0].toFixed(2)},${projected[1].toFixed(2)}`;
+        })
+        .join("L")}Z`;
+    })
+    .join("");
+}
+
+function getRomanLinePath(linePoints: LonLat[]) {
+  if (linePoints.length < 2) {
+    return "";
+  }
+
+  return `M${linePoints
+    .map((point) => {
+      const projected = projectRomanPoint(point);
+      return `${projected[0].toFixed(2)},${projected[1].toFixed(2)}`;
+    })
+    .join("L")}`;
+}
+
+function getRomanControl(recordSet: RomanControlRecord[], provinceId: number, year: number) {
+  return recordSet.find((record) => record.pid === provinceId && record.start <= year && record.end >= year) ?? null;
+}
+
+function RomanRegionMap({
+  data,
+  onClearSummary,
+  year,
+}: {
+  data: FrontendRomanControlDb;
+  onClearSummary: () => void;
+  year: number;
+}) {
+  const [hoveredProvinceId, setHoveredProvinceId] = useState<number | null>(null);
+  const [selectedProvinceId, setSelectedProvinceId] = useState<number | null>(null);
+  const activeProvinceId = hoveredProvinceId ?? selectedProvinceId;
+  const activeProvince = activeProvinceId === null ? null : data.provinces.find((province) => province.id === activeProvinceId) ?? null;
+  const activeControl = activeProvince ? getRomanControl(data.timeline, activeProvince.id, year) : null;
+  const legendItems = Array.from(
+    data.timeline
+      .filter((record) => record.start <= year && record.end >= year)
+      .reduce((items, record) => items.set(record.ctrl, record.color), new Map<string, string>()),
+  );
+
+  return (
+    <div className="roman-map-frame">
+      <svg className="roman-map" viewBox={romanViewBox} role="img" aria-label="Roman provincial control map" onClick={onClearSummary}>
+        <rect className="roman-map-background" x="0" y="0" width="100" height="68" />
+        {data.physical?.coast?.map((segment, index) => (
+          <path className="roman-coastline" d={getRomanLinePath(segment)} key={`coast-${index}`} />
+        ))}
+        {data.physical?.rivers?.map((segment, index) => (
+          <path className="roman-river" d={getRomanLinePath(segment)} key={`river-${index}`} />
+        ))}
+        <path
+          className="roman-frontier"
+          d={getRomanLinePath([
+            [6, 47.5],
+            [8, 48.2],
+            [12, 48.6],
+            [14, 48.0],
+            [17, 47.5],
+            [20, 46.8],
+            [22, 46.0],
+            [24, 45.5],
+            [27, 45.0],
+            [29, 45.5],
+          ])}
+        />
+        {data.provinces.map((province) => {
+          const control = getRomanControl(data.timeline, province.id, year);
+          const isActive = activeProvinceId === province.id;
+
+          return (
+            <path
+              className={`roman-province ${isActive ? "active" : ""}`}
+              d={getRomanPath(province.g)}
+              fill={control?.color ?? "#333333"}
+              key={province.id}
+              onMouseEnter={() => setHoveredProvinceId(province.id)}
+              onMouseLeave={() => setHoveredProvinceId(null)}
+              onFocus={() => setHoveredProvinceId(province.id)}
+              onBlur={() => setHoveredProvinceId(null)}
+              onClick={(event) => {
+                event.stopPropagation();
+                setSelectedProvinceId(province.id);
+              }}
+              tabIndex={0}
+              role="button"
+              aria-label={`${province.n}, ${control?.ctrl ?? "Unknown"}`}
+            />
+          );
+        })}
+        {data.provinces
+          .filter((province) => {
+            const ring = province.g[0];
+            return ring && ring.length >= 4 && Math.abs(ring.reduce((area, point, index) => {
+              const next = ring[(index + 1) % ring.length];
+              return area + point[0] * next[1] - next[0] * point[1];
+            }, 0)) > 0.4;
+          })
+          .slice(0, 34)
+          .map((province) => {
+            const [x, y] = projectRomanPoint([province.x, province.y]);
+            return (
+              <text className="roman-province-label" key={`${province.id}-label`} x={x} y={y}>
+                {province.n}
+              </text>
+            );
+          })}
+      </svg>
+      <div className="roman-era-chip">
+        <strong>{year} CE</strong>
+        <span>{activeProvince ? `${activeProvince.n}: ${activeControl?.ctrl ?? "Unknown"}` : "Roman provincial control"}</span>
+      </div>
+      <div className="roman-legend">
+        {legendItems.map(([label, color]) => (
+          <span key={label}>
+            <i style={{ background: color }} />
+            {label}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [page, setPage] = useState<Page>("world");
   const [year, setYear] = useState(220);
   const [query, setQuery] = useState("");
-  const [chinaMapMode, setChinaMapMode] = useState<ChinaMapMode>("political");
+  const [chinaMapMode, setChinaMapMode] = useState<ChinaMapMode>("commandery");
   const [selectedRegion, setSelectedRegion] = useState<Region>("china");
   const [hoveredRegion, setHoveredRegion] = useState<Region | null>(null);
   const [summaryRegion, setSummaryRegion] = useState<Region | null>("china");
@@ -1664,6 +2147,8 @@ function App() {
   const [selectedPersonId, setSelectedPersonId] = useState<string | null>(null);
   const [personIndexFilter, setPersonIndexFilter] = useState<PersonIndexFilter>("all");
   const [showMediumEvents, setShowMediumEvents] = useState(false);
+  const [runtimeRomanControlDb, setRuntimeRomanControlDb] = useState<FrontendRomanControlDb>(emptyRomanControlDb);
+  const [romanControlDbStatus, setRomanControlDbStatus] = useState<"loading" | "ready" | "error">("loading");
 
   const normalizedQuery = query.trim().toLowerCase();
 
@@ -1766,14 +2251,14 @@ function App() {
     () =>
       chinaBlocks.map((block) => ({
         block,
-        control: getChinaBlockControl(block.id, year),
+        control: getChinaBlockControl(getChinaBlockControlId(block), year),
       })),
     [year],
   );
   const selectedChinaBlock = selectedChinaBlockId ? (chinaBlockById.get(selectedChinaBlockId) ?? null) : null;
   const hoveredChinaBlock = hoveredChinaBlockId ? (chinaBlockById.get(hoveredChinaBlockId) ?? null) : null;
   const inspectedChinaBlock = hoveredChinaBlock ?? selectedChinaBlock;
-  const inspectedChinaControl = inspectedChinaBlock ? getChinaBlockControl(inspectedChinaBlock.id, year) : null;
+  const inspectedChinaControl = inspectedChinaBlock ? getChinaBlockControl(getChinaBlockControlId(inspectedChinaBlock), year) : null;
 
   const selectedRegionEvents = (
     page === "world"
@@ -1914,6 +2399,40 @@ function App() {
   const selectedPersonIsInEvent = selectedPerson ? selectedEventPersonIds.includes(selectedPerson.id) : false;
 
   useEffect(() => {
+    let cancelled = false;
+
+    setRomanControlDbStatus("loading");
+    fetch("/api/frontend-roman-control")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Roman control API failed: ${response.status}`);
+        }
+
+        return response.json() as Promise<FrontendRomanControlDb>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+
+        setRuntimeRomanControlDb(data);
+        setRomanControlDbStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+
+        setRuntimeRomanControlDb(emptyRomanControlDb);
+        setRomanControlDbStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
     setSelectedPersonId((current) =>
       current && selectedEventPersonIds.includes(current) ? current : (selectedEventPersonIds[0] ?? null),
     );
@@ -1951,7 +2470,7 @@ function App() {
   function selectRegion(region: Region) {
     if (region === "china") {
       setPage("china");
-      setChinaMapMode("political");
+      setChinaMapMode("commandery");
       setSelectedRegion("china");
       setSummaryRegion(null);
       setHoveredRegion(null);
@@ -1960,6 +2479,20 @@ function App() {
       const firstChinaEvent = visibleEvents.find((event) => event.region === "china");
       if (firstChinaEvent) {
         setSelectedId(firstChinaEvent.id);
+      }
+      return;
+    }
+
+    if (region === "rome") {
+      setPage("rome");
+      setSelectedRegion("rome");
+      setSummaryRegion(null);
+      setHoveredRegion(null);
+      setSelectedChinaBlockId(null);
+      setHoveredChinaBlockId(null);
+      const firstRomanEvent = visibleEvents.find((event) => event.region === "rome");
+      if (firstRomanEvent) {
+        setSelectedId(firstRomanEvent.id);
       }
       return;
     }
@@ -2000,9 +2533,13 @@ function App() {
     setSelectedRegion(event.region);
     if (event.region === "china") {
       setPage("china");
+      setChinaMapMode("commandery");
       if (!matchesThreeKingdomsFilter(event, eventFilter)) {
         setEventFilter("all");
       }
+    }
+    if (event.region === "rome") {
+      setPage("rome");
     }
 
     setSelectedId(event.id);
@@ -2024,6 +2561,8 @@ function App() {
                 ? "人物索引：三国人物关系与生平"
                 : page === "china"
                   ? "中国区域：三国格局"
+                  : page === "rome"
+                    ? "罗马省份控制：190-310 CE"
                   : "四大区域同年对照"}
             </h1>
           </div>
@@ -2069,7 +2608,7 @@ function App() {
                 </button>
               ))}
             </div>
-            <span>{chinaMapMode === "political" ? "州郡区块模型" : (chinaMapLayer?.title ?? chinaRegionEra.title)}</span>
+            <span>{chinaMapMode === "political" ? "州郡区块模型" : chinaMapMode === "commandery" ? "157郡拼图" : (chinaMapLayer?.title ?? chinaRegionEra.title)}</span>
           </div>
         )}
 
@@ -2084,6 +2623,22 @@ function App() {
               中国地图
             </button>
             <span>{visiblePersonIndex.length}/{chinaPersons.length} 个人物</span>
+          </div>
+        )}
+
+        {page === "rome" && (
+          <div className="region-toolbar">
+            <button className="back-button" type="button" onClick={returnToWorld}>
+              <ArrowLeft size={18} />
+              World overview
+            </button>
+            <span>
+              {runtimeRomanControlDb.provinces.length
+                ? `${runtimeRomanControlDb.provinces.length} province fragments`
+                : romanControlDbStatus === "loading"
+                  ? "Loading Roman province map"
+                  : "Roman API offline"}
+            </span>
           </div>
         )}
 
@@ -2165,6 +2720,20 @@ function App() {
               onClearSummary={() => setSummaryRegion(null)}
               year={year}
             />
+          ) : page === "rome" ? (
+            runtimeRomanControlDb.provinces.length ? (
+              <RomanRegionMap
+                data={runtimeRomanControlDb}
+                onClearSummary={() => {
+                  setHoveredRegion(null);
+                }}
+                year={year}
+              />
+            ) : (
+              <div className="empty-state">
+                {romanControlDbStatus === "loading" ? "Loading Roman province map" : "Roman control API is not available"}
+              </div>
+            )
           ) : (
             <ChinaRegionMap
               activeBlockId={selectedChinaBlockId}
@@ -2215,7 +2784,7 @@ function App() {
             </aside>
           )}
 
-          {page === "china" && chinaMapMode === "political" && inspectedChinaBlock && (
+          {page === "china" && (chinaMapMode === "political" || chinaMapMode === "commandery") && inspectedChinaBlock && (
             <aside
               className="hover-summary regional-summary"
               style={
@@ -2429,7 +2998,7 @@ function App() {
               <span>190</span>
               <span>220</span>
               <span>260</span>
-              <span>280</span>
+              <span>310</span>
             </div>
             {page === "world" && (
               <div className="timeline-region-legend" aria-label="区域颜色">
@@ -2659,7 +3228,7 @@ function App() {
           </section>
         )}
 
-        {page !== "people" && page === "china" && chinaMapMode === "political" && (
+        {page !== "people" && page === "china" && (chinaMapMode === "political" || chinaMapMode === "commandery") && (
           <section className="event-list">
             <h3>控制区块</h3>
             <div className="chips block-chip-list">

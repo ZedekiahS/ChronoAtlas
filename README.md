@@ -34,8 +34,10 @@
 - `docs/product-brief.md`: 产品方向和核心体验。
 - `docs/mvp-scope.md`: 第一阶段范围、边界和优先级。
 - `docs/data-model.md`: 历史事件数据结构。
-- `data/events-180-280.sample.json`: 首批结构化样例数据。
-- `data/regions-180-280.json`: 第一版历史区域与近似边界数据。
+- `db/seeds/`: SQLite 种子数据，当前核心人物、事件、来源和证据链从这里重建。
+- `db/migrations/`: SQLite schema 迁移。
+- `scripts/history-api-server.mjs`: 前端读取 SQLite 的本地 API。
+- `data/china-three-kingdoms-map.json`: 暂保留的地图数据，后续地图重做时再迁移。
 - `src/`: 第一版交互原型。
 
 ## Local Development
