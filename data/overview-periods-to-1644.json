@@ -1,0 +1,993 @@
+{
+  "schemaVersion": 1,
+  "model": "period-overview",
+  "range": [
+    -650,
+    1644
+  ],
+  "overviewYearMin": -650,
+  "overviewYearMax": 1644,
+  "periods": [
+    {
+      "id": "background-3000-550-bce",
+      "title": "早期文明背景",
+      "startYear": -3000,
+      "endYear": -550,
+      "color": "#6f766d",
+      "status": "background",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "中国早期国家",
+          "tier": "core",
+          "summary": "从新石器晚期、夏商周到春秋早期，形成礼制、城邑和区域政治秩序。"
+        },
+        {
+          "id": "mesopotamia",
+          "label": "两河与埃及",
+          "tier": "core",
+          "summary": "苏美尔、古巴比伦、埃及和近东青铜时代体系提供早期国家样本。"
+        },
+        {
+          "id": "mediterranean",
+          "label": "东地中海",
+          "tier": "secondary",
+          "summary": "赫梯、迈锡尼、腓尼基和亚述等体系为后来的帝国时代铺垫。"
+        }
+      ],
+      "context": [
+        "印度河与吠陀早期",
+        "草原通道",
+        "青铜时代崩溃"
+      ],
+      "snapshotYears": [
+        -3000,
+        -1600,
+        -1046,
+        -771,
+        -550
+      ],
+      "summary": "前 550 以前先作为压缩背景层，不作为第一轮高精度地图重点。"
+    },
+    {
+      "id": "period-550-330-bce",
+      "title": "波斯帝国与战国形成",
+      "startYear": -550,
+      "endYear": -330,
+      "color": "#a6563f",
+      "status": "planned",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "东周/战国",
+          "tier": "core",
+          "summary": "春秋晚期到战国秩序形成，诸侯国兼并和制度改革加速。"
+        },
+        {
+          "id": "persia",
+          "label": "阿契美尼德波斯",
+          "tier": "core",
+          "summary": "从伊朗高原扩展为横跨西亚、埃及和中亚的大帝国。"
+        },
+        {
+          "id": "greek",
+          "label": "希腊城邦",
+          "tier": "secondary",
+          "summary": "城邦世界与波斯冲突，随后马其顿崛起。"
+        }
+      ],
+      "context": [
+        "印度十六大国",
+        "草原与中亚通道"
+      ],
+      "snapshotYears": [
+        -550,
+        -500,
+        -450,
+        -400,
+        -330
+      ],
+      "summary": "轴心时代后半，帝国、城邦和战国体系同时成形。"
+    },
+    {
+      "id": "period-330-221-bce",
+      "title": "希腊化世界与秦统一前夜",
+      "startYear": -330,
+      "endYear": -221,
+      "color": "#b47a3c",
+      "status": "planned",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "战国后期",
+          "tier": "core",
+          "summary": "秦国扩张并最终统一六国，郡县制和皇帝制度即将成型。"
+        },
+        {
+          "id": "hellenistic",
+          "label": "希腊化世界",
+          "tier": "core",
+          "summary": "亚历山大帝国解体后，塞琉古、托勒密等王国竞争。"
+        },
+        {
+          "id": "india",
+          "label": "孔雀帝国",
+          "tier": "secondary",
+          "summary": "摩揭陀扩张为孔雀帝国，南亚出现大规模帝国整合。"
+        }
+      ],
+      "context": [
+        "罗马在意大利兴起",
+        "中亚与印度河区域"
+      ],
+      "snapshotYears": [
+        -330,
+        -300,
+        -260,
+        -230,
+        -221
+      ],
+      "summary": "中国统一前夜与希腊化、孔雀帝国的跨区域并行阶段。"
+    },
+    {
+      "id": "period-221-30-bce",
+      "title": "秦汉形成与罗马扩张",
+      "startYear": -221,
+      "endYear": -30,
+      "color": "#c69a3f",
+      "status": "planned",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "秦与西汉",
+          "tier": "core",
+          "summary": "秦统一、楚汉战争、西汉建立，汉武帝时期扩张至西域方向。"
+        },
+        {
+          "id": "rome",
+          "label": "罗马共和国扩张",
+          "tier": "core",
+          "summary": "罗马控制地中海并进入内战，最终走向帝制。"
+        },
+        {
+          "id": "parthia",
+          "label": "安息与中亚",
+          "tier": "secondary",
+          "summary": "安息取代塞琉古东部权力，成为罗马东方对手和丝路节点。"
+        }
+      ],
+      "context": [
+        "匈奴",
+        "印度后孔雀时代",
+        "希腊化残余王国"
+      ],
+      "snapshotYears": [
+        -221,
+        -202,
+        -141,
+        -100,
+        -60,
+        -30
+      ],
+      "summary": "中国和地中海同时形成更稳定的帝国框架。"
+    },
+    {
+      "id": "period-30-bce-190",
+      "title": "汉罗马帝国世界",
+      "startYear": -30,
+      "endYear": 190,
+      "color": "#8c9b55",
+      "status": "planned",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "两汉",
+          "tier": "core",
+          "summary": "西汉、王莽、新莽到东汉，边疆、士族和地方豪强结构逐渐变化。"
+        },
+        {
+          "id": "rome",
+          "label": "罗马帝国",
+          "tier": "core",
+          "summary": "奥古斯都以后罗马进入帝国稳定期，并形成横跨地中海的统治体系。"
+        },
+        {
+          "id": "central-asia",
+          "label": "安息/贵霜/中亚",
+          "tier": "secondary",
+          "summary": "安息、贵霜和西域共同构成汉罗马之间的交通与缓冲地带。"
+        }
+      ],
+      "context": [
+        "印度区域王朝",
+        "日耳曼边境",
+        "印度洋贸易"
+      ],
+      "snapshotYears": [
+        -30,
+        25,
+        73,
+        100,
+        166,
+        190
+      ],
+      "summary": "高帝国时代的粗略世界格局，是当前 190-310 切片的前传。"
+    },
+    {
+      "id": "period-190-310",
+      "title": "帝国危机与新边界",
+      "startYear": 190,
+      "endYear": 310,
+      "color": "#b94f32",
+      "status": "complete",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "三国与西晋",
+          "tier": "core",
+          "summary": "东汉崩解，魏蜀吴鼎立，西晋短暂统一后走向内乱。"
+        },
+        {
+          "id": "rome",
+          "label": "罗马三世纪危机",
+          "tier": "core",
+          "summary": "皇帝更替频繁、边境压力加剧，戴克里先改革重塑帝国。"
+        },
+        {
+          "id": "sasanian-persia",
+          "label": "萨珊波斯",
+          "tier": "core",
+          "summary": "萨珊取代安息，成为罗马东方强敌，并影响西亚格局。"
+        }
+      ],
+      "context": [
+        "萨珊东境与贵霜残部",
+        "草原与边疆迁徙",
+        "丝路与印度洋贸易"
+      ],
+      "snapshotYears": [
+        190,
+        220,
+        246,
+        260,
+        280,
+        293,
+        310
+      ],
+      "summary": "当前已制作的深度时期：地图、事件、人物、年龄和史料都已有基础。",
+      "detailEntryYear": 246
+    },
+    {
+      "id": "period-310-439",
+      "title": "晚古典转型",
+      "startYear": 310,
+      "endYear": 439,
+      "color": "#7b6aa8",
+      "status": "planned",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "东晋十六国",
+          "tier": "core",
+          "summary": "西晋崩溃后南北分裂，北魏最终统一北方。"
+        },
+        {
+          "id": "rome",
+          "label": "罗马东西分治",
+          "tier": "core",
+          "summary": "基督教化、东西帝国分治和西部蛮族政权形成。"
+        },
+        {
+          "id": "sasanian-persia",
+          "label": "萨珊成熟期",
+          "tier": "secondary",
+          "summary": "萨珊继续与罗马/拜占庭竞争，并维持西亚强权地位。"
+        }
+      ],
+      "context": [
+        "笈多印度",
+        "草原与内亚",
+        "日耳曼诸王国"
+      ],
+      "snapshotYears": [
+        310,
+        317,
+        350,
+        376,
+        395,
+        410,
+        439
+      ],
+      "summary": "从当前切片自然延伸到东晋十六国和晚期罗马世界。"
+    },
+    {
+      "id": "period-439-589",
+      "title": "南北朝与后罗马世界",
+      "startYear": 439,
+      "endYear": 589,
+      "color": "#5c8f83",
+      "status": "planned",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "南北朝",
+          "tier": "core",
+          "summary": "北朝和南朝并立，制度、民族和宗教结构深刻变化，最终隋统一。"
+        },
+        {
+          "id": "byzantium",
+          "label": "拜占庭/地中海",
+          "tier": "core",
+          "summary": "东罗马延续帝国传统，西部由日耳曼王国重组。"
+        },
+        {
+          "id": "sasanian-persia",
+          "label": "萨珊-拜占庭边境",
+          "tier": "secondary",
+          "summary": "西亚边境竞争长期持续，成为伊斯兰兴起前的重要背景。"
+        }
+      ],
+      "context": [
+        "突厥前夜",
+        "印度后笈多",
+        "朝鲜半岛与日本"
+      ],
+      "snapshotYears": [
+        439,
+        476,
+        500,
+        535,
+        557,
+        589
+      ],
+      "summary": "中国南北朝与地中海后罗马秩序并行变化。"
+    },
+    {
+      "id": "period-589-750",
+      "title": "隋唐与伊斯兰扩张",
+      "startYear": 589,
+      "endYear": 750,
+      "color": "#4f8da8",
+      "status": "planned",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "隋唐早期",
+          "tier": "core",
+          "summary": "隋统一后唐建立，向西域、东北和周边体系扩展。"
+        },
+        {
+          "id": "islamic",
+          "label": "伊斯兰哈里发",
+          "tier": "core",
+          "summary": "阿拉伯征服改写西亚、北非和中亚西部格局。"
+        },
+        {
+          "id": "byzantium",
+          "label": "拜占庭收缩",
+          "tier": "secondary",
+          "summary": "拜占庭在伊斯兰扩张压力下重组防御体系。"
+        }
+      ],
+      "context": [
+        "吐蕃",
+        "突厥",
+        "印度区域王朝",
+        "朝鲜半岛和日本"
+      ],
+      "snapshotYears": [
+        589,
+        618,
+        632,
+        661,
+        705,
+        750
+      ],
+      "summary": "欧亚大陆从隋唐统一、萨珊灭亡和伊斯兰扩张中重新洗牌。"
+    },
+    {
+      "id": "period-750-907",
+      "title": "唐-阿拔斯时代",
+      "startYear": 750,
+      "endYear": 907,
+      "color": "#5d79b3",
+      "status": "planned",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "唐中晚期",
+          "tier": "core",
+          "summary": "安史之乱后唐朝地方化，边疆和财政结构持续变化。"
+        },
+        {
+          "id": "islamic",
+          "label": "阿拔斯世界",
+          "tier": "core",
+          "summary": "阿拔斯哈里发连接西亚、中亚、北非与印度洋网络。"
+        },
+        {
+          "id": "inner-asia",
+          "label": "内亚/吐蕃/回鹘",
+          "tier": "secondary",
+          "summary": "草原和高原势力影响唐朝边疆和丝路秩序。"
+        }
+      ],
+      "context": [
+        "拜占庭",
+        "加洛林欧洲",
+        "日本平安前期"
+      ],
+      "snapshotYears": [
+        750,
+        755,
+        780,
+        820,
+        875,
+        907
+      ],
+      "summary": "唐中晚期、阿拔斯和内亚势力共同塑造欧亚交流网络。"
+    },
+    {
+      "id": "period-907-1206",
+      "title": "宋辽金与蒙古前夜",
+      "startYear": 907,
+      "endYear": 1206,
+      "color": "#8b7d4d",
+      "status": "planned",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "五代宋辽金",
+          "tier": "core",
+          "summary": "五代十国后宋建立，辽、金、西夏与宋长期并立。"
+        },
+        {
+          "id": "inner-asia",
+          "label": "草原与契丹/女真",
+          "tier": "core",
+          "summary": "内亚政权直接重塑中国北方和东北亚政治格局。"
+        },
+        {
+          "id": "islamic-central-asia",
+          "label": "伊斯兰中亚",
+          "tier": "secondary",
+          "summary": "塞尔柱和中亚诸政权构成蒙古兴起前的西部背景。"
+        }
+      ],
+      "context": [
+        "十字军与拜占庭",
+        "西欧封建世界",
+        "印度北部"
+      ],
+      "snapshotYears": [
+        907,
+        960,
+        1004,
+        1066,
+        1127,
+        1141,
+        1206
+      ],
+      "summary": "多政权并立的中国和内亚结构，为蒙古时代铺垫。"
+    },
+    {
+      "id": "period-1206-1368",
+      "title": "蒙古世界体系",
+      "startYear": 1206,
+      "endYear": 1368,
+      "color": "#6e8f4e",
+      "status": "planned",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "宋元转换",
+          "tier": "core",
+          "summary": "蒙古先后灭金、西夏、南宋，元朝建立后又在内乱中衰落。"
+        },
+        {
+          "id": "mongol",
+          "label": "蒙古帝国",
+          "tier": "core",
+          "summary": "蒙古征服把欧亚草原、中亚、西亚和东欧连成一个政治交通体系。"
+        },
+        {
+          "id": "islamic-west-asia",
+          "label": "伊儿汗与中亚",
+          "tier": "secondary",
+          "summary": "蒙古诸汗国深刻改变伊斯兰世界和丝路秩序。"
+        }
+      ],
+      "context": [
+        "欧洲",
+        "印度德里苏丹国",
+        "日本与高丽",
+        "东南亚"
+      ],
+      "snapshotYears": [
+        1206,
+        1215,
+        1234,
+        1271,
+        1279,
+        1294,
+        1368
+      ],
+      "summary": "蒙古帝国是 1644 前最重要的跨欧亚结构之一。"
+    },
+    {
+      "id": "period-1368-1517",
+      "title": "明初与后蒙古世界",
+      "startYear": 1368,
+      "endYear": 1517,
+      "color": "#9a6f9f",
+      "status": "planned",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "明初到中期",
+          "tier": "core",
+          "summary": "明朝建立、永乐扩张、郑和下西洋和北方边防共同塑造格局。"
+        },
+        {
+          "id": "central-west-asia",
+          "label": "帖木儿与奥斯曼",
+          "tier": "core",
+          "summary": "后蒙古世界重组，奥斯曼崛起并进入地中海核心。"
+        },
+        {
+          "id": "europe",
+          "label": "欧洲与大航海前夜",
+          "tier": "secondary",
+          "summary": "欧洲诸国竞争加剧，1492 后进入大西洋扩张阶段。"
+        }
+      ],
+      "context": [
+        "印度",
+        "东南亚海域",
+        "日本室町"
+      ],
+      "snapshotYears": [
+        1368,
+        1405,
+        1453,
+        1492,
+        1517
+      ],
+      "summary": "明朝和后蒙古世界并行，欧洲开始从区域力量转入远洋扩张。"
+    },
+    {
+      "id": "period-1517-1644",
+      "title": "早期近代重组",
+      "startYear": 1517,
+      "endYear": 1644,
+      "color": "#4f7f99",
+      "status": "planned",
+      "focusRegions": [
+        {
+          "id": "china",
+          "label": "晚明与明清转换",
+          "tier": "core",
+          "summary": "白银经济、边疆压力、农民战争和满洲崛起最终导致 1644 转折。"
+        },
+        {
+          "id": "islamic-empires",
+          "label": "奥斯曼/萨法维/莫卧儿",
+          "tier": "core",
+          "summary": "伊斯兰三大帝国占据从地中海到南亚的核心地带。"
+        },
+        {
+          "id": "europe-atlantic",
+          "label": "欧洲与大西洋",
+          "tier": "core",
+          "summary": "宗教改革、国家竞争和殖民扩张重塑全球联系。"
+        }
+      ],
+      "context": [
+        "日本战国到江户",
+        "东南亚贸易",
+        "美洲殖民体系",
+        "中亚汗国"
+      ],
+      "snapshotYears": [
+        1517,
+        1550,
+        1571,
+        1600,
+        1618,
+        1644
+      ],
+      "summary": "1644 前的最后主段，连接明清转换和全球早期近代体系。"
+    }
+  ],
+  "regionCoordinates": {
+    "china": [
+      108,
+      34
+    ],
+    "mesopotamia": [
+      44,
+      33
+    ],
+    "mediterranean": [
+      22,
+      39
+    ],
+    "persia": [
+      53,
+      31
+    ],
+    "greek": [
+      22,
+      38
+    ],
+    "hellenistic": [
+      38,
+      34
+    ],
+    "india": [
+      78,
+      22
+    ],
+    "rome": [
+      14,
+      42
+    ],
+    "parthia": [
+      52,
+      34
+    ],
+    "central-asia": [
+      67,
+      41
+    ],
+    "sasanian-persia": [
+      53,
+      31
+    ],
+    "byzantium": [
+      29,
+      41
+    ],
+    "islamic": [
+      43,
+      28
+    ],
+    "inner-asia": [
+      95,
+      45
+    ],
+    "islamic-central-asia": [
+      63,
+      37
+    ],
+    "mongol": [
+      102,
+      46
+    ],
+    "islamic-west-asia": [
+      47,
+      34
+    ],
+    "central-west-asia": [
+      51,
+      36
+    ],
+    "europe": [
+      10,
+      49
+    ],
+    "islamic-empires": [
+      55,
+      31
+    ],
+    "europe-atlantic": [
+      -4,
+      47
+    ]
+  },
+  "periodRegionCoordinates": {
+    "background-3000-550-bce": {
+      "china": [
+        108,
+        35
+      ],
+      "mesopotamia": [
+        44,
+        33
+      ],
+      "mediterranean": [
+        27,
+        38
+      ]
+    },
+    "period-550-330-bce": {
+      "china": [
+        110,
+        35
+      ],
+      "persia": [
+        51,
+        32
+      ],
+      "greek": [
+        23,
+        39
+      ]
+    },
+    "period-330-221-bce": {
+      "china": [
+        111,
+        35
+      ],
+      "hellenistic": [
+        42,
+        34
+      ],
+      "india": [
+        78,
+        23
+      ]
+    },
+    "period-221-30-bce": {
+      "china": [
+        108,
+        36
+      ],
+      "rome": [
+        13,
+        42
+      ],
+      "parthia": [
+        53,
+        34
+      ]
+    },
+    "period-30-bce-190": {
+      "china": [
+        107,
+        35
+      ],
+      "rome": [
+        15,
+        42
+      ],
+      "central-asia": [
+        68,
+        40
+      ]
+    },
+    "period-190-310": {
+      "china": [
+        107,
+        34
+      ],
+      "rome": [
+        15,
+        42
+      ],
+      "sasanian-persia": [
+        53,
+        31
+      ]
+    },
+    "period-310-439": {
+      "china": [
+        109,
+        34
+      ],
+      "rome": [
+        20,
+        43
+      ],
+      "sasanian-persia": [
+        53,
+        31
+      ]
+    },
+    "period-439-589": {
+      "china": [
+        111,
+        35
+      ],
+      "byzantium": [
+        29,
+        41
+      ],
+      "sasanian-persia": [
+        53,
+        31
+      ]
+    },
+    "period-589-750": {
+      "china": [
+        108,
+        36
+      ],
+      "islamic": [
+        43,
+        29
+      ],
+      "byzantium": [
+        29,
+        41
+      ]
+    },
+    "period-750-907": {
+      "china": [
+        108,
+        35
+      ],
+      "islamic": [
+        44,
+        31
+      ],
+      "inner-asia": [
+        92,
+        43
+      ]
+    },
+    "period-907-1206": {
+      "china": [
+        112,
+        36
+      ],
+      "inner-asia": [
+        107,
+        45
+      ],
+      "islamic-central-asia": [
+        63,
+        38
+      ]
+    },
+    "period-1206-1368": {
+      "china": [
+        110,
+        35
+      ],
+      "mongol": [
+        96,
+        47
+      ],
+      "islamic-west-asia": [
+        47,
+        34
+      ]
+    },
+    "period-1368-1517": {
+      "china": [
+        110,
+        35
+      ],
+      "central-west-asia": [
+        48,
+        37
+      ],
+      "europe": [
+        10,
+        48
+      ]
+    },
+    "period-1517-1644": {
+      "china": [
+        112,
+        36
+      ],
+      "islamic-empires": [
+        58,
+        30
+      ],
+      "europe-atlantic": [
+        -3,
+        47
+      ]
+    }
+  },
+  "regionZoneSizes": {
+    "china": {
+      "width": 15,
+      "height": 9,
+      "rotate": -8
+    },
+    "mesopotamia": {
+      "width": 9,
+      "height": 7,
+      "rotate": -12
+    },
+    "mediterranean": {
+      "width": 16,
+      "height": 8,
+      "rotate": 4
+    },
+    "persia": {
+      "width": 16,
+      "height": 9,
+      "rotate": -10
+    },
+    "greek": {
+      "width": 8,
+      "height": 6,
+      "rotate": -8
+    },
+    "hellenistic": {
+      "width": 22,
+      "height": 10,
+      "rotate": -8
+    },
+    "india": {
+      "width": 11,
+      "height": 10,
+      "rotate": 12
+    },
+    "rome": {
+      "width": 20,
+      "height": 11,
+      "rotate": 6
+    },
+    "parthia": {
+      "width": 14,
+      "height": 8,
+      "rotate": -8
+    },
+    "central-asia": {
+      "width": 20,
+      "height": 7,
+      "rotate": -4
+    },
+    "sasanian-persia": {
+      "width": 13,
+      "height": 8,
+      "rotate": -10
+    },
+    "byzantium": {
+      "width": 12,
+      "height": 7,
+      "rotate": 8
+    },
+    "islamic": {
+      "width": 27,
+      "height": 12,
+      "rotate": -6
+    },
+    "inner-asia": {
+      "width": 24,
+      "height": 8,
+      "rotate": -4
+    },
+    "islamic-central-asia": {
+      "width": 16,
+      "height": 7,
+      "rotate": -8
+    },
+    "mongol": {
+      "width": 34,
+      "height": 10,
+      "rotate": -4
+    },
+    "islamic-west-asia": {
+      "width": 16,
+      "height": 8,
+      "rotate": -8
+    },
+    "central-west-asia": {
+      "width": 18,
+      "height": 9,
+      "rotate": -6
+    },
+    "europe": {
+      "width": 13,
+      "height": 9,
+      "rotate": -8
+    },
+    "islamic-empires": {
+      "width": 32,
+      "height": 11,
+      "rotate": -6
+    },
+    "europe-atlantic": {
+      "width": 16,
+      "height": 10,
+      "rotate": -12
+    }
+  }
+}

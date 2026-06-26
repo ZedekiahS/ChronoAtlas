@@ -351,7 +351,249 @@ function eventDetail(db, eventId) {
   return { event, entities, evidence };
 }
 
+function buildFtsQuery(query) {
+  return query
+    .split(/\s+/)
+    .map((term) => term.trim())
+    .filter(Boolean)
+    .map((term) => `"${term.replaceAll('"', '""')}"`)
+    .join(" OR ");
+}
+
+function extractEvidenceBodySection(body, label) {
+  if (typeof body !== "string" || body.length === 0) {
+    return null;
+  }
+
+  const labels = ["原文", "译文/释义", "核心人物", "相关人物", "地点", "宏观事件", "事实类型", "待核问题"];
+  const marker = `${label}：`;
+  const start = body.indexOf(marker);
+  if (start === -1) {
+    return null;
+  }
+
+  const contentStart = start + marker.length;
+  const nextStarts = labels
+    .filter((item) => item !== label)
+    .map((item) => body.indexOf(`${item}：`, contentStart))
+    .filter((index) => index !== -1);
+  const contentEnd = nextStarts.length ? Math.min(...nextStarts) : body.length;
+  let value = body.slice(contentStart, contentEnd).trim();
+  if (label === "待核问题") {
+    value = value.split(/\n\s*\n/)[0]?.trim() ?? value;
+  }
+  return value.length ? value : null;
+}
+
 function searchDocuments(db, url) {
+  const query = url.searchParams.get("q")?.trim();
+  const region = url.searchParams.get("region")?.trim();
+  const entityIdParam = url.searchParams.get("entityId")?.trim();
+  const entityId = entityIdParam
+    ? entityIdParam.startsWith("person:") || entityIdParam.includes(":")
+      ? entityIdParam
+      : `person:${entityIdParam}`
+    : null;
+  const limit = parseLimit(url.searchParams.get("limit"), 25, 100);
+  const offset = parseOffset(url.searchParams.get("offset"));
+
+  if (!query) {
+    return { results: [], limit, offset };
+  }
+
+  const where = ["(c.title LIKE $likeQuery OR c.body LIKE $likeQuery OR c.rowid IN (SELECT rowid FROM document_chunks_fts WHERE document_chunks_fts MATCH $ftsQuery))"];
+  const joins = [];
+  const params = {
+    $likeQuery: `%${query}%`,
+    $ftsQuery: buildFtsQuery(query) || query,
+    $limit: limit,
+    $offset: offset
+  };
+
+  if (region) {
+    where.push("c.region_id = $region");
+    params.$region = region;
+  }
+
+  if (entityId) {
+    joins.push("JOIN document_chunk_entities dce ON dce.chunk_id = c.id");
+    where.push("dce.entity_id = $entityId");
+    params.$entityId = entityId;
+  }
+
+  let results;
+  try {
+    results = db.prepare(`
+      SELECT DISTINCT
+        c.id,
+        c.search_document_id,
+        c.chunk_index,
+        c.subject_table,
+        c.subject_id,
+        c.title,
+        substr(c.body, 1, 600) AS snippet,
+        c.language,
+        c.region_id,
+        c.period_id,
+        c.topic_id,
+        c.time_start,
+        c.time_end,
+        c.token_estimate,
+        c.review_status,
+        (SELECT sd.raw_json FROM search_documents sd WHERE sd.id = c.search_document_id) AS document_raw_json,
+        (SELECT sd.body FROM search_documents sd WHERE sd.id = c.search_document_id) AS document_body,
+        (SELECT el.source_id FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_source_id,
+        (SELECT el.locator FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_locator,
+        (SELECT el.quote FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_quote,
+        (SELECT el.confidence FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_confidence,
+        (SELECT ic.translation FROM import_evidence_cards ic WHERE ic.id = c.subject_id) AS card_translation,
+        (SELECT ic.questions_json FROM import_evidence_cards ic WHERE ic.id = c.subject_id) AS card_questions_json,
+        CASE
+          WHEN c.rowid IN (SELECT rowid FROM document_chunks_fts WHERE document_chunks_fts MATCH $ftsQuery) THEN 0
+          ELSE 1
+        END AS rank_bucket
+      FROM document_chunks c
+      ${joins.join("\n")}
+      WHERE ${where.join(" AND ")}
+      ORDER BY
+        rank_bucket,
+        CASE WHEN c.title LIKE $likeQuery THEN 0 ELSE 1 END,
+        COALESCE(c.time_start, 9999),
+        c.id
+      LIMIT $limit OFFSET $offset
+    `).all(params);
+  } catch {
+    const fallbackWhere = ["(c.title LIKE $likeQuery OR c.body LIKE $likeQuery)"];
+    const fallbackParams = {
+      $likeQuery: params.$likeQuery,
+      $limit: limit,
+      $offset: offset
+    };
+    if (region) {
+      fallbackWhere.push("c.region_id = $region");
+      fallbackParams.$region = region;
+    }
+    if (entityId) {
+      fallbackWhere.push("dce.entity_id = $entityId");
+      fallbackParams.$entityId = entityId;
+    }
+    results = db.prepare(`
+      SELECT DISTINCT
+        c.id,
+        c.search_document_id,
+        c.chunk_index,
+        c.subject_table,
+        c.subject_id,
+        c.title,
+        substr(c.body, 1, 600) AS snippet,
+        c.language,
+        c.region_id,
+        c.period_id,
+        c.topic_id,
+        c.time_start,
+        c.time_end,
+        c.token_estimate,
+        c.review_status,
+        (SELECT sd.raw_json FROM search_documents sd WHERE sd.id = c.search_document_id) AS document_raw_json,
+        (SELECT sd.body FROM search_documents sd WHERE sd.id = c.search_document_id) AS document_body,
+        (SELECT el.source_id FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_source_id,
+        (SELECT el.locator FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_locator,
+        (SELECT el.quote FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_quote,
+        (SELECT el.confidence FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_confidence,
+        (SELECT ic.translation FROM import_evidence_cards ic WHERE ic.id = c.subject_id) AS card_translation,
+        (SELECT ic.questions_json FROM import_evidence_cards ic WHERE ic.id = c.subject_id) AS card_questions_json,
+        1 AS rank_bucket
+      FROM document_chunks c
+      ${joins.join("\n")}
+      WHERE ${fallbackWhere.join(" AND ")}
+      ORDER BY
+        CASE WHEN c.title LIKE $likeQuery THEN 0 ELSE 1 END,
+        COALESCE(c.time_start, 9999),
+        c.id
+      LIMIT $limit OFFSET $offset
+    `).all(fallbackParams);
+  }
+
+  const entitiesByChunk = new Map();
+  if (results.length > 0) {
+    const entityRows = db.prepare(`
+      SELECT
+        dce.chunk_id,
+        dce.link_role,
+        dce.sort_order,
+        e.id,
+        e.entity_type,
+        e.primary_label,
+        e.region_id
+      FROM document_chunk_entities dce
+      JOIN entities e ON e.id = dce.entity_id
+      WHERE dce.chunk_id IN (${results.map(() => "?").join(", ")})
+      ORDER BY dce.chunk_id, dce.sort_order, e.primary_label
+    `).all(...results.map((result) => result.id));
+
+    for (const row of entityRows) {
+      const list = entitiesByChunk.get(row.chunk_id) ?? [];
+      list.push({
+        id: row.id,
+        entityType: row.entity_type,
+        label: row.primary_label,
+        regionId: row.region_id,
+        role: row.link_role
+      });
+      entitiesByChunk.set(row.chunk_id, list);
+    }
+  }
+
+  return {
+    results: results.map((result) => {
+      const raw = parseRawJson(result.document_raw_json);
+      const cardQuestions = parseRawJson(result.card_questions_json);
+      const questions = Array.isArray(raw.questions)
+        ? raw.questions
+        : Array.isArray(cardQuestions)
+          ? cardQuestions
+          : [];
+      const bodyTranslation = extractEvidenceBodySection(result.document_body, "译文/释义");
+      const bodyDisputeNote = extractEvidenceBodySection(result.document_body, "待核问题");
+      return {
+        id: result.id,
+        searchDocumentId: result.search_document_id,
+        chunkIndex: result.chunk_index,
+        subjectTable: result.subject_table,
+        subjectId: result.subject_id,
+        title: result.title,
+        snippet: result.snippet,
+        language: result.language,
+        regionId: result.region_id,
+        periodId: result.period_id,
+        topicId: result.topic_id,
+        timeStart: result.time_start,
+        timeEnd: result.time_end,
+        tokenEstimate: result.token_estimate,
+        reviewStatus: result.review_status,
+        rankBucket: result.rank_bucket,
+        sourceId: raw.sourceId ?? result.evidence_source_id ?? null,
+        sourceTitle: raw.sourceTitle ?? null,
+        locator: raw.locator ?? result.evidence_locator ?? null,
+        quote: result.evidence_quote ?? null,
+        translation: raw.translation ?? result.card_translation ?? bodyTranslation ?? null,
+        confidence: raw.confidence ?? result.evidence_confidence ?? null,
+        disputeNote: raw.disputeNote ?? raw.uncertainty ?? (questions.length ? questions.join("; ") : bodyDisputeNote),
+        peopleCore: Array.isArray(raw.peopleCore) ? raw.peopleCore : [],
+        peopleMentioned: Array.isArray(raw.peopleMentioned) ? raw.peopleMentioned : [],
+        places: Array.isArray(raw.places) ? raw.places : [],
+        eventLabel: raw.eventLabel ?? null,
+        macroEvent: raw.macroEvent ?? null,
+        factType: raw.factType ?? null,
+        entities: entitiesByChunk.get(result.id) ?? []
+      };
+    }),
+    limit,
+    offset
+  };
+}
+
+function searchDocumentsLegacy(db, url) {
   const query = url.searchParams.get("q")?.trim();
   const region = url.searchParams.get("region")?.trim();
   const limit = parseLimit(url.searchParams.get("limit"), 25, 100);
@@ -583,6 +825,109 @@ function frontendDb(db) {
   };
 }
 
+function frontendPeopleIndex(db) {
+  return {
+    schemaVersion: 2,
+    generatedFrom: "sqlite:core-person-tables",
+    purpose: "frontend-people-index",
+    persons: db.prepare(`
+      SELECT raw_json
+      FROM persons
+      ORDER BY id
+    `).all().map((row) => parseRawJson(row.raw_json)),
+    personLifeEvents: db.prepare(`
+      SELECT raw_json
+      FROM person_life_events
+      ORDER BY COALESCE(year, 9999), id
+    `).all().map((row) => parseRawJson(row.raw_json)),
+    personRelations: db.prepare(`
+      SELECT raw_json
+      FROM person_relations
+      ORDER BY COALESCE(start_year, 9999), id
+    `).all().map((row) => parseRawJson(row.raw_json))
+  };
+}
+
+function frontendSources(db) {
+  const mentions = db.prepare(`
+    SELECT
+      id,
+      source_id,
+      work_title,
+      book_title,
+      chapter_title,
+      locator,
+      year,
+      text,
+      translation,
+      confidence,
+      review_status,
+      raw_json
+    FROM source_mentions
+    ORDER BY COALESCE(year, 9999), id
+  `).all().map((row) => {
+    const raw = parseRawJson(row.raw_json);
+    return {
+      id: row.id,
+      sourceId: row.source_id,
+      workTitle: row.work_title,
+      bookTitle: row.book_title,
+      chapterTitle: row.chapter_title,
+      locator: row.locator,
+      year: row.year,
+      text: row.text,
+      translation: row.translation,
+      mentionedPersonIds: db.prepare(`
+        SELECT person_id
+        FROM source_mention_people
+        WHERE mention_id = ?
+        ORDER BY sort_order
+      `).all(row.id).map((person) => person.person_id),
+      mentionedEventIds: db.prepare(`
+        SELECT event_id
+        FROM source_mention_events
+        WHERE mention_id = ?
+        ORDER BY sort_order
+      `).all(row.id).map((event) => event.event_id),
+      mentionedPlaceIds: db.prepare(`
+        SELECT place_id
+        FROM source_mention_places
+        WHERE mention_id = ?
+        ORDER BY sort_order
+      `).all(row.id).map((place) => place.place_id),
+      tags: db.prepare(`
+        SELECT tag
+        FROM source_mention_tags
+        WHERE mention_id = ?
+        ORDER BY sort_order
+      `).all(row.id).map((tag) => tag.tag),
+      confidence: row.confidence ?? raw.confidence ?? "medium",
+      reviewStatus: row.review_status ?? raw.reviewStatus ?? "draft",
+      disputeNote: raw.disputeNote ?? raw.uncertainty ?? null
+    };
+  });
+
+  return {
+    schemaVersion: 2,
+    generatedFrom: "sqlite:source-tables",
+    purpose: "frontend-sources",
+    sources: db.prepare(`
+      SELECT id, title, author, type, citation_short, url, note
+      FROM sources
+      ORDER BY id
+    `).all().map((source) => ({
+      id: source.id,
+      title: source.title,
+      author: source.author ?? "",
+      type: source.type,
+      citationShort: source.citation_short ?? source.id,
+      note: source.note ?? "",
+      url: source.url ?? undefined
+    })),
+    sourceMentions: mentions
+  };
+}
+
 function frontendPersonDetail(db, entityIdOrLegacyId) {
   const legacyPersonId = entityIdOrLegacyId.startsWith("person:")
     ? entityIdOrLegacyId.slice("person:".length)
@@ -690,12 +1035,72 @@ function frontendEvents(db) {
     generatedFrom: "sqlite:future-schema",
     purpose: "frontend-events",
     events: db.prepare(`
-      SELECT raw_json
+      SELECT *
       FROM events
       WHERE id NOT LIKE 'life:%'
       ORDER BY COALESCE(time_start, 9999), id
-    `).all().map((row) => parseRawJson(row.raw_json))
+    `).all().map((row) => {
+      const raw = parseRawJson(row.raw_json);
+
+      return {
+        ...raw,
+        id: row.id,
+        title: row.title,
+        startYear: raw.startYear ?? row.time_start,
+        endYear: raw.endYear ?? row.time_end ?? row.time_start,
+        region: raw.region ?? row.region_id,
+        category: raw.category ?? row.event_type ?? "politics",
+        summary: raw.summary ?? row.summary ?? "",
+        confidence: raw.confidence ?? row.confidence ?? "medium",
+        people: raw.people ?? [],
+        personIds: raw.personIds ?? [],
+        polities: raw.polities ?? [],
+        relatedEvents: raw.relatedEvents ?? [],
+        tags: raw.tags ?? [],
+        sources: raw.sources ?? [],
+        sourceRefs: raw.sourceRefs ?? []
+      };
+    })
   };
+}
+
+function appRuntimeDataset(db, id, fallback) {
+  const row = db.prepare(`
+    SELECT raw_json
+    FROM app_runtime_datasets
+    WHERE id = ?
+  `).get(id);
+
+  return row ? parseRawJson(row.raw_json) : fallback;
+}
+
+function frontendEventImportance(db) {
+  return appRuntimeDataset(db, "event-importance-180-280", {
+    model: "event-importance",
+    defaultImportance: "medium",
+    records: []
+  });
+}
+
+function frontendRegions(db) {
+  return {
+    generatedFrom: "sqlite:app-runtime-datasets",
+    regions: appRuntimeDataset(db, "regions-180-280", [])
+  };
+}
+
+function frontendPeriodOverview(db) {
+  return appRuntimeDataset(db, "period-overview-to-1644", {
+    schemaVersion: 1,
+    model: "period-overview",
+    range: [-550, 1644],
+    overviewYearMin: -550,
+    overviewYearMax: 1644,
+    periods: [],
+    regionCoordinates: {},
+    periodRegionCoordinates: {},
+    regionZoneSizes: {}
+  });
 }
 
 function frontendEventEvidence(db, eventId) {
@@ -711,6 +1116,164 @@ function frontendEventEvidence(db, eventId) {
     eventId,
     eventTitle: event.title,
     evidence: evidenceRowsForSubject(db, "events", eventId)
+  };
+}
+
+function frontendCoverage190310(db) {
+  const regions = [
+    { id: "china", label: "中国", expectedPeriodIds: ["china-three-kingdoms-180-280"], minimums: { events: 25, entities: 150, evidence: 500 } },
+    { id: "rome", label: "罗马", expectedPeriodIds: ["rome-190-310"], minimums: { events: 80, entities: 20, evidence: 80 } },
+    { id: "sasanian-persia", label: "萨珊", expectedPeriodIds: ["sasanian-persia-224-310"], minimums: { events: 10, entities: 7, evidence: 40 } }
+  ];
+  const eventRows = db.prepare(`
+    SELECT id, title, time_start, time_end
+    FROM events
+    WHERE region_id = ?
+      AND id NOT LIKE 'life:%'
+      AND COALESCE(time_end, time_start) >= 190
+      AND COALESCE(time_start, time_end) <= 310
+    ORDER BY COALESCE(time_start, 9999), id
+  `);
+  const eventEvidenceCount = db.prepare(`
+    SELECT COUNT(DISTINCT ev.id) AS count
+    FROM events ev
+    WHERE ev.region_id = ?
+      AND ev.id NOT LIKE 'life:%'
+      AND COALESCE(ev.time_end, ev.time_start) >= 190
+      AND COALESCE(ev.time_start, ev.time_end) <= 310
+      AND EXISTS (
+        SELECT 1 FROM evidence_links el
+        WHERE el.subject_table = 'events' AND el.subject_id = ev.id
+      )
+  `);
+  const entityCount = db.prepare("SELECT COUNT(*) AS count FROM entities WHERE entity_type = 'person' AND region_id = ?");
+  const entityEvidenceCount = db.prepare(`
+    SELECT COUNT(DISTINCT e.id) AS count
+    FROM entities e
+    WHERE e.entity_type = 'person'
+      AND e.region_id = ?
+      AND EXISTS (
+        SELECT 1
+        FROM event_entities ee
+        JOIN evidence_links el ON el.subject_table = 'events' AND el.subject_id = ee.event_id
+        WHERE ee.entity_id = e.id
+      )
+  `);
+  const participantNameCount = db.prepare(`
+    SELECT COUNT(DISTINCT hep.display_name) AS count
+    FROM historical_event_people hep
+    JOIN historical_events he ON he.id = hep.event_id
+    WHERE he.region = ?
+      AND he.end_year >= 190
+      AND he.start_year <= 310
+      AND hep.display_name IS NOT NULL
+      AND LENGTH(TRIM(hep.display_name)) > 0
+  `);
+  const evidenceCount = db.prepare(`
+    SELECT COUNT(*) AS count
+    FROM search_documents
+    WHERE region_id = ?
+      AND COALESCE(time_end, time_start) >= 190
+      AND COALESCE(time_start, time_end) <= 310
+  `);
+  const evidenceWithSourceCount = db.prepare(`
+    SELECT COUNT(*) AS count
+    FROM search_documents sd
+    WHERE sd.region_id = ?
+      AND COALESCE(sd.time_end, sd.time_start) >= 190
+      AND COALESCE(sd.time_start, sd.time_end) <= 310
+      AND json_extract(sd.raw_json, '$.sourceId') IS NOT NULL
+      AND json_extract(sd.raw_json, '$.locator') IS NOT NULL
+  `);
+  const missingOriginalCount = db.prepare(`
+    SELECT COUNT(*) AS count
+    FROM search_documents sd
+    WHERE sd.region_id = ?
+      AND COALESCE(sd.time_end, sd.time_start) >= 190
+      AND COALESCE(sd.time_start, sd.time_end) <= 310
+      AND json_extract(sd.raw_json, '$.sourceId') IS NOT NULL
+      AND json_extract(sd.raw_json, '$.locator') IS NOT NULL
+      AND (
+        json_extract(sd.raw_json, '$.originalText') IS NULL
+        OR LENGTH(TRIM(json_extract(sd.raw_json, '$.originalText'))) = 0
+      )
+  `);
+  const periodMismatchCount = db.prepare(`
+    SELECT COUNT(*) AS count
+    FROM search_documents
+    WHERE region_id = ?
+      AND COALESCE(time_end, time_start) >= 190
+      AND COALESCE(time_start, time_end) <= 310
+      AND period_id NOT IN (?, ?, ?)
+  `);
+  const missingEvidenceEvents = db.prepare(`
+    SELECT ev.id, ev.title, ev.time_start AS year
+    FROM events ev
+    WHERE ev.region_id = ?
+      AND ev.id NOT LIKE 'life:%'
+      AND COALESCE(ev.time_end, ev.time_start) >= 190
+      AND COALESCE(ev.time_start, ev.time_end) <= 310
+      AND NOT EXISTS (
+        SELECT 1 FROM evidence_links el
+        WHERE el.subject_table = 'events' AND el.subject_id = ev.id
+      )
+    ORDER BY COALESCE(ev.time_start, 9999), ev.id
+    LIMIT 8
+  `);
+  const missingOriginalExamples = db.prepare(`
+    SELECT id, title, time_start AS year
+    FROM search_documents
+    WHERE region_id = ?
+      AND COALESCE(time_end, time_start) >= 190
+      AND COALESCE(time_start, time_end) <= 310
+      AND json_extract(raw_json, '$.sourceId') IS NOT NULL
+      AND json_extract(raw_json, '$.locator') IS NOT NULL
+      AND (
+        json_extract(raw_json, '$.originalText') IS NULL
+        OR LENGTH(TRIM(json_extract(raw_json, '$.originalText'))) = 0
+      )
+    ORDER BY COALESCE(time_start, 9999), id
+    LIMIT 8
+  `);
+
+  return {
+    schemaVersion: 1,
+    purpose: "frontend-coverage-190-310",
+    range: [190, 310],
+    generatedAt: new Date().toISOString(),
+    regions: regions.map((region) => {
+      const events = eventRows.all(region.id);
+      const metrics = {
+        events: events.length,
+        eventsWithEvidence: eventEvidenceCount.get(region.id).count,
+        peopleEntities: entityCount.get(region.id).count,
+        peopleWithEvidence: entityEvidenceCount.get(region.id).count,
+        participantNames: participantNameCount.get(region.id).count,
+        evidenceDocuments: evidenceCount.get(region.id).count,
+        evidenceWithSource: evidenceWithSourceCount.get(region.id).count,
+        evidenceMissingOriginal: missingOriginalCount.get(region.id).count,
+        periodMismatch: periodMismatchCount.get(region.id, ...region.expectedPeriodIds, "", "").count
+      };
+      const gaps = [];
+      if (metrics.events < region.minimums.events) gaps.push(`事件数量低于目标：${metrics.events}/${region.minimums.events}`);
+      if (metrics.eventsWithEvidence < metrics.events) gaps.push(`还有 ${metrics.events - metrics.eventsWithEvidence} 条事件没有证据链接`);
+      if (metrics.peopleEntities < region.minimums.entities) gaps.push(`人物实体偏少：${metrics.peopleEntities}/${region.minimums.entities}`);
+      if (metrics.participantNames > metrics.peopleEntities) gaps.push(`${metrics.participantNames - metrics.peopleEntities} 个事件参与者姓名尚未实体化`);
+      if (metrics.evidenceDocuments < region.minimums.evidence) gaps.push(`证据卡数量低于目标：${metrics.evidenceDocuments}/${region.minimums.evidence}`);
+      if (metrics.evidenceWithSource < metrics.evidenceDocuments) gaps.push(`${metrics.evidenceDocuments - metrics.evidenceWithSource} 条证据缺 source_id 或 locator`);
+      if (metrics.evidenceMissingOriginal > 0) gaps.push(`${metrics.evidenceMissingOriginal} 条证据缺真实原文摘录`);
+      if (metrics.periodMismatch > 0) gaps.push(`${metrics.periodMismatch} 条证据 period_id 不在目标时期`);
+      return {
+        id: region.id,
+        label: region.label,
+        expectedPeriodIds: region.expectedPeriodIds,
+        minimums: region.minimums,
+        metrics,
+        gaps,
+        missingEvidenceEvents: missingEvidenceEvents.all(region.id),
+        missingOriginalExamples: missingOriginalExamples.all(region.id)
+      };
+    })
   };
 }
 
@@ -737,17 +1300,22 @@ function frontendChinaControl(db) {
         FROM china_admin_blocks
         WHERE dataset_id = 'china-admin-block-map-190-280'
         ORDER BY id
-      `).all().map((block) => ({
-        id: block.id,
-        name: block.name,
-        level: block.level,
-        parent: block.parent_id,
-        center: parseRawJson(block.center_json),
-        geometry: parseRawJson(block.geometry_json),
-        confidence: block.confidence,
-        approximate: block.approximate === 1,
-        sources: parseRawJson(block.sources_json)
-      }))
+      `).all().map((block) => {
+        const rawBlock = parseRawJson(block.raw_json);
+
+        return {
+          id: block.id,
+          name: block.name,
+          controlBlockId: rawBlock.controlBlockId,
+          level: block.level,
+          parent: block.parent_id ?? rawBlock.parent,
+          center: parseRawJson(block.center_json),
+          geometry: parseRawJson(block.geometry_json),
+          confidence: block.confidence,
+          approximate: block.approximate === 1,
+          sources: parseRawJson(block.sources_json)
+        };
+      })
     },
     controlTimeline: {
       schemaVersion: timelineDataset?.schema_version ?? 1,
@@ -810,7 +1378,7 @@ function frontendAppData(db) {
     generatedFrom: "sqlite:app-runtime-datasets",
     eventImportance: byId.get("event-importance-180-280") ?? {
       model: "event-importance",
-      defaultImportance: "medium",
+      defaultImportance: "detail",
       records: []
     },
     regions: byId.get("regions-180-280") ?? []
@@ -1132,6 +1700,36 @@ async function route(request, response) {
       return;
     }
 
+    if (pathname === "/api/frontend-event-importance") {
+      sendJson(response, 200, frontendEventImportance(db));
+      return;
+    }
+
+    if (pathname === "/api/frontend-regions") {
+      sendJson(response, 200, frontendRegions(db));
+      return;
+    }
+
+    if (pathname === "/api/frontend-period-overview") {
+      sendJson(response, 200, frontendPeriodOverview(db));
+      return;
+    }
+
+    if (pathname === "/api/frontend-coverage-190-310") {
+      sendJson(response, 200, frontendCoverage190310(db));
+      return;
+    }
+
+    if (pathname === "/api/frontend-people-index") {
+      sendJson(response, 200, frontendPeopleIndex(db));
+      return;
+    }
+
+    if (pathname === "/api/frontend-sources") {
+      sendJson(response, 200, frontendSources(db));
+      return;
+    }
+
     if (pathname.startsWith("/api/frontend-events/") && pathname.endsWith("/evidence")) {
       const eventId = pathname.slice("/api/frontend-events/".length, -"/evidence".length);
       if (!eventId) {
@@ -1196,7 +1794,7 @@ async function route(request, response) {
       return;
     }
 
-    if (pathname === "/api/search") {
+    if (pathname === "/api/search" || pathname === "/api/search-documents") {
       sendJson(response, 200, searchDocuments(db, url));
       return;
     }

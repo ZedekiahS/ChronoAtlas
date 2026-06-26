@@ -42,6 +42,10 @@ const preferredTableOrder = [
   "china_control_controllers",
   "china_control_records",
   "app_runtime_datasets",
+  "civilizations",
+  "regions",
+  "periods",
+  "topics",
   "entities",
   "entity_aliases",
   "entity_relations",
@@ -88,6 +92,18 @@ const runtimeTables = new Set([
   "china_control_controllers",
   "china_control_records",
   "app_runtime_datasets",
+  "civilizations",
+  "regions",
+  "periods",
+  "topics",
+  "entities",
+  "entity_aliases",
+  "entity_relations",
+  "events",
+  "event_entities",
+  "evidence_links",
+  "source_passage_entities",
+  "search_documents",
 ]);
 
 const baseSchemaColumns = new Map([
@@ -160,7 +176,8 @@ try {
     ...tableNames.filter((tableName) => !preferredTableOrder.includes(tableName)),
   ];
 
-  function buildSeedSql(tables, label) {
+  function buildSeedSql(tables, label, options = {}) {
+    const insertVerb = options.insertOrReplace ? "INSERT OR REPLACE" : "INSERT";
     const output = [
       "-- Generated from db/chronoatlas.sqlite. Do not edit by hand.",
       "-- Rebuild with: npm run db:seed:export",
@@ -184,7 +201,7 @@ try {
       const columnSql = seedColumns.map(quoteIdentifier).join(", ");
       for (const row of rows) {
         const valuesSql = seedColumns.map((column) => sqlLiteral(row[column])).join(", ");
-        output.push(`INSERT INTO ${quoteIdentifier(tableName)} (${columnSql}) VALUES (${valuesSql});`);
+        output.push(`${insertVerb} INTO ${quoteIdentifier(tableName)} (${columnSql}) VALUES (${valuesSql});`);
       }
     }
 
@@ -193,7 +210,9 @@ try {
   }
 
   const coreSql = buildSeedSql(coreTables, "Core base tables loaded before migrations");
-  const runtimeSql = buildSeedSql(runtimeTables, "Runtime/map tables loaded after migrations");
+  const runtimeSql = buildSeedSql(runtimeTables, "Runtime/map and AI/RAG tables loaded after migrations", {
+    insertOrReplace: true,
+  });
 
   await mkdir(seedsDir, { recursive: true });
   await writeFile(coreOutputPath, coreSql, "utf8");

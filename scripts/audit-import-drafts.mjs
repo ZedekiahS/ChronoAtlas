@@ -46,6 +46,27 @@ function hasText(value) {
   return typeof value === "string" && value.length > 0;
 }
 
+function firstText(...values) {
+  return values.find(hasText);
+}
+
+function asDraftObject(draft) {
+  if (Array.isArray(draft)) {
+    return { evidenceCards: draft };
+  }
+  return draft ?? {};
+}
+
+function arrayFromValue(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+  if (typeof value === "string" && value.trim().length > 0) {
+    return [value.trim()];
+  }
+  return [];
+}
+
 function isNeedsId(value) {
   return typeof value === "string" && value.startsWith("needs-id:");
 }
@@ -349,25 +370,28 @@ function findEventTitleMatches(db, eventName, year) {
 
 function validateEvidenceCard(card, index, db, issues, evidenceStats) {
   const itemId = `evidenceCards[${index}]`;
-  issues.error(hasText(card?.source), `Evidence card needs source: ${itemId}`);
+  const sourceTitle = firstText(card?.sourceTitle, card?.source);
+  const originalText = firstText(card?.originalText, card?.text, card?.translation);
+  const eventLabel = firstText(card?.eventLabel, card?.event);
+  issues.error(hasText(sourceTitle), `Evidence card needs source/sourceTitle: ${itemId}`);
   issues.error(hasText(card?.sourceType), `Evidence card needs sourceType: ${itemId}`);
   issues.warn(card?.author === null || hasText(card?.author), `Evidence card author should be string/null: ${itemId}`);
-  issues.warn(card?.commentaryAuthor === null || hasText(card?.commentaryAuthor), `Evidence card commentaryAuthor should be string/null: ${itemId}`);
+  issues.warn(card?.commentaryAuthor === null || card?.commentaryAuthor === undefined || hasText(card?.commentaryAuthor), `Evidence card commentaryAuthor should be string/null: ${itemId}`);
   issues.warn(card?.quotedWork === null || card?.quotedWork === undefined || hasText(card?.quotedWork), `Evidence card quotedWork should be string/null when present: ${itemId}`);
   issues.warn(card?.section === null || card?.section === undefined || hasText(card?.section), `Evidence card section should be string/null when present: ${itemId}`);
   issues.error(hasText(card?.locator), `Evidence card needs locator: ${itemId}`);
   issues.warn(Number.isInteger(card?.year) || card?.year === null, `Evidence card year should be integer/null: ${itemId}`);
   issues.warn(card?.displayDate === null || hasText(card?.displayDate), `Evidence card displayDate should be string/null: ${itemId}`);
-  issues.error(hasText(card?.text), `Evidence card needs original text: ${itemId}`);
+  issues.error(hasText(originalText), `Evidence card needs original text: ${itemId}`);
   issues.warn(card?.translation === null || hasText(card?.translation), `Evidence card translation should be string/null: ${itemId}`);
-  const hasOldPeople = Array.isArray(card?.people);
-  const hasNewPeople = Array.isArray(card?.peopleCore);
-  issues.error(hasOldPeople || hasNewPeople, `Evidence card needs people array or peopleCore array: ${itemId}`);
-  issues.error(card?.peopleCore === undefined || Array.isArray(card.peopleCore), `Evidence card peopleCore must be an array when present: ${itemId}`);
+  const hasOldPeople = arrayFromValue(card?.people).length > 0;
+  const hasNewPeople = arrayFromValue(card?.peopleCore).length > 0;
+  issues.error(hasOldPeople || hasNewPeople, `Evidence card needs people array/string or peopleCore array/string: ${itemId}`);
+  issues.error(card?.peopleCore === undefined || Array.isArray(card.peopleCore) || hasText(card.peopleCore), `Evidence card peopleCore must be an array/string when present: ${itemId}`);
   issues.error(card?.peopleMentioned === undefined || Array.isArray(card.peopleMentioned), `Evidence card peopleMentioned must be an array when present: ${itemId}`);
   issues.error(Array.isArray(card?.places), `Evidence card places must be an array: ${itemId}`);
   issues.warn(card?.macroEvent === null || card?.macroEvent === undefined || hasText(card?.macroEvent), `Evidence card macroEvent should be string/null when present: ${itemId}`);
-  issues.warn(card?.event === null || hasText(card?.event), `Evidence card event should be string/null: ${itemId}`);
+  issues.warn(eventLabel === null || eventLabel === undefined || hasText(eventLabel), `Evidence card event/eventLabel should be string/null: ${itemId}`);
   const hasOldFact = hasText(card?.fact);
   const hasLayeredFact = hasText(card?.factBrief) && hasText(card?.factDetailed);
   issues.error(hasOldFact || hasLayeredFact, `Evidence card needs fact or factBrief/factDetailed: ${itemId}`);
@@ -375,17 +399,17 @@ function validateEvidenceCard(card, index, db, issues, evidenceStats) {
   issues.warn(["high", "medium", "low"].includes(card?.confidence), `Evidence card confidence should be high/medium/low: ${itemId}`);
   issues.error(Array.isArray(card?.questions), `Evidence card questions must be an array: ${itemId}`);
 
-  if (hasText(card?.source)) {
-    const sourceMatches = findSourceMatches(db, card.source);
-    addUnique(evidenceStats.sourceMatches, card.source, sourceMatches);
+  if (hasText(sourceTitle)) {
+    const sourceMatches = findSourceMatches(db, sourceTitle);
+    addUnique(evidenceStats.sourceMatches, sourceTitle, sourceMatches);
     if (!sourceMatches.length) {
-      evidenceStats.unmatchedSources.add(card.source);
+      evidenceStats.unmatchedSources.add(sourceTitle);
     }
   }
 
   const cardPeople = [
-    ...(Array.isArray(card?.people) ? card.people : []),
-    ...(Array.isArray(card?.peopleCore) ? card.peopleCore : []),
+    ...arrayFromValue(card?.people),
+    ...arrayFromValue(card?.peopleCore),
     ...(Array.isArray(card?.peopleMentioned) ? card.peopleMentioned : []),
   ];
 
@@ -405,7 +429,7 @@ function validateEvidenceCard(card, index, db, issues, evidenceStats) {
     }
   }
 
-  for (const eventName of [card?.macroEvent, card?.event]) {
+  for (const eventName of [card?.macroEvent, eventLabel]) {
     if (!hasText(eventName)) {
       continue;
     }
@@ -500,6 +524,7 @@ async function auditFile(db, filePath) {
     issues.errors.push(`Invalid JSON: ${error.message}`);
     return { file: relativePath, counts: {}, issues, conflicts: {}, references: {}, overlaps: [] };
   }
+  draft = asDraftObject(draft);
 
   const localIds = {};
   const counts = {};

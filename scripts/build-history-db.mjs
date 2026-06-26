@@ -41,6 +41,19 @@ async function applyMigrations(db) {
   return migrationFiles;
 }
 
+async function refreshDocumentChunkIndex(db) {
+  const migrationPath = path.join(rootDir, "db", "migrations", "007-document-chunks-fts.mjs");
+  if (!existsSync(migrationPath)) {
+    return;
+  }
+
+  const migration = await import(`${pathToFileURL(migrationPath).href}?refresh=${Date.now()}`);
+  if (typeof migration.default !== "function") {
+    throw new Error("Document chunk migration must default-export a function");
+  }
+  await migration.default(db);
+}
+
 function scalarCount(db, tableName) {
   return db.prepare(`SELECT COUNT(*) AS count FROM ${tableName}`).get().count;
 }
@@ -57,6 +70,7 @@ function verifyDatabase(db) {
     ["events", 1],
     ["evidence_links", 1],
     ["app_runtime_datasets", 1],
+    ["document_chunks", 1],
   ];
 
   for (const [tableName, expected] of minimumCounts) {
@@ -97,6 +111,7 @@ async function main() {
     db.exec(seedSql);
     await applyMigrations(db);
     db.exec(runtimeSeedSql);
+    await refreshDocumentChunkIndex(db);
     verifyDatabase(db);
     seededCounts = {
       persons: scalarCount(db, "persons"),

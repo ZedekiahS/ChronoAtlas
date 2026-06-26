@@ -1,4 +1,5 @@
 import { StrictMode, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type { ReactNode } from "react";
 import { createRoot } from "react-dom/client";
 import { geoGraticule10, geoNaturalEarth1, geoPath } from "d3-geo";
 import { curveLinearClosed, line } from "d3-shape";
@@ -26,25 +27,14 @@ import {
   UsersRound,
   X,
 } from "lucide-react";
-import eventsData from "../data/events-180-280.sample.json";
-import eventImportanceData from "../data/event-importance-180-280.json";
-import chinaAdminBlocksData from "../data/china-admin-blocks-190-280.json";
-import chinaBlockControlTimelineData from "../data/china-block-control-timeline-190-280.json";
-import chinaCommanderySupplementalBlocksData from "../data/china-commandery-supplemental-blocks.json";
 import chinaMapData from "../data/china-three-kingdoms-map.json";
-import chinaPersonLifeEventsData from "../data/china-person-life-events.json";
-import chinaPersonRelationsData from "../data/china-person-relations.json";
-import chinaPersonsData from "../data/china-persons.json";
-import chinaSourceMentionsData from "../data/china-source-mentions.json";
-import chinaSourcesData from "../data/china-sources.json";
 import naturalEarthChinaPhysicalData from "../data/natural-earth-china-physical.json";
-import regionsData from "../data/regions-180-280.json";
 import "./styles.css";
 
 type Region = "china" | "rome" | "sasanian-persia" | "india";
 
-type EventCategory = "politics" | "war" | "society" | "culture" | "economy";
-type EventImportance = "major" | "medium" | "minor";
+type EventCategory = "politics" | "war" | "society" | "culture" | "economy" | "diplomacy" | "religion" | "frontier";
+type EventImportance = "major" | "medium" | "minor" | "detail";
 type LonLat = [number, number];
 
 type HistoricalEvent = {
@@ -122,6 +112,7 @@ type SourceMention = {
   tags: string[];
   confidence: "high" | "medium" | "low";
   reviewStatus: "draft" | "reviewed";
+  disputeNote?: string | null;
 };
 
 type HistoricalPerson = {
@@ -185,10 +176,78 @@ type PersonAnnualTimelineItem = {
   year: number;
 };
 
-type Page = "world" | "china" | "rome" | "people";
+type Page = "home" | "world" | "china" | "rome" | "people" | "age" | "evidence" | "compare" | "coverage";
 type ChinaMapMode = "political" | "terrain" | "three-d" | "commandery";
 type ThreeKingdomsFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "war" | "politics";
-type PersonIndexFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han";
+type PersonIndexFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "rome" | "sasanian-persia";
+type AgeRegionFilter = "all" | "china" | "rome" | "sasanian-persia" | "india";
+
+type EvidenceRegionFilter = "all" | Region;
+
+type AgePerson = {
+  id: string;
+  name: string;
+  region: AgeRegionFilter;
+  polity: string;
+  roles: string[];
+  birthYear: number;
+  deathYear?: number | null;
+  summary: string;
+  source: "person-index" | "age-supplement";
+};
+
+type PersonIndexItem = {
+  id: string;
+  name: string;
+  courtesyName: string | null;
+  life: string | null;
+  primaryPolity: string;
+  roles: string[];
+  summary: string;
+  source: "china-person-index" | "age-supplement";
+  region: AgeRegionFilter;
+  birthYear?: number;
+  deathYear?: number | null;
+};
+
+type EvidenceSearchResult = {
+  id: string;
+  searchDocumentId: string;
+  chunkIndex: number;
+  subjectTable: string;
+  subjectId: string;
+  title: string;
+  snippet: string;
+  language: string | null;
+  regionId: string | null;
+  periodId: string | null;
+  topicId: string | null;
+  timeStart: number | null;
+  timeEnd: number | null;
+  tokenEstimate: number;
+  reviewStatus: string;
+  rankBucket: number;
+  sourceId?: string | null;
+  sourceTitle?: string | null;
+  locator?: string | null;
+  quote?: string | null;
+  translation?: string | null;
+  confidence?: "high" | "medium" | "low" | null;
+  disputeNote?: string | null;
+  peopleCore?: string[];
+  peopleMentioned?: string[];
+  places?: string[];
+  eventLabel?: string | null;
+  macroEvent?: string | null;
+  factType?: string | null;
+  entities: Array<{
+    id: string;
+    entityType: string;
+    label: string;
+    regionId: string | null;
+    role: string;
+  }>;
+};
 
 type RegionInfo = {
   id: Region;
@@ -215,6 +274,30 @@ type BoundaryGroup = {
   boundaryType: "effective-control" | "nominal" | "cultural-influence";
   confidence: "high" | "medium" | "low";
   boundary: LonLat[];
+};
+
+type PeriodStatus = "complete" | "planned" | "background";
+
+type OverviewFocusRegion = {
+  id: string;
+  label: string;
+  tier: "core" | "secondary" | "context";
+  summary: string;
+  coordinates?: LonLat;
+};
+
+type OverviewPeriod = {
+  id: string;
+  title: string;
+  startYear: number;
+  endYear: number;
+  color: string;
+  status: PeriodStatus;
+  focusRegions: OverviewFocusRegion[];
+  context: string[];
+  snapshotYears: number[];
+  summary: string;
+  detailEntryYear?: number;
 };
 
 type ChinaPolity = BoundaryGroup & {
@@ -331,6 +414,72 @@ type ChinaControlTimeline = {
   records: ChinaControlRecord[];
 };
 
+type FrontendChinaControlDb = {
+  adminBlocks: ChinaAdminBlocksDataset;
+  controlTimeline: ChinaControlTimeline;
+};
+
+type FrontendPeopleIndexDb = {
+  persons: HistoricalPerson[];
+  personLifeEvents: PersonLifeEvent[];
+  personRelations: PersonRelation[];
+};
+
+type FrontendSourcesDb = {
+  sources: SourceRecord[];
+  sourceMentions: SourceMention[];
+};
+
+type FrontendRegionsDb = {
+  generatedFrom?: string;
+  regions: RegionInfo[];
+};
+
+type FrontendPeriodOverviewDb = {
+  schemaVersion: number;
+  model: "period-overview";
+  range?: [number, number];
+  overviewYearMin?: number;
+  overviewYearMax?: number;
+  periods?: OverviewPeriod[];
+  regionCoordinates?: Record<string, LonLat>;
+  periodRegionCoordinates?: Record<string, Record<string, LonLat>>;
+  regionZoneSizes?: Record<string, { width: number; height: number; rotate?: number }>;
+};
+
+type CoverageRegion = {
+  id: Exclude<Region, "india">;
+  label: string;
+  expectedPeriodIds: string[];
+  minimums: {
+    events: number;
+    entities: number;
+    evidence: number;
+  };
+  metrics: {
+    events: number;
+    eventsWithEvidence: number;
+    peopleEntities: number;
+    peopleWithEvidence: number;
+    participantNames: number;
+    evidenceDocuments: number;
+    evidenceWithSource: number;
+    evidenceMissingOriginal: number;
+    periodMismatch: number;
+  };
+  gaps: string[];
+  missingEvidenceEvents: Array<{ id: string; title: string; year: number | null }>;
+  missingOriginalExamples: Array<{ id: string; title: string; year: number | null }>;
+};
+
+type FrontendCoverageDb = {
+  schemaVersion: number;
+  purpose: "frontend-coverage-190-310";
+  range: [number, number];
+  generatedAt: string;
+  regions: CoverageRegion[];
+};
+
 type NaturalEarthPhysical = {
   source: string;
   license: string;
@@ -347,27 +496,81 @@ type NaturalEarthPhysical = {
   geographyRegions: FeatureCollection<Geometry, GeoJsonProperties>;
 };
 
-const events = eventsData as HistoricalEvent[];
-const eventImportanceDataset = eventImportanceData as EventImportanceDataset;
-const chinaSources = chinaSourcesData as SourceRecord[];
-const chinaSourceMentions = chinaSourceMentionsData as SourceMention[];
-const chinaPersons = chinaPersonsData as HistoricalPerson[];
-const chinaPersonLifeEvents = chinaPersonLifeEventsData as PersonLifeEvent[];
-const chinaPersonRelations = chinaPersonRelationsData as PersonRelation[];
-const chinaBlocksDataset = chinaAdminBlocksData as unknown as ChinaAdminBlocksDataset;
-const chinaCommanderySupplementalBlocksDataset = chinaCommanderySupplementalBlocksData as unknown as ChinaAdminBlocksDataset;
-const chinaControlTimeline = chinaBlockControlTimelineData as unknown as ChinaControlTimeline;
+let eventImportanceDataset: EventImportanceDataset = {
+  model: "event-importance",
+  defaultImportance: "medium",
+  records: [],
+};
 const chinaMap = chinaMapData as ChinaMapLayer;
 const naturalEarthChinaPhysical = naturalEarthChinaPhysicalData as NaturalEarthPhysical;
 const emptyRomanControlDb: FrontendRomanControlDb = { provinces: [], timeline: [] };
-const regions = regionsData as unknown as RegionInfo[];
-const chinaBlocks = [...chinaBlocksDataset.blocks, ...chinaCommanderySupplementalBlocksDataset.blocks];
-const chinaBlockById = new Map(chinaBlocks.map((block) => [block.id, block]));
-const chinaControllerColorMap = new Map(chinaControlTimeline.controllers.map((controller) => [controller.id, controller.color]));
-const chinaSourceById = new Map(chinaSources.map((source) => [source.id, source]));
-const chinaSourceMentionById = new Map(chinaSourceMentions.map((mention) => [mention.id, mention]));
-const chinaPersonById = new Map(chinaPersons.map((person) => [person.id, person]));
-const eventImportanceById = new Map(eventImportanceDataset.records.map((record) => [record.eventId, record.importance]));
+const emptyPeopleIndexDb: FrontendPeopleIndexDb = {
+  persons: [],
+  personLifeEvents: [],
+  personRelations: [],
+};
+const emptySourcesDb: FrontendSourcesDb = {
+  sources: [],
+  sourceMentions: [],
+};
+const emptyChinaControlDb: FrontendChinaControlDb = {
+  adminBlocks: {
+    schemaVersion: 1,
+    model: "china-admin-block-map",
+    range: [190, 280],
+    notes: "",
+    blocks: [],
+  },
+  controlTimeline: {
+    schemaVersion: 1,
+    model: "china-block-control-timeline",
+    range: [190, 280],
+    keyYears: [],
+    controllers: [],
+    records: [],
+  },
+};
+const emptyHistoricalEvent: HistoricalEvent = {
+  id: "__empty__",
+  title: "数据加载中",
+  startYear: 220,
+  endYear: 220,
+  region: "china",
+  category: "politics",
+  summary: "事件数据正在从 SQLite API 载入。",
+  people: [],
+  polities: [],
+  relatedEvents: [],
+  tags: [],
+  confidence: "medium",
+  sources: [],
+};
+const emptyRegionEra: RegionEra = {
+  startYear: 190,
+  endYear: 310,
+  title: "Runtime loading",
+  summary: "Region data is loading from the API.",
+  boundaryType: "effective-control",
+  confidence: "low",
+  boundary: [],
+  sources: [],
+};
+const emptyRegions: RegionInfo[] = [
+  { id: "china", label: "中国", accent: "#5b9279", eras: [emptyRegionEra] },
+  { id: "rome", label: "罗马", accent: "#5b6fbb", eras: [emptyRegionEra] },
+  { id: "sasanian-persia", label: "萨珊", accent: "#9a7a2f", eras: [emptyRegionEra] },
+  { id: "india", label: "印度", accent: "#b56b4d", eras: [emptyRegionEra] },
+];
+let regions = emptyRegions;
+let chinaSources: SourceRecord[] = [];
+let chinaSourceMentions: SourceMention[] = [];
+let chinaSourceById = new Map<string, SourceRecord>();
+let chinaSourceMentionById = new Map<string, SourceMention>();
+let chinaPersons: HistoricalPerson[] = [];
+let chinaPersonLifeEvents: PersonLifeEvent[] = [];
+let chinaPersonRelations: PersonRelation[] = [];
+let chinaPersonById = new Map<string, HistoricalPerson>();
+let eventImportanceById = new Map<string, EventImportance>();
 type WorldAtlasTopology = Topology<{ countries: GeometryCollection }>;
 
 const atlas = countries110 as unknown as WorldAtlasTopology;
@@ -392,6 +595,9 @@ const categoryLabels: Record<EventCategory, string> = {
   society: "社会",
   culture: "文化",
   economy: "经济",
+  diplomacy: "外交",
+  religion: "宗教",
+  frontier: "边境",
 };
 
 const chinaMapModes: Array<{
@@ -432,6 +638,8 @@ const personIndexFilters: Array<{
     label: "汉末群雄",
     terms: ["东汉", "汉末", "袁绍", "袁术", "董卓", "吕布", "刘表", "刘璋", "张鲁", "公孙瓒", "黄巾"],
   },
+  { id: "rome", label: "罗马", terms: ["罗马", "皇帝", "塞维鲁", "奥勒良", "戴克里先", "瓦勒良"] },
+  { id: "sasanian-persia", label: "萨珊", terms: ["萨珊", "波斯", "沙普尔", "阿尔达希尔", "纳尔塞", "摩尼", "卡尔提尔"] },
 ];
 
 const eventDetailTabs: Array<{
@@ -447,13 +655,152 @@ const eventDetailTabs: Array<{
 
 const yearMin = 190;
 const yearMax = 310;
-const worldComparisonRegionOrder: Region[] = ["china", "rome", "sasanian-persia", "india"];
+const worldComparisonRegionOrder: Region[] = ["china", "rome", "sasanian-persia"];
 const chinaFocusPersonIds = ["cao-cao", "sun-quan", "liu-bei"];
+let overviewYearMin = -550;
+let overviewYearMax = 1644;
+let overviewPeriods: OverviewPeriod[] = [];
+let overviewRegionCoordinates: Record<string, LonLat> = {};
+let overviewPeriodRegionCoordinates: Record<string, Record<string, LonLat>> = {};
+let overviewRegionZoneSizes: Record<string, { width: number; height: number; rotate?: number }> = {};
+
+const emptyOverviewPeriod: OverviewPeriod = {
+  id: "runtime-loading",
+  title: "Overview loading",
+  startYear: -550,
+  endYear: 1644,
+  color: "#6f766d",
+  status: "background",
+  focusRegions: [],
+  context: [],
+  snapshotYears: [-550],
+  summary: "Overview period data is loading from the API.",
+};
+const ageRegionFilters: Array<{ id: AgeRegionFilter; label: string }> = [
+  { id: "all", label: "全部" },
+  { id: "china", label: "中国" },
+  { id: "rome", label: "罗马" },
+  { id: "sasanian-persia", label: "萨珊" },
+];
+
+const ageSupplementPeople: AgePerson[] = [
+  {
+    id: "rome-septimius-severus",
+    name: "塞普蒂米乌斯·塞维鲁",
+    region: "rome",
+    polity: "罗马帝国",
+    roles: ["皇帝"],
+    birthYear: 145,
+    deathYear: 211,
+    summary: "塞维鲁王朝建立者，193 年取得帝位。",
+    source: "age-supplement",
+  },
+  {
+    id: "rome-alexander-severus",
+    name: "亚历山大·塞维鲁",
+    region: "rome",
+    polity: "罗马帝国",
+    roles: ["皇帝"],
+    birthYear: 208,
+    deathYear: 235,
+    summary: "塞维鲁王朝末代皇帝，235 年被杀后罗马进入三世纪危机。",
+    source: "age-supplement",
+  },
+  {
+    id: "rome-maximinus-thrax",
+    name: "马克西米努斯·色雷克斯",
+    region: "rome",
+    polity: "罗马帝国",
+    roles: ["皇帝", "军事统帅"],
+    birthYear: 173,
+    deathYear: 238,
+    summary: "235 年即位，被视作三世纪危机开端人物之一。",
+    source: "age-supplement",
+  },
+  {
+    id: "rome-aurelian",
+    name: "奥勒良",
+    region: "rome",
+    polity: "罗马帝国",
+    roles: ["皇帝", "军事统帅"],
+    birthYear: 214,
+    deathYear: 275,
+    summary: "后来的罗马皇帝，完成帝国再统一，常被称为世界光复者。",
+    source: "age-supplement",
+  },
+  {
+    id: "rome-diocletian",
+    name: "戴克里先",
+    region: "rome",
+    polity: "罗马帝国",
+    roles: ["皇帝", "四帝共治创建者"],
+    birthYear: 244,
+    deathYear: 311,
+    summary: "284 年即位，推行四帝共治和晚期罗马改革。",
+    source: "age-supplement",
+  },
+  {
+    id: "sasanian-ardashir-i",
+    name: "阿尔达希尔一世",
+    region: "sasanian-persia",
+    polity: "萨珊波斯",
+    roles: ["国王"],
+    birthYear: 180,
+    deathYear: 242,
+    summary: "萨珊王朝建立者，224 年击败安息末王阿尔达班四世。",
+    source: "age-supplement",
+  },
+  {
+    id: "sasanian-shapur-i",
+    name: "沙普尔一世",
+    region: "sasanian-persia",
+    polity: "萨珊波斯",
+    roles: ["国王"],
+    birthYear: 215,
+    deathYear: 270,
+    summary: "萨珊王朝早期君主，多次与罗马作战。",
+    source: "age-supplement",
+  },
+  {
+    id: "sasanian-narseh",
+    name: "纳尔塞",
+    region: "sasanian-persia",
+    polity: "萨珊波斯",
+    roles: ["国王"],
+    birthYear: 228,
+    deathYear: 303,
+    summary: "萨珊国王，293 年通过 Paikuli 铭文所反映的政治联盟取得王位，后与戴克里先体系下的罗马作战。",
+    source: "age-supplement",
+  },
+  {
+    id: "sasanian-kartir",
+    name: "卡尔提尔",
+    region: "sasanian-persia",
+    polity: "萨珊波斯",
+    roles: ["祭司"],
+    birthYear: 240,
+    deathYear: 293,
+    summary: "萨珊早期重要祆教祭司，以多处铭文记录自身宗教权力和宫廷地位。",
+    source: "age-supplement",
+  },
+  {
+    id: "sasanian-mani",
+    name: "摩尼",
+    region: "sasanian-persia",
+    polity: "萨珊波斯",
+    roles: ["宗教创立者"],
+    birthYear: 216,
+    deathYear: 277,
+    summary: "摩尼教创立者，早期曾在萨珊宫廷环境中传教，后在巴赫拉姆一世时期遇害。",
+    source: "age-supplement",
+  },
+];
 
 const eventImportanceLabels: Record<EventImportance, string> = {
   major: "大型事件",
   medium: "中型事件",
   minor: "小型事件",
+  detail: "细节事件",
 };
 
 function isActiveInYear(event: HistoricalEvent, year: number) {
@@ -468,6 +815,82 @@ function formatYearRange(event: HistoricalEvent) {
   return event.startYear === event.endYear
     ? `${event.startYear} 年`
     : `${event.startYear}-${event.endYear} 年`;
+}
+
+function formatHistoricalYear(year: number) {
+  return year < 0 ? `前 ${Math.abs(year)}` : `${year}`;
+}
+
+function formatHistoricalYearWithEra(year: number) {
+  return year < 0 ? `${Math.abs(year)} BCE` : `${year} CE`;
+}
+
+function getOverviewPeriod(year: number) {
+  return (
+    [...overviewPeriods].reverse().find((period) => period.startYear <= year && period.endYear >= year) ??
+    overviewPeriods[overviewPeriods.length - 1] ??
+    emptyOverviewPeriod
+  );
+}
+
+function getPeriodMidpoint(period: OverviewPeriod) {
+  return Math.round((Math.max(period.startYear, overviewYearMin) + Math.min(period.endYear, overviewYearMax)) / 2);
+}
+
+function getOverviewYearPercent(year: number) {
+  return ((year - overviewYearMin) / (overviewYearMax - overviewYearMin)) * 100;
+}
+
+function getOverviewRegionCoordinate(period: OverviewPeriod, region: OverviewFocusRegion) {
+  return region.coordinates ?? overviewPeriodRegionCoordinates[period.id]?.[region.id] ?? overviewRegionCoordinates[region.id] ?? [0, 20];
+}
+
+function getOverviewRegionPosition(period: OverviewPeriod, region: OverviewFocusRegion) {
+  const point = projection(getOverviewRegionCoordinate(period, region));
+  if (!point) {
+    return { left: "50%", top: "50%" };
+  }
+
+  return {
+    left: `${(point[0] / 1000) * 100}%`,
+    top: `${(point[1] / 520) * 100}%`,
+  };
+}
+
+function getOverviewRegionZoneStyle(period: OverviewPeriod, region: OverviewFocusRegion) {
+  const size = overviewRegionZoneSizes[region.id] ?? { width: 12, height: 8, rotate: 0 };
+  return {
+    "--period-color": period.color,
+    "--zone-width": `${size.width}%`,
+    "--zone-height": `${size.height}%`,
+    "--zone-rotate": `${size.rotate ?? 0}deg`,
+    ...getOverviewRegionPosition(period, region),
+  } as React.CSSProperties;
+}
+
+function getPeriodStatusLabel(status: PeriodStatus) {
+  if (status === "complete") {
+    return "已完成";
+  }
+
+  if (status === "background") {
+    return "背景";
+  }
+
+  return "规划中";
+}
+
+function getOverviewPeriodShortLabel(period: OverviewPeriod) {
+  const coreLabels = period.focusRegions
+    .filter((region) => region.tier === "core")
+    .map((region) => region.label.replace(/世界|体系|危机|转换|形成|时期/g, ""))
+    .slice(0, 2);
+
+  if (period.status === "background") {
+    return "背景";
+  }
+
+  return coreLabels.join("·") || period.title.slice(0, 4);
 }
 
 function isPinnedToYear(event: HistoricalEvent, year: number) {
@@ -489,7 +912,7 @@ function sortEventsByYearThenTitle(left: HistoricalEvent, right: HistoricalEvent
 }
 
 function getEventImportance(event: HistoricalEvent): EventImportance {
-  return event.importance ?? eventImportanceById.get(event.id) ?? eventImportanceDataset.defaultImportance;
+  return eventImportanceById.get(event.id) ?? eventImportanceDataset.defaultImportance;
 }
 
 function shouldShowWorldEvent(event: HistoricalEvent, showMediumEvents: boolean) {
@@ -728,6 +1151,32 @@ function getSourceMentionYearLabel(mention: SourceMention) {
   return mention.year === null ? "年代不详" : `${mention.year}`;
 }
 
+function EvidenceField({ label, value }: { label: string; value?: ReactNode }) {
+  if (
+    value === null ||
+    value === undefined ||
+    (typeof value === "string" && value.trim().length === 0)
+  ) {
+    return null;
+  }
+
+  return (
+    <div className="evidence-field">
+      <span>{label}</span>
+      <strong>{value}</strong>
+    </div>
+  );
+}
+
+function CompactEvidenceList({ values }: { values?: string[] }) {
+  const cleaned = (values ?? []).filter(Boolean);
+  if (!cleaned.length) {
+    return null;
+  }
+
+  return <>{cleaned.slice(0, 6).join("、")}{cleaned.length > 6 ? ` +${cleaned.length - 6}` : ""}</>;
+}
+
 function SourceMentionCard({ compact = false, mention }: { compact?: boolean; mention: SourceMention }) {
   return (
     <article className={`source-mention-card ${compact ? "compact" : ""}`} data-source-mention-id={mention.id}>
@@ -735,7 +1184,24 @@ function SourceMentionCard({ compact = false, mention }: { compact?: boolean; me
         <span>{getSourceMentionYearLabel(mention)}</span>
         <SourceRefLink className="source-title-link" sourceRef={getSourceMentionRef(mention)} />
       </div>
+      {!compact && (
+        <div className="source-mention-standard">
+          <EvidenceField label="source_id" value={mention.sourceId} />
+          <EvidenceField label="locator" value={mention.locator} />
+          <EvidenceField label="人物" value={<CompactEvidenceList values={mention.mentionedPersonIds} />} />
+          <EvidenceField label="事件" value={<CompactEvidenceList values={mention.mentionedEventIds} />} />
+          <EvidenceField label="地点" value={<CompactEvidenceList values={mention.mentionedPlaceIds} />} />
+        </div>
+      )}
       <blockquote>{mention.text}</blockquote>
+      {mention.translation && !compact && <p className="source-mention-translation">{mention.translation}</p>}
+      {!compact && (
+        <div className="source-mention-standard">
+          <EvidenceField label="可信度" value={getConfidenceLabel(mention.confidence)} />
+          <EvidenceField label="审核" value={mention.reviewStatus === "reviewed" ? "已审" : "草稿"} />
+          <EvidenceField label="争议" value={mention.disputeNote ?? "未标注"} />
+        </div>
+      )}
       {!compact && (
         <div className="source-mention-tags">
           <span>{getConfidenceLabel(mention.confidence)}</span>
@@ -905,16 +1371,16 @@ function eventContainsAny(event: HistoricalEvent, terms: string[]) {
   return terms.some((term) => text.includes(term));
 }
 
-function getPersonSearchFields(person: HistoricalPerson) {
+function getPersonSearchFields(person: HistoricalPerson | PersonIndexItem) {
   return [person.name, person.courtesyName, person.primaryPolity, ...person.roles, person.summary].filter(Boolean) as string[];
 }
 
-function personContainsAny(person: HistoricalPerson, terms: string[]) {
+function personContainsAny(person: HistoricalPerson | PersonIndexItem, terms: string[]) {
   const text = getPersonSearchFields(person).join(" ");
   return terms.some((term) => text.includes(term));
 }
 
-function getPersonSearchRank(person: HistoricalPerson, normalizedQuery: string) {
+function getPersonSearchRank(person: HistoricalPerson | PersonIndexItem, normalizedQuery: string) {
   if (!normalizedQuery) {
     return 0;
   }
@@ -933,13 +1399,143 @@ function getPersonSearchRank(person: HistoricalPerson, normalizedQuery: string) 
   }, Number.POSITIVE_INFINITY);
 }
 
-function matchesPersonIndexFilter(person: HistoricalPerson, filter: PersonIndexFilter) {
+function matchesPersonIndexFilter(person: HistoricalPerson | PersonIndexItem, filter: PersonIndexFilter) {
   if (filter === "all") {
     return true;
   }
 
+  if ("region" in person && (filter === "rome" || filter === "sasanian-persia")) {
+    return person.region === filter;
+  }
+
+  if (!("region" in person) && (filter === "rome" || filter === "sasanian-persia")) {
+    return false;
+  }
+
   const filterConfig = personIndexFilters.find((item) => item.id === filter);
   return filterConfig ? personContainsAny(person, filterConfig.terms) : true;
+}
+
+function chinaPersonToPersonIndexItem(person: HistoricalPerson): PersonIndexItem {
+  const lifeSpan = parseLifeSpan(person.life);
+  return {
+    id: person.id,
+    name: person.name,
+    courtesyName: person.courtesyName,
+    life: person.life,
+    primaryPolity: person.primaryPolity,
+    roles: person.roles,
+    summary: person.summary,
+    source: "china-person-index",
+    region: "china",
+    birthYear: lifeSpan.birthYear ?? undefined,
+    deathYear: lifeSpan.deathYear,
+  };
+}
+
+function agePersonToPersonIndexItem(person: AgePerson): PersonIndexItem {
+  return {
+    id: person.id,
+    name: person.name,
+    courtesyName: null,
+    life: `${person.birthYear}-${person.deathYear ?? "?"}`,
+    primaryPolity: person.polity,
+    roles: person.roles,
+    summary: person.summary,
+    source: "age-supplement",
+    region: person.region,
+    birthYear: person.birthYear,
+    deathYear: person.deathYear,
+  };
+}
+
+function parseLifeSpan(life: string | null) {
+  if (!life) {
+    return { birthYear: null, deathYear: null };
+  }
+
+  const [birthToken, deathToken] = life.split("-");
+  const birthMatch = birthToken?.match(/\d{2,4}/);
+  const deathMatch = deathToken?.match(/\d{2,4}/);
+
+  return {
+    birthYear: birthMatch && !birthToken.includes("?") ? Number(birthMatch[0]) : null,
+    deathYear: deathMatch ? Number(deathMatch[0]) : null,
+  };
+}
+
+function chinaPersonToAgePerson(person: HistoricalPerson): AgePerson | null {
+  const lifeSpan = parseLifeSpan(person.life);
+  if (!lifeSpan.birthYear) {
+    return null;
+  }
+
+  return {
+    id: `china-${person.id}`,
+    name: person.name,
+    region: "china",
+    polity: person.primaryPolity,
+    roles: person.roles,
+    birthYear: lifeSpan.birthYear,
+    deathYear: lifeSpan.deathYear,
+    summary: person.summary,
+    source: "person-index",
+  };
+}
+
+function getAgeRegionLabel(region: AgeRegionFilter) {
+  return ageRegionFilters.find((filter) => filter.id === region)?.label ?? region;
+}
+
+function getAgePersonState(person: AgePerson, targetYear: number) {
+  const age = targetYear - person.birthYear;
+
+  if (targetYear < person.birthYear) {
+    return {
+      age,
+      category: "unborn" as const,
+      label: `${person.birthYear - targetYear} 年后出生`,
+      sortRank: 2,
+    };
+  }
+
+  if (person.deathYear && targetYear > person.deathYear) {
+    return {
+      age: person.deathYear - person.birthYear,
+      category: "deceased" as const,
+      label: `已故 ${targetYear - person.deathYear} 年，终年 ${person.deathYear - person.birthYear} 岁`,
+      sortRank: 1,
+    };
+  }
+
+  return {
+    age,
+    category: "alive" as const,
+    label: `${age} 岁`,
+    sortRank: 0,
+  };
+}
+
+function agePersonSearchRank(person: AgePerson, normalizedQuery: string) {
+  if (!normalizedQuery) {
+    return 0;
+  }
+
+  const fields = [person.name, person.polity, getAgeRegionLabel(person.region), ...person.roles]
+    .filter(Boolean)
+    .map((field) => field.toLowerCase());
+
+  return fields.reduce((best, field, index) => {
+    if (field === normalizedQuery) {
+      return Math.min(best, index);
+    }
+
+    if (field.includes(normalizedQuery)) {
+      return Math.min(best, index + 8);
+    }
+
+    return best;
+  }, Number.POSITIVE_INFINITY);
 }
 
 function matchesThreeKingdomsFilter(event: HistoricalEvent, filter: ThreeKingdomsFilter) {
@@ -956,7 +1552,7 @@ function matchesThreeKingdomsFilter(event: HistoricalEvent, filter: ThreeKingdom
   }
 
   if (filter === "cao-wei") {
-    return eventContainsAny(event, ["曹操集团", "曹魏", "曹操", "曹丕", "司马懿", "邓艾", "钟会"]);
+    return eventContainsAny(event, ["曹操集团", "曹魏", "曹操", "曹丕", "司马", "邓艾", "钟会"]);
   }
 
   if (filter === "shu-han") {
@@ -1130,9 +1726,9 @@ function getChinaMapLayer(year: number) {
   return chinaMap.eras.find((era) => era.startYear <= year && era.endYear >= year) ?? null;
 }
 
-function getChinaBlockControl(blockId: string, year: number) {
+function getChinaBlockControl(controlTimeline: ChinaControlTimeline, blockId: string, year: number) {
   return (
-    chinaControlTimeline.records.find(
+    controlTimeline.records.find(
       (record) => record.blockId === blockId && record.startYear <= year && record.endYear >= year,
     ) ?? null
   );
@@ -1142,8 +1738,8 @@ function getChinaBlockControlId(block: ChinaBlock) {
   return block.controlBlockId ?? block.id;
 }
 
-function getChinaControllerColor(controller?: string | null) {
-  return controller ? (chinaControllerColorMap.get(controller) ?? "#7d8578") : "#7d8578";
+function getChinaControllerColor(controllerColorMap: Map<string, string>, controller?: string | null) {
+  return controller ? (controllerColorMap.get(controller) ?? "#7d8578") : "#7d8578";
 }
 
 function getChinaBlockPath(block: ChinaBlock) {
@@ -1174,7 +1770,7 @@ function getChinaControlStatusLabel(status: ChinaControlStatus | undefined) {
     case "effective-control":
       return "实际控制";
     case "contested":
-      return "争夺区";
+      return "争夺中";
     case "frontier":
       return "边缘控制";
     case "nominal-control":
@@ -1195,6 +1791,106 @@ function getChinaBlockLevelLabel(level: ChinaBlockLevel) {
     default:
       return "区块";
   }
+}
+
+function normalizeHistoricalEvent(event: HistoricalEvent): HistoricalEvent {
+  return {
+    ...event,
+    people: event.people ?? [],
+    personIds: event.personIds ?? [],
+    polities: event.polities ?? [],
+    relatedEvents: event.relatedEvents ?? [],
+    tags: event.tags ?? [],
+    sources: event.sources ?? [],
+  };
+}
+
+function normalizeHistoricalPerson(person: HistoricalPerson): HistoricalPerson {
+  return {
+    ...person,
+    courtesyName: person.courtesyName ?? null,
+    life: person.life ?? null,
+    primaryPolity: person.primaryPolity ?? "",
+    roles: person.roles ?? [],
+    summary: person.summary ?? "",
+    sourceRefs: person.sourceRefs ?? [],
+  };
+}
+
+function normalizePersonLifeEvent(lifeEvent: PersonLifeEvent): PersonLifeEvent {
+  return {
+    ...lifeEvent,
+    relatedEventIds: lifeEvent.relatedEventIds ?? [],
+    sourceMentionIds: lifeEvent.sourceMentionIds ?? [],
+    confidence: lifeEvent.confidence ?? "medium",
+    sourceRefs: lifeEvent.sourceRefs ?? [],
+  };
+}
+
+function normalizePersonRelation(relation: PersonRelation): PersonRelation {
+  return {
+    ...relation,
+    summary: relation.summary ?? "",
+    sourceRefs: relation.sourceRefs ?? [],
+  };
+}
+
+function applyPeopleIndexData(data: FrontendPeopleIndexDb) {
+  chinaPersons = (data.persons ?? []).map(normalizeHistoricalPerson);
+  chinaPersonLifeEvents = (data.personLifeEvents ?? []).map(normalizePersonLifeEvent);
+  chinaPersonRelations = (data.personRelations ?? []).map(normalizePersonRelation);
+  chinaPersonById = new Map(chinaPersons.map((person) => [person.id, person]));
+}
+
+function normalizeSourceRecord(source: SourceRecord): SourceRecord {
+  return {
+    ...source,
+    author: source.author ?? "",
+    citationShort: source.citationShort ?? source.id,
+    note: source.note ?? "",
+  };
+}
+
+function normalizeSourceMention(mention: SourceMention): SourceMention {
+  return {
+    ...mention,
+    translation: mention.translation ?? null,
+    mentionedPersonIds: mention.mentionedPersonIds ?? [],
+    mentionedEventIds: mention.mentionedEventIds ?? [],
+    mentionedPlaceIds: mention.mentionedPlaceIds ?? [],
+    tags: mention.tags ?? [],
+    confidence: mention.confidence ?? "medium",
+    reviewStatus: mention.reviewStatus ?? "draft",
+  };
+}
+
+function applySourcesData(data: FrontendSourcesDb) {
+  chinaSources = (data.sources ?? []).map(normalizeSourceRecord);
+  chinaSourceMentions = (data.sourceMentions ?? []).map(normalizeSourceMention);
+  chinaSourceById = new Map(chinaSources.map((source) => [source.id, source]));
+  chinaSourceMentionById = new Map(chinaSourceMentions.map((mention) => [mention.id, mention]));
+}
+
+function applyRegionsData(data: FrontendRegionsDb) {
+  regions = data.regions?.length ? data.regions : emptyRegions;
+}
+
+function applyEventImportanceData(data: EventImportanceDataset) {
+  eventImportanceDataset = {
+    model: "event-importance",
+    defaultImportance: data.defaultImportance ?? "medium",
+    records: data.records ?? [],
+  };
+  eventImportanceById = new Map(eventImportanceDataset.records.map((record) => [record.eventId, record.importance]));
+}
+
+function applyPeriodOverviewData(data: FrontendPeriodOverviewDb) {
+  overviewYearMin = data.overviewYearMin ?? data.range?.[0] ?? -550;
+  overviewYearMax = data.overviewYearMax ?? data.range?.[1] ?? 1644;
+  overviewPeriods = data.periods ?? [];
+  overviewRegionCoordinates = data.regionCoordinates ?? {};
+  overviewPeriodRegionCoordinates = data.periodRegionCoordinates ?? {};
+  overviewRegionZoneSizes = data.regionZoneSizes ?? {};
 }
 
 function getConfidenceLabel(confidence: "high" | "medium" | "low" | undefined) {
@@ -1250,7 +1946,7 @@ function getRegionSummary(region: RegionInfo, regionEvents: HistoricalEvent[], y
     return `${year} 年背景：${era.summary}`;
   }
 
-  return `${year} 年：${yearEvents.map((event) => event.title).join("；")}。${era.summary}`;
+  return `${year} 年：${yearEvents.map((event) => event.title).join("、")}。${era.summary}`;
 }
 
 function WorldMap({
@@ -1258,6 +1954,7 @@ function WorldMap({
   hoveredRegion,
   onHover,
   onSelect,
+  onEnter,
   onClearSummary,
   year,
   viewBox = worldViewBox,
@@ -1266,6 +1963,7 @@ function WorldMap({
   hoveredRegion: Region | null;
   onHover: (region: Region | null) => void;
   onSelect: (region: Region) => void;
+  onEnter: (region: Region) => void;
   onClearSummary: () => void;
   year: number;
   viewBox?: string;
@@ -1288,7 +1986,7 @@ function WorldMap({
           })}
         </g>
 
-        {regions.map((region) => {
+        {regions.filter((region) => worldComparisonRegionOrder.includes(region.id)).map((region) => {
           const isActive = region.id === activeRegion;
           const isHovered = region.id === hoveredRegion;
           const era = getRegionEra(region, year);
@@ -1312,6 +2010,10 @@ function WorldMap({
                 onClick={(event) => {
                   event.stopPropagation();
                   onSelect(region.id);
+                }}
+                onDoubleClick={(event) => {
+                  event.stopPropagation();
+                  onEnter(region.id);
                 }}
                 tabIndex={0}
                 role="button"
@@ -1477,12 +2179,12 @@ function ChinaTerrain3DMap({ onClearSummary }: { onClearSummary: () => void }) {
 
   return (
     <div className="terrain-3d-frame" onClick={onClearSummary}>
-      <canvas ref={canvasRef} aria-label="中国区域 3D 地形图" />
+      <canvas ref={canvasRef} aria-label="中国区域 3D 地形" />
     </div>
   );
 }
 
-// Demo-matched linear projection: lon 89→0, 136→100; lat 55→0, 16→80
+// Demo-matched linear projection: lon 89?, 136?00; lat 55?, 16?0
 function cmdProject(lon: number, lat: number): [number, number] {
   return [((lon - 89) / (136 - 89)) * 100, ((55 - lat) / (55 - 16)) * 80];
 }
@@ -1538,6 +2240,10 @@ const PUZZLE_VIEWBOX = "0 0 100 80";
 
 function ChinaCommanderyPuzzleMap({
   activeBlockId,
+  blocks,
+  blockById,
+  controllerColorMap,
+  controlTimeline,
   hoveredBlockId,
   onSelectBlock,
   onHoverBlock,
@@ -1545,6 +2251,10 @@ function ChinaCommanderyPuzzleMap({
   year,
 }: {
   activeBlockId: string | null;
+  blocks: ChinaBlock[];
+  blockById: Map<string, ChinaBlock>;
+  controllerColorMap: Map<string, string>;
+  controlTimeline: ChinaControlTimeline;
   hoveredBlockId: string | null;
   onSelectBlock: (blockId: string) => void;
   onHoverBlock: (blockId: string | null) => void;
@@ -1559,7 +2269,7 @@ function ChinaCommanderyPuzzleMap({
   const pathCache = useMemo(() => {
     const cache = new Map<string, string>();
 
-    chinaBlocks.forEach((block) => {
+    blocks.forEach((block) => {
       let pathString = "";
 
       block.geometry.coordinates.forEach((ring) => {
@@ -1579,15 +2289,15 @@ function ChinaCommanderyPuzzleMap({
     });
 
     return cache;
-  }, []);
+  }, [blocks]);
 
   const blockEntries = useMemo(
     () =>
-      chinaBlocks.map((block) => ({
+      blocks.map((block) => ({
         block,
-        control: getChinaBlockControl(getChinaBlockControlId(block), year),
+        control: getChinaBlockControl(controlTimeline, getChinaBlockControlId(block), year),
       })),
-    [year],
+    [blocks, controlTimeline, year],
   );
 
   const labeledBlockIds = useMemo(() => {
@@ -1622,12 +2332,12 @@ function ChinaCommanderyPuzzleMap({
 
     blockEntries.forEach(({ control }) => {
       if (control?.controller && !controllerSet.has(control.controller)) {
-        controllerSet.set(control.controller, getChinaControllerColor(control.controller));
+        controllerSet.set(control.controller, getChinaControllerColor(controllerColorMap, control.controller));
       }
     });
 
     return Array.from(controllerSet.entries()).sort((left, right) => left[0].localeCompare(right[0], "zh-Hans-CN"));
-  }, [blockEntries]);
+  }, [blockEntries, controllerColorMap]);
 
   const handleWheel = useCallback((event: React.WheelEvent) => {
     event.preventDefault();
@@ -1671,8 +2381,8 @@ function ChinaCommanderyPuzzleMap({
     });
   }, []);
 
-  const tooltipBlock = tooltip ? (chinaBlockById.get(tooltip.blockId) ?? null) : null;
-  const tooltipControl = tooltipBlock ? getChinaBlockControl(getChinaBlockControlId(tooltipBlock), year) : null;
+  const tooltipBlock = tooltip ? (blockById.get(tooltip.blockId) ?? null) : null;
+  const tooltipControl = tooltipBlock ? getChinaBlockControl(controlTimeline, getChinaBlockControlId(tooltipBlock), year) : null;
 
   return (
     <div className="map-frame map-mode-commandery">
@@ -1714,7 +2424,7 @@ function ChinaCommanderyPuzzleMap({
             return null;
           }
 
-          const color = getChinaControllerColor(control?.controller);
+          const color = getChinaControllerColor(controllerColorMap, control?.controller);
           const isActive = activeBlockId === block.id;
           const isHovered = hoveredBlockId === block.id;
 
@@ -1775,6 +2485,9 @@ function ChinaCommanderyPuzzleMap({
 
 function ChinaRegionMap({
   activeBlockId,
+  blocks,
+  controllerColorMap,
+  controlTimeline,
   hoveredBlockId,
   mapMode,
   onSelectBlock,
@@ -1783,6 +2496,9 @@ function ChinaRegionMap({
   year,
 }: {
   activeBlockId: string | null;
+  blocks: ChinaBlock[];
+  controllerColorMap: Map<string, string>;
+  controlTimeline: ChinaControlTimeline;
   hoveredBlockId: string | null;
   mapMode: ChinaMapMode;
   onSelectBlock: (blockId: string) => void;
@@ -1790,9 +2506,10 @@ function ChinaRegionMap({
   onClearSummary: () => void;
   year: number;
 }) {
-  const blockEntries = chinaBlocks.map((block) => ({
+  const blockById = useMemo(() => new Map(blocks.map((block) => [block.id, block])), [blocks]);
+  const blockEntries = blocks.map((block) => ({
     block,
-    control: getChinaBlockControl(getChinaBlockControlId(block), year),
+    control: getChinaBlockControl(controlTimeline, getChinaBlockControlId(block), year),
   }));
 
   if (mapMode === "three-d") {
@@ -1803,6 +2520,10 @@ function ChinaRegionMap({
     return (
       <ChinaCommanderyPuzzleMap
         activeBlockId={activeBlockId}
+        blocks={blocks}
+        blockById={blockById}
+        controllerColorMap={controllerColorMap}
+        controlTimeline={controlTimeline}
         hoveredBlockId={hoveredBlockId}
         onSelectBlock={onSelectBlock}
         onHoverBlock={onHoverBlock}
@@ -1906,7 +2627,7 @@ function ChinaRegionMap({
                 return null;
               }
 
-              const color = getChinaControllerColor(control?.controller);
+              const color = getChinaControllerColor(controllerColorMap, control?.controller);
               const isActive = activeBlockId === block.id;
               const isHovered = hoveredBlockId === block.id;
               const status = control?.status ?? "frontier";
@@ -1985,6 +2706,21 @@ function ChinaRegionMap({
         )}
       </svg>
     </div>
+  );
+}
+
+function OverviewWorldMap() {
+  return (
+    <svg className="overview-base-map" viewBox={worldViewBox} role="img" aria-label="世界粗略底图">
+      {spherePath && <path className="sphere" d={spherePath} />}
+      {graticulePath && <path className="graticule" d={graticulePath} />}
+      <g>
+        {countries.map((country, index) => {
+          const d = path(country);
+          return d ? <path className="country" d={d} key={index} /> : null;
+        })}
+      </g>
+    </svg>
   );
 }
 
@@ -2132,8 +2868,9 @@ function RomanRegionMap({
 }
 
 function App() {
-  const [page, setPage] = useState<Page>("world");
+  const [page, setPage] = useState<Page>("home");
   const [year, setYear] = useState(220);
+  const [overviewYear, setOverviewYear] = useState(190);
   const [query, setQuery] = useState("");
   const [chinaMapMode, setChinaMapMode] = useState<ChinaMapMode>("commandery");
   const [selectedRegion, setSelectedRegion] = useState<Region>("china");
@@ -2146,15 +2883,54 @@ function App() {
   const [hoveredChinaBlockId, setHoveredChinaBlockId] = useState<string | null>(null);
   const [selectedPersonId, setSelectedPersonId] = useState<string | null>(null);
   const [personIndexFilter, setPersonIndexFilter] = useState<PersonIndexFilter>("all");
+  const [ageRegionFilter, setAgeRegionFilter] = useState<AgeRegionFilter>("all");
+  const [evidenceRegionFilter, setEvidenceRegionFilter] = useState<EvidenceRegionFilter>("all");
+  const [evidenceResults, setEvidenceResults] = useState<EvidenceSearchResult[]>([]);
+  const [evidenceStatus, setEvidenceStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [showMediumEvents, setShowMediumEvents] = useState(false);
+  const [events, setEvents] = useState<HistoricalEvent[]>([]);
+  const [eventsStatus, setEventsStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [peopleDataVersion, setPeopleDataVersion] = useState(0);
+  const [peopleDataStatus, setPeopleDataStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [sourceDataVersion, setSourceDataVersion] = useState(0);
+  const [sourceDataStatus, setSourceDataStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [regionsDataVersion, setRegionsDataVersion] = useState(0);
+  const [regionsDataStatus, setRegionsDataStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [eventImportanceVersion, setEventImportanceVersion] = useState(0);
+  const [eventImportanceStatus, setEventImportanceStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [overviewDataVersion, setOverviewDataVersion] = useState(0);
+  const [overviewDataStatus, setOverviewDataStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [runtimeChinaControlDb, setRuntimeChinaControlDb] = useState<FrontendChinaControlDb>(emptyChinaControlDb);
+  const [chinaControlDbStatus, setChinaControlDbStatus] = useState<"loading" | "ready" | "error">("loading");
   const [runtimeRomanControlDb, setRuntimeRomanControlDb] = useState<FrontendRomanControlDb>(emptyRomanControlDb);
   const [romanControlDbStatus, setRomanControlDbStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [coverageData, setCoverageData] = useState<FrontendCoverageDb | null>(null);
+  const [coverageDataStatus, setCoverageDataStatus] = useState<"loading" | "ready" | "error">("loading");
+  void eventImportanceStatus;
+  void regionsDataStatus;
+  void overviewDataVersion;
+  void overviewDataStatus;
+  void coverageDataStatus;
 
   const normalizedQuery = query.trim().toLowerCase();
+  const chinaBlocks = runtimeChinaControlDb.adminBlocks.blocks;
+  const chinaControlTimeline = runtimeChinaControlDb.controlTimeline;
+  const chinaBlockById = useMemo(() => new Map(chinaBlocks.map((block) => [block.id, block])), [chinaBlocks]);
+  const chinaControllerColorMap = useMemo(
+    () => new Map(chinaControlTimeline.controllers.map((controller) => [controller.id, controller.color])),
+    [chinaControlTimeline.controllers],
+  );
+  const activeOverviewPeriod = getOverviewPeriod(overviewYear);
+  const activeOverviewSnapshotYear =
+    activeOverviewPeriod.snapshotYears
+      .filter((snapshotYear) => snapshotYear >= overviewYearMin && snapshotYear <= overviewYearMax)
+      .sort((left, right) => Math.abs(left - overviewYear) - Math.abs(right - overviewYear))[0] ?? overviewYear;
+  const activeOverviewCoreRegions = activeOverviewPeriod.focusRegions.filter((region) => region.tier === "core");
+  const activeOverviewSupportRegions = activeOverviewPeriod.focusRegions.filter((region) => region.tier !== "core");
 
   const matchingEvents = useMemo(() => {
     return events.filter((event) => eventMatchesQuery(event, normalizedQuery));
-  }, [normalizedQuery]);
+  }, [events, normalizedQuery]);
 
   const visibleEvents = useMemo(() => {
     return matchingEvents.filter((event) => isActiveInYear(event, year) || isNearYear(event, year));
@@ -2197,7 +2973,7 @@ function App() {
       });
 
     return [...markers.values()].sort((left, right) => left.year - right.year || left.region.label.localeCompare(right.region.label, "zh-Hans-CN"));
-  }, [matchingEvents]);
+  }, [eventImportanceVersion, matchingEvents, regionsDataVersion]);
   const worldComparisonItems = worldComparisonRegionOrder
     .map((regionId) => regions.find((region) => region.id === regionId))
     .filter((region): region is RegionInfo => Boolean(region))
@@ -2251,14 +3027,16 @@ function App() {
     () =>
       chinaBlocks.map((block) => ({
         block,
-        control: getChinaBlockControl(getChinaBlockControlId(block), year),
+        control: getChinaBlockControl(chinaControlTimeline, getChinaBlockControlId(block), year),
       })),
-    [year],
+    [chinaBlocks, chinaControlTimeline, year],
   );
   const selectedChinaBlock = selectedChinaBlockId ? (chinaBlockById.get(selectedChinaBlockId) ?? null) : null;
   const hoveredChinaBlock = hoveredChinaBlockId ? (chinaBlockById.get(hoveredChinaBlockId) ?? null) : null;
-  const inspectedChinaBlock = hoveredChinaBlock ?? selectedChinaBlock;
-  const inspectedChinaControl = inspectedChinaBlock ? getChinaBlockControl(getChinaBlockControlId(inspectedChinaBlock), year) : null;
+  const inspectedChinaBlock = (hoveredChinaBlock ?? selectedChinaBlock)!;
+  const inspectedChinaControl = inspectedChinaBlock
+    ? getChinaBlockControl(chinaControlTimeline, getChinaBlockControlId(inspectedChinaBlock), year)
+    : null;
 
   const selectedRegionEvents = (
     page === "world"
@@ -2297,15 +3075,21 @@ function App() {
     filteredRegionEvents.find((event) => event.id === selectedId) ??
     filteredRegionEvents[0] ??
     events.find((event) => event.id === selectedId) ??
-    events[0];
+    events[0] ??
+    emptyHistoricalEvent;
   const selectedEventDetail = selectedEvent.detail ?? null;
 
   const relatedEvents = selectedEvent.relatedEvents
     .map((id) => events.find((event) => event.id === id))
     .filter((event): event is HistoricalEvent => Boolean(event));
   const selectedEventPersonIds = (selectedEvent.personIds ?? []).filter((id) => chinaPersonById.has(id));
+  const personIndexItems = useMemo(
+    () => [...chinaPersons.map(chinaPersonToPersonIndexItem), ...ageSupplementPeople.map(agePersonToPersonIndexItem)],
+    [peopleDataVersion],
+  );
   const selectedPerson = selectedPersonId ? (chinaPersonById.get(selectedPersonId) ?? null) : null;
-  const activeSelectedPersonId = selectedPerson?.id ?? null;
+  const selectedPersonIndexItem = selectedPersonId ? (personIndexItems.find((person) => person.id === selectedPersonId) ?? null) : null;
+  const activeSelectedPersonId = selectedPersonIndexItem?.id ?? selectedPerson?.id ?? null;
   const selectedPersonRelations = selectedPerson
     ? chinaPersonRelations.filter(
         (relation) => relation.sourcePersonId === selectedPerson.id || relation.targetPersonId === selectedPerson.id,
@@ -2321,11 +3105,15 @@ function App() {
         .filter((lifeEvent) => lifeEvent.personId === selectedPerson.id)
         .sort((left, right) => getLifeEventSortValue(left) - getLifeEventSortValue(right) || left.displayYear.localeCompare(right.displayYear))
     : [];
-  const selectedPersonSourceMentions = selectedPerson
-    ? chinaSourceMentions
-        .filter((mention) => mention.mentionedPersonIds.includes(selectedPerson.id))
-        .sort((left, right) => (left.year ?? 9999) - (right.year ?? 9999) || left.locator.localeCompare(right.locator, "zh-Hans-CN"))
-    : [];
+  const selectedPersonSourceMentions = useMemo(
+    () =>
+      selectedPerson
+        ? chinaSourceMentions
+            .filter((mention) => mention.mentionedPersonIds.includes(selectedPerson.id))
+            .sort((left, right) => (left.year ?? 9999) - (right.year ?? 9999) || left.locator.localeCompare(right.locator, "zh-Hans-CN"))
+        : [],
+    [selectedPerson, sourceDataVersion],
+  );
   const selectedPersonAnnualTimeline = selectedPerson ? getPersonAnnualTimeline(selectedPerson, selectedPersonLifeEvents) : [];
   const relationshipGraphNodes = selectedPerson
     ? selectedPersonRelations.slice(0, 6).map((relation, index, relations) => {
@@ -2347,7 +3135,7 @@ function App() {
     const counts = new Map<string, number>();
     chinaPersonLifeEvents.forEach((lifeEvent) => counts.set(lifeEvent.personId, (counts.get(lifeEvent.personId) ?? 0) + 1));
     return counts;
-  }, []);
+  }, [peopleDataVersion]);
   const personRelationCounts = useMemo(() => {
     const counts = new Map<string, number>();
     chinaPersonRelations.forEach((relation) => {
@@ -2355,22 +3143,37 @@ function App() {
       counts.set(relation.targetPersonId, (counts.get(relation.targetPersonId) ?? 0) + 1);
     });
     return counts;
-  }, []);
+  }, [peopleDataVersion]);
   const personEventCounts = useMemo(() => {
     const counts = new Map<string, number>();
     events.forEach((event) => {
       event.personIds?.forEach((personId) => counts.set(personId, (counts.get(personId) ?? 0) + 1));
     });
     return counts;
-  }, []);
+  }, [events]);
+  const personIndexEventCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    personIndexItems.forEach((person) => {
+      counts.set(
+        person.id,
+        events.filter(
+          (event) =>
+            event.personIds?.includes(person.id) ||
+            event.personIds?.includes(person.id.replace(/^china-/, "")) ||
+            event.people.includes(person.name),
+        ).length,
+      );
+    });
+    return counts;
+  }, [events, personIndexItems]);
   const personIndexCounts = Object.fromEntries(
     personIndexFilters.map((filter) => [
       filter.id,
-      chinaPersons.filter((person) => matchesPersonIndexFilter(person, filter.id)).length,
+      personIndexItems.filter((person) => matchesPersonIndexFilter(person, filter.id)).length,
     ]),
   ) as Record<PersonIndexFilter, number>;
   const visiblePersonIndex = useMemo(() => {
-    return chinaPersons
+    return personIndexItems
       .map((person) => ({
         person,
         rank: getPersonSearchRank(person, normalizedQuery),
@@ -2379,24 +3182,390 @@ function App() {
       .sort(
         (left, right) =>
           left.rank - right.rank ||
-          (personEventCounts.get(right.person.id) ?? 0) - (personEventCounts.get(left.person.id) ?? 0) ||
+          (personIndexEventCounts.get(right.person.id) ?? 0) - (personIndexEventCounts.get(left.person.id) ?? 0) ||
           left.person.name.localeCompare(right.person.name, "zh-Hans-CN"),
       )
       .map(({ person }) => person);
-  }, [normalizedQuery, personEventCounts, personIndexFilter]);
+  }, [normalizedQuery, personIndexEventCounts, personIndexFilter, personIndexItems]);
   const personSearchResults = useMemo(() => {
     if (!normalizedQuery) {
       return [];
     }
 
-    return chinaPersons
+    return personIndexItems
       .map((person) => ({ person, rank: getPersonSearchRank(person, normalizedQuery) }))
       .filter((item) => Number.isFinite(item.rank))
       .sort((left, right) => left.rank - right.rank || left.person.name.localeCompare(right.person.name, "zh-Hans-CN"))
       .map((item) => item.person)
       .slice(0, 8);
-  }, [normalizedQuery]);
+  }, [normalizedQuery, personIndexItems]);
+  const agePeople = useMemo(() => {
+    return [...chinaPersons.map(chinaPersonToAgePerson).filter((person): person is AgePerson => Boolean(person)), ...ageSupplementPeople];
+  }, [peopleDataVersion]);
+  const ageComparisonItems = useMemo(() => {
+    return agePeople
+      .map((person) => ({
+        person,
+        rank: agePersonSearchRank(person, normalizedQuery),
+        state: getAgePersonState(person, year),
+      }))
+      .filter(({ person, rank }) => {
+        const regionMatches = ageRegionFilter === "all" || person.region === ageRegionFilter;
+        return regionMatches && (!normalizedQuery || Number.isFinite(rank));
+      })
+      .sort(
+        (left, right) => {
+          if (normalizedQuery) {
+            return (
+              left.rank - right.rank ||
+              left.state.sortRank - right.state.sortRank ||
+              right.state.age - left.state.age ||
+              left.person.name.localeCompare(right.person.name, "zh-Hans-CN")
+            );
+          }
+
+          return (
+            left.state.sortRank - right.state.sortRank ||
+            right.state.age - left.state.age ||
+            left.person.name.localeCompare(right.person.name, "zh-Hans-CN")
+          );
+        },
+      );
+  }, [agePeople, ageRegionFilter, normalizedQuery, year]);
+  const ageRegionCounts = Object.fromEntries(
+    ageRegionFilters.map((filter) => [
+      filter.id,
+      agePeople.filter((person) => filter.id === "all" || person.region === filter.id).length,
+    ]),
+  ) as Record<AgeRegionFilter, number>;
+  const currentYearEvents = matchingEvents
+    .filter((event) => isPinnedToYear(event, year))
+    .sort(sortEventsByYearThenTitle);
+  const evidenceSearchTerm = page === "evidence" ? query.trim() : "";
+  const evidenceRegionCounts = Object.fromEntries(
+    (["all", ...worldComparisonRegionOrder] as EvidenceRegionFilter[]).map((filter) => [
+      filter,
+      filter === "all" ? evidenceResults.length : evidenceResults.filter((result) => result.regionId === filter).length,
+    ]),
+  ) as Record<EvidenceRegionFilter, number>;
+  const eventComparisonItems = worldComparisonRegionOrder
+    .map((regionId) => regions.find((region) => region.id === regionId))
+    .filter((region): region is RegionInfo => Boolean(region))
+    .map((region) => {
+      const regionEvents = matchingEvents.filter((event) => event.region === region.id);
+      const exactEvents = regionEvents
+        .filter((event) => isPinnedToYear(event, year) && shouldShowWorldEvent(event, showMediumEvents))
+        .sort(sortEventsByYearThenTitle);
+      const hiddenMediumEvents = showMediumEvents
+        ? []
+        : regionEvents.filter((event) => isPinnedToYear(event, year) && getEventImportance(event) === "medium").sort(sortEventsByYearThenTitle);
+      const nearbyEvents = regionEvents
+        .filter((event) => !isPinnedToYear(event, year) && Math.abs(event.startYear - year) <= 3 && shouldShowWorldEvent(event, showMediumEvents))
+        .sort((left, right) => Math.abs(left.startYear - year) - Math.abs(right.startYear - year) || sortEventsByYearThenTitle(left, right))
+        .slice(0, 3);
+
+      return {
+        region,
+        era: getRegionEra(region, year),
+        exactEvents,
+        hiddenMediumEvents,
+        nearbyEvents,
+        focusLifeEvents: region.id === "china" && exactEvents.length === 0 && hiddenMediumEvents.length === 0 ? getChinaFocusLifeEvents(year) : [],
+      };
+    });
+  const eventComparisonCount = eventComparisonItems.reduce((total, item) => total + item.exactEvents.length, 0);
   const selectedPersonIsInEvent = selectedPerson ? selectedEventPersonIds.includes(selectedPerson.id) : false;
+
+  useEffect(() => {
+    let cancelled = false;
+
+    setPeopleDataStatus("loading");
+    fetch("/api/frontend-people-index")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`People index API failed: ${response.status}`);
+        }
+
+        return response.json() as Promise<FrontendPeopleIndexDb>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+
+        applyPeopleIndexData(data);
+        setPeopleDataVersion((version) => version + 1);
+        setPeopleDataStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+
+        applyPeopleIndexData(emptyPeopleIndexDb);
+        setPeopleDataVersion((version) => version + 1);
+        setPeopleDataStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    setSourceDataStatus("loading");
+    fetch("/api/frontend-sources")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Sources API failed: ${response.status}`);
+        }
+
+        return response.json() as Promise<FrontendSourcesDb>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+
+        applySourcesData(data);
+        setSourceDataVersion((version) => version + 1);
+        setSourceDataStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+
+        applySourcesData(emptySourcesDb);
+        setSourceDataVersion((version) => version + 1);
+        setSourceDataStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    setRegionsDataStatus("loading");
+    fetch("/api/frontend-regions")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Regions API failed: ${response.status}`);
+        }
+
+        return response.json() as Promise<FrontendRegionsDb>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+
+        applyRegionsData(data);
+        setRegionsDataVersion((version) => version + 1);
+        setRegionsDataStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+
+        applyRegionsData({ regions: emptyRegions });
+        setRegionsDataVersion((version) => version + 1);
+        setRegionsDataStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    setEventImportanceStatus("loading");
+    fetch("/api/frontend-event-importance")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Event importance API failed: ${response.status}`);
+        }
+
+        return response.json() as Promise<EventImportanceDataset>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+
+        applyEventImportanceData(data);
+        setEventImportanceVersion((version) => version + 1);
+        setEventImportanceStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+
+        applyEventImportanceData({
+          model: "event-importance",
+          defaultImportance: "medium",
+          records: [],
+        });
+        setEventImportanceVersion((version) => version + 1);
+        setEventImportanceStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    setOverviewDataStatus("loading");
+    fetch("/api/frontend-period-overview")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Period overview API failed: ${response.status}`);
+        }
+
+        return response.json() as Promise<FrontendPeriodOverviewDb>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+
+        applyPeriodOverviewData(data);
+        setOverviewDataVersion((version) => version + 1);
+        setOverviewDataStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+
+        applyPeriodOverviewData({
+          schemaVersion: 1,
+          model: "period-overview",
+          range: [-550, 1644],
+          periods: [],
+        });
+        setOverviewDataVersion((version) => version + 1);
+        setOverviewDataStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    setEventsStatus("loading");
+    fetch("/api/frontend-events")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Events API failed: ${response.status}`);
+        }
+
+        return response.json() as Promise<{ events: HistoricalEvent[] }>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+
+        setEvents((data.events ?? []).map(normalizeHistoricalEvent));
+        setEventsStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+
+        setEvents([]);
+        setEventsStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    setCoverageDataStatus("loading");
+    fetch("/api/frontend-coverage-190-310")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Coverage API failed: ${response.status}`);
+        }
+
+        return response.json() as Promise<FrontendCoverageDb>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+
+        setCoverageData(data);
+        setCoverageDataStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+
+        setCoverageData(null);
+        setCoverageDataStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    setChinaControlDbStatus("loading");
+    fetch("/api/frontend-china-control")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`China control API failed: ${response.status}`);
+        }
+
+        return response.json() as Promise<FrontendChinaControlDb>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+
+        setRuntimeChinaControlDb(data);
+        setChinaControlDbStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+
+        setRuntimeChinaControlDb(emptyChinaControlDb);
+        setChinaControlDbStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -2433,6 +3602,51 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (page !== "evidence") {
+      return;
+    }
+
+    if (!evidenceSearchTerm) {
+      setEvidenceResults([]);
+      setEvidenceStatus("idle");
+      return;
+    }
+
+    const controller = new AbortController();
+    const params = new URLSearchParams({
+      q: evidenceSearchTerm,
+      limit: "36",
+    });
+    if (evidenceRegionFilter !== "all") {
+      params.set("region", evidenceRegionFilter);
+    }
+
+    setEvidenceStatus("loading");
+    fetch(`/api/search-documents?${params.toString()}`, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Evidence search failed: ${response.status}`);
+        }
+        return response.json() as Promise<{ results: EvidenceSearchResult[] }>;
+      })
+      .then((payload) => {
+        setEvidenceResults(payload.results ?? []);
+        setEvidenceStatus("ready");
+      })
+      .catch((error) => {
+        if (error.name === "AbortError") {
+          return;
+        }
+        setEvidenceResults([]);
+        setEvidenceStatus("error");
+      });
+
+    return () => {
+      controller.abort();
+    };
+  }, [evidenceRegionFilter, evidenceSearchTerm, page]);
+
+  useEffect(() => {
     setSelectedPersonId((current) =>
       current && selectedEventPersonIds.includes(current) ? current : (selectedEventPersonIds[0] ?? null),
     );
@@ -2465,7 +3679,19 @@ function App() {
     if (!chinaBlockById.has(selectedChinaBlockId)) {
       setSelectedChinaBlockId(null);
     }
-  }, [chinaMapMode, page, selectedChinaBlockId]);
+  }, [chinaBlockById, chinaMapMode, page, selectedChinaBlockId]);
+
+  function previewRegion(region: Region) {
+    setSelectedRegion(region);
+    setSummaryRegion(region);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+    const firstEvent = visibleEvents.find((event) => event.region === region);
+    if (firstEvent) {
+      setSelectedId(firstEvent.id);
+    }
+  }
 
   function selectRegion(region: Region) {
     if (region === "china") {
@@ -2513,6 +3739,29 @@ function App() {
     setHoveredChinaBlockId(null);
   }
 
+  function returnToHome() {
+    setPage("home");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+  }
+
+  function enterOverviewPeriod(period: OverviewPeriod, entryYear = period.detailEntryYear ?? getPeriodMidpoint(period)) {
+    setOverviewYear(Math.min(overviewYearMax, Math.max(overviewYearMin, entryYear)));
+    if (period.status !== "complete") {
+      return;
+    }
+
+    setYear(Math.min(yearMax, Math.max(yearMin, entryYear)));
+    setPage("world");
+    setSelectedRegion("china");
+    setSummaryRegion("china");
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+  }
+
   function openPeopleIndex() {
     setPage("people");
     setSelectedRegion("china");
@@ -2521,6 +3770,52 @@ function App() {
     setSelectedChinaBlockId(null);
     setHoveredChinaBlockId(null);
     setSelectedPersonId((current) => current ?? "cao-cao");
+  }
+
+  function openAgeComparison() {
+    setPage("age");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+  }
+
+  function openEvidencePanel() {
+    setPage("evidence");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+  }
+
+  function openEvidenceSearch(term: string, region?: EvidenceRegionFilter) {
+    setQuery(term);
+    if (region) {
+      setEvidenceRegionFilter(region);
+    }
+    openEvidencePanel();
+  }
+
+  function openEventEvidence(event: HistoricalEvent) {
+    openEvidenceSearch(event.title, event.region);
+  }
+
+  function openEventComparison() {
+    setPage("compare");
+    setQuery("");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+  }
+
+  function openCoveragePanel() {
+    setPage("coverage");
+    setQuery("");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
   }
 
   function changeChinaMapMode(mode: ChinaMapMode) {
@@ -2548,25 +3843,50 @@ function App() {
 
   function selectPerson(personId: string) {
     setSelectedPersonId(personId);
+    const indexPerson = personIndexItems.find((person) => person.id === personId);
+    if (indexPerson?.source === "age-supplement") {
+      setAgeRegionFilter(indexPerson.region);
+      setQuery(indexPerson.name);
+      setPage("age");
+    }
   }
 
   return (
-    <main className="app-shell">
+    <main className={`app-shell ${page === "home" || page === "evidence" || page === "compare" || page === "coverage" ? "wide-shell" : ""}`}>
       <section className="map-workspace">
         <header className="topbar">
           <div>
             <p className="kicker">ChronoAtlas</p>
             <h1>
-              {page === "people"
-                ? "人物索引：三国人物关系与生平"
+              {page === "home"
+                ? "世界历史总览：前 550 至 1644"
+                : page === "people"
+                ? "人物索引：跨区域人物与生平"
+                : page === "age"
+                  ? "年龄对比：同年人物年龄"
+                : page === "evidence"
+                  ? "史料证据：原文、译文与出处"
+                : page === "compare"
+                  ? "事件对比：中国、罗马与萨珊"
+                : page === "coverage"
+                  ? "190-310 覆盖度检查"
                 : page === "china"
                   ? "中国区域：三国格局"
                   : page === "rome"
-                    ? "罗马省份控制：190-310 CE"
-                  : "四大区域同年对照"}
+                    ? "罗马省份控制 190-310 CE"
+                  : "中国、罗马与萨珊同年对照"}
             </h1>
           </div>
           <div className="topbar-actions">
+            <button
+              className={`topbar-action ${page === "home" ? "active" : ""}`}
+              type="button"
+              aria-pressed={page === "home"}
+              onClick={returnToHome}
+            >
+              <Compass size={17} aria-hidden="true" />
+              <span>时期总览</span>
+            </button>
             <button
               className={`topbar-action ${page === "people" ? "active" : ""}`}
               type="button"
@@ -2576,14 +3896,58 @@ function App() {
               <UsersRound size={17} aria-hidden="true" />
               <span>人物索引</span>
             </button>
-            <label className="search-box">
-              <Search size={18} aria-hidden="true" />
-              <input
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder={page === "people" ? "搜索人物、字号、势力" : "搜索人物、政权、事件"}
-              />
-            </label>
+            <button
+              className={`topbar-action ${page === "age" ? "active" : ""}`}
+              type="button"
+              aria-pressed={page === "age"}
+              onClick={openAgeComparison}
+            >
+              <CalendarDays size={17} aria-hidden="true" />
+              <span>年龄对比</span>
+            </button>
+            <button
+              className={`topbar-action ${page === "evidence" ? "active" : ""}`}
+              type="button"
+              aria-pressed={page === "evidence"}
+              onClick={openEvidencePanel}
+            >
+              <BookOpen size={17} aria-hidden="true" />
+              <span>史料证据</span>
+            </button>
+            <button
+              className={`topbar-action ${page === "compare" ? "active" : ""}`}
+              type="button"
+              aria-pressed={page === "compare"}
+              onClick={openEventComparison}
+            >
+              <CircleDot size={17} aria-hidden="true" />
+              <span>事件对比</span>
+            </button>
+            <button
+              className={`topbar-action ${page === "coverage" ? "active" : ""}`}
+              type="button"
+              aria-pressed={page === "coverage"}
+              onClick={openCoveragePanel}
+            >
+              <Grid3x3 size={17} aria-hidden="true" />
+              <span>覆盖度</span>
+            </button>
+            {page !== "home" && page !== "coverage" && (
+              <label className="search-box">
+                <Search size={18} aria-hidden="true" />
+                <input
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  placeholder={
+                    page === "people" || page === "age"
+                      ? "搜索人物、字号、势力"
+                      : page === "evidence"
+                        ? "搜索原文、人物、事件、出处"
+                        : "搜索人物、政权、事件"
+                  }
+                />
+              </label>
+            )}
           </div>
         </header>
 
@@ -2622,7 +3986,58 @@ function App() {
               <MapPinned size={18} />
               中国地图
             </button>
-            <span>{visiblePersonIndex.length}/{chinaPersons.length} 个人物</span>
+            <span>{visiblePersonIndex.length}/{personIndexItems.length} 个人物</span>
+          </div>
+        )}
+
+        {page === "age" && (
+          <div className="region-toolbar">
+            <button className="back-button" type="button" onClick={returnToWorld}>
+              <ArrowLeft size={18} />
+              世界总览
+            </button>
+            <button className="back-button" type="button" onClick={openPeopleIndex}>
+              <UsersRound size={18} />
+              人物索引
+            </button>
+            <span>{ageComparisonItems.length}/{agePeople.length} 个可计算年龄人物 · {year} 年</span>
+          </div>
+        )}
+
+        {page === "evidence" && (
+          <div className="region-toolbar">
+            <button className="back-button" type="button" onClick={returnToWorld}>
+              <ArrowLeft size={18} />
+              世界总览
+            </button>
+            <button className="back-button" type="button" onClick={openPeopleIndex}>
+              <UsersRound size={18} />
+              人物索引
+            </button>
+            <span>
+              {evidenceSearchTerm
+                ? `${evidenceResults.length} 条史料片段`
+                : "输入关键词检索原文、译文、出处"}
+            </span>
+          </div>
+        )}
+
+        {page === "compare" && (
+          <div className="region-toolbar">
+            <button className="back-button" type="button" onClick={returnToWorld}>
+              <ArrowLeft size={18} />
+              世界总览
+            </button>
+            <button
+              className={`back-button ${showMediumEvents ? "active" : ""}`}
+              type="button"
+              aria-pressed={showMediumEvents}
+              onClick={() => setShowMediumEvents((current) => !current)}
+            >
+              <Layers size={18} />
+              中型事件 {showMediumEvents ? "开" : "关"}
+            </button>
+            <span>{year} 年 · {eventComparisonCount} 条对比事件</span>
           </div>
         )}
 
@@ -2642,12 +4057,555 @@ function App() {
           </div>
         )}
 
-        {page === "people" ? (
+        {page === "home" ? (
+          <section className="overview-stage" aria-label="世界历史总览">
+            <div className="overview-map-panel">
+              <div className="overview-map-header">
+                <div>
+                  <p className="kicker">Global Timeline</p>
+                  <h2>{formatHistoricalYearWithEra(overviewYear)}</h2>
+                  <span>{activeOverviewPeriod.title}</span>
+                </div>
+                <button
+                  className={`back-button ${activeOverviewPeriod.status === "complete" ? "active" : ""}`}
+                  type="button"
+                  onClick={() => enterOverviewPeriod(activeOverviewPeriod, overviewYear)}
+                >
+                  <MapPinned size={18} />
+                  {activeOverviewPeriod.status === "complete" ? "进入详细时期" : "查看规划"}
+                </button>
+              </div>
+
+              <div className="overview-world-canvas" aria-label="粗略世界格局">
+                <OverviewWorldMap />
+                {activeOverviewCoreRegions.map((region) => (
+                  <span
+                    className="overview-region-zone"
+                    key={`${activeOverviewPeriod.id}-${region.id}-zone`}
+                    style={getOverviewRegionZoneStyle(activeOverviewPeriod, region)}
+                    aria-hidden="true"
+                  />
+                ))}
+                {activeOverviewCoreRegions.map((region, index) => (
+                  <button
+                    className="overview-map-pin"
+                    key={`${activeOverviewPeriod.id}-${region.id}`}
+                    style={
+                      {
+                        "--period-color": activeOverviewPeriod.color,
+                        ...getOverviewRegionPosition(activeOverviewPeriod, region),
+                      } as React.CSSProperties
+                    }
+                    type="button"
+                    title={region.summary}
+                    onClick={() => setOverviewYear(activeOverviewSnapshotYear)}
+                    onDoubleClick={() => enterOverviewPeriod(activeOverviewPeriod, overviewYear)}
+                  >
+                    <span>{index + 1}</span>
+                    <strong aria-hidden="true">{region.label}</strong>
+                  </button>
+                ))}
+                {activeOverviewSupportRegions.map((region, index) => (
+                  <button
+                    className="overview-map-pin secondary"
+                    key={`${activeOverviewPeriod.id}-${region.id}`}
+                    style={
+                      {
+                        "--period-color": activeOverviewPeriod.color,
+                        ...getOverviewRegionPosition(activeOverviewPeriod, region),
+                      } as React.CSSProperties
+                    }
+                    type="button"
+                    title={region.summary}
+                    onClick={() => setOverviewYear(activeOverviewSnapshotYear)}
+                    onDoubleClick={() => enterOverviewPeriod(activeOverviewPeriod, overviewYear)}
+                  >
+                    <span>{index + activeOverviewCoreRegions.length + 1}</span>
+                    <strong aria-hidden="true">{region.label}</strong>
+                  </button>
+                ))}
+              </div>
+
+              <div className="overview-slider-card">
+                <div className="overview-year-readout">
+                  <CalendarDays size={19} aria-hidden="true" />
+                  <strong>{formatHistoricalYearWithEra(overviewYear)}</strong>
+                  <span>最近快照：{formatHistoricalYearWithEra(activeOverviewSnapshotYear)}</span>
+                </div>
+                <div className="overview-period-track" aria-hidden="true">
+                  {overviewPeriods
+                    .filter((period) => period.endYear >= overviewYearMin && period.startYear <= overviewYearMax)
+                    .map((period) => {
+                      const start = Math.max(period.startYear, overviewYearMin);
+                      const end = Math.min(period.endYear, overviewYearMax);
+                      const left = getOverviewYearPercent(start);
+                      const width = Math.max(0.4, getOverviewYearPercent(end) - left);
+                      return (
+                        <button
+                          className={`overview-period-band ${period.id === activeOverviewPeriod.id ? "selected" : ""} ${period.status}`}
+                          key={period.id}
+                          style={{ left: `${left}%`, width: `${width}%`, "--period-color": period.color } as React.CSSProperties}
+                          type="button"
+                          title={`${period.title} · ${formatHistoricalYear(start)}-${formatHistoricalYear(end)}`}
+                          onClick={() => setOverviewYear(getPeriodMidpoint(period))}
+                          onDoubleClick={() => enterOverviewPeriod(period, getPeriodMidpoint(period))}
+                        >
+                          <span>{period.id === activeOverviewPeriod.id ? getOverviewPeriodShortLabel(period) : ""}</span>
+                        </button>
+                      );
+                    })}
+                  <span className="overview-current-year" style={{ left: `${getOverviewYearPercent(overviewYear)}%` }} />
+                </div>
+                <input
+                  aria-label="选择总览年份"
+                  className="overview-range"
+                  type="range"
+                  min={overviewYearMin}
+                  max={overviewYearMax}
+                  step={1}
+                  value={overviewYear}
+                  onInput={(event) => setOverviewYear(Number(event.currentTarget.value))}
+                  onChange={(event) => setOverviewYear(Number(event.target.value))}
+                />
+                <div className="overview-range-labels">
+                  <span>前 550</span>
+                  <span>?221</span>
+                  <span>190</span>
+                  <span>750</span>
+                  <span>1206</span>
+                  <span>1644</span>
+                </div>
+              </div>
+            </div>
+
+            <aside className="overview-side-panel">
+              <div className="overview-period-card" style={{ "--period-color": activeOverviewPeriod.color } as React.CSSProperties}>
+                <span>{getPeriodStatusLabel(activeOverviewPeriod.status)}</span>
+                <h3>{activeOverviewPeriod.title}</h3>
+                <p>{activeOverviewPeriod.summary}</p>
+                <div className="overview-period-meta">
+                  <strong>{formatHistoricalYear(activeOverviewPeriod.startYear)}-{formatHistoricalYear(activeOverviewPeriod.endYear)}</strong>
+                  <small>{activeOverviewPeriod.focusRegions.filter((region) => region.tier === "core").map((region) => region.label).join(" / ")}</small>
+                </div>
+              </div>
+
+              <div className="overview-snapshot-list">
+                <span>快照年份</span>
+                <div>
+                  {activeOverviewPeriod.snapshotYears
+                    .filter((snapshotYear) => snapshotYear >= overviewYearMin && snapshotYear <= overviewYearMax)
+                    .map((snapshotYear) => (
+                      <button
+                        className={snapshotYear === activeOverviewSnapshotYear ? "selected" : ""}
+                        key={`${activeOverviewPeriod.id}-${snapshotYear}`}
+                        type="button"
+                        onClick={() => setOverviewYear(snapshotYear)}
+                        onDoubleClick={() => enterOverviewPeriod(activeOverviewPeriod, snapshotYear)}
+                      >
+                        {formatHistoricalYear(snapshotYear)}
+                      </button>
+                    ))}
+                </div>
+              </div>
+
+              <div className="overview-context-list">
+                <span>背景小框</span>
+                {activeOverviewPeriod.context.map((contextItem) => (
+                  <p key={`${activeOverviewPeriod.id}-${contextItem}`}>{contextItem}</p>
+                ))}
+              </div>
+            </aside>
+          </section>
+        ) : page === "coverage" ? (
+          <section className="coverage-stage" aria-label="190-310 覆盖度检查">
+            <div className="coverage-summary">
+              <div>
+                <p className="kicker">190-310 范例检查</p>
+                <h2>中国、罗马、萨珊覆盖度</h2>
+                <p>从 SQLite/API 统计事件、人物实体、证据卡和缺口；用于判断 190-310 是否达到后续时期的范例标准。</p>
+              </div>
+              <div className="age-index-metrics">
+                <div>
+                  <span>区域</span>
+                  <strong>{coverageData?.regions.length ?? 0}</strong>
+                </div>
+                <div>
+                  <span>时期</span>
+                  <strong>190-310</strong>
+                </div>
+                <div>
+                  <span>状态</span>
+                  <strong>{coverageDataStatus === "ready" ? "ready" : coverageDataStatus}</strong>
+                </div>
+              </div>
+            </div>
+
+            {coverageDataStatus === "loading" ? (
+              <div className="empty-state">正在读取覆盖度数据...</div>
+            ) : coverageDataStatus === "error" || !coverageData ? (
+              <div className="empty-state">覆盖度 API 暂时不可用。</div>
+            ) : (
+              <div className="coverage-grid">
+                {coverageData.regions.map((region) => {
+                  const metrics = region.metrics;
+                  const eventEvidencePercent = metrics.events ? Math.round((metrics.eventsWithEvidence / metrics.events) * 100) : 0;
+                  const evidenceSourcePercent = metrics.evidenceDocuments ? Math.round((metrics.evidenceWithSource / metrics.evidenceDocuments) * 100) : 0;
+                  return (
+                    <article className="coverage-card" key={region.id}>
+                      <header>
+                        <div>
+                          <span>{region.expectedPeriodIds.join(" / ")}</span>
+                          <h3>{region.label}</h3>
+                        </div>
+                        <strong>{region.gaps.length ? `${region.gaps.length} gaps` : "ok"}</strong>
+                      </header>
+
+                      <div className="coverage-metrics">
+                        <EvidenceField label="事件" value={`${metrics.events} / ${region.minimums.events}`} />
+                        <EvidenceField label="事件证据" value={`${metrics.eventsWithEvidence}/${metrics.events} (${eventEvidencePercent}%)`} />
+                        <EvidenceField label="人物实体" value={`${metrics.peopleEntities} / ${region.minimums.entities}`} />
+                        <EvidenceField label="已证据化人物" value={metrics.peopleWithEvidence} />
+                        <EvidenceField label="参与者姓名" value={metrics.participantNames} />
+                        <EvidenceField label="证据卡" value={`${metrics.evidenceDocuments} / ${region.minimums.evidence}`} />
+                        <EvidenceField label="source/locator" value={`${metrics.evidenceWithSource}/${metrics.evidenceDocuments} (${evidenceSourcePercent}%)`} />
+                        <EvidenceField label="缺原文" value={metrics.evidenceMissingOriginal} />
+                        <EvidenceField label="period 错位" value={metrics.periodMismatch} />
+                      </div>
+
+                      <div className="coverage-gap-list">
+                        <span>缺口</span>
+                        {region.gaps.length ? (
+                          region.gaps.map((gap) => <p key={`${region.id}-${gap}`}>{gap}</p>)
+                        ) : (
+                          <p>当前基础覆盖达标。</p>
+                        )}
+                      </div>
+
+                      <div className="coverage-examples">
+                        <div>
+                          <span>无事件证据</span>
+                          {region.missingEvidenceEvents.length ? (
+                            region.missingEvidenceEvents.map((event) => (
+                              <button key={event.id} type="button" onClick={() => openEvidenceSearch(event.title, region.id)}>
+                                {event.year ?? "?"} · {event.title}
+                              </button>
+                            ))
+                          ) : (
+                            <small>无</small>
+                          )}
+                        </div>
+                        <div>
+                          <span>缺原文示例</span>
+                          {region.missingOriginalExamples.length ? (
+                            region.missingOriginalExamples.map((item) => (
+                              <button key={item.id} type="button" onClick={() => openEvidenceSearch(item.title, region.id)}>
+                                {item.year ?? "?"} · {item.title}
+                              </button>
+                            ))
+                          ) : (
+                            <small>无</small>
+                          )}
+                        </div>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            )}
+          </section>
+        ) : page === "evidence" ? (
+          <section className="evidence-stage" aria-label="史料证据">
+            <div className="evidence-summary">
+              <div>
+                <p className="kicker">史料证据</p>
+                <h2>{evidenceSearchTerm ? `检索：${evidenceSearchTerm}` : "检索原文、译文与出处"}</h2>
+                <p>结果来自 SQLite / RAG 文档层，优先展示已经导入的正史原文、释义、人物与出处。</p>
+              </div>
+              <div className="evidence-quick-searches" aria-label="常用检索">
+                <button type="button" onClick={() => openEventEvidence(selectedEvent)}>
+                  当前事件：{selectedEvent.title}
+                </button>
+                {selectedPersonIndexItem && (
+                  <button type="button" onClick={() => openEvidenceSearch(selectedPersonIndexItem.name, selectedPersonIndexItem.region === "all" ? "all" : selectedPersonIndexItem.region)}>
+                    当前人物：{selectedPersonIndexItem.name}
+                  </button>
+                )}
+                {["高平陵", "关羽斩颜良", "陆抗病重上疏", "赤壁", "沙普尔", "瓦勒良", "Paikuli"].map((term) => (
+                  <button key={term} type="button" onClick={() => setQuery(term)}>
+                    {term}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="person-filter-bar" role="group" aria-label="史料区域筛选">
+              {(["all", ...worldComparisonRegionOrder] as EvidenceRegionFilter[]).map((filter) => {
+                const region = filter === "all" ? null : regions.find((item) => item.id === filter);
+                return (
+                  <button
+                    className={`person-filter-button ${evidenceRegionFilter === filter ? "selected" : ""}`}
+                    key={filter}
+                    type="button"
+                    aria-pressed={evidenceRegionFilter === filter}
+                    onClick={() => setEvidenceRegionFilter(filter)}
+                  >
+                    <span>{region?.label ?? "全部"}</span>
+                    <small>{evidenceRegionCounts[filter] ?? 0}</small>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="evidence-results">
+              {evidenceStatus === "idle" ? (
+                <div className="empty-state">输入关键词，或点上面的常用检索。</div>
+              ) : evidenceStatus === "loading" ? (
+                <div className="empty-state">正在检索史料...</div>
+              ) : evidenceStatus === "error" ? (
+                <div className="empty-state">史料 API 暂时不可用。</div>
+              ) : evidenceResults.length ? (
+                evidenceResults.map((result) => {
+                  const region = regions.find((item) => item.id === result.regionId);
+                  const relatedPeople = [
+                    ...(result.peopleCore ?? []),
+                    ...(result.peopleMentioned ?? []),
+                    ...result.entities
+                      .filter((entity) => entity.entityType === "person")
+                      .map((entity) => entity.label),
+                  ];
+                  return (
+                    <article className="evidence-card" key={result.id}>
+                      <div className="evidence-card-heading">
+                        <div>
+                          <span>{region?.label ?? result.regionId ?? "未分区"} · {result.timeStart ?? "年代未详"}</span>
+                          <h3>{result.title}</h3>
+                        </div>
+                        <strong>{result.topicId ?? "source"}</strong>
+                      </div>
+                      <p>{result.snippet}</p>
+                      <div className="evidence-card-standard">
+                        <EvidenceField label="source_id" value={result.sourceId ?? "未绑定"} />
+                        <EvidenceField label="出处" value={[result.sourceTitle, result.locator].filter(Boolean).join(" · ")} />
+                        <EvidenceField label="年份" value={result.timeStart ?? "未定年"} />
+                        <EvidenceField label="人物" value={<CompactEvidenceList values={[...new Set(relatedPeople)]} />} />
+                        <EvidenceField label="事件" value={result.eventLabel ?? result.macroEvent ?? result.subjectId} />
+                        <EvidenceField label="地点" value={<CompactEvidenceList values={result.places} />} />
+                        <EvidenceField label="可信度" value={result.confidence ? getConfidenceLabel(result.confidence) : "未标注"} />
+                        <EvidenceField label="争议" value={result.disputeNote ?? "未标注"} />
+                      </div>
+                      {(result.quote || result.translation) && (
+                        <details className="evidence-source-detail">
+                          <summary>原文 / 译文</summary>
+                          {result.quote && <blockquote>{result.quote}</blockquote>}
+                          {result.translation && <p>{result.translation}</p>}
+                        </details>
+                      )}
+                      <div className="evidence-card-meta">
+                        <span>{result.searchDocumentId}</span>
+                        <span>{result.tokenEstimate} tokens</span>
+                        <span>{result.reviewStatus}</span>
+                        {result.subjectTable === "events" && events.some((event) => event.id === result.subjectId) && (
+                          <button
+                            className="evidence-meta-action"
+                            type="button"
+                            onClick={() => {
+                              const event = events.find((item) => item.id === result.subjectId);
+                              if (event) {
+                                selectHistoricalEvent(event);
+                              }
+                            }}
+                          >
+                            打开事件
+                          </button>
+                        )}
+                      </div>
+                    </article>
+                  );
+                })
+              ) : (
+                <div className="empty-state">没有匹配史料，换一个人物、事件或出处关键词试试。</div>
+              )}
+            </div>
+          </section>
+        ) : page === "compare" ? (
+          <section className="event-compare-stage" aria-label="事件对比">
+            <div className="event-compare-summary">
+              <div>
+                <p className="kicker">事件对比</p>
+                <h2>{year} 年三方对照</h2>
+                <p>只放中国、罗马与萨珊的同年锚点和邻近大事。打开中型事件时会补充更多细节，但不会把页面塞成完整年表。</p>
+              </div>
+              <div className="age-index-metrics">
+                <div>
+                  <span>同年事件</span>
+                  <strong>{eventComparisonCount}</strong>
+                </div>
+                <div>
+                  <span>当前年份</span>
+                  <strong>{year}</strong>
+                </div>
+                <div>
+                  <span>显示范围</span>
+                  <strong>{showMediumEvents ? "中型" : "大型"}</strong>
+                </div>
+              </div>
+            </div>
+
+            <div className="event-compare-grid">
+              {eventComparisonItems.map((item) => (
+                <article
+                  className="event-compare-column"
+                  key={item.region.id}
+                  style={{ "--accent": item.region.accent } as React.CSSProperties}
+                >
+                  <header>
+                    <span>{item.region.label}</span>
+                    <strong>{item.era.title}</strong>
+                  </header>
+                  <p className="event-compare-era">{item.era.summary}</p>
+
+                  <div className="event-compare-list">
+                    {item.exactEvents.length ? (
+                      item.exactEvents.slice(0, 5).map((event) => (
+                        <article className="event-compare-item" key={event.id}>
+                          <button className="event-compare-main" type="button" onClick={() => selectHistoricalEvent(event)}>
+                            <strong>{event.title}</strong>
+                            <span>{formatYearRange(event)} · {eventImportanceLabels[getEventImportance(event)]} · {categoryLabels[event.category]}</span>
+                            <small>{event.summary}</small>
+                          </button>
+                          <button className="event-card-link" type="button" onClick={() => openEventEvidence(event)}>
+                            史料
+                          </button>
+                        </article>
+                      ))
+                    ) : item.hiddenMediumEvents.length ? (
+                      <div className="event-compare-empty">
+                        <strong>有中型事件</strong>
+                        <span>打开“中型事件”查看 {item.hiddenMediumEvents.length} 条。</span>
+                      </div>
+                    ) : item.focusLifeEvents.length ? (
+                      item.focusLifeEvents.map(({ inferred, lifeEvent, person }) => (
+                        <div className="event-compare-empty" key={lifeEvent.id}>
+                          <strong>{person.name}：{lifeEvent.title}</strong>
+                          <span>{inferred ? "延续上一阶段：" : ""}{lifeEvent.summary}</span>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="event-compare-empty">
+                        <strong>无同年锚点</strong>
+                        <span>可参考邻近年份事件。</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {item.nearbyEvents.length > 0 && (
+                    <footer>
+                      <span>邻近年份</span>
+                      {item.nearbyEvents.map((event) => (
+                        <button key={event.id} type="button" onClick={() => selectHistoricalEvent(event)}>
+                          {event.startYear} · {event.title}
+                        </button>
+                      ))}
+                    </footer>
+                  )}
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : page === "age" ? (
+          <section className="age-comparison-stage" aria-label="年龄对比">
+            <div className="age-comparison-summary">
+              <div>
+                <p className="kicker">年龄对比</p>
+                <h2>{year} 年人物年龄</h2>
+                <p>按公元年份减出生年估算周岁；未按具体生日和虚岁修正。</p>
+              </div>
+              <div className="age-index-metrics">
+                <div>
+                  <span>当前结果</span>
+                  <strong>{ageComparisonItems.length}</strong>
+                </div>
+                <div>
+                  <span>仍在世</span>
+                  <strong>{ageComparisonItems.filter((item) => item.state.category === "alive").length}</strong>
+                </div>
+                <div>
+                  <span>当年事件</span>
+                  <strong>{currentYearEvents.length}</strong>
+                </div>
+              </div>
+            </div>
+
+            <div className="person-filter-bar" role="group" aria-label="年龄对比范围">
+              {ageRegionFilters.map((filter) => (
+                <button
+                  className={`person-filter-button ${ageRegionFilter === filter.id ? "selected" : ""}`}
+                  key={filter.id}
+                  type="button"
+                  aria-pressed={ageRegionFilter === filter.id}
+                  onClick={() => setAgeRegionFilter(filter.id)}
+                >
+                  <span>{filter.label}</span>
+                  <small>{ageRegionCounts[filter.id]}</small>
+                </button>
+              ))}
+            </div>
+
+            <div className="age-event-strip" aria-label={`${year} 年事件锚点`}>
+              {currentYearEvents.length ? (
+                currentYearEvents.slice(0, 8).map((event) => (
+                  <button
+                    className="age-event-chip"
+                    key={event.id}
+                    type="button"
+                    onClick={() => {
+                      setYear(event.startYear);
+                      setSelectedId(event.id);
+                    }}
+                  >
+                    <strong>{event.title}</strong>
+                    <span>{event.startYear} 年 · {regions.find((region) => region.id === event.region)?.label ?? event.region}</span>
+                  </button>
+                ))
+              ) : (
+                <span className="age-event-empty">本年没有已标注的大事；拖动时间条或搜索人物继续对比。</span>
+              )}
+            </div>
+
+            <div className="age-card-grid">
+              {ageComparisonItems.length ? (
+                ageComparisonItems.map(({ person, state }) => (
+                  <article className={`age-card age-card-${state.category}`} key={person.id}>
+                    <div className="age-card-heading">
+                      <div>
+                        <strong>{person.name}</strong>
+                        <span>{getAgeRegionLabel(person.region)} · {person.polity}</span>
+                      </div>
+                      <em>{state.label}</em>
+                    </div>
+                    <div className="age-card-years">
+                      <span>生年 {person.birthYear}</span>
+                      <span>{person.deathYear ? `卒年 ${person.deathYear}` : "卒年未详"}</span>
+                    </div>
+                    <p>{person.summary}</p>
+                    <div className="age-card-tags">
+                      {person.roles.slice(0, 3).map((role) => (
+                        <span key={`${person.id}-${role}`}>{role}</span>
+                      ))}
+                    </div>
+                  </article>
+                ))
+              ) : (
+                <div className="empty-state">暂无匹配人物</div>
+              )}
+            </div>
+          </section>
+        ) : page === "people" ? (
           <section className="person-index-stage" aria-label="人物索引">
             <div className="person-index-summary">
               <div>
-                <p className="kicker">人物资料库</p>
-                <h2>三国人物索引</h2>
+                <p className="kicker">人物资料</p>
+                <h2>人物索引</h2>
               </div>
               <div className="person-index-metrics">
                 <div>
@@ -2656,11 +4614,11 @@ function App() {
                 </div>
                 <div>
                   <span>资料人物</span>
-                  <strong>{chinaPersons.length}</strong>
+                  <strong>{personIndexItems.length}</strong>
                 </div>
                 <div>
-                  <span>关系记录</span>
-                  <strong>{chinaPersonRelations.length}</strong>
+                  <span>跨区人物</span>
+                  <strong>{personIndexItems.filter((person) => person.region !== "china").length}</strong>
                 </div>
               </div>
             </div>
@@ -2695,12 +4653,12 @@ function App() {
                       {person.courtesyName && <small>字{person.courtesyName}</small>}
                     </span>
                     <span className="person-index-life">{person.life ?? "生卒未详"}</span>
-                    <span className="person-index-polity">{person.primaryPolity}</span>
+                    <span className="person-index-polity">{getAgeRegionLabel(person.region)} · {person.primaryPolity}</span>
                     <span className="person-index-summary-text">{person.summary}</span>
                     <span className="person-index-card-stats">
-                      <span>{personLifeEventCounts.get(person.id) ?? 0} 生平</span>
-                      <span>{personRelationCounts.get(person.id) ?? 0} 关系</span>
-                      <span>{personEventCounts.get(person.id) ?? 0} 事件</span>
+                      <span>{person.source === "china-person-index" ? `${personLifeEventCounts.get(person.id) ?? 0} 生平` : "可算年龄"}</span>
+                      <span>{person.source === "china-person-index" ? `${personRelationCounts.get(person.id) ?? 0} 关系` : getAgeRegionLabel(person.region)}</span>
+                      <span>{personIndexEventCounts.get(person.id) ?? 0} 事件</span>
                     </span>
                   </button>
                 ))
@@ -2710,13 +4668,14 @@ function App() {
             </div>
           </section>
         ) : (
-          <section className="map-stage">
+          <section className={`map-stage ${page === "world" ? "world-map-stage" : ""}`}>
           {page === "world" ? (
             <WorldMap
               activeRegion={selectedRegion}
               hoveredRegion={hoveredRegion}
               onHover={setHoveredRegion}
-              onSelect={selectRegion}
+              onSelect={previewRegion}
+              onEnter={selectRegion}
               onClearSummary={() => setSummaryRegion(null)}
               year={year}
             />
@@ -2735,18 +4694,27 @@ function App() {
               </div>
             )
           ) : (
-            <ChinaRegionMap
-              activeBlockId={selectedChinaBlockId}
-              hoveredBlockId={hoveredChinaBlockId}
-              mapMode={chinaMapMode}
-              onSelectBlock={setSelectedChinaBlockId}
-              onHoverBlock={setHoveredChinaBlockId}
-              onClearSummary={() => {
-                setSelectedChinaBlockId(null);
-                setHoveredChinaBlockId(null);
-              }}
-              year={year}
-            />
+            chinaBlocks.length ? (
+              <ChinaRegionMap
+                activeBlockId={selectedChinaBlockId}
+                blocks={chinaBlocks}
+                controllerColorMap={chinaControllerColorMap}
+                controlTimeline={chinaControlTimeline}
+                hoveredBlockId={hoveredChinaBlockId}
+                mapMode={chinaMapMode}
+                onSelectBlock={setSelectedChinaBlockId}
+                onHoverBlock={setHoveredChinaBlockId}
+                onClearSummary={() => {
+                  setSelectedChinaBlockId(null);
+                  setHoveredChinaBlockId(null);
+                }}
+                year={year}
+              />
+            ) : (
+              <div className="empty-state">
+                {chinaControlDbStatus === "loading" ? "Loading China commandery map" : "China control API is not available"}
+              </div>
+            )
           )}
 
           {page === "world" && inspectedRegion && inspectedEra && (
@@ -2784,12 +4752,12 @@ function App() {
             </aside>
           )}
 
-          {page === "china" && (chinaMapMode === "political" || chinaMapMode === "commandery") && inspectedChinaBlock && (
+          {page === "china" && (chinaMapMode === "political" || chinaMapMode === "commandery") && inspectedChinaBlock && false && (
             <aside
               className="hover-summary regional-summary"
               style={
                 {
-                  "--accent": getChinaControllerColor(inspectedChinaControl?.controller),
+                  "--accent": getChinaControllerColor(chinaControllerColorMap, inspectedChinaControl?.controller),
                 } as React.CSSProperties
               }
               aria-live="polite"
@@ -2810,9 +4778,9 @@ function App() {
                   <X size={16} />
                 </button>
               </div>
-              <h2>{inspectedChinaBlock.name}</h2>
+              <h2>{inspectedChinaBlock!.name}</h2>
               <p>
-                {inspectedChinaControl?.controller ?? "待补"}在 {formatChinaControlRange(inspectedChinaControl)}
+                {inspectedChinaControl?.controller ?? "待补"} · {formatChinaControlRange(inspectedChinaControl)}
                 对此区块为{getChinaControlStatusLabel(inspectedChinaControl?.status)}。此层为控制区块与势力范围近似，不是精确国界。
               </p>
               <div className="summary-meta">
@@ -2828,11 +4796,11 @@ function App() {
         )}
 
         {page === "world" && (
-          <section className="world-comparison" aria-label={`${year} 年四大区域同年对照`}>
+          <section className="world-comparison" aria-label={`${year} 年中国、罗马与萨珊同年对照`}>
             <div className="world-comparison-heading">
               <div>
                 <p className="kicker">同年对照</p>
-                <h2>{year} 年的四大区域局势</h2>
+                <h2>{year} 年的三方局势</h2>
               </div>
               <div className="comparison-controls">
                 <span>时间条只标大型事件；空档优先显示主角动向。</span>
@@ -2940,8 +4908,8 @@ function App() {
           </section>
         )}
 
-        {page !== "people" && (
-          <section className="timeline-dock" aria-label="时间线">
+        {page !== "home" && page !== "people" && page !== "evidence" && (
+          <section className="timeline-dock" aria-label="时间轴">
           <button
             className="icon-button"
             type="button"
@@ -2976,7 +4944,7 @@ function App() {
                           } as React.CSSProperties
                         }
                         title={`${marker.year} 年 · ${marker.region.label} · ${marker.titles.slice(0, 2).join("、")}${
-                          marker.eventCount > 2 ? `等 ${marker.eventCount} 件` : ""
+                          marker.eventCount > 2 ? `?${marker.eventCount} 件` : ""
                         }`}
                       />
                     );
@@ -3024,6 +4992,7 @@ function App() {
         )}
       </section>
 
+      {page !== "home" && page !== "evidence" && page !== "compare" && (
       <aside className="detail-panel" aria-label="区域与事件详情">
         <div className="region-detail">
           <div
@@ -3062,7 +5031,7 @@ function App() {
                     <span>人物档案</span>
                     <h4>
                       {selectedPerson.name}
-                      {selectedPerson.courtesyName ? ` · 字${selectedPerson.courtesyName}` : ""}
+                      {selectedPerson.courtesyName ? ` · ${selectedPerson.courtesyName}` : ""}
                     </h4>
                   </div>
                   <strong>{selectedPerson.life ?? "生卒未详"}</strong>
@@ -3103,7 +5072,7 @@ function App() {
                             ) : (
                               <p>
                                 <strong>史料未详</strong>
-                                当前资料库尚未整理这一年的明确事迹。
+                                当前资料库尚未整理这一年的明确事迹?
                               </p>
                             )}
                           </div>
@@ -3193,7 +5162,7 @@ function App() {
 
                 <div className="person-event-heading">
                   <CalendarDays size={16} aria-hidden="true" />
-                  <span>关联大事件</span>
+                  <span>关联大事</span>
                   <strong>{selectedPersonEvents.length}</strong>
                 </div>
                 <div className="person-event-timeline">
@@ -3237,7 +5206,7 @@ function App() {
                   className={`chip-button block-chip ${selectedChinaBlockId === block.id ? "selected" : ""}`}
                   key={block.id}
                   type="button"
-                  style={{ "--controller-color": getChinaControllerColor(control?.controller) } as React.CSSProperties}
+                  style={{ "--controller-color": getChinaControllerColor(chinaControllerColorMap, control?.controller) } as React.CSSProperties}
                   onMouseEnter={() => setHoveredChinaBlockId(block.id)}
                   onMouseLeave={() => setHoveredChinaBlockId(null)}
                   onClick={() => setSelectedChinaBlockId(block.id)}
@@ -3294,7 +5263,7 @@ function App() {
               ))
             ) : selectedRegionHiddenMediumEvents.length ? (
               <div className="empty-state event-stack-note">
-                {selectedRegionHiddenMediumEvents.length} 个中型事件已折叠，打开中型事件开关后显示。
+                {selectedRegionHiddenMediumEvents.length} 个中型事件已折叠，打开中型事件开关后显示?
               </div>
             ) : selectedRegionFocusLifeEvents.length ? (
               <div className="comparison-event-list event-stack-focus">
@@ -3362,7 +5331,7 @@ function App() {
             </div>
             <div>
               <span>地点</span>
-              <strong>{selectedEvent.locationName || "待补充"}</strong>
+              <strong>{selectedEvent.locationName || "待补"}</strong>
             </div>
             <div>
               <span>可信度</span>
@@ -3520,7 +5489,7 @@ function App() {
                     <span>人物档案</span>
                     <h4>
                       {selectedPerson.name}
-                      {selectedPerson.courtesyName ? ` · 字${selectedPerson.courtesyName}` : ""}
+                      {selectedPerson.courtesyName ? ` · ${selectedPerson.courtesyName}` : ""}
                     </h4>
                   </div>
                   <strong>{selectedPerson.life ?? "生卒未详"}</strong>
@@ -3654,7 +5623,7 @@ function App() {
 
                 <div className="person-event-heading">
                   <CalendarDays size={16} aria-hidden="true" />
-                  <span>关联大事件</span>
+                  <span>关联大事</span>
                   <strong>{selectedPersonEvents.length}</strong>
                 </div>
                 <div className="person-event-timeline">
@@ -3695,7 +5664,7 @@ function App() {
           <section className="detail-section">
             <h3>
               <Compass size={17} aria-hidden="true" />
-              政权与标签
+              政权与标?
             </h3>
             <div className="chips">
               {[...selectedEvent.polities, ...selectedEvent.tags].map((tag, index) => (
@@ -3772,7 +5741,7 @@ function App() {
                 ? `${year} 年曹孙刘动向`
                 : selectedRegionHiddenMediumEvents.length
                   ? `${year} 年中型事件已折叠`
-                  : `${year} 年${selectedRegionEra.title}`}
+                  : `${year} 年 ${selectedRegionEra.title}`}
             </h2>
             {selectedRegionFocusLifeEvents.length ? (
               <div className="comparison-event-list detail-focus-list">
@@ -3790,7 +5759,7 @@ function App() {
               </div>
             ) : selectedRegionHiddenMediumEvents.length ? (
               <p className="detail-summary">
-                {selectedRegionHiddenMediumEvents.length} 个中型事件暂未展开，打开中型事件开关后在本年对照中显示。
+                {selectedRegionHiddenMediumEvents.length} 个中型事件暂未展开，打开中型事件开关后在本年对照中显示?
               </p>
             ) : (
               <p className="detail-summary">{selectedRegionEra.summary}</p>
@@ -3798,6 +5767,7 @@ function App() {
           </section>
         )}
       </aside>
+      )}
     </main>
   );
 }

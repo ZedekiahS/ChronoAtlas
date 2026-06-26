@@ -1,23 +1,314 @@
 {
   "model": "event-importance",
-  "defaultImportance": "medium",
+  "defaultImportance": "detail",
   "records": [
-    { "eventId": "china-184-yellow-turban-rebellion", "importance": "major" },
-    { "eventId": "china-189-dong-zhuo-enters-luoyang", "importance": "major" },
-    { "eventId": "china-200-guandu", "importance": "major" },
-    { "eventId": "china-208-red-cliffs", "importance": "major" },
-    { "eventId": "china-220-cao-pi-founds-wei", "importance": "major" },
-    { "eventId": "china-221-liu-bei-founds-shu", "importance": "major" },
-    { "eventId": "china-222-yiling", "importance": "major" },
-    { "eventId": "china-229-sun-quan-emperor", "importance": "major" },
-    { "eventId": "china-263-shu-han-conquered", "importance": "major" },
-    { "eventId": "china-265-jin-replaces-wei", "importance": "major" },
-    { "eventId": "china-280-jin-conquers-wu", "importance": "major" },
-    { "eventId": "china-291-eight-princes-war", "importance": "major" },
-    { "eventId": "china-304-five-barbarians-begin", "importance": "major" },
-    { "eventId": "rome-193-year-of-five-emperors", "importance": "major" },
-    { "eventId": "sasanian-224-ardashir-defeats-parthians", "importance": "major" },
-    { "eventId": "rome-235-start-third-century-crisis", "importance": "major" },
-    { "eventId": "rome-sasanian-260-valerian-captured", "importance": "major" }
+    {
+      "eventId": "china-184-yellow-turban-rebellion",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-189-dong-zhuo-enters-luoyang",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-190-coalition-against-dong-zhuo",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-192-dong-zhuo-killed",
+      "importance": "medium"
+    },
+    {
+      "eventId": "china-194-lu-bu-seizes-yan",
+      "importance": "medium"
+    },
+    {
+      "eventId": "china-194-tao-qian-yields-xuzhou",
+      "importance": "medium"
+    },
+    {
+      "eventId": "china-196-cao-cao-escorts-emperor",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-196-lu-bu-seizes-xuzhou",
+      "importance": "medium"
+    },
+    {
+      "eventId": "china-197-yuan-shu-declares-emperor",
+      "importance": "medium"
+    },
+    {
+      "eventId": "china-199-gongsun-zan-defeated",
+      "importance": "medium"
+    },
+    {
+      "eventId": "china-199-lu-bu-defeated",
+      "importance": "medium"
+    },
+    {
+      "eventId": "china-199-yuan-shu-collapse",
+      "importance": "medium"
+    },
+    {
+      "eventId": "china-200-guandu",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-207-longzhong-plan",
+      "importance": "medium"
+    },
+    {
+      "eventId": "china-208-red-cliffs",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-214-liu-bei-takes-yi",
+      "importance": "medium"
+    },
+    {
+      "eventId": "china-215-cao-cao-takes-hanzhong",
+      "importance": "medium"
+    },
+    {
+      "eventId": "china-219-hanzhong-and-jingzhou-crisis",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-220-cao-pi-founds-wei",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-221-liu-bei-founds-shu",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-222-yiling",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-226-jiaozhou-incorporated-by-wu",
+      "importance": "medium"
+    },
+    {
+      "eventId": "china-229-sun-quan-emperor",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-234-wuzhang-plains",
+      "importance": "medium"
+    },
+    {
+      "eventId": "china-263-shu-han-conquered",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-265-jin-replaces-wei",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-280-jin-conquers-wu",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-291-eight-princes-war",
+      "importance": "major"
+    },
+    {
+      "eventId": "china-304-five-barbarians-begin",
+      "importance": "major"
+    },
+    {
+      "eventId": "india-230-kushan-decline",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-193-assassination-of-commodus-and-pertinax-auction-of-the-empire",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-193-didius-julianus-buys-the-throne-severus-proclaimed-in-pannonia",
+      "importance": "major"
+    },
+    {
+      "eventId": "rome-194-severus-defeats-pescennius-niger-at-issus",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-197-battle-of-lugdunum-severus-defeats-clodius-albinus",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-198-severus-sacks-ctesiphon-and-creates-province-of-mesopotamia",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-211-caracalla-murders-geta",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-211-death-of-septimius-severus-at-eboracum",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-212-constitutio-antoniniana-universal-citizenship",
+      "importance": "major"
+    },
+    {
+      "eventId": "rome-217-assassination-of-caracalla-macrinus-proclaimed-emperor",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-222-assassination-of-elagabalus-alexander-severus-becomes-emperor",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-230-the-collapse-of-roman-coinage-and-hyperinflation",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-235-assassination-of-alexander-severus-beginning-of-the-third-century-crisis",
+      "importance": "major"
+    },
+    {
+      "eventId": "rome-238-year-of-the-six-emperors",
+      "importance": "major"
+    },
+    {
+      "eventId": "rome-244-death-of-gordian-iii-philip-the-arab-becomes-emperor",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-249-decian-persecution-of-christians",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-251-battle-of-abrittus-decius-killed-by-goths",
+      "importance": "major"
+    },
+    {
+      "eventId": "rome-252-the-plague-of-cyprian-249-262",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-253-valerian-and-gallienus-the-first-systematic-division-of-the-empire",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-260-capture-of-valerian-by-shapur-i",
+      "importance": "major"
+    },
+    {
+      "eventId": "rome-260-postumus-founds-the-gallic-empire",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-260-the-gallic-empire-260-274",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-270-aurelian-becomes-emperor",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-270-zenobia-and-the-palmyrene-empire-267-272",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-271-construction-of-the-aurelian-walls-rome-is-no-longer-safe",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-272-aurelian-defeats-zenobia-and-recovers-the-east",
+      "importance": "major"
+    },
+    {
+      "eventId": "rome-274-aurelian-defeats-tetricus-and-reunifies-the-roman-empire",
+      "importance": "major"
+    },
+    {
+      "eventId": "rome-275-assassination-of-aurelian",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-284-diocletian-becomes-emperor",
+      "importance": "major"
+    },
+    {
+      "eventId": "rome-286-carausius-and-the-secessionist-british-empire-286-296",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-293-establishment-of-the-tetrarchy",
+      "importance": "major"
+    },
+    {
+      "eventId": "rome-301-diocletians-administrative-and-economic-reforms",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-301-diocletians-edict-on-maximum-prices-301-ce",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-303-the-great-persecution-begins",
+      "importance": "major"
+    },
+    {
+      "eventId": "rome-305-abdication-of-diocletian-and-maximian",
+      "importance": "major"
+    },
+    {
+      "eventId": "rome-306-death-of-constantius-chlorus-constantine-proclaimed-emperor",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-308-council-of-carnuntum-diocletians-last-attempt-to-save-the-tetrarchy",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-311-death-of-galerius-and-the-edict-of-toleration",
+      "importance": "medium"
+    },
+    {
+      "eventId": "rome-sasanian-260-valerian-captured",
+      "importance": "major"
+    },
+    {
+      "eventId": "sasanian-224-ardashir-defeats-parthians",
+      "importance": "major"
+    },
+    {
+      "eventId": "sasanian-230-ardashir-roman-frontier",
+      "importance": "medium"
+    },
+    {
+      "eventId": "sasanian-232-alexander-severus-expedition",
+      "importance": "medium"
+    },
+    {
+      "eventId": "sasanian-244-battle-of-misiche",
+      "importance": "major"
+    },
+    {
+      "eventId": "sasanian-256-dura-europos",
+      "importance": "medium"
+    },
+    {
+      "eventId": "sasanian-262-odaenathus-counteroffensive",
+      "importance": "medium"
+    },
+    {
+      "eventId": "sasanian-280-kartir-priestly-power",
+      "importance": "medium"
+    },
+    {
+      "eventId": "sasanian-293-narseh-paikuli",
+      "importance": "major"
+    },
+    {
+      "eventId": "sasanian-298-treaty-of-nisibis",
+      "importance": "major"
+    }
   ]
 }

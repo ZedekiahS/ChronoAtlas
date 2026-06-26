@@ -10,7 +10,7 @@ const dbPath = path.join(rootDir, "db", "chronoatlas.sqlite");
 
 const boundaryTypes = new Set(["effective-control", "nominal", "cultural-influence"]);
 const confidenceValues = new Set(["high", "medium", "low"]);
-const eventImportanceValues = new Set(["major", "medium", "minor"]);
+const eventImportanceValues = new Set(["major", "medium", "minor", "detail"]);
 
 function assert(condition, message) {
   if (!condition) {

@@ -30,6 +30,16 @@ function textOrNull(value) {
   return typeof value === "string" && value.length > 0 ? value : null;
 }
 
+function firstText(...values) {
+  for (const value of values) {
+    const text = textOrNull(value);
+    if (text) {
+      return text;
+    }
+  }
+  return null;
+}
+
 function integerOrNull(value) {
   return Number.isInteger(value) ? value : null;
 }
@@ -38,8 +48,25 @@ function arrayOrEmpty(value) {
   return Array.isArray(value) ? value : [];
 }
 
+function arrayFromValue(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+  if (typeof value === "string" && value.trim().length > 0) {
+    return [value.trim()];
+  }
+  return [];
+}
+
 function hasText(value) {
   return typeof value === "string" && value.length > 0;
+}
+
+function getDraftEvidenceCards(draft) {
+  if (Array.isArray(draft)) {
+    return draft;
+  }
+  return arrayOrEmpty(draft?.evidenceCards);
 }
 
 function stableId(input) {
@@ -81,13 +108,14 @@ function validateCard(card) {
   const errors = [];
   const warnings = [];
 
-  if (!hasText(card?.source)) errors.push("source is required");
+  if (!hasText(card?.source) && !hasText(card?.sourceTitle)) errors.push("source/sourceTitle is required");
   if (!hasText(card?.sourceType)) errors.push("sourceType is required");
   if (!hasText(card?.locator)) errors.push("locator is required");
-  if (!hasText(card?.text)) errors.push("text is required");
-  if (!arrayOrEmpty(card?.people).length && !arrayOrEmpty(card?.peopleCore).length) {
-    errors.push("people or peopleCore is required");
+  if (!hasText(card?.text) && !hasText(card?.originalText) && !hasText(card?.translation)) {
+    errors.push("text/originalText/translation is required");
   }
+  if (card?.people !== undefined && !Array.isArray(card.people) && !hasText(card.people)) errors.push("people must be an array/string when present");
+  if (card?.peopleCore !== undefined && !Array.isArray(card.peopleCore) && !hasText(card.peopleCore)) errors.push("peopleCore must be an array/string when present");
   if (!Array.isArray(card?.places)) errors.push("places must be an array");
   if (!hasText(card?.fact) && !(hasText(card?.factBrief) && hasText(card?.factDetailed))) {
     errors.push("fact or factBrief/factDetailed is required");
@@ -101,9 +129,6 @@ function validateCard(card) {
   if (card?.confidence !== undefined && !confidenceValues.has(card.confidence)) {
     warnings.push("confidence should be high/medium/low");
   }
-  if (card?.peopleCore !== undefined && !Array.isArray(card.peopleCore)) {
-    errors.push("peopleCore must be an array when present");
-  }
   if (card?.peopleMentioned !== undefined && !Array.isArray(card.peopleMentioned)) {
     errors.push("peopleMentioned must be an array when present");
   }
@@ -115,6 +140,9 @@ function validateCard(card) {
 }
 
 function inferCollectionHint(relativePath, draft) {
+  if (Array.isArray(draft)) {
+    return "evidenceCards";
+  }
   if (Array.isArray(draft?.evidenceCards)) {
     return "evidenceCards";
   }
@@ -133,12 +161,12 @@ function inferCorpusHint(relativePath, draft) {
 }
 
 function normalizeCard(card) {
-  const peopleCore = arrayOrEmpty(card.peopleCore).length ? arrayOrEmpty(card.peopleCore) : arrayOrEmpty(card.people);
+  const peopleCore = arrayFromValue(card.peopleCore).length ? arrayFromValue(card.peopleCore) : arrayFromValue(card.people);
   const factBrief = textOrNull(card.factBrief) ?? textOrNull(card.fact);
   const factDetailed = textOrNull(card.factDetailed) ?? textOrNull(card.fact);
 
   return {
-    sourceTitle: textOrNull(card.source),
+    sourceTitle: firstText(card.sourceTitle, card.source),
     sourceType: textOrNull(card.sourceType),
     author: textOrNull(card.author),
     commentaryAuthor: textOrNull(card.commentaryAuthor),
@@ -147,13 +175,13 @@ function normalizeCard(card) {
     locator: textOrNull(card.locator),
     year: integerOrNull(card.year),
     displayDate: textOrNull(card.displayDate),
-    originalText: textOrNull(card.text),
+    originalText: firstText(card.originalText, card.text, card.translation),
     translation: textOrNull(card.translation),
     peopleCore,
     peopleMentioned: arrayOrEmpty(card.peopleMentioned),
     places: arrayOrEmpty(card.places),
     macroEvent: textOrNull(card.macroEvent),
-    eventLabel: textOrNull(card.event),
+    eventLabel: firstText(card.eventLabel, card.event),
     factBrief,
     factDetailed,
     factType: textOrNull(card.factType),
@@ -186,7 +214,7 @@ async function importFile(db, filePath, statements) {
     fileErrors = [`Invalid JSON: ${error.message}`];
   }
 
-  const cards = arrayOrEmpty(draft?.evidenceCards);
+  const cards = getDraftEvidenceCards(draft);
   const cardValidations = cards.map(validateCard);
   const errorCount = fileErrors.length + cardValidations.reduce((sum, result) => sum + result.errors.length, 0);
   const warningCount = fileWarnings.length + cardValidations.reduce((sum, result) => sum + result.warnings.length, 0);
