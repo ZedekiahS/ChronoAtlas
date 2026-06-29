@@ -1094,6 +1094,86 @@ function getChinaFocusLifeEvents(year: number) {
     .slice(0, 3);
 }
 
+function getChinaLifeEventTerms(item: FocusLifeEvent) {
+  return [
+    item.person.id,
+    item.person.name,
+    item.person.courtesyName,
+    item.person.primaryPolity,
+    item.lifeEvent.title,
+    item.lifeEvent.summary,
+    item.lifeEvent.type,
+    ...item.person.roles,
+  ]
+    .filter(Boolean)
+    .join(" ");
+}
+
+function matchesThreeKingdomsLifeEventFilter(item: FocusLifeEvent, filter: ThreeKingdomsFilter) {
+  if (filter === "all") {
+    return true;
+  }
+
+  if (filter === "war") {
+    return item.lifeEvent.type === "campaign";
+  }
+
+  if (filter === "politics") {
+    return ["office", "politics", "turning-point", "abdication"].includes(item.lifeEvent.type);
+  }
+
+  const text = getChinaLifeEventTerms(item);
+
+  if (filter === "cao-wei") {
+    return (
+      text.includes("曹魏") ||
+      text.includes("曹操集团") ||
+      text.includes("司马")
+    );
+  }
+
+  if (filter === "shu-han") {
+    return text.includes("蜀汉") || text.includes("刘备集团");
+  }
+
+  if (filter === "sun-wu") {
+    return text.includes("孙吴") || text.includes("江东");
+  }
+
+  return item.lifeEvent.year !== null && item.lifeEvent.year < 220;
+}
+
+function getChinaLifeEventsForYear(year: number, filter: ThreeKingdomsFilter = "all") {
+  return chinaPersonLifeEvents
+    .filter((lifeEvent) => isLifeEventInYear(lifeEvent, year))
+    .map((lifeEvent) => {
+      const person = chinaPersonById.get(lifeEvent.personId);
+      if (!person) {
+        return null;
+      }
+
+      return {
+        inferred: false,
+        lifeEvent,
+        person,
+        rank: chinaFocusPersonIds.includes(person.id) ? chinaFocusPersonIds.indexOf(person.id) : 100,
+      };
+    })
+    .filter((item): item is FocusLifeEvent => Boolean(item))
+    .filter((item) => matchesThreeKingdomsLifeEventFilter(item, filter))
+    .sort((left, right) => {
+      const leftYear = getLifeEventStartYear(left.lifeEvent) ?? year;
+      const rightYear = getLifeEventStartYear(right.lifeEvent) ?? year;
+      return (
+        left.rank - right.rank ||
+        leftYear - rightYear ||
+        getLifeEventSortValue(left.lifeEvent) - getLifeEventSortValue(right.lifeEvent) ||
+        left.person.name.localeCompare(right.person.name, "zh-Hans-CN")
+      );
+    })
+    .slice(0, 5);
+}
+
 function getPersonLifeRange(person: HistoricalPerson, lifeEvents: PersonLifeEvent[]) {
   const lifeMatch = person.life?.match(/^(\d{1,4}|\?)-(\d{1,4}|\?)$/);
   const knownYears = lifeEvents
@@ -3164,18 +3244,25 @@ function App() {
     selectedRegion === "china"
       ? selectedRegionEvents.filter((event) => matchesThreeKingdomsFilter(event, eventFilter))
       : selectedRegionEvents;
+  const selectedRegionFallbackLifeEvents =
+    selectedRegion === "china" && filteredRegionEvents.length === 0 ? getChinaLifeEventsForYear(year, eventFilter) : [];
+  const selectedRegionTotalFallbackLifeEvents =
+    selectedRegion === "china" && selectedRegionEvents.length === 0 ? getChinaLifeEventsForYear(year, "all") : [];
   const selectedRegionFocusLifeEvents =
-    page === "world" &&
     selectedRegion === "china" &&
     filteredRegionEvents.length === 0 &&
     selectedRegionHiddenMediumEvents.length === 0
-      ? getChinaFocusLifeEvents(year)
+      ? selectedRegionFallbackLifeEvents.length
+        ? selectedRegionFallbackLifeEvents
+        : getChinaFocusLifeEvents(year).filter((item) => matchesThreeKingdomsLifeEventFilter(item, eventFilter))
       : [];
+  const selectedRegionFilteredDisplayCount = filteredRegionEvents.length + selectedRegionFallbackLifeEvents.length;
+  const selectedRegionTotalDisplayCount = selectedRegionEvents.length + selectedRegionTotalFallbackLifeEvents.length;
   const eventFilterCounts = Object.fromEntries(
-    threeKingdomsFilters.map((filter) => [
-      filter.id,
-      selectedRegionEvents.filter((event) => matchesThreeKingdomsFilter(event, filter.id)).length,
-    ]),
+    threeKingdomsFilters.map((filter) => {
+      const eventCount = selectedRegionEvents.filter((event) => matchesThreeKingdomsFilter(event, filter.id)).length;
+      return [filter.id, eventCount || getChinaLifeEventsForYear(year, filter.id).length];
+    }),
   ) as Record<ThreeKingdomsFilter, number>;
   const selectedEvent =
     filteredRegionEvents.find((event) => event.id === selectedId) ??
@@ -5565,7 +5652,7 @@ function App() {
             <h3>区域事件</h3>
             {selectedRegion === "china" && (
               <span>
-                {filteredRegionEvents.length}/{selectedRegionEvents.length}
+                {selectedRegionFilteredDisplayCount}/{selectedRegionTotalDisplayCount}
               </span>
             )}
           </div>
