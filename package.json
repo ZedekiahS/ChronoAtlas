@@ -16,6 +16,8 @@
     "import:china-physical": "node --no-warnings scripts/import-natural-earth-china-runtime.mjs",
     "audit:china-map-geometry": "node --no-warnings scripts/audit-map-geometry-china-190-280.mjs",
     "import:china-map-geometry": "node --no-warnings scripts/import-map-geometry-china-190-280.mjs",
+    "import:roman-map-geometry": "node --no-warnings scripts/import-map-geometry-roman-190-310.mjs",
+    "import:roman-event-map-links": "node --no-warnings scripts/import-roman-event-map-links.mjs",
     "db:seed:export": "node --no-warnings scripts/export-sqlite-seed.mjs",
     "db:build": "node --no-warnings scripts/build-history-db.mjs",
     "db:export": "node --no-warnings scripts/export-history-data.mjs",

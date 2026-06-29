@@ -1181,7 +1181,7 @@ h1 {
 
 .coverage-stage {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr);
   gap: 14px;
   min-height: 0;
 }
@@ -1220,6 +1220,21 @@ h1 {
   padding-right: 4px;
 }
 
+.coverage-stack {
+  display: grid;
+  gap: 12px;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.coverage-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 0;
+}
+
 .coverage-card {
   display: grid;
   align-content: start;
@@ -1237,6 +1252,7 @@ h1 {
 }
 
 .coverage-card header span,
+.coverage-check-panel > span,
 .coverage-gap-list > span,
 .coverage-examples span {
   grid-column: 1 / -1;
@@ -1262,17 +1278,89 @@ h1 {
   font-weight: 900;
 }
 
+.coverage-card header strong.coverage-status.ok {
+  background: rgba(37, 119, 96, 0.12);
+  color: #257760;
+}
+
+.coverage-card header strong.coverage-status.warn {
+  background: rgba(185, 79, 50, 0.12);
+  color: #8b3f2d;
+}
+
+.coverage-card-body {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.9fr) minmax(280px, 1.1fr) minmax(260px, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.coverage-progress-panel,
+.coverage-check-panel,
+.coverage-gap-list {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid rgba(30, 34, 38, 0.08);
+  border-radius: 8px;
+  background: rgba(250, 250, 247, 0.74);
+}
+
+.coverage-progress-row {
+  display: grid;
+  gap: 6px;
+}
+
+.coverage-progress-row div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.coverage-progress-row span {
+  color: #5c646b;
+  font-size: 12px;
+  font-weight: 820;
+}
+
+.coverage-progress-row strong {
+  color: #101820;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.coverage-progress-row i {
+  position: relative;
+  display: block;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(30, 34, 38, 0.09);
+}
+
+.coverage-progress-row b {
+  position: absolute;
+  inset: 0 auto 0 0;
+  display: block;
+  border-radius: inherit;
+  background: #b94f32;
+}
+
 .coverage-metrics {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 6px;
 }
 
+.coverage-metrics.compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .coverage-gap-list {
-  display: grid;
-  gap: 6px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(30, 34, 38, 0.08);
+  max-height: 180px;
+  overflow-y: auto;
 }
 
 .coverage-gap-list p {
@@ -2840,6 +2928,14 @@ h1 {
   line-height: 1.68;
 }
 
+.detail-subtitle {
+  margin: -4px 0 0;
+  color: #687077;
+  font-size: 13px;
+  font-weight: 760;
+  line-height: 1.45;
+}
+
 .summary-meta {
   display: flex;
   flex-wrap: wrap;
@@ -3110,6 +3206,13 @@ input[type="range"] {
   line-height: 1.35;
 }
 
+.event-card small {
+  color: #687077;
+  font-size: 12px;
+  font-weight: 760;
+  line-height: 1.35;
+}
+
 .event-card span:last-child {
   color: #565f66;
   font-size: 13px;
@@ -3120,6 +3223,41 @@ input[type="range"] {
   color: #8b3f2d;
   font-size: 12px;
   font-weight: 850;
+}
+
+.event-filter-note {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 9px 10px;
+  border: 1px solid rgba(30, 34, 38, 0.1);
+  border-radius: 8px;
+  background: rgba(250, 250, 247, 0.74);
+  color: #3f474d;
+  font-size: 12px;
+  font-weight: 780;
+}
+
+.event-filter-note span {
+  color: #8b3f2d;
+  font-weight: 900;
+}
+
+.event-filter-note strong {
+  color: #101820;
+  font-size: 13px;
+}
+
+.event-filter-note button {
+  margin-left: auto;
+  padding: 5px 8px;
+  border: 1px solid rgba(185, 79, 50, 0.18);
+  border-radius: 6px;
+  background: rgba(185, 79, 50, 0.07);
+  color: #8b3f2d;
+  font-size: 12px;
+  font-weight: 840;
 }
 
 .empty-state {
@@ -4245,6 +4383,14 @@ a.source-title-link:hover {
 
   .coverage-grid {
     grid-template-columns: 1fr;
+  }
+
+  .coverage-card-body {
+    grid-template-columns: 1fr;
+  }
+
+  .coverage-metrics.compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .overview-stage {

@@ -1030,6 +1030,13 @@ function frontendPersonDetail(db, entityIdOrLegacyId) {
 }
 
 function frontendEvents(db) {
+  const featureEvents = db.prepare(`
+    SELECT feature_id
+    FROM map_feature_events
+    WHERE event_id = ?
+    ORDER BY feature_id
+  `);
+
   return {
     schemaVersion: 2,
     generatedFrom: "sqlite:future-schema",
@@ -1058,7 +1065,10 @@ function frontendEvents(db) {
         relatedEvents: raw.relatedEvents ?? [],
         tags: raw.tags ?? [],
         sources: raw.sources ?? [],
-        sourceRefs: raw.sourceRefs ?? []
+        sourceRefs: raw.sourceRefs ?? [],
+        titleZh: raw.titleZh ?? null,
+        titleEn: raw.titleEn ?? raw.eventLabel ?? row.title,
+        mapFeatureIds: featureEvents.all(row.id).map((item) => item.feature_id)
       };
     })
   };
@@ -1540,14 +1550,96 @@ function frontendMapGeometryDebug(db, url) {
 }
 
 function frontendRomanControl(db) {
+  const geometryDataset = db.prepare(`
+    SELECT *
+    FROM map_geometry_datasets
+    WHERE id = 'roman-province-map-190-310'
+  `).get();
+  const controlDataset = db.prepare(`
+    SELECT *
+    FROM map_control_datasets
+    WHERE id = 'roman-province-control-timeline-190-310'
+  `).get();
   const row = db.prepare(`
     SELECT raw_json
     FROM app_runtime_datasets
     WHERE id = 'roman-control-map-190-310'
   `).get();
+  const runtimeData = row ? parseRawJson(row.raw_json) : null;
 
-  return row
-    ? parseRawJson(row.raw_json)
+  if (geometryDataset && controlDataset) {
+    const provinces = db.prepare(`
+      SELECT
+        f.id,
+        f.name,
+        f.center_lon,
+        f.center_lat,
+        f.notes,
+        f.raw_json,
+        g.coordinates_json
+      FROM map_features f
+      JOIN map_feature_geometries g ON g.feature_id = f.id AND g.simplification_level = 'full'
+      WHERE f.dataset_id = 'roman-province-map-190-310'
+      ORDER BY CAST(json_extract(f.raw_json, '$.id') AS INTEGER), f.id
+    `).all().map((feature) => {
+      const rawProvince = parseRawJson(feature.raw_json);
+      const numericId = Number.isInteger(rawProvince.id)
+        ? rawProvince.id
+        : Number(String(feature.id).replace("roman-province:", ""));
+
+      return {
+        id: numericId,
+        n: feature.name,
+        r: rawProvince.r,
+        x: feature.center_lon,
+        y: feature.center_lat,
+        g: parseRawJson(feature.coordinates_json, []),
+        family: rawProvince.family ?? feature.notes ?? null
+      };
+    });
+
+    const timeline = db.prepare(`
+      SELECT
+        r.feature_id,
+        r.start_year,
+        r.end_year,
+        r.raw_json,
+        c.label,
+        c.color
+      FROM map_control_records r
+      JOIN map_controllers c ON c.id = r.controller_id
+      WHERE r.control_dataset_id = 'roman-province-control-timeline-190-310'
+      ORDER BY CAST(json_extract(r.raw_json, '$.pid') AS INTEGER), r.start_year, r.end_year
+    `).all().map((record) => {
+      const rawRecord = parseRawJson(record.raw_json);
+      const numericId = Number.isInteger(rawRecord.pid)
+        ? rawRecord.pid
+        : Number(String(record.feature_id).replace("roman-province:", ""));
+
+      return {
+        pid: numericId,
+        start: record.start_year,
+        end: record.end_year,
+        ctrl: record.label,
+        color: record.color
+      };
+    });
+
+    return {
+      schemaVersion: geometryDataset.schema_version,
+      generatedFrom: "sqlite:map-geometry-runtime",
+      model: "roman-control-map",
+      range: [controlDataset.time_start, controlDataset.time_end],
+      keyYears: parseRawJson(controlDataset.key_years_json, []),
+      notes: geometryDataset.source_note,
+      physical: runtimeData?.physical ?? {},
+      provinces,
+      timeline
+    };
+  }
+
+  return runtimeData
+    ? runtimeData
     : {
         schemaVersion: 1,
         generatedFrom: "sqlite:app-runtime-datasets",
