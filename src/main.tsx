@@ -27,7 +27,6 @@ import {
   UsersRound,
   X,
 } from "lucide-react";
-import chinaMapData from "../data/china-three-kingdoms-map.json";
 import naturalEarthChinaPhysicalData from "../data/natural-earth-china-physical.json";
 import "./styles.css";
 
@@ -501,8 +500,19 @@ let eventImportanceDataset: EventImportanceDataset = {
   defaultImportance: "medium",
   records: [],
 };
-const chinaMap = chinaMapData as ChinaMapLayer;
 const naturalEarthChinaPhysical = naturalEarthChinaPhysicalData as NaturalEarthPhysical;
+const emptyChinaMap: ChinaMapLayer = {
+  id: "china-three-kingdoms-180-280",
+  label: "China Three Kingdoms map",
+  view: {
+    northWest: [78, 50],
+    southEast: [132, 16],
+    padding: 18,
+  },
+  eras: [],
+  cities: [],
+  sources: [],
+};
 const emptyRomanControlDb: FrontendRomanControlDb = { provinces: [], timeline: [] };
 const emptyPeopleIndexDb: FrontendPeopleIndexDb = {
   persons: [],
@@ -1722,8 +1732,8 @@ function getBoundaryGroups(region: RegionInfo, era: RegionEra) {
   ];
 }
 
-function getChinaMapLayer(year: number) {
-  return chinaMap.eras.find((era) => era.startYear <= year && era.endYear >= year) ?? null;
+function getChinaMapLayer(map: ChinaMapLayer, year: number) {
+  return map.eras.find((era) => era.startYear <= year && era.endYear >= year) ?? null;
 }
 
 function getChinaBlockControl(controlTimeline: ChinaControlTimeline, blockId: string, year: number) {
@@ -2486,6 +2496,7 @@ function ChinaCommanderyPuzzleMap({
 function ChinaRegionMap({
   activeBlockId,
   blocks,
+  cities,
   controllerColorMap,
   controlTimeline,
   hoveredBlockId,
@@ -2497,6 +2508,7 @@ function ChinaRegionMap({
 }: {
   activeBlockId: string | null;
   blocks: ChinaBlock[];
+  cities: ChinaMapLayer["cities"];
   controllerColorMap: Map<string, string>;
   controlTimeline: ChinaControlTimeline;
   hoveredBlockId: string | null;
@@ -2687,7 +2699,7 @@ function ChinaRegionMap({
               );
             })}
 
-            {chinaMap.cities.map((city) => {
+            {cities.map((city) => {
               const cityPoint = getProjectedPoint(city.coordinates);
               if (!cityPoint) {
                 return null;
@@ -2900,6 +2912,8 @@ function App() {
   const [eventImportanceStatus, setEventImportanceStatus] = useState<"loading" | "ready" | "error">("loading");
   const [overviewDataVersion, setOverviewDataVersion] = useState(0);
   const [overviewDataStatus, setOverviewDataStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [runtimeChinaMap, setRuntimeChinaMap] = useState<ChinaMapLayer>(emptyChinaMap);
+  const [chinaMapStatus, setChinaMapStatus] = useState<"loading" | "ready" | "error">("loading");
   const [runtimeChinaControlDb, setRuntimeChinaControlDb] = useState<FrontendChinaControlDb>(emptyChinaControlDb);
   const [chinaControlDbStatus, setChinaControlDbStatus] = useState<"loading" | "ready" | "error">("loading");
   const [runtimeRomanControlDb, setRuntimeRomanControlDb] = useState<FrontendRomanControlDb>(emptyRomanControlDb);
@@ -2910,6 +2924,7 @@ function App() {
   void regionsDataStatus;
   void overviewDataVersion;
   void overviewDataStatus;
+  void chinaMapStatus;
   void coverageDataStatus;
 
   const normalizedQuery = query.trim().toLowerCase();
@@ -3022,7 +3037,7 @@ function App() {
   const selectedRegionEra = getRegionEra(selectedRegionInfo, year);
   const chinaRegionInfo = regions.find((region) => region.id === "china")!;
   const chinaRegionEra = getRegionEra(chinaRegionInfo, year);
-  const chinaMapLayer = getChinaMapLayer(year);
+  const chinaMapLayer = getChinaMapLayer(runtimeChinaMap, year);
   const chinaBlockSnapshots = useMemo(
     () =>
       chinaBlocks.map((block) => ({
@@ -3492,6 +3507,40 @@ function App() {
 
         setEvents([]);
         setEventsStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    setChinaMapStatus("loading");
+    fetch("/api/frontend-china-map")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`China map API failed: ${response.status}`);
+        }
+
+        return response.json() as Promise<ChinaMapLayer>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+
+        setRuntimeChinaMap(data);
+        setChinaMapStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+
+        setRuntimeChinaMap(emptyChinaMap);
+        setChinaMapStatus("error");
       });
 
     return () => {
@@ -4698,6 +4747,7 @@ function App() {
               <ChinaRegionMap
                 activeBlockId={selectedChinaBlockId}
                 blocks={chinaBlocks}
+                cities={runtimeChinaMap.cities}
                 controllerColorMap={chinaControllerColorMap}
                 controlTimeline={chinaControlTimeline}
                 hoveredBlockId={hoveredChinaBlockId}

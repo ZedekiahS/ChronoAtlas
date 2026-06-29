@@ -1103,6 +1103,21 @@ function frontendPeriodOverview(db) {
   });
 }
 
+function frontendChinaMap(db) {
+  return appRuntimeDataset(db, "china-three-kingdoms-map-180-280", {
+    id: "china-three-kingdoms-180-280",
+    label: "China Three Kingdoms map",
+    view: {
+      northWest: [78, 50],
+      southEast: [132, 16],
+      padding: 18
+    },
+    eras: [],
+    cities: [],
+    sources: []
+  });
+}
+
 function frontendEventEvidence(db, eventId) {
   const event = db.prepare("SELECT id, title FROM events WHERE id = ?").get(eventId);
   if (!event) {
@@ -1712,6 +1727,11 @@ async function route(request, response) {
 
     if (pathname === "/api/frontend-period-overview") {
       sendJson(response, 200, frontendPeriodOverview(db));
+      return;
+    }
+
+    if (pathname === "/api/frontend-china-map") {
+      sendJson(response, 200, frontendChinaMap(db));
       return;
     }
 

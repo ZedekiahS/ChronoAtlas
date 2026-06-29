@@ -2,7 +2,6 @@ import { DatabaseSync } from "node:sqlite";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import chinaMap from "../data/china-three-kingdoms-map.json" with { type: "json" };
 import naturalEarthChinaPhysical from "../data/natural-earth-china-physical.json" with { type: "json" };
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -230,6 +229,12 @@ function validateRuntimeDatasets(db) {
       assert(era.boundary || era.boundaryGroups, `Era needs boundary or boundaryGroups: ${eraId}`);
     }
   }
+
+  const chinaMap = parseJson(
+    byId.get("china-three-kingdoms-map-180-280")?.raw_json,
+    "app_runtime_datasets:china-three-kingdoms-map-180-280",
+  );
+  validateChinaMapDataset(chinaMap);
 }
 
 function validateImportStagingSchema(db) {
@@ -262,7 +267,7 @@ function validateImportStagingSchema(db) {
   }
 }
 
-function validateDeferredMapJson() {
+function validateChinaMapDataset(chinaMap) {
   validateLonLat(chinaMap.view.northWest, "chinaMap.view.northWest");
   validateLonLat(chinaMap.view.southEast, "chinaMap.view.southEast");
 
@@ -293,7 +298,9 @@ function validateDeferredMapJson() {
   for (const city of chinaMap.cities) {
     validateLonLat(city.coordinates, city.id);
   }
+}
 
+function validateDeferredMapJson() {
   assert(naturalEarthChinaPhysical.license === "Public domain", "Natural Earth physical data license must be public domain");
   validateFeatureCollection(naturalEarthChinaPhysical.land, "naturalEarthChinaPhysical.land");
   validateFeatureCollection(naturalEarthChinaPhysical.rivers, "naturalEarthChinaPhysical.rivers");
