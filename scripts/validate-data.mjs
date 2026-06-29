@@ -2,7 +2,6 @@ import { DatabaseSync } from "node:sqlite";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import naturalEarthChinaPhysical from "../data/natural-earth-china-physical.json" with { type: "json" };
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dbPath = path.join(rootDir, "db", "chronoatlas.sqlite");
@@ -235,6 +234,12 @@ function validateRuntimeDatasets(db) {
     "app_runtime_datasets:china-three-kingdoms-map-180-280",
   );
   validateChinaMapDataset(chinaMap);
+
+  const naturalEarthChinaPhysical = parseJson(
+    byId.get("natural-earth-china-physical")?.raw_json,
+    "app_runtime_datasets:natural-earth-china-physical",
+  );
+  validateNaturalEarthChinaPhysical(naturalEarthChinaPhysical);
 }
 
 function validateImportStagingSchema(db) {
@@ -300,7 +305,7 @@ function validateChinaMapDataset(chinaMap) {
   }
 }
 
-function validateDeferredMapJson() {
+function validateNaturalEarthChinaPhysical(naturalEarthChinaPhysical) {
   assert(naturalEarthChinaPhysical.license === "Public domain", "Natural Earth physical data license must be public domain");
   validateFeatureCollection(naturalEarthChinaPhysical.land, "naturalEarthChinaPhysical.land");
   validateFeatureCollection(naturalEarthChinaPhysical.rivers, "naturalEarthChinaPhysical.rivers");
@@ -315,7 +320,6 @@ try {
   validateDatabase(db);
   validateRuntimeDatasets(db);
   validateImportStagingSchema(db);
-  validateDeferredMapJson();
 } finally {
   db.close();
 }

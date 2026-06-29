@@ -27,7 +27,6 @@ import {
   UsersRound,
   X,
 } from "lucide-react";
-import naturalEarthChinaPhysicalData from "../data/natural-earth-china-physical.json";
 import "./styles.css";
 
 type Region = "china" | "rome" | "sasanian-persia" | "india";
@@ -175,7 +174,7 @@ type PersonAnnualTimelineItem = {
   year: number;
 };
 
-type Page = "home" | "world" | "china" | "rome" | "people" | "age" | "evidence" | "compare" | "coverage";
+type Page = "home" | "world" | "china" | "rome" | "people" | "age" | "evidence" | "compare" | "coverage" | "map-debug";
 type ChinaMapMode = "political" | "terrain" | "three-d" | "commandery";
 type ThreeKingdomsFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "war" | "politics";
 type PersonIndexFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "rome" | "sasanian-persia";
@@ -479,6 +478,71 @@ type FrontendCoverageDb = {
   regions: CoverageRegion[];
 };
 
+type FrontendMapGeometryDebugDb = {
+  purpose: "frontend-map-geometry-debug";
+  dataset: {
+    id: string;
+    label: string;
+    model: string;
+    time_start: number | null;
+    time_end: number | null;
+    review_status: string;
+  };
+  controlDataset: {
+    id: string;
+    label: string;
+    model: string;
+    time_start: number;
+    time_end: number;
+    review_status: string;
+  } | null;
+  summary: {
+    features: number;
+    geometries: number;
+    sources: number;
+    controllers: number;
+    controlRecords: number;
+    controlSources: number;
+  };
+  features: Array<{
+    id: string;
+    name: string;
+    feature_type: string;
+    admin_level: string | null;
+    parent_feature_id: string | null;
+    control_feature_id: string | null;
+    confidence: string;
+    approximate: number;
+    min_lon: number | null;
+    min_lat: number | null;
+    max_lon: number | null;
+    max_lat: number | null;
+    geometry_type: string | null;
+    point_count: number | null;
+    ring_count: number | null;
+    control_record_count: number;
+    source_count: number;
+  }>;
+  controllers: Array<{ id: string; label: string; color: string; sort_order: number }>;
+  controlRecords: Array<{
+    id: string;
+    feature_id: string;
+    feature_name: string | null;
+    controller: string;
+    start_year: number;
+    end_year: number;
+    status: string;
+    confidence: string;
+    source_count: number;
+  }>;
+  sourceSamples: Array<{
+    feature_id: string;
+    source_role: string;
+    note: string | null;
+    confidence: string;
+  }>;
+};
+
 type NaturalEarthPhysical = {
   source: string;
   license: string;
@@ -500,7 +564,6 @@ let eventImportanceDataset: EventImportanceDataset = {
   defaultImportance: "medium",
   records: [],
 };
-const naturalEarthChinaPhysical = naturalEarthChinaPhysicalData as NaturalEarthPhysical;
 const emptyChinaMap: ChinaMapLayer = {
   id: "china-three-kingdoms-180-280",
   label: "China Three Kingdoms map",
@@ -512,6 +575,25 @@ const emptyChinaMap: ChinaMapLayer = {
   eras: [],
   cities: [],
   sources: [],
+};
+const emptyFeatureCollection: FeatureCollection<Geometry, GeoJsonProperties> = {
+  type: "FeatureCollection",
+  features: [],
+};
+const emptyNaturalEarthChinaPhysical: NaturalEarthPhysical = {
+  source: "Natural Earth 10m physical vectors via natural-earth-vector GeoJSON",
+  license: "Public domain",
+  sourceUrls: {},
+  bbox: {
+    west: 76,
+    south: 15,
+    east: 134,
+    north: 51,
+  },
+  land: emptyFeatureCollection,
+  rivers: emptyFeatureCollection,
+  lakes: emptyFeatureCollection,
+  geographyRegions: emptyFeatureCollection,
 };
 const emptyRomanControlDb: FrontendRomanControlDb = { provinces: [], timeline: [] };
 const emptyPeopleIndexDb: FrontendPeopleIndexDb = {
@@ -2056,14 +2138,14 @@ function getTerrainHeight(lon: number, lat: number) {
   );
 }
 
-function getLocalTerrainPoint(lon: number, lat: number, height = 0) {
-  const { west, east, south, north } = naturalEarthChinaPhysical.bbox;
+function getLocalTerrainPoint(physical: NaturalEarthPhysical, lon: number, lat: number, height = 0) {
+  const { west, east, south, north } = physical.bbox;
   const x = ((lon - west) / (east - west) - 0.5) * 10.8;
   const z = (0.5 - (lat - south) / (north - south)) * 6.5;
   return { x, y: height, z };
 }
 
-function ChinaTerrain3DMap({ onClearSummary }: { onClearSummary: () => void }) {
+function ChinaTerrain3DMap({ onClearSummary, physical }: { onClearSummary: () => void; physical: NaturalEarthPhysical }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -2116,8 +2198,8 @@ function ChinaTerrain3DMap({ onClearSummary }: { onClearSummary: () => void }) {
       for (let index = 0; index < positions.count; index += 1) {
         const x = positions.getX(index);
         const planarY = positions.getY(index);
-        const lon = naturalEarthChinaPhysical.bbox.west + (x / width + 0.5) * (naturalEarthChinaPhysical.bbox.east - naturalEarthChinaPhysical.bbox.west);
-        const lat = naturalEarthChinaPhysical.bbox.south + (planarY / depth + 0.5) * (naturalEarthChinaPhysical.bbox.north - naturalEarthChinaPhysical.bbox.south);
+        const lon = physical.bbox.west + (x / width + 0.5) * (physical.bbox.east - physical.bbox.west);
+        const lat = physical.bbox.south + (planarY / depth + 0.5) * (physical.bbox.north - physical.bbox.south);
         const height = getTerrainHeight(lon, lat);
         positions.setXYZ(index, x, height, -planarY);
 
@@ -2156,10 +2238,10 @@ function ChinaTerrain3DMap({ onClearSummary }: { onClearSummary: () => void }) {
       terrainGroup.add(water);
 
       const riverMaterial = new THREE.LineBasicMaterial({ color: 0x2b6f96, transparent: true, opacity: 0.72 });
-      for (const river of naturalEarthChinaPhysical.rivers.features.filter((featureItem) => getNaturalEarthScaleRank(featureItem) <= 2)) {
+      for (const river of physical.rivers.features.filter((featureItem) => getNaturalEarthScaleRank(featureItem) <= 2)) {
         const points = collectGeometryCoordinates(river.geometry)
           .map(([lon, lat]) => {
-            const local = getLocalTerrainPoint(lon, lat, getTerrainHeight(lon, lat) + 0.035);
+            const local = getLocalTerrainPoint(physical, lon, lat, getTerrainHeight(lon, lat) + 0.035);
             return new THREE.Vector3(local.x, local.y, local.z);
           })
           .filter((point) => Number.isFinite(point.x) && Number.isFinite(point.z));
@@ -2185,7 +2267,7 @@ function ChinaTerrain3DMap({ onClearSummary }: { onClearSummary: () => void }) {
       cleanupResize();
       window.cancelAnimationFrame(animationFrame);
     };
-  }, []);
+  }, [physical]);
 
   return (
     <div className="terrain-3d-frame" onClick={onClearSummary}>
@@ -2504,6 +2586,7 @@ function ChinaRegionMap({
   onSelectBlock,
   onHoverBlock,
   onClearSummary,
+  physical,
   year,
 }: {
   activeBlockId: string | null;
@@ -2516,6 +2599,7 @@ function ChinaRegionMap({
   onSelectBlock: (blockId: string) => void;
   onHoverBlock: (blockId: string | null) => void;
   onClearSummary: () => void;
+  physical: NaturalEarthPhysical;
   year: number;
 }) {
   const blockById = useMemo(() => new Map(blocks.map((block) => [block.id, block])), [blocks]);
@@ -2525,7 +2609,7 @@ function ChinaRegionMap({
   }));
 
   if (mapMode === "three-d") {
-    return <ChinaTerrain3DMap onClearSummary={onClearSummary} />;
+    return <ChinaTerrain3DMap onClearSummary={onClearSummary} physical={physical} />;
   }
 
   if (mapMode === "commandery") {
@@ -2560,7 +2644,7 @@ function ChinaRegionMap({
           </pattern>
         </defs>
         {graticulePath && <path className="graticule" d={graticulePath} />}
-        {naturalEarthChinaPhysical.land.features.map((geoFeature, index) => {
+        {physical.land.features.map((geoFeature, index) => {
           const landPath = path(geoFeature);
           if (!landPath) {
             return null;
@@ -2571,7 +2655,7 @@ function ChinaRegionMap({
 
         {(mapMode === "political" || mapMode === "terrain") && (
           <>
-            {naturalEarthChinaPhysical.geographyRegions.features.map((geoFeature, index) => {
+            {physical.geographyRegions.features.map((geoFeature, index) => {
               const regionPath = path(geoFeature);
               if (!regionPath) {
                 return null;
@@ -2586,7 +2670,7 @@ function ChinaRegionMap({
               );
             })}
 
-            {naturalEarthChinaPhysical.lakes.features.map((geoFeature, index) => {
+            {physical.lakes.features.map((geoFeature, index) => {
               const lakePath = path(geoFeature);
               if (!lakePath) {
                 return null;
@@ -2595,7 +2679,7 @@ function ChinaRegionMap({
               return <path className="physical-lake" d={lakePath} key={`lake-${index}`} />;
             })}
 
-            {naturalEarthChinaPhysical.rivers.features.map((geoFeature, index) => {
+            {physical.rivers.features.map((geoFeature, index) => {
               const riverPath = path(geoFeature);
               if (!riverPath) {
                 return null;
@@ -2611,7 +2695,7 @@ function ChinaRegionMap({
             })}
 
             {mapMode === "terrain" &&
-              naturalEarthChinaPhysical.geographyRegions.features.map((geoFeature, index) => {
+              physical.geographyRegions.features.map((geoFeature, index) => {
                 if (!shouldShowTerrainLabel(geoFeature)) {
                   return null;
                 }
@@ -2670,7 +2754,7 @@ function ChinaRegionMap({
               );
             })}
 
-            {naturalEarthChinaPhysical.rivers.features
+            {physical.rivers.features
               .filter((geoFeature) => getNaturalEarthScaleRank(geoFeature) <= 2)
               .map((geoFeature, index) => {
                 const riverPath = path(geoFeature);
@@ -2914,18 +2998,25 @@ function App() {
   const [overviewDataStatus, setOverviewDataStatus] = useState<"loading" | "ready" | "error">("loading");
   const [runtimeChinaMap, setRuntimeChinaMap] = useState<ChinaMapLayer>(emptyChinaMap);
   const [chinaMapStatus, setChinaMapStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [runtimeNaturalEarthChinaPhysical, setRuntimeNaturalEarthChinaPhysical] =
+    useState<NaturalEarthPhysical>(emptyNaturalEarthChinaPhysical);
+  const [chinaPhysicalStatus, setChinaPhysicalStatus] = useState<"loading" | "ready" | "error">("loading");
   const [runtimeChinaControlDb, setRuntimeChinaControlDb] = useState<FrontendChinaControlDb>(emptyChinaControlDb);
   const [chinaControlDbStatus, setChinaControlDbStatus] = useState<"loading" | "ready" | "error">("loading");
   const [runtimeRomanControlDb, setRuntimeRomanControlDb] = useState<FrontendRomanControlDb>(emptyRomanControlDb);
   const [romanControlDbStatus, setRomanControlDbStatus] = useState<"loading" | "ready" | "error">("loading");
   const [coverageData, setCoverageData] = useState<FrontendCoverageDb | null>(null);
   const [coverageDataStatus, setCoverageDataStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [mapDebugData, setMapDebugData] = useState<FrontendMapGeometryDebugDb | null>(null);
+  const [mapDebugDataStatus, setMapDebugDataStatus] = useState<"loading" | "ready" | "error">("loading");
   void eventImportanceStatus;
   void regionsDataStatus;
   void overviewDataVersion;
   void overviewDataStatus;
   void chinaMapStatus;
+  void chinaPhysicalStatus;
   void coverageDataStatus;
+  void mapDebugDataStatus;
 
   const normalizedQuery = query.trim().toLowerCase();
   const chinaBlocks = runtimeChinaControlDb.adminBlocks.blocks;
@@ -3551,6 +3642,40 @@ function App() {
   useEffect(() => {
     let cancelled = false;
 
+    setChinaPhysicalStatus("loading");
+    fetch("/api/frontend-china-physical")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`China physical API failed: ${response.status}`);
+        }
+
+        return response.json() as Promise<NaturalEarthPhysical>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+
+        setRuntimeNaturalEarthChinaPhysical(data);
+        setChinaPhysicalStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+
+        setRuntimeNaturalEarthChinaPhysical(emptyNaturalEarthChinaPhysical);
+        setChinaPhysicalStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
     setCoverageDataStatus("loading");
     fetch("/api/frontend-coverage-190-310")
       .then((response) => {
@@ -3575,6 +3700,40 @@ function App() {
 
         setCoverageData(null);
         setCoverageDataStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    setMapDebugDataStatus("loading");
+    fetch("/api/frontend-map-geometry-debug?dataset=china-admin-block-map-190-280&limit=180")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Map geometry debug API failed: ${response.status}`);
+        }
+
+        return response.json() as Promise<FrontendMapGeometryDebugDb>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+
+        setMapDebugData(data);
+        setMapDebugDataStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+
+        setMapDebugData(null);
+        setMapDebugDataStatus("error");
       });
 
     return () => {
@@ -3867,6 +4026,15 @@ function App() {
     setHoveredChinaBlockId(null);
   }
 
+  function openMapDebugPanel() {
+    setPage("map-debug");
+    setQuery("");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+  }
+
   function changeChinaMapMode(mode: ChinaMapMode) {
     setChinaMapMode(mode);
     setSelectedChinaBlockId(null);
@@ -3901,7 +4069,7 @@ function App() {
   }
 
   return (
-    <main className={`app-shell ${page === "home" || page === "evidence" || page === "compare" || page === "coverage" ? "wide-shell" : ""}`}>
+    <main className={`app-shell ${page === "home" || page === "evidence" || page === "compare" || page === "coverage" || page === "map-debug" ? "wide-shell" : ""}`}>
       <section className="map-workspace">
         <header className="topbar">
           <div>
@@ -3981,7 +4149,16 @@ function App() {
               <Grid3x3 size={17} aria-hidden="true" />
               <span>覆盖度</span>
             </button>
-            {page !== "home" && page !== "coverage" && (
+            <button
+              className={`topbar-action ${page === "map-debug" ? "active" : ""}`}
+              type="button"
+              aria-pressed={page === "map-debug"}
+              onClick={openMapDebugPanel}
+            >
+              <Network size={17} aria-hidden="true" />
+              <span>地图调试</span>
+            </button>
+            {page !== "home" && page !== "coverage" && page !== "map-debug" && (
               <label className="search-box">
                 <Search size={18} aria-hidden="true" />
                 <input
@@ -4264,6 +4441,117 @@ function App() {
                 ))}
               </div>
             </aside>
+          </section>
+        ) : page === "map-debug" ? (
+          <section className="coverage-stage" aria-label="地图几何调试">
+            <div className="coverage-summary">
+              <div>
+                <p className="kicker">SQLite map runtime</p>
+                <h2>地图几何调试</h2>
+                <p>只读检查通用 map_* 表里的 feature、geometry、control timeline 和 source 片段。</p>
+              </div>
+              <div className="age-index-metrics">
+                <div>
+                  <span>Feature</span>
+                  <strong>{mapDebugData?.summary.features ?? 0}</strong>
+                </div>
+                <div>
+                  <span>Control</span>
+                  <strong>{mapDebugData?.summary.controlRecords ?? 0}</strong>
+                </div>
+                <div>
+                  <span>Status</span>
+                  <strong>{mapDebugDataStatus === "ready" ? "ready" : mapDebugDataStatus}</strong>
+                </div>
+              </div>
+            </div>
+
+            {mapDebugDataStatus === "loading" ? (
+              <div className="empty-state">正在读取地图几何调试数据...</div>
+            ) : mapDebugDataStatus === "error" || !mapDebugData ? (
+              <div className="empty-state">地图几何调试 API 暂时不可用。</div>
+            ) : (
+              <div className="coverage-grid">
+                <article className="coverage-card">
+                  <header>
+                    <div>
+                      <span>{mapDebugData.dataset.model}</span>
+                      <h3>{mapDebugData.dataset.label}</h3>
+                    </div>
+                    <strong>{mapDebugData.dataset.review_status}</strong>
+                  </header>
+                  <div className="coverage-metrics">
+                    <EvidenceField label="features" value={mapDebugData.summary.features} />
+                    <EvidenceField label="geometries" value={mapDebugData.summary.geometries} />
+                    <EvidenceField label="feature sources" value={mapDebugData.summary.sources} />
+                    <EvidenceField label="controllers" value={mapDebugData.summary.controllers} />
+                    <EvidenceField label="records" value={mapDebugData.summary.controlRecords} />
+                    <EvidenceField label="record sources" value={mapDebugData.summary.controlSources} />
+                  </div>
+                  <div className="coverage-examples">
+                    <span>Feature samples</span>
+                    {mapDebugData.features.slice(0, 24).map((featureRow) => (
+                      <button key={featureRow.id} type="button">
+                        <strong>{featureRow.name}</strong>
+                        <small>
+                          {featureRow.feature_type} · {featureRow.admin_level ?? "n/a"} · {featureRow.point_count ?? 0} pts · {featureRow.source_count} sources
+                        </small>
+                      </button>
+                    ))}
+                  </div>
+                </article>
+
+                <article className="coverage-card">
+                  <header>
+                    <div>
+                      <span>{mapDebugData.controlDataset?.model ?? "no control dataset"}</span>
+                      <h3>{mapDebugData.controlDataset?.label ?? "控制时间线"}</h3>
+                    </div>
+                    <strong>{mapDebugData.controllers.length} controllers</strong>
+                  </header>
+                  <div className="coverage-examples">
+                    <span>Controllers</span>
+                    {mapDebugData.controllers.map((controller) => (
+                      <button key={controller.id} type="button" style={{ "--controller-color": controller.color } as React.CSSProperties}>
+                        <strong>{controller.label}</strong>
+                        <small>{controller.color}</small>
+                      </button>
+                    ))}
+                  </div>
+                  <div className="coverage-examples">
+                    <span>Control record samples</span>
+                    {mapDebugData.controlRecords.slice(0, 30).map((record) => (
+                      <button key={record.id} type="button">
+                        <strong>{record.feature_name ?? record.feature_id}</strong>
+                        <small>
+                          {record.start_year}-{record.end_year} · {record.controller} · {record.status} · {record.source_count} sources
+                        </small>
+                      </button>
+                    ))}
+                  </div>
+                </article>
+
+                <article className="coverage-card">
+                  <header>
+                    <div>
+                      <span>Sources</span>
+                      <h3>几何来源样例</h3>
+                    </div>
+                    <strong>{mapDebugData.sourceSamples.length} samples</strong>
+                  </header>
+                  <div className="coverage-examples">
+                    {mapDebugData.sourceSamples.map((source, index) => (
+                      <button key={`${source.feature_id}-${source.source_role}-${index}`} type="button">
+                        <strong>{source.feature_id}</strong>
+                        <small>
+                          {source.source_role} · {source.confidence} · {source.note ?? "no note"}
+                        </small>
+                      </button>
+                    ))}
+                  </div>
+                </article>
+              </div>
+            )}
           </section>
         ) : page === "coverage" ? (
           <section className="coverage-stage" aria-label="190-310 覆盖度检查">
@@ -4758,6 +5046,7 @@ function App() {
                   setSelectedChinaBlockId(null);
                   setHoveredChinaBlockId(null);
                 }}
+                physical={runtimeNaturalEarthChinaPhysical}
                 year={year}
               />
             ) : (

@@ -1118,6 +1118,24 @@ function frontendChinaMap(db) {
   });
 }
 
+function frontendChinaPhysical(db) {
+  return appRuntimeDataset(db, "natural-earth-china-physical", {
+    source: "Natural Earth 10m physical vectors via natural-earth-vector GeoJSON",
+    license: "Public domain",
+    sourceUrls: {},
+    bbox: {
+      west: 76,
+      south: 15,
+      east: 134,
+      north: 51
+    },
+    land: { type: "FeatureCollection", features: [] },
+    rivers: { type: "FeatureCollection", features: [] },
+    lakes: { type: "FeatureCollection", features: [] },
+    geographyRegions: { type: "FeatureCollection", features: [] }
+  });
+}
+
 function frontendEventEvidence(db, eventId) {
   const event = db.prepare("SELECT id, title FROM events WHERE id = ?").get(eventId);
   if (!event) {
@@ -1295,69 +1313,229 @@ function frontendCoverage190310(db) {
 function frontendChinaControl(db) {
   const adminDataset = db.prepare(`
     SELECT *
-    FROM china_admin_block_datasets
+    FROM map_geometry_datasets
     WHERE id = 'china-admin-block-map-190-280'
   `).get();
   const timelineDataset = db.prepare(`
     SELECT *
-    FROM china_control_timeline_datasets
+    FROM map_control_datasets
     WHERE id = 'china-block-control-timeline-190-280'
   `).get();
+  const featureSources = db.prepare(`
+    SELECT note
+    FROM map_feature_sources
+    WHERE feature_id = ?
+    ORDER BY sort_order
+  `);
+  const recordSources = db.prepare(`
+    SELECT note
+    FROM map_control_record_sources
+    WHERE control_record_id = ?
+    ORDER BY sort_order
+  `);
 
   return {
     adminBlocks: {
       schemaVersion: adminDataset?.schema_version ?? 1,
       model: adminDataset?.model ?? "china-admin-block-map",
-      range: [adminDataset?.year_start ?? 190, adminDataset?.year_end ?? 280],
-      notes: adminDataset?.notes ?? "",
+      range: [adminDataset?.time_start ?? 190, adminDataset?.time_end ?? 280],
+      notes: adminDataset?.source_note ?? "",
       blocks: db.prepare(`
-        SELECT *
-        FROM china_admin_blocks
-        WHERE dataset_id = 'china-admin-block-map-190-280'
-        ORDER BY id
+        SELECT
+          f.*,
+          g.geometry_type,
+          g.coordinates_json
+        FROM map_features f
+        JOIN map_feature_geometries g ON g.feature_id = f.id AND g.simplification_level = 'full'
+        WHERE f.dataset_id = 'china-admin-block-map-190-280'
+        ORDER BY CASE f.feature_type WHEN 'admin_block' THEN 0 ELSE 1 END, f.id
       `).all().map((block) => {
         const rawBlock = parseRawJson(block.raw_json);
 
         return {
           id: block.id,
           name: block.name,
-          controlBlockId: rawBlock.controlBlockId,
-          level: block.level,
-          parent: block.parent_id ?? rawBlock.parent,
-          center: parseRawJson(block.center_json),
-          geometry: parseRawJson(block.geometry_json),
+          controlBlockId: block.control_feature_id ?? rawBlock.controlBlockId,
+          level: block.admin_level,
+          parent: block.parent_feature_id ?? rawBlock.parent ?? null,
+          center: [block.center_lon, block.center_lat],
+          geometry: {
+            type: block.geometry_type,
+            coordinates: parseRawJson(block.coordinates_json)
+          },
           confidence: block.confidence,
           approximate: block.approximate === 1,
-          sources: parseRawJson(block.sources_json)
+          sources: featureSources.all(block.id).map((source) => source.note).filter(Boolean)
         };
       })
     },
     controlTimeline: {
       schemaVersion: timelineDataset?.schema_version ?? 1,
       model: timelineDataset?.model ?? "china-block-control-timeline",
-      range: [timelineDataset?.year_start ?? 190, timelineDataset?.year_end ?? 280],
+      range: [timelineDataset?.time_start ?? 190, timelineDataset?.time_end ?? 280],
       keyYears: parseRawJson(timelineDataset?.key_years_json),
       controllers: db.prepare(`
-        SELECT id, color
-        FROM china_control_controllers
-        WHERE timeline_id = 'china-block-control-timeline-190-280'
-        ORDER BY id
+        SELECT label AS id, color
+        FROM map_controllers
+        WHERE control_dataset_id = 'china-block-control-timeline-190-280'
+        ORDER BY sort_order, label
       `).all(),
       records: db.prepare(`
-        SELECT block_id, start_year, end_year, controller, status, confidence, sources_json
-        FROM china_control_records
-        WHERE timeline_id = 'china-block-control-timeline-190-280'
-        ORDER BY block_id, start_year, end_year
+        SELECT
+          r.id,
+          r.feature_id,
+          r.start_year,
+          r.end_year,
+          c.label AS controller,
+          r.status,
+          r.confidence
+        FROM map_control_records r
+        JOIN map_controllers c ON c.id = r.controller_id
+        WHERE r.control_dataset_id = 'china-block-control-timeline-190-280'
+        ORDER BY r.feature_id, r.start_year, r.end_year
       `).all().map((record) => ({
-        blockId: record.block_id,
+        blockId: record.feature_id,
         startYear: record.start_year,
         endYear: record.end_year,
         controller: record.controller,
         status: record.status,
         confidence: record.confidence,
-        sources: parseRawJson(record.sources_json)
+        sources: recordSources.all(record.id).map((source) => source.note).filter(Boolean)
       }))
     }
+  };
+}
+
+function frontendMapGeometryDebug(db, url) {
+  const datasetId = url.searchParams.get("dataset") || "china-admin-block-map-190-280";
+  const limit = Math.min(500, Math.max(20, Number(url.searchParams.get("limit") ?? 160) || 160));
+  const dataset = db.prepare(`
+    SELECT *
+    FROM map_geometry_datasets
+    WHERE id = ?
+  `).get(datasetId);
+
+  if (!dataset) {
+    return null;
+  }
+
+  const controlDataset = db.prepare(`
+    SELECT *
+    FROM map_control_datasets
+    WHERE geometry_dataset_id = ?
+    ORDER BY time_start, id
+    LIMIT 1
+  `).get(datasetId);
+  const summary = {
+    features: db.prepare("SELECT COUNT(1) AS count FROM map_features WHERE dataset_id = ?").get(datasetId).count,
+    geometries: db.prepare(`
+      SELECT COUNT(1) AS count
+      FROM map_feature_geometries
+      WHERE feature_id IN (SELECT id FROM map_features WHERE dataset_id = ?)
+    `).get(datasetId).count,
+    sources: db.prepare(`
+      SELECT COUNT(1) AS count
+      FROM map_feature_sources
+      WHERE feature_id IN (SELECT id FROM map_features WHERE dataset_id = ?)
+    `).get(datasetId).count,
+    controllers: controlDataset
+      ? db.prepare("SELECT COUNT(1) AS count FROM map_controllers WHERE control_dataset_id = ?").get(controlDataset.id).count
+      : 0,
+    controlRecords: controlDataset
+      ? db.prepare("SELECT COUNT(1) AS count FROM map_control_records WHERE control_dataset_id = ?").get(controlDataset.id).count
+      : 0,
+    controlSources: controlDataset
+      ? db.prepare(`
+          SELECT COUNT(1) AS count
+          FROM map_control_record_sources
+          WHERE control_record_id IN (SELECT id FROM map_control_records WHERE control_dataset_id = ?)
+        `).get(controlDataset.id).count
+      : 0
+  };
+
+  const features = db.prepare(`
+    SELECT
+      f.id,
+      f.name,
+      f.feature_type,
+      f.admin_level,
+      f.parent_feature_id,
+      f.control_feature_id,
+      f.confidence,
+      f.approximate,
+      f.min_lon,
+      f.min_lat,
+      f.max_lon,
+      f.max_lat,
+      g.geometry_type,
+      g.point_count,
+      g.ring_count,
+      (
+        SELECT COUNT(1)
+        FROM map_control_records r
+        WHERE r.feature_id = f.id
+      ) AS control_record_count,
+      (
+        SELECT COUNT(1)
+        FROM map_feature_sources s
+        WHERE s.feature_id = f.id
+      ) AS source_count
+    FROM map_features f
+    LEFT JOIN map_feature_geometries g ON g.feature_id = f.id AND g.simplification_level = 'full'
+    WHERE f.dataset_id = ?
+    ORDER BY CASE f.feature_type WHEN 'admin_block' THEN 0 ELSE 1 END, f.id
+    LIMIT ?
+  `).all(datasetId, limit);
+
+  const controllers = controlDataset
+    ? db.prepare(`
+        SELECT id, label, color, sort_order
+        FROM map_controllers
+        WHERE control_dataset_id = ?
+        ORDER BY sort_order, label
+      `).all(controlDataset.id)
+    : [];
+  const controlRecords = controlDataset
+    ? db.prepare(`
+        SELECT
+          r.id,
+          r.feature_id,
+          f.name AS feature_name,
+          c.label AS controller,
+          r.start_year,
+          r.end_year,
+          r.status,
+          r.confidence,
+          (
+            SELECT COUNT(1)
+            FROM map_control_record_sources s
+            WHERE s.control_record_id = r.id
+          ) AS source_count
+        FROM map_control_records r
+        JOIN map_controllers c ON c.id = r.controller_id
+        LEFT JOIN map_features f ON f.id = r.feature_id
+        WHERE r.control_dataset_id = ?
+        ORDER BY r.feature_id, r.start_year, r.end_year
+        LIMIT ?
+      `).all(controlDataset.id, limit)
+    : [];
+  const sourceSamples = db.prepare(`
+    SELECT feature_id, source_role, note, confidence
+    FROM map_feature_sources
+    WHERE feature_id IN (SELECT id FROM map_features WHERE dataset_id = ?)
+    ORDER BY feature_id, sort_order
+    LIMIT 60
+  `).all(datasetId);
+
+  return {
+    purpose: "frontend-map-geometry-debug",
+    dataset,
+    controlDataset,
+    summary,
+    features,
+    controllers,
+    controlRecords,
+    sourceSamples
   };
 }
 
@@ -1735,6 +1913,11 @@ async function route(request, response) {
       return;
     }
 
+    if (pathname === "/api/frontend-china-physical") {
+      sendJson(response, 200, frontendChinaPhysical(db));
+      return;
+    }
+
     if (pathname === "/api/frontend-coverage-190-310") {
       sendJson(response, 200, frontendCoverage190310(db));
       return;
@@ -1763,6 +1946,12 @@ async function route(request, response) {
 
     if (pathname === "/api/frontend-china-control") {
       sendJson(response, 200, frontendChinaControl(db));
+      return;
+    }
+
+    if (pathname === "/api/frontend-map-geometry-debug") {
+      const debugPayload = frontendMapGeometryDebug(db, url);
+      debugPayload ? sendJson(response, 200, debugPayload) : notFound(response);
       return;
     }
 
