@@ -1168,6 +1168,10 @@ h1 {
   border-left-color: #912727;
 }
 
+.ai-history-card.legacy {
+  border-left-color: #8a8f94;
+}
+
 .ai-history-card header {
   display: flex;
   align-items: flex-start;

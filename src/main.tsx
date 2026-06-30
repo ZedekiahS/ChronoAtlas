@@ -5454,7 +5454,7 @@ function App() {
             ) : (
               <div className="ai-history-list">
                 {aiHistory.answers.map((answer) => (
-                  <article className={`ai-history-card ${answer.qualityChecks?.grade ?? "green"}`} key={answer.id}>
+                  <article className={`ai-history-card ${answer.qualityChecks?.grade ?? "legacy"}`} key={answer.id}>
                     <header>
                       <div>
                         <span>
@@ -5463,7 +5463,9 @@ function App() {
                         <h3>{answer.question || answer.id}</h3>
                       </div>
                       <strong>
-                        {(answer.qualityChecks?.grade ?? "green").toUpperCase()} {answer.qualityChecks?.score ?? 0}
+                        {answer.qualityChecks
+                          ? `${answer.qualityChecks.grade ?? "green"} ${answer.qualityChecks.score ?? 0}`.toUpperCase()
+                          : (locale === "zh" ? "未评分" : "LEGACY")}
                       </strong>
                     </header>
                     <div className="ai-source-policy">

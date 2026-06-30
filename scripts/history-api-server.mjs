@@ -681,6 +681,9 @@ function listAiAnswers(db, url) {
       const raw = parseRawJson(row.raw_json);
       const citations = parseRawJson(row.cited_items_json);
       const warnings = parseRawJson(row.warnings_json);
+      const qualityChecks = raw.qualityChecks && typeof raw.qualityChecks.grade === "string"
+        ? raw.qualityChecks
+        : null;
       return {
         id: row.id,
         runId: row.run_id,
@@ -696,7 +699,7 @@ function listAiAnswers(db, url) {
         warnings: Array.isArray(warnings) ? warnings : [],
         provider: row.provider,
         model: row.model,
-        qualityChecks: raw.qualityChecks ?? null
+        qualityChecks
       };
     }),
     total,
