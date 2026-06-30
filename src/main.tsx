@@ -193,7 +193,7 @@ type PersonAnnualTimelineItem = {
   year: number;
 };
 
-type Page = "home" | "world" | "china" | "rome" | "people" | "age" | "evidence" | "compare" | "coverage" | "map-debug";
+type Page = "home" | "world" | "china" | "rome" | "people" | "age" | "evidence" | "compare" | "coverage" | "map-debug" | "ai-debug";
 type ChinaMapMode = "political" | "terrain" | "three-d" | "commandery";
 type ThreeKingdomsFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "war" | "politics";
 type PersonIndexFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "rome" | "sasanian-persia";
@@ -264,6 +264,51 @@ type EvidenceSearchResult = {
     regionId: string | null;
     role: string;
   }>;
+};
+
+type AiRetrieveItem = {
+  rank: number;
+  subjectTable?: string | null;
+  subjectId?: string | null;
+  searchDocumentId?: string | null;
+  chunkId?: string | null;
+  sourceId?: string | null;
+  sourceTitle?: string | null;
+  citationShort?: string | null;
+  locator?: string | null;
+  quote?: string | null;
+  translation?: string | null;
+  evidenceRole?: string | null;
+  confidence?: "high" | "medium" | "low" | null;
+  regionId?: string | null;
+  timeStart?: number | null;
+  timeEnd?: number | null;
+  title?: string | null;
+  snippet?: string | null;
+  score?: number | null;
+  reason?: string | null;
+};
+
+type AiRetrieveResult = {
+  schemaVersion: number;
+  purpose: "ai-retrieve";
+  runId: string;
+  question: string;
+  locale: Locale;
+  context: {
+    eventId: string | null;
+    personId: string | null;
+    entityId: string | null;
+    region: string | null;
+    year: number | null;
+    sourceId: string | null;
+  };
+  queryPlan: {
+    strategy: string;
+    steps: string[];
+  };
+  items: AiRetrieveItem[];
+  warnings: string[];
 };
 
 type RegionInfo = {
@@ -925,8 +970,8 @@ const coverageGapFilters: Array<{ id: CoverageGapFilter; label: Record<Locale, s
 ];
 
 const uiText: Record<Locale, {
-  nav: Record<"home" | "people" | "age" | "evidence" | "compare" | "coverage" | "mapDebug", string>;
-  pageTitle: Record<Page, string>;
+  nav: Partial<Record<"home" | "people" | "age" | "evidence" | "compare" | "coverage" | "mapDebug" | "aiDebug", string>>;
+  pageTitle: Partial<Record<Page, string>>;
   search: {
     people: string;
     evidence: string;
@@ -3554,6 +3599,13 @@ function App() {
   const [evidenceRegionFilter, setEvidenceRegionFilter] = useState<EvidenceRegionFilter>("all");
   const [evidenceResults, setEvidenceResults] = useState<EvidenceSearchResult[]>([]);
   const [evidenceStatus, setEvidenceStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const [aiDebugQuestion, setAiDebugQuestion] = useState("赤壁之战有哪些史料依据？");
+  const [aiDebugEventId, setAiDebugEventId] = useState("");
+  const [aiDebugPersonId, setAiDebugPersonId] = useState("");
+  const [aiDebugRegion, setAiDebugRegion] = useState<EvidenceRegionFilter>("all");
+  const [aiDebugYear, setAiDebugYear] = useState(String(year));
+  const [aiDebugResult, setAiDebugResult] = useState<AiRetrieveResult | null>(null);
+  const [aiDebugStatus, setAiDebugStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [showMediumEvents, setShowMediumEvents] = useState(false);
   const [events, setEvents] = useState<HistoricalEvent[]>([]);
   const [eventsStatus, setEventsStatus] = useState<"loading" | "ready" | "error">("loading");
@@ -4670,6 +4722,59 @@ function App() {
     setSelectedRomanProvinceId(null);
   }
 
+  function openAiDebugPanel() {
+    setPage("ai-debug");
+    setQuery("");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+    setSelectedRomanProvinceId(null);
+    setAiDebugYear(String(year));
+    setAiDebugRegion(selectedEvent.region);
+    setAiDebugEventId(selectedEvent.id);
+  }
+
+  async function runAiDebugRetrieve() {
+    const trimmedQuestion = aiDebugQuestion.trim();
+    if (!trimmedQuestion) {
+      setAiDebugStatus("error");
+      return;
+    }
+
+    setAiDebugStatus("loading");
+    setAiDebugResult(null);
+    const parsedYear = Number(aiDebugYear);
+    const payload = {
+      question: trimmedQuestion,
+      locale,
+      limit: 12,
+      context: {
+        eventId: aiDebugEventId.trim() || null,
+        personId: aiDebugPersonId.trim() || null,
+        region: aiDebugRegion === "all" ? null : aiDebugRegion,
+        year: Number.isInteger(parsedYear) ? parsedYear : null,
+      },
+    };
+
+    try {
+      const response = await fetch("/api/ai/retrieve", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        throw new Error(`AI retrieve failed: ${response.status}`);
+      }
+      const result = await response.json() as AiRetrieveResult;
+      setAiDebugResult(result);
+      setAiDebugStatus("ready");
+    } catch {
+      setAiDebugResult(null);
+      setAiDebugStatus("error");
+    }
+  }
+
   function changeChinaMapMode(mode: ChinaMapMode) {
     setChinaMapMode(mode);
     setSelectedChinaBlockId(null);
@@ -4723,12 +4828,12 @@ function App() {
   ) as Record<CoverageGapFilter, number>;
 
   return (
-    <main className={`app-shell ${page === "home" || page === "evidence" || page === "compare" || page === "coverage" || page === "map-debug" ? "wide-shell" : ""}`}>
+    <main className={`app-shell ${page === "home" || page === "evidence" || page === "compare" || page === "coverage" || page === "map-debug" || page === "ai-debug" ? "wide-shell" : ""}`}>
       <section className="map-workspace">
         <header className="topbar">
           <div>
             <p className="kicker">ChronoAtlas</p>
-            <h1>{t.pageTitle[page]}</h1>
+            <h1>{t.pageTitle[page] ?? (locale === "zh" ? "AI 证据检索调试" : "AI Evidence Retrieval Debug")}</h1>
           </div>
           <div className="topbar-actions">
             <button
@@ -4795,6 +4900,15 @@ function App() {
               <span>{t.nav.mapDebug}</span>
             </button>
             <button
+              className={`topbar-action ${page === "ai-debug" ? "active" : ""}`}
+              type="button"
+              aria-pressed={page === "ai-debug"}
+              onClick={openAiDebugPanel}
+            >
+              <Network size={20} aria-hidden="true" />
+              <span>{t.nav.aiDebug ?? (locale === "zh" ? "AI 调试" : "AI Debug")}</span>
+            </button>
+            <button
               className="topbar-action locale-toggle"
               type="button"
               aria-label={locale === "zh" ? "Switch to English" : "切换到中文"}
@@ -4802,7 +4916,7 @@ function App() {
             >
               <span>{locale === "zh" ? "English" : "中文"}</span>
             </button>
-            {page !== "home" && page !== "coverage" && page !== "map-debug" && (
+            {page !== "home" && page !== "coverage" && page !== "map-debug" && page !== "ai-debug" && (
               <label className="search-box">
                 <Search size={18} aria-hidden="true" />
                 <input
@@ -4928,7 +5042,7 @@ function App() {
         )}
 
         {page === "home" ? (
-          <section className="overview-stage" aria-label={t.pageTitle.home}>
+          <section className="overview-stage" aria-label={t.pageTitle.home ?? "World history overview"}>
             <div className="overview-map-panel">
               <div className="overview-map-header">
                 <div>
@@ -5085,6 +5199,149 @@ function App() {
                 ))}
               </div>
             </aside>
+          </section>
+        ) : page === "ai-debug" ? (
+          <section className="evidence-stage ai-debug-stage" aria-label={locale === "zh" ? "AI 证据检索调试" : "AI evidence retrieval debug"}>
+            <div className="evidence-summary">
+              <div>
+                <p className="kicker">{locale === "zh" ? "AI / RAG 调试" : "AI / RAG Debug"}</p>
+                <h2>{locale === "zh" ? "证据召回，不调用模型" : "Evidence Retrieval, No Model Call"}</h2>
+                <p>
+                  {locale === "zh"
+                    ? "先检查 SQLite 会给 AI 哪些证据。这里不会生成回答，只显示 runId、检索策略和证据包。"
+                    : "Inspect which SQLite evidence items would be sent to AI. This view does not generate answers."}
+                </p>
+              </div>
+              <div className="coverage-metrics">
+                <EvidenceField label="runId" value={aiDebugResult?.runId ?? (locale === "zh" ? "尚未检索" : "not run")} />
+                <EvidenceField label={locale === "zh" ? "结果数" : "items"} value={aiDebugResult?.items.length ?? 0} />
+              </div>
+            </div>
+
+            <div className="ai-debug-form">
+              <label>
+                <span>{locale === "zh" ? "问题" : "Question"}</span>
+                <textarea
+                  value={aiDebugQuestion}
+                  onChange={(event) => setAiDebugQuestion(event.target.value)}
+                  rows={3}
+                />
+              </label>
+              <div className="ai-debug-grid">
+                <label>
+                  <span>eventId</span>
+                  <input
+                    value={aiDebugEventId}
+                    onChange={(event) => setAiDebugEventId(event.target.value)}
+                    placeholder="china-208-red-cliffs"
+                  />
+                </label>
+                <label>
+                  <span>personId</span>
+                  <input
+                    value={aiDebugPersonId}
+                    onChange={(event) => setAiDebugPersonId(event.target.value)}
+                    placeholder="liu-bei / person:liu-bei"
+                  />
+                </label>
+                <label>
+                  <span>{locale === "zh" ? "区域" : "Region"}</span>
+                  <select value={aiDebugRegion} onChange={(event) => setAiDebugRegion(event.target.value as EvidenceRegionFilter)}>
+                    <option value="all">{locale === "zh" ? "不限制" : "Any"}</option>
+                    {worldComparisonRegionOrder.map((regionId) => (
+                      <option key={regionId} value={regionId}>{regions.find((region) => region.id === regionId)?.label ?? regionId}</option>
+                    ))}
+                  </select>
+                </label>
+                <label>
+                  <span>{locale === "zh" ? "年份" : "Year"}</span>
+                  <input
+                    value={aiDebugYear}
+                    onChange={(event) => setAiDebugYear(event.target.value)}
+                    inputMode="numeric"
+                    placeholder="208"
+                  />
+                </label>
+              </div>
+              <div className="ai-debug-actions">
+                <button className="primary-action" type="button" onClick={runAiDebugRetrieve} disabled={aiDebugStatus === "loading"}>
+                  <Search size={18} aria-hidden="true" />
+                  {aiDebugStatus === "loading" ? (locale === "zh" ? "检索中..." : "Retrieving...") : (locale === "zh" ? "检索证据" : "Retrieve Evidence")}
+                </button>
+                <button
+                  className="secondary-action"
+                  type="button"
+                  onClick={() => {
+                    setAiDebugQuestion(getEventDisplayTitle(selectedEvent, locale).primary);
+                    setAiDebugEventId(selectedEvent.id);
+                    setAiDebugRegion(selectedEvent.region);
+                    setAiDebugYear(String(selectedEvent.startYear));
+                  }}
+                >
+                  {locale === "zh" ? "使用当前事件" : "Use Current Event"}
+                </button>
+              </div>
+            </div>
+
+            {aiDebugStatus === "idle" ? (
+              <div className="empty-state">{locale === "zh" ? "填写问题和上下文后检索证据。" : "Enter a question and context, then retrieve evidence."}</div>
+            ) : aiDebugStatus === "error" ? (
+              <div className="empty-state">{locale === "zh" ? "AI 检索 API 暂时不可用或问题为空。" : "AI retrieval API is unavailable or the question is empty."}</div>
+            ) : aiDebugResult ? (
+              <div className="ai-debug-results">
+                <article className="coverage-card">
+                  <header>
+                    <div>
+                      <span>{locale === "zh" ? "检索策略" : "Query Plan"}</span>
+                      <h3>{aiDebugResult.queryPlan.strategy}</h3>
+                    </div>
+                    <strong>{aiDebugResult.locale}</strong>
+                  </header>
+                  <div className="coverage-examples">
+                    <div>
+                      <span>steps</span>
+                      <p>{aiDebugResult.queryPlan.steps.join(" -> ") || "none"}</p>
+                    </div>
+                    {aiDebugResult.warnings.length > 0 && (
+                      <div>
+                        <span>warnings</span>
+                        {aiDebugResult.warnings.map((warning) => <p key={warning}>{warning}</p>)}
+                      </div>
+                    )}
+                  </div>
+                </article>
+
+                <div className="evidence-results">
+                  {aiDebugResult.items.length ? aiDebugResult.items.map((item) => (
+                    <article className="evidence-card" key={`${item.rank}-${item.chunkId ?? item.subjectId ?? item.sourceId}`}>
+                      <div className="evidence-card-heading">
+                        <div>
+                          <span>#{item.rank} · {item.reason ?? "unknown"} · score {item.score ?? "n/a"}</span>
+                          <h3>{item.title ?? item.sourceTitle ?? item.subjectId ?? item.chunkId}</h3>
+                        </div>
+                        <strong>{item.regionId ?? "n/a"} {item.timeStart ?? ""}</strong>
+                      </div>
+                      <div className="evidence-card-standard">
+                        <EvidenceField label="subject" value={[item.subjectTable, item.subjectId].filter(Boolean).join(": ")} />
+                        <EvidenceField label="source_id" value={item.sourceId ?? "未绑定"} />
+                        <EvidenceField label="source" value={[item.sourceTitle, item.locator].filter(Boolean).join(" · ")} />
+                        <EvidenceField label="confidence" value={item.confidence ?? "unmarked"} />
+                      </div>
+                      {(item.quote || item.translation || item.snippet) && (
+                        <details className="evidence-source-detail" open>
+                          <summary>{locale === "zh" ? "证据内容" : "Evidence Content"}</summary>
+                          {item.quote && <blockquote>{item.quote}</blockquote>}
+                          {item.translation && <p>{item.translation}</p>}
+                          {!item.translation && item.snippet && <p>{item.snippet}</p>}
+                        </details>
+                      )}
+                    </article>
+                  )) : (
+                    <div className="empty-state">{locale === "zh" ? "没有召回证据。" : "No evidence retrieved."}</div>
+                  )}
+                </div>
+              </div>
+            ) : null}
           </section>
         ) : page === "map-debug" ? (
           <section className="coverage-stage" aria-label="地图几何调试">
