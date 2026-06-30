@@ -4007,7 +4007,7 @@ function App() {
     let cancelled = false;
 
     setPeopleDataStatus("loading");
-    fetch("/api/frontend-people-index")
+    fetch(`/api/frontend-people-index?locale=${locale}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`People index API failed: ${response.status}`);
@@ -4037,13 +4037,13 @@ function App() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [locale]);
 
   useEffect(() => {
     let cancelled = false;
 
     setSourceDataStatus("loading");
-    fetch("/api/frontend-sources")
+    fetch(`/api/frontend-sources?locale=${locale}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Sources API failed: ${response.status}`);
@@ -4073,7 +4073,7 @@ function App() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [locale]);
 
   useEffect(() => {
     let cancelled = false;
@@ -4196,7 +4196,7 @@ function App() {
     let cancelled = false;
 
     setEventsStatus("loading");
-    fetch("/api/frontend-events")
+    fetch(`/api/frontend-events?locale=${locale}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Events API failed: ${response.status}`);
@@ -4224,7 +4224,7 @@ function App() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [locale]);
 
   useEffect(() => {
     let cancelled = false;

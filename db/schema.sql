@@ -21,6 +21,18 @@ CREATE TABLE sources (
   FOREIGN KEY (corpus_id) REFERENCES corpora(id)
 );
 
+CREATE TABLE source_i18n (
+  source_id TEXT NOT NULL,
+  locale TEXT NOT NULL,
+  title TEXT NOT NULL,
+  author TEXT,
+  citation_short TEXT,
+  note TEXT,
+  raw_json TEXT NOT NULL DEFAULT '{}',
+  PRIMARY KEY (source_id, locale),
+  FOREIGN KEY (source_id) REFERENCES sources(id) ON DELETE CASCADE
+);
+
 CREATE TABLE source_passages (
   id TEXT PRIMARY KEY,
   source_id TEXT NOT NULL,
@@ -40,6 +52,16 @@ CREATE TABLE source_passages (
   FOREIGN KEY (parent_passage_id) REFERENCES source_passages(id)
 );
 
+CREATE TABLE source_passage_i18n (
+  passage_id TEXT NOT NULL,
+  locale TEXT NOT NULL,
+  translation TEXT,
+  notes TEXT,
+  raw_json TEXT NOT NULL DEFAULT '{}',
+  PRIMARY KEY (passage_id, locale),
+  FOREIGN KEY (passage_id) REFERENCES source_passages(id) ON DELETE CASCADE
+);
+
 CREATE TABLE persons (
   id TEXT PRIMARY KEY,
   region TEXT NOT NULL DEFAULT 'china',
@@ -53,6 +75,19 @@ CREATE TABLE persons (
   summary TEXT,
   coverage_status TEXT NOT NULL DEFAULT 'partial',
   raw_json TEXT NOT NULL
+);
+
+CREATE TABLE person_i18n (
+  person_id TEXT NOT NULL,
+  locale TEXT NOT NULL,
+  name TEXT NOT NULL,
+  courtesy_name TEXT,
+  life TEXT,
+  primary_polity TEXT,
+  summary TEXT,
+  raw_json TEXT NOT NULL DEFAULT '{}',
+  PRIMARY KEY (person_id, locale),
+  FOREIGN KEY (person_id) REFERENCES persons(id) ON DELETE CASCADE
 );
 
 CREATE TABLE person_roles (
@@ -86,6 +121,17 @@ CREATE TABLE historical_events (
   coordinates_json TEXT,
   detail_json TEXT,
   raw_json TEXT NOT NULL
+);
+
+CREATE TABLE historical_event_i18n (
+  event_id TEXT NOT NULL,
+  locale TEXT NOT NULL,
+  title TEXT NOT NULL,
+  location_name TEXT,
+  summary TEXT,
+  raw_json TEXT NOT NULL DEFAULT '{}',
+  PRIMARY KEY (event_id, locale),
+  FOREIGN KEY (event_id) REFERENCES historical_events(id) ON DELETE CASCADE
 );
 
 CREATE TABLE historical_event_people (
@@ -124,6 +170,19 @@ CREATE TABLE source_mentions (
   raw_json TEXT NOT NULL,
   FOREIGN KEY (source_id) REFERENCES sources(id),
   FOREIGN KEY (passage_id) REFERENCES source_passages(id)
+);
+
+CREATE TABLE source_mention_i18n (
+  mention_id TEXT NOT NULL,
+  locale TEXT NOT NULL,
+  work_title TEXT,
+  book_title TEXT,
+  chapter_title TEXT,
+  translation TEXT,
+  dispute_note TEXT,
+  raw_json TEXT NOT NULL DEFAULT '{}',
+  PRIMARY KEY (mention_id, locale),
+  FOREIGN KEY (mention_id) REFERENCES source_mentions(id) ON DELETE CASCADE
 );
 
 CREATE TABLE source_mention_people (
@@ -175,6 +234,17 @@ CREATE TABLE person_life_events (
   FOREIGN KEY (person_id) REFERENCES persons(id) ON DELETE CASCADE
 );
 
+CREATE TABLE person_life_event_i18n (
+  life_event_id TEXT NOT NULL,
+  locale TEXT NOT NULL,
+  display_year TEXT,
+  title TEXT NOT NULL,
+  summary TEXT NOT NULL,
+  raw_json TEXT NOT NULL DEFAULT '{}',
+  PRIMARY KEY (life_event_id, locale),
+  FOREIGN KEY (life_event_id) REFERENCES person_life_events(id) ON DELETE CASCADE
+);
+
 CREATE TABLE person_life_event_historical_events (
   life_event_id TEXT NOT NULL,
   event_id TEXT NOT NULL,
@@ -216,6 +286,15 @@ CREATE TABLE person_relations (
   raw_json TEXT NOT NULL,
   FOREIGN KEY (source_person_id) REFERENCES persons(id) ON DELETE CASCADE,
   FOREIGN KEY (target_person_id) REFERENCES persons(id) ON DELETE CASCADE
+);
+
+CREATE TABLE person_relation_i18n (
+  relation_id TEXT NOT NULL,
+  locale TEXT NOT NULL,
+  summary TEXT NOT NULL,
+  raw_json TEXT NOT NULL DEFAULT '{}',
+  PRIMARY KEY (relation_id, locale),
+  FOREIGN KEY (relation_id) REFERENCES person_relations(id) ON DELETE CASCADE
 );
 
 CREATE TABLE person_relation_events (
@@ -289,10 +368,16 @@ CREATE TABLE import_runs (
 );
 
 CREATE INDEX idx_sources_corpus ON sources(corpus_id);
+CREATE INDEX idx_source_i18n_locale ON source_i18n(locale);
 CREATE INDEX idx_persons_name ON persons(name);
+CREATE INDEX idx_person_i18n_name ON person_i18n(locale, name);
 CREATE INDEX idx_person_life_events_person_year ON person_life_events(person_id, year);
+CREATE INDEX idx_person_life_event_i18n_locale ON person_life_event_i18n(locale);
 CREATE INDEX idx_source_mentions_source_year ON source_mentions(source_id, year);
+CREATE INDEX idx_source_mention_i18n_locale ON source_mention_i18n(locale);
 CREATE INDEX idx_source_mention_people_person ON source_mention_people(person_id);
 CREATE INDEX idx_historical_events_region_year ON historical_events(region, start_year);
+CREATE INDEX idx_historical_event_i18n_locale ON historical_event_i18n(locale);
 CREATE INDEX idx_person_relations_source_person ON person_relations(source_person_id);
 CREATE INDEX idx_person_relations_target_person ON person_relations(target_person_id);
+CREATE INDEX idx_person_relation_i18n_locale ON person_relation_i18n(locale);

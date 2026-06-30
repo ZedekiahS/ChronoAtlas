@@ -86,6 +86,16 @@ export default function migrate(db) {
       FOREIGN KEY (region_id) REFERENCES regions(id)
     );
 
+    CREATE TABLE IF NOT EXISTS entity_i18n (
+      entity_id TEXT NOT NULL,
+      locale TEXT NOT NULL,
+      primary_label TEXT NOT NULL,
+      summary TEXT,
+      raw_json TEXT NOT NULL DEFAULT '{}',
+      PRIMARY KEY (entity_id, locale),
+      FOREIGN KEY (entity_id) REFERENCES entities(id) ON DELETE CASCADE
+    );
+
     CREATE TABLE IF NOT EXISTS entity_aliases (
       id TEXT PRIMARY KEY,
       entity_id TEXT NOT NULL,
@@ -139,6 +149,17 @@ export default function migrate(db) {
       raw_json TEXT NOT NULL DEFAULT '{}',
       FOREIGN KEY (region_id) REFERENCES regions(id),
       FOREIGN KEY (place_entity_id) REFERENCES entities(id)
+    );
+
+    CREATE TABLE IF NOT EXISTS event_i18n (
+      event_id TEXT NOT NULL,
+      locale TEXT NOT NULL,
+      title TEXT NOT NULL,
+      display_time TEXT,
+      summary TEXT,
+      raw_json TEXT NOT NULL DEFAULT '{}',
+      PRIMARY KEY (event_id, locale),
+      FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE
     );
 
     CREATE TABLE IF NOT EXISTS event_entities (
@@ -230,6 +251,52 @@ export default function migrate(db) {
       raw_json TEXT NOT NULL DEFAULT '{}'
     );
 
+    CREATE TABLE IF NOT EXISTS ai_retrieval_runs (
+      id TEXT PRIMARY KEY,
+      created_at TEXT NOT NULL,
+      question TEXT NOT NULL,
+      locale TEXT NOT NULL DEFAULT 'zh',
+      page_context_json TEXT NOT NULL DEFAULT '{}',
+      query_plan_json TEXT NOT NULL DEFAULT '{}',
+      provider TEXT,
+      model TEXT,
+      raw_json TEXT NOT NULL DEFAULT '{}'
+    );
+
+    CREATE TABLE IF NOT EXISTS ai_retrieval_items (
+      run_id TEXT NOT NULL,
+      rank INTEGER NOT NULL,
+      subject_table TEXT,
+      subject_id TEXT,
+      search_document_id TEXT,
+      chunk_id TEXT,
+      source_id TEXT,
+      passage_id TEXT,
+      mention_id TEXT,
+      score REAL,
+      reason TEXT,
+      raw_json TEXT NOT NULL DEFAULT '{}',
+      PRIMARY KEY (run_id, rank),
+      FOREIGN KEY (run_id) REFERENCES ai_retrieval_runs(id) ON DELETE CASCADE,
+      FOREIGN KEY (source_id) REFERENCES sources(id),
+      FOREIGN KEY (passage_id) REFERENCES source_passages(id),
+      FOREIGN KEY (mention_id) REFERENCES source_mentions(id)
+    );
+
+    CREATE TABLE IF NOT EXISTS ai_answers (
+      id TEXT PRIMARY KEY,
+      run_id TEXT NOT NULL,
+      created_at TEXT NOT NULL,
+      answer TEXT NOT NULL,
+      cited_items_json TEXT NOT NULL DEFAULT '[]',
+      confidence TEXT,
+      warnings_json TEXT NOT NULL DEFAULT '[]',
+      provider TEXT,
+      model TEXT,
+      raw_json TEXT NOT NULL DEFAULT '{}',
+      FOREIGN KEY (run_id) REFERENCES ai_retrieval_runs(id) ON DELETE CASCADE
+    );
+
     CREATE INDEX IF NOT EXISTS idx_civilizations_region_time
       ON civilizations(region_id, time_start, time_end);
     CREATE INDEX IF NOT EXISTS idx_regions_parent
@@ -240,6 +307,8 @@ export default function migrate(db) {
       ON entities(entity_type, primary_label);
     CREATE INDEX IF NOT EXISTS idx_entities_region_time
       ON entities(region_id, time_start, time_end);
+    CREATE INDEX IF NOT EXISTS idx_entity_i18n_label
+      ON entity_i18n(locale, primary_label);
     CREATE INDEX IF NOT EXISTS idx_entity_aliases_value
       ON entity_aliases(value);
     CREATE INDEX IF NOT EXISTS idx_entity_relations_source
@@ -248,6 +317,8 @@ export default function migrate(db) {
       ON entity_relations(target_entity_id, relation_type);
     CREATE INDEX IF NOT EXISTS idx_events_region_time
       ON events(region_id, time_start, time_end);
+    CREATE INDEX IF NOT EXISTS idx_event_i18n_locale
+      ON event_i18n(locale);
     CREATE INDEX IF NOT EXISTS idx_event_entities_entity
       ON event_entities(entity_id, role);
     CREATE INDEX IF NOT EXISTS idx_observations_query
@@ -258,5 +329,13 @@ export default function migrate(db) {
       ON search_documents(region_id, period_id, topic_id, time_start, time_end);
     CREATE INDEX IF NOT EXISTS idx_embeddings_document
       ON embeddings(search_document_id, provider, model);
+    CREATE INDEX IF NOT EXISTS idx_ai_retrieval_runs_created
+      ON ai_retrieval_runs(created_at);
+    CREATE INDEX IF NOT EXISTS idx_ai_retrieval_items_subject
+      ON ai_retrieval_items(subject_table, subject_id);
+    CREATE INDEX IF NOT EXISTS idx_ai_retrieval_items_source
+      ON ai_retrieval_items(source_id, mention_id, passage_id);
+    CREATE INDEX IF NOT EXISTS idx_ai_answers_run
+      ON ai_answers(run_id);
   `);
 }
