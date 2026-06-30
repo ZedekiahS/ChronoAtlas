@@ -650,6 +650,61 @@ function parseRawJson(rawJson) {
   }
 }
 
+function listAiAnswers(db, url) {
+  const limit = parseLimit(url.searchParams.get("limit"), 50, 200);
+  const offset = parseOffset(url.searchParams.get("offset"));
+  const rows = db.prepare(`
+    SELECT
+      a.id,
+      a.run_id,
+      a.created_at,
+      a.answer,
+      a.cited_items_json,
+      a.confidence,
+      a.warnings_json,
+      a.provider,
+      a.model,
+      a.raw_json,
+      r.question,
+      r.locale,
+      r.page_context_json,
+      r.query_plan_json
+    FROM ai_answers a
+    LEFT JOIN ai_retrieval_runs r ON r.id = a.run_id
+    ORDER BY a.created_at DESC
+    LIMIT ? OFFSET ?
+  `).all(limit, offset);
+  const total = db.prepare("SELECT COUNT(*) AS count FROM ai_answers").get().count;
+
+  return {
+    answers: rows.map((row) => {
+      const raw = parseRawJson(row.raw_json);
+      const citations = parseRawJson(row.cited_items_json);
+      const warnings = parseRawJson(row.warnings_json);
+      return {
+        id: row.id,
+        runId: row.run_id,
+        createdAt: row.created_at,
+        question: row.question ?? "",
+        locale: row.locale ?? "zh",
+        context: parseRawJson(row.page_context_json),
+        queryPlan: parseRawJson(row.query_plan_json),
+        answer: row.answer,
+        citations: Array.isArray(citations) ? citations : [],
+        citationCount: Array.isArray(citations) ? citations.length : 0,
+        confidence: row.confidence,
+        warnings: Array.isArray(warnings) ? warnings : [],
+        provider: row.provider,
+        model: row.model,
+        qualityChecks: raw.qualityChecks ?? null
+      };
+    }),
+    total,
+    limit,
+    offset
+  };
+}
+
 function localeFromUrl(url) {
   return url.searchParams.get("locale") === "en" ? "en" : "zh";
 }
@@ -1264,6 +1319,59 @@ function evidencePromptItems(items) {
   }));
 }
 
+function inspectEvidenceAnswerQuality(answer, citations) {
+  const citationRefs = new Set(citations.map((citation) => citation.ref));
+  const citedRefs = [...answer.matchAll(/\[E(\d+)\]/g)].map((match) => `E${match[1]}`);
+  const citedRefSet = new Set(citedRefs);
+  const missingCitationRefs = [...new Set(citedRefs.filter((ref) => !citationRefs.has(ref)))];
+  const unusedEvidenceRefs = [...citationRefs].filter((ref) => !citedRefSet.has(ref));
+  const ignoredLinePattern =
+    /^(source use|citations?|references?|引用|来源|证据使用|source|internal evidence|external web|background knowledge|背景常识)\b/i;
+  const uncitedClaimSamples = answer
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter((line) => line.length >= 18)
+    .filter((line) => !ignoredLinePattern.test(line.replace(/^[-*#\s]+/, "")))
+    .filter((line) => /[\p{Script=Han}A-Za-z0-9]/u.test(line))
+    .filter((line) => !/\[E\d+\]/.test(line))
+    .slice(0, 5);
+
+  const backgroundKnowledgeMentioned = /background knowledge|背景常识/i.test(answer);
+  const passed = missingCitationRefs.length === 0 && uncitedClaimSamples.length === 0;
+  const score = Math.max(
+    0,
+    100 - (missingCitationRefs.length * 35) - (uncitedClaimSamples.length * 12)
+  );
+  const grade = missingCitationRefs.length > 0 || uncitedClaimSamples.length >= 4
+    ? "red"
+    : uncitedClaimSamples.length > 0
+      ? "yellow"
+      : "green";
+  const status = grade === "green" ? "pass" : grade === "yellow" ? "review" : "fail";
+
+  return {
+    passed,
+    grade,
+    status,
+    score,
+    citedRefs: [...citedRefSet],
+    internalEvidenceCitationCount: citedRefSet.size,
+    missingCitationRefs,
+    unusedEvidenceRefs,
+    uncitedClaimSamples,
+    backgroundKnowledgeMentioned,
+    externalWebSourceCount: 0,
+    warnings: [
+      ...(missingCitationRefs.length
+        ? [`Answer cites refs not returned by retrieval: ${missingCitationRefs.join(", ")}`]
+        : []),
+      ...(uncitedClaimSamples.length
+        ? ["Answer may contain uncited claims; review uncitedClaimSamples."]
+        : [])
+    ]
+  };
+}
+
 function buildEvidenceAnswerMessages({ question, locale, context, items }) {
   const languageInstruction = locale === "en"
     ? "Answer in English."
@@ -1275,12 +1383,14 @@ function buildEvidenceAnswerMessages({ question, locale, context, items }) {
       role: "system",
       content: [
         "You are ChronoAtlas's historical evidence assistant.",
-        "Use only the provided evidence items. Do not add facts that are not supported by the evidence.",
-        "If the evidence is insufficient, say so explicitly.",
-        "Every factual claim should cite evidence refs like [E1] or [E2].",
-        "Distinguish source quotation, translation/paraphrase, and interpretation.",
+        "ChronoAtlas internal evidence is the primary knowledge base. Base the answer on the provided evidence items first.",
+        "You may add a small amount of standard, widely accepted background knowledge only when it helps orientation, but label it explicitly as 'Background knowledge' or '背景常识'.",
+        "Do not use background knowledge to replace missing evidence, settle disputed details, or introduce precise claims not supported by the evidence.",
+        "Every claim drawn from ChronoAtlas evidence must cite refs like [E1] or [E2]. Background knowledge should be clearly separated and kept brief.",
+        "If the internal evidence is insufficient, say so explicitly before adding any background context.",
+        "Distinguish source quotation, translation/paraphrase, internal-evidence interpretation, and background knowledge.",
         languageInstruction,
-        "Return concise prose, followed by a short 'Citations' section listing sourceId, locator, and evidence ref."
+        "Return concise prose, followed by a short 'Source Use' section with counts for internal evidence, external web sources (always 0 unless provided), and background knowledge."
       ].join("\n")
     },
     {
@@ -1353,6 +1463,20 @@ async function aiEvidenceAnswer(db, payload = {}) {
   });
 
   if (retrieval.items.length === 0) {
+    const qualityChecks = {
+      passed: true,
+      grade: "green",
+      status: "pass",
+      score: 100,
+      citedRefs: [],
+      internalEvidenceCitationCount: 0,
+      missingCitationRefs: [],
+      unusedEvidenceRefs: [],
+      uncitedClaimSamples: [],
+      backgroundKnowledgeMentioned: false,
+      externalWebSourceCount: 0,
+      warnings: []
+    };
     return {
       schemaVersion: 1,
       purpose: "ai-evidence-answer",
@@ -1364,7 +1488,8 @@ async function aiEvidenceAnswer(db, payload = {}) {
       warnings: retrieval.warnings,
       retrieval,
       provider: null,
-      model: null
+      model: null,
+      qualityChecks
     };
   }
 
@@ -1395,6 +1520,8 @@ async function aiEvidenceAnswer(db, payload = {}) {
     translation: item.translation ?? null,
     confidence: item.confidence ?? null
   }));
+  const qualityChecks = inspectEvidenceAnswerQuality(providerResult.answer, citations);
+  const warnings = [...retrieval.warnings, ...qualityChecks.warnings];
 
   const answerId = randomUUID();
   db.prepare(`
@@ -1414,13 +1541,14 @@ async function aiEvidenceAnswer(db, payload = {}) {
     providerResult.answer,
     JSON.stringify(citations),
     "evidence-bound",
-    JSON.stringify(retrieval.warnings),
+    JSON.stringify(warnings),
     config.provider,
     config.model,
     JSON.stringify({
       provider: config.provider,
       model: config.model,
-      usage: providerResult.raw?.usage ?? null
+      usage: providerResult.raw?.usage ?? null,
+      qualityChecks
     })
   );
 
@@ -1433,8 +1561,9 @@ async function aiEvidenceAnswer(db, payload = {}) {
     model: config.model,
     answer: providerResult.answer,
     citations,
-    warnings: retrieval.warnings,
-    retrieval
+    warnings,
+    retrieval,
+    qualityChecks
   };
 }
 
@@ -2780,6 +2909,11 @@ async function route(request, response) {
 
     if (pathname === "/api/import-batches") {
       sendJson(response, 200, importBatchList(db));
+      return;
+    }
+
+    if (pathname === "/api/ai-answers") {
+      sendJson(response, 200, listAiAnswers(db, url));
       return;
     }
 

@@ -193,7 +193,7 @@ type PersonAnnualTimelineItem = {
   year: number;
 };
 
-type Page = "home" | "world" | "china" | "rome" | "people" | "age" | "evidence" | "compare" | "coverage" | "map-debug" | "ai-debug";
+type Page = "home" | "world" | "china" | "rome" | "people" | "age" | "evidence" | "compare" | "coverage" | "map-debug" | "ai-debug" | "ai-history";
 type ChinaMapMode = "political" | "terrain" | "three-d" | "commandery";
 type ThreeKingdomsFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "war" | "politics";
 type PersonIndexFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "rome" | "sasanian-persia";
@@ -333,6 +333,45 @@ type AiEvidenceAnswerResult = {
   }>;
   warnings: string[];
   retrieval: AiRetrieveResult;
+  qualityChecks?: {
+    passed: boolean;
+    grade?: "green" | "yellow" | "red";
+    status?: "pass" | "review" | "fail";
+    score?: number;
+    citedRefs: string[];
+    internalEvidenceCitationCount: number;
+    missingCitationRefs: string[];
+    unusedEvidenceRefs: string[];
+    uncitedClaimSamples: string[];
+    backgroundKnowledgeMentioned: boolean;
+    externalWebSourceCount: number;
+    warnings: string[];
+  };
+};
+
+type AiAnswerHistoryItem = {
+  id: string;
+  runId: string;
+  createdAt: string;
+  question: string;
+  locale: Locale;
+  context: AiRetrieveResult["context"];
+  queryPlan: AiRetrieveResult["queryPlan"] | Record<string, unknown>;
+  answer: string;
+  citations: AiEvidenceAnswerResult["citations"];
+  citationCount: number;
+  confidence: string | null;
+  warnings: string[];
+  provider: string | null;
+  model: string | null;
+  qualityChecks: AiEvidenceAnswerResult["qualityChecks"] | null;
+};
+
+type AiAnswerHistoryResult = {
+  answers: AiAnswerHistoryItem[];
+  total: number;
+  limit: number;
+  offset: number;
 };
 
 type RegionInfo = {
@@ -994,7 +1033,7 @@ const coverageGapFilters: Array<{ id: CoverageGapFilter; label: Record<Locale, s
 ];
 
 const uiText: Record<Locale, {
-  nav: Partial<Record<"home" | "people" | "age" | "evidence" | "compare" | "coverage" | "mapDebug" | "aiDebug", string>>;
+  nav: Partial<Record<"home" | "people" | "age" | "evidence" | "compare" | "coverage" | "mapDebug" | "aiDebug" | "aiHistory", string>>;
   pageTitle: Partial<Record<Page, string>>;
   search: {
     people: string;
@@ -1243,6 +1282,7 @@ const uiText: Record<Locale, {
       compare: "Compare",
       coverage: "Coverage",
       mapDebug: "Map Debug",
+      aiHistory: "AI History",
     },
     pageTitle: {
       home: "World History Overview: 550 BCE to 1644",
@@ -1255,6 +1295,7 @@ const uiText: Record<Locale, {
       compare: "Event Comparison: China, Rome, and Sasanian Persia",
       coverage: "190-310 Coverage Audit",
       "map-debug": "Map Debug",
+      "ai-history": "AI Answer History",
     },
     search: {
       people: "Search people, names, factions",
@@ -3633,6 +3674,8 @@ function App() {
   const [aiAnswerResult, setAiAnswerResult] = useState<AiEvidenceAnswerResult | null>(null);
   const [aiAnswerStatus, setAiAnswerStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const [aiAnswerError, setAiAnswerError] = useState<string | null>(null);
+  const [aiHistory, setAiHistory] = useState<AiAnswerHistoryResult | null>(null);
+  const [aiHistoryStatus, setAiHistoryStatus] = useState<"loading" | "ready" | "error">("loading");
   const [showMediumEvents, setShowMediumEvents] = useState(false);
   const [events, setEvents] = useState<HistoricalEvent[]>([]);
   const [eventsStatus, setEventsStatus] = useState<"loading" | "ready" | "error">("loading");
@@ -3669,6 +3712,7 @@ function App() {
   void chinaPhysicalStatus;
   void coverageDataStatus;
   void mapDebugDataStatus;
+  void aiHistoryStatus;
 
   const t = uiText[locale];
   const normalizedQuery = query.trim().toLowerCase();
@@ -3884,6 +3928,8 @@ function App() {
     emptyHistoricalEvent;
   const selectedEventTitle = getEventDisplayTitle(selectedEvent, locale);
   const selectedEventDetail = selectedEvent.detail ?? null;
+  const selectedEventAiAnswer =
+    aiAnswerResult?.retrieval.context.eventId === selectedEvent.id ? aiAnswerResult : null;
 
   const relatedEvents = selectedEvent.relatedEvents
     .map((id) => events.find((event) => event.id === id))
@@ -4444,6 +4490,40 @@ function App() {
   useEffect(() => {
     let cancelled = false;
 
+    setAiHistoryStatus("loading");
+    fetch("/api/ai-answers?limit=80")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`AI answers API failed: ${response.status}`);
+        }
+
+        return response.json() as Promise<AiAnswerHistoryResult>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+
+        setAiHistory(data);
+        setAiHistoryStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+
+        setAiHistory(null);
+        setAiHistoryStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
     setChinaControlDbStatus("loading");
     fetch("/api/frontend-china-control")
       .then((response) => {
@@ -4769,6 +4849,16 @@ function App() {
     }
   }
 
+  function openAiHistoryPanel() {
+    setPage("ai-history");
+    setQuery("");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+    setSelectedRomanProvinceId(null);
+  }
+
   async function runAiDebugRetrieve() {
     const trimmedQuestion = aiDebugQuestion.trim();
     if (!trimmedQuestion) {
@@ -4855,6 +4945,49 @@ function App() {
     }
   }
 
+  async function runSelectedEventAiAnswer() {
+    const question = `${getEventDisplayTitle(selectedEvent, locale).primary}${locale === "zh" ? "有哪些史料依据？" : ": what evidence supports this event?"}`;
+    setAiDebugQuestion(question);
+    setAiDebugEventId(selectedEvent.id);
+    setAiDebugPersonId("");
+    setAiDebugRegion(selectedEvent.region);
+    setAiDebugYear(String(selectedEvent.startYear));
+    setAiAnswerStatus("loading");
+    setAiAnswerResult(null);
+    setAiAnswerError(null);
+
+    try {
+      const response = await fetch("/api/ai/evidence-answer", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          question,
+          locale,
+          limit: 10,
+          context: {
+            eventId: selectedEvent.id,
+            personId: null,
+            region: selectedEvent.region,
+            year: selectedEvent.startYear,
+          },
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result?.error ?? `AI answer failed: ${response.status}`);
+      }
+      const answerResult = result as AiEvidenceAnswerResult;
+      setAiAnswerResult(answerResult);
+      setAiDebugResult(answerResult.retrieval);
+      setAiDebugStatus("ready");
+      setAiAnswerStatus("ready");
+    } catch (error) {
+      setAiAnswerResult(null);
+      setAiAnswerStatus("error");
+      setAiAnswerError(error instanceof Error ? error.message : "AI answer failed");
+    }
+  }
+
   function changeChinaMapMode(mode: ChinaMapMode) {
     setChinaMapMode(mode);
     setSelectedChinaBlockId(null);
@@ -4906,14 +5039,19 @@ function App() {
       coverageData?.regions.filter((region) => coverageRegionMatchesFilter(region, filter.id)).length ?? 0,
     ]),
   ) as Record<CoverageGapFilter, number>;
+  const pageHeadingTitle =
+    t.pageTitle[page] ??
+    (page === "ai-history"
+      ? (locale === "zh" ? "AI 回答记录" : "AI Answer History")
+      : (locale === "zh" ? "AI 证据检索调试" : "AI Evidence Retrieval Debug"));
 
   return (
-    <main className={`app-shell ${page === "home" || page === "evidence" || page === "compare" || page === "coverage" || page === "map-debug" || page === "ai-debug" ? "wide-shell" : ""}`}>
+    <main className={`app-shell ${page === "home" || page === "evidence" || page === "compare" || page === "coverage" || page === "map-debug" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""}`}>
       <section className="map-workspace">
         <header className="topbar">
           <div>
             <p className="kicker">ChronoAtlas</p>
-            <h1>{t.pageTitle[page] ?? (locale === "zh" ? "AI 证据检索调试" : "AI Evidence Retrieval Debug")}</h1>
+            <h1>{pageHeadingTitle}</h1>
           </div>
           <div className="topbar-actions">
             <button
@@ -4989,6 +5127,15 @@ function App() {
               <span>{t.nav.aiDebug ?? (locale === "zh" ? "AI 调试" : "AI Debug")}</span>
             </button>
             <button
+              className={`topbar-action ${page === "ai-history" ? "active" : ""}`}
+              type="button"
+              aria-pressed={page === "ai-history"}
+              onClick={openAiHistoryPanel}
+            >
+              <BookOpen size={17} aria-hidden="true" />
+              <span>{t.nav.aiHistory ?? (locale === "zh" ? "AI 记录" : "AI History")}</span>
+            </button>
+            <button
               className="topbar-action locale-toggle"
               type="button"
               aria-label={locale === "zh" ? "Switch to English" : "切换到中文"}
@@ -4996,7 +5143,7 @@ function App() {
             >
               <span>{locale === "zh" ? "English" : "中文"}</span>
             </button>
-            {page !== "home" && page !== "coverage" && page !== "map-debug" && page !== "ai-debug" && (
+            {page !== "home" && page !== "coverage" && page !== "map-debug" && page !== "ai-debug" && page !== "ai-history" && (
               <label className="search-box">
                 <Search size={18} aria-hidden="true" />
                 <input
@@ -5280,6 +5427,91 @@ function App() {
               </div>
             </aside>
           </section>
+        ) : page === "ai-history" ? (
+          <section className="evidence-stage ai-history-stage" aria-label={locale === "zh" ? "AI 回答记录" : "AI answer history"}>
+            <div className="evidence-summary">
+              <div>
+                <p className="kicker">{locale === "zh" ? "AI / RAG 记录" : "AI / RAG History"}</p>
+                <h2>{locale === "zh" ? "历史提问、回答、引用与评分" : "Past Questions, Answers, Citations, and Scores"}</h2>
+                <p>
+                  {locale === "zh"
+                    ? "这里读取 SQLite 中保存的 AI 回答，不会重新调用模型。用于复核每次回答是否基于内部证据，以及红黄绿质量状态。"
+                    : "This reads saved AI answers from SQLite and does not call the model again. Use it to review evidence use and quality grades."}
+                </p>
+              </div>
+              <div className="coverage-metrics">
+                <EvidenceField label={locale === "zh" ? "记录总数" : "total"} value={aiHistory?.total ?? 0} />
+                <EvidenceField label={locale === "zh" ? "当前显示" : "shown"} value={aiHistory?.answers.length ?? 0} />
+              </div>
+            </div>
+
+            {aiHistoryStatus === "loading" ? (
+              <div className="empty-state">{locale === "zh" ? "正在读取 AI 回答记录..." : "Loading AI answer history..."}</div>
+            ) : aiHistoryStatus === "error" || !aiHistory ? (
+              <div className="empty-state">{locale === "zh" ? "AI 回答记录 API 暂时不可用。" : "AI answer history API is unavailable."}</div>
+            ) : aiHistory.answers.length === 0 ? (
+              <div className="empty-state">{locale === "zh" ? "还没有保存过 AI 回答。" : "No saved AI answers yet."}</div>
+            ) : (
+              <div className="ai-history-list">
+                {aiHistory.answers.map((answer) => (
+                  <article className={`ai-history-card ${answer.qualityChecks?.grade ?? "green"}`} key={answer.id}>
+                    <header>
+                      <div>
+                        <span>
+                          {new Date(answer.createdAt).toLocaleString(locale === "zh" ? "zh-CN" : "en-US")} · {answer.provider ?? "local"} / {answer.model ?? "no model"}
+                        </span>
+                        <h3>{answer.question || answer.id}</h3>
+                      </div>
+                      <strong>
+                        {(answer.qualityChecks?.grade ?? "green").toUpperCase()} {answer.qualityChecks?.score ?? 0}
+                      </strong>
+                    </header>
+                    <div className="ai-source-policy">
+                      <span>{locale === "zh" ? `内部证据 ${answer.citationCount}` : `Internal evidence ${answer.citationCount}`}</span>
+                      <span>{locale === "zh" ? `未引用样本 ${answer.qualityChecks?.uncitedClaimSamples.length ?? 0}` : `Uncited samples ${answer.qualityChecks?.uncitedClaimSamples.length ?? 0}`}</span>
+                      <span>{answer.context?.region ?? "all"} {answer.context?.year ?? ""}</span>
+                    </div>
+                    <p className="ai-answer-text">{answer.answer}</p>
+                    {answer.warnings.length > 0 && (
+                      <div className="ai-quality-list yellow">
+                        <strong>{locale === "zh" ? "Warnings" : "Warnings"}</strong>
+                        <ul>
+                          {answer.warnings.map((warning) => <li key={warning}>{warning}</li>)}
+                        </ul>
+                      </div>
+                    )}
+                    {answer.citations.length > 0 && (
+                      <details className="ai-citation-details">
+                        <summary>{locale === "zh" ? "查看引用" : "View citations"}</summary>
+                        <div className="ai-citation-list">
+                          {answer.citations.map((citation) => (
+                            <article key={`${answer.id}-${citation.ref}-${citation.sourceId}-${citation.locator}`}>
+                              <header>
+                                <strong>{citation.ref}</strong>
+                                <span>{[citation.sourceTitle ?? citation.sourceId, citation.locator].filter(Boolean).join(" · ")}</span>
+                              </header>
+                              {citation.quote && (
+                                <p>
+                                  <b>{locale === "zh" ? "原文" : "Original"}</b>
+                                  {citation.quote}
+                                </p>
+                              )}
+                              {citation.translation && (
+                                <p>
+                                  <b>{locale === "zh" ? "译文" : "Translation"}</b>
+                                  {citation.translation}
+                                </p>
+                              )}
+                            </article>
+                          ))}
+                        </div>
+                      </details>
+                    )}
+                  </article>
+                ))}
+              </div>
+            )}
+          </section>
         ) : page === "ai-debug" ? (
           <section className="evidence-stage ai-debug-stage" aria-label={locale === "zh" ? "AI 证据检索调试" : "AI evidence retrieval debug"}>
             <div className="evidence-summary">
@@ -5299,6 +5531,11 @@ function App() {
             </div>
 
             <div className="ai-debug-form">
+              <div className="ai-source-policy" aria-label={locale === "zh" ? "回答来源规则" : "answer source rules"}>
+                <span>{locale === "zh" ? "主知识库：ChronoAtlas SQLite" : "Primary: ChronoAtlas SQLite"}</span>
+                <span>{locale === "zh" ? "外部网页：默认 0" : "External web: 0 by default"}</span>
+                <span>{locale === "zh" ? "背景常识：少量、标准、需标注" : "Background: brief, standard, labeled"}</span>
+              </div>
               <label>
                 <span>{locale === "zh" ? "问题" : "Question"}</span>
                 <textarea
@@ -5388,6 +5625,34 @@ function App() {
                       <p>{aiAnswerError ?? (locale === "zh" ? "生成回答失败" : "Answer generation failed")}</p>
                     ) : aiAnswerResult ? (
                       <>
+                        <div className="ai-source-policy" aria-label={locale === "zh" ? "回答来源分级" : "answer source policy"}>
+                          <span>{locale === "zh" ? `内部证据 ${aiAnswerResult.citations.length}` : `Internal evidence ${aiAnswerResult.citations.length}`}</span>
+                          <span>{locale === "zh" ? "外部网页 0" : "External web 0"}</span>
+                          <span>{locale === "zh" ? "背景常识 少量且需标注" : "Background brief and labeled"}</span>
+                        </div>
+                        {aiAnswerResult.qualityChecks && (
+                          <div className={`ai-quality-list ${aiAnswerResult.qualityChecks.grade ?? (aiAnswerResult.qualityChecks.passed ? "green" : "yellow")}`}>
+                            <strong>
+                              {aiAnswerResult.qualityChecks.grade === "red"
+                                ? (locale === "zh" ? "红：引用风险较高" : "Red: citation risk")
+                                : aiAnswerResult.qualityChecks.grade === "yellow"
+                                  ? (locale === "zh" ? "黄：需要复核" : "Yellow: review needed")
+                                  : (locale === "zh" ? "绿：引用检查通过" : "Green: citation check passed")}
+                            </strong>
+                            <span>
+                              {locale === "zh"
+                                ? `评分 ${aiAnswerResult.qualityChecks.score ?? 0}；已引用 ${aiAnswerResult.qualityChecks.internalEvidenceCitationCount} 条内部证据，外部网页 ${aiAnswerResult.qualityChecks.externalWebSourceCount}`
+                                : `Score ${aiAnswerResult.qualityChecks.score ?? 0}; ${aiAnswerResult.qualityChecks.internalEvidenceCitationCount} internal refs cited, ${aiAnswerResult.qualityChecks.externalWebSourceCount} external web sources`}
+                            </span>
+                            {aiAnswerResult.qualityChecks.uncitedClaimSamples.length > 0 && (
+                              <ul>
+                                {aiAnswerResult.qualityChecks.uncitedClaimSamples.map((sample) => (
+                                  <li key={sample}>{sample}</li>
+                                ))}
+                              </ul>
+                            )}
+                          </div>
+                        )}
                         <p className="ai-answer-text">{aiAnswerResult.answer}</p>
                         {aiAnswerResult.citations.length > 0 && (
                           <div className="coverage-examples">
@@ -6766,6 +7031,72 @@ function App() {
               <strong>{selectedEvent.confidence}</strong>
             </div>
           </div>
+
+          <section className="detail-section ai-event-answer-panel">
+            <div className="person-section-heading">
+              <h3>
+                <Network size={17} aria-hidden="true" />
+                {locale === "zh" ? "AI 史料回答" : "AI Evidence Answer"}
+              </h3>
+              <button
+                className="text-action"
+                type="button"
+                onClick={runSelectedEventAiAnswer}
+                disabled={aiAnswerStatus === "loading"}
+              >
+                {aiAnswerStatus === "loading"
+                  ? (locale === "zh" ? "生成中..." : "Answering...")
+                  : (locale === "zh" ? "生成当前事件回答" : "Answer This Event")}
+              </button>
+            </div>
+            {aiAnswerStatus === "error" ? (
+              <p className="ai-event-answer-error">{aiAnswerError ?? (locale === "zh" ? "AI 回答生成失败" : "AI answer failed")}</p>
+            ) : selectedEventAiAnswer ? (
+              <div className="ai-event-answer">
+                <div className="ai-source-policy" aria-label={locale === "zh" ? "回答来源分级" : "answer source policy"}>
+                  <span>{locale === "zh" ? `内部证据 ${selectedEventAiAnswer.citations.length}` : `Internal evidence ${selectedEventAiAnswer.citations.length}`}</span>
+                  <span>{locale === "zh" ? "外部网页 0" : "External web 0"}</span>
+                  <span>
+                    {selectedEventAiAnswer.qualityChecks?.passed
+                      ? (locale === "zh" ? "引用检查通过" : "Citation check passed")
+                      : (locale === "zh" ? "引用检查需复核" : "Citation check needs review")}
+                  </span>
+                </div>
+                <p className="ai-answer-text">{selectedEventAiAnswer.answer}</p>
+                {selectedEventAiAnswer.citations.length > 0 && (
+                  <details className="ai-citation-details">
+                    <summary>{locale === "zh" ? "查看引用原文/译文" : "View quoted evidence"}</summary>
+                    <div className="ai-citation-list">
+                      {selectedEventAiAnswer.citations.map((citation) => (
+                        <article key={`${citation.ref}-${citation.sourceId}-${citation.locator}`}>
+                          <header>
+                            <strong>{citation.ref}</strong>
+                            <span>{[citation.sourceTitle ?? citation.sourceId, citation.locator].filter(Boolean).join(" · ")}</span>
+                          </header>
+                          {citation.quote && (
+                            <p>
+                              <b>{locale === "zh" ? "原文" : "Original"}</b>
+                              {citation.quote}
+                            </p>
+                          )}
+                          {citation.translation && (
+                            <p>
+                              <b>{locale === "zh" ? "译文" : "Translation"}</b>
+                              {citation.translation}
+                            </p>
+                          )}
+                        </article>
+                      ))}
+                    </div>
+                  </details>
+                )}
+              </div>
+            ) : (
+              <p className="ai-event-answer-empty">
+                {locale === "zh" ? "基于 SQLite 史料证据生成，不使用外部网页。" : "Generated from SQLite evidence; no external web sources."}
+              </p>
+            )}
+          </section>
 
           {selectedEventDetail && (
             <section className="detail-section event-deep-detail">
