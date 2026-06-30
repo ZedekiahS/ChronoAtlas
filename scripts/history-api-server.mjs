@@ -1214,6 +1214,230 @@ function aiRetrieve(db, payload = {}) {
   };
 }
 
+function aiProviderConfig(payload = {}) {
+  const provider = String(payload.provider ?? process.env.AI_PROVIDER ?? "deepseek").toLowerCase();
+  if (provider === "openai") {
+    return {
+      provider,
+      apiKey: process.env.OPENAI_API_KEY,
+      model: String(payload.model ?? process.env.OPENAI_MODEL ?? "gpt-4.1-mini"),
+      baseUrl: String(process.env.OPENAI_BASE_URL ?? "https://api.openai.com/v1")
+    };
+  }
+
+  if (provider === "deepseek") {
+    return {
+      provider,
+      apiKey: process.env.DEEPSEEK_API_KEY,
+      model: String(payload.model ?? process.env.DEEPSEEK_MODEL ?? "deepseek-chat"),
+      baseUrl: String(process.env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com")
+    };
+  }
+
+  throw new Error("Unsupported AI provider. Use deepseek or openai.");
+}
+
+function truncateForPrompt(value, maxLength) {
+  if (typeof value !== "string") {
+    return "";
+  }
+  const normalized = value.replace(/\s+/g, " ").trim();
+  return normalized.length > maxLength ? `${normalized.slice(0, maxLength)}...` : normalized;
+}
+
+function evidencePromptItems(items) {
+  return items.map((item) => ({
+    ref: `E${item.rank}`,
+    rank: item.rank,
+    reason: item.reason ?? null,
+    score: item.score ?? null,
+    subjectTable: item.subjectTable ?? null,
+    subjectId: item.subjectId ?? null,
+    sourceId: item.sourceId ?? null,
+    sourceTitle: item.sourceTitle ?? null,
+    locator: item.locator ?? null,
+    year: item.timeStart ?? null,
+    confidence: item.confidence ?? null,
+    quote: truncateForPrompt(item.quote ?? "", 900),
+    translation: truncateForPrompt(item.translation ?? "", 900),
+    snippet: truncateForPrompt(item.snippet ?? "", 700)
+  }));
+}
+
+function buildEvidenceAnswerMessages({ question, locale, context, items }) {
+  const languageInstruction = locale === "en"
+    ? "Answer in English."
+    : "请用中文回答。";
+  const evidenceItems = evidencePromptItems(items);
+
+  return [
+    {
+      role: "system",
+      content: [
+        "You are ChronoAtlas's historical evidence assistant.",
+        "Use only the provided evidence items. Do not add facts that are not supported by the evidence.",
+        "If the evidence is insufficient, say so explicitly.",
+        "Every factual claim should cite evidence refs like [E1] or [E2].",
+        "Distinguish source quotation, translation/paraphrase, and interpretation.",
+        languageInstruction,
+        "Return concise prose, followed by a short 'Citations' section listing sourceId, locator, and evidence ref."
+      ].join("\n")
+    },
+    {
+      role: "user",
+      content: JSON.stringify({
+        question,
+        locale,
+        context,
+        evidence: evidenceItems
+      }, null, 2)
+    }
+  ];
+}
+
+async function callChatCompletions({ provider, apiKey, model, baseUrl, messages }) {
+  if (!apiKey) {
+    throw new Error(`Missing API key for ${provider}. Set ${provider === "openai" ? "OPENAI_API_KEY" : "DEEPSEEK_API_KEY"}.`);
+  }
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 45_000);
+  try {
+    const response = await fetch(`${baseUrl.replace(/\/$/, "")}/chat/completions`, {
+      method: "POST",
+      headers: {
+        "authorization": `Bearer ${apiKey}`,
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        model,
+        messages,
+        temperature: 0.2,
+        max_tokens: 1200
+      }),
+      signal: controller.signal
+    });
+
+    const body = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      const message = body?.error?.message ?? body?.message ?? `AI provider request failed: ${response.status}`;
+      throw new Error(message);
+    }
+
+    const answer = body?.choices?.[0]?.message?.content;
+    if (typeof answer !== "string" || !answer.trim()) {
+      throw new Error("AI provider returned an empty answer.");
+    }
+
+    return {
+      answer: answer.trim(),
+      raw: body
+    };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function aiEvidenceAnswer(db, payload = {}) {
+  const question = typeof payload.question === "string" ? payload.question.trim().slice(0, 800) : "";
+  if (!question) {
+    throw new Error("Missing question");
+  }
+
+  const locale = payload.locale === "en" ? "en" : "zh";
+  const retrieval = aiRetrieve(db, {
+    question,
+    locale,
+    limit: parseLimit(payload.limit, 10, 20),
+    context: payload.context ?? {}
+  });
+
+  if (retrieval.items.length === 0) {
+    return {
+      schemaVersion: 1,
+      purpose: "ai-evidence-answer",
+      runId: retrieval.runId,
+      answer: locale === "en"
+        ? "The current ChronoAtlas evidence database does not contain enough matching evidence to answer this question."
+        : "当前 ChronoAtlas 证据库没有召回足够证据，暂不能回答这个问题。",
+      citations: [],
+      warnings: retrieval.warnings,
+      retrieval,
+      provider: null,
+      model: null
+    };
+  }
+
+  const config = aiProviderConfig(payload);
+  const messages = buildEvidenceAnswerMessages({
+    question,
+    locale,
+    context: retrieval.context,
+    items: retrieval.items
+  });
+  const providerResult = await callChatCompletions({
+    provider: config.provider,
+    apiKey: config.apiKey,
+    model: config.model,
+    baseUrl: config.baseUrl,
+    messages
+  });
+
+  const citations = retrieval.items.map((item) => ({
+    ref: `E${item.rank}`,
+    rank: item.rank,
+    sourceId: item.sourceId ?? null,
+    sourceTitle: item.sourceTitle ?? null,
+    locator: item.locator ?? null,
+    subjectTable: item.subjectTable ?? null,
+    subjectId: item.subjectId ?? null,
+    quote: item.quote ?? null,
+    translation: item.translation ?? null,
+    confidence: item.confidence ?? null
+  }));
+
+  const answerId = randomUUID();
+  db.prepare(`
+    UPDATE ai_retrieval_runs
+    SET provider = ?, model = ?
+    WHERE id = ?
+  `).run(config.provider, config.model, retrieval.runId);
+  db.prepare(`
+    INSERT INTO ai_answers (
+      id, run_id, created_at, answer, cited_items_json, confidence,
+      warnings_json, provider, model, raw_json
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `).run(
+    answerId,
+    retrieval.runId,
+    new Date().toISOString(),
+    providerResult.answer,
+    JSON.stringify(citations),
+    "evidence-bound",
+    JSON.stringify(retrieval.warnings),
+    config.provider,
+    config.model,
+    JSON.stringify({
+      provider: config.provider,
+      model: config.model,
+      usage: providerResult.raw?.usage ?? null
+    })
+  );
+
+  return {
+    schemaVersion: 1,
+    purpose: "ai-evidence-answer",
+    answerId,
+    runId: retrieval.runId,
+    provider: config.provider,
+    model: config.model,
+    answer: providerResult.answer,
+    citations,
+    warnings: retrieval.warnings,
+    retrieval
+  };
+}
+
 function frontendDb(db) {
   const sources = db.prepare(`
     SELECT id, title, author, type, citation_short, url, note
@@ -2493,6 +2717,27 @@ async function route(request, response) {
           badRequest(response, error.message);
         }
       }, { readOnly: false });
+      return;
+    }
+
+    if (pathname === "/api/ai/evidence-answer") {
+      let body;
+      try {
+        body = await readRequestJson(request);
+      } catch (error) {
+        badRequest(response, error.message);
+        return;
+      }
+
+      let db;
+      try {
+        db = dbConnection({ readOnly: false });
+        sendJson(response, 200, await aiEvidenceAnswer(db, body));
+      } catch (error) {
+        badRequest(response, error.message);
+      } finally {
+        db?.close();
+      }
       return;
     }
 

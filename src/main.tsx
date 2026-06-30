@@ -311,6 +311,30 @@ type AiRetrieveResult = {
   warnings: string[];
 };
 
+type AiEvidenceAnswerResult = {
+  schemaVersion: number;
+  purpose: "ai-evidence-answer";
+  answerId?: string;
+  runId: string;
+  provider: string | null;
+  model: string | null;
+  answer: string;
+  citations: Array<{
+    ref: string;
+    rank: number;
+    sourceId: string | null;
+    sourceTitle: string | null;
+    locator: string | null;
+    subjectTable: string | null;
+    subjectId: string | null;
+    quote: string | null;
+    translation: string | null;
+    confidence: string | null;
+  }>;
+  warnings: string[];
+  retrieval: AiRetrieveResult;
+};
+
 type RegionInfo = {
   id: Region;
   label: string;
@@ -3606,6 +3630,9 @@ function App() {
   const [aiDebugYear, setAiDebugYear] = useState(String(year));
   const [aiDebugResult, setAiDebugResult] = useState<AiRetrieveResult | null>(null);
   const [aiDebugStatus, setAiDebugStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const [aiAnswerResult, setAiAnswerResult] = useState<AiEvidenceAnswerResult | null>(null);
+  const [aiAnswerStatus, setAiAnswerStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const [aiAnswerError, setAiAnswerError] = useState<string | null>(null);
   const [showMediumEvents, setShowMediumEvents] = useState(false);
   const [events, setEvents] = useState<HistoricalEvent[]>([]);
   const [eventsStatus, setEventsStatus] = useState<"loading" | "ready" | "error">("loading");
@@ -4731,8 +4758,15 @@ function App() {
     setHoveredChinaBlockId(null);
     setSelectedRomanProvinceId(null);
     setAiDebugYear(String(year));
-    setAiDebugRegion(selectedEvent.region);
-    setAiDebugEventId(selectedEvent.id);
+    if (eventsStatus === "ready") {
+      setAiDebugRegion(selectedEvent.region);
+      setAiDebugEventId(selectedEvent.id);
+      setAiDebugQuestion(`${getEventDisplayTitle(selectedEvent, locale).primary}${locale === "zh" ? "有哪些史料依据？" : ": what evidence supports this event?"}`);
+    } else {
+      setAiDebugRegion("all");
+      setAiDebugEventId("");
+      setAiDebugQuestion(locale === "zh" ? "当前年份有哪些史料依据？" : "What evidence is available for the current year?");
+    }
   }
 
   async function runAiDebugRetrieve() {
@@ -4772,6 +4806,52 @@ function App() {
     } catch {
       setAiDebugResult(null);
       setAiDebugStatus("error");
+    }
+  }
+
+  async function runAiEvidenceAnswer() {
+    const trimmedQuestion = aiDebugQuestion.trim();
+    if (!trimmedQuestion) {
+      setAiAnswerStatus("error");
+      setAiAnswerError(locale === "zh" ? "问题不能为空" : "Question is required");
+      return;
+    }
+
+    setAiAnswerStatus("loading");
+    setAiAnswerResult(null);
+    setAiAnswerError(null);
+    const parsedYear = Number(aiDebugYear);
+    const payload = {
+      question: trimmedQuestion,
+      locale,
+      limit: 10,
+      context: {
+        eventId: aiDebugEventId.trim() || null,
+        personId: aiDebugPersonId.trim() || null,
+        region: aiDebugRegion === "all" ? null : aiDebugRegion,
+        year: Number.isInteger(parsedYear) ? parsedYear : null,
+      },
+    };
+
+    try {
+      const response = await fetch("/api/ai/evidence-answer", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result?.error ?? `AI answer failed: ${response.status}`);
+      }
+      const answerResult = result as AiEvidenceAnswerResult;
+      setAiAnswerResult(answerResult);
+      setAiDebugResult(answerResult.retrieval);
+      setAiDebugStatus("ready");
+      setAiAnswerStatus("ready");
+    } catch (error) {
+      setAiAnswerResult(null);
+      setAiAnswerStatus("error");
+      setAiAnswerError(error instanceof Error ? error.message : "AI answer failed");
     }
   }
 
@@ -5268,6 +5348,10 @@ function App() {
                   <Search size={18} aria-hidden="true" />
                   {aiDebugStatus === "loading" ? (locale === "zh" ? "检索中..." : "Retrieving...") : (locale === "zh" ? "检索证据" : "Retrieve Evidence")}
                 </button>
+                <button className="primary-action" type="button" onClick={runAiEvidenceAnswer} disabled={aiAnswerStatus === "loading"}>
+                  <Network size={18} aria-hidden="true" />
+                  {aiAnswerStatus === "loading" ? (locale === "zh" ? "生成中..." : "Answering...") : (locale === "zh" ? "生成回答" : "Generate Answer")}
+                </button>
                 <button
                   className="secondary-action"
                   type="button"
@@ -5289,6 +5373,38 @@ function App() {
               <div className="empty-state">{locale === "zh" ? "AI 检索 API 暂时不可用或问题为空。" : "AI retrieval API is unavailable or the question is empty."}</div>
             ) : aiDebugResult ? (
               <div className="ai-debug-results">
+                {(aiAnswerStatus === "loading" || aiAnswerStatus === "error" || aiAnswerResult) && (
+                  <article className="coverage-card ai-answer-card">
+                    <header>
+                      <div>
+                        <span>{locale === "zh" ? "AI 回答" : "AI Answer"}</span>
+                        <h3>{aiAnswerResult ? `${aiAnswerResult.provider ?? "local"} / ${aiAnswerResult.model ?? "no model"}` : aiAnswerStatus}</h3>
+                      </div>
+                      <strong>{aiAnswerResult?.citations.length ?? 0} refs</strong>
+                    </header>
+                    {aiAnswerStatus === "loading" ? (
+                      <p>{locale === "zh" ? "正在基于召回证据生成回答..." : "Generating an evidence-bound answer..."}</p>
+                    ) : aiAnswerStatus === "error" ? (
+                      <p>{aiAnswerError ?? (locale === "zh" ? "生成回答失败" : "Answer generation failed")}</p>
+                    ) : aiAnswerResult ? (
+                      <>
+                        <p className="ai-answer-text">{aiAnswerResult.answer}</p>
+                        {aiAnswerResult.citations.length > 0 && (
+                          <div className="coverage-examples">
+                            <div>
+                              <span>citations</span>
+                              {aiAnswerResult.citations.slice(0, 8).map((citation) => (
+                                <p key={`${citation.ref}-${citation.sourceId}-${citation.locator}`}>
+                                  {citation.ref}: {[citation.sourceId, citation.locator].filter(Boolean).join(" · ") || citation.subjectId}
+                                </p>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    ) : null}
+                  </article>
+                )}
                 <article className="coverage-card">
                   <header>
                     <div>
