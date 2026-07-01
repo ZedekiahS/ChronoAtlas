@@ -1,4 +1,4 @@
-import { StrictMode, useCallback, useEffect, useMemo, useRef, useState } from "react";
+﻿import { StrictMode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { createRoot } from "react-dom/client";
 import { geoGraticule10, geoNaturalEarth1, geoPath } from "d3-geo";
@@ -134,9 +134,12 @@ type SourceMention = {
 
 type HistoricalPerson = {
   id: string;
+  region?: string;
   name: string;
   courtesyName: string | null;
   life: string | null;
+  birthYear?: number | null;
+  deathYear?: number | null;
   primaryPolity: string;
   roles: string[];
   summary: string;
@@ -150,17 +153,23 @@ type PersonLifeEvent = {
   endYear?: number | null;
   displayYear: string;
   type:
-    | "abdication"
     | "birth"
+    | "accession"
+    | "abdication"
     | "campaign"
+    | "crisis"
     | "death"
+    | "deposition"
     | "diplomacy"
     | "later-tradition"
     | "office"
     | "politics"
+    | "reform"
+    | "reign"
     | "service"
     | "strategy"
-    | "turning-point";
+    | "turning-point"
+    | "war";
   title: string;
   summary: string;
   relatedEventIds: string[];
@@ -221,7 +230,7 @@ type PersonIndexItem = {
   primaryPolity: string;
   roles: string[];
   summary: string;
-  source: "china-person-index" | "age-supplement";
+  source: "person-index" | "age-supplement";
   region: AgeRegionFilter;
   birthYear?: number;
   deathYear?: number | null;
@@ -905,61 +914,6 @@ const ageRegionFilters: Array<{ id: AgeRegionFilter; label: string }> = [
 ];
 
 const ageSupplementPeople: AgePerson[] = [
-  {
-    id: "rome-septimius-severus",
-    name: "塞普蒂米乌斯·塞维鲁",
-    region: "rome",
-    polity: "罗马帝国",
-    roles: ["皇帝"],
-    birthYear: 145,
-    deathYear: 211,
-    summary: "塞维鲁王朝建立者，193 年取得帝位。",
-    source: "age-supplement",
-  },
-  {
-    id: "rome-alexander-severus",
-    name: "亚历山大·塞维鲁",
-    region: "rome",
-    polity: "罗马帝国",
-    roles: ["皇帝"],
-    birthYear: 208,
-    deathYear: 235,
-    summary: "塞维鲁王朝末代皇帝，235 年被杀后罗马进入三世纪危机。",
-    source: "age-supplement",
-  },
-  {
-    id: "rome-maximinus-thrax",
-    name: "马克西米努斯·色雷克斯",
-    region: "rome",
-    polity: "罗马帝国",
-    roles: ["皇帝", "军事统帅"],
-    birthYear: 173,
-    deathYear: 238,
-    summary: "235 年即位，被视作三世纪危机开端人物之一。",
-    source: "age-supplement",
-  },
-  {
-    id: "rome-aurelian",
-    name: "奥勒良",
-    region: "rome",
-    polity: "罗马帝国",
-    roles: ["皇帝", "军事统帅"],
-    birthYear: 214,
-    deathYear: 275,
-    summary: "后来的罗马皇帝，完成帝国再统一，常被称为世界光复者。",
-    source: "age-supplement",
-  },
-  {
-    id: "rome-diocletian",
-    name: "戴克里先",
-    region: "rome",
-    polity: "罗马帝国",
-    roles: ["皇帝", "四帝共治创建者"],
-    birthYear: 244,
-    deathYear: 311,
-    summary: "284 年即位，推行四帝共治和晚期罗马改革。",
-    source: "age-supplement",
-  },
   {
     id: "sasanian-ardashir-i",
     name: "阿尔达希尔一世",
@@ -2187,6 +2141,7 @@ function matchesPersonIndexFilter(person: HistoricalPerson | PersonIndexItem, fi
 
 function chinaPersonToPersonIndexItem(person: HistoricalPerson): PersonIndexItem {
   const lifeSpan = parseLifeSpan(person.life);
+  const region = (person.region === "rome" || person.region === "sasanian-persia" || person.region === "india" ? person.region : "china") as AgeRegionFilter;
   return {
     id: person.id,
     name: person.name,
@@ -2195,10 +2150,10 @@ function chinaPersonToPersonIndexItem(person: HistoricalPerson): PersonIndexItem
     primaryPolity: person.primaryPolity,
     roles: person.roles,
     summary: person.summary,
-    source: "china-person-index",
-    region: "china",
-    birthYear: lifeSpan.birthYear ?? undefined,
-    deathYear: lifeSpan.deathYear,
+    source: "person-index",
+    region,
+    birthYear: person.birthYear ?? lifeSpan.birthYear ?? undefined,
+    deathYear: person.deathYear ?? lifeSpan.deathYear,
   };
 }
 
@@ -2235,18 +2190,20 @@ function parseLifeSpan(life: string | null) {
 
 function chinaPersonToAgePerson(person: HistoricalPerson): AgePerson | null {
   const lifeSpan = parseLifeSpan(person.life);
-  if (!lifeSpan.birthYear) {
+  const birthYear = person.birthYear ?? lifeSpan.birthYear;
+  if (!birthYear) {
     return null;
   }
+  const region = (person.region === "rome" || person.region === "sasanian-persia" || person.region === "india" ? person.region : "china") as AgeRegionFilter;
 
   return {
-    id: `china-${person.id}`,
+    id: person.id,
     name: person.name,
-    region: "china",
+    region,
     polity: person.primaryPolity,
     roles: person.roles,
-    birthYear: lifeSpan.birthYear,
-    deathYear: lifeSpan.deathYear,
+    birthYear,
+    deathYear: person.deathYear ?? lifeSpan.deathYear,
     summary: person.summary,
     source: "person-index",
   };
@@ -2577,8 +2534,11 @@ function normalizeHistoricalEvent(event: HistoricalEvent): HistoricalEvent {
 function normalizeHistoricalPerson(person: HistoricalPerson): HistoricalPerson {
   return {
     ...person,
+    region: person.region ?? "china",
     courtesyName: person.courtesyName ?? null,
     life: person.life ?? null,
+    birthYear: person.birthYear ?? null,
+    deathYear: person.deathYear ?? null,
     primaryPolity: person.primaryPolity ?? "",
     roles: person.roles ?? [],
     summary: person.summary ?? "",
@@ -2678,16 +2638,22 @@ function getConfidenceLabel(confidence: "high" | "medium" | "low" | undefined) {
 function getLifeEventTypeLabel(type: PersonLifeEvent["type"]) {
   const labels: Record<PersonLifeEvent["type"], string> = {
     abdication: "禅让",
+    accession: "即位",
     birth: "出生",
     campaign: "战事",
+    crisis: "危机",
     death: "死亡",
+    deposition: "失位",
     diplomacy: "外交",
     "later-tradition": "传统称呼",
     office: "任位",
     politics: "政治",
+    reform: "改革",
+    reign: "统治",
     service: "仕历",
     strategy: "谋略",
     "turning-point": "转折",
+    war: "战争",
   };
 
   return labels[type] ?? type;
@@ -4842,9 +4808,14 @@ function App() {
       setAiDebugRegion(selectedEvent.region);
       setAiDebugEventId(selectedEvent.id);
       setAiDebugQuestion(`${getEventDisplayTitle(selectedEvent, locale).primary}${locale === "zh" ? "有哪些史料依据？" : ": what evidence supports this event?"}`);
+      setAiDebugEventId("");
+      setAiDebugPersonId("");
+      setAiDebugRegion("all");
+      setAiDebugQuestion(locale === "zh" ? "当前年份有哪些史料依据？" : "What evidence is available for the current year?");
     } else {
       setAiDebugRegion("all");
       setAiDebugEventId("");
+      setAiDebugPersonId("");
       setAiDebugQuestion(locale === "zh" ? "当前年份有哪些史料依据？" : "What evidence is available for the current year?");
     }
   }
@@ -5043,7 +5014,10 @@ function App() {
     t.pageTitle[page] ??
     (page === "ai-history"
       ? (locale === "zh" ? "AI 回答记录" : "AI Answer History")
-      : (locale === "zh" ? "AI 证据检索调试" : "AI Evidence Retrieval Debug"));
+      : (locale === "zh" ? "AI 问答" : "AI Q&A"));
+  const showTimelineDock = page === "world" || page === "china" || page === "rome" || page === "age";
+  const showDetailPanel = page === "world" || page === "china" || page === "rome" || page === "people";
+  const showRegionalEventSections = page === "world" || page === "china" || page === "rome";
 
   return (
     <main className={`app-shell ${page === "home" || page === "evidence" || page === "compare" || page === "coverage" || page === "map-debug" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""}`}>
@@ -5124,7 +5098,7 @@ function App() {
               onClick={openAiDebugPanel}
             >
               <Network size={20} aria-hidden="true" />
-              <span>{t.nav.aiDebug ?? (locale === "zh" ? "AI 调试" : "AI Debug")}</span>
+              <span>{t.nav.aiDebug ?? (locale === "zh" ? "AI 问答" : "AI Q&A")}</span>
             </button>
             <button
               className={`topbar-action ${page === "ai-history" ? "active" : ""}`}
@@ -5515,20 +5489,20 @@ function App() {
             )}
           </section>
         ) : page === "ai-debug" ? (
-          <section className="evidence-stage ai-debug-stage" aria-label={locale === "zh" ? "AI 证据检索调试" : "AI evidence retrieval debug"}>
+          <section className="evidence-stage ai-debug-stage ai-answer-stage" aria-label={locale === "zh" ? "AI 问答" : "AI Q&A"}>
             <div className="evidence-summary">
               <div>
-                <p className="kicker">{locale === "zh" ? "AI / RAG 调试" : "AI / RAG Debug"}</p>
-                <h2>{locale === "zh" ? "证据召回，不调用模型" : "Evidence Retrieval, No Model Call"}</h2>
+                <p className="kicker">{locale === "zh" ? "AI / RAG 问答" : "AI / RAG Q&A"}</p>
+                <h2>{locale === "zh" ? "基于 ChronoAtlas 史料回答" : "Evidence-Bound ChronoAtlas Answers"}</h2>
                 <p>
                   {locale === "zh"
-                    ? "先检查 SQLite 会给 AI 哪些证据。这里不会生成回答，只显示 runId、检索策略和证据包。"
-                    : "Inspect which SQLite evidence items would be sent to AI. This view does not generate answers."}
+                    ? "直接提问。页面只展示回答和相关证据摘要；技术检索细节不放在默认界面。"
+                    : "Ask directly. This page shows the answer and relevant evidence only; technical retrieval details are kept out of the default view."}
                 </p>
               </div>
               <div className="coverage-metrics">
-                <EvidenceField label="runId" value={aiDebugResult?.runId ?? (locale === "zh" ? "尚未检索" : "not run")} />
-                <EvidenceField label={locale === "zh" ? "结果数" : "items"} value={aiDebugResult?.items.length ?? 0} />
+                <EvidenceField label={locale === "zh" ? "相关证据" : "evidence"} value={aiDebugResult?.items.length ?? 0} />
+                <EvidenceField label={locale === "zh" ? "外部网页" : "external web"} value={0} />
               </div>
             </div>
 
@@ -5542,7 +5516,11 @@ function App() {
                 <span>{locale === "zh" ? "问题" : "Question"}</span>
                 <textarea
                   value={aiDebugQuestion}
-                  onChange={(event) => setAiDebugQuestion(event.target.value)}
+                  onChange={(event) => {
+                    setAiDebugQuestion(event.target.value);
+                    setAiDebugEventId("");
+                    setAiDebugPersonId("");
+                  }}
                   rows={3}
                 />
               </label>
@@ -5672,7 +5650,23 @@ function App() {
                     ) : null}
                   </article>
                 )}
-                <article className="coverage-card">
+                {aiDebugResult.items.length > 0 && (
+                  <details className="ai-related-evidence">
+                    <summary>{locale === "zh" ? `相关证据 ${aiDebugResult.items.length}` : `Relevant Evidence ${aiDebugResult.items.length}`}</summary>
+                    <div className="ai-related-list">
+                      {aiDebugResult.items.slice(0, 6).map((item) => (
+                        <article key={`related-${item.rank}-${item.chunkId ?? item.subjectId ?? item.sourceId}`}>
+                          <header>
+                            <strong>{item.title ?? item.sourceTitle ?? item.subjectId ?? item.chunkId}</strong>
+                            <span>{item.regionId ?? "n/a"} {item.timeStart ?? ""}</span>
+                          </header>
+                          <p>{item.translation ?? item.quote ?? item.snippet ?? item.locator ?? ""}</p>
+                        </article>
+                      ))}
+                    </div>
+                  </details>
+                )}
+                <article className="coverage-card ai-technical-panel">
                   <header>
                     <div>
                       <span>{locale === "zh" ? "检索策略" : "Query Plan"}</span>
@@ -5694,7 +5688,7 @@ function App() {
                   </div>
                 </article>
 
-                <div className="evidence-results">
+                <div className="evidence-results ai-technical-panel">
                   {aiDebugResult.items.length ? aiDebugResult.items.map((item) => (
                     <article className="evidence-card" key={`${item.rank}-${item.chunkId ?? item.subjectId ?? item.sourceId}`}>
                       <div className="evidence-card-heading">
@@ -6329,8 +6323,8 @@ function App() {
                     <span className="person-index-polity">{getAgeRegionLabel(person.region)} · {person.primaryPolity}</span>
                     <span className="person-index-summary-text">{person.summary}</span>
                     <span className="person-index-card-stats">
-                      <span>{person.source === "china-person-index" ? `${personLifeEventCounts.get(person.id) ?? 0} ${t.peoplePage.lifeEvents}` : t.peoplePage.calculableAge}</span>
-                      <span>{person.source === "china-person-index" ? `${personRelationCounts.get(person.id) ?? 0} ${t.peoplePage.relations}` : getAgeRegionLabel(person.region)}</span>
+                      <span>{person.source === "person-index" ? `${personLifeEventCounts.get(person.id) ?? 0} ${t.peoplePage.lifeEvents}` : t.peoplePage.calculableAge}</span>
+                      <span>{person.source === "person-index" ? `${personRelationCounts.get(person.id) ?? 0} ${t.peoplePage.relations}` : getAgeRegionLabel(person.region)}</span>
                       <span>{personIndexEventCounts.get(person.id) ?? 0} {t.peoplePage.eventCount}</span>
                     </span>
                   </button>
@@ -6586,7 +6580,7 @@ function App() {
           </section>
         )}
 
-        {page !== "home" && page !== "people" && page !== "evidence" && (
+        {showTimelineDock && (
           <section className="timeline-dock" aria-label="时间轴">
           <button
             className="icon-button"
@@ -6670,7 +6664,7 @@ function App() {
         )}
       </section>
 
-      {page !== "home" && page !== "evidence" && page !== "compare" && (
+      {showDetailPanel && (
       <aside className="detail-panel" aria-label="区域与事件详情">
         <div className="region-detail">
           <div
@@ -6875,7 +6869,7 @@ function App() {
           </section>
         )}
 
-        {page !== "people" && page === "china" && (chinaMapMode === "political" || chinaMapMode === "commandery") && (
+        {showRegionalEventSections && page === "china" && (chinaMapMode === "political" || chinaMapMode === "commandery") && (
           <section className="event-list">
             <h3>控制区块</h3>
             <div className="chips block-chip-list">
@@ -6898,7 +6892,7 @@ function App() {
           </section>
         )}
 
-        {page !== "people" && (
+        {showRegionalEventSections && (
           <section className="event-list">
           <div className="event-list-heading">
             <h3>区域事件</h3>
@@ -7009,7 +7003,7 @@ function App() {
           </section>
         )}
 
-        {page !== "people" && filteredRegionEvents.length > 0 && (
+        {showRegionalEventSections && filteredRegionEvents.length > 0 && (
           <section className="event-detail">
           <div className="detail-eyebrow">
             <CircleDot size={18} aria-hidden="true" />
@@ -7486,7 +7480,7 @@ function App() {
           </section>
         )}
 
-        {page !== "people" && filteredRegionEvents.length === 0 && (
+        {showRegionalEventSections && filteredRegionEvents.length === 0 && (
           <section className="event-detail empty-event-detail">
             <div className="detail-eyebrow">
               <CircleDot size={18} aria-hidden="true" />
@@ -7548,3 +7542,4 @@ root.render(
     <App />
   </StrictMode>,
 );
+

@@ -361,6 +361,38 @@ function buildFtsQuery(query) {
     .join(" OR ");
 }
 
+function aiQuestionSearchTerms(question) {
+  const knownTerms = [
+    "曹操去世", "曹操", "刘备", "孙权", "司马懿",
+    "瓦勒良", "沙普尔", "欧特罗庇乌斯", "优西比乌", "拉克坦修", "赫罗狄安", "狄奥",
+    "戴克里先", "四帝共治", "奥勒良", "芝诺比娅", "帕尔米拉", "卡拉卡拉", "盖塔", "塞维鲁",
+    "罗马", "萨珊", "波斯",
+    "史料", "古代史料", "来源", "典籍", "证据",
+    "valerian", "shapur", "eutropius", "eusebius", "lactantius", "herodian", "dio",
+    "diocletian", "tetrarchy", "aurelian", "zenobia", "palmyra", "caracalla", "geta", "severus",
+    "rome", "roman", "sasanian", "persia",
+  ];
+  const normalized = question
+    .replace(/[?？!！,，.。:：;；、/\\()[\]{}"'“”‘’\s]+/g, " ")
+    .replace(/的时候|是什么|有哪些|有何|什么|时期|时候|支持|说明|当前|本年|同年|去世|逝世|死亡|死|古代|主要|相关|在|和|与|及|的|了|吗|呢|是|有|为|于|时/g, " ");
+  const stopwords = new Set(["公元", "时候", "时期", "什么", "哪些", "当前", "本年", "同年", "相关"]);
+  const inferredTerms = [];
+  if (/曹操/.test(question) && /死|去世|逝世|死亡/.test(question)) {
+    inferredTerms.push("曹操去世");
+  }
+  const matchedKnownTerms = knownTerms.filter((term) => question.toLowerCase().includes(term.toLowerCase()));
+  return [...new Set([...inferredTerms, ...matchedKnownTerms, ...normalized
+    .split(/\s+/)
+    .map((term) => term.trim())
+    .filter((term) => term.length >= 2 && term.length <= 24)
+    .filter((term) => !stopwords.has(term))
+  ])].slice(0, 8);
+}
+
+function isSourceFocusedQuestion(question) {
+  return /史料|来源|典籍|证据|出自|记载|source|evidence|text|classical|ancient/i.test(question);
+}
+
 function extractEvidenceBodySection(body, label) {
   if (typeof body !== "string" || body.length === 0) {
     return null;
@@ -838,7 +870,11 @@ function normalizeAiContext(rawContext = {}) {
         ? personId
         : `person:${personId}`
       : null,
-    region: typeof context.region === "string" && context.region.trim() ? context.region.trim() : null,
+    region: typeof context.region === "string" && context.region.trim()
+      ? context.region.trim()
+      : typeof context.regionId === "string" && context.regionId.trim()
+        ? context.regionId.trim()
+        : null,
     year: Number.isInteger(Number(context.year)) ? Number(context.year) : null,
     sourceId: typeof context.sourceId === "string" && context.sourceId.trim() ? context.sourceId.trim() : null
   };
@@ -968,13 +1004,27 @@ function aiChunkSearchItems(db, { question, context, locale, limit }) {
     return [];
   }
 
-  const where = ["(c.title LIKE $likeQuery OR c.body LIKE $likeQuery OR c.rowid IN (SELECT rowid FROM document_chunks_fts WHERE document_chunks_fts MATCH $ftsQuery))"];
+  const sourceFocused = isSourceFocusedQuestion(question);
+  const searchTerms = aiQuestionSearchTerms(question);
+  const searchClauses = [
+    "c.title LIKE $likeQuery",
+    "c.body LIKE $likeQuery"
+  ];
   const joins = [];
   const params = {
     $likeQuery: `%${question}%`,
-    $ftsQuery: buildFtsQuery(question) || question,
+    $yearContext: context.year,
+    $sourceFocused: sourceFocused ? 1 : 0,
     $limit: limit
   };
+  searchTerms.forEach((term, index) => {
+    const key = `$term${index}`;
+    searchClauses.push(`c.title LIKE ${key}`);
+    searchClauses.push(`c.body LIKE ${key}`);
+    params[key] = `%${term}%`;
+  });
+  const titleRankClauses = searchTerms.map((_, index) => `WHEN c.title LIKE $term${index} THEN ${index + 1}`);
+  const where = [`(${searchClauses.join(" OR ")})`];
 
   if (context.region) {
     where.push("c.region_id = $region");
@@ -1014,22 +1064,44 @@ function aiChunkSearchItems(db, { question, context, locale, limit }) {
       (SELECT el.quote FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS quote,
       (SELECT el.confidence FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS confidence,
       CASE
-        WHEN c.rowid IN (SELECT rowid FROM document_chunks_fts WHERE document_chunks_fts MATCH $ftsQuery) THEN 0
-        ELSE 1
-      END AS rank_bucket
+        WHEN c.title LIKE $likeQuery THEN 0
+        ${titleRankClauses.join("\n")}
+        ELSE 99
+      END AS rank_bucket,
+      CASE
+        WHEN $yearContext IS NULL THEN 9999
+        ELSE MIN(
+          ABS(COALESCE(c.time_start, c.time_end, $yearContext) - $yearContext),
+          ABS(COALESCE(c.time_end, c.time_start, $yearContext) - $yearContext)
+        )
+      END AS year_distance
     FROM document_chunks c
     ${joins.join("\n")}
     WHERE ${where.join(" AND ")}
     ORDER BY
+      CASE
+        WHEN $sourceFocused = 1 AND c.subject_table = 'source_passages' THEN 0
+        WHEN $sourceFocused = 1 THEN 1
+        ELSE 0
+      END,
       rank_bucket,
-      CASE WHEN c.title LIKE $likeQuery THEN 0 ELSE 1 END,
+      year_distance,
       COALESCE(c.time_start, 9999),
       c.id
     LIMIT $limit
   `;
 
   try {
-    return db.prepare(selectSql).all(params).map((row) => {
+    const rows = db.prepare(selectSql).all(params);
+    const hasTitleMatches = rows.some((row) => row.rank_bucket < 99);
+    let filteredRows = rows.filter((row) => !hasTitleMatches || row.rank_bucket < 99);
+    if (/曹操/.test(question) && /死|去世|逝世|死亡/.test(question)) {
+      const deathRows = filteredRows.filter((row) => /曹操.*(去世|之死|死|崩)/.test(row.title ?? ""));
+      if (deathRows.length > 0) {
+        filteredRows = deathRows;
+      }
+    }
+    return filteredRows.map((row) => {
       const raw = parseRawJson(row.document_raw_json);
       return {
         subjectTable: row.subject_table,
@@ -1047,13 +1119,31 @@ function aiChunkSearchItems(db, { question, context, locale, limit }) {
         timeEnd: row.time_end,
         title: row.title,
         snippet: row.snippet,
-        score: row.rank_bucket === 0 ? 0.72 : 0.55,
+        score: sourceFocused && row.subject_table === "source_passages" ? 0.78 : row.rank_bucket < 99 ? 0.72 : 0.55,
         reason: "keyword-document"
       };
     });
   } catch {
     return [];
   }
+}
+
+function shouldUseContextNearbyFallback(question) {
+  return /当前年份|當前年份|本年|这一年|這一年|同年有哪些|current year|this year|available evidence|what evidence is available/i.test(question);
+}
+
+function aiMentionedRegions(question) {
+  const regions = [];
+  if (/罗马|羅馬|rome|roman/i.test(question)) {
+    regions.push("rome");
+  }
+  if (/萨珊|薩珊|波斯|sasanian|persia/i.test(question)) {
+    regions.push("sasanian-persia");
+  }
+  if (/中国|中國|汉|漢|魏|蜀|吴|吳|曹操|刘备|劉備|孙权|孫權/i.test(question)) {
+    regions.push("china");
+  }
+  return [...new Set(regions)];
 }
 
 function aiContextDocumentItems(db, { context, limit }) {
@@ -1203,7 +1293,24 @@ function aiRetrieve(db, payload = {}) {
     limit: Math.max(limit, 12)
   }));
 
-  if (items.length < limit && (context.year !== null || context.region)) {
+  for (const region of aiMentionedRegions(question)) {
+    if (context.region && context.region !== region) {
+      continue;
+    }
+    const hasRegionItem = items.some((item) => item.regionId === region);
+    if (!hasRegionItem && context.year !== null) {
+      items.push(...aiContextDocumentItems(db, {
+        context: { ...context, region },
+        limit: 4
+      }).map((item) => ({
+        ...item,
+        reason: "mentioned-region-context",
+        score: 0.66
+      })));
+    }
+  }
+
+  if (items.length === 0 && shouldUseContextNearbyFallback(question) && (context.year !== null || context.region)) {
     queryPlan.steps.push("context-nearby-documents");
     items.push(...aiContextDocumentItems(db, {
       context,
@@ -1660,6 +1767,10 @@ function frontendPeopleIndex(db, locale = "zh") {
     persons: db.prepare(`
       SELECT
         p.raw_json,
+        p.id,
+        p.region,
+        p.birth_year,
+        p.death_year,
         COALESCE(pi.name, pizh.name, p.name) AS name,
         COALESCE(pi.courtesy_name, pizh.courtesy_name, p.courtesy_name) AS courtesy_name,
         COALESCE(pi.life, pizh.life, p.life) AS life,
@@ -1671,6 +1782,10 @@ function frontendPeopleIndex(db, locale = "zh") {
       ORDER BY p.id
     `).all(locale).map((row) => ({
       ...parseRawJson(row.raw_json),
+      id: row.id,
+      region: row.region,
+      birthYear: row.birth_year,
+      deathYear: row.death_year,
       name: row.name,
       courtesyName: row.courtesy_name,
       life: row.life,

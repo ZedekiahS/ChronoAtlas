@@ -1043,6 +1043,20 @@ h1 {
   grid-template-rows: auto auto minmax(0, 1fr);
 }
 
+.ai-answer-stage {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.ai-answer-stage .coverage-metrics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ai-answer-stage .ai-debug-grid label:nth-child(-n + 2),
+.ai-answer-stage .ai-technical-panel {
+  display: none;
+}
+
 .ai-debug-form {
   display: grid;
   gap: 12px;
@@ -1135,10 +1149,64 @@ h1 {
 
 .ai-debug-results {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
   gap: 12px;
   min-height: 0;
-  overflow: hidden;
+}
+
+.ai-related-evidence {
+  padding: 12px;
+  border: 1px solid rgba(30, 34, 38, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.ai-related-evidence summary {
+  cursor: pointer;
+  color: #8b3f2d;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.ai-related-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ai-related-list article {
+  display: grid;
+  gap: 5px;
+  padding: 9px;
+  border: 1px solid rgba(30, 34, 38, 0.1);
+  border-radius: 8px;
+  background: #fbfaf6;
+}
+
+.ai-related-list header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ai-related-list strong {
+  color: #1e2226;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.ai-related-list span {
+  flex: none;
+  color: #687077;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ai-related-list p {
+  margin: 0;
+  color: #4b535a;
+  font-size: 12px;
+  line-height: 1.55;
 }
 
 .ai-history-stage {
