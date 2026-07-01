@@ -35,6 +35,13 @@ const people = [
   ["rome-maximinus-daia", "马克西米努斯·达扎", "Maximinus Daia", 270, 313, "罗马帝国", "305 年成为凯撒，四帝共治崩解后成为东部竞争者。", ["Maximinus Daza"], "rome-source-de-mortibus-persecutorum-lactantius", "18-19"],
   ["rome-constantine", "君士坦丁", "Constantine", 272, 337, "罗马帝国", "306 年在不列颠被拥立，后成为四帝共治崩解后的核心竞争者。", ["Constantine I", "Constantine the Great"], "rome-source-de-mortibus-persecutorum-lactantius", "24-26"],
   ["rome-maxentius", "马克森提乌斯", "Maxentius", 278, 312, "罗马帝国", "306 年在罗马起事，挑战四帝共治继承安排。", ["Marcus Aurelius Valerius Maxentius"], "rome-source-de-mortibus-persecutorum-lactantius", "24-26"],
+  ["rome-julia-domna", "尤利娅·多姆娜", "Julia Domna", 160, 217, "塞维鲁王朝", "塞普蒂米乌斯·塞维鲁之妻，卡拉卡拉与盖塔之母，是塞维鲁王朝宫廷政治的重要核心。", ["Julia Domna Augusta"], "rome-source-roman-history-cassius-dio", "78.2-78.24"],
+  ["rome-julia-maesa", "尤利娅·玛伊萨", "Julia Maesa", 165, 224, "塞维鲁王朝", "尤利娅·多姆娜之妹，推动埃拉伽巴路斯和亚历山大·塞维鲁进入皇位继承。", ["Julia Maesa Augusta"], "rome-source-history-of-the-empire-after-marcus-herodian", "5.3-5.8"],
+  ["rome-julia-soaemias", "尤利娅·索艾米亚斯", "Julia Soaemias", 180, 222, "塞维鲁王朝", "埃拉伽巴路斯之母，随其进入罗马政治核心，222 年与其一同被杀。", ["Julia Soaemias Bassiana"], "rome-source-history-of-the-empire-after-marcus-herodian", "5.3-5.8"],
+  ["rome-julia-mamaea", "尤利娅·玛迈亚", "Julia Mamaea", 180, 235, "塞维鲁王朝", "亚历山大·塞维鲁之母，在其统治中长期掌握宫廷影响，235 年与其一同被军队杀害。", ["Julia Avita Mamaea"], "rome-source-history-of-the-empire-after-marcus-herodian", "6.1-6.9"],
+  ["rome-tetricus", "提特里库斯", "Tetricus I", null, null, "高卢帝国", "高卢帝国后期统治者，274 年向奥勒良投降，高卢割据由此结束。", ["Gaius Pius Esuvius Tetricus", "Tetricus"], "rome-source-breviarium-ab-urbe-condita-eutropius", "9.13"],
+  ["rome-macrianus", "马克里亚努斯", "Macrianus", null, 261, "东方割据势力", "瓦勒良被俘后东方军政网络中的竞争者，其集团挑战加里恩努斯但迅速失败。", ["Fulvius Macrianus"], "rome-source-historia-nova-zosimus", "1.39-1.40"],
+  ["rome-quietus", "奎埃图斯", "Quietus", null, 261, "东方割据势力", "马克里亚努斯集团成员，瓦勒良被俘后的东方割据竞争中败亡。", ["Titus Fulvius Junius Quietus"], "rome-source-historia-nova-zosimus", "1.39-1.40"],
   ["palmyra-odaenathus", "奥登纳图斯", "Odaenathus", null, 267, "帕尔米拉 / 罗马东方", "瓦勒良被俘后代表罗马反击沙普尔，维持东方秩序。", ["Septimius Odaenathus"], "rome-source-historia-nova-zosimus", "1.39-1.40"],
   ["palmyra-zenobia", "芝诺比娅", "Zenobia", 240, null, "帕尔米拉", "奥登纳图斯死后执掌帕尔米拉政权，与奥勒良对抗。", ["Septimia Zenobia"], "rome-source-historia-augusta-scriptores-historiae-augustae", "Aurelian 24-30"],
   ["rome-postumus", "波斯图穆斯", "Postumus", null, 269, "高卢帝国", "260 年后在高卢自立，建立西部割据政权。", ["Marcus Cassianius Latinius Postumus"], "rome-source-de-caesaribus-aurelius-victor", "33"],
@@ -104,6 +111,119 @@ const lifeEvents = [
   ["rome-carausius", 286, "accession", "割据不列颠", "卡劳修斯在不列颠割据，形成西部海防危机。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.21"],
   ["rome-allectus", 293, "accession", "取代卡劳修斯", "阿莱克图斯杀卡劳修斯后继续控制不列颠。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.22"],
   ["rome-allectus", 296, "death", "被君士坦提乌斯击败", "296 年阿莱克图斯被击败，不列颠重新归入帝国。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.22"],
+  ["rome-septimius-severus", 194, "war", "击败尼格尔", "塞维鲁东进击败佩斯凯尼乌斯·尼格尔，掌握东方行省承认。", "rome-source-history-of-the-empire-after-marcus-herodian", "3.1-3.4"],
+  ["rome-septimius-severus", 202, "reign", "王朝继承安排成形", "塞维鲁把皇权与军队、家族继承绑定，卡拉卡拉和盖塔的继承地位更加明确。", "rome-source-roman-history-cassius-dio", "76.15-76.17"],
+  ["rome-caracalla", 213, "war", "莱茵与日耳曼战事", "卡拉卡拉在北方边境展开军事行动，强化其军人皇帝形象。", "rome-source-roman-history-cassius-dio", "78.13-78.14"],
+  ["rome-caracalla", 217, "death", "东方行军途中遇刺", "卡拉卡拉在对帕提亚方向行动期间遇刺，马克里努斯随后取得皇位。", "rome-source-history-of-the-empire-after-marcus-herodian", "4.12-4.13"],
+  ["rome-elagabalus", 221, "reign", "宗教与宫廷冲突加深", "埃拉伽巴路斯把埃梅萨神祇崇拜带入罗马政治核心，引发元老院和禁卫军反感。", "rome-source-history-of-the-empire-after-marcus-herodian", "5.5-5.7"],
+  ["rome-gordian-i", 238, "death", "起义失败后自尽", "非洲起义迅速失败后，戈尔迪安一世自尽，六帝之年的动荡继续扩大。", "rome-source-history-of-the-empire-after-marcus-herodian", "7.9"],
+  ["rome-pupienus", 238, "death", "被禁卫军杀害", "普皮恩努斯与巴尔比努斯共治关系紧张，最终同被禁卫军杀害。", "rome-source-history-of-the-empire-after-marcus-herodian", "8.8"],
+  ["rome-balbinus", 238, "death", "与普皮恩努斯同死", "巴尔比努斯在罗马城内权力冲突中被禁卫军杀害，戈尔迪安三世成为唯一皇帝。", "rome-source-history-of-the-empire-after-marcus-herodian", "8.8"],
+  ["rome-gordian-iii", 242, "war", "东方远征开始", "戈尔迪安三世在近臣和军队辅佐下发动东方远征，应对萨珊压力。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.2"],
+  ["rome-philip-the-arab", 249, "death", "败于德西乌斯", "腓力在与德西乌斯的冲突中败亡，罗马再次进入军队拥立的新一轮更替。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.4"],
+  ["rome-gallienus", 262, "reform", "依赖骑兵与机动军力", "加里恩努斯时期的军事调整强化机动反应能力，是三世纪危机后期恢复的一部分。", "rome-source-de-caesaribus-aurelius-victor", "33"],
+  ["rome-claudius-ii", 270, "death", "疫病中去世", "克劳狄二世在短暂恢复军威后去世，奥勒良随后进入核心竞争。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.11"],
+  ["rome-aurelian", 271, "war", "稳住多瑙河与意大利", "奥勒良先处理北方入侵和意大利安全问题，为随后东征和西征创造条件。", "rome-source-historia-augusta-scriptores-historiae-augustae", "Aurelian 18-22"],
+  ["rome-aurelian", 274, "reform", "太阳神崇拜与帝国整合", "奥勒良用宗教和胜利仪式强调帝国重新统一后的中心权威。", "rome-source-historia-augusta-scriptores-historiae-augustae", "Aurelian 35"],
+  ["rome-aurelian", 275, "death", "东方行军前遇害", "奥勒良在筹备新一轮东方行动时被近臣和军人谋杀。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.15"],
+  ["rome-tacitus", 275, "accession", "奥勒良死后被推为皇帝", "塔西佗在奥勒良遇害后的权力空档中取得皇位。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.16"],
+  ["rome-tacitus", 276, "death", "短暂在位后去世", "塔西佗统治时间很短，死后普罗布斯成为新的核心军人皇帝。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.16-9.17"],
+  ["rome-probus", 277, "war", "清理高卢与莱茵压力", "普罗布斯在西方边境继续清理外部入侵和地方混乱。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.17"],
+  ["rome-probus", 282, "death", "被军队杀害", "普罗布斯在军队不满中被杀，卡鲁斯随后称帝。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.17-9.18"],
+  ["rome-carus", 283, "death", "东方远征途中死亡", "卡鲁斯东征取得进展后突然死亡，继承局势转向努梅里安和卡里努斯。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.18"],
+  ["rome-numerian", 283, "accession", "随父东方远征后继位", "卡鲁斯死后，努梅里安在东方军队中继承皇位。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.18-9.20"],
+  ["rome-numerian", 284, "death", "撤军途中死亡", "努梅里安在东方撤军途中死亡，军队随后拥立戴克里先。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.20"],
+  ["rome-carinus", 283, "accession", "统治西部", "卡里努斯作为卡鲁斯之子在西部维持统治，与东方军队拥立的戴克里先对峙。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.19-9.20"],
+  ["rome-carinus", 285, "death", "败于戴克里先阵营", "卡里努斯与戴克里先竞争失败，戴克里先成为帝国唯一奥古斯都。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.20"],
+  ["rome-diocletian", 285, "war", "击败卡里努斯", "戴克里先击败卡里努斯后结束卡鲁斯家族的继承竞争。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.20"],
+  ["rome-diocletian", 286, "reform", "任命马克西米安分担西部", "戴克里先把马克西米安提升为共治者，帝国东西分担治理开始制度化。", "rome-source-de-mortibus-persecutorum-lactantius", "7-8"],
+  ["rome-diocletian", 301, "reform", "价格敕令", "戴克里先晚期用最高价格敕令尝试管控通货、军费和市场压力。", "rome-source-de-mortibus-persecutorum-lactantius", "7"],
+  ["rome-maximian", 293, "reform", "成为西部奥古斯都核心", "四帝共治形成后，马克西米安负责西部军事和政治压力。", "rome-source-de-mortibus-persecutorum-lactantius", "7-8"],
+  ["rome-maximian", 310, "death", "复出失败后死亡", "马克西米安退位后多次试图重返权力，最终在君士坦丁阵营压力下死亡。", "rome-source-de-mortibus-persecutorum-lactantius", "29-30"],
+  ["rome-galerius", 311, "death", "临终宽容敕令后去世", "伽列里乌斯在晚年病重时发布宽容敕令，随后去世。", "rome-source-de-mortibus-persecutorum-lactantius", "33-35"],
+  ["rome-severus-ii", 305, "accession", "成为西部凯撒", "戴克里先和马克西米安退位后，塞维鲁二世按四帝共治安排成为西部凯撒。", "rome-source-de-mortibus-persecutorum-lactantius", "18-19"],
+  ["rome-severus-ii", 306, "war", "卷入马克森提乌斯危机", "马克森提乌斯起事后，塞维鲁二世受命压制罗马局势，但西部军队忠诚发生动摇。", "rome-source-de-mortibus-persecutorum-lactantius", "24-26"],
+  ["rome-severus-ii", 307, "death", "被迫投降后死亡", "塞维鲁二世在对马克森提乌斯行动失败后被迫投降，随后死亡。", "rome-source-de-mortibus-persecutorum-lactantius", "26"],
+  ["rome-maximinus-daia", 305, "accession", "成为东部凯撒", "马克西米努斯·达扎在 305 年继承安排中成为东部凯撒。", "rome-source-de-mortibus-persecutorum-lactantius", "18-19"],
+  ["rome-maximinus-daia", 310, "reign", "争取奥古斯都地位", "四帝共治秩序破裂后，马克西米努斯·达扎要求更高名位并扩张东部权力。", "rome-source-de-mortibus-persecutorum-lactantius", "32"],
+  ["rome-constantine", 307, "reign", "巩固高卢与不列颠基础", "君士坦丁被拥立后先稳住西北行省基础，与四帝共治旧秩序保持紧张关系。", "rome-source-de-mortibus-persecutorum-lactantius", "24-26"],
+  ["rome-constantine", 310, "reign", "与马克西米安决裂", "君士坦丁镇压马克西米安复出企图，进一步巩固自己的西部权力。", "rome-source-de-mortibus-persecutorum-lactantius", "29-30"],
+  ["rome-maxentius", 307, "war", "击退塞维鲁二世", "马克森提乌斯依靠罗马和意大利军政网络击退塞维鲁二世，四帝共治继承安排进一步崩解。", "rome-source-de-mortibus-persecutorum-lactantius", "24-26"],
+  ["rome-maxentius", 308, "reign", "卡农图姆会议后仍据罗马", "卡农图姆会议试图重排合法名位，但马克森提乌斯仍控制罗马和意大利。", "rome-source-de-mortibus-persecutorum-lactantius", "29-30"],
+  ["rome-julia-domna", 193, "reign", "成为塞维鲁王朝皇后", "塞维鲁夺取皇位后，尤利娅·多姆娜成为王朝宫廷的核心女性成员。", "rome-source-roman-history-cassius-dio", "76.15-76.17"],
+  ["rome-julia-domna", 211, "crisis", "调停卡拉卡拉与盖塔失败", "塞维鲁死后，尤利娅·多姆娜处于两子共治冲突中心，兄弟共治很快破裂。", "rome-source-roman-history-cassius-dio", "78.2-78.4"],
+  ["rome-julia-domna", 217, "death", "卡拉卡拉死后去世", "卡拉卡拉遇刺和马克里努斯上台后，尤利娅·多姆娜失去政治基础并去世。", "rome-source-roman-history-cassius-dio", "78.23-78.24"],
+  ["rome-julia-maesa", 218, "accession", "推动埃拉伽巴路斯称帝", "尤利娅·玛伊萨利用塞维鲁家族声望和东方军队网络推动埃拉伽巴路斯取代马克里努斯。", "rome-source-history-of-the-empire-after-marcus-herodian", "5.3-5.4"],
+  ["rome-julia-maesa", 221, "reign", "转向扶持亚历山大", "埃拉伽巴路斯失去支持后，尤利娅·玛伊萨推动亚历山大·塞维鲁成为继承选择。", "rome-source-history-of-the-empire-after-marcus-herodian", "5.7-5.8"],
+  ["rome-julia-soaemias", 218, "accession", "随埃拉伽巴路斯入主罗马", "尤利娅·索艾米亚斯作为埃拉伽巴路斯之母进入皇权核心。", "rome-source-history-of-the-empire-after-marcus-herodian", "5.3-5.5"],
+  ["rome-julia-soaemias", 222, "death", "与埃拉伽巴路斯同死", "222 年禁卫军杀死埃拉伽巴路斯，尤利娅·索艾米亚斯也一同遇害。", "rome-source-history-of-the-empire-after-marcus-herodian", "5.8"],
+  ["rome-julia-mamaea", 222, "accession", "辅佐亚历山大·塞维鲁上台", "亚历山大·塞维鲁即位后，尤利娅·玛迈亚成为宫廷和政策运作中的关键人物。", "rome-source-history-of-the-empire-after-marcus-herodian", "5.8"],
+  ["rome-julia-mamaea", 231, "war", "参与东方战争决策环境", "亚历山大·塞维鲁东征萨珊时，玛迈亚仍深度影响皇帝和宫廷决策。", "rome-source-history-of-the-empire-after-marcus-herodian", "6.2-6.6"],
+  ["rome-julia-mamaea", 235, "death", "莱茵军营中被杀", "莱茵前线军队不满亚历山大和玛迈亚的统治方式，母子二人一同被杀。", "rome-source-history-of-the-empire-after-marcus-herodian", "6.8-6.9"],
+  ["rome-macrianus", 260, "accession", "瓦勒良被俘后争夺东方", "瓦勒良被俘后，马克里亚努斯集团在东方军政真空中挑战加里恩努斯。", "rome-source-historia-nova-zosimus", "1.39-1.40"],
+  ["rome-macrianus", 261, "death", "向西进攻失败", "马克里亚努斯势力向西挑战加里恩努斯失败，集团迅速瓦解。", "rome-source-historia-nova-zosimus", "1.40"],
+  ["rome-quietus", 260, "accession", "东方割据称号", "奎埃图斯在瓦勒良被俘后的东方割据中获得皇帝称号。", "rome-source-historia-nova-zosimus", "1.39-1.40"],
+  ["rome-quietus", 261, "death", "在东方失败身亡", "马克里亚努斯集团失败后，奎埃图斯也在东方局势中败亡。", "rome-source-historia-nova-zosimus", "1.40"],
+  ["rome-tetricus", 271, "accession", "成为高卢帝国统治者", "维多利努斯之后，提特里库斯成为高卢帝国后期核心统治者。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.13"],
+  ["rome-tetricus", 274, "deposition", "向奥勒良投降", "274 年奥勒良收复高卢时，提特里库斯投降，西部割据结束。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.13"],
+  ["palmyra-odaenathus", 260, "reign", "东方危机中的罗马盟友", "瓦勒良被俘后，奥登纳图斯成为罗马东方秩序恢复的重要地方强人。", "rome-source-historia-nova-zosimus", "1.39-1.40"],
+  ["palmyra-odaenathus", 267, "death", "被刺杀", "奥登纳图斯被刺杀后，帕尔米拉权力转入芝诺比娅和瓦巴拉图斯体系。", "rome-source-historia-nova-zosimus", "1.39-1.40"],
+  ["palmyra-zenobia", 267, "accession", "掌握帕尔米拉权力", "奥登纳图斯死后，芝诺比娅以摄政和王权保护者身份控制帕尔米拉政权。", "rome-source-historia-augusta-scriptores-historiae-augustae", "Aurelian 24-26"],
+  ["palmyra-zenobia", 270, "war", "扩张至埃及和东方", "芝诺比娅政权向埃及和叙利亚周边扩张，成为奥勒良必须处理的东方割据力量。", "rome-source-historia-nova-zosimus", "1.50-1.51"],
+  ["rome-postumus", 261, "reign", "建立高卢政权制度", "波斯图穆斯在高卢建立独立的皇帝、执政官和军政体系，维持西部防务。", "rome-source-de-caesaribus-aurelius-victor", "33"],
+  ["rome-postumus", 269, "death", "军队骚乱中被杀", "波斯图穆斯在西部割据政权内部军队冲突中被杀，高卢帝国进入继承动荡。", "rome-source-de-caesaribus-aurelius-victor", "33"],
+  ["rome-carausius", 287, "reign", "控制海峡与不列颠", "卡劳修斯利用舰队和不列颠资源维持割据，使西部海防成为戴克里先体系的难题。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.21"],
+  ["rome-carausius", 293, "death", "被阿莱克图斯杀害", "卡劳修斯被部下阿莱克图斯杀害，不列颠割据政权继续存在到 296 年。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.22"],
+];
+
+const personRelations = [
+  ["rome-septimius-severus", "rome-julia-domna", "spouse", 187, 211, "塞普蒂米乌斯·塞维鲁与尤利娅·多姆娜的婚姻把叙利亚埃梅萨精英网络带入塞维鲁王朝核心。", "rome-source-roman-history-cassius-dio", "76.15-76.17"],
+  ["rome-septimius-severus", "rome-caracalla", "family-successor", 188, 211, "卡拉卡拉为塞维鲁之子，塞维鲁晚年安排其进入继承结构并与盖塔共同继承。", "rome-source-roman-history-cassius-dio", "78.1-78.4"],
+  ["rome-septimius-severus", "rome-geta", "family-successor", 189, 211, "盖塔为塞维鲁之子，与卡拉卡拉同为王朝继承安排的一部分。", "rome-source-roman-history-cassius-dio", "78.1-78.4"],
+  ["rome-julia-domna", "rome-caracalla", "mother", 188, 217, "尤利娅·多姆娜是卡拉卡拉之母，塞维鲁死后仍处在王朝权力核心。", "rome-source-roman-history-cassius-dio", "78.2-78.24"],
+  ["rome-julia-domna", "rome-geta", "mother", 189, 211, "尤利娅·多姆娜是盖塔之母，曾被卷入卡拉卡拉与盖塔的共治冲突。", "rome-source-roman-history-cassius-dio", "78.2-78.4"],
+  ["rome-caracalla", "rome-geta", "succession-rival", 211, 211, "卡拉卡拉与盖塔短暂共治后迅速转为继承竞争，盖塔被杀。", "rome-source-roman-history-cassius-dio", "78.2-78.4"],
+  ["rome-caracalla", "rome-macrinus", "assassination-succession", 217, 217, "卡拉卡拉遇刺后，禁卫军长官马克里努斯取得皇位。", "rome-source-history-of-the-empire-after-marcus-herodian", "4.12-5.1"],
+  ["rome-julia-maesa", "rome-elagabalus", "dynastic-sponsor", 218, 222, "尤利娅·玛伊萨利用塞维鲁家族声望和东方军队网络推动埃拉伽巴路斯上台。", "rome-source-history-of-the-empire-after-marcus-herodian", "5.3-5.4"],
+  ["rome-julia-soaemias", "rome-elagabalus", "mother", 204, 222, "尤利娅·索艾米亚斯是埃拉伽巴路斯之母，并随其进入罗马政治核心。", "rome-source-history-of-the-empire-after-marcus-herodian", "5.3-5.8"],
+  ["rome-julia-maesa", "rome-alexander-severus", "dynastic-sponsor", 221, 224, "埃拉伽巴路斯失去支持后，尤利娅·玛伊萨转向扶持亚历山大·塞维鲁。", "rome-source-history-of-the-empire-after-marcus-herodian", "5.7-5.8"],
+  ["rome-julia-mamaea", "rome-alexander-severus", "mother-regent", 208, 235, "尤利娅·玛迈亚是亚历山大·塞维鲁之母，在其统治中长期影响宫廷与政策。", "rome-source-history-of-the-empire-after-marcus-herodian", "6.1-6.9"],
+  ["rome-alexander-severus", "rome-maximinus-thrax", "military-overthrow", 235, 235, "亚历山大·塞维鲁被军队杀害后，马克西米努斯·色雷克斯被拥立，三世纪危机进入新阶段。", "rome-source-history-of-the-empire-after-marcus-herodian", "6.8-6.9"],
+  ["rome-maximinus-thrax", "rome-gordian-i", "civil-war-opponent", 238, 238, "非洲起义拥立戈尔迪安一世反对马克西米努斯，六帝之年由此展开。", "rome-source-history-of-the-empire-after-marcus-herodian", "7.5-7.9"],
+  ["rome-gordian-i", "rome-gordian-ii", "father-son-co-ruler", 238, 238, "戈尔迪安二世为戈尔迪安一世之子，非洲起义中父子共同称帝。", "rome-source-history-of-the-empire-after-marcus-herodian", "7.5-7.9"],
+  ["rome-pupienus", "rome-balbinus", "senatorial-co-ruler", 238, 238, "元老院拥立普皮恩努斯与巴尔比努斯共治，以对抗马克西米努斯。", "rome-source-history-of-the-empire-after-marcus-herodian", "7.10-8.8"],
+  ["rome-pupienus", "rome-gordian-iii", "co-ruler-successor", 238, 238, "戈尔迪安三世在六帝之年成为年轻的继承中心，普皮恩努斯和巴尔比努斯死后独掌帝位。", "rome-source-history-of-the-empire-after-marcus-herodian", "8.8"],
+  ["rome-balbinus", "rome-gordian-iii", "co-ruler-successor", 238, 238, "巴尔比努斯与普皮恩努斯共治失败后，戈尔迪安三世成为唯一皇帝。", "rome-source-history-of-the-empire-after-marcus-herodian", "8.8"],
+  ["rome-gordian-iii", "rome-philip-the-arab", "succession", 244, 244, "戈尔迪安三世在东方战争背景下死亡后，腓力继位并与波斯议和。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.2-9.3"],
+  ["rome-philip-the-arab", "rome-decius", "civil-war-opponent", 249, 249, "德西乌斯在军队政治中取代腓力，成为三世纪危机中又一次军队拥立的皇帝。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.4"],
+  ["rome-valerian", "rome-gallienus", "father-son-co-ruler", 253, 260, "瓦勒良与其子加里恩努斯共治，分别面对东方和西方压力。", "rome-source-de-caesaribus-aurelius-victor", "33"],
+  ["rome-valerian", "palmyra-odaenathus", "eastern-ally-after-capture", 260, 267, "瓦勒良被俘后，奥登纳图斯作为东方强人帮助罗马反击波斯并维持局势。", "rome-source-historia-nova-zosimus", "1.39-1.40"],
+  ["rome-gallienus", "rome-postumus", "breakaway-rival", 260, 268, "加里恩努斯独自面对帝国分裂时，波斯图穆斯在高卢建立西部割据政权。", "rome-source-de-caesaribus-aurelius-victor", "33"],
+  ["rome-gallienus", "rome-macrianus", "breakaway-rival", 260, 261, "瓦勒良被俘后，马克里亚努斯集团在东方挑战加里恩努斯。", "rome-source-historia-nova-zosimus", "1.39-1.40"],
+  ["rome-macrianus", "rome-quietus", "breakaway-co-ruler", 260, 261, "马克里亚努斯与奎埃图斯同属瓦勒良被俘后的东方割据集团。", "rome-source-historia-nova-zosimus", "1.39-1.40"],
+  ["rome-gallienus", "rome-claudius-ii", "succession", 268, 268, "加里恩努斯遇害后，克劳狄二世取得皇位并继续处理帝国危机。", "rome-source-historia-nova-zosimus", "1.40-1.41"],
+  ["rome-claudius-ii", "rome-aurelian", "succession", 270, 270, "克劳狄二世死后，奥勒良进入皇位竞争并成为危机后期的恢复者。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.11-9.13"],
+  ["palmyra-odaenathus", "palmyra-zenobia", "spouse-successor", 267, 272, "奥登纳图斯死后，芝诺比娅执掌帕尔米拉权力并扩大东方割据。", "rome-source-historia-augusta-scriptores-historiae-augustae", "Aurelian 24-30"],
+  ["rome-aurelian", "palmyra-zenobia", "campaign-opponent", 272, 272, "奥勒良东征击败芝诺比娅，恢复罗马东方控制。", "rome-source-historia-nova-zosimus", "1.50-1.61"],
+  ["rome-aurelian", "rome-tetricus", "campaign-opponent", 274, 274, "奥勒良收复高卢时，提特里库斯投降，西部割据结束。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.13"],
+  ["rome-aurelian", "rome-tacitus", "succession", 275, 275, "奥勒良遇害后，塔西佗在权力空档中取得皇位。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.15-9.16"],
+  ["rome-tacitus", "rome-probus", "succession", 276, 276, "塔西佗短暂在位后，普罗布斯成为新的核心军人皇帝。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.16-9.17"],
+  ["rome-probus", "rome-carus", "succession", 282, 282, "普罗布斯被军队杀害后，卡鲁斯称帝并发动东方远征。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.17-9.18"],
+  ["rome-carus", "rome-numerian", "father-son-successor", 253, 284, "努梅里安为卡鲁斯之子，卡鲁斯死后在东方继承皇位。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.18-9.20"],
+  ["rome-carus", "rome-carinus", "father-son-successor", 250, 285, "卡里努斯为卡鲁斯之子，在西部继承并与戴克里先竞争。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.19-9.20"],
+  ["rome-numerian", "rome-diocletian", "succession-crisis", 284, 284, "努梅里安死亡后，东方军队拥立戴克里先，继承危机转向与卡里努斯的竞争。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.20"],
+  ["rome-diocletian", "rome-carinus", "civil-war-opponent", 285, 285, "戴克里先击败卡里努斯后成为帝国唯一奥古斯都。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.20"],
+  ["rome-diocletian", "rome-maximian", "tetrarchic-co-ruler", 286, 305, "戴克里先提升马克西米安分担西部压力，四帝共治的双奥古斯都基础形成。", "rome-source-de-mortibus-persecutorum-lactantius", "7-8"],
+  ["rome-diocletian", "rome-galerius", "tetrarchic-caesar", 293, 305, "伽列里乌斯成为东部凯撒，构成戴克里先体系下的继承与军政分担结构。", "rome-source-de-mortibus-persecutorum-lactantius", "18-19"],
+  ["rome-maximian", "rome-constantius-chlorus", "tetrarchic-caesar", 293, 305, "君士坦提乌斯成为西部凯撒，名义上服务于马克西米安的西部奥古斯都体系。", "rome-source-de-mortibus-persecutorum-lactantius", "7-8"],
+  ["rome-constantius-chlorus", "rome-constantine", "father-son-successor", 272, 306, "君士坦提乌斯死于不列颠后，军队拥立其子君士坦丁。", "rome-source-de-mortibus-persecutorum-lactantius", "24-26"],
+  ["rome-galerius", "rome-maximinus-daia", "tetrarchic-caesar", 305, 311, "305 年后马克西米努斯·达扎成为东部凯撒，并在四帝共治崩解中追求更高名位。", "rome-source-de-mortibus-persecutorum-lactantius", "18-19"],
+  ["rome-galerius", "rome-severus-ii", "tetrarchic-colleague", 305, 307, "塞维鲁二世按 305 年继承安排成为西部凯撒，伽列里乌斯在新体系中居于关键地位。", "rome-source-de-mortibus-persecutorum-lactantius", "18-26"],
+  ["rome-severus-ii", "rome-maxentius", "succession-conflict", 306, 307, "马克森提乌斯起事后，塞维鲁二世奉命压制但失败，西部继承秩序进一步崩解。", "rome-source-de-mortibus-persecutorum-lactantius", "24-26"],
+  ["rome-maximian", "rome-maxentius", "father-son-ally", 306, 308, "马克西米安退位后卷入其子马克森提乌斯的罗马政权，使四帝共治合法性更复杂。", "rome-source-de-mortibus-persecutorum-lactantius", "24-30"],
+  ["rome-constantine", "rome-maximian", "ally-to-rival", 307, 310, "君士坦丁曾借助马克西米安的政治声望，后在马克西米安复出失败中与其决裂。", "rome-source-de-mortibus-persecutorum-lactantius", "29-30"],
+  ["rome-carausius", "rome-allectus", "usurpation-successor", 293, 293, "阿莱克图斯杀卡劳修斯后继续控制不列颠割据政权。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.22"],
+  ["rome-constantius-chlorus", "rome-allectus", "campaign-opponent", 296, 296, "君士坦提乌斯击败阿莱克图斯，收复不列颠。", "rome-source-breviarium-ab-urbe-condita-eutropius", "9.22"],
 ];
 
 function lifeLabel(birth, death) {
@@ -145,8 +265,23 @@ try {
     VALUES (?, ?, ?, NULL, ?)
     ON CONFLICT(life_event_id, source_id, locator) DO UPDATE SET raw_json=excluded.raw_json
   `);
+  const insertRelation = db.prepare(`
+    INSERT INTO person_relations (id, source_person_id, target_person_id, type, start_year, end_year, summary, confidence, raw_json)
+    VALUES (?, ?, ?, ?, ?, ?, ?, 'medium', ?)
+    ON CONFLICT(id) DO UPDATE SET
+      source_person_id=excluded.source_person_id, target_person_id=excluded.target_person_id, type=excluded.type,
+      start_year=excluded.start_year, end_year=excluded.end_year, summary=excluded.summary, confidence=excluded.confidence,
+      raw_json=excluded.raw_json
+  `);
+  const insertRelationRef = db.prepare(`
+    INSERT INTO person_relation_source_refs (relation_id, source_id, locator, raw_json)
+    VALUES (?, ?, ?, ?)
+    ON CONFLICT(relation_id, source_id, locator) DO UPDATE SET raw_json=excluded.raw_json
+  `);
   const deleteLife = db.prepare("DELETE FROM person_life_events WHERE id LIKE 'rome-life:%'");
   const deleteRefs = db.prepare("DELETE FROM person_life_event_source_refs WHERE life_event_id LIKE 'rome-life:%'");
+  const deleteRelationRefs = db.prepare("DELETE FROM person_relation_source_refs WHERE relation_id LIKE 'rome-relation:%'");
+  const deleteRelations = db.prepare("DELETE FROM person_relations WHERE id LIKE 'rome-relation:%'");
   const insertChunkEntity = db.prepare(`
     INSERT INTO document_chunk_entities (chunk_id, entity_id, link_role, sort_order)
     VALUES (?, ?, 'mentioned', ?)
@@ -156,6 +291,8 @@ try {
   db.exec("BEGIN;");
   deleteRefs.run();
   deleteLife.run();
+  deleteRelationRefs.run();
+  deleteRelations.run();
   for (const [id, zh, en, birth, death, polity, summary, aliases, sourceId, locator] of people) {
     const entityId = `person:${id}`;
     const raw = { batchId, id, zh, en, aliases, sourceRefs: [{ sourceId, locator }] };
@@ -180,6 +317,21 @@ try {
     const lifeId = `rome-life:${personId}:${year}:${type}`;
     insertLife.run(lifeId, personId, year, String(year), type, title, summary, "medium", 0, json({ batchId, personId, year, type, title, summary, sourceRefs: [{ sourceId, locator }] }));
     insertRef.run(lifeId, sourceId, locator, json({ batchId }));
+  }
+
+  for (const [sourcePersonId, targetPersonId, type, startYear, endYear, summary, sourceId, locator] of personRelations) {
+    const relationId = `rome-relation:${sourcePersonId}:${targetPersonId}:${type}`;
+    insertRelation.run(
+      relationId,
+      sourcePersonId,
+      targetPersonId,
+      type,
+      startYear,
+      endYear,
+      summary,
+      json({ batchId, id: relationId, sourcePersonId, targetPersonId, type, startYear, endYear, summary, sourceRefs: [{ sourceId, locator }] }),
+    );
+    insertRelationRef.run(relationId, sourceId, locator, json({ batchId }));
   }
 
   db.prepare("DELETE FROM document_chunk_entities WHERE entity_id LIKE 'person:rome-%' OR entity_id LIKE 'person:palmyra-%'").run();

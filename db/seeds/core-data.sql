@@ -967,6 +967,18 @@ INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_y
 INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('rome-postumus', 'rome', '波斯图穆斯', NULL, '?-269', NULL, 269, 'medium', '高卢帝国', '260 年后在高卢自立，建立西部割据政权。', 'partial', '{"batchId":"manual-rome-persons-190-310","id":"rome-postumus","zh":"波斯图穆斯","en":"Postumus","aliases":["Marcus Cassianius Latinius Postumus"],"sourceRefs":[{"sourceId":"rome-source-de-caesaribus-aurelius-victor","locator":"33"}]}');
 INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('rome-carausius', 'rome', '卡劳修斯', NULL, '?-293', NULL, 293, 'medium', '不列颠割据政权', '286 年在不列颠割据，挑战戴克里先和马克西米安。', 'partial', '{"batchId":"manual-rome-persons-190-310","id":"rome-carausius","zh":"卡劳修斯","en":"Carausius","aliases":["Marcus Aurelius Mausaeus Carausius"],"sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.21"}]}');
 INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('rome-allectus', 'rome', '阿莱克图斯', NULL, '?-296', NULL, 296, 'medium', '不列颠割据政权', '杀卡劳修斯后继续割据不列颠，296 年被击败。', 'partial', '{"batchId":"manual-rome-persons-190-310","id":"rome-allectus","zh":"阿莱克图斯","en":"Allectus","aliases":["Allectus"],"sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.22"}]}');
+INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('rome-julia-domna', 'rome', '尤利娅·多姆娜', NULL, '160-217', 160, 217, 'medium', '塞维鲁王朝', '塞普蒂米乌斯·塞维鲁之妻，卡拉卡拉与盖塔之母，是塞维鲁王朝宫廷政治的重要核心。', 'partial', '{"batchId":"manual-rome-persons-190-310","id":"rome-julia-domna","zh":"尤利娅·多姆娜","en":"Julia Domna","aliases":["Julia Domna Augusta"],"sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.2-78.24"}]}');
+INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('rome-julia-maesa', 'rome', '尤利娅·玛伊萨', NULL, '165-224', 165, 224, 'medium', '塞维鲁王朝', '尤利娅·多姆娜之妹，推动埃拉伽巴路斯和亚历山大·塞维鲁进入皇位继承。', 'partial', '{"batchId":"manual-rome-persons-190-310","id":"rome-julia-maesa","zh":"尤利娅·玛伊萨","en":"Julia Maesa","aliases":["Julia Maesa Augusta"],"sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.3-5.8"}]}');
+INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('rome-julia-soaemias', 'rome', '尤利娅·索艾米亚斯', NULL, '180-222', 180, 222, 'medium', '塞维鲁王朝', '埃拉伽巴路斯之母，随其进入罗马政治核心，222 年与其一同被杀。', 'partial', '{"batchId":"manual-rome-persons-190-310","id":"rome-julia-soaemias","zh":"尤利娅·索艾米亚斯","en":"Julia Soaemias","aliases":["Julia Soaemias Bassiana"],"sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.3-5.8"}]}');
+INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('rome-julia-mamaea', 'rome', '尤利娅·玛迈亚', NULL, '180-235', 180, 235, 'medium', '塞维鲁王朝', '亚历山大·塞维鲁之母，在其统治中长期掌握宫廷影响，235 年与其一同被军队杀害。', 'partial', '{"batchId":"manual-rome-persons-190-310","id":"rome-julia-mamaea","zh":"尤利娅·玛迈亚","en":"Julia Mamaea","aliases":["Julia Avita Mamaea"],"sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"6.1-6.9"}]}');
+INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('rome-tetricus', 'rome', '提特里库斯', NULL, '?-?', NULL, NULL, 'medium', '高卢帝国', '高卢帝国后期统治者，274 年向奥勒良投降，高卢割据由此结束。', 'partial', '{"batchId":"manual-rome-persons-190-310","id":"rome-tetricus","zh":"提特里库斯","en":"Tetricus I","aliases":["Gaius Pius Esuvius Tetricus","Tetricus"],"sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.13"}]}');
+INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('rome-macrianus', 'rome', '马克里亚努斯', NULL, '?-261', NULL, 261, 'medium', '东方割据势力', '瓦勒良被俘后东方军政网络中的竞争者，其集团挑战加里恩努斯但迅速失败。', 'partial', '{"batchId":"manual-rome-persons-190-310","id":"rome-macrianus","zh":"马克里亚努斯","en":"Macrianus","aliases":["Fulvius Macrianus"],"sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.39-1.40"}]}');
+INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('rome-quietus', 'rome', '奎埃图斯', NULL, '?-261', NULL, 261, 'medium', '东方割据势力', '马克里亚努斯集团成员，瓦勒良被俘后的东方割据竞争中败亡。', 'partial', '{"batchId":"manual-rome-persons-190-310","id":"rome-quietus","zh":"奎埃图斯","en":"Quietus","aliases":["Titus Fulvius Junius Quietus"],"sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.39-1.40"}]}');
+INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('sasanian-ardashir-i', 'sasanian-persia', '阿尔达希尔一世', NULL, '180-242', 180, 242, 'medium', '萨珊波斯', '萨珊王朝建立者，224 年击败安息末王阿尔达班四世，并把伊朗高原政治重心从安息体系转入萨珊体系。', 'formal', '{"id":"sasanian-ardashir-i","name":"阿尔达希尔一世","nameEn":"Ardashir I","aliases":["Ardashir","Artaxerxes","Ardashir son of Papak","阿尔达希尔"],"roles":["国王","王朝建立者"],"sourceId":"deepseek-sasanian-source-sasanian-coinage-ardashir-i-ardashir-i-royal-mint-early-sasanian-coinage","sourceLocator":"early Sasanian coinage","importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('sasanian-shapur-i', 'sasanian-persia', '沙普尔一世', NULL, '215-270', 215, 270, 'medium', '萨珊波斯', '萨珊王朝早期核心君主，多次对罗马作战；ŠKZ 铭文把戈尔迪安三世、腓力和瓦勒良相关战事纳入王权叙事。', 'formal', '{"id":"sasanian-shapur-i","name":"沙普尔一世","nameEn":"Shapur I","aliases":["Shapur","Sapor I","Šābuhr I","沙卜尔一世","沙普尔"],"roles":["国王"],"sourceId":"deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri","sourceLocator":"ŠKZ","importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('sasanian-narseh', 'sasanian-persia', '纳尔塞', NULL, '228-303', 228, 303, 'medium', '萨珊波斯', '萨珊国王，293 年通过 Paikuli 铭文所反映的贵族联盟取得王位，后在罗马四帝共治体系压力下签订尼西比斯和约。', 'formal', '{"id":"sasanian-narseh","name":"纳尔塞","nameEn":"Narseh","aliases":["Narses","Narse","Narsē","纳尔赛"],"roles":["国王"],"sourceId":"deepseek-sasanian-source-paikuli-inscription-npi-narseh-paikuli-tower-inscription-narseh-middle-p","sourceLocator":"NPi §1-10","importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('sasanian-kartir', 'sasanian-persia', '卡尔提尔', NULL, '240-293', 240, 293, 'low', '萨珊波斯', '萨珊早期重要祆教祭司，以多处铭文记录自身在沙普尔一世之后逐步上升的宗教权力和宫廷地位。', 'formal', '{"id":"sasanian-kartir","name":"卡尔提尔","nameEn":"Kartir","aliases":["Kirdir","Kirder","Karter","卡提尔"],"roles":["祭司","祆教权力人物"],"sourceId":"deepseek-sasanian-source-kartirs-inscriptions-collective-evidence-kartir-kirder-kkz-knrb-ksm-knrm","sourceLocator":"collective evidence from the four Kartir inscriptions","importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "persons" ("id", "region", "name", "courtesy_name", "life", "birth_year", "death_year", "life_confidence", "primary_polity", "summary", "coverage_status", "raw_json") VALUES ('sasanian-mani', 'sasanian-persia', '摩尼', NULL, '216-277', 216, 277, 'medium', '萨珊波斯', '摩尼教创立者，早期曾在萨珊宫廷环境中传教，后在巴赫拉姆一世时期受压制并死亡。', 'formal', '{"id":"sasanian-mani","name":"摩尼","nameEn":"Mani","aliases":["Manes","Manichaeus","摩尼教创立者"],"roles":["宗教创立者"],"sourceId":"deepseek-sasanian-source-mani-and-manichaeism-manichaean-texts-kephalaia-cologne-mani-codex-mani-","sourceLocator":"Cologne Mani Codex; Kephalaia","importedFromBatch":"manual-sasanian-persons-190-310"}');
 
 -- person_i18n
 INSERT INTO "person_i18n" ("person_id", "locale", "name", "courtesy_name", "life", "primary_polity", "summary", "raw_json") VALUES ('zhang-jiao', 'zh', '张角', NULL, '?-184', '太平道 / 黄巾军', '太平道领袖，发动黄巾起义，成为东汉末年地方军事化和群雄割据的起点之一。', '{}');
@@ -1923,132 +1935,11833 @@ INSERT INTO "person_aliases" ("id", "person_id", "value", "type", "source_refs_j
 INSERT INTO "person_aliases" ("id", "person_id", "value", "type", "source_refs_json", "raw_json") VALUES ('alias-guan-lu-courtesy-name', 'guan-lu', '公明', 'courtesy-name', '[{"sourceId":"sanguozhi-wei-guan-lu","locator":"管辂传"}]', '{"generatedFrom":"persons.courtesyName"}');
 
 -- historical_events
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-184-yellow-turban-rebellion', '黄巾起义爆发', 'china', 184, 184, '东汉各地', 'society', '太平道领袖张角发动大规模起义，东汉中央权威进一步崩溃，州郡军事化和地方豪强扩张由此加速。', 'high', 'null', '{"background":["东汉后期宦官、外戚和地方豪强矛盾长期积累，中央对地方社会的控制能力下降。","太平道以宗教组织和治病、符水等方式扩展基层动员网络，张角等人能够跨州郡组织起事。"],"process":["184 年黄巾起义在多地同时爆发，东汉朝廷以皇甫嵩、朱儁等将领镇压。","起义主力虽被击破，但地方州郡为了平乱获得更多军事权力，地方兵力开始长期化。"],"result":["张角病死，黄巾主力被镇压，但各地余部和民变仍延续。","州郡军事化、豪强武装化和中央财政压力共同推动东汉末年政治秩序崩解。"],"impact":["黄巾起义是三国前史的关键起点，它使地方军事力量合法化，为后来的州牧、军阀割据创造条件。","曹操、刘备、孙坚等后来的三国人物都在平乱或后续地方军事化背景中获得政治军事机会。"],"sourceNotes":["《后汉书·皇甫嵩朱儁列传》提供东汉朝廷镇压黄巾的主要叙述。","《资治通鉴》卷五十八把黄巾起义置于中平元年的连续政治脉络中。"],"uncertainty":["各地黄巾人数和组织规模在不同叙述中可能有夸张，第一版只保留结构性影响，不采用精确人数。"]}', '{"id":"china-184-yellow-turban-rebellion","title":"黄巾起义爆发","startYear":184,"endYear":184,"region":"china","locationName":"东汉各地","coordinates":null,"category":"society","summary":"太平道领袖张角发动大规模起义，东汉中央权威进一步崩溃，州郡军事化和地方豪强扩张由此加速。","people":["张角"],"personIds":["zhang-jiao"],"polities":["东汉","黄巾军"],"relatedEvents":["china-189-dong-zhuo-enters-luoyang","china-190-coalition-against-dong-zhuo"],"tags":["东汉末年","起义","三国前史"],"confidence":"high","sources":["《后汉书·皇甫嵩朱儁列传》","《资治通鉴》卷五十八"],"sourceRefs":[{"sourceId":"houhanshu-huangfu-song","locator":"黄巾起义相关记载"},{"sourceId":"zizhi-tongjian-58","locator":"中平元年"}],"detail":{"background":["东汉后期宦官、外戚和地方豪强矛盾长期积累，中央对地方社会的控制能力下降。","太平道以宗教组织和治病、符水等方式扩展基层动员网络，张角等人能够跨州郡组织起事。"],"process":["184 年黄巾起义在多地同时爆发，东汉朝廷以皇甫嵩、朱儁等将领镇压。","起义主力虽被击破，但地方州郡为了平乱获得更多军事权力，地方兵力开始长期化。"],"result":["张角病死，黄巾主力被镇压，但各地余部和民变仍延续。","州郡军事化、豪强武装化和中央财政压力共同推动东汉末年政治秩序崩解。"],"impact":["黄巾起义是三国前史的关键起点，它使地方军事力量合法化，为后来的州牧、军阀割据创造条件。","曹操、刘备、孙坚等后来的三国人物都在平乱或后续地方军事化背景中获得政治军事机会。"],"sourceNotes":["《后汉书·皇甫嵩朱儁列传》提供东汉朝廷镇压黄巾的主要叙述。","《资治通鉴》卷五十八把黄巾起义置于中平元年的连续政治脉络中。"],"uncertainty":["各地黄巾人数和组织规模在不同叙述中可能有夸张，第一版只保留结构性影响，不采用精确人数。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-189-dong-zhuo-enters-luoyang', '董卓入洛阳控制朝廷', 'china', 189, 189, '洛阳', 'politics', '何进被杀后，董卓率凉州军入洛阳，废少帝、立献帝，东汉朝廷被军事强人直接控制。', 'high', '[112.45,34.62]', '{"background":["黄巾之后，东汉中央已严重依赖地方和边军力量。灵帝去世、何进召外兵入京，使洛阳政局进一步军事化。","董卓以凉州军为基础进入洛阳，利用宫廷混乱迅速控制皇帝和朝廷。"],"process":["董卓废少帝、立陈留王刘协为献帝，以军事力量重组朝廷权力结构。","董卓控制洛阳后，关东士族和地方军政势力开始以讨董名义结盟。"],"result":["献帝成为军阀控制朝廷合法性的象征，东汉名义朝廷进入长期被挟持状态。","董卓集团与关东诸军对立，促成 190 年讨董联盟。"],"impact":["董卓入洛让东汉中央权威从制度性衰弱转为被军事集团直接控制。","此事件开启了“控制皇帝即控制政治合法性”的三国前期逻辑，后来曹操迎献帝至许即沿用这一政治资源。"],"sourceNotes":["《后汉书·董卓列传》和《孝献帝纪》分别提供董卓集团与献帝朝廷角度。","《资治通鉴》卷五十九适合梳理中平六年至初平元年的连续政变。"],"uncertainty":["董卓入京后的具体兵力规模和宫廷细节存在叙事差异，第一版以政治结构变化为主。"]}', '{"id":"china-189-dong-zhuo-enters-luoyang","title":"董卓入洛阳控制朝廷","startYear":189,"endYear":189,"region":"china","locationName":"洛阳","coordinates":[112.45,34.62],"category":"politics","summary":"何进被杀后，董卓率凉州军入洛阳，废少帝、立献帝，东汉朝廷被军事强人直接控制。","people":["董卓","汉献帝"],"personIds":["dong-zhuo","han-xiandi"],"polities":["东汉","董卓集团"],"relatedEvents":["china-184-yellow-turban-rebellion","china-190-coalition-against-dong-zhuo","china-192-dong-zhuo-killed"],"tags":["董卓","洛阳","废立皇帝"],"confidence":"high","sources":["《后汉书·董卓列传》","《后汉书·孝献帝纪》","《资治通鉴》卷五十九"],"sourceRefs":[{"sourceId":"houhanshu-dong-zhuo","locator":"董卓入京相关记载"},{"sourceId":"houhanshu-xiandi","locator":"中平六年"},{"sourceId":"zizhi-tongjian-59","locator":"中平六年至初平元年"}],"detail":{"background":["黄巾之后，东汉中央已严重依赖地方和边军力量。灵帝去世、何进召外兵入京，使洛阳政局进一步军事化。","董卓以凉州军为基础进入洛阳，利用宫廷混乱迅速控制皇帝和朝廷。"],"process":["董卓废少帝、立陈留王刘协为献帝，以军事力量重组朝廷权力结构。","董卓控制洛阳后，关东士族和地方军政势力开始以讨董名义结盟。"],"result":["献帝成为军阀控制朝廷合法性的象征，东汉名义朝廷进入长期被挟持状态。","董卓集团与关东诸军对立，促成 190 年讨董联盟。"],"impact":["董卓入洛让东汉中央权威从制度性衰弱转为被军事集团直接控制。","此事件开启了“控制皇帝即控制政治合法性”的三国前期逻辑，后来曹操迎献帝至许即沿用这一政治资源。"],"sourceNotes":["《后汉书·董卓列传》和《孝献帝纪》分别提供董卓集团与献帝朝廷角度。","《资治通鉴》卷五十九适合梳理中平六年至初平元年的连续政变。"],"uncertainty":["董卓入京后的具体兵力规模和宫廷细节存在叙事差异，第一版以政治结构变化为主。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-190-coalition-against-dong-zhuo', '关东诸军起兵讨董', 'china', 190, 191, '关东、洛阳周边', 'war', '袁绍、袁术、曹操等关东军阀以讨伐董卓为名起兵。联盟本身松散，却标志着州郡军阀公开进入全国政治舞台。', 'high', '[113.7,34.8]', 'null', '{"id":"china-190-coalition-against-dong-zhuo","title":"关东诸军起兵讨董","startYear":190,"endYear":191,"region":"china","locationName":"关东、洛阳周边","coordinates":[113.7,34.8],"category":"war","summary":"袁绍、袁术、曹操等关东军阀以讨伐董卓为名起兵。联盟本身松散，却标志着州郡军阀公开进入全国政治舞台。","people":["袁绍","袁术","曹操","董卓"],"personIds":["yuan-shao","yuan-shu","cao-cao","dong-zhuo"],"polities":["东汉","关东联军","董卓集团"],"relatedEvents":["china-189-dong-zhuo-enters-luoyang","china-192-dong-zhuo-killed","china-200-guandu"],"tags":["关东联军","讨董","群雄并起"],"confidence":"high","sources":["《后汉书·董卓列传》","《三国志·魏书·武帝纪》","《资治通鉴》卷五十九"],"sourceRefs":[{"sourceId":"houhanshu-dong-zhuo","locator":"关东诸军讨董"},{"sourceId":"sanguozhi-wei-wudi","locator":"初平元年前后"},{"sourceId":"zizhi-tongjian-59","locator":"初平元年"}]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-192-dong-zhuo-killed', '董卓被杀，长安政局再度失控', 'china', 192, 192, '长安', 'politics', '王允与吕布等诛杀董卓，但董卓旧部随后攻入长安，献帝朝廷继续在军阀挟持中动荡。', 'high', '[108.94,34.34]', 'null', '{"id":"china-192-dong-zhuo-killed","title":"董卓被杀，长安政局再度失控","startYear":192,"endYear":192,"region":"china","locationName":"长安","coordinates":[108.94,34.34],"category":"politics","summary":"王允与吕布等诛杀董卓，但董卓旧部随后攻入长安，献帝朝廷继续在军阀挟持中动荡。","people":["董卓","吕布","汉献帝"],"personIds":["dong-zhuo","lu-bu","han-xiandi"],"polities":["东汉","董卓旧部"],"relatedEvents":["china-189-dong-zhuo-enters-luoyang","china-196-cao-cao-escorts-emperor"],"tags":["长安","董卓之死","朝廷失序"],"confidence":"high","sources":["《后汉书·董卓列传》","《三国志·魏书·吕布传》","《资治通鉴》卷六十"],"sourceRefs":[{"sourceId":"houhanshu-dong-zhuo","locator":"董卓被杀相关记载"},{"sourceId":"sanguozhi-wei-lubu","locator":"吕布传"},{"sourceId":"zizhi-tongjian-59","locator":"初平三年前后"}]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-194-tao-qian-yields-xuzhou', '陶谦病卒，刘备领徐州', 'china', 194, 194, '徐州', 'politics', '陶谦病重后将徐州托付给刘备，陶谦死后刘备在徐州士民推举下接掌州事，第一次获得较完整的州级政治基础。', 'high', '[117.2,34.26]', '{"background":["徐州位于兖州、豫州、淮南、青州之间，是曹操、袁术、吕布、刘备都可能介入的中原东南枢纽。","曹操东征徐州与陶谦冲突后，徐州内部需要新的军事保护者，刘备由此进入徐州政治。"],"process":["陶谦病重时将徐州托付给刘备，糜竺等徐州士人推动刘备接掌州事。","刘备起初有所迟疑，孔融劝其不要依附袁术，最终刘备领徐州。"],"result":["刘备获得第一个州级政治舞台，但徐州基础仍然薄弱。","徐州很快卷入袁术、吕布和曹操之间的连续争夺。"],"impact":["这是刘备从流动武装首领转向州级割据者的第一次机会。","徐州得失也解释了刘备早年为何长期在曹操、袁绍、刘表等大势力之间辗转。"],"sourceNotes":["《先主传》保存刘备领徐州的核心叙述，《陶谦传》可补徐州前置背景。","此事件作为中型事件展示，不进入主时间条大型事件点。"],"uncertainty":["陶谦临终托付、徐州士人推举和刘备实际控制范围并不等于全州稳固控制，第一版按政治主导权处理。"]}', '{"id":"china-194-tao-qian-yields-xuzhou","title":"陶谦病卒，刘备领徐州","startYear":194,"endYear":194,"region":"china","locationName":"徐州","coordinates":[117.2,34.26],"category":"politics","summary":"陶谦病重后将徐州托付给刘备，陶谦死后刘备在徐州士民推举下接掌州事，第一次获得较完整的州级政治基础。","people":["陶谦","刘备","糜竺","孔融","陈群"],"personIds":["tao-qian","liu-bei","chen-qun"],"polities":["徐州陶谦集团","刘备集团","东汉"],"relatedEvents":["china-194-lu-bu-seizes-yan","china-196-lu-bu-seizes-xuzhou","china-199-lu-bu-defeated"],"tags":["徐州","陶谦","刘备早期根据地"],"confidence":"high","sources":["《三国志·蜀书·先主传》","《三国志·魏书·陶谦传》","《资治通鉴》卷六十一"],"sourceRefs":[{"sourceId":"sanguozhi-shu-xianzhu","locator":"陶谦迎先主入徐州","quote":"谦病笃，谓别驾麋竺曰：“非刘备不能安此州也。”"},{"sourceId":"sanguozhi-shu-xianzhu","locator":"先主遂领徐州","quote":"孔融谓先主曰：“袁公路岂忧国忘家者邪？冢中枯骨，何足介意。”先主遂领徐州。"},{"sourceId":"sanguozhi-wei-tao-qian","locator":"陶谦传徐州相关记载"}],"detail":{"background":["徐州位于兖州、豫州、淮南、青州之间，是曹操、袁术、吕布、刘备都可能介入的中原东南枢纽。","曹操东征徐州与陶谦冲突后，徐州内部需要新的军事保护者，刘备由此进入徐州政治。"],"process":["陶谦病重时将徐州托付给刘备，糜竺等徐州士人推动刘备接掌州事。","刘备起初有所迟疑，孔融劝其不要依附袁术，最终刘备领徐州。"],"result":["刘备获得第一个州级政治舞台，但徐州基础仍然薄弱。","徐州很快卷入袁术、吕布和曹操之间的连续争夺。"],"impact":["这是刘备从流动武装首领转向州级割据者的第一次机会。","徐州得失也解释了刘备早年为何长期在曹操、袁绍、刘表等大势力之间辗转。"],"sourceNotes":["《先主传》保存刘备领徐州的核心叙述，《陶谦传》可补徐州前置背景。","此事件作为中型事件展示，不进入主时间条大型事件点。"],"uncertainty":["陶谦临终托付、徐州士人推举和刘备实际控制范围并不等于全州稳固控制，第一版按政治主导权处理。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-194-lu-bu-seizes-yan', '吕布袭取兖州，曹操根据地受挫', 'china', 194, 195, '兖州', 'war', '曹操东征徐州期间，吕布与兖州部分士人、将领结合，袭取兖州多地。曹操一度只保有少数城邑，北方格局仍未稳定。', 'high', '[116.6,35.2]', '{"background":["曹操在兖州逐步建立根据地后，东征徐州造成内部空虚，也激化了兖州士人与曹操之间的矛盾。","陈宫、张邈等人与吕布结合，使吕布获得进入兖州的机会。"],"process":["吕布袭取兖州多地，曹操一度只保有少数城邑，早期根据地几乎崩溃。","曹操回师与吕布争夺兖州，双方拉锯至 195 年，曹操逐渐恢复控制。"],"result":["吕布未能稳固兖州，最终转向徐州方向发展。","曹操虽然恢复兖州，但这次危机暴露其早期政治基础仍然脆弱。"],"impact":["兖州危机是曹操统一北方前最危险的挫折之一。","它也让吕布集团从董卓旧部游离势力，转变为中原割据竞争者。"],"sourceNotes":["《三国志·魏书·武帝纪》以曹操本纪叙述兖州失复，《吕布传》提供吕布集团侧线索。","陈宫事迹散见于吕布相关叙述，第一版把他标记为吕布集团关键谋士。"],"uncertainty":["兖州各县城的具体归属变化需要后续地图区块数据细化；当前事件只记录战略走势。"]}', '{"id":"china-194-lu-bu-seizes-yan","title":"吕布袭取兖州，曹操根据地受挫","startYear":194,"endYear":195,"region":"china","locationName":"兖州","coordinates":[116.6,35.2],"category":"war","summary":"曹操东征徐州期间，吕布与兖州部分士人、将领结合，袭取兖州多地。曹操一度只保有少数城邑，北方格局仍未稳定。","people":["吕布","曹操","陈宫"],"personIds":["lu-bu","cao-cao","chen-gong"],"polities":["曹操集团","吕布集团"],"relatedEvents":["china-199-lu-bu-defeated","china-200-guandu"],"tags":["兖州","曹操根据地","吕布"],"confidence":"high","sources":["《三国志·魏书·武帝纪》","《三国志·魏书·吕布传》","《资治通鉴》卷六十一"],"sourceRefs":[{"sourceId":"sanguozhi-wei-wudi","locator":"兴平元年至二年"},{"sourceId":"sanguozhi-wei-lubu","locator":"吕布传"},{"sourceId":"zizhi-tongjian-59","locator":"兴平年间"}],"detail":{"background":["曹操在兖州逐步建立根据地后，东征徐州造成内部空虚，也激化了兖州士人与曹操之间的矛盾。","陈宫、张邈等人与吕布结合，使吕布获得进入兖州的机会。"],"process":["吕布袭取兖州多地，曹操一度只保有少数城邑，早期根据地几乎崩溃。","曹操回师与吕布争夺兖州，双方拉锯至 195 年，曹操逐渐恢复控制。"],"result":["吕布未能稳固兖州，最终转向徐州方向发展。","曹操虽然恢复兖州，但这次危机暴露其早期政治基础仍然脆弱。"],"impact":["兖州危机是曹操统一北方前最危险的挫折之一。","它也让吕布集团从董卓旧部游离势力，转变为中原割据竞争者。"],"sourceNotes":["《三国志·魏书·武帝纪》以曹操本纪叙述兖州失复，《吕布传》提供吕布集团侧线索。","陈宫事迹散见于吕布相关叙述，第一版把他标记为吕布集团关键谋士。"],"uncertainty":["兖州各县城的具体归属变化需要后续地图区块数据细化；当前事件只记录战略走势。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-196-cao-cao-escorts-emperor', '曹操迎汉献帝至许', 'china', 196, 196, '许', 'politics', '曹操迎接汉献帝至许，以东汉朝廷名义发布诏令、整合政治合法性，形成“挟天子以令诸侯”的政治优势。', 'high', '[113.85,34.04]', 'null', '{"id":"china-196-cao-cao-escorts-emperor","title":"曹操迎汉献帝至许","startYear":196,"endYear":196,"region":"china","locationName":"许","coordinates":[113.85,34.04],"category":"politics","summary":"曹操迎接汉献帝至许，以东汉朝廷名义发布诏令、整合政治合法性，形成“挟天子以令诸侯”的政治优势。","people":["曹操","汉献帝","荀彧","董昭"],"personIds":["cao-cao","han-xiandi","xun-yu","dong-zhao"],"polities":["东汉","曹操集团"],"relatedEvents":["china-192-dong-zhuo-killed","china-200-guandu","china-220-cao-pi-founds-wei"],"tags":["许都","汉献帝","政治合法性"],"confidence":"high","sources":["《三国志·魏书·武帝纪》","《后汉书·孝献帝纪》","《资治通鉴》卷六十二"],"sourceRefs":[{"sourceId":"sanguozhi-wei-wudi","locator":"建安元年"},{"sourceId":"houhanshu-xiandi","locator":"建安元年"}]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-196-lu-bu-seizes-xuzhou', '吕布袭下邳，刘备失徐州', 'china', 196, 196, '下邳、徐州', 'war', '刘备与袁术交战时，吕布袭取下邳并控制徐州。刘备失去刚取得的州级基础，转入依附吕布、曹操之间的夹缝状态。', 'high', '[118,34.3]', '{"background":["刘备接掌徐州后，既要面对袁术压力，也要安置来投的吕布，政治基础并不稳固。","徐州内部军事力量复杂，刘备、张飞、吕布、袁术的行动互相牵动。"],"process":["刘备东向与袁术相争，吕布趁机袭取下邳。","吕布取得刘备家属和徐州核心据点，刘备被迫向外求援或转为依附。"],"result":["吕布成为徐州实际主导者，刘备失去陶谦死后取得的州级根据地。","徐州问题进一步牵动曹操、袁术和刘备，最终导向下邳之战。"],"impact":["此事件让吕布从兖州失败后的流动势力，转为徐州割据者。","刘备早期事业再次受挫，也为后来与曹操合攻吕布埋下伏笔。"],"sourceNotes":["《吕布传》保留了吕布袭下邳的简明叙述，《先主传》可与刘备失徐州线索互证。","这里作为中型事件折叠显示，用来补足徐州连续格局，而不是主时间条大型事件。"],"uncertainty":["徐州各郡县归属在 196-198 年间变化频繁，当前只记录下邳和徐州主导权转移。"]}', '{"id":"china-196-lu-bu-seizes-xuzhou","title":"吕布袭下邳，刘备失徐州","startYear":196,"endYear":196,"region":"china","locationName":"下邳、徐州","coordinates":[118,34.3],"category":"war","summary":"刘备与袁术交战时，吕布袭取下邳并控制徐州。刘备失去刚取得的州级基础，转入依附吕布、曹操之间的夹缝状态。","people":["吕布","刘备","袁术","张飞"],"personIds":["lu-bu","liu-bei","yuan-shu","zhang-fei"],"polities":["吕布集团","刘备集团","袁术集团"],"relatedEvents":["china-194-tao-qian-yields-xuzhou","china-197-yuan-shu-declares-emperor","china-199-lu-bu-defeated"],"tags":["徐州","下邳","吕布","刘备失据"],"confidence":"high","sources":["《三国志·魏书·吕布传》","《三国志·蜀书·先主传》","《资治通鉴》卷六十二"],"sourceRefs":[{"sourceId":"sanguozhi-wei-lubu","locator":"吕布传徐州相关记载","quote":"备东击术，布袭取下邳，获备妻子。"},{"sourceId":"sanguozhi-shu-xianzhu","locator":"先主传徐州相关记载"},{"sourceId":"zizhi-tongjian-62","locator":"建安元年"}],"detail":{"background":["刘备接掌徐州后，既要面对袁术压力，也要安置来投的吕布，政治基础并不稳固。","徐州内部军事力量复杂，刘备、张飞、吕布、袁术的行动互相牵动。"],"process":["刘备东向与袁术相争，吕布趁机袭取下邳。","吕布取得刘备家属和徐州核心据点，刘备被迫向外求援或转为依附。"],"result":["吕布成为徐州实际主导者，刘备失去陶谦死后取得的州级根据地。","徐州问题进一步牵动曹操、袁术和刘备，最终导向下邳之战。"],"impact":["此事件让吕布从兖州失败后的流动势力，转为徐州割据者。","刘备早期事业再次受挫，也为后来与曹操合攻吕布埋下伏笔。"],"sourceNotes":["《吕布传》保留了吕布袭下邳的简明叙述，《先主传》可与刘备失徐州线索互证。","这里作为中型事件折叠显示，用来补足徐州连续格局，而不是主时间条大型事件。"],"uncertainty":["徐州各郡县归属在 196-198 年间变化频繁，当前只记录下邳和徐州主导权转移。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-197-yuan-shu-declares-emperor', '袁术称帝，淮南集团迅速孤立', 'china', 197, 197, '寿春', 'politics', '袁术在淮南称帝，破坏东汉名义秩序，也使自己成为其他势力共同排斥的对象，淮南势力开始瓦解。', 'high', '[116.78,32.57]', '{"background":["袁术出自汝南袁氏，曾掌握淮南和部分扬州资源，在汉末群雄中有很高门第资本。","曹操迎汉献帝至许后，东汉名义秩序反而被曹操利用；袁术称帝是在这一合法性竞争中的冒进选择。"],"process":["袁术以符命和袁氏门第为依据，在寿春僭号称帝，建立“仲氏”名号。","阎象等部属曾以周文王事殷作比劝阻，但袁术没有采纳。"],"result":["袁术称帝迅速引发政治孤立，其他势力更容易以维护汉室名义排斥或攻击袁术。","淮南集团财政、粮食和军心压力加速恶化。"],"impact":["袁术称帝是汉末群雄中最早公开破坏汉室名义秩序的举动之一。","它也解释了袁术为何从强势淮南军阀快速走向败亡。"],"sourceNotes":["《袁术传》提供袁术称帝、部属劝阻和败亡的核心叙述。","《资治通鉴》卷六十二可用于校准建安二年前后的连续政局。"],"uncertainty":["袁术称帝的具体仪式制度可后续细化；当前重点记录其政治后果。"]}', '{"id":"china-197-yuan-shu-declares-emperor","title":"袁术称帝，淮南集团迅速孤立","startYear":197,"endYear":197,"region":"china","locationName":"寿春","coordinates":[116.78,32.57],"category":"politics","summary":"袁术在淮南称帝，破坏东汉名义秩序，也使自己成为其他势力共同排斥的对象，淮南势力开始瓦解。","people":["袁术"],"personIds":["yuan-shu"],"polities":["袁术集团","东汉"],"relatedEvents":["china-190-coalition-against-dong-zhuo","china-196-lu-bu-seizes-xuzhou","china-199-yuan-shu-collapse","china-199-lu-bu-defeated"],"tags":["淮南","称帝","政治孤立"],"confidence":"high","sources":["《三国志·魏书·袁术传》","《资治通鉴》卷六十二"],"sourceRefs":[{"sourceId":"sanguozhi-wei-yuan-shu","locator":"袁术称帝相关记载","quote":"用河内张烱之符命，遂僭号。"},{"sourceId":"sanguozhi-wei-yuan-shu","locator":"典略所载建号","quote":"自以名字当之，乃建号称仲氏。"},{"sourceId":"zizhi-tongjian-62","locator":"建安二年"}],"detail":{"background":["袁术出自汝南袁氏，曾掌握淮南和部分扬州资源，在汉末群雄中有很高门第资本。","曹操迎汉献帝至许后，东汉名义秩序反而被曹操利用；袁术称帝是在这一合法性竞争中的冒进选择。"],"process":["袁术以符命和袁氏门第为依据，在寿春僭号称帝，建立“仲氏”名号。","阎象等部属曾以周文王事殷作比劝阻，但袁术没有采纳。"],"result":["袁术称帝迅速引发政治孤立，其他势力更容易以维护汉室名义排斥或攻击袁术。","淮南集团财政、粮食和军心压力加速恶化。"],"impact":["袁术称帝是汉末群雄中最早公开破坏汉室名义秩序的举动之一。","它也解释了袁术为何从强势淮南军阀快速走向败亡。"],"sourceNotes":["《袁术传》提供袁术称帝、部属劝阻和败亡的核心叙述。","《资治通鉴》卷六十二可用于校准建安二年前后的连续政局。"],"uncertainty":["袁术称帝的具体仪式制度可后续细化；当前重点记录其政治后果。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-199-yuan-shu-collapse', '袁术败亡，淮南集团瓦解', 'china', 199, 199, '淮南、江亭一带', 'politics', '称帝后的袁术先后受吕布、曹操等压力，粮尽势孤，欲北投袁谭未成，最终病死。淮南袁术集团作为独立势力瓦解。', 'high', '[116.78,32.57]', '{"background":["袁术称帝后，原本可借袁氏门第整合的政治资源迅速转化为负担。","吕布、曹操、孙策等势力都与袁术发生过冲突，淮南集团内外压力不断加重。"],"process":["袁术称帝后军政资源枯竭，部曲雷薄、陈兰等拒绝接纳，袁术欲转向袁绍集团方向求存。","袁术在北走途中病死，集团核心不再具备独立政治号召力。"],"result":["袁术集团瓦解，淮南权力真空被曹操、孙策等势力重新分割。","袁术称帝失败也成为汉末其他群雄避免过早称帝的重要反例。"],"impact":["袁术败亡减少了中原东南部的独立竞争者。","淮南和江淮地区此后更直接进入曹操、孙权两大集团的长期对峙格局。"],"sourceNotes":["《袁术传》同时记录称帝和败亡，适合把 197 与 199 两个节点连成一条线。","《资治通鉴》卷六十二可校准建安四年前后的袁术、吕布、曹操事件顺序。"],"uncertainty":["袁术败亡前各部曲、部将的具体去向较分散，第一版只处理集团瓦解这一层。"]}', '{"id":"china-199-yuan-shu-collapse","title":"袁术败亡，淮南集团瓦解","startYear":199,"endYear":199,"region":"china","locationName":"淮南、江亭一带","coordinates":[116.78,32.57],"category":"politics","summary":"称帝后的袁术先后受吕布、曹操等压力，粮尽势孤，欲北投袁谭未成，最终病死。淮南袁术集团作为独立势力瓦解。","people":["袁术","袁绍","袁谭","曹操","吕布"],"personIds":["yuan-shu","yuan-shao","cao-cao","lu-bu"],"polities":["袁术集团","曹操集团","袁绍集团"],"relatedEvents":["china-197-yuan-shu-declares-emperor","china-199-lu-bu-defeated","china-200-guandu"],"tags":["袁术","淮南","群雄败亡"],"confidence":"high","sources":["《三国志·魏书·袁术传》","《资治通鉴》卷六十二"],"sourceRefs":[{"sourceId":"sanguozhi-wei-yuan-shu","locator":"袁术败亡相关记载","quote":"术前为吕布所破，后为太祖所败，奔其部曲雷薄、陈兰于灊山，复为所拒。"},{"sourceId":"sanguozhi-wei-yuan-shu","locator":"江亭病死","quote":"欲至青州从袁谭，发病道死。"},{"sourceId":"zizhi-tongjian-62","locator":"建安四年"}],"detail":{"background":["袁术称帝后，原本可借袁氏门第整合的政治资源迅速转化为负担。","吕布、曹操、孙策等势力都与袁术发生过冲突，淮南集团内外压力不断加重。"],"process":["袁术称帝后军政资源枯竭，部曲雷薄、陈兰等拒绝接纳，袁术欲转向袁绍集团方向求存。","袁术在北走途中病死，集团核心不再具备独立政治号召力。"],"result":["袁术集团瓦解，淮南权力真空被曹操、孙策等势力重新分割。","袁术称帝失败也成为汉末其他群雄避免过早称帝的重要反例。"],"impact":["袁术败亡减少了中原东南部的独立竞争者。","淮南和江淮地区此后更直接进入曹操、孙权两大集团的长期对峙格局。"],"sourceNotes":["《袁术传》同时记录称帝和败亡，适合把 197 与 199 两个节点连成一条线。","《资治通鉴》卷六十二可校准建安四年前后的袁术、吕布、曹操事件顺序。"],"uncertainty":["袁术败亡前各部曲、部将的具体去向较分散，第一版只处理集团瓦解这一层。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-199-gongsun-zan-defeated', '易京陷落，公孙瓒败亡', 'china', 199, 199, '易京', 'war', '袁绍长期围攻公孙瓒，易京最终陷落。公孙瓒败亡后，幽州与冀北格局转向袁绍主导，为官渡前袁绍强势地位提供基础。', 'high', '[115.49,39.35]', '{"background":["袁绍与公孙瓒长期争夺冀州、幽州和北方边地资源。","公孙瓒后期退守易京，以高楼、深堑和积谷进行防御。"],"process":["袁绍连续围攻易京，公孙瓒无法恢复外线主动。","易京陷落后，公孙瓒集团瓦解。"],"result":["袁绍取得河北和幽州方向更完整的控制。","官渡前，袁绍因此成为北方资源最强的军事政治集团。"],"impact":["公孙瓒败亡是官渡之前北方格局收束的重要节点。","它不是曹刘孙主线事件，但对理解袁绍为何能南下压迫曹操非常重要。"],"sourceNotes":["《公孙瓒传》提供易京固守和败亡脉络，《袁绍传》提供袁绍北方扩张视角。","此事件按中型事件处理，适合在打开中型事件时显示。"],"uncertainty":["易京位置和围攻细节可后续结合地图资料细化；当前以北方权力转移为主。"]}', '{"id":"china-199-gongsun-zan-defeated","title":"易京陷落，公孙瓒败亡","startYear":199,"endYear":199,"region":"china","locationName":"易京","coordinates":[115.49,39.35],"category":"war","summary":"袁绍长期围攻公孙瓒，易京最终陷落。公孙瓒败亡后，幽州与冀北格局转向袁绍主导，为官渡前袁绍强势地位提供基础。","people":["公孙瓒","袁绍"],"personIds":["gongsun-zan","yuan-shao"],"polities":["公孙瓒集团","袁绍集团"],"relatedEvents":["china-200-guandu"],"tags":["易京","幽州","袁绍","公孙瓒败亡"],"confidence":"high","sources":["《三国志·魏书·公孙瓒传》","《三国志·魏书·袁绍传》","《资治通鉴》卷六十二"],"sourceRefs":[{"sourceId":"sanguozhi-wei-gongsun-zan","locator":"易京固守相关记载","quote":"瓒军数败，乃走还易京固守。"},{"sourceId":"sanguozhi-wei-yuan-shao","locator":"袁绍平公孙瓒相关记载"},{"sourceId":"zizhi-tongjian-62","locator":"建安四年"}],"detail":{"background":["袁绍与公孙瓒长期争夺冀州、幽州和北方边地资源。","公孙瓒后期退守易京，以高楼、深堑和积谷进行防御。"],"process":["袁绍连续围攻易京，公孙瓒无法恢复外线主动。","易京陷落后，公孙瓒集团瓦解。"],"result":["袁绍取得河北和幽州方向更完整的控制。","官渡前，袁绍因此成为北方资源最强的军事政治集团。"],"impact":["公孙瓒败亡是官渡之前北方格局收束的重要节点。","它不是曹刘孙主线事件，但对理解袁绍为何能南下压迫曹操非常重要。"],"sourceNotes":["《公孙瓒传》提供易京固守和败亡脉络，《袁绍传》提供袁绍北方扩张视角。","此事件按中型事件处理，适合在打开中型事件时显示。"],"uncertainty":["易京位置和围攻细节可后续结合地图资料细化；当前以北方权力转移为主。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-199-lu-bu-defeated', '下邳陷落，吕布败亡', 'china', 199, 199, '下邳', 'war', '曹操围攻下邳，吕布被俘后处死。徐州局势重新洗牌，曹操在官渡前清除了东南方向的重要威胁。', 'high', '[118,34.3]', '{"background":["吕布在兖州失败后据徐州，刘备、曹操、袁术等势力围绕徐州长期互动。","官渡前，曹操需要清除东南方向的不稳定势力，避免与袁绍决战时腹背受敌。"],"process":["曹操围攻下邳，刘备也参与曹操方面行动。吕布、陈宫守城，但内部离心和外部压力不断加大。","下邳最终陷落，吕布、陈宫等被俘。"],"result":["吕布和陈宫被杀，吕布集团灭亡。","曹操取得徐州方向主动权，官渡前的战略后顾之忧明显减少。"],"impact":["吕布败亡使中原割据竞争者减少，曹操可以把主要精力转向袁绍。","刘备随后仍会反复转移阵营，但此时徐州不再是独立吕布集团的根据地。"],"sourceNotes":["《三国志·魏书·武帝纪》和《吕布传》是下邳战事与吕布败亡的主要纪传依据。","《资治通鉴》卷六十二可用于补建安三年至四年的连续战事顺序。"],"uncertainty":["水淹下邳、城内降叛等细节在后世叙事中常被戏剧化，第一版只保留战役结果和战略意义。"]}', '{"id":"china-199-lu-bu-defeated","title":"下邳陷落，吕布败亡","startYear":199,"endYear":199,"region":"china","locationName":"下邳","coordinates":[118,34.3],"category":"war","summary":"曹操围攻下邳，吕布被俘后处死。徐州局势重新洗牌，曹操在官渡前清除了东南方向的重要威胁。","people":["曹操","吕布","刘备","陈宫","荀攸","郭嘉"],"personIds":["cao-cao","lu-bu","liu-bei","chen-gong","xun-you","guo-jia"],"polities":["曹操集团","吕布集团"],"relatedEvents":["china-194-lu-bu-seizes-yan","china-196-lu-bu-seizes-xuzhou","china-199-yuan-shu-collapse","china-200-guandu"],"tags":["下邳","徐州","吕布败亡"],"confidence":"high","sources":["《三国志·魏书·武帝纪》","《三国志·魏书·吕布传》","《资治通鉴》卷六十二"],"sourceRefs":[{"sourceId":"sanguozhi-wei-wudi","locator":"建安三年至四年"},{"sourceId":"sanguozhi-wei-lubu","locator":"吕布传下邳败亡","quote":"太祖堑围之三月，上下离心，其将侯成、宋宪、魏续缚陈宫，将其衆降。"},{"sourceId":"zizhi-tongjian-62","locator":"建安三年至四年"}],"detail":{"background":["吕布在兖州失败后据徐州，刘备、曹操、袁术等势力围绕徐州长期互动。","官渡前，曹操需要清除东南方向的不稳定势力，避免与袁绍决战时腹背受敌。"],"process":["曹操围攻下邳，刘备也参与曹操方面行动。吕布、陈宫守城，但内部离心和外部压力不断加大。","下邳最终陷落，吕布、陈宫等被俘。"],"result":["吕布和陈宫被杀，吕布集团灭亡。","曹操取得徐州方向主动权，官渡前的战略后顾之忧明显减少。"],"impact":["吕布败亡使中原割据竞争者减少，曹操可以把主要精力转向袁绍。","刘备随后仍会反复转移阵营，但此时徐州不再是独立吕布集团的根据地。"],"sourceNotes":["《三国志·魏书·武帝纪》和《吕布传》是下邳战事与吕布败亡的主要纪传依据。","《资治通鉴》卷六十二可用于补建安三年至四年的连续战事顺序。"],"uncertainty":["水淹下邳、城内降叛等细节在后世叙事中常被戏剧化，第一版只保留战役结果和战略意义。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-200-guandu', '官渡之战', 'china', 200, 200, '官渡', 'war', '曹操与袁绍在官渡决战。曹操袭破乌巢后取得战略胜利，河北袁绍集团由盛转衰，北方统一的方向基本确定。', 'high', '[114,34.8]', '{"background":["曹操在 196 年迎汉献帝至许，获得以汉廷名义发布政令的政治优势；到 199 年下邳平定吕布后，兖州、豫州及许都周边根据地相对稳固。","袁绍在北方击败公孙瓒后控制冀州、幽州、并州、青州等地，兵力与资源规模较曹操更大，是建安五年前后北方最强势力。","双方争夺的核心不只是官渡一地，而是黄河南北通道、许都安全以及北方统一主导权。"],"process":["袁绍南下后，曹操以官渡为核心防线抵御其攻势，战场围绕黄河渡口、粮道和许都北面门户展开。","白马、延津等前哨战中，颜良、文丑先后败亡；关羽斩颜良是曹操侧局部反击的代表节点。","曹操一度承受军粮与兵力压力，荀彧支持坚守，荀攸等参与军中谋划；袁绍方面沮授、田丰等持重意见未能主导决策。","乌巢被袭是战局转折点。许攸投曹提供粮秣情报，曹操破坏袁绍军粮储备后，张郃、高览等将领归曹，袁绍军心迅速瓦解。"],"result":["袁绍退回河北，官渡一战使其集团从优势转为被动。","曹操虽然没有在 200 年立即完全吞并河北，但北方统一的战略方向已经明显转向曹操。"],"impact":["官渡之战奠定曹操统一北方的基础，也为后来的曹魏政权提供人口、土地和制度资源。","此战展示了汉末战争中后勤、情报、将领决断和政治合法性的综合作用，不只是单纯兵力对比。"],"sourceNotes":["《三国志·魏书·武帝纪》提供曹操侧的本纪叙事，《袁绍传》提供袁绍集团的传记脉络，张郃相关细节还需参看《张郃传》。","颜良、文丑、张郃、高览并称“河北四庭柱”属于后世通俗归类，前端人物卡中作为传统标签展示，不写成汉末正式制度。","《资治通鉴》卷六十三将纪传材料整理为建安五年的连续纪年，适合作为事件时间线骨架。"],"uncertainty":["参战兵力、伤亡规模和部分战术细节在后世叙述中常被放大，第一版只标注战略走势，不把数字当作精确值。","官渡战场的具体空间范围可进一步结合历史地图和考古地名资料细化。"]}', '{"id":"china-200-guandu","title":"官渡之战","startYear":200,"endYear":200,"region":"china","locationName":"官渡","coordinates":[114,34.8],"category":"war","summary":"曹操与袁绍在官渡决战。曹操袭破乌巢后取得战略胜利，河北袁绍集团由盛转衰，北方统一的方向基本确定。","people":["曹操","袁绍","颜良","文丑","张郃","高览","许攸","沮授","田丰","审配","关羽","荀彧","荀攸","郭嘉","贾诩"],"personIds":["cao-cao","yuan-shao","yan-liang","wen-chou","zhang-he","gao-lan","xu-you","ju-shou","tian-feng","shen-pei","guan-yu","xun-yu","xun-you","guo-jia","jia-xu"],"polities":["曹操集团","袁绍集团"],"relatedEvents":["china-196-cao-cao-escorts-emperor","china-194-lu-bu-seizes-yan","china-208-red-cliffs"],"tags":["官渡","河北","北方统一"],"confidence":"high","sources":["《三国志·魏书·武帝纪》","《三国志·魏书·袁绍传》","《三国志·魏书·张乐于张徐传》","《三国志·魏书·荀彧荀攸贾诩传》","《三国志·蜀书·关羽传》","《资治通鉴》卷六十三"],"sourceRefs":[{"sourceId":"sanguozhi-wei-wudi","locator":"建安五年","quote":"袁绍运谷车数千乘至，公用荀攸计，遣徐晃、史涣邀击，大破之，尽烧其车。公乃留曹洪守，自将步骑五千人夜往，会明至。"},{"sourceId":"sanguozhi-wei-yuan-shao","locator":"袁绍传官渡相关记载","quote":"沮授又曰：“北兵数衆而果劲不及南，南谷虚少而货财不及北；南利在于急战，北利在于缓搏。宜徐持乆，旷以日月。”绍不从。"},{"sourceId":"sanguozhi-wei-zhang-he","locator":"张郃传官渡相关记载","quote":"合说绍曰：“曹公兵精，往必破琼等；琼等破，则将军事去矣，宜急引兵救之。”"},{"sourceId":"sanguozhi-wei-xun-yu-jia-xu","locator":"荀彧、荀攸传官渡相关记载","quote":"太祖保官渡，绍围之。太祖军粮方尽，书与彧，议欲还许以引绍。彧曰：“今军食虽少，未若楚、汉在荥阳、成皐间也。”"},{"sourceId":"sanguozhi-shu-guan-yu","locator":"关羽传白马斩颜良","quote":"羽望见良麾盖，策马刺良于万衆之中，斩其首还，绍诸将莫能当者，遂解白马围。"},{"sourceId":"zizhi-tongjian-63","locator":"建安五年","quote":"冬，十月，绍复遣车运谷，使其将淳于琼等将兵万馀人送之，宿绍营北四十里。"}],"detail":{"background":["曹操在 196 年迎汉献帝至许，获得以汉廷名义发布政令的政治优势；到 199 年下邳平定吕布后，兖州、豫州及许都周边根据地相对稳固。","袁绍在北方击败公孙瓒后控制冀州、幽州、并州、青州等地，兵力与资源规模较曹操更大，是建安五年前后北方最强势力。","双方争夺的核心不只是官渡一地，而是黄河南北通道、许都安全以及北方统一主导权。"],"process":["袁绍南下后，曹操以官渡为核心防线抵御其攻势，战场围绕黄河渡口、粮道和许都北面门户展开。","白马、延津等前哨战中，颜良、文丑先后败亡；关羽斩颜良是曹操侧局部反击的代表节点。","曹操一度承受军粮与兵力压力，荀彧支持坚守，荀攸等参与军中谋划；袁绍方面沮授、田丰等持重意见未能主导决策。","乌巢被袭是战局转折点。许攸投曹提供粮秣情报，曹操破坏袁绍军粮储备后，张郃、高览等将领归曹，袁绍军心迅速瓦解。"],"result":["袁绍退回河北，官渡一战使其集团从优势转为被动。","曹操虽然没有在 200 年立即完全吞并河北，但北方统一的战略方向已经明显转向曹操。"],"impact":["官渡之战奠定曹操统一北方的基础，也为后来的曹魏政权提供人口、土地和制度资源。","此战展示了汉末战争中后勤、情报、将领决断和政治合法性的综合作用，不只是单纯兵力对比。"],"sourceNotes":["《三国志·魏书·武帝纪》提供曹操侧的本纪叙事，《袁绍传》提供袁绍集团的传记脉络，张郃相关细节还需参看《张郃传》。","颜良、文丑、张郃、高览并称“河北四庭柱”属于后世通俗归类，前端人物卡中作为传统标签展示，不写成汉末正式制度。","《资治通鉴》卷六十三将纪传材料整理为建安五年的连续纪年，适合作为事件时间线骨架。"],"uncertainty":["参战兵力、伤亡规模和部分战术细节在后世叙述中常被放大，第一版只标注战略走势，不把数字当作精确值。","官渡战场的具体空间范围可进一步结合历史地图和考古地名资料细化。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-207-longzhong-plan', '刘备得诸葛亮，隆中对成形', 'china', 207, 207, '隆中', 'politics', '刘备延揽诸葛亮，诸葛亮提出据荆益、联孙抗曹、待天下有变的战略构想，为后来蜀汉路线奠定思想框架。', 'medium', '[112.08,32.02]', 'null', '{"id":"china-207-longzhong-plan","title":"刘备得诸葛亮，隆中对成形","startYear":207,"endYear":207,"region":"china","locationName":"隆中","coordinates":[112.08,32.02],"category":"politics","summary":"刘备延揽诸葛亮，诸葛亮提出据荆益、联孙抗曹、待天下有变的战略构想，为后来蜀汉路线奠定思想框架。","people":["刘备","诸葛亮"],"personIds":["liu-bei","zhuge-liang"],"polities":["刘备集团","荆州刘表集团"],"relatedEvents":["china-208-red-cliffs","china-214-liu-bei-takes-yi","china-234-wuzhang-plains"],"tags":["隆中对","荆州","蜀汉战略"],"confidence":"medium","sources":["《三国志·蜀书·诸葛亮传》","《三国志·蜀书·先主传》"],"sourceRefs":[{"sourceId":"sanguozhi-shu-zhuge-liang","locator":"隆中对相关记载"},{"sourceId":"sanguozhi-shu-xianzhu","locator":"建安十二年前后"}]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-208-red-cliffs', '赤壁之战', 'china', 208, 208, '赤壁、长江中游', 'war', '曹操南下荆州后，孙权与刘备联合抵抗。赤壁之战阻止了曹操迅速统一南方，三分格局开始显现。', 'high', '[113.9,29.7]', '{"background":["官渡之后曹操逐步完成北方整合，208 年南下荆州。刘表去世后，荆州内部继承和投降问题让长江中游局势骤然变化。","刘表去世是赤壁前的关键前置节点。刘备在荆州失去稳定依托后南撤，孙权则面对是否臣服曹操、保守江东或联合刘备抵抗的选择。","鲁肃、周瑜等主张抗曹，孙刘联盟在共同压力下成形。赤壁并非孤立战役，而是荆州归属、江东安全和南方政治格局的交汇点。"],"process":["曹操军队沿长江方向推进，但北方军队远征南方，水军经验、疫病、补给和新近收编荆州军的整合都带来压力。","孙权方面以周瑜等将领统军，鲁肃承担联刘协调意义；刘备集团参与联盟作战，诸葛亮在刘备战略与孙刘沟通叙事中占有位置。","史书传统普遍记录火攻和曹军退却，但具体执行细节在不同叙述中有差异；前端第一版保留为“火攻与退兵”而不展开演义化桥段。"],"result":["曹操放弃迅速统一南方的计划，退回北方经营中原和关中方向。","孙权保住江东，刘备获得重新立足和后续争取荆州、益州的机会。"],"impact":["赤壁之战使曹操、孙权、刘备三方进入长期并立与再分配阶段，三国格局由此清晰化。","荆州成为之后十余年孙刘关系的关键矛盾点，直接关联刘备入蜀、关羽北伐和夷陵之战。"],"sourceNotes":["《三国志·魏书·武帝纪》对曹操南征和退兵记载较简略，蜀、吴相关传记保留了更多联盟与水战叙述。","《吴书·周瑜鲁肃吕蒙传》对孙权集团内部决策、周瑜统军和鲁肃外交意义尤其关键；诸葛亮、贾诩在此处作为战略背景人物展示，不处理成演义化主角。","《资治通鉴》卷六十五综合多方材料，适合作为赤壁事件链的纪年骨架。"],"uncertainty":["赤壁具体地点、曹军兵力规模、火攻细节和战役范围仍有讨论空间，第一版采用“长江中游赤壁战区”的近似表达。","《三国演义》中的许多精彩桥段具有文学价值，但不能直接当作本项目的史实数据。"]}', '{"id":"china-208-red-cliffs","title":"赤壁之战","startYear":208,"endYear":208,"region":"china","locationName":"赤壁、长江中游","coordinates":[113.9,29.7],"category":"war","summary":"曹操南下荆州后，孙权与刘备联合抵抗。赤壁之战阻止了曹操迅速统一南方，三分格局开始显现。","people":["曹操","刘备","孙权","周瑜","鲁肃","刘表","诸葛亮","贾诩","王粲","刘廙"],"personIds":["cao-cao","liu-bei","sun-quan","zhou-yu","lu-su","liu-biao","zhuge-liang","jia-xu","wang-can","liu-yi"],"polities":["曹操集团","刘备集团","孙吴"],"relatedEvents":["china-200-guandu","china-207-longzhong-plan","china-214-liu-bei-takes-yi","china-219-hanzhong-and-jingzhou-crisis"],"tags":["赤壁","孙刘联盟","三分格局"],"confidence":"high","sources":["《三国志·魏书·武帝纪》","《三国志·蜀书·先主传》","《三国志·蜀书·诸葛亮传》","《三国志·魏书·荀彧荀攸贾诩传》","《三国志·吴书·周瑜鲁肃吕蒙传》","《资治通鉴》卷六十五"],"sourceRefs":[{"sourceId":"sanguozhi-wei-wudi","locator":"建安十三年","quote":"公至赤壁，与备战，不利。于是大疫，吏士多死者，乃引军还。备遂有荆州、江南诸郡。"},{"sourceId":"sanguozhi-shu-xianzhu","locator":"建安十三年","quote":"与曹公战于赤壁，大破之，焚其舟船。先主与吴军水陆并进，追到南郡。"},{"sourceId":"sanguozhi-shu-zhuge-liang","locator":"赤壁前后刘备战略相关记载"},{"sourceId":"sanguozhi-wei-xun-yu-jia-xu","locator":"贾诩传南征前后相关记载"},{"sourceId":"sanguozhi-wu-zhou-yu","locator":"周瑜、鲁肃传赤壁相关记载","quote":"权遂遣瑜及程普等与备并力逆曹公，遇于赤壁。时曹公军衆已有疾病，初一交战，公军败退，引次江北。"},{"sourceId":"zizhi-tongjian-65","locator":"建安十三年","quote":"遂以周瑜、程普为左右督，将兵与备并力逆操；以鲁肃为赞军校尉，助画方略。"}],"detail":{"background":["官渡之后曹操逐步完成北方整合，208 年南下荆州。刘表去世后，荆州内部继承和投降问题让长江中游局势骤然变化。","刘表去世是赤壁前的关键前置节点。刘备在荆州失去稳定依托后南撤，孙权则面对是否臣服曹操、保守江东或联合刘备抵抗的选择。","鲁肃、周瑜等主张抗曹，孙刘联盟在共同压力下成形。赤壁并非孤立战役，而是荆州归属、江东安全和南方政治格局的交汇点。"],"process":["曹操军队沿长江方向推进，但北方军队远征南方，水军经验、疫病、补给和新近收编荆州军的整合都带来压力。","孙权方面以周瑜等将领统军，鲁肃承担联刘协调意义；刘备集团参与联盟作战，诸葛亮在刘备战略与孙刘沟通叙事中占有位置。","史书传统普遍记录火攻和曹军退却，但具体执行细节在不同叙述中有差异；前端第一版保留为“火攻与退兵”而不展开演义化桥段。"],"result":["曹操放弃迅速统一南方的计划，退回北方经营中原和关中方向。","孙权保住江东，刘备获得重新立足和后续争取荆州、益州的机会。"],"impact":["赤壁之战使曹操、孙权、刘备三方进入长期并立与再分配阶段，三国格局由此清晰化。","荆州成为之后十余年孙刘关系的关键矛盾点，直接关联刘备入蜀、关羽北伐和夷陵之战。"],"sourceNotes":["《三国志·魏书·武帝纪》对曹操南征和退兵记载较简略，蜀、吴相关传记保留了更多联盟与水战叙述。","《吴书·周瑜鲁肃吕蒙传》对孙权集团内部决策、周瑜统军和鲁肃外交意义尤其关键；诸葛亮、贾诩在此处作为战略背景人物展示，不处理成演义化主角。","《资治通鉴》卷六十五综合多方材料，适合作为赤壁事件链的纪年骨架。"],"uncertainty":["赤壁具体地点、曹军兵力规模、火攻细节和战役范围仍有讨论空间，第一版采用“长江中游赤壁战区”的近似表达。","《三国演义》中的许多精彩桥段具有文学价值，但不能直接当作本项目的史实数据。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-214-liu-bei-takes-yi', '刘备入主益州', 'china', 214, 214, '成都', 'war', '刘备与刘璋决裂后攻取益州，取得稳定的西南根据地。荆州、益州并重的战略开始具备现实基础。', 'high', '[104.07,30.67]', '{"background":["赤壁之后，刘备虽在荆州获得立足点，但长期缺乏可供建国的稳定纵深。","刘璋据益州，张鲁据汉中，益州内部对外部军事压力和继承治理能力有疑虑，给刘备入蜀创造机会。","庞统、法正等人为刘备集团提供取益州的战略和内部信息支持。"],"process":["刘备最初以援助刘璋抵御张鲁为名入蜀，随后双方关系破裂，战争转为夺取益州。","庞统随军参与谋划并死于雒城战事；诸葛亮、张飞等自荆州入援，马超归附也对成都造成压力。","214 年成都出降，刘备接管益州。"],"result":["刘备取得成都平原和益州资源，集团从流动割据势力转为拥有稳定根据地。","刘璋退出益州主导权，益州成为后续蜀汉政权的核心地区。"],"impact":["取益州让隆中对的“跨有荆益”具备现实基础。","益州也把刘备推入汉中、荆州双线压力：西北要争汉中，东线要处理孙刘荆州矛盾。"],"sourceNotes":["《先主传》提供刘备入蜀主线，《庞统法正传》补足谋臣视角。","马超、黄忠等将领信息需结合《关张马黄赵传》理解。"],"uncertainty":["成都围攻和各郡县归附的细节可后续结合区块地图细化；第一版先保留益州主导权转移。"]}', '{"id":"china-214-liu-bei-takes-yi","title":"刘备入主益州","startYear":214,"endYear":214,"region":"china","locationName":"成都","coordinates":[104.07,30.67],"category":"war","summary":"刘备与刘璋决裂后攻取益州，取得稳定的西南根据地。荆州、益州并重的战略开始具备现实基础。","people":["刘备","刘璋","诸葛亮","张飞","庞统","法正","马超","黄忠"],"personIds":["liu-bei","liu-zhang","zhuge-liang","zhang-fei","pang-tong","fa-zheng","ma-chao","huang-zhong"],"polities":["刘备集团","益州刘璋集团"],"relatedEvents":["china-207-longzhong-plan","china-208-red-cliffs","china-219-hanzhong-and-jingzhou-crisis"],"tags":["益州","成都","蜀汉基础"],"confidence":"high","sources":["《三国志·蜀书·先主传》","《三国志·蜀书·庞统法正传》","《三国志·蜀书·关张马黄赵传》","《资治通鉴》卷六十七"],"sourceRefs":[{"sourceId":"sanguozhi-shu-xianzhu","locator":"建安十九年"},{"sourceId":"sanguozhi-shu-pangtong-fa-zheng","locator":"庞统、法正传取益州相关记载"},{"sourceId":"sanguozhi-shu-zhang-fei","locator":"马超、黄忠入蜀前后相关记载"},{"sourceId":"zizhi-tongjian-67","locator":"建安十九年"}],"detail":{"background":["赤壁之后，刘备虽在荆州获得立足点，但长期缺乏可供建国的稳定纵深。","刘璋据益州，张鲁据汉中，益州内部对外部军事压力和继承治理能力有疑虑，给刘备入蜀创造机会。","庞统、法正等人为刘备集团提供取益州的战略和内部信息支持。"],"process":["刘备最初以援助刘璋抵御张鲁为名入蜀，随后双方关系破裂，战争转为夺取益州。","庞统随军参与谋划并死于雒城战事；诸葛亮、张飞等自荆州入援，马超归附也对成都造成压力。","214 年成都出降，刘备接管益州。"],"result":["刘备取得成都平原和益州资源，集团从流动割据势力转为拥有稳定根据地。","刘璋退出益州主导权，益州成为后续蜀汉政权的核心地区。"],"impact":["取益州让隆中对的“跨有荆益”具备现实基础。","益州也把刘备推入汉中、荆州双线压力：西北要争汉中，东线要处理孙刘荆州矛盾。"],"sourceNotes":["《先主传》提供刘备入蜀主线，《庞统法正传》补足谋臣视角。","马超、黄忠等将领信息需结合《关张马黄赵传》理解。"],"uncertainty":["成都围攻和各郡县归附的细节可后续结合区块地图细化；第一版先保留益州主导权转移。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-215-cao-cao-takes-hanzhong', '曹操取汉中', 'china', 215, 215, '汉中', 'war', '张鲁向曹操投降，汉中纳入曹操控制。此后汉中成为曹操与刘备争夺关中、益州通道的关键区块。', 'high', '[107.02,33.07]', '{"background":["刘备取益州后，汉中成为曹操和刘备之间的战略缓冲区。","张鲁长期据汉中，既是宗教政治割据者，也是关中、益州之间的门户控制者。"],"process":["曹操西征汉中，张鲁最终归降，汉中暂入曹操控制。","曹操未能长期亲自经营汉中，留下的防守体系后来面对刘备攻势承压。"],"result":["汉中从张鲁割据区转为曹刘争夺前线。","刘备集团意识到若曹操长期控制汉中，成都平原会受到北面直接威胁。"],"impact":["215 年曹操取汉中直接引出 217-219 年刘备夺汉中战事。","汉中成为蜀汉后续北伐和防御曹魏的门户。"],"sourceNotes":["曹操侧主要见《武帝纪》，张鲁割据和归降见《张鲁传》。","刘备后续夺汉中需要结合《法正传》《黄忠传》和《资治通鉴》建安二十四年。"],"uncertainty":["汉中各谷道和关隘的空间关系需要地图层后续细化；第一版以战略门户表达。"]}', '{"id":"china-215-cao-cao-takes-hanzhong","title":"曹操取汉中","startYear":215,"endYear":215,"region":"china","locationName":"汉中","coordinates":[107.02,33.07],"category":"war","summary":"张鲁向曹操投降，汉中纳入曹操控制。此后汉中成为曹操与刘备争夺关中、益州通道的关键区块。","people":["曹操","张鲁","刘备","法正","黄忠","刘晔"],"personIds":["cao-cao","zhang-lu","liu-bei","fa-zheng","huang-zhong","liu-ye"],"polities":["曹操集团","张鲁集团","刘备集团"],"relatedEvents":["china-214-liu-bei-takes-yi","china-219-hanzhong-and-jingzhou-crisis"],"tags":["汉中","张鲁","关中益州通道"],"confidence":"high","sources":["《三国志·魏书·武帝纪》","《三国志·魏书·张鲁传》","《资治通鉴》卷六十七"],"sourceRefs":[{"sourceId":"sanguozhi-wei-wudi","locator":"建安二十年"},{"sourceId":"sanguozhi-wei-zhang-lu","locator":"张鲁传"},{"sourceId":"sanguozhi-shu-pangtong-fa-zheng","locator":"法正传汉中战略相关记载"},{"sourceId":"sanguozhi-shu-zhang-fei","locator":"黄忠传汉中相关记载"},{"sourceId":"zizhi-tongjian-67","locator":"建安二十年"}],"detail":{"background":["刘备取益州后，汉中成为曹操和刘备之间的战略缓冲区。","张鲁长期据汉中，既是宗教政治割据者，也是关中、益州之间的门户控制者。"],"process":["曹操西征汉中，张鲁最终归降，汉中暂入曹操控制。","曹操未能长期亲自经营汉中，留下的防守体系后来面对刘备攻势承压。"],"result":["汉中从张鲁割据区转为曹刘争夺前线。","刘备集团意识到若曹操长期控制汉中，成都平原会受到北面直接威胁。"],"impact":["215 年曹操取汉中直接引出 217-219 年刘备夺汉中战事。","汉中成为蜀汉后续北伐和防御曹魏的门户。"],"sourceNotes":["曹操侧主要见《武帝纪》，张鲁割据和归降见《张鲁传》。","刘备后续夺汉中需要结合《法正传》《黄忠传》和《资治通鉴》建安二十四年。"],"uncertainty":["汉中各谷道和关隘的空间关系需要地图层后续细化；第一版以战略门户表达。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-219-hanzhong-and-jingzhou-crisis', '刘备称汉中王，关羽失荆州', 'china', 219, 220, '汉中、荆州', 'war', '刘备夺取汉中后称汉中王，关羽北伐襄樊一度震动曹魏。但孙吴袭取荆州，关羽败亡，蜀汉东西两线格局被迫收缩。', 'high', 'null', '{"background":["刘备取益州后继续争夺汉中，汉中关系成都安全与北伐门户。","同时，荆州是刘备集团东线根基，却也是孙权长期要求重新分配的区域。"],"process":["汉中方向，刘备集团在法正等谋划下推进，黄忠定军山斩夏侯渊，曹操最终退走。","刘备称汉中王后，关羽在荆州北伐襄樊，一度威胁曹魏南线。","孙权方面由吕蒙等策划袭取荆州，陆逊参与配合，关羽失去后方后败亡。"],"result":["刘备取得汉中并提升政治号召，但几乎同时失去荆州。","蜀汉从荆益并重被迫转为以益州、汉中为核心，孙刘关系进入严重破裂。"],"impact":["汉中胜利提高刘备称王和称帝的政治资本。","荆州丧失则直接引出刘备伐吴和夷陵之战，三国边界趋向长期化。"],"sourceNotes":["汉中线需结合《先主传》《法正传》《黄忠传》，荆州线需结合《关羽传》《吕蒙传》《陆逊传》。","《资治通鉴》卷六十七适合作为 219 年多线事件的时间骨架。"],"uncertainty":["汉中战役和荆州战役严格说是两条战线，此处作为 219 年刘备集团战略转折合并展示。"]}', '{"id":"china-219-hanzhong-and-jingzhou-crisis","title":"刘备称汉中王，关羽失荆州","startYear":219,"endYear":220,"region":"china","locationName":"汉中、荆州","coordinates":null,"category":"war","summary":"刘备夺取汉中后称汉中王，关羽北伐襄樊一度震动曹魏。但孙吴袭取荆州，关羽败亡，蜀汉东西两线格局被迫收缩。","people":["刘备","关羽","曹操","孙权","陆逊","吕蒙","法正","黄忠","马超","董昭"],"personIds":["liu-bei","guan-yu","cao-cao","sun-quan","lu-xun","lu-meng","fa-zheng","huang-zhong","ma-chao","dong-zhao"],"polities":["刘备集团","曹操集团","孙吴"],"relatedEvents":["china-208-red-cliffs","china-214-liu-bei-takes-yi","china-221-liu-bei-founds-shu","china-222-yiling"],"tags":["汉中","荆州","关羽北伐"],"confidence":"high","sources":["《三国志·蜀书·先主传》","《三国志·蜀书·关羽传》","《三国志·蜀书·庞统法正传》","《三国志·蜀书·关张马黄赵传》","《三国志·吴书·周瑜鲁肃吕蒙传》","《三国志·吴书·陆逊传》","《资治通鉴》卷六十七"],"sourceRefs":[{"sourceId":"sanguozhi-shu-xianzhu","locator":"建安二十四年"},{"sourceId":"sanguozhi-shu-guan-yu","locator":"关羽传"},{"sourceId":"sanguozhi-shu-pangtong-fa-zheng","locator":"法正传汉中相关记载"},{"sourceId":"sanguozhi-shu-zhang-fei","locator":"黄忠、马超传相关记载"},{"sourceId":"sanguozhi-wu-zhou-yu","locator":"吕蒙传取荆州相关记载"},{"sourceId":"sanguozhi-wu-lu-xun","locator":"陆逊传取荆州相关记载"},{"sourceId":"zizhi-tongjian-67","locator":"建安二十四年"}],"detail":{"background":["刘备取益州后继续争夺汉中，汉中关系成都安全与北伐门户。","同时，荆州是刘备集团东线根基，却也是孙权长期要求重新分配的区域。"],"process":["汉中方向，刘备集团在法正等谋划下推进，黄忠定军山斩夏侯渊，曹操最终退走。","刘备称汉中王后，关羽在荆州北伐襄樊，一度威胁曹魏南线。","孙权方面由吕蒙等策划袭取荆州，陆逊参与配合，关羽失去后方后败亡。"],"result":["刘备取得汉中并提升政治号召，但几乎同时失去荆州。","蜀汉从荆益并重被迫转为以益州、汉中为核心，孙刘关系进入严重破裂。"],"impact":["汉中胜利提高刘备称王和称帝的政治资本。","荆州丧失则直接引出刘备伐吴和夷陵之战，三国边界趋向长期化。"],"sourceNotes":["汉中线需结合《先主传》《法正传》《黄忠传》，荆州线需结合《关羽传》《吕蒙传》《陆逊传》。","《资治通鉴》卷六十七适合作为 219 年多线事件的时间骨架。"],"uncertainty":["汉中战役和荆州战役严格说是两条战线，此处作为 219 年刘备集团战略转折合并展示。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-220-cao-pi-founds-wei', '曹丕称帝，曹魏建立', 'china', 220, 220, '洛阳', 'politics', '曹丕接受汉献帝禅让，建立魏国，东汉正式结束。三国时期从割据事实进入正式政权并立阶段。', 'high', '[112.45,34.62]', 'null', '{"id":"china-220-cao-pi-founds-wei","title":"曹丕称帝，曹魏建立","startYear":220,"endYear":220,"region":"china","locationName":"洛阳","coordinates":[112.45,34.62],"category":"politics","summary":"曹丕接受汉献帝禅让，建立魏国，东汉正式结束。三国时期从割据事实进入正式政权并立阶段。","people":["曹丕","汉献帝","曹操","贾诩","陈群","钟繇","董昭","刘放","孙资","刘廙","贾逵","卫觊"],"personIds":["cao-pi","han-xiandi","cao-cao","jia-xu","chen-qun","zhong-yao","dong-zhao","liu-fang","sun-zi","liu-yi","jia-kui","wei-ji"],"polities":["曹魏","东汉"],"relatedEvents":["china-196-cao-cao-escorts-emperor","china-221-liu-bei-founds-shu","china-229-sun-quan-emperor"],"tags":["三国","曹魏","东汉灭亡"],"confidence":"high","sources":["《三国志·魏书·文帝纪》","《后汉书·孝献帝纪》","《资治通鉴》卷六十九"],"sourceRefs":[{"sourceId":"sanguozhi-wei-wendi","locator":"黄初元年","quote":"今其追踵尧典，禅位于魏王。告祠高庙。使兼御史大夫张音持节奉玺绶禅位。"},{"sourceId":"houhanshu-xiandi","locator":"延康元年"},{"sourceId":"zizhi-tongjian-69","locator":"黄初元年","quote":"冬十月乙卯，汉帝告祠高庙，使行御史大夫张音持节奉玺绶诏册，禅位于魏。辛未，升坛受玺绶，即皇帝位。"}]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-221-liu-bei-founds-shu', '刘备称帝，蜀汉建立', 'china', 221, 221, '成都', 'politics', '刘备在成都称帝，以继承汉室为政治名义建立蜀汉。此举回应曹魏代汉，也使魏蜀对立正式制度化。', 'high', '[104.07,30.67]', 'null', '{"id":"china-221-liu-bei-founds-shu","title":"刘备称帝，蜀汉建立","startYear":221,"endYear":221,"region":"china","locationName":"成都","coordinates":[104.07,30.67],"category":"politics","summary":"刘备在成都称帝，以继承汉室为政治名义建立蜀汉。此举回应曹魏代汉，也使魏蜀对立正式制度化。","people":["刘备","诸葛亮","刘禅"],"personIds":["liu-bei","zhuge-liang","liu-shan"],"polities":["蜀汉","曹魏"],"relatedEvents":["china-220-cao-pi-founds-wei","china-222-yiling","china-234-wuzhang-plains"],"tags":["蜀汉","成都","汉室继承"],"confidence":"high","sources":["《三国志·蜀书·先主传》","《资治通鉴》卷六十九"],"sourceRefs":[{"sourceId":"sanguozhi-shu-xianzhu","locator":"章武元年","quote":"章武元年夏四月，大赦，改年。以诸葛亮为丞相，许靖为司徒。置百官，立宗庙。"},{"sourceId":"zizhi-tongjian-69","locator":"章武元年","quote":"夏四月丙午，汉中王即皇帝位于武担之南。大赦，改元章武。以诸葛亮为丞相，许靖为司徒。"}]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-222-yiling', '夷陵之战', 'china', 222, 222, '夷陵、猇亭', 'war', '刘备为夺回荆州东征孙吴，陆逊据险相持并反击，蜀军大败。此战后吴蜀重新寻求缓和，三国边界趋于稳定。', 'high', '[111.3,30.75]', '{"background":["关羽败亡和荆州丧失后，刘备以夺回荆州、报复孙吴为目标发动东征。","孙权在曹魏压力与蜀汉报复之间寻求平衡，同时任用陆逊主持西线防御。"],"process":["刘备沿长江上游东进，蜀军战线拉长，营垒绵延。","陆逊采取持重防守，等待蜀军疲敝后发动反击，最终在猇亭、夷陵一带大破蜀军。"],"result":["刘备退回白帝城，蜀汉精锐和政治声势遭受重挫。","孙吴保住荆州，吴蜀随后逐步恢复外交缓和。"],"impact":["夷陵之战确立孙吴对荆州的长期控制。","刘备死后，诸葛亮辅政必须在修复吴蜀关系和恢复蜀汉国力之间重新布局。"],"sourceNotes":["蜀方主线见《先主传》，吴方战役指挥见《陆逊传》。","《资治通鉴》卷七十适合串联章武二年与黄武元年的战役进程。"],"uncertainty":["蜀军营垒具体分布和火攻细节存在叙事加工空间，第一版只标注战略和战役结果。"]}', '{"id":"china-222-yiling","title":"夷陵之战","startYear":222,"endYear":222,"region":"china","locationName":"夷陵、猇亭","coordinates":[111.3,30.75],"category":"war","summary":"刘备为夺回荆州东征孙吴，陆逊据险相持并反击，蜀军大败。此战后吴蜀重新寻求缓和，三国边界趋于稳定。","people":["刘备","孙权","陆逊"],"personIds":["liu-bei","sun-quan","lu-xun"],"polities":["蜀汉","孙吴"],"relatedEvents":["china-219-hanzhong-and-jingzhou-crisis","china-221-liu-bei-founds-shu","china-229-sun-quan-emperor"],"tags":["夷陵","荆州","吴蜀战争"],"confidence":"high","sources":["《三国志·蜀书·先主传》","《三国志·吴书·陆逊传》","《资治通鉴》卷七十"],"sourceRefs":[{"sourceId":"sanguozhi-shu-xianzhu","locator":"章武二年","quote":"陆议大破先主军于猇亭，将军冯习、张南等皆没。先主自猇亭还秭归，收合离散兵。"},{"sourceId":"sanguozhi-wu-lu-xun","locator":"陆逊传夷陵相关记载","quote":"逊曰：“吾已晓破之之术。”乃敕各持一把茅，以火攻拔之。通率诸军同时俱攻，斩张南、冯习及胡王沙摩柯等首，破其四十馀营。"},{"sourceId":"zizhi-tongjian-70","locator":"章武二年 / 黄武元年","quote":"陆逊督诸军大破先主军于猇亭，将军冯习、张南等皆没。"}],"detail":{"background":["关羽败亡和荆州丧失后，刘备以夺回荆州、报复孙吴为目标发动东征。","孙权在曹魏压力与蜀汉报复之间寻求平衡，同时任用陆逊主持西线防御。"],"process":["刘备沿长江上游东进，蜀军战线拉长，营垒绵延。","陆逊采取持重防守，等待蜀军疲敝后发动反击，最终在猇亭、夷陵一带大破蜀军。"],"result":["刘备退回白帝城，蜀汉精锐和政治声势遭受重挫。","孙吴保住荆州，吴蜀随后逐步恢复外交缓和。"],"impact":["夷陵之战确立孙吴对荆州的长期控制。","刘备死后，诸葛亮辅政必须在修复吴蜀关系和恢复蜀汉国力之间重新布局。"],"sourceNotes":["蜀方主线见《先主传》，吴方战役指挥见《陆逊传》。","《资治通鉴》卷七十适合串联章武二年与黄武元年的战役进程。"],"uncertainty":["蜀军营垒具体分布和火攻细节存在叙事加工空间，第一版只标注战略和战役结果。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-224-ardashir-defeats-parthians', '阿尔达希尔击败安息王朝', 'sasanian-persia', 224, 224, '霍尔米兹甘', 'war', '阿尔达希尔一世击败安息末代君主阿尔达班四世，萨珊波斯崛起，西亚政治格局发生重大变化。', 'high', 'null', 'null', '{"id":"sasanian-224-ardashir-defeats-parthians","title":"阿尔达希尔击败安息王朝","startYear":224,"endYear":224,"region":"sasanian-persia","locationName":"霍尔米兹甘","coordinates":null,"category":"war","summary":"阿尔达希尔一世击败安息末代君主阿尔达班四世，萨珊波斯崛起，西亚政治格局发生重大变化。","people":["阿尔达希尔一世","阿尔达班四世"],"polities":["萨珊波斯","安息帝国"],"relatedEvents":["rome-sasanian-260-valerian-captured"],"tags":["萨珊波斯","安息帝国","西亚"],"confidence":"high","sources":["al-Tabari, History","Touraj Daryaee, Sasanian Persia"]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-226-jiaozhou-incorporated-by-wu', '士燮卒，交州士氏独立地位削弱', 'china', 226, 226, '交州、交趾', 'politics', '士燮去世后，交州士氏长期自治的局面开始改变。孙吴通过刺史任命和军事处置加强交州控制，岭南逐渐纳入孙吴直接经营。', 'medium', '[106.35,21.03]', '{"background":["士燮长期据交趾并影响交州诸郡，虽向孙权奉贡、遣子入质，但地方士氏仍保有很强自治色彩。","对孙吴而言，交州连接岭南资源、海上交通和南方边郡，不能长期只停留在名义臣属状态。"],"process":["士燮去世后，孙吴对交州官职进行重新任命，并依靠吕岱等人处理地方反抗和郡县秩序。","士氏家族原本的地方独立地位被削弱，孙吴刺史体系和军事力量进一步进入交州。"],"result":["交州从士燮时代的半自治名义臣属，转向孙吴更直接的行政和军事控制。","岭南不再只是地图边缘的灰色背景，而是孙吴南方政权结构的一部分。"],"impact":["此事件属于非主角派系并入或失去独立地位的中型事件，正好适合补充你说的对比信息层。","它也为后续孙吴在南方的资源、边郡治理和海路活动提供背景。"],"sourceNotes":["《士燮传》记录士燮向孙权奉承节度、遣子入质和黄武五年去世。","《吕岱传》补足孙吴在交州的实际军事和行政经营。"],"uncertainty":["“并入”不是一天完成的静态边界变化，而是士燮死后孙吴任命、军事处置和地方秩序重组的过程；当前用 226 年作为关键节点。"]}', '{"id":"china-226-jiaozhou-incorporated-by-wu","title":"士燮卒，交州士氏独立地位削弱","startYear":226,"endYear":226,"region":"china","locationName":"交州、交趾","coordinates":[106.35,21.03],"category":"politics","summary":"士燮去世后，交州士氏长期自治的局面开始改变。孙吴通过刺史任命和军事处置加强交州控制，岭南逐渐纳入孙吴直接经营。","people":["士燮","孙权","吕岱","士徽"],"personIds":["shi-xie","sun-quan"],"polities":["交州士氏","孙吴"],"relatedEvents":["china-222-yiling","china-229-sun-quan-emperor"],"tags":["交州","士燮","孙吴岭南经营"],"confidence":"medium","sources":["《三国志·吴书·士燮传》","《三国志·吴书·吕岱传》","《资治通鉴》卷七十"],"sourceRefs":[{"sourceId":"sanguozhi-wu-shi-xie","locator":"建安十五年至黄武五年","quote":"建安十五年，孙权遣步隲为交州刺史。隲到，燮率兄弟奉承节度。"},{"sourceId":"sanguozhi-wu-shi-xie","locator":"黄武五年","quote":"燮在郡四十馀岁，黄武五年，年九十卒。"},{"sourceId":"sanguozhi-wu-lu-dai","locator":"吕岱传交州相关记载"},{"sourceId":"zizhi-tongjian-70","locator":"黄武五年前后"}],"detail":{"background":["士燮长期据交趾并影响交州诸郡，虽向孙权奉贡、遣子入质，但地方士氏仍保有很强自治色彩。","对孙吴而言，交州连接岭南资源、海上交通和南方边郡，不能长期只停留在名义臣属状态。"],"process":["士燮去世后，孙吴对交州官职进行重新任命，并依靠吕岱等人处理地方反抗和郡县秩序。","士氏家族原本的地方独立地位被削弱，孙吴刺史体系和军事力量进一步进入交州。"],"result":["交州从士燮时代的半自治名义臣属，转向孙吴更直接的行政和军事控制。","岭南不再只是地图边缘的灰色背景，而是孙吴南方政权结构的一部分。"],"impact":["此事件属于非主角派系并入或失去独立地位的中型事件，正好适合补充你说的对比信息层。","它也为后续孙吴在南方的资源、边郡治理和海路活动提供背景。"],"sourceNotes":["《士燮传》记录士燮向孙权奉承节度、遣子入质和黄武五年去世。","《吕岱传》补足孙吴在交州的实际军事和行政经营。"],"uncertainty":["“并入”不是一天完成的静态边界变化，而是士燮死后孙吴任命、军事处置和地方秩序重组的过程；当前用 226 年作为关键节点。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-229-sun-quan-emperor', '孙权称帝，孙吴正式建国', 'china', 229, 229, '武昌、建业', 'politics', '孙权称帝，国号吴，随后迁都建业。至此魏、蜀、吴三国都以皇帝名义建立政权。', 'high', '[114.3,30.55]', 'null', '{"id":"china-229-sun-quan-emperor","title":"孙权称帝，孙吴正式建国","startYear":229,"endYear":229,"region":"china","locationName":"武昌、建业","coordinates":[114.3,30.55],"category":"politics","summary":"孙权称帝，国号吴，随后迁都建业。至此魏、蜀、吴三国都以皇帝名义建立政权。","people":["孙权"],"personIds":["sun-quan"],"polities":["孙吴","曹魏","蜀汉"],"relatedEvents":["china-220-cao-pi-founds-wei","china-221-liu-bei-founds-shu","china-280-jin-conquers-wu"],"tags":["孙吴","建业","三国鼎立"],"confidence":"high","sources":["《三国志·吴书·吴主传》","《资治通鉴》卷七十一"],"sourceRefs":[{"sourceId":"sanguozhi-wu-wuzhu","locator":"黄龙元年"},{"sourceId":"zizhi-tongjian-69","locator":"黄龙元年附近纪年"}]}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-184-yellow-turban-rebellion', '黄巾起义爆发', 'china', 184, 184, '东汉各地', 'society', '太平道领袖张角发动大规模起义，东汉中央权威进一步崩溃，州郡军事化和地方豪强扩张由此加速。', 'high', 'null', '{
+  "overview": "太平道领袖张角发动大规模起义，东汉中央权威进一步崩溃，州郡军事化和地方豪强扩张由此加速。",
+  "background": [
+    "东汉后期宦官、外戚和地方豪强矛盾长期积累，中央对地方社会的控制能力下降。",
+    "太平道以宗教组织和治病、符水等方式扩展基层动员网络，张角等人能够跨州郡组织起事。"
+  ],
+  "process": [
+    "184 年黄巾起义在多地同时爆发，东汉朝廷以皇甫嵩、朱儁等将领镇压。",
+    "起义主力虽被击破，但地方州郡为了平乱获得更多军事权力，地方兵力开始长期化。"
+  ],
+  "result": [
+    "张角病死，黄巾主力被镇压，但各地余部和民变仍延续。",
+    "州郡军事化、豪强武装化和中央财政压力共同推动东汉末年政治秩序崩解。"
+  ],
+  "impact": [
+    "黄巾起义是三国前史的关键起点，它使地方军事力量合法化，为后来的州牧、军阀割据创造条件。",
+    "曹操、刘备、孙坚等后来的三国人物都在平乱或后续地方军事化背景中获得政治军事机会。"
+  ],
+  "sourceNotes": [
+    "《后汉书·皇甫嵩朱儁列传》提供东汉朝廷镇压黄巾的主要叙述。",
+    "《资治通鉴》卷五十八把黄巾起义置于中平元年的连续政治脉络中。"
+  ],
+  "uncertainty": [
+    "各地黄巾人数和组织规模在不同叙述中可能有夸张，第一版只保留结构性影响，不采用精确人数。"
+  ]
+}', '{
+  "id": "china-184-yellow-turban-rebellion",
+  "title": "黄巾起义爆发",
+  "startYear": 184,
+  "endYear": 184,
+  "region": "china",
+  "locationName": "东汉各地",
+  "coordinates": null,
+  "category": "society",
+  "summary": "太平道领袖张角发动大规模起义，东汉中央权威进一步崩溃，州郡军事化和地方豪强扩张由此加速。",
+  "people": [
+    "张角"
+  ],
+  "personIds": [
+    "zhang-jiao"
+  ],
+  "polities": [
+    "东汉",
+    "黄巾军"
+  ],
+  "relatedEvents": [
+    "china-189-dong-zhuo-enters-luoyang",
+    "china-190-coalition-against-dong-zhuo"
+  ],
+  "tags": [
+    "东汉末年",
+    "起义",
+    "三国前史"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《后汉书·皇甫嵩朱儁列传》",
+    "《资治通鉴》卷五十八"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "houhanshu-huangfu-song",
+      "locator": "黄巾起义相关记载"
+    },
+    {
+      "sourceId": "zizhi-tongjian-58",
+      "locator": "中平元年"
+    }
+  ],
+  "detail": {
+    "overview": "太平道领袖张角发动大规模起义，东汉中央权威进一步崩溃，州郡军事化和地方豪强扩张由此加速。",
+    "background": [
+      "东汉后期宦官、外戚和地方豪强矛盾长期积累，中央对地方社会的控制能力下降。",
+      "太平道以宗教组织和治病、符水等方式扩展基层动员网络，张角等人能够跨州郡组织起事。"
+    ],
+    "process": [
+      "184 年黄巾起义在多地同时爆发，东汉朝廷以皇甫嵩、朱儁等将领镇压。",
+      "起义主力虽被击破，但地方州郡为了平乱获得更多军事权力，地方兵力开始长期化。"
+    ],
+    "result": [
+      "张角病死，黄巾主力被镇压，但各地余部和民变仍延续。",
+      "州郡军事化、豪强武装化和中央财政压力共同推动东汉末年政治秩序崩解。"
+    ],
+    "impact": [
+      "黄巾起义是三国前史的关键起点，它使地方军事力量合法化，为后来的州牧、军阀割据创造条件。",
+      "曹操、刘备、孙坚等后来的三国人物都在平乱或后续地方军事化背景中获得政治军事机会。"
+    ],
+    "sourceNotes": [
+      "《后汉书·皇甫嵩朱儁列传》提供东汉朝廷镇压黄巾的主要叙述。",
+      "《资治通鉴》卷五十八把黄巾起义置于中平元年的连续政治脉络中。"
+    ],
+    "uncertainty": [
+      "各地黄巾人数和组织规模在不同叙述中可能有夸张，第一版只保留结构性影响，不采用精确人数。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-189-dong-zhuo-enters-luoyang', '董卓入洛阳控制朝廷', 'china', 189, 189, '洛阳', 'politics', '何进被杀后，董卓率凉州军入洛阳，废少帝、立献帝，东汉朝廷被军事强人直接控制。', 'high', '[112.45,34.62]', '{
+  "overview": "何进被杀后，董卓率凉州军入洛阳，废少帝、立献帝，东汉朝廷被军事强人直接控制。",
+  "background": [
+    "黄巾之后，东汉中央已严重依赖地方和边军力量。灵帝去世、何进召外兵入京，使洛阳政局进一步军事化。",
+    "董卓以凉州军为基础进入洛阳，利用宫廷混乱迅速控制皇帝和朝廷。"
+  ],
+  "process": [
+    "董卓废少帝、立陈留王刘协为献帝，以军事力量重组朝廷权力结构。",
+    "董卓控制洛阳后，关东士族和地方军政势力开始以讨董名义结盟。"
+  ],
+  "result": [
+    "献帝成为军阀控制朝廷合法性的象征，东汉名义朝廷进入长期被挟持状态。",
+    "董卓集团与关东诸军对立，促成 190 年讨董联盟。"
+  ],
+  "impact": [
+    "董卓入洛让东汉中央权威从制度性衰弱转为被军事集团直接控制。",
+    "此事件开启了“控制皇帝即控制政治合法性”的三国前期逻辑，后来曹操迎献帝至许即沿用这一政治资源。"
+  ],
+  "sourceNotes": [
+    "《后汉书·董卓列传》和《孝献帝纪》分别提供董卓集团与献帝朝廷角度。",
+    "《资治通鉴》卷五十九适合梳理中平六年至初平元年的连续政变。"
+  ],
+  "uncertainty": [
+    "董卓入京后的具体兵力规模和宫廷细节存在叙事差异，第一版以政治结构变化为主。"
+  ]
+}', '{
+  "id": "china-189-dong-zhuo-enters-luoyang",
+  "title": "董卓入洛阳控制朝廷",
+  "startYear": 189,
+  "endYear": 189,
+  "region": "china",
+  "locationName": "洛阳",
+  "coordinates": [
+    112.45,
+    34.62
+  ],
+  "category": "politics",
+  "summary": "何进被杀后，董卓率凉州军入洛阳，废少帝、立献帝，东汉朝廷被军事强人直接控制。",
+  "people": [
+    "董卓",
+    "汉献帝"
+  ],
+  "personIds": [
+    "dong-zhuo",
+    "han-xiandi"
+  ],
+  "polities": [
+    "东汉",
+    "董卓集团"
+  ],
+  "relatedEvents": [
+    "china-184-yellow-turban-rebellion",
+    "china-190-coalition-against-dong-zhuo",
+    "china-192-dong-zhuo-killed"
+  ],
+  "tags": [
+    "董卓",
+    "洛阳",
+    "废立皇帝"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《后汉书·董卓列传》",
+    "《后汉书·孝献帝纪》",
+    "《资治通鉴》卷五十九"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "houhanshu-dong-zhuo",
+      "locator": "董卓入京相关记载"
+    },
+    {
+      "sourceId": "houhanshu-xiandi",
+      "locator": "中平六年"
+    },
+    {
+      "sourceId": "zizhi-tongjian-59",
+      "locator": "中平六年至初平元年"
+    }
+  ],
+  "detail": {
+    "overview": "何进被杀后，董卓率凉州军入洛阳，废少帝、立献帝，东汉朝廷被军事强人直接控制。",
+    "background": [
+      "黄巾之后，东汉中央已严重依赖地方和边军力量。灵帝去世、何进召外兵入京，使洛阳政局进一步军事化。",
+      "董卓以凉州军为基础进入洛阳，利用宫廷混乱迅速控制皇帝和朝廷。"
+    ],
+    "process": [
+      "董卓废少帝、立陈留王刘协为献帝，以军事力量重组朝廷权力结构。",
+      "董卓控制洛阳后，关东士族和地方军政势力开始以讨董名义结盟。"
+    ],
+    "result": [
+      "献帝成为军阀控制朝廷合法性的象征，东汉名义朝廷进入长期被挟持状态。",
+      "董卓集团与关东诸军对立，促成 190 年讨董联盟。"
+    ],
+    "impact": [
+      "董卓入洛让东汉中央权威从制度性衰弱转为被军事集团直接控制。",
+      "此事件开启了“控制皇帝即控制政治合法性”的三国前期逻辑，后来曹操迎献帝至许即沿用这一政治资源。"
+    ],
+    "sourceNotes": [
+      "《后汉书·董卓列传》和《孝献帝纪》分别提供董卓集团与献帝朝廷角度。",
+      "《资治通鉴》卷五十九适合梳理中平六年至初平元年的连续政变。"
+    ],
+    "uncertainty": [
+      "董卓入京后的具体兵力规模和宫廷细节存在叙事差异，第一版以政治结构变化为主。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-190-coalition-against-dong-zhuo', '关东诸军起兵讨董', 'china', 190, 191, '关东、洛阳周边', 'war', '袁绍、袁术、曹操等关东军阀以讨伐董卓为名起兵。联盟本身松散，却标志着州郡军阀公开进入全国政治舞台。', 'high', '[113.7,34.8]', '{
+  "overview": "190 年关东诸军以讨伐董卓为名起兵，标志着州郡军事力量公开进入全国政治舞台。联盟未能形成稳定中央替代者，却让东汉朝廷失去对地方军政集团的实际约束。",
+  "background": [
+    "董卓入洛阳后废少帝、立献帝，直接以凉州军控制朝廷，引发关东士族和地方军政势力反弹。",
+    "黄巾起义以来州郡军事化已经扩大，地方长官和豪强拥有调兵、募兵、结盟的现实条件。",
+    "袁绍、袁术、曹操等人虽同称讨董，但各自有地域基础和政治诉求，联盟从一开始就缺乏统一指挥。"
+  ],
+  "process": [
+    "关东诸军推袁绍为盟主，分别在酸枣、河内、南阳等地集结，以讨伐董卓为共同名义。",
+    "曹操等少数力量尝试主动进兵，但联盟主力多观望不前，内部协调能力有限。",
+    "董卓最终迁都长安，焚毁洛阳，关东军没有完成恢复朝廷秩序的目标。"
+  ],
+  "result": [
+    "董卓集团退入关中，献帝朝廷仍在军阀挟持之下。",
+    "关东联盟迅速松散，各路诸侯从讨董转向争夺地盘和人口。",
+    "曹操、袁绍、袁术等人的独立政治军事路线开始清晰化。"
+  ],
+  "impact": [
+    "此事件把东汉末年从宫廷政变推向州郡军阀公开割据阶段。",
+    "联盟失败说明旧朝廷名义仍有号召力，但已不足以重建统一秩序。",
+    "袁绍、袁术、曹操后续竞争的起点都可以追溯到这次讨董联盟。"
+  ],
+  "sourceNotes": [
+    "《后汉书·董卓列传》提供董卓入洛、迁都和关东军反应的核心叙述。",
+    "《三国志·魏书·武帝纪》从曹操早期行动角度补充讨董过程。",
+    "《资治通鉴》卷五十九适合串联初平元年前后的联盟、迁都和地方分化。"
+  ],
+  "uncertainty": [
+    "关东诸军具体兵力和各营驻地在史书中不宜精确量化。",
+    "联盟失败不能简单归因于某一人怯战，更应看作地方利益和指挥结构失效。"
+  ]
+}', '{
+  "id": "china-190-coalition-against-dong-zhuo",
+  "title": "关东诸军起兵讨董",
+  "startYear": 190,
+  "endYear": 191,
+  "region": "china",
+  "locationName": "关东、洛阳周边",
+  "coordinates": [
+    113.7,
+    34.8
+  ],
+  "category": "war",
+  "summary": "袁绍、袁术、曹操等关东军阀以讨伐董卓为名起兵。联盟本身松散，却标志着州郡军阀公开进入全国政治舞台。",
+  "people": [
+    "袁绍",
+    "袁术",
+    "曹操",
+    "董卓"
+  ],
+  "personIds": [
+    "yuan-shao",
+    "yuan-shu",
+    "cao-cao",
+    "dong-zhuo"
+  ],
+  "polities": [
+    "东汉",
+    "关东联军",
+    "董卓集团"
+  ],
+  "relatedEvents": [
+    "china-189-dong-zhuo-enters-luoyang",
+    "china-192-dong-zhuo-killed",
+    "china-200-guandu"
+  ],
+  "tags": [
+    "关东联军",
+    "讨董",
+    "群雄并起"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《后汉书·董卓列传》",
+    "《三国志·魏书·武帝纪》",
+    "《资治通鉴》卷五十九"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "houhanshu-dong-zhuo",
+      "locator": "关东诸军讨董"
+    },
+    {
+      "sourceId": "sanguozhi-wei-wudi",
+      "locator": "初平元年前后"
+    },
+    {
+      "sourceId": "zizhi-tongjian-59",
+      "locator": "初平元年"
+    }
+  ],
+  "detail": {
+    "overview": "190 年关东诸军以讨伐董卓为名起兵，标志着州郡军事力量公开进入全国政治舞台。联盟未能形成稳定中央替代者，却让东汉朝廷失去对地方军政集团的实际约束。",
+    "background": [
+      "董卓入洛阳后废少帝、立献帝，直接以凉州军控制朝廷，引发关东士族和地方军政势力反弹。",
+      "黄巾起义以来州郡军事化已经扩大，地方长官和豪强拥有调兵、募兵、结盟的现实条件。",
+      "袁绍、袁术、曹操等人虽同称讨董，但各自有地域基础和政治诉求，联盟从一开始就缺乏统一指挥。"
+    ],
+    "process": [
+      "关东诸军推袁绍为盟主，分别在酸枣、河内、南阳等地集结，以讨伐董卓为共同名义。",
+      "曹操等少数力量尝试主动进兵，但联盟主力多观望不前，内部协调能力有限。",
+      "董卓最终迁都长安，焚毁洛阳，关东军没有完成恢复朝廷秩序的目标。"
+    ],
+    "result": [
+      "董卓集团退入关中，献帝朝廷仍在军阀挟持之下。",
+      "关东联盟迅速松散，各路诸侯从讨董转向争夺地盘和人口。",
+      "曹操、袁绍、袁术等人的独立政治军事路线开始清晰化。"
+    ],
+    "impact": [
+      "此事件把东汉末年从宫廷政变推向州郡军阀公开割据阶段。",
+      "联盟失败说明旧朝廷名义仍有号召力，但已不足以重建统一秩序。",
+      "袁绍、袁术、曹操后续竞争的起点都可以追溯到这次讨董联盟。"
+    ],
+    "sourceNotes": [
+      "《后汉书·董卓列传》提供董卓入洛、迁都和关东军反应的核心叙述。",
+      "《三国志·魏书·武帝纪》从曹操早期行动角度补充讨董过程。",
+      "《资治通鉴》卷五十九适合串联初平元年前后的联盟、迁都和地方分化。"
+    ],
+    "uncertainty": [
+      "关东诸军具体兵力和各营驻地在史书中不宜精确量化。",
+      "联盟失败不能简单归因于某一人怯战，更应看作地方利益和指挥结构失效。"
+    ]
+  },
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-event-details-china-sasanian-remaining-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-192-dong-zhuo-killed', '董卓被杀，长安政局再度失控', 'china', 192, 192, '长安', 'politics', '王允与吕布等诛杀董卓，但董卓旧部随后攻入长安，献帝朝廷继续在军阀挟持中动荡。', 'high', '[108.94,34.34]', '{
+  "overview": "192 年王允、吕布诛杀董卓，但这不是朝廷秩序恢复，而是董卓旧部反扑和长安再度失控的开端。献帝朝廷继续成为军阀争夺合法性的核心资源。",
+  "background": [
+    "董卓迁都长安后继续以暴力和亲信控制朝廷，关东讨董联盟未能直接解除献帝困局。",
+    "王允等朝臣试图借宫廷内部力量除去董卓，吕布则因个人处境和董卓关系恶化成为关键执行者。",
+    "董卓军政集团并非只依赖董卓本人，李傕、郭汜等凉州旧部仍掌握军事力量。"
+  ],
+  "process": [
+    "王允与吕布合谋，在董卓入宫过程中将其刺杀。",
+    "董卓死后，王允未能妥善安置或整合董卓旧部，关中军事集团迅速反弹。",
+    "李傕、郭汜等攻入长安，王允被杀，吕布逃离，献帝朝廷再次被军事集团控制。"
+  ],
+  "result": [
+    "董卓本人被除去，但董卓集团遗留的军事化政治并未结束。",
+    "吕布从宫廷政变参与者转为流亡军人，之后进入兖州、徐州争夺。",
+    "献帝朝廷继续失去独立行动能力，为 196 年曹操迎帝至许埋下背景。"
+  ],
+  "impact": [
+    "此事件说明东汉末年的危机已经不只是权臣个人问题，而是军队、地方和朝廷结构失衡。",
+    "王允失败后，朝廷内部士人无法单独恢复秩序，地方军阀成为实际政治主角。",
+    "长安动荡推动献帝后来东归，并最终被曹操接入许都政治体系。"
+  ],
+  "sourceNotes": [
+    "《后汉书·董卓列传》是董卓被杀和旧部反扑的主干材料。",
+    "《三国志·魏书·吕布传》可补吕布参与诛董及后续流亡线索。",
+    "《资治通鉴》卷六十对王允处置失当和李傕、郭汜攻长安有连续叙述。"
+  ],
+  "uncertainty": [
+    "吕布参与诛董的动机包含个人怨隙、政治机会和王允策动，不能单线解释。",
+    "王允拒绝赦免旧部的细节带有后世评价色彩，需与政治结果分开看。"
+  ]
+}', '{
+  "id": "china-192-dong-zhuo-killed",
+  "title": "董卓被杀，长安政局再度失控",
+  "startYear": 192,
+  "endYear": 192,
+  "region": "china",
+  "locationName": "长安",
+  "coordinates": [
+    108.94,
+    34.34
+  ],
+  "category": "politics",
+  "summary": "王允与吕布等诛杀董卓，但董卓旧部随后攻入长安，献帝朝廷继续在军阀挟持中动荡。",
+  "people": [
+    "董卓",
+    "吕布",
+    "汉献帝"
+  ],
+  "personIds": [
+    "dong-zhuo",
+    "lu-bu",
+    "han-xiandi"
+  ],
+  "polities": [
+    "东汉",
+    "董卓旧部"
+  ],
+  "relatedEvents": [
+    "china-189-dong-zhuo-enters-luoyang",
+    "china-196-cao-cao-escorts-emperor"
+  ],
+  "tags": [
+    "长安",
+    "董卓之死",
+    "朝廷失序"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《后汉书·董卓列传》",
+    "《三国志·魏书·吕布传》",
+    "《资治通鉴》卷六十"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "houhanshu-dong-zhuo",
+      "locator": "董卓被杀相关记载"
+    },
+    {
+      "sourceId": "sanguozhi-wei-lubu",
+      "locator": "吕布传"
+    },
+    {
+      "sourceId": "zizhi-tongjian-59",
+      "locator": "初平三年前后"
+    }
+  ],
+  "detail": {
+    "overview": "192 年王允、吕布诛杀董卓，但这不是朝廷秩序恢复，而是董卓旧部反扑和长安再度失控的开端。献帝朝廷继续成为军阀争夺合法性的核心资源。",
+    "background": [
+      "董卓迁都长安后继续以暴力和亲信控制朝廷，关东讨董联盟未能直接解除献帝困局。",
+      "王允等朝臣试图借宫廷内部力量除去董卓，吕布则因个人处境和董卓关系恶化成为关键执行者。",
+      "董卓军政集团并非只依赖董卓本人，李傕、郭汜等凉州旧部仍掌握军事力量。"
+    ],
+    "process": [
+      "王允与吕布合谋，在董卓入宫过程中将其刺杀。",
+      "董卓死后，王允未能妥善安置或整合董卓旧部，关中军事集团迅速反弹。",
+      "李傕、郭汜等攻入长安，王允被杀，吕布逃离，献帝朝廷再次被军事集团控制。"
+    ],
+    "result": [
+      "董卓本人被除去，但董卓集团遗留的军事化政治并未结束。",
+      "吕布从宫廷政变参与者转为流亡军人，之后进入兖州、徐州争夺。",
+      "献帝朝廷继续失去独立行动能力，为 196 年曹操迎帝至许埋下背景。"
+    ],
+    "impact": [
+      "此事件说明东汉末年的危机已经不只是权臣个人问题，而是军队、地方和朝廷结构失衡。",
+      "王允失败后，朝廷内部士人无法单独恢复秩序，地方军阀成为实际政治主角。",
+      "长安动荡推动献帝后来东归，并最终被曹操接入许都政治体系。"
+    ],
+    "sourceNotes": [
+      "《后汉书·董卓列传》是董卓被杀和旧部反扑的主干材料。",
+      "《三国志·魏书·吕布传》可补吕布参与诛董及后续流亡线索。",
+      "《资治通鉴》卷六十对王允处置失当和李傕、郭汜攻长安有连续叙述。"
+    ],
+    "uncertainty": [
+      "吕布参与诛董的动机包含个人怨隙、政治机会和王允策动，不能单线解释。",
+      "王允拒绝赦免旧部的细节带有后世评价色彩，需与政治结果分开看。"
+    ]
+  },
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-event-details-china-sasanian-remaining-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-194-tao-qian-yields-xuzhou', '陶谦病卒，刘备领徐州', 'china', 194, 194, '徐州', 'politics', '陶谦病重后将徐州托付给刘备，陶谦死后刘备在徐州士民推举下接掌州事，第一次获得较完整的州级政治基础。', 'high', '[117.2,34.26]', '{
+  "overview": "陶谦病重后将徐州托付给刘备，陶谦死后刘备在徐州士民推举下接掌州事，第一次获得较完整的州级政治基础。",
+  "background": [
+    "徐州位于兖州、豫州、淮南、青州之间，是曹操、袁术、吕布、刘备都可能介入的中原东南枢纽。",
+    "曹操东征徐州与陶谦冲突后，徐州内部需要新的军事保护者，刘备由此进入徐州政治。"
+  ],
+  "process": [
+    "陶谦病重时将徐州托付给刘备，糜竺等徐州士人推动刘备接掌州事。",
+    "刘备起初有所迟疑，孔融劝其不要依附袁术，最终刘备领徐州。"
+  ],
+  "result": [
+    "刘备获得第一个州级政治舞台，但徐州基础仍然薄弱。",
+    "徐州很快卷入袁术、吕布和曹操之间的连续争夺。"
+  ],
+  "impact": [
+    "这是刘备从流动武装首领转向州级割据者的第一次机会。",
+    "徐州得失也解释了刘备早年为何长期在曹操、袁绍、刘表等大势力之间辗转。"
+  ],
+  "sourceNotes": [
+    "《先主传》保存刘备领徐州的核心叙述，《陶谦传》可补徐州前置背景。",
+    "此事件作为中型事件展示，不进入主时间条大型事件点。"
+  ],
+  "uncertainty": [
+    "陶谦临终托付、徐州士人推举和刘备实际控制范围并不等于全州稳固控制，第一版按政治主导权处理。"
+  ]
+}', '{
+  "id": "china-194-tao-qian-yields-xuzhou",
+  "title": "陶谦病卒，刘备领徐州",
+  "startYear": 194,
+  "endYear": 194,
+  "region": "china",
+  "locationName": "徐州",
+  "coordinates": [
+    117.2,
+    34.26
+  ],
+  "category": "politics",
+  "summary": "陶谦病重后将徐州托付给刘备，陶谦死后刘备在徐州士民推举下接掌州事，第一次获得较完整的州级政治基础。",
+  "people": [
+    "陶谦",
+    "刘备",
+    "糜竺",
+    "孔融",
+    "陈群"
+  ],
+  "personIds": [
+    "tao-qian",
+    "liu-bei",
+    "chen-qun"
+  ],
+  "polities": [
+    "徐州陶谦集团",
+    "刘备集团",
+    "东汉"
+  ],
+  "relatedEvents": [
+    "china-194-lu-bu-seizes-yan",
+    "china-196-lu-bu-seizes-xuzhou",
+    "china-199-lu-bu-defeated"
+  ],
+  "tags": [
+    "徐州",
+    "陶谦",
+    "刘备早期根据地"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·蜀书·先主传》",
+    "《三国志·魏书·陶谦传》",
+    "《资治通鉴》卷六十一"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-shu-xianzhu",
+      "locator": "陶谦迎先主入徐州",
+      "quote": "谦病笃，谓别驾麋竺曰：“非刘备不能安此州也。”"
+    },
+    {
+      "sourceId": "sanguozhi-shu-xianzhu",
+      "locator": "先主遂领徐州",
+      "quote": "孔融谓先主曰：“袁公路岂忧国忘家者邪？冢中枯骨，何足介意。”先主遂领徐州。"
+    },
+    {
+      "sourceId": "sanguozhi-wei-tao-qian",
+      "locator": "陶谦传徐州相关记载"
+    }
+  ],
+  "detail": {
+    "overview": "陶谦病重后将徐州托付给刘备，陶谦死后刘备在徐州士民推举下接掌州事，第一次获得较完整的州级政治基础。",
+    "background": [
+      "徐州位于兖州、豫州、淮南、青州之间，是曹操、袁术、吕布、刘备都可能介入的中原东南枢纽。",
+      "曹操东征徐州与陶谦冲突后，徐州内部需要新的军事保护者，刘备由此进入徐州政治。"
+    ],
+    "process": [
+      "陶谦病重时将徐州托付给刘备，糜竺等徐州士人推动刘备接掌州事。",
+      "刘备起初有所迟疑，孔融劝其不要依附袁术，最终刘备领徐州。"
+    ],
+    "result": [
+      "刘备获得第一个州级政治舞台，但徐州基础仍然薄弱。",
+      "徐州很快卷入袁术、吕布和曹操之间的连续争夺。"
+    ],
+    "impact": [
+      "这是刘备从流动武装首领转向州级割据者的第一次机会。",
+      "徐州得失也解释了刘备早年为何长期在曹操、袁绍、刘表等大势力之间辗转。"
+    ],
+    "sourceNotes": [
+      "《先主传》保存刘备领徐州的核心叙述，《陶谦传》可补徐州前置背景。",
+      "此事件作为中型事件展示，不进入主时间条大型事件点。"
+    ],
+    "uncertainty": [
+      "陶谦临终托付、徐州士人推举和刘备实际控制范围并不等于全州稳固控制，第一版按政治主导权处理。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-194-lu-bu-seizes-yan', '吕布袭取兖州，曹操根据地受挫', 'china', 194, 195, '兖州', 'war', '曹操东征徐州期间，吕布与兖州部分士人、将领结合，袭取兖州多地。曹操一度只保有少数城邑，北方格局仍未稳定。', 'high', '[116.6,35.2]', '{
+  "overview": "曹操东征徐州期间，吕布与兖州部分士人、将领结合，袭取兖州多地。曹操一度只保有少数城邑，北方格局仍未稳定。",
+  "background": [
+    "曹操在兖州逐步建立根据地后，东征徐州造成内部空虚，也激化了兖州士人与曹操之间的矛盾。",
+    "陈宫、张邈等人与吕布结合，使吕布获得进入兖州的机会。"
+  ],
+  "process": [
+    "吕布袭取兖州多地，曹操一度只保有少数城邑，早期根据地几乎崩溃。",
+    "曹操回师与吕布争夺兖州，双方拉锯至 195 年，曹操逐渐恢复控制。"
+  ],
+  "result": [
+    "吕布未能稳固兖州，最终转向徐州方向发展。",
+    "曹操虽然恢复兖州，但这次危机暴露其早期政治基础仍然脆弱。"
+  ],
+  "impact": [
+    "兖州危机是曹操统一北方前最危险的挫折之一。",
+    "它也让吕布集团从董卓旧部游离势力，转变为中原割据竞争者。"
+  ],
+  "sourceNotes": [
+    "《三国志·魏书·武帝纪》以曹操本纪叙述兖州失复，《吕布传》提供吕布集团侧线索。",
+    "陈宫事迹散见于吕布相关叙述，第一版把他标记为吕布集团关键谋士。"
+  ],
+  "uncertainty": [
+    "兖州各县城的具体归属变化需要后续地图区块数据细化；当前事件只记录战略走势。"
+  ]
+}', '{
+  "id": "china-194-lu-bu-seizes-yan",
+  "title": "吕布袭取兖州，曹操根据地受挫",
+  "startYear": 194,
+  "endYear": 195,
+  "region": "china",
+  "locationName": "兖州",
+  "coordinates": [
+    116.6,
+    35.2
+  ],
+  "category": "war",
+  "summary": "曹操东征徐州期间，吕布与兖州部分士人、将领结合，袭取兖州多地。曹操一度只保有少数城邑，北方格局仍未稳定。",
+  "people": [
+    "吕布",
+    "曹操",
+    "陈宫"
+  ],
+  "personIds": [
+    "lu-bu",
+    "cao-cao",
+    "chen-gong"
+  ],
+  "polities": [
+    "曹操集团",
+    "吕布集团"
+  ],
+  "relatedEvents": [
+    "china-199-lu-bu-defeated",
+    "china-200-guandu"
+  ],
+  "tags": [
+    "兖州",
+    "曹操根据地",
+    "吕布"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·魏书·武帝纪》",
+    "《三国志·魏书·吕布传》",
+    "《资治通鉴》卷六十一"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-wei-wudi",
+      "locator": "兴平元年至二年"
+    },
+    {
+      "sourceId": "sanguozhi-wei-lubu",
+      "locator": "吕布传"
+    },
+    {
+      "sourceId": "zizhi-tongjian-59",
+      "locator": "兴平年间"
+    }
+  ],
+  "detail": {
+    "overview": "曹操东征徐州期间，吕布与兖州部分士人、将领结合，袭取兖州多地。曹操一度只保有少数城邑，北方格局仍未稳定。",
+    "background": [
+      "曹操在兖州逐步建立根据地后，东征徐州造成内部空虚，也激化了兖州士人与曹操之间的矛盾。",
+      "陈宫、张邈等人与吕布结合，使吕布获得进入兖州的机会。"
+    ],
+    "process": [
+      "吕布袭取兖州多地，曹操一度只保有少数城邑，早期根据地几乎崩溃。",
+      "曹操回师与吕布争夺兖州，双方拉锯至 195 年，曹操逐渐恢复控制。"
+    ],
+    "result": [
+      "吕布未能稳固兖州，最终转向徐州方向发展。",
+      "曹操虽然恢复兖州，但这次危机暴露其早期政治基础仍然脆弱。"
+    ],
+    "impact": [
+      "兖州危机是曹操统一北方前最危险的挫折之一。",
+      "它也让吕布集团从董卓旧部游离势力，转变为中原割据竞争者。"
+    ],
+    "sourceNotes": [
+      "《三国志·魏书·武帝纪》以曹操本纪叙述兖州失复，《吕布传》提供吕布集团侧线索。",
+      "陈宫事迹散见于吕布相关叙述，第一版把他标记为吕布集团关键谋士。"
+    ],
+    "uncertainty": [
+      "兖州各县城的具体归属变化需要后续地图区块数据细化；当前事件只记录战略走势。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-196-cao-cao-escorts-emperor', '曹操迎汉献帝至许', 'china', 196, 196, '许', 'politics', '曹操迎接汉献帝至许，以东汉朝廷名义发布诏令、整合政治合法性，形成“挟天子以令诸侯”的政治优势。', 'high', '[113.85,34.04]', '{
+  "overview": "196 年曹操迎汉献帝至许，把流亡朝廷转化为自己的政治合法性资源。此后曹操能够以汉廷名义发布诏令，形成相对其他诸侯的制度优势。",
+  "background": [
+    "董卓死后，献帝长期处在李傕、郭汜等军阀挟持和长安动荡中，朝廷名义仍在但实际权力极弱。",
+    "曹操在兖州危机后重新稳住根据地，需要更高层级的政治合法性来压过地方诸侯竞争。",
+    "荀彧、董昭等人推动迎奉天子，说明曹操集团已开始把朝廷作为长期战略资源。"
+  ],
+  "process": [
+    "献帝东归途中处境艰难，曹操迎接并护送其进入许。",
+    "许成为新的朝廷所在，曹操以汉廷名义处理封拜、诏令和诸侯关系。",
+    "曹操集团逐步把地方军事基础、朝廷名义和官僚制度结合起来。"
+  ],
+  "result": [
+    "献帝从长安军阀控制转入曹操集团控制，东汉朝廷形式上延续。",
+    "曹操获得“奉天子”政治优势，对袁绍、袁术、刘备等势力形成合法性压力。",
+    "许都体系成为曹魏政权形成前的制度基础。"
+  ],
+  "impact": [
+    "此事件是曹操从地方军阀转向全国政治中心的关键转折。",
+    "“挟天子以令诸侯”并不只是口号，而是诏令、官爵和名义秩序的实际工具。",
+    "220 年曹丕代汉的制度路径，建立在 196 年以后曹操长期掌控汉廷的基础上。"
+  ],
+  "sourceNotes": [
+    "《三国志·魏书·武帝纪》记录建安元年曹操迎帝至许的政治节点。",
+    "《后汉书·孝献帝纪》提供献帝朝廷角度的纪年框架。",
+    "《资治通鉴》卷六十二适合连接献帝东归、许都建立和曹操战略选择。"
+  ],
+  "uncertainty": [
+    "“挟天子以令诸侯”是后世概括，实际过程包含保护朝廷、控制朝廷和利用朝廷多重面向。",
+    "荀彧、董昭等人具体建议的先后和分工，在不同叙述中需要谨慎处理。"
+  ]
+}', '{
+  "id": "china-196-cao-cao-escorts-emperor",
+  "title": "曹操迎汉献帝至许",
+  "startYear": 196,
+  "endYear": 196,
+  "region": "china",
+  "locationName": "许",
+  "coordinates": [
+    113.85,
+    34.04
+  ],
+  "category": "politics",
+  "summary": "曹操迎接汉献帝至许，以东汉朝廷名义发布诏令、整合政治合法性，形成“挟天子以令诸侯”的政治优势。",
+  "people": [
+    "曹操",
+    "汉献帝",
+    "荀彧",
+    "董昭"
+  ],
+  "personIds": [
+    "cao-cao",
+    "han-xiandi",
+    "xun-yu",
+    "dong-zhao"
+  ],
+  "polities": [
+    "东汉",
+    "曹操集团"
+  ],
+  "relatedEvents": [
+    "china-192-dong-zhuo-killed",
+    "china-200-guandu",
+    "china-220-cao-pi-founds-wei"
+  ],
+  "tags": [
+    "许都",
+    "汉献帝",
+    "政治合法性"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·魏书·武帝纪》",
+    "《后汉书·孝献帝纪》",
+    "《资治通鉴》卷六十二"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-wei-wudi",
+      "locator": "建安元年"
+    },
+    {
+      "sourceId": "houhanshu-xiandi",
+      "locator": "建安元年"
+    }
+  ],
+  "detail": {
+    "overview": "196 年曹操迎汉献帝至许，把流亡朝廷转化为自己的政治合法性资源。此后曹操能够以汉廷名义发布诏令，形成相对其他诸侯的制度优势。",
+    "background": [
+      "董卓死后，献帝长期处在李傕、郭汜等军阀挟持和长安动荡中，朝廷名义仍在但实际权力极弱。",
+      "曹操在兖州危机后重新稳住根据地，需要更高层级的政治合法性来压过地方诸侯竞争。",
+      "荀彧、董昭等人推动迎奉天子，说明曹操集团已开始把朝廷作为长期战略资源。"
+    ],
+    "process": [
+      "献帝东归途中处境艰难，曹操迎接并护送其进入许。",
+      "许成为新的朝廷所在，曹操以汉廷名义处理封拜、诏令和诸侯关系。",
+      "曹操集团逐步把地方军事基础、朝廷名义和官僚制度结合起来。"
+    ],
+    "result": [
+      "献帝从长安军阀控制转入曹操集团控制，东汉朝廷形式上延续。",
+      "曹操获得“奉天子”政治优势，对袁绍、袁术、刘备等势力形成合法性压力。",
+      "许都体系成为曹魏政权形成前的制度基础。"
+    ],
+    "impact": [
+      "此事件是曹操从地方军阀转向全国政治中心的关键转折。",
+      "“挟天子以令诸侯”并不只是口号，而是诏令、官爵和名义秩序的实际工具。",
+      "220 年曹丕代汉的制度路径，建立在 196 年以后曹操长期掌控汉廷的基础上。"
+    ],
+    "sourceNotes": [
+      "《三国志·魏书·武帝纪》记录建安元年曹操迎帝至许的政治节点。",
+      "《后汉书·孝献帝纪》提供献帝朝廷角度的纪年框架。",
+      "《资治通鉴》卷六十二适合连接献帝东归、许都建立和曹操战略选择。"
+    ],
+    "uncertainty": [
+      "“挟天子以令诸侯”是后世概括，实际过程包含保护朝廷、控制朝廷和利用朝廷多重面向。",
+      "荀彧、董昭等人具体建议的先后和分工，在不同叙述中需要谨慎处理。"
+    ]
+  },
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-event-details-china-sasanian-remaining-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-196-lu-bu-seizes-xuzhou', '吕布袭下邳，刘备失徐州', 'china', 196, 196, '下邳、徐州', 'war', '刘备与袁术交战时，吕布袭取下邳并控制徐州。刘备失去刚取得的州级基础，转入依附吕布、曹操之间的夹缝状态。', 'high', '[118,34.3]', '{
+  "overview": "刘备与袁术交战时，吕布袭取下邳并控制徐州。刘备失去刚取得的州级基础，转入依附吕布、曹操之间的夹缝状态。",
+  "background": [
+    "刘备接掌徐州后，既要面对袁术压力，也要安置来投的吕布，政治基础并不稳固。",
+    "徐州内部军事力量复杂，刘备、张飞、吕布、袁术的行动互相牵动。"
+  ],
+  "process": [
+    "刘备东向与袁术相争，吕布趁机袭取下邳。",
+    "吕布取得刘备家属和徐州核心据点，刘备被迫向外求援或转为依附。"
+  ],
+  "result": [
+    "吕布成为徐州实际主导者，刘备失去陶谦死后取得的州级根据地。",
+    "徐州问题进一步牵动曹操、袁术和刘备，最终导向下邳之战。"
+  ],
+  "impact": [
+    "此事件让吕布从兖州失败后的流动势力，转为徐州割据者。",
+    "刘备早期事业再次受挫，也为后来与曹操合攻吕布埋下伏笔。"
+  ],
+  "sourceNotes": [
+    "《吕布传》保留了吕布袭下邳的简明叙述，《先主传》可与刘备失徐州线索互证。",
+    "这里作为中型事件折叠显示，用来补足徐州连续格局，而不是主时间条大型事件。"
+  ],
+  "uncertainty": [
+    "徐州各郡县归属在 196-198 年间变化频繁，当前只记录下邳和徐州主导权转移。"
+  ]
+}', '{
+  "id": "china-196-lu-bu-seizes-xuzhou",
+  "title": "吕布袭下邳，刘备失徐州",
+  "startYear": 196,
+  "endYear": 196,
+  "region": "china",
+  "locationName": "下邳、徐州",
+  "coordinates": [
+    118,
+    34.3
+  ],
+  "category": "war",
+  "summary": "刘备与袁术交战时，吕布袭取下邳并控制徐州。刘备失去刚取得的州级基础，转入依附吕布、曹操之间的夹缝状态。",
+  "people": [
+    "吕布",
+    "刘备",
+    "袁术",
+    "张飞"
+  ],
+  "personIds": [
+    "lu-bu",
+    "liu-bei",
+    "yuan-shu",
+    "zhang-fei"
+  ],
+  "polities": [
+    "吕布集团",
+    "刘备集团",
+    "袁术集团"
+  ],
+  "relatedEvents": [
+    "china-194-tao-qian-yields-xuzhou",
+    "china-197-yuan-shu-declares-emperor",
+    "china-199-lu-bu-defeated"
+  ],
+  "tags": [
+    "徐州",
+    "下邳",
+    "吕布",
+    "刘备失据"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·魏书·吕布传》",
+    "《三国志·蜀书·先主传》",
+    "《资治通鉴》卷六十二"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-wei-lubu",
+      "locator": "吕布传徐州相关记载",
+      "quote": "备东击术，布袭取下邳，获备妻子。"
+    },
+    {
+      "sourceId": "sanguozhi-shu-xianzhu",
+      "locator": "先主传徐州相关记载"
+    },
+    {
+      "sourceId": "zizhi-tongjian-62",
+      "locator": "建安元年"
+    }
+  ],
+  "detail": {
+    "overview": "刘备与袁术交战时，吕布袭取下邳并控制徐州。刘备失去刚取得的州级基础，转入依附吕布、曹操之间的夹缝状态。",
+    "background": [
+      "刘备接掌徐州后，既要面对袁术压力，也要安置来投的吕布，政治基础并不稳固。",
+      "徐州内部军事力量复杂，刘备、张飞、吕布、袁术的行动互相牵动。"
+    ],
+    "process": [
+      "刘备东向与袁术相争，吕布趁机袭取下邳。",
+      "吕布取得刘备家属和徐州核心据点，刘备被迫向外求援或转为依附。"
+    ],
+    "result": [
+      "吕布成为徐州实际主导者，刘备失去陶谦死后取得的州级根据地。",
+      "徐州问题进一步牵动曹操、袁术和刘备，最终导向下邳之战。"
+    ],
+    "impact": [
+      "此事件让吕布从兖州失败后的流动势力，转为徐州割据者。",
+      "刘备早期事业再次受挫，也为后来与曹操合攻吕布埋下伏笔。"
+    ],
+    "sourceNotes": [
+      "《吕布传》保留了吕布袭下邳的简明叙述，《先主传》可与刘备失徐州线索互证。",
+      "这里作为中型事件折叠显示，用来补足徐州连续格局，而不是主时间条大型事件。"
+    ],
+    "uncertainty": [
+      "徐州各郡县归属在 196-198 年间变化频繁，当前只记录下邳和徐州主导权转移。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-197-yuan-shu-declares-emperor', '袁术称帝，淮南集团迅速孤立', 'china', 197, 197, '寿春', 'politics', '袁术在淮南称帝，破坏东汉名义秩序，也使自己成为其他势力共同排斥的对象，淮南势力开始瓦解。', 'high', '[116.78,32.57]', '{
+  "overview": "袁术在淮南称帝，破坏东汉名义秩序，也使自己成为其他势力共同排斥的对象，淮南势力开始瓦解。",
+  "background": [
+    "袁术出自汝南袁氏，曾掌握淮南和部分扬州资源，在汉末群雄中有很高门第资本。",
+    "曹操迎汉献帝至许后，东汉名义秩序反而被曹操利用；袁术称帝是在这一合法性竞争中的冒进选择。"
+  ],
+  "process": [
+    "袁术以符命和袁氏门第为依据，在寿春僭号称帝，建立“仲氏”名号。",
+    "阎象等部属曾以周文王事殷作比劝阻，但袁术没有采纳。"
+  ],
+  "result": [
+    "袁术称帝迅速引发政治孤立，其他势力更容易以维护汉室名义排斥或攻击袁术。",
+    "淮南集团财政、粮食和军心压力加速恶化。"
+  ],
+  "impact": [
+    "袁术称帝是汉末群雄中最早公开破坏汉室名义秩序的举动之一。",
+    "它也解释了袁术为何从强势淮南军阀快速走向败亡。"
+  ],
+  "sourceNotes": [
+    "《袁术传》提供袁术称帝、部属劝阻和败亡的核心叙述。",
+    "《资治通鉴》卷六十二可用于校准建安二年前后的连续政局。"
+  ],
+  "uncertainty": [
+    "袁术称帝的具体仪式制度可后续细化；当前重点记录其政治后果。"
+  ]
+}', '{
+  "id": "china-197-yuan-shu-declares-emperor",
+  "title": "袁术称帝，淮南集团迅速孤立",
+  "startYear": 197,
+  "endYear": 197,
+  "region": "china",
+  "locationName": "寿春",
+  "coordinates": [
+    116.78,
+    32.57
+  ],
+  "category": "politics",
+  "summary": "袁术在淮南称帝，破坏东汉名义秩序，也使自己成为其他势力共同排斥的对象，淮南势力开始瓦解。",
+  "people": [
+    "袁术"
+  ],
+  "personIds": [
+    "yuan-shu"
+  ],
+  "polities": [
+    "袁术集团",
+    "东汉"
+  ],
+  "relatedEvents": [
+    "china-190-coalition-against-dong-zhuo",
+    "china-196-lu-bu-seizes-xuzhou",
+    "china-199-yuan-shu-collapse",
+    "china-199-lu-bu-defeated"
+  ],
+  "tags": [
+    "淮南",
+    "称帝",
+    "政治孤立"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·魏书·袁术传》",
+    "《资治通鉴》卷六十二"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-wei-yuan-shu",
+      "locator": "袁术称帝相关记载",
+      "quote": "用河内张烱之符命，遂僭号。"
+    },
+    {
+      "sourceId": "sanguozhi-wei-yuan-shu",
+      "locator": "典略所载建号",
+      "quote": "自以名字当之，乃建号称仲氏。"
+    },
+    {
+      "sourceId": "zizhi-tongjian-62",
+      "locator": "建安二年"
+    }
+  ],
+  "detail": {
+    "overview": "袁术在淮南称帝，破坏东汉名义秩序，也使自己成为其他势力共同排斥的对象，淮南势力开始瓦解。",
+    "background": [
+      "袁术出自汝南袁氏，曾掌握淮南和部分扬州资源，在汉末群雄中有很高门第资本。",
+      "曹操迎汉献帝至许后，东汉名义秩序反而被曹操利用；袁术称帝是在这一合法性竞争中的冒进选择。"
+    ],
+    "process": [
+      "袁术以符命和袁氏门第为依据，在寿春僭号称帝，建立“仲氏”名号。",
+      "阎象等部属曾以周文王事殷作比劝阻，但袁术没有采纳。"
+    ],
+    "result": [
+      "袁术称帝迅速引发政治孤立，其他势力更容易以维护汉室名义排斥或攻击袁术。",
+      "淮南集团财政、粮食和军心压力加速恶化。"
+    ],
+    "impact": [
+      "袁术称帝是汉末群雄中最早公开破坏汉室名义秩序的举动之一。",
+      "它也解释了袁术为何从强势淮南军阀快速走向败亡。"
+    ],
+    "sourceNotes": [
+      "《袁术传》提供袁术称帝、部属劝阻和败亡的核心叙述。",
+      "《资治通鉴》卷六十二可用于校准建安二年前后的连续政局。"
+    ],
+    "uncertainty": [
+      "袁术称帝的具体仪式制度可后续细化；当前重点记录其政治后果。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-199-yuan-shu-collapse', '袁术败亡，淮南集团瓦解', 'china', 199, 199, '淮南、江亭一带', 'politics', '称帝后的袁术先后受吕布、曹操等压力，粮尽势孤，欲北投袁谭未成，最终病死。淮南袁术集团作为独立势力瓦解。', 'high', '[116.78,32.57]', '{
+  "overview": "称帝后的袁术先后受吕布、曹操等压力，粮尽势孤，欲北投袁谭未成，最终病死。淮南袁术集团作为独立势力瓦解。",
+  "background": [
+    "袁术称帝后，原本可借袁氏门第整合的政治资源迅速转化为负担。",
+    "吕布、曹操、孙策等势力都与袁术发生过冲突，淮南集团内外压力不断加重。"
+  ],
+  "process": [
+    "袁术称帝后军政资源枯竭，部曲雷薄、陈兰等拒绝接纳，袁术欲转向袁绍集团方向求存。",
+    "袁术在北走途中病死，集团核心不再具备独立政治号召力。"
+  ],
+  "result": [
+    "袁术集团瓦解，淮南权力真空被曹操、孙策等势力重新分割。",
+    "袁术称帝失败也成为汉末其他群雄避免过早称帝的重要反例。"
+  ],
+  "impact": [
+    "袁术败亡减少了中原东南部的独立竞争者。",
+    "淮南和江淮地区此后更直接进入曹操、孙权两大集团的长期对峙格局。"
+  ],
+  "sourceNotes": [
+    "《袁术传》同时记录称帝和败亡，适合把 197 与 199 两个节点连成一条线。",
+    "《资治通鉴》卷六十二可校准建安四年前后的袁术、吕布、曹操事件顺序。"
+  ],
+  "uncertainty": [
+    "袁术败亡前各部曲、部将的具体去向较分散，第一版只处理集团瓦解这一层。"
+  ]
+}', '{
+  "id": "china-199-yuan-shu-collapse",
+  "title": "袁术败亡，淮南集团瓦解",
+  "startYear": 199,
+  "endYear": 199,
+  "region": "china",
+  "locationName": "淮南、江亭一带",
+  "coordinates": [
+    116.78,
+    32.57
+  ],
+  "category": "politics",
+  "summary": "称帝后的袁术先后受吕布、曹操等压力，粮尽势孤，欲北投袁谭未成，最终病死。淮南袁术集团作为独立势力瓦解。",
+  "people": [
+    "袁术",
+    "袁绍",
+    "袁谭",
+    "曹操",
+    "吕布"
+  ],
+  "personIds": [
+    "yuan-shu",
+    "yuan-shao",
+    "cao-cao",
+    "lu-bu"
+  ],
+  "polities": [
+    "袁术集团",
+    "曹操集团",
+    "袁绍集团"
+  ],
+  "relatedEvents": [
+    "china-197-yuan-shu-declares-emperor",
+    "china-199-lu-bu-defeated",
+    "china-200-guandu"
+  ],
+  "tags": [
+    "袁术",
+    "淮南",
+    "群雄败亡"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·魏书·袁术传》",
+    "《资治通鉴》卷六十二"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-wei-yuan-shu",
+      "locator": "袁术败亡相关记载",
+      "quote": "术前为吕布所破，后为太祖所败，奔其部曲雷薄、陈兰于灊山，复为所拒。"
+    },
+    {
+      "sourceId": "sanguozhi-wei-yuan-shu",
+      "locator": "江亭病死",
+      "quote": "欲至青州从袁谭，发病道死。"
+    },
+    {
+      "sourceId": "zizhi-tongjian-62",
+      "locator": "建安四年"
+    }
+  ],
+  "detail": {
+    "overview": "称帝后的袁术先后受吕布、曹操等压力，粮尽势孤，欲北投袁谭未成，最终病死。淮南袁术集团作为独立势力瓦解。",
+    "background": [
+      "袁术称帝后，原本可借袁氏门第整合的政治资源迅速转化为负担。",
+      "吕布、曹操、孙策等势力都与袁术发生过冲突，淮南集团内外压力不断加重。"
+    ],
+    "process": [
+      "袁术称帝后军政资源枯竭，部曲雷薄、陈兰等拒绝接纳，袁术欲转向袁绍集团方向求存。",
+      "袁术在北走途中病死，集团核心不再具备独立政治号召力。"
+    ],
+    "result": [
+      "袁术集团瓦解，淮南权力真空被曹操、孙策等势力重新分割。",
+      "袁术称帝失败也成为汉末其他群雄避免过早称帝的重要反例。"
+    ],
+    "impact": [
+      "袁术败亡减少了中原东南部的独立竞争者。",
+      "淮南和江淮地区此后更直接进入曹操、孙权两大集团的长期对峙格局。"
+    ],
+    "sourceNotes": [
+      "《袁术传》同时记录称帝和败亡，适合把 197 与 199 两个节点连成一条线。",
+      "《资治通鉴》卷六十二可校准建安四年前后的袁术、吕布、曹操事件顺序。"
+    ],
+    "uncertainty": [
+      "袁术败亡前各部曲、部将的具体去向较分散，第一版只处理集团瓦解这一层。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-199-gongsun-zan-defeated', '易京陷落，公孙瓒败亡', 'china', 199, 199, '易京', 'war', '袁绍长期围攻公孙瓒，易京最终陷落。公孙瓒败亡后，幽州与冀北格局转向袁绍主导，为官渡前袁绍强势地位提供基础。', 'high', '[115.49,39.35]', '{
+  "overview": "袁绍长期围攻公孙瓒，易京最终陷落。公孙瓒败亡后，幽州与冀北格局转向袁绍主导，为官渡前袁绍强势地位提供基础。",
+  "background": [
+    "袁绍与公孙瓒长期争夺冀州、幽州和北方边地资源。",
+    "公孙瓒后期退守易京，以高楼、深堑和积谷进行防御。"
+  ],
+  "process": [
+    "袁绍连续围攻易京，公孙瓒无法恢复外线主动。",
+    "易京陷落后，公孙瓒集团瓦解。"
+  ],
+  "result": [
+    "袁绍取得河北和幽州方向更完整的控制。",
+    "官渡前，袁绍因此成为北方资源最强的军事政治集团。"
+  ],
+  "impact": [
+    "公孙瓒败亡是官渡之前北方格局收束的重要节点。",
+    "它不是曹刘孙主线事件，但对理解袁绍为何能南下压迫曹操非常重要。"
+  ],
+  "sourceNotes": [
+    "《公孙瓒传》提供易京固守和败亡脉络，《袁绍传》提供袁绍北方扩张视角。",
+    "此事件按中型事件处理，适合在打开中型事件时显示。"
+  ],
+  "uncertainty": [
+    "易京位置和围攻细节可后续结合地图资料细化；当前以北方权力转移为主。"
+  ]
+}', '{
+  "id": "china-199-gongsun-zan-defeated",
+  "title": "易京陷落，公孙瓒败亡",
+  "startYear": 199,
+  "endYear": 199,
+  "region": "china",
+  "locationName": "易京",
+  "coordinates": [
+    115.49,
+    39.35
+  ],
+  "category": "war",
+  "summary": "袁绍长期围攻公孙瓒，易京最终陷落。公孙瓒败亡后，幽州与冀北格局转向袁绍主导，为官渡前袁绍强势地位提供基础。",
+  "people": [
+    "公孙瓒",
+    "袁绍"
+  ],
+  "personIds": [
+    "gongsun-zan",
+    "yuan-shao"
+  ],
+  "polities": [
+    "公孙瓒集团",
+    "袁绍集团"
+  ],
+  "relatedEvents": [
+    "china-200-guandu"
+  ],
+  "tags": [
+    "易京",
+    "幽州",
+    "袁绍",
+    "公孙瓒败亡"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·魏书·公孙瓒传》",
+    "《三国志·魏书·袁绍传》",
+    "《资治通鉴》卷六十二"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-wei-gongsun-zan",
+      "locator": "易京固守相关记载",
+      "quote": "瓒军数败，乃走还易京固守。"
+    },
+    {
+      "sourceId": "sanguozhi-wei-yuan-shao",
+      "locator": "袁绍平公孙瓒相关记载"
+    },
+    {
+      "sourceId": "zizhi-tongjian-62",
+      "locator": "建安四年"
+    }
+  ],
+  "detail": {
+    "overview": "袁绍长期围攻公孙瓒，易京最终陷落。公孙瓒败亡后，幽州与冀北格局转向袁绍主导，为官渡前袁绍强势地位提供基础。",
+    "background": [
+      "袁绍与公孙瓒长期争夺冀州、幽州和北方边地资源。",
+      "公孙瓒后期退守易京，以高楼、深堑和积谷进行防御。"
+    ],
+    "process": [
+      "袁绍连续围攻易京，公孙瓒无法恢复外线主动。",
+      "易京陷落后，公孙瓒集团瓦解。"
+    ],
+    "result": [
+      "袁绍取得河北和幽州方向更完整的控制。",
+      "官渡前，袁绍因此成为北方资源最强的军事政治集团。"
+    ],
+    "impact": [
+      "公孙瓒败亡是官渡之前北方格局收束的重要节点。",
+      "它不是曹刘孙主线事件，但对理解袁绍为何能南下压迫曹操非常重要。"
+    ],
+    "sourceNotes": [
+      "《公孙瓒传》提供易京固守和败亡脉络，《袁绍传》提供袁绍北方扩张视角。",
+      "此事件按中型事件处理，适合在打开中型事件时显示。"
+    ],
+    "uncertainty": [
+      "易京位置和围攻细节可后续结合地图资料细化；当前以北方权力转移为主。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-199-lu-bu-defeated', '下邳陷落，吕布败亡', 'china', 199, 199, '下邳', 'war', '曹操围攻下邳，吕布被俘后处死。徐州局势重新洗牌，曹操在官渡前清除了东南方向的重要威胁。', 'high', '[118,34.3]', '{
+  "overview": "曹操围攻下邳，吕布被俘后处死。徐州局势重新洗牌，曹操在官渡前清除了东南方向的重要威胁。",
+  "background": [
+    "吕布在兖州失败后据徐州，刘备、曹操、袁术等势力围绕徐州长期互动。",
+    "官渡前，曹操需要清除东南方向的不稳定势力，避免与袁绍决战时腹背受敌。"
+  ],
+  "process": [
+    "曹操围攻下邳，刘备也参与曹操方面行动。吕布、陈宫守城，但内部离心和外部压力不断加大。",
+    "下邳最终陷落，吕布、陈宫等被俘。"
+  ],
+  "result": [
+    "吕布和陈宫被杀，吕布集团灭亡。",
+    "曹操取得徐州方向主动权，官渡前的战略后顾之忧明显减少。"
+  ],
+  "impact": [
+    "吕布败亡使中原割据竞争者减少，曹操可以把主要精力转向袁绍。",
+    "刘备随后仍会反复转移阵营，但此时徐州不再是独立吕布集团的根据地。"
+  ],
+  "sourceNotes": [
+    "《三国志·魏书·武帝纪》和《吕布传》是下邳战事与吕布败亡的主要纪传依据。",
+    "《资治通鉴》卷六十二可用于补建安三年至四年的连续战事顺序。"
+  ],
+  "uncertainty": [
+    "水淹下邳、城内降叛等细节在后世叙事中常被戏剧化，第一版只保留战役结果和战略意义。"
+  ]
+}', '{
+  "id": "china-199-lu-bu-defeated",
+  "title": "下邳陷落，吕布败亡",
+  "startYear": 199,
+  "endYear": 199,
+  "region": "china",
+  "locationName": "下邳",
+  "coordinates": [
+    118,
+    34.3
+  ],
+  "category": "war",
+  "summary": "曹操围攻下邳，吕布被俘后处死。徐州局势重新洗牌，曹操在官渡前清除了东南方向的重要威胁。",
+  "people": [
+    "曹操",
+    "吕布",
+    "刘备",
+    "陈宫",
+    "荀攸",
+    "郭嘉"
+  ],
+  "personIds": [
+    "cao-cao",
+    "lu-bu",
+    "liu-bei",
+    "chen-gong",
+    "xun-you",
+    "guo-jia"
+  ],
+  "polities": [
+    "曹操集团",
+    "吕布集团"
+  ],
+  "relatedEvents": [
+    "china-194-lu-bu-seizes-yan",
+    "china-196-lu-bu-seizes-xuzhou",
+    "china-199-yuan-shu-collapse",
+    "china-200-guandu"
+  ],
+  "tags": [
+    "下邳",
+    "徐州",
+    "吕布败亡"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·魏书·武帝纪》",
+    "《三国志·魏书·吕布传》",
+    "《资治通鉴》卷六十二"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-wei-wudi",
+      "locator": "建安三年至四年"
+    },
+    {
+      "sourceId": "sanguozhi-wei-lubu",
+      "locator": "吕布传下邳败亡",
+      "quote": "太祖堑围之三月，上下离心，其将侯成、宋宪、魏续缚陈宫，将其衆降。"
+    },
+    {
+      "sourceId": "zizhi-tongjian-62",
+      "locator": "建安三年至四年"
+    }
+  ],
+  "detail": {
+    "overview": "曹操围攻下邳，吕布被俘后处死。徐州局势重新洗牌，曹操在官渡前清除了东南方向的重要威胁。",
+    "background": [
+      "吕布在兖州失败后据徐州，刘备、曹操、袁术等势力围绕徐州长期互动。",
+      "官渡前，曹操需要清除东南方向的不稳定势力，避免与袁绍决战时腹背受敌。"
+    ],
+    "process": [
+      "曹操围攻下邳，刘备也参与曹操方面行动。吕布、陈宫守城，但内部离心和外部压力不断加大。",
+      "下邳最终陷落，吕布、陈宫等被俘。"
+    ],
+    "result": [
+      "吕布和陈宫被杀，吕布集团灭亡。",
+      "曹操取得徐州方向主动权，官渡前的战略后顾之忧明显减少。"
+    ],
+    "impact": [
+      "吕布败亡使中原割据竞争者减少，曹操可以把主要精力转向袁绍。",
+      "刘备随后仍会反复转移阵营，但此时徐州不再是独立吕布集团的根据地。"
+    ],
+    "sourceNotes": [
+      "《三国志·魏书·武帝纪》和《吕布传》是下邳战事与吕布败亡的主要纪传依据。",
+      "《资治通鉴》卷六十二可用于补建安三年至四年的连续战事顺序。"
+    ],
+    "uncertainty": [
+      "水淹下邳、城内降叛等细节在后世叙事中常被戏剧化，第一版只保留战役结果和战略意义。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-200-guandu', '官渡之战', 'china', 200, 200, '官渡', 'war', '曹操与袁绍在官渡决战。曹操袭破乌巢后取得战略胜利，河北袁绍集团由盛转衰，北方统一的方向基本确定。', 'high', '[114,34.8]', '{
+  "overview": "曹操与袁绍在官渡决战。曹操袭破乌巢后取得战略胜利，河北袁绍集团由盛转衰，北方统一的方向基本确定。",
+  "background": [
+    "曹操在 196 年迎汉献帝至许，获得以汉廷名义发布政令的政治优势；到 199 年下邳平定吕布后，兖州、豫州及许都周边根据地相对稳固。",
+    "袁绍在北方击败公孙瓒后控制冀州、幽州、并州、青州等地，兵力与资源规模较曹操更大，是建安五年前后北方最强势力。",
+    "双方争夺的核心不只是官渡一地，而是黄河南北通道、许都安全以及北方统一主导权。"
+  ],
+  "process": [
+    "袁绍南下后，曹操以官渡为核心防线抵御其攻势，战场围绕黄河渡口、粮道和许都北面门户展开。",
+    "白马、延津等前哨战中，颜良、文丑先后败亡；关羽斩颜良是曹操侧局部反击的代表节点。",
+    "曹操一度承受军粮与兵力压力，荀彧支持坚守，荀攸等参与军中谋划；袁绍方面沮授、田丰等持重意见未能主导决策。",
+    "乌巢被袭是战局转折点。许攸投曹提供粮秣情报，曹操破坏袁绍军粮储备后，张郃、高览等将领归曹，袁绍军心迅速瓦解。"
+  ],
+  "result": [
+    "袁绍退回河北，官渡一战使其集团从优势转为被动。",
+    "曹操虽然没有在 200 年立即完全吞并河北，但北方统一的战略方向已经明显转向曹操。"
+  ],
+  "impact": [
+    "官渡之战奠定曹操统一北方的基础，也为后来的曹魏政权提供人口、土地和制度资源。",
+    "此战展示了汉末战争中后勤、情报、将领决断和政治合法性的综合作用，不只是单纯兵力对比。"
+  ],
+  "sourceNotes": [
+    "《三国志·魏书·武帝纪》提供曹操侧的本纪叙事，《袁绍传》提供袁绍集团的传记脉络，张郃相关细节还需参看《张郃传》。",
+    "颜良、文丑、张郃、高览并称“河北四庭柱”属于后世通俗归类，前端人物卡中作为传统标签展示，不写成汉末正式制度。",
+    "《资治通鉴》卷六十三将纪传材料整理为建安五年的连续纪年，适合作为事件时间线骨架。"
+  ],
+  "uncertainty": [
+    "参战兵力、伤亡规模和部分战术细节在后世叙述中常被放大，第一版只标注战略走势，不把数字当作精确值。",
+    "官渡战场的具体空间范围可进一步结合历史地图和考古地名资料细化。"
+  ]
+}', '{
+  "id": "china-200-guandu",
+  "title": "官渡之战",
+  "startYear": 200,
+  "endYear": 200,
+  "region": "china",
+  "locationName": "官渡",
+  "coordinates": [
+    114,
+    34.8
+  ],
+  "category": "war",
+  "summary": "曹操与袁绍在官渡决战。曹操袭破乌巢后取得战略胜利，河北袁绍集团由盛转衰，北方统一的方向基本确定。",
+  "people": [
+    "曹操",
+    "袁绍",
+    "颜良",
+    "文丑",
+    "张郃",
+    "高览",
+    "许攸",
+    "沮授",
+    "田丰",
+    "审配",
+    "关羽",
+    "荀彧",
+    "荀攸",
+    "郭嘉",
+    "贾诩"
+  ],
+  "personIds": [
+    "cao-cao",
+    "yuan-shao",
+    "yan-liang",
+    "wen-chou",
+    "zhang-he",
+    "gao-lan",
+    "xu-you",
+    "ju-shou",
+    "tian-feng",
+    "shen-pei",
+    "guan-yu",
+    "xun-yu",
+    "xun-you",
+    "guo-jia",
+    "jia-xu"
+  ],
+  "polities": [
+    "曹操集团",
+    "袁绍集团"
+  ],
+  "relatedEvents": [
+    "china-196-cao-cao-escorts-emperor",
+    "china-194-lu-bu-seizes-yan",
+    "china-208-red-cliffs"
+  ],
+  "tags": [
+    "官渡",
+    "河北",
+    "北方统一"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·魏书·武帝纪》",
+    "《三国志·魏书·袁绍传》",
+    "《三国志·魏书·张乐于张徐传》",
+    "《三国志·魏书·荀彧荀攸贾诩传》",
+    "《三国志·蜀书·关羽传》",
+    "《资治通鉴》卷六十三"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-wei-wudi",
+      "locator": "建安五年",
+      "quote": "袁绍运谷车数千乘至，公用荀攸计，遣徐晃、史涣邀击，大破之，尽烧其车。公乃留曹洪守，自将步骑五千人夜往，会明至。"
+    },
+    {
+      "sourceId": "sanguozhi-wei-yuan-shao",
+      "locator": "袁绍传官渡相关记载",
+      "quote": "沮授又曰：“北兵数衆而果劲不及南，南谷虚少而货财不及北；南利在于急战，北利在于缓搏。宜徐持乆，旷以日月。”绍不从。"
+    },
+    {
+      "sourceId": "sanguozhi-wei-zhang-he",
+      "locator": "张郃传官渡相关记载",
+      "quote": "合说绍曰：“曹公兵精，往必破琼等；琼等破，则将军事去矣，宜急引兵救之。”"
+    },
+    {
+      "sourceId": "sanguozhi-wei-xun-yu-jia-xu",
+      "locator": "荀彧、荀攸传官渡相关记载",
+      "quote": "太祖保官渡，绍围之。太祖军粮方尽，书与彧，议欲还许以引绍。彧曰：“今军食虽少，未若楚、汉在荥阳、成皐间也。”"
+    },
+    {
+      "sourceId": "sanguozhi-shu-guan-yu",
+      "locator": "关羽传白马斩颜良",
+      "quote": "羽望见良麾盖，策马刺良于万衆之中，斩其首还，绍诸将莫能当者，遂解白马围。"
+    },
+    {
+      "sourceId": "zizhi-tongjian-63",
+      "locator": "建安五年",
+      "quote": "冬，十月，绍复遣车运谷，使其将淳于琼等将兵万馀人送之，宿绍营北四十里。"
+    }
+  ],
+  "detail": {
+    "overview": "曹操与袁绍在官渡决战。曹操袭破乌巢后取得战略胜利，河北袁绍集团由盛转衰，北方统一的方向基本确定。",
+    "background": [
+      "曹操在 196 年迎汉献帝至许，获得以汉廷名义发布政令的政治优势；到 199 年下邳平定吕布后，兖州、豫州及许都周边根据地相对稳固。",
+      "袁绍在北方击败公孙瓒后控制冀州、幽州、并州、青州等地，兵力与资源规模较曹操更大，是建安五年前后北方最强势力。",
+      "双方争夺的核心不只是官渡一地，而是黄河南北通道、许都安全以及北方统一主导权。"
+    ],
+    "process": [
+      "袁绍南下后，曹操以官渡为核心防线抵御其攻势，战场围绕黄河渡口、粮道和许都北面门户展开。",
+      "白马、延津等前哨战中，颜良、文丑先后败亡；关羽斩颜良是曹操侧局部反击的代表节点。",
+      "曹操一度承受军粮与兵力压力，荀彧支持坚守，荀攸等参与军中谋划；袁绍方面沮授、田丰等持重意见未能主导决策。",
+      "乌巢被袭是战局转折点。许攸投曹提供粮秣情报，曹操破坏袁绍军粮储备后，张郃、高览等将领归曹，袁绍军心迅速瓦解。"
+    ],
+    "result": [
+      "袁绍退回河北，官渡一战使其集团从优势转为被动。",
+      "曹操虽然没有在 200 年立即完全吞并河北，但北方统一的战略方向已经明显转向曹操。"
+    ],
+    "impact": [
+      "官渡之战奠定曹操统一北方的基础，也为后来的曹魏政权提供人口、土地和制度资源。",
+      "此战展示了汉末战争中后勤、情报、将领决断和政治合法性的综合作用，不只是单纯兵力对比。"
+    ],
+    "sourceNotes": [
+      "《三国志·魏书·武帝纪》提供曹操侧的本纪叙事，《袁绍传》提供袁绍集团的传记脉络，张郃相关细节还需参看《张郃传》。",
+      "颜良、文丑、张郃、高览并称“河北四庭柱”属于后世通俗归类，前端人物卡中作为传统标签展示，不写成汉末正式制度。",
+      "《资治通鉴》卷六十三将纪传材料整理为建安五年的连续纪年，适合作为事件时间线骨架。"
+    ],
+    "uncertainty": [
+      "参战兵力、伤亡规模和部分战术细节在后世叙述中常被放大，第一版只标注战略走势，不把数字当作精确值。",
+      "官渡战场的具体空间范围可进一步结合历史地图和考古地名资料细化。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-207-longzhong-plan', '刘备得诸葛亮，隆中对成形', 'china', 207, 207, '隆中', 'politics', '刘备延揽诸葛亮，诸葛亮提出据荆益、联孙抗曹、待天下有变的战略构想，为后来蜀汉路线奠定思想框架。', 'medium', '[112.08,32.02]', '{
+  "overview": "207 年刘备延揽诸葛亮，隆中对为刘备集团提出据荆益、联孙抗曹、等待天下变化的战略框架。它的重要性在于把刘备早期流动状态转化为可执行的区域战略。",
+  "background": [
+    "刘备在徐州、汝南等地多次受挫，依附刘表后暂居荆州，缺乏稳定独立根据地。",
+    "曹操已控制北方和汉廷，孙权占据江东，刘备若继续流动作战难以长期生存。",
+    "荆州、益州地理条件和政治格局为第三方势力提供了可能空间。"
+  ],
+  "process": [
+    "刘备三顾诸葛亮，诸葛亮分析曹操、孙权、荆州、益州和天下形势。",
+    "诸葛亮提出先据荆州、益州，外结孙权，内修政理，再等待北方变化的方案。",
+    "这一战略没有立即实现，但成为刘备集团后续赤壁、入蜀和蜀汉建国的路线参照。"
+  ],
+  "result": [
+    "诸葛亮进入刘备集团核心，刘备获得系统战略设计。",
+    "刘备集团从依附刘表的客军，逐渐转向争取荆州和益州的长期计划。",
+    "隆中对成为蜀汉政治叙事中解释其合法路线的重要文本。"
+  ],
+  "impact": [
+    "隆中对把三国格局的可能性提前概念化：曹操不可骤争，孙权可为援而不可图，荆益为根基。",
+    "它连接 208 年赤壁、214 年入蜀、221 年称帝和诸葛亮北伐等后续主线。",
+    "即使后续荆州丢失使原方案受挫，隆中对仍是理解蜀汉战略自我定位的核心材料。"
+  ],
+  "sourceNotes": [
+    "《三国志·蜀书·诸葛亮传》保存隆中对文本，是此事件核心史料。",
+    "《三国志·蜀书·先主传》可补刘备当时依附荆州和延揽人才的背景。",
+    "隆中对文本兼具战略分析和蜀汉后期政治记忆，适合放在史料证据面板重点展示。"
+  ],
+  "uncertainty": [
+    "隆中对现存文本可能经过陈寿和蜀汉政治记忆整理，不能完全等同现场逐字记录。",
+    "后人常以结果倒推其预见性，实际应视为当时条件下的战略框架。"
+  ]
+}', '{
+  "id": "china-207-longzhong-plan",
+  "title": "刘备得诸葛亮，隆中对成形",
+  "startYear": 207,
+  "endYear": 207,
+  "region": "china",
+  "locationName": "隆中",
+  "coordinates": [
+    112.08,
+    32.02
+  ],
+  "category": "politics",
+  "summary": "刘备延揽诸葛亮，诸葛亮提出据荆益、联孙抗曹、待天下有变的战略构想，为后来蜀汉路线奠定思想框架。",
+  "people": [
+    "刘备",
+    "诸葛亮"
+  ],
+  "personIds": [
+    "liu-bei",
+    "zhuge-liang"
+  ],
+  "polities": [
+    "刘备集团",
+    "荆州刘表集团"
+  ],
+  "relatedEvents": [
+    "china-208-red-cliffs",
+    "china-214-liu-bei-takes-yi",
+    "china-234-wuzhang-plains"
+  ],
+  "tags": [
+    "隆中对",
+    "荆州",
+    "蜀汉战略"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "《三国志·蜀书·诸葛亮传》",
+    "《三国志·蜀书·先主传》"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-shu-zhuge-liang",
+      "locator": "隆中对相关记载"
+    },
+    {
+      "sourceId": "sanguozhi-shu-xianzhu",
+      "locator": "建安十二年前后"
+    }
+  ],
+  "detail": {
+    "overview": "207 年刘备延揽诸葛亮，隆中对为刘备集团提出据荆益、联孙抗曹、等待天下变化的战略框架。它的重要性在于把刘备早期流动状态转化为可执行的区域战略。",
+    "background": [
+      "刘备在徐州、汝南等地多次受挫，依附刘表后暂居荆州，缺乏稳定独立根据地。",
+      "曹操已控制北方和汉廷，孙权占据江东，刘备若继续流动作战难以长期生存。",
+      "荆州、益州地理条件和政治格局为第三方势力提供了可能空间。"
+    ],
+    "process": [
+      "刘备三顾诸葛亮，诸葛亮分析曹操、孙权、荆州、益州和天下形势。",
+      "诸葛亮提出先据荆州、益州，外结孙权，内修政理，再等待北方变化的方案。",
+      "这一战略没有立即实现，但成为刘备集团后续赤壁、入蜀和蜀汉建国的路线参照。"
+    ],
+    "result": [
+      "诸葛亮进入刘备集团核心，刘备获得系统战略设计。",
+      "刘备集团从依附刘表的客军，逐渐转向争取荆州和益州的长期计划。",
+      "隆中对成为蜀汉政治叙事中解释其合法路线的重要文本。"
+    ],
+    "impact": [
+      "隆中对把三国格局的可能性提前概念化：曹操不可骤争，孙权可为援而不可图，荆益为根基。",
+      "它连接 208 年赤壁、214 年入蜀、221 年称帝和诸葛亮北伐等后续主线。",
+      "即使后续荆州丢失使原方案受挫，隆中对仍是理解蜀汉战略自我定位的核心材料。"
+    ],
+    "sourceNotes": [
+      "《三国志·蜀书·诸葛亮传》保存隆中对文本，是此事件核心史料。",
+      "《三国志·蜀书·先主传》可补刘备当时依附荆州和延揽人才的背景。",
+      "隆中对文本兼具战略分析和蜀汉后期政治记忆，适合放在史料证据面板重点展示。"
+    ],
+    "uncertainty": [
+      "隆中对现存文本可能经过陈寿和蜀汉政治记忆整理，不能完全等同现场逐字记录。",
+      "后人常以结果倒推其预见性，实际应视为当时条件下的战略框架。"
+    ]
+  },
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-event-details-china-sasanian-remaining-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-208-red-cliffs', '赤壁之战', 'china', 208, 208, '赤壁、长江中游', 'war', '曹操南下荆州后，孙权与刘备联合抵抗。赤壁之战阻止了曹操迅速统一南方，三分格局开始显现。', 'high', '[113.9,29.7]', '{
+  "overview": "曹操南下荆州后，孙权与刘备联合抵抗。赤壁之战阻止了曹操迅速统一南方，三分格局开始显现。",
+  "background": [
+    "官渡之后曹操逐步完成北方整合，208 年南下荆州。刘表去世后，荆州内部继承和投降问题让长江中游局势骤然变化。",
+    "刘表去世是赤壁前的关键前置节点。刘备在荆州失去稳定依托后南撤，孙权则面对是否臣服曹操、保守江东或联合刘备抵抗的选择。",
+    "鲁肃、周瑜等主张抗曹，孙刘联盟在共同压力下成形。赤壁并非孤立战役，而是荆州归属、江东安全和南方政治格局的交汇点。"
+  ],
+  "process": [
+    "曹操军队沿长江方向推进，但北方军队远征南方，水军经验、疫病、补给和新近收编荆州军的整合都带来压力。",
+    "孙权方面以周瑜等将领统军，鲁肃承担联刘协调意义；刘备集团参与联盟作战，诸葛亮在刘备战略与孙刘沟通叙事中占有位置。",
+    "史书传统普遍记录火攻和曹军退却，但具体执行细节在不同叙述中有差异；前端第一版保留为“火攻与退兵”而不展开演义化桥段。"
+  ],
+  "result": [
+    "曹操放弃迅速统一南方的计划，退回北方经营中原和关中方向。",
+    "孙权保住江东，刘备获得重新立足和后续争取荆州、益州的机会。"
+  ],
+  "impact": [
+    "赤壁之战使曹操、孙权、刘备三方进入长期并立与再分配阶段，三国格局由此清晰化。",
+    "荆州成为之后十余年孙刘关系的关键矛盾点，直接关联刘备入蜀、关羽北伐和夷陵之战。"
+  ],
+  "sourceNotes": [
+    "《三国志·魏书·武帝纪》对曹操南征和退兵记载较简略，蜀、吴相关传记保留了更多联盟与水战叙述。",
+    "《吴书·周瑜鲁肃吕蒙传》对孙权集团内部决策、周瑜统军和鲁肃外交意义尤其关键；诸葛亮、贾诩在此处作为战略背景人物展示，不处理成演义化主角。",
+    "《资治通鉴》卷六十五综合多方材料，适合作为赤壁事件链的纪年骨架。"
+  ],
+  "uncertainty": [
+    "赤壁具体地点、曹军兵力规模、火攻细节和战役范围仍有讨论空间，第一版采用“长江中游赤壁战区”的近似表达。",
+    "《三国演义》中的许多精彩桥段具有文学价值，但不能直接当作本项目的史实数据。"
+  ]
+}', '{
+  "id": "china-208-red-cliffs",
+  "title": "赤壁之战",
+  "startYear": 208,
+  "endYear": 208,
+  "region": "china",
+  "locationName": "赤壁、长江中游",
+  "coordinates": [
+    113.9,
+    29.7
+  ],
+  "category": "war",
+  "summary": "曹操南下荆州后，孙权与刘备联合抵抗。赤壁之战阻止了曹操迅速统一南方，三分格局开始显现。",
+  "people": [
+    "曹操",
+    "刘备",
+    "孙权",
+    "周瑜",
+    "鲁肃",
+    "刘表",
+    "诸葛亮",
+    "贾诩",
+    "王粲",
+    "刘廙"
+  ],
+  "personIds": [
+    "cao-cao",
+    "liu-bei",
+    "sun-quan",
+    "zhou-yu",
+    "lu-su",
+    "liu-biao",
+    "zhuge-liang",
+    "jia-xu",
+    "wang-can",
+    "liu-yi"
+  ],
+  "polities": [
+    "曹操集团",
+    "刘备集团",
+    "孙吴"
+  ],
+  "relatedEvents": [
+    "china-200-guandu",
+    "china-207-longzhong-plan",
+    "china-214-liu-bei-takes-yi",
+    "china-219-hanzhong-and-jingzhou-crisis"
+  ],
+  "tags": [
+    "赤壁",
+    "孙刘联盟",
+    "三分格局"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·魏书·武帝纪》",
+    "《三国志·蜀书·先主传》",
+    "《三国志·蜀书·诸葛亮传》",
+    "《三国志·魏书·荀彧荀攸贾诩传》",
+    "《三国志·吴书·周瑜鲁肃吕蒙传》",
+    "《资治通鉴》卷六十五"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-wei-wudi",
+      "locator": "建安十三年",
+      "quote": "公至赤壁，与备战，不利。于是大疫，吏士多死者，乃引军还。备遂有荆州、江南诸郡。"
+    },
+    {
+      "sourceId": "sanguozhi-shu-xianzhu",
+      "locator": "建安十三年",
+      "quote": "与曹公战于赤壁，大破之，焚其舟船。先主与吴军水陆并进，追到南郡。"
+    },
+    {
+      "sourceId": "sanguozhi-shu-zhuge-liang",
+      "locator": "赤壁前后刘备战略相关记载"
+    },
+    {
+      "sourceId": "sanguozhi-wei-xun-yu-jia-xu",
+      "locator": "贾诩传南征前后相关记载"
+    },
+    {
+      "sourceId": "sanguozhi-wu-zhou-yu",
+      "locator": "周瑜、鲁肃传赤壁相关记载",
+      "quote": "权遂遣瑜及程普等与备并力逆曹公，遇于赤壁。时曹公军衆已有疾病，初一交战，公军败退，引次江北。"
+    },
+    {
+      "sourceId": "zizhi-tongjian-65",
+      "locator": "建安十三年",
+      "quote": "遂以周瑜、程普为左右督，将兵与备并力逆操；以鲁肃为赞军校尉，助画方略。"
+    }
+  ],
+  "detail": {
+    "overview": "曹操南下荆州后，孙权与刘备联合抵抗。赤壁之战阻止了曹操迅速统一南方，三分格局开始显现。",
+    "background": [
+      "官渡之后曹操逐步完成北方整合，208 年南下荆州。刘表去世后，荆州内部继承和投降问题让长江中游局势骤然变化。",
+      "刘表去世是赤壁前的关键前置节点。刘备在荆州失去稳定依托后南撤，孙权则面对是否臣服曹操、保守江东或联合刘备抵抗的选择。",
+      "鲁肃、周瑜等主张抗曹，孙刘联盟在共同压力下成形。赤壁并非孤立战役，而是荆州归属、江东安全和南方政治格局的交汇点。"
+    ],
+    "process": [
+      "曹操军队沿长江方向推进，但北方军队远征南方，水军经验、疫病、补给和新近收编荆州军的整合都带来压力。",
+      "孙权方面以周瑜等将领统军，鲁肃承担联刘协调意义；刘备集团参与联盟作战，诸葛亮在刘备战略与孙刘沟通叙事中占有位置。",
+      "史书传统普遍记录火攻和曹军退却，但具体执行细节在不同叙述中有差异；前端第一版保留为“火攻与退兵”而不展开演义化桥段。"
+    ],
+    "result": [
+      "曹操放弃迅速统一南方的计划，退回北方经营中原和关中方向。",
+      "孙权保住江东，刘备获得重新立足和后续争取荆州、益州的机会。"
+    ],
+    "impact": [
+      "赤壁之战使曹操、孙权、刘备三方进入长期并立与再分配阶段，三国格局由此清晰化。",
+      "荆州成为之后十余年孙刘关系的关键矛盾点，直接关联刘备入蜀、关羽北伐和夷陵之战。"
+    ],
+    "sourceNotes": [
+      "《三国志·魏书·武帝纪》对曹操南征和退兵记载较简略，蜀、吴相关传记保留了更多联盟与水战叙述。",
+      "《吴书·周瑜鲁肃吕蒙传》对孙权集团内部决策、周瑜统军和鲁肃外交意义尤其关键；诸葛亮、贾诩在此处作为战略背景人物展示，不处理成演义化主角。",
+      "《资治通鉴》卷六十五综合多方材料，适合作为赤壁事件链的纪年骨架。"
+    ],
+    "uncertainty": [
+      "赤壁具体地点、曹军兵力规模、火攻细节和战役范围仍有讨论空间，第一版采用“长江中游赤壁战区”的近似表达。",
+      "《三国演义》中的许多精彩桥段具有文学价值，但不能直接当作本项目的史实数据。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-214-liu-bei-takes-yi', '刘备入主益州', 'china', 214, 214, '成都', 'war', '刘备与刘璋决裂后攻取益州，取得稳定的西南根据地。荆州、益州并重的战略开始具备现实基础。', 'high', '[104.07,30.67]', '{
+  "overview": "刘备与刘璋决裂后攻取益州，取得稳定的西南根据地。荆州、益州并重的战略开始具备现实基础。",
+  "background": [
+    "赤壁之后，刘备虽在荆州获得立足点，但长期缺乏可供建国的稳定纵深。",
+    "刘璋据益州，张鲁据汉中，益州内部对外部军事压力和继承治理能力有疑虑，给刘备入蜀创造机会。",
+    "庞统、法正等人为刘备集团提供取益州的战略和内部信息支持。"
+  ],
+  "process": [
+    "刘备最初以援助刘璋抵御张鲁为名入蜀，随后双方关系破裂，战争转为夺取益州。",
+    "庞统随军参与谋划并死于雒城战事；诸葛亮、张飞等自荆州入援，马超归附也对成都造成压力。",
+    "214 年成都出降，刘备接管益州。"
+  ],
+  "result": [
+    "刘备取得成都平原和益州资源，集团从流动割据势力转为拥有稳定根据地。",
+    "刘璋退出益州主导权，益州成为后续蜀汉政权的核心地区。"
+  ],
+  "impact": [
+    "取益州让隆中对的“跨有荆益”具备现实基础。",
+    "益州也把刘备推入汉中、荆州双线压力：西北要争汉中，东线要处理孙刘荆州矛盾。"
+  ],
+  "sourceNotes": [
+    "《先主传》提供刘备入蜀主线，《庞统法正传》补足谋臣视角。",
+    "马超、黄忠等将领信息需结合《关张马黄赵传》理解。"
+  ],
+  "uncertainty": [
+    "成都围攻和各郡县归附的细节可后续结合区块地图细化；第一版先保留益州主导权转移。"
+  ]
+}', '{
+  "id": "china-214-liu-bei-takes-yi",
+  "title": "刘备入主益州",
+  "startYear": 214,
+  "endYear": 214,
+  "region": "china",
+  "locationName": "成都",
+  "coordinates": [
+    104.07,
+    30.67
+  ],
+  "category": "war",
+  "summary": "刘备与刘璋决裂后攻取益州，取得稳定的西南根据地。荆州、益州并重的战略开始具备现实基础。",
+  "people": [
+    "刘备",
+    "刘璋",
+    "诸葛亮",
+    "张飞",
+    "庞统",
+    "法正",
+    "马超",
+    "黄忠"
+  ],
+  "personIds": [
+    "liu-bei",
+    "liu-zhang",
+    "zhuge-liang",
+    "zhang-fei",
+    "pang-tong",
+    "fa-zheng",
+    "ma-chao",
+    "huang-zhong"
+  ],
+  "polities": [
+    "刘备集团",
+    "益州刘璋集团"
+  ],
+  "relatedEvents": [
+    "china-207-longzhong-plan",
+    "china-208-red-cliffs",
+    "china-219-hanzhong-and-jingzhou-crisis"
+  ],
+  "tags": [
+    "益州",
+    "成都",
+    "蜀汉基础"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·蜀书·先主传》",
+    "《三国志·蜀书·庞统法正传》",
+    "《三国志·蜀书·关张马黄赵传》",
+    "《资治通鉴》卷六十七"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-shu-xianzhu",
+      "locator": "建安十九年"
+    },
+    {
+      "sourceId": "sanguozhi-shu-pangtong-fa-zheng",
+      "locator": "庞统、法正传取益州相关记载"
+    },
+    {
+      "sourceId": "sanguozhi-shu-zhang-fei",
+      "locator": "马超、黄忠入蜀前后相关记载"
+    },
+    {
+      "sourceId": "zizhi-tongjian-67",
+      "locator": "建安十九年"
+    }
+  ],
+  "detail": {
+    "overview": "刘备与刘璋决裂后攻取益州，取得稳定的西南根据地。荆州、益州并重的战略开始具备现实基础。",
+    "background": [
+      "赤壁之后，刘备虽在荆州获得立足点，但长期缺乏可供建国的稳定纵深。",
+      "刘璋据益州，张鲁据汉中，益州内部对外部军事压力和继承治理能力有疑虑，给刘备入蜀创造机会。",
+      "庞统、法正等人为刘备集团提供取益州的战略和内部信息支持。"
+    ],
+    "process": [
+      "刘备最初以援助刘璋抵御张鲁为名入蜀，随后双方关系破裂，战争转为夺取益州。",
+      "庞统随军参与谋划并死于雒城战事；诸葛亮、张飞等自荆州入援，马超归附也对成都造成压力。",
+      "214 年成都出降，刘备接管益州。"
+    ],
+    "result": [
+      "刘备取得成都平原和益州资源，集团从流动割据势力转为拥有稳定根据地。",
+      "刘璋退出益州主导权，益州成为后续蜀汉政权的核心地区。"
+    ],
+    "impact": [
+      "取益州让隆中对的“跨有荆益”具备现实基础。",
+      "益州也把刘备推入汉中、荆州双线压力：西北要争汉中，东线要处理孙刘荆州矛盾。"
+    ],
+    "sourceNotes": [
+      "《先主传》提供刘备入蜀主线，《庞统法正传》补足谋臣视角。",
+      "马超、黄忠等将领信息需结合《关张马黄赵传》理解。"
+    ],
+    "uncertainty": [
+      "成都围攻和各郡县归附的细节可后续结合区块地图细化；第一版先保留益州主导权转移。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-215-cao-cao-takes-hanzhong', '曹操取汉中', 'china', 215, 215, '汉中', 'war', '张鲁向曹操投降，汉中纳入曹操控制。此后汉中成为曹操与刘备争夺关中、益州通道的关键区块。', 'high', '[107.02,33.07]', '{
+  "overview": "张鲁向曹操投降，汉中纳入曹操控制。此后汉中成为曹操与刘备争夺关中、益州通道的关键区块。",
+  "background": [
+    "刘备取益州后，汉中成为曹操和刘备之间的战略缓冲区。",
+    "张鲁长期据汉中，既是宗教政治割据者，也是关中、益州之间的门户控制者。"
+  ],
+  "process": [
+    "曹操西征汉中，张鲁最终归降，汉中暂入曹操控制。",
+    "曹操未能长期亲自经营汉中，留下的防守体系后来面对刘备攻势承压。"
+  ],
+  "result": [
+    "汉中从张鲁割据区转为曹刘争夺前线。",
+    "刘备集团意识到若曹操长期控制汉中，成都平原会受到北面直接威胁。"
+  ],
+  "impact": [
+    "215 年曹操取汉中直接引出 217-219 年刘备夺汉中战事。",
+    "汉中成为蜀汉后续北伐和防御曹魏的门户。"
+  ],
+  "sourceNotes": [
+    "曹操侧主要见《武帝纪》，张鲁割据和归降见《张鲁传》。",
+    "刘备后续夺汉中需要结合《法正传》《黄忠传》和《资治通鉴》建安二十四年。"
+  ],
+  "uncertainty": [
+    "汉中各谷道和关隘的空间关系需要地图层后续细化；第一版以战略门户表达。"
+  ]
+}', '{
+  "id": "china-215-cao-cao-takes-hanzhong",
+  "title": "曹操取汉中",
+  "startYear": 215,
+  "endYear": 215,
+  "region": "china",
+  "locationName": "汉中",
+  "coordinates": [
+    107.02,
+    33.07
+  ],
+  "category": "war",
+  "summary": "张鲁向曹操投降，汉中纳入曹操控制。此后汉中成为曹操与刘备争夺关中、益州通道的关键区块。",
+  "people": [
+    "曹操",
+    "张鲁",
+    "刘备",
+    "法正",
+    "黄忠",
+    "刘晔"
+  ],
+  "personIds": [
+    "cao-cao",
+    "zhang-lu",
+    "liu-bei",
+    "fa-zheng",
+    "huang-zhong",
+    "liu-ye"
+  ],
+  "polities": [
+    "曹操集团",
+    "张鲁集团",
+    "刘备集团"
+  ],
+  "relatedEvents": [
+    "china-214-liu-bei-takes-yi",
+    "china-219-hanzhong-and-jingzhou-crisis"
+  ],
+  "tags": [
+    "汉中",
+    "张鲁",
+    "关中益州通道"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·魏书·武帝纪》",
+    "《三国志·魏书·张鲁传》",
+    "《资治通鉴》卷六十七"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-wei-wudi",
+      "locator": "建安二十年"
+    },
+    {
+      "sourceId": "sanguozhi-wei-zhang-lu",
+      "locator": "张鲁传"
+    },
+    {
+      "sourceId": "sanguozhi-shu-pangtong-fa-zheng",
+      "locator": "法正传汉中战略相关记载"
+    },
+    {
+      "sourceId": "sanguozhi-shu-zhang-fei",
+      "locator": "黄忠传汉中相关记载"
+    },
+    {
+      "sourceId": "zizhi-tongjian-67",
+      "locator": "建安二十年"
+    }
+  ],
+  "detail": {
+    "overview": "张鲁向曹操投降，汉中纳入曹操控制。此后汉中成为曹操与刘备争夺关中、益州通道的关键区块。",
+    "background": [
+      "刘备取益州后，汉中成为曹操和刘备之间的战略缓冲区。",
+      "张鲁长期据汉中，既是宗教政治割据者，也是关中、益州之间的门户控制者。"
+    ],
+    "process": [
+      "曹操西征汉中，张鲁最终归降，汉中暂入曹操控制。",
+      "曹操未能长期亲自经营汉中，留下的防守体系后来面对刘备攻势承压。"
+    ],
+    "result": [
+      "汉中从张鲁割据区转为曹刘争夺前线。",
+      "刘备集团意识到若曹操长期控制汉中，成都平原会受到北面直接威胁。"
+    ],
+    "impact": [
+      "215 年曹操取汉中直接引出 217-219 年刘备夺汉中战事。",
+      "汉中成为蜀汉后续北伐和防御曹魏的门户。"
+    ],
+    "sourceNotes": [
+      "曹操侧主要见《武帝纪》，张鲁割据和归降见《张鲁传》。",
+      "刘备后续夺汉中需要结合《法正传》《黄忠传》和《资治通鉴》建安二十四年。"
+    ],
+    "uncertainty": [
+      "汉中各谷道和关隘的空间关系需要地图层后续细化；第一版以战略门户表达。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-219-hanzhong-and-jingzhou-crisis', '刘备称汉中王，关羽失荆州', 'china', 219, 220, '汉中、荆州', 'war', '刘备夺取汉中后称汉中王，关羽北伐襄樊一度震动曹魏。但孙吴袭取荆州，关羽败亡，蜀汉东西两线格局被迫收缩。', 'high', 'null', '{
+  "overview": "刘备夺取汉中后称汉中王，关羽北伐襄樊一度震动曹魏。但孙吴袭取荆州，关羽败亡，蜀汉东西两线格局被迫收缩。",
+  "background": [
+    "刘备取益州后继续争夺汉中，汉中关系成都安全与北伐门户。",
+    "同时，荆州是刘备集团东线根基，却也是孙权长期要求重新分配的区域。"
+  ],
+  "process": [
+    "汉中方向，刘备集团在法正等谋划下推进，黄忠定军山斩夏侯渊，曹操最终退走。",
+    "刘备称汉中王后，关羽在荆州北伐襄樊，一度威胁曹魏南线。",
+    "孙权方面由吕蒙等策划袭取荆州，陆逊参与配合，关羽失去后方后败亡。"
+  ],
+  "result": [
+    "刘备取得汉中并提升政治号召，但几乎同时失去荆州。",
+    "蜀汉从荆益并重被迫转为以益州、汉中为核心，孙刘关系进入严重破裂。"
+  ],
+  "impact": [
+    "汉中胜利提高刘备称王和称帝的政治资本。",
+    "荆州丧失则直接引出刘备伐吴和夷陵之战，三国边界趋向长期化。"
+  ],
+  "sourceNotes": [
+    "汉中线需结合《先主传》《法正传》《黄忠传》，荆州线需结合《关羽传》《吕蒙传》《陆逊传》。",
+    "《资治通鉴》卷六十七适合作为 219 年多线事件的时间骨架。"
+  ],
+  "uncertainty": [
+    "汉中战役和荆州战役严格说是两条战线，此处作为 219 年刘备集团战略转折合并展示。"
+  ]
+}', '{
+  "id": "china-219-hanzhong-and-jingzhou-crisis",
+  "title": "刘备称汉中王，关羽失荆州",
+  "startYear": 219,
+  "endYear": 220,
+  "region": "china",
+  "locationName": "汉中、荆州",
+  "coordinates": null,
+  "category": "war",
+  "summary": "刘备夺取汉中后称汉中王，关羽北伐襄樊一度震动曹魏。但孙吴袭取荆州，关羽败亡，蜀汉东西两线格局被迫收缩。",
+  "people": [
+    "刘备",
+    "关羽",
+    "曹操",
+    "孙权",
+    "陆逊",
+    "吕蒙",
+    "法正",
+    "黄忠",
+    "马超",
+    "董昭"
+  ],
+  "personIds": [
+    "liu-bei",
+    "guan-yu",
+    "cao-cao",
+    "sun-quan",
+    "lu-xun",
+    "lu-meng",
+    "fa-zheng",
+    "huang-zhong",
+    "ma-chao",
+    "dong-zhao"
+  ],
+  "polities": [
+    "刘备集团",
+    "曹操集团",
+    "孙吴"
+  ],
+  "relatedEvents": [
+    "china-208-red-cliffs",
+    "china-214-liu-bei-takes-yi",
+    "china-221-liu-bei-founds-shu",
+    "china-222-yiling"
+  ],
+  "tags": [
+    "汉中",
+    "荆州",
+    "关羽北伐"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·蜀书·先主传》",
+    "《三国志·蜀书·关羽传》",
+    "《三国志·蜀书·庞统法正传》",
+    "《三国志·蜀书·关张马黄赵传》",
+    "《三国志·吴书·周瑜鲁肃吕蒙传》",
+    "《三国志·吴书·陆逊传》",
+    "《资治通鉴》卷六十七"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-shu-xianzhu",
+      "locator": "建安二十四年"
+    },
+    {
+      "sourceId": "sanguozhi-shu-guan-yu",
+      "locator": "关羽传"
+    },
+    {
+      "sourceId": "sanguozhi-shu-pangtong-fa-zheng",
+      "locator": "法正传汉中相关记载"
+    },
+    {
+      "sourceId": "sanguozhi-shu-zhang-fei",
+      "locator": "黄忠、马超传相关记载"
+    },
+    {
+      "sourceId": "sanguozhi-wu-zhou-yu",
+      "locator": "吕蒙传取荆州相关记载"
+    },
+    {
+      "sourceId": "sanguozhi-wu-lu-xun",
+      "locator": "陆逊传取荆州相关记载"
+    },
+    {
+      "sourceId": "zizhi-tongjian-67",
+      "locator": "建安二十四年"
+    }
+  ],
+  "detail": {
+    "overview": "刘备夺取汉中后称汉中王，关羽北伐襄樊一度震动曹魏。但孙吴袭取荆州，关羽败亡，蜀汉东西两线格局被迫收缩。",
+    "background": [
+      "刘备取益州后继续争夺汉中，汉中关系成都安全与北伐门户。",
+      "同时，荆州是刘备集团东线根基，却也是孙权长期要求重新分配的区域。"
+    ],
+    "process": [
+      "汉中方向，刘备集团在法正等谋划下推进，黄忠定军山斩夏侯渊，曹操最终退走。",
+      "刘备称汉中王后，关羽在荆州北伐襄樊，一度威胁曹魏南线。",
+      "孙权方面由吕蒙等策划袭取荆州，陆逊参与配合，关羽失去后方后败亡。"
+    ],
+    "result": [
+      "刘备取得汉中并提升政治号召，但几乎同时失去荆州。",
+      "蜀汉从荆益并重被迫转为以益州、汉中为核心，孙刘关系进入严重破裂。"
+    ],
+    "impact": [
+      "汉中胜利提高刘备称王和称帝的政治资本。",
+      "荆州丧失则直接引出刘备伐吴和夷陵之战，三国边界趋向长期化。"
+    ],
+    "sourceNotes": [
+      "汉中线需结合《先主传》《法正传》《黄忠传》，荆州线需结合《关羽传》《吕蒙传》《陆逊传》。",
+      "《资治通鉴》卷六十七适合作为 219 年多线事件的时间骨架。"
+    ],
+    "uncertainty": [
+      "汉中战役和荆州战役严格说是两条战线，此处作为 219 年刘备集团战略转折合并展示。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-220-cao-pi-founds-wei', '曹丕称帝，曹魏建立', 'china', 220, 220, '洛阳', 'politics', '曹丕接受汉献帝禅让，建立魏国，东汉正式结束。三国时期从割据事实进入正式政权并立阶段。', 'high', '[112.45,34.62]', '{
+  "overview": "220 年曹丕接受汉献帝禅让，建立曹魏，东汉正式结束。它把曹操长期控制汉廷的事实转化为新王朝制度，三国从割据局面进入正式政权并立阶段。",
+  "background": [
+    "196 年曹操迎献帝至许后，曹氏长期掌握汉廷军事、财政和任官方面实权。",
+    "曹操去世后，曹丕继承魏王和丞相地位，需要把继承权、朝廷控制和新政权合法性整合起来。",
+    "东汉名义虽仍存在，但中央权力已被曹氏政权结构吸收。"
+  ],
+  "process": [
+    "汉献帝以禅让形式移交皇位，曹丕受玺绶即皇帝位。",
+    "曹魏沿用并改造汉末制度，设置新年号和国家礼仪，完成从魏王国到帝国的转化。",
+    "魏廷通过禅让文本和群臣劝进叙事，把改朝换代包装为天命转移。"
+  ],
+  "result": [
+    "东汉灭亡，曹魏建立，洛阳成为曹魏政治中心。",
+    "汉献帝退为山阳公，东汉皇帝不再拥有国家统治名义。",
+    "刘备、孙权随后分别以不同方式回应曹魏称帝，三国并立制度化。"
+  ],
+  "impact": [
+    "曹丕称帝是三国正式政治格局形成的第一步。",
+    "禅让模式成为后续司马炎代魏的重要制度范本。",
+    "它也使蜀汉“继汉”叙事和孙吴独立称帝的政治压力同时上升。"
+  ],
+  "sourceNotes": [
+    "《三国志·魏书·文帝纪》保存曹丕受禅和建国的魏方纪年。",
+    "《后汉书·孝献帝纪》从东汉终结角度记录禅让。",
+    "《资治通鉴》卷六十九可对比禅让程序和政治语境。"
+  ],
+  "uncertainty": [
+    "禅让文本中的自愿与天命语言属于政治合法化话语，不应按字面理解为自由选择。",
+    "曹魏建国的实际基础是长期军事和制度控制，而不是 220 年单次仪式。"
+  ]
+}', '{
+  "id": "china-220-cao-pi-founds-wei",
+  "title": "曹丕称帝，曹魏建立",
+  "startYear": 220,
+  "endYear": 220,
+  "region": "china",
+  "locationName": "洛阳",
+  "coordinates": [
+    112.45,
+    34.62
+  ],
+  "category": "politics",
+  "summary": "曹丕接受汉献帝禅让，建立魏国，东汉正式结束。三国时期从割据事实进入正式政权并立阶段。",
+  "people": [
+    "曹丕",
+    "汉献帝",
+    "曹操",
+    "贾诩",
+    "陈群",
+    "钟繇",
+    "董昭",
+    "刘放",
+    "孙资",
+    "刘廙",
+    "贾逵",
+    "卫觊"
+  ],
+  "personIds": [
+    "cao-pi",
+    "han-xiandi",
+    "cao-cao",
+    "jia-xu",
+    "chen-qun",
+    "zhong-yao",
+    "dong-zhao",
+    "liu-fang",
+    "sun-zi",
+    "liu-yi",
+    "jia-kui",
+    "wei-ji"
+  ],
+  "polities": [
+    "曹魏",
+    "东汉"
+  ],
+  "relatedEvents": [
+    "china-196-cao-cao-escorts-emperor",
+    "china-221-liu-bei-founds-shu",
+    "china-229-sun-quan-emperor"
+  ],
+  "tags": [
+    "三国",
+    "曹魏",
+    "东汉灭亡"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·魏书·文帝纪》",
+    "《后汉书·孝献帝纪》",
+    "《资治通鉴》卷六十九"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-wei-wendi",
+      "locator": "黄初元年",
+      "quote": "今其追踵尧典，禅位于魏王。告祠高庙。使兼御史大夫张音持节奉玺绶禅位。"
+    },
+    {
+      "sourceId": "houhanshu-xiandi",
+      "locator": "延康元年"
+    },
+    {
+      "sourceId": "zizhi-tongjian-69",
+      "locator": "黄初元年",
+      "quote": "冬十月乙卯，汉帝告祠高庙，使行御史大夫张音持节奉玺绶诏册，禅位于魏。辛未，升坛受玺绶，即皇帝位。"
+    }
+  ],
+  "detail": {
+    "overview": "220 年曹丕接受汉献帝禅让，建立曹魏，东汉正式结束。它把曹操长期控制汉廷的事实转化为新王朝制度，三国从割据局面进入正式政权并立阶段。",
+    "background": [
+      "196 年曹操迎献帝至许后，曹氏长期掌握汉廷军事、财政和任官方面实权。",
+      "曹操去世后，曹丕继承魏王和丞相地位，需要把继承权、朝廷控制和新政权合法性整合起来。",
+      "东汉名义虽仍存在，但中央权力已被曹氏政权结构吸收。"
+    ],
+    "process": [
+      "汉献帝以禅让形式移交皇位，曹丕受玺绶即皇帝位。",
+      "曹魏沿用并改造汉末制度，设置新年号和国家礼仪，完成从魏王国到帝国的转化。",
+      "魏廷通过禅让文本和群臣劝进叙事，把改朝换代包装为天命转移。"
+    ],
+    "result": [
+      "东汉灭亡，曹魏建立，洛阳成为曹魏政治中心。",
+      "汉献帝退为山阳公，东汉皇帝不再拥有国家统治名义。",
+      "刘备、孙权随后分别以不同方式回应曹魏称帝，三国并立制度化。"
+    ],
+    "impact": [
+      "曹丕称帝是三国正式政治格局形成的第一步。",
+      "禅让模式成为后续司马炎代魏的重要制度范本。",
+      "它也使蜀汉“继汉”叙事和孙吴独立称帝的政治压力同时上升。"
+    ],
+    "sourceNotes": [
+      "《三国志·魏书·文帝纪》保存曹丕受禅和建国的魏方纪年。",
+      "《后汉书·孝献帝纪》从东汉终结角度记录禅让。",
+      "《资治通鉴》卷六十九可对比禅让程序和政治语境。"
+    ],
+    "uncertainty": [
+      "禅让文本中的自愿与天命语言属于政治合法化话语，不应按字面理解为自由选择。",
+      "曹魏建国的实际基础是长期军事和制度控制，而不是 220 年单次仪式。"
+    ]
+  },
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-event-details-china-sasanian-remaining-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-221-liu-bei-founds-shu', '刘备称帝，蜀汉建立', 'china', 221, 221, '成都', 'politics', '刘备在成都称帝，以继承汉室为政治名义建立蜀汉。此举回应曹魏代汉，也使魏蜀对立正式制度化。', 'high', '[104.07,30.67]', '{
+  "overview": "221 年刘备在成都称帝，建立蜀汉，以继承汉室回应曹魏代汉。蜀汉建国把刘备集团从益州割据政权转化为以汉统为名的皇帝政权。",
+  "background": [
+    "曹丕代汉后，刘备集团必须回应东汉灭亡带来的合法性断裂。",
+    "刘备占据益州，并曾取得汉中王称号，已经具备相对完整的政权基础。",
+    "关羽失荆州后，刘备集团战略空间收缩，更需要通过称帝凝聚内部和对外名义。"
+  ],
+  "process": [
+    "刘备在成都即皇帝位，改元章武，设置百官和宗庙。",
+    "诸葛亮任丞相，成为蜀汉政权制度建设的核心人物。",
+    "蜀汉以“汉”作为国号和政治名义，强调自身继承刘氏汉统。"
+  ],
+  "result": [
+    "蜀汉正式建立，魏蜀对立从政权事实上升为皇帝名义对立。",
+    "刘备集团完成从军阀集团、益州政权到帝国名义政权的转化。",
+    "称帝后不久，刘备发动伐吴，夷陵之战成为新政权早期重大挫折。"
+  ],
+  "impact": [
+    "蜀汉称帝使三国格局不再只是曹魏与地方势力关系，而是多个皇帝政权并存。",
+    "“继汉”叙事成为蜀汉长期政治合法性的核心，也影响后世对三国正统的评价。",
+    "章武政权的短期军事选择直接导向 222 年夷陵之战。"
+  ],
+  "sourceNotes": [
+    "《三国志·蜀书·先主传》记录刘备称帝、改元、置百官和任命诸葛亮。",
+    "《资治通鉴》卷六十九提供称帝日期和政治流程。",
+    "相关原文适合与曹丕 220 年受禅记录并列展示。"
+  ],
+  "uncertainty": [
+    "蜀汉自称继承汉室是政治立场，不等于各方共同承认其正统。",
+    "称帝与伐吴之间的政治关系需谨慎处理，不能简单说称帝必然导致夷陵。"
+  ]
+}', '{
+  "id": "china-221-liu-bei-founds-shu",
+  "title": "刘备称帝，蜀汉建立",
+  "startYear": 221,
+  "endYear": 221,
+  "region": "china",
+  "locationName": "成都",
+  "coordinates": [
+    104.07,
+    30.67
+  ],
+  "category": "politics",
+  "summary": "刘备在成都称帝，以继承汉室为政治名义建立蜀汉。此举回应曹魏代汉，也使魏蜀对立正式制度化。",
+  "people": [
+    "刘备",
+    "诸葛亮",
+    "刘禅"
+  ],
+  "personIds": [
+    "liu-bei",
+    "zhuge-liang",
+    "liu-shan"
+  ],
+  "polities": [
+    "蜀汉",
+    "曹魏"
+  ],
+  "relatedEvents": [
+    "china-220-cao-pi-founds-wei",
+    "china-222-yiling",
+    "china-234-wuzhang-plains"
+  ],
+  "tags": [
+    "蜀汉",
+    "成都",
+    "汉室继承"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·蜀书·先主传》",
+    "《资治通鉴》卷六十九"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-shu-xianzhu",
+      "locator": "章武元年",
+      "quote": "章武元年夏四月，大赦，改年。以诸葛亮为丞相，许靖为司徒。置百官，立宗庙。"
+    },
+    {
+      "sourceId": "zizhi-tongjian-69",
+      "locator": "章武元年",
+      "quote": "夏四月丙午，汉中王即皇帝位于武担之南。大赦，改元章武。以诸葛亮为丞相，许靖为司徒。"
+    }
+  ],
+  "detail": {
+    "overview": "221 年刘备在成都称帝，建立蜀汉，以继承汉室回应曹魏代汉。蜀汉建国把刘备集团从益州割据政权转化为以汉统为名的皇帝政权。",
+    "background": [
+      "曹丕代汉后，刘备集团必须回应东汉灭亡带来的合法性断裂。",
+      "刘备占据益州，并曾取得汉中王称号，已经具备相对完整的政权基础。",
+      "关羽失荆州后，刘备集团战略空间收缩，更需要通过称帝凝聚内部和对外名义。"
+    ],
+    "process": [
+      "刘备在成都即皇帝位，改元章武，设置百官和宗庙。",
+      "诸葛亮任丞相，成为蜀汉政权制度建设的核心人物。",
+      "蜀汉以“汉”作为国号和政治名义，强调自身继承刘氏汉统。"
+    ],
+    "result": [
+      "蜀汉正式建立，魏蜀对立从政权事实上升为皇帝名义对立。",
+      "刘备集团完成从军阀集团、益州政权到帝国名义政权的转化。",
+      "称帝后不久，刘备发动伐吴，夷陵之战成为新政权早期重大挫折。"
+    ],
+    "impact": [
+      "蜀汉称帝使三国格局不再只是曹魏与地方势力关系，而是多个皇帝政权并存。",
+      "“继汉”叙事成为蜀汉长期政治合法性的核心，也影响后世对三国正统的评价。",
+      "章武政权的短期军事选择直接导向 222 年夷陵之战。"
+    ],
+    "sourceNotes": [
+      "《三国志·蜀书·先主传》记录刘备称帝、改元、置百官和任命诸葛亮。",
+      "《资治通鉴》卷六十九提供称帝日期和政治流程。",
+      "相关原文适合与曹丕 220 年受禅记录并列展示。"
+    ],
+    "uncertainty": [
+      "蜀汉自称继承汉室是政治立场，不等于各方共同承认其正统。",
+      "称帝与伐吴之间的政治关系需谨慎处理，不能简单说称帝必然导致夷陵。"
+    ]
+  },
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-event-details-china-sasanian-remaining-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-222-yiling', '夷陵之战', 'china', 222, 222, '夷陵、猇亭', 'war', '刘备为夺回荆州东征孙吴，陆逊据险相持并反击，蜀军大败。此战后吴蜀重新寻求缓和，三国边界趋于稳定。', 'high', '[111.3,30.75]', '{
+  "overview": "刘备为夺回荆州东征孙吴，陆逊据险相持并反击，蜀军大败。此战后吴蜀重新寻求缓和，三国边界趋于稳定。",
+  "background": [
+    "关羽败亡和荆州丧失后，刘备以夺回荆州、报复孙吴为目标发动东征。",
+    "孙权在曹魏压力与蜀汉报复之间寻求平衡，同时任用陆逊主持西线防御。"
+  ],
+  "process": [
+    "刘备沿长江上游东进，蜀军战线拉长，营垒绵延。",
+    "陆逊采取持重防守，等待蜀军疲敝后发动反击，最终在猇亭、夷陵一带大破蜀军。"
+  ],
+  "result": [
+    "刘备退回白帝城，蜀汉精锐和政治声势遭受重挫。",
+    "孙吴保住荆州，吴蜀随后逐步恢复外交缓和。"
+  ],
+  "impact": [
+    "夷陵之战确立孙吴对荆州的长期控制。",
+    "刘备死后，诸葛亮辅政必须在修复吴蜀关系和恢复蜀汉国力之间重新布局。"
+  ],
+  "sourceNotes": [
+    "蜀方主线见《先主传》，吴方战役指挥见《陆逊传》。",
+    "《资治通鉴》卷七十适合串联章武二年与黄武元年的战役进程。"
+  ],
+  "uncertainty": [
+    "蜀军营垒具体分布和火攻细节存在叙事加工空间，第一版只标注战略和战役结果。"
+  ]
+}', '{
+  "id": "china-222-yiling",
+  "title": "夷陵之战",
+  "startYear": 222,
+  "endYear": 222,
+  "region": "china",
+  "locationName": "夷陵、猇亭",
+  "coordinates": [
+    111.3,
+    30.75
+  ],
+  "category": "war",
+  "summary": "刘备为夺回荆州东征孙吴，陆逊据险相持并反击，蜀军大败。此战后吴蜀重新寻求缓和，三国边界趋于稳定。",
+  "people": [
+    "刘备",
+    "孙权",
+    "陆逊"
+  ],
+  "personIds": [
+    "liu-bei",
+    "sun-quan",
+    "lu-xun"
+  ],
+  "polities": [
+    "蜀汉",
+    "孙吴"
+  ],
+  "relatedEvents": [
+    "china-219-hanzhong-and-jingzhou-crisis",
+    "china-221-liu-bei-founds-shu",
+    "china-229-sun-quan-emperor"
+  ],
+  "tags": [
+    "夷陵",
+    "荆州",
+    "吴蜀战争"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·蜀书·先主传》",
+    "《三国志·吴书·陆逊传》",
+    "《资治通鉴》卷七十"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-shu-xianzhu",
+      "locator": "章武二年",
+      "quote": "陆议大破先主军于猇亭，将军冯习、张南等皆没。先主自猇亭还秭归，收合离散兵。"
+    },
+    {
+      "sourceId": "sanguozhi-wu-lu-xun",
+      "locator": "陆逊传夷陵相关记载",
+      "quote": "逊曰：“吾已晓破之之术。”乃敕各持一把茅，以火攻拔之。通率诸军同时俱攻，斩张南、冯习及胡王沙摩柯等首，破其四十馀营。"
+    },
+    {
+      "sourceId": "zizhi-tongjian-70",
+      "locator": "章武二年 / 黄武元年",
+      "quote": "陆逊督诸军大破先主军于猇亭，将军冯习、张南等皆没。"
+    }
+  ],
+  "detail": {
+    "overview": "刘备为夺回荆州东征孙吴，陆逊据险相持并反击，蜀军大败。此战后吴蜀重新寻求缓和，三国边界趋于稳定。",
+    "background": [
+      "关羽败亡和荆州丧失后，刘备以夺回荆州、报复孙吴为目标发动东征。",
+      "孙权在曹魏压力与蜀汉报复之间寻求平衡，同时任用陆逊主持西线防御。"
+    ],
+    "process": [
+      "刘备沿长江上游东进，蜀军战线拉长，营垒绵延。",
+      "陆逊采取持重防守，等待蜀军疲敝后发动反击，最终在猇亭、夷陵一带大破蜀军。"
+    ],
+    "result": [
+      "刘备退回白帝城，蜀汉精锐和政治声势遭受重挫。",
+      "孙吴保住荆州，吴蜀随后逐步恢复外交缓和。"
+    ],
+    "impact": [
+      "夷陵之战确立孙吴对荆州的长期控制。",
+      "刘备死后，诸葛亮辅政必须在修复吴蜀关系和恢复蜀汉国力之间重新布局。"
+    ],
+    "sourceNotes": [
+      "蜀方主线见《先主传》，吴方战役指挥见《陆逊传》。",
+      "《资治通鉴》卷七十适合串联章武二年与黄武元年的战役进程。"
+    ],
+    "uncertainty": [
+      "蜀军营垒具体分布和火攻细节存在叙事加工空间，第一版只标注战略和战役结果。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-224-ardashir-defeats-parthians', '阿尔达希尔击败安息王朝', 'sasanian-persia', 224, 224, '霍尔米兹甘', 'war', '阿尔达希尔一世击败安息末王阿尔达班四世，萨珊王朝由地方王权上升为伊朗高原的新帝国秩序。', 'high', 'null', '{
+  "overview": "224 年前后，阿尔达希尔一世击败安息末王阿尔达班四世，标志着安息王朝的瓦解和萨珊王朝的兴起。这个节点不是简单的王朝更替，而是伊朗高原政治、王权称号和罗马东方边境格局的重组。",
+  "background": [
+    "三世纪初的安息王朝已经受内部分裂、地方贵族力量和罗马边境压力削弱，中央王权难以有效整合伊朗高原。",
+    "阿尔达希尔以法尔斯地方王权为基础扩张，其早期钱币和称号显示他从地方统治者逐步塑造更高层级的王权身份。",
+    "罗马作者把阿尔达希尔的兴起理解为“波斯人重新建立帝国”，说明这一事件在罗马东方战略视野中很快被视为重大变化。"
+  ],
+  "process": [
+    "阿尔达希尔先在法尔斯和周边地区扩大权力，逐步挑战安息阿萨息斯体系。",
+    "他与阿尔达班四世发生决定性冲突，并在传统记载中通过多次战役击败安息末王。",
+    "胜利后，阿尔达希尔把自身王权从地方政权提升为“伊朗诸王之王”式的帝国权力。"
+  ],
+  "result": [
+    "安息王朝的核心王权崩溃，萨珊王朝成为伊朗高原新的主导力量。",
+    "萨珊王权以更集中的王朝叙事、宗教合法性和铭文/钱币表达重塑统治形象。",
+    "罗马东方边界面对的不再是后期安息的松散体系，而是更具进攻性的萨珊国家。"
+  ],
+  "impact": [
+    "224 年是 190-310 时间段西亚主线的起点，后续 230 年代阿尔达希尔进攻罗马边境、240-260 年代沙普尔一世扩张都从这里展开。",
+    "萨珊兴起改变了罗马、亚美尼亚、美索不达米亚和伊朗高原之间的力量平衡。",
+    "这个事件也为后续解释沙普尔一世的 ŠKZ 铭文和纳尔塞 Paikuli 铭文提供王权传统背景。"
+  ],
+  "sourceNotes": [
+    "早期萨珊钱币能稳定支撑阿尔达希尔从地方王权上升为帝国王权的框架。",
+    "Cassius Dio/Xiphilinus 传统记录阿尔达希尔击败安息王并建立波斯帝国，是罗马侧理解这一转折的关键材料。",
+    "Tabari 保存后期伊朗传统，可补叙事脉络，但年代和细节优先级低于钱币与较早文本。"
+  ],
+  "uncertainty": [
+    "具体战役次数、路线和每次冲突的年代在不同传统中并不完全一致。",
+    "后期波斯-阿拉伯传统往往带有王朝起源叙事色彩，不能直接等同同期档案。",
+    "钱币可固定王权转型框架，但不能单独还原全部军事过程。"
+  ]
+}', '{
+  "id": "sasanian-224-ardashir-defeats-parthians",
+  "title": "阿尔达希尔击败安息王朝",
+  "startYear": 224,
+  "endYear": 224,
+  "region": "sasanian-persia",
+  "locationName": "霍尔米兹甘",
+  "coordinates": null,
+  "category": "war",
+  "summary": "阿尔达希尔一世击败安息末王阿尔达班四世，萨珊王朝由地方王权上升为伊朗高原的新帝国秩序。",
+  "people": [
+    "阿尔达希尔一世",
+    "阿尔达班四世"
+  ],
+  "polities": [
+    "萨珊波斯",
+    "安息帝国"
+  ],
+  "relatedEvents": [
+    "rome-sasanian-260-valerian-captured",
+    "sasanian-230-ardashir-roman-frontier"
+  ],
+  "tags": [
+    "萨珊波斯",
+    "安息帝国",
+    "西亚",
+    "dynastic-change",
+    "sasanian-rise",
+    "parthia",
+    "coinage"
+  ],
+  "confidence": "high",
+  "sources": [
+    "al-Tabari, History",
+    "Touraj Daryaee, Sasanian Persia"
+  ],
+  "detail": {
+    "overview": "224 年前后，阿尔达希尔一世击败安息末王阿尔达班四世，标志着安息王朝的瓦解和萨珊王朝的兴起。这个节点不是简单的王朝更替，而是伊朗高原政治、王权称号和罗马东方边境格局的重组。",
+    "background": [
+      "三世纪初的安息王朝已经受内部分裂、地方贵族力量和罗马边境压力削弱，中央王权难以有效整合伊朗高原。",
+      "阿尔达希尔以法尔斯地方王权为基础扩张，其早期钱币和称号显示他从地方统治者逐步塑造更高层级的王权身份。",
+      "罗马作者把阿尔达希尔的兴起理解为“波斯人重新建立帝国”，说明这一事件在罗马东方战略视野中很快被视为重大变化。"
+    ],
+    "process": [
+      "阿尔达希尔先在法尔斯和周边地区扩大权力，逐步挑战安息阿萨息斯体系。",
+      "他与阿尔达班四世发生决定性冲突，并在传统记载中通过多次战役击败安息末王。",
+      "胜利后，阿尔达希尔把自身王权从地方政权提升为“伊朗诸王之王”式的帝国权力。"
+    ],
+    "result": [
+      "安息王朝的核心王权崩溃，萨珊王朝成为伊朗高原新的主导力量。",
+      "萨珊王权以更集中的王朝叙事、宗教合法性和铭文/钱币表达重塑统治形象。",
+      "罗马东方边界面对的不再是后期安息的松散体系，而是更具进攻性的萨珊国家。"
+    ],
+    "impact": [
+      "224 年是 190-310 时间段西亚主线的起点，后续 230 年代阿尔达希尔进攻罗马边境、240-260 年代沙普尔一世扩张都从这里展开。",
+      "萨珊兴起改变了罗马、亚美尼亚、美索不达米亚和伊朗高原之间的力量平衡。",
+      "这个事件也为后续解释沙普尔一世的 ŠKZ 铭文和纳尔塞 Paikuli 铭文提供王权传统背景。"
+    ],
+    "sourceNotes": [
+      "早期萨珊钱币能稳定支撑阿尔达希尔从地方王权上升为帝国王权的框架。",
+      "Cassius Dio/Xiphilinus 传统记录阿尔达希尔击败安息王并建立波斯帝国，是罗马侧理解这一转折的关键材料。",
+      "Tabari 保存后期伊朗传统，可补叙事脉络，但年代和细节优先级低于钱币与较早文本。"
+    ],
+    "uncertainty": [
+      "具体战役次数、路线和每次冲突的年代在不同传统中并不完全一致。",
+      "后期波斯-阿拉伯传统往往带有王朝起源叙事色彩，不能直接等同同期档案。",
+      "钱币可固定王权转型框架，但不能单独还原全部军事过程。"
+    ]
+  },
+  "sourceRefs": [
+    {
+      "sourceId": "deepseek-sasanian-source-sasanian-coinage-ardashir-i-ardashir-i-royal-mint-early-sasanian-coinage",
+      "locator": "early Ardashir types",
+      "note": "阿尔达希尔王权称号和钱币证据。"
+    },
+    {
+      "sourceId": "deepseek-sasanian-source-cassius-dio-roman-history-cassius-dio-cassius-dio-historia-romana",
+      "locator": "80.3.1-80.4.2",
+      "note": "罗马侧关于安息崩溃和波斯帝国再起的叙述。"
+    },
+    {
+      "sourceId": "deepseek-sasanian-source-tabari-tarikh-al-rusul-wal-muluk-history-of-prophets-and-kings-al-tabari",
+      "locator": "Sasanian origin tradition",
+      "note": "后期伊朗传统，只作补充叙事。"
+    }
+  ],
+  "personIds": [
+    "sasanian-ardashir-i"
+  ],
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-sasanian-event-details-core-224-280"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-226-jiaozhou-incorporated-by-wu', '士燮卒，交州士氏独立地位削弱', 'china', 226, 226, '交州、交趾', 'politics', '士燮去世后，交州士氏长期自治的局面开始改变。孙吴通过刺史任命和军事处置加强交州控制，岭南逐渐纳入孙吴直接经营。', 'medium', '[106.35,21.03]', '{
+  "overview": "士燮去世后，交州士氏长期自治的局面开始改变。孙吴通过刺史任命和军事处置加强交州控制，岭南逐渐纳入孙吴直接经营。",
+  "background": [
+    "士燮长期据交趾并影响交州诸郡，虽向孙权奉贡、遣子入质，但地方士氏仍保有很强自治色彩。",
+    "对孙吴而言，交州连接岭南资源、海上交通和南方边郡，不能长期只停留在名义臣属状态。"
+  ],
+  "process": [
+    "士燮去世后，孙吴对交州官职进行重新任命，并依靠吕岱等人处理地方反抗和郡县秩序。",
+    "士氏家族原本的地方独立地位被削弱，孙吴刺史体系和军事力量进一步进入交州。"
+  ],
+  "result": [
+    "交州从士燮时代的半自治名义臣属，转向孙吴更直接的行政和军事控制。",
+    "岭南不再只是地图边缘的灰色背景，而是孙吴南方政权结构的一部分。"
+  ],
+  "impact": [
+    "此事件属于非主角派系并入或失去独立地位的中型事件，正好适合补充你说的对比信息层。",
+    "它也为后续孙吴在南方的资源、边郡治理和海路活动提供背景。"
+  ],
+  "sourceNotes": [
+    "《士燮传》记录士燮向孙权奉承节度、遣子入质和黄武五年去世。",
+    "《吕岱传》补足孙吴在交州的实际军事和行政经营。"
+  ],
+  "uncertainty": [
+    "“并入”不是一天完成的静态边界变化，而是士燮死后孙吴任命、军事处置和地方秩序重组的过程；当前用 226 年作为关键节点。"
+  ]
+}', '{
+  "id": "china-226-jiaozhou-incorporated-by-wu",
+  "title": "士燮卒，交州士氏独立地位削弱",
+  "startYear": 226,
+  "endYear": 226,
+  "region": "china",
+  "locationName": "交州、交趾",
+  "coordinates": [
+    106.35,
+    21.03
+  ],
+  "category": "politics",
+  "summary": "士燮去世后，交州士氏长期自治的局面开始改变。孙吴通过刺史任命和军事处置加强交州控制，岭南逐渐纳入孙吴直接经营。",
+  "people": [
+    "士燮",
+    "孙权",
+    "吕岱",
+    "士徽"
+  ],
+  "personIds": [
+    "shi-xie",
+    "sun-quan"
+  ],
+  "polities": [
+    "交州士氏",
+    "孙吴"
+  ],
+  "relatedEvents": [
+    "china-222-yiling",
+    "china-229-sun-quan-emperor"
+  ],
+  "tags": [
+    "交州",
+    "士燮",
+    "孙吴岭南经营"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "《三国志·吴书·士燮传》",
+    "《三国志·吴书·吕岱传》",
+    "《资治通鉴》卷七十"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-wu-shi-xie",
+      "locator": "建安十五年至黄武五年",
+      "quote": "建安十五年，孙权遣步隲为交州刺史。隲到，燮率兄弟奉承节度。"
+    },
+    {
+      "sourceId": "sanguozhi-wu-shi-xie",
+      "locator": "黄武五年",
+      "quote": "燮在郡四十馀岁，黄武五年，年九十卒。"
+    },
+    {
+      "sourceId": "sanguozhi-wu-lu-dai",
+      "locator": "吕岱传交州相关记载"
+    },
+    {
+      "sourceId": "zizhi-tongjian-70",
+      "locator": "黄武五年前后"
+    }
+  ],
+  "detail": {
+    "overview": "士燮去世后，交州士氏长期自治的局面开始改变。孙吴通过刺史任命和军事处置加强交州控制，岭南逐渐纳入孙吴直接经营。",
+    "background": [
+      "士燮长期据交趾并影响交州诸郡，虽向孙权奉贡、遣子入质，但地方士氏仍保有很强自治色彩。",
+      "对孙吴而言，交州连接岭南资源、海上交通和南方边郡，不能长期只停留在名义臣属状态。"
+    ],
+    "process": [
+      "士燮去世后，孙吴对交州官职进行重新任命，并依靠吕岱等人处理地方反抗和郡县秩序。",
+      "士氏家族原本的地方独立地位被削弱，孙吴刺史体系和军事力量进一步进入交州。"
+    ],
+    "result": [
+      "交州从士燮时代的半自治名义臣属，转向孙吴更直接的行政和军事控制。",
+      "岭南不再只是地图边缘的灰色背景，而是孙吴南方政权结构的一部分。"
+    ],
+    "impact": [
+      "此事件属于非主角派系并入或失去独立地位的中型事件，正好适合补充你说的对比信息层。",
+      "它也为后续孙吴在南方的资源、边郡治理和海路活动提供背景。"
+    ],
+    "sourceNotes": [
+      "《士燮传》记录士燮向孙权奉承节度、遣子入质和黄武五年去世。",
+      "《吕岱传》补足孙吴在交州的实际军事和行政经营。"
+    ],
+    "uncertainty": [
+      "“并入”不是一天完成的静态边界变化，而是士燮死后孙吴任命、军事处置和地方秩序重组的过程；当前用 226 年作为关键节点。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-229-sun-quan-emperor', '孙权称帝，孙吴正式建国', 'china', 229, 229, '武昌、建业', 'politics', '孙权称帝，国号吴，随后迁都建业。至此魏、蜀、吴三国都以皇帝名义建立政权。', 'high', '[114.3,30.55]', '{
+  "overview": "229 年孙权称帝，孙吴正式以皇帝政权身份出现。至此魏、蜀、吴三方都完成帝号建构，三国鼎立的制度形态最终成型。",
+  "background": [
+    "孙权长期控制江东，并在赤壁后逐步扩展到荆州、交州等方向，具备独立政权基础。",
+    "曹魏和蜀汉已先后称帝，孙权若继续只称王，政治名义上处于不对等位置。",
+    "吴蜀联盟与魏吴对抗反复变化，孙权需要在外交和内部合法性之间取得平衡。"
+  ],
+  "process": [
+    "孙权称帝，国号吴，改元黄龙。",
+    "孙吴随后迁都建业，强化长江下游作为政权中心的地位。",
+    "吴国以江东士族、宗室将领和地方军事体系支撑皇帝政权。"
+  ],
+  "result": [
+    "孙吴正式建国，三国鼎立进入完整皇帝并立格局。",
+    "建业成为吴国政治中心，江东政权的制度化程度提高。",
+    "魏、蜀、吴之间的外交称谓和正统竞争更加明确。"
+  ],
+  "impact": [
+    "229 年是三国正式形态完成的节点，适合作为人物、地图和事件链共同锚点。",
+    "孙吴称帝巩固了江东本位政权，也使其与蜀汉联盟关系更复杂。",
+    "吴国长期存续到 280 年，成为西晋统一前最后一个对立政权。"
+  ],
+  "sourceNotes": [
+    "《三国志·吴书·吴主传》是孙权称帝和迁都建业的核心材料。",
+    "《资治通鉴》卷七十一可补黄龙元年前后魏蜀吴关系。",
+    "此事件应和 220 曹魏、221 蜀汉并列，形成三国建国链。"
+  ],
+  "uncertainty": [
+    "孙权称帝的内部推动过程在史料中没有曹魏受禅那样完整的制度文本。",
+    "吴蜀关系在孙权称帝前后有外交称谓变化，后续可在事件链中细化。"
+  ]
+}', '{
+  "id": "china-229-sun-quan-emperor",
+  "title": "孙权称帝，孙吴正式建国",
+  "startYear": 229,
+  "endYear": 229,
+  "region": "china",
+  "locationName": "武昌、建业",
+  "coordinates": [
+    114.3,
+    30.55
+  ],
+  "category": "politics",
+  "summary": "孙权称帝，国号吴，随后迁都建业。至此魏、蜀、吴三国都以皇帝名义建立政权。",
+  "people": [
+    "孙权"
+  ],
+  "personIds": [
+    "sun-quan"
+  ],
+  "polities": [
+    "孙吴",
+    "曹魏",
+    "蜀汉"
+  ],
+  "relatedEvents": [
+    "china-220-cao-pi-founds-wei",
+    "china-221-liu-bei-founds-shu",
+    "china-280-jin-conquers-wu"
+  ],
+  "tags": [
+    "孙吴",
+    "建业",
+    "三国鼎立"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·吴书·吴主传》",
+    "《资治通鉴》卷七十一"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-wu-wuzhu",
+      "locator": "黄龙元年"
+    },
+    {
+      "sourceId": "zizhi-tongjian-69",
+      "locator": "黄龙元年附近纪年"
+    }
+  ],
+  "detail": {
+    "overview": "229 年孙权称帝，孙吴正式以皇帝政权身份出现。至此魏、蜀、吴三方都完成帝号建构，三国鼎立的制度形态最终成型。",
+    "background": [
+      "孙权长期控制江东，并在赤壁后逐步扩展到荆州、交州等方向，具备独立政权基础。",
+      "曹魏和蜀汉已先后称帝，孙权若继续只称王，政治名义上处于不对等位置。",
+      "吴蜀联盟与魏吴对抗反复变化，孙权需要在外交和内部合法性之间取得平衡。"
+    ],
+    "process": [
+      "孙权称帝，国号吴，改元黄龙。",
+      "孙吴随后迁都建业，强化长江下游作为政权中心的地位。",
+      "吴国以江东士族、宗室将领和地方军事体系支撑皇帝政权。"
+    ],
+    "result": [
+      "孙吴正式建国，三国鼎立进入完整皇帝并立格局。",
+      "建业成为吴国政治中心，江东政权的制度化程度提高。",
+      "魏、蜀、吴之间的外交称谓和正统竞争更加明确。"
+    ],
+    "impact": [
+      "229 年是三国正式形态完成的节点，适合作为人物、地图和事件链共同锚点。",
+      "孙吴称帝巩固了江东本位政权，也使其与蜀汉联盟关系更复杂。",
+      "吴国长期存续到 280 年，成为西晋统一前最后一个对立政权。"
+    ],
+    "sourceNotes": [
+      "《三国志·吴书·吴主传》是孙权称帝和迁都建业的核心材料。",
+      "《资治通鉴》卷七十一可补黄龙元年前后魏蜀吴关系。",
+      "此事件应和 220 曹魏、221 蜀汉并列，形成三国建国链。"
+    ],
+    "uncertainty": [
+      "孙权称帝的内部推动过程在史料中没有曹魏受禅那样完整的制度文本。",
+      "吴蜀关系在孙权称帝前后有外交称谓变化，后续可在事件链中细化。"
+    ]
+  },
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-event-details-china-sasanian-remaining-190-310"
+}');
 INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('india-230-kushan-decline', '贵霜帝国影响力持续衰退', 'india', 230, 250, '印度西北部与中亚南缘', 'politics', '三世纪前中期，贵霜帝国对印度西北和中亚南部的控制减弱，区域政治力量逐渐重组。', 'medium', 'null', 'null', '{"id":"india-230-kushan-decline","title":"贵霜帝国影响力持续衰退","startYear":230,"endYear":250,"region":"india","locationName":"印度西北部与中亚南缘","coordinates":null,"category":"politics","summary":"三世纪前中期，贵霜帝国对印度西北和中亚南部的控制减弱，区域政治力量逐渐重组。","people":[],"polities":["贵霜帝国"],"relatedEvents":["sasanian-224-ardashir-defeats-parthians"],"tags":["印度次大陆","贵霜","区域化"],"confidence":"medium","sources":["The Cambridge History of India","A. L. Basham, The Wonder That Was India"]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-234-wuzhang-plains', '诸葛亮卒于五丈原', 'china', 234, 234, '五丈原', 'war', '诸葛亮最后一次北伐时与司马懿对峙于渭水南北，后卒于五丈原。蜀汉北伐进入新的阶段，战略主动性逐渐减弱。', 'high', '[107.65,34.32]', '{"background":["刘备去世后，诸葛亮辅政，蜀汉以恢复汉室和北伐曹魏作为重要政治目标。","多次北伐既是军事行动，也是维持蜀汉政治正当性和军政动员能力的方式。"],"process":["234 年诸葛亮出兵五丈原，与司马懿在渭水一线长期对峙。","司马懿采取持重策略，避免与蜀军进行高风险决战。","诸葛亮病逝军中，蜀军撤退。"],"result":["诸葛亮去世，蜀汉失去最重要的政治和军事组织者。","北伐并未停止，但后续节奏、资源和政治威望都明显改变。"],"impact":["五丈原标志蜀汉前期诸葛亮主导时代结束。","曹魏西线压力下降，司马氏在长期军政运作中继续积累威望。"],"sourceNotes":["《诸葛亮传》《后主传》提供蜀汉角度，《资治通鉴》卷七十二提供编年叙述。","司马懿与诸葛亮对峙的细节需要避免演义化处理。"],"uncertainty":["诸葛亮病情、司马懿应对和军中细节在后世叙事中有文学化扩展，第一版按正史和编年主线处理。"]}', '{"id":"china-234-wuzhang-plains","title":"诸葛亮卒于五丈原","startYear":234,"endYear":234,"region":"china","locationName":"五丈原","coordinates":[107.65,34.32],"category":"war","summary":"诸葛亮最后一次北伐时与司马懿对峙于渭水南北，后卒于五丈原。蜀汉北伐进入新的阶段，战略主动性逐渐减弱。","people":["诸葛亮","司马懿","刘禅"],"personIds":["zhuge-liang","sima-yi","liu-shan"],"polities":["蜀汉","曹魏"],"relatedEvents":["china-207-longzhong-plan","china-221-liu-bei-founds-shu","china-263-shu-han-conquered"],"tags":["北伐","五丈原","蜀汉后期"],"confidence":"high","sources":["《三国志·蜀书·诸葛亮传》","《三国志·蜀书·后主传》","《资治通鉴》卷七十二"],"sourceRefs":[{"sourceId":"sanguozhi-shu-zhuge-liang","locator":"建兴十二年"},{"sourceId":"sanguozhi-shu-houzhu","locator":"建兴十二年"},{"sourceId":"zizhi-tongjian-72","locator":"青龙二年 / 建兴十二年"}],"detail":{"background":["刘备去世后，诸葛亮辅政，蜀汉以恢复汉室和北伐曹魏作为重要政治目标。","多次北伐既是军事行动，也是维持蜀汉政治正当性和军政动员能力的方式。"],"process":["234 年诸葛亮出兵五丈原，与司马懿在渭水一线长期对峙。","司马懿采取持重策略，避免与蜀军进行高风险决战。","诸葛亮病逝军中，蜀军撤退。"],"result":["诸葛亮去世，蜀汉失去最重要的政治和军事组织者。","北伐并未停止，但后续节奏、资源和政治威望都明显改变。"],"impact":["五丈原标志蜀汉前期诸葛亮主导时代结束。","曹魏西线压力下降，司马氏在长期军政运作中继续积累威望。"],"sourceNotes":["《诸葛亮传》《后主传》提供蜀汉角度，《资治通鉴》卷七十二提供编年叙述。","司马懿与诸葛亮对峙的细节需要避免演义化处理。"],"uncertainty":["诸葛亮病情、司马懿应对和军中细节在后世叙事中有文学化扩展，第一版按正史和编年主线处理。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-sasanian-260-valerian-captured', '沙普尔一世俘虏罗马皇帝瓦勒良', 'sasanian-persia', 260, 260, '埃德萨附近', 'war', '萨珊君主沙普尔一世在与罗马的战争中俘虏皇帝瓦勒良，这是罗马帝国对外战争中的重大打击。', 'high', '[39.03,37.16]', 'null', '{"id":"rome-sasanian-260-valerian-captured","title":"沙普尔一世俘虏罗马皇帝瓦勒良","startYear":260,"endYear":260,"region":"sasanian-persia","locationName":"埃德萨附近","coordinates":[39.03,37.16],"category":"war","summary":"萨珊君主沙普尔一世在与罗马的战争中俘虏皇帝瓦勒良，这是罗马帝国对外战争中的重大打击。","people":["沙普尔一世","瓦勒良"],"polities":["萨珊波斯","罗马帝国"],"relatedEvents":["rome-235-start-third-century-crisis","sasanian-224-ardashir-defeats-parthians"],"tags":["罗马","萨珊波斯","战争"],"confidence":"high","sources":["Res Gestae Divi Saporis","Roman imperial histories"]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-263-shu-han-conquered', '蜀汉灭亡', 'china', 263, 263, '成都', 'war', '曹魏发动灭蜀之战，钟会主力牵制剑阁，邓艾偷渡阴平直入成都，刘禅投降，三国之一的蜀汉灭亡。', 'high', '[104.07,30.67]', '{"background":["诸葛亮去世后，蜀汉仍由姜维等继续北伐，但国力、人口和政治资源长期处于劣势。","曹魏后期实际权力掌握在司马昭手中，灭蜀既是军事行动，也是司马氏累积禅代资本的政治工程。"],"process":["钟会率主力入汉中、压向剑阁，姜维退守剑阁牵制魏军。","邓艾绕道阴平，越过蜀汉主要防线，直逼成都方向。","刘禅在成都投降，蜀汉灭亡。"],"result":["蜀汉作为三国之一灭亡，益州转入曹魏控制。","邓艾、钟会随后因功高、猜忌和野心引发冲突，成都局势又出现短暂混乱。"],"impact":["灭蜀极大提高司马昭和司马氏的政治威望，为 265 年司马炎代魏铺路。","三国鼎立从三方变为魏吴对峙，统一趋势明显加速。"],"sourceNotes":["《后主传》记录刘禅投降和蜀亡主线，《资治通鉴》卷七十八适合还原景元四年前后的战役顺序。","姜维、邓艾、钟会后续冲突可后续拆成独立事件。"],"uncertainty":["阴平道行军路线和局部战斗细节存在后世讨论，第一版以战略突破和成都投降为核心。"]}', '{"id":"china-263-shu-han-conquered","title":"蜀汉灭亡","startYear":263,"endYear":263,"region":"china","locationName":"成都","coordinates":[104.07,30.67],"category":"war","summary":"曹魏发动灭蜀之战，钟会主力牵制剑阁，邓艾偷渡阴平直入成都，刘禅投降，三国之一的蜀汉灭亡。","people":["刘禅","邓艾","钟会","姜维","司马昭"],"personIds":["liu-shan","deng-ai","zhong-hui","jiang-wei","sima-zhao"],"polities":["蜀汉","曹魏"],"relatedEvents":["china-234-wuzhang-plains","china-265-jin-replaces-wei","china-280-jin-conquers-wu"],"tags":["三国","蜀汉","曹魏","灭蜀之战"],"confidence":"high","sources":["《三国志·蜀书·后主传》","《资治通鉴》卷七十八"],"sourceRefs":[{"sourceId":"sanguozhi-shu-houzhu","locator":"景耀六年 / 炎兴元年"},{"sourceId":"zizhi-tongjian-78","locator":"景元四年"}],"detail":{"background":["诸葛亮去世后，蜀汉仍由姜维等继续北伐，但国力、人口和政治资源长期处于劣势。","曹魏后期实际权力掌握在司马昭手中，灭蜀既是军事行动，也是司马氏累积禅代资本的政治工程。"],"process":["钟会率主力入汉中、压向剑阁，姜维退守剑阁牵制魏军。","邓艾绕道阴平，越过蜀汉主要防线，直逼成都方向。","刘禅在成都投降，蜀汉灭亡。"],"result":["蜀汉作为三国之一灭亡，益州转入曹魏控制。","邓艾、钟会随后因功高、猜忌和野心引发冲突，成都局势又出现短暂混乱。"],"impact":["灭蜀极大提高司马昭和司马氏的政治威望，为 265 年司马炎代魏铺路。","三国鼎立从三方变为魏吴对峙，统一趋势明显加速。"],"sourceNotes":["《后主传》记录刘禅投降和蜀亡主线，《资治通鉴》卷七十八适合还原景元四年前后的战役顺序。","姜维、邓艾、钟会后续冲突可后续拆成独立事件。"],"uncertainty":["阴平道行军路线和局部战斗细节存在后世讨论，第一版以战略突破和成都投降为核心。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-265-jin-replaces-wei', '司马炎代魏，西晋建立', 'china', 265, 265, '洛阳', 'politics', '司马炎接受魏帝禅让，建立西晋。曹魏灭亡后，北方政权进入司马氏统治阶段。', 'high', '[112.45,34.62]', '{"background":["高平陵之变后，司马氏逐步控制曹魏朝政。","司马昭主持灭蜀，使司马氏威望进一步超过曹魏皇室。"],"process":["司马昭去世后，司马炎继承晋王地位。","265 年司马炎接受魏帝禅让，建立西晋，曹魏灭亡。"],"result":["北方政权由曹魏转入西晋，司马氏完成制度化代魏。","孙吴成为唯一尚未并入西晋体系的三国政权。"],"impact":["司马炎代魏使统一战争进入最后阶段。","西晋建立后，北方政权具备了对吴发动全国性战争的名义和资源整合能力。"],"sourceNotes":["《晋书·武帝纪》提供司马炎代魏主线，《资治通鉴》卷七十八串联咸熙二年至泰始元年。","本事件强调政权承继，不把司马懿直接写成 265 年行动者，而是作为司马氏掌权源头。"],"uncertainty":["禅代仪式和政治文书细节可后续扩充，本版先处理政权转换。"]}', '{"id":"china-265-jin-replaces-wei","title":"司马炎代魏，西晋建立","startYear":265,"endYear":265,"region":"china","locationName":"洛阳","coordinates":[112.45,34.62],"category":"politics","summary":"司马炎接受魏帝禅让，建立西晋。曹魏灭亡后，北方政权进入司马氏统治阶段。","people":["司马炎","司马昭","司马懿"],"personIds":["sima-yan","sima-zhao","sima-yi"],"polities":["西晋","曹魏"],"relatedEvents":["china-263-shu-han-conquered","china-280-jin-conquers-wu"],"tags":["西晋","曹魏灭亡","禅代"],"confidence":"high","sources":["《晋书·武帝纪》","《资治通鉴》卷七十九"],"sourceRefs":[{"sourceId":"jinshu-wudi","locator":"泰始元年"},{"sourceId":"zizhi-tongjian-78","locator":"咸熙二年至泰始元年"}],"detail":{"background":["高平陵之变后，司马氏逐步控制曹魏朝政。","司马昭主持灭蜀，使司马氏威望进一步超过曹魏皇室。"],"process":["司马昭去世后，司马炎继承晋王地位。","265 年司马炎接受魏帝禅让，建立西晋，曹魏灭亡。"],"result":["北方政权由曹魏转入西晋，司马氏完成制度化代魏。","孙吴成为唯一尚未并入西晋体系的三国政权。"],"impact":["司马炎代魏使统一战争进入最后阶段。","西晋建立后，北方政权具备了对吴发动全国性战争的名义和资源整合能力。"],"sourceNotes":["《晋书·武帝纪》提供司马炎代魏主线，《资治通鉴》卷七十八串联咸熙二年至泰始元年。","本事件强调政权承继，不把司马懿直接写成 265 年行动者，而是作为司马氏掌权源头。"],"uncertainty":["禅代仪式和政治文书细节可后续扩充，本版先处理政权转换。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-280-jin-conquers-wu', '西晋灭吴，三国归一', 'china', 280, 280, '建业', 'war', '西晋多路伐吴，孙吴末帝投降。三国分裂局面结束，中国再次进入统一王朝框架。', 'high', '[118.8,32.06]', '{"background":["蜀汉灭亡、西晋代魏后，孙吴成为南方最后一个独立政权。","孙吴后期政治失序，长江防线虽有地理优势，但面对西晋多路统筹压力。"],"process":["西晋发动多路伐吴，荆州方向由杜预等推进，益州水军由王濬顺江东下。","晋军水陆并进，突破长江防线并逼近建业。","孙皓出降，孙吴灭亡。"],"result":["三国鼎立结束，西晋完成形式上的全国统一。","建业、江东和岭南等地纳入西晋王朝框架。"],"impact":["晋灭吴是中国古代大规模水陆协同南征的重要案例。","统一并不意味着长期稳定，西晋之后仍会面临宗室、门阀和边疆问题，但三国时代至此结束。"],"sourceNotes":["《晋书·武帝纪》提供朝廷纪年，《杜预传》《王濬传》提供将领和战役侧面。","《三国志·吴书·三嗣主传》保留孙皓和吴末政治脉络，《资治通鉴》卷八十一整理太康元年战役顺序。"],"uncertainty":["各路晋军推进细节和功劳归属在史传中有不同强调，第一版只展示核心作战轴线和政权结局。"]}', '{"id":"china-280-jin-conquers-wu","title":"西晋灭吴，三国归一","startYear":280,"endYear":280,"region":"china","locationName":"建业","coordinates":[118.8,32.06],"category":"war","summary":"西晋多路伐吴，孙吴末帝投降。三国分裂局面结束，中国再次进入统一王朝框架。","people":["司马炎","孙皓","王濬","杜预"],"personIds":["sima-yan","sun-hao","wang-jun","du-yu"],"polities":["西晋","孙吴"],"relatedEvents":["china-229-sun-quan-emperor","china-265-jin-replaces-wei"],"tags":["西晋","孙吴灭亡","统一"],"confidence":"high","sources":["《晋书·武帝纪》","《晋书·杜预传 / 王濬传》","《三国志·吴书·三嗣主传》","《资治通鉴》卷八十一"],"sourceRefs":[{"sourceId":"jinshu-wudi","locator":"太康元年"},{"sourceId":"jinshu-wang-jun-du-yu","locator":"杜预、王濬传灭吴相关记载"},{"sourceId":"sanguozhi-wu-sun-hao","locator":"孙皓传降晋相关记载"},{"sourceId":"zizhi-tongjian-81","locator":"太康元年"}],"detail":{"background":["蜀汉灭亡、西晋代魏后，孙吴成为南方最后一个独立政权。","孙吴后期政治失序，长江防线虽有地理优势，但面对西晋多路统筹压力。"],"process":["西晋发动多路伐吴，荆州方向由杜预等推进，益州水军由王濬顺江东下。","晋军水陆并进，突破长江防线并逼近建业。","孙皓出降，孙吴灭亡。"],"result":["三国鼎立结束，西晋完成形式上的全国统一。","建业、江东和岭南等地纳入西晋王朝框架。"],"impact":["晋灭吴是中国古代大规模水陆协同南征的重要案例。","统一并不意味着长期稳定，西晋之后仍会面临宗室、门阀和边疆问题，但三国时代至此结束。"],"sourceNotes":["《晋书·武帝纪》提供朝廷纪年，《杜预传》《王濬传》提供将领和战役侧面。","《三国志·吴书·三嗣主传》保留孙皓和吴末政治脉络，《资治通鉴》卷八十一整理太康元年战役顺序。"],"uncertainty":["各路晋军推进细节和功劳归属在史传中有不同强调，第一版只展示核心作战轴线和政权结局。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-291-eight-princes-war', '八王之乱展开', 'china', 291, 306, '洛阳及西晋核心州郡', 'politics', '西晋宗室诸王和外戚、朝臣围绕中央权力反复争斗，通常称为八王之乱。其主要阶段一般定为 291-306 年，是西晋由统一转入失序的关键节点。', 'high', '[112.45,34.62]', '{"background":["280 年灭吴后，西晋实现短暂统一，但分封宗室、皇位继承和外戚干政等问题并未解决。"],"process":["291 年前后，围绕杨骏、贾南风和汝南王司马亮等人的冲突揭开序幕。"],"impact":["八王之乱是西晋迅速衰败的核心原因之一。"],"sourceNotes":["本条作为 310 年时间轴提醒事件，先保留总览层级。"]}', '{"id":"china-291-eight-princes-war","title":"八王之乱展开","region":"china","startYear":291,"endYear":306,"locationName":"洛阳及西晋核心州郡","category":"politics","summary":"西晋宗室诸王和外戚、朝臣围绕中央权力反复争斗，通常称为八王之乱。其主要阶段一般定为 291-306 年，是西晋由统一转入失序的关键节点。","confidence":"high","coordinates":[112.45,34.62],"detail":{"background":["280 年灭吴后，西晋实现短暂统一，但分封宗室、皇位继承和外戚干政等问题并未解决。"],"process":["291 年前后，围绕杨骏、贾南风和汝南王司马亮等人的冲突揭开序幕。"],"impact":["八王之乱是西晋迅速衰败的核心原因之一。"],"sourceNotes":["本条作为 310 年时间轴提醒事件，先保留总览层级。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-304-five-barbarians-begin', '五胡乱华开端', 'china', 304, 304, '并州、巴蜀及西晋边缘州郡', 'war', '304 年，刘渊在并州建立汉赵政权，李雄在成都称王，通常被视为十六国局面和五胡乱华开端的关键节点。', 'high', '[112.55,37.87]', '{"background":["八王之乱削弱西晋中央和地方军政秩序，边镇军队和地方豪强获得更大活动空间。"],"process":["刘渊、李雄等势力在 304 年前后分别建立政权，西晋边缘控制迅速松动。"],"impact":["中国北方进入更长期的分裂、迁徙和战争格局。"],"sourceNotes":["本条用于 310 年时间轴总览，后续可拆分为汉赵、成汉等事件。"]}', '{"id":"china-304-five-barbarians-begin","title":"五胡乱华开端","region":"china","startYear":304,"endYear":304,"locationName":"并州、巴蜀及西晋边缘州郡","category":"war","summary":"304 年，刘渊在并州建立汉赵政权，李雄在成都称王，通常被视为十六国局面和五胡乱华开端的关键节点。","confidence":"high","coordinates":[112.55,37.87],"detail":{"background":["八王之乱削弱西晋中央和地方军政秩序，边镇军队和地方豪强获得更大活动空间。"],"process":["刘渊、李雄等势力在 304 年前后分别建立政权，西晋边缘控制迅速松动。"],"impact":["中国北方进入更长期的分裂、迁徙和战争格局。"],"sourceNotes":["本条用于 310 年时间轴总览，后续可拆分为汉赵、成汉等事件。"]}}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-230-ardashir-roman-frontier', '阿尔达希尔威胁罗马东方边境', 'sasanian-persia', 230, 231, 'Mesopotamia and Syria frontier', 'war', '阿尔达希尔一世在巩固萨珊王权后向罗马东方边境施压，罗马被迫准备大规模东征。', 'medium', '[41.5,36.5]', '{}', '{"id":"sasanian-230-ardashir-roman-frontier","title":"阿尔达希尔威胁罗马东方边境","region":"sasanian-persia","startYear":230,"endYear":231,"locationName":"Mesopotamia and Syria frontier","category":"war","summary":"阿尔达希尔一世在巩固萨珊王权后向罗马东方边境施压，罗马被迫准备大规模东征。","confidence":"medium","coordinates":[41.5,36.5]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-232-alexander-severus-expedition', '亚历山大·塞维鲁远征波斯', 'sasanian-persia', 231, 233, 'Roman-Persian frontier', 'war', '亚历山大·塞维鲁组织对萨珊波斯的东征，但战果有限，双方边境压力并未根本解除。', 'medium', '[42,36]', '{}', '{"id":"sasanian-232-alexander-severus-expedition","title":"亚历山大·塞维鲁远征波斯","region":"sasanian-persia","startYear":231,"endYear":233,"locationName":"Roman-Persian frontier","category":"war","summary":"亚历山大·塞维鲁组织对萨珊波斯的东征，但战果有限，双方边境压力并未根本解除。","confidence":"medium","coordinates":[42,36]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-244-battle-of-misiche', '米西凯会战与戈尔迪安三世之死', 'sasanian-persia', 244, 244, 'Misiche / Mesopotamia', 'war', '沙普尔一世铭文宣称在米西凯击败罗马，戈尔迪安三世随后死亡，罗马与萨珊达成不利和约。', 'medium', '[44.3,32.6]', '{}', '{"id":"sasanian-244-battle-of-misiche","title":"米西凯会战与戈尔迪安三世之死","region":"sasanian-persia","startYear":244,"endYear":244,"locationName":"Misiche / Mesopotamia","category":"war","summary":"沙普尔一世铭文宣称在米西凯击败罗马，戈尔迪安三世随后死亡，罗马与萨珊达成不利和约。","confidence":"medium","coordinates":[44.3,32.6]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-256-dura-europos', '杜拉欧罗普斯陷落', 'sasanian-persia', 256, 256, 'Dura-Europos', 'war', '幼发拉底河边境要塞杜拉欧罗普斯被萨珊攻陷，考古证据显示围城战和坑道战极为激烈。', 'high', '[40.73,34.75]', '{}', '{"id":"sasanian-256-dura-europos","title":"杜拉欧罗普斯陷落","region":"sasanian-persia","startYear":256,"endYear":256,"locationName":"Dura-Europos","category":"war","summary":"幼发拉底河边境要塞杜拉欧罗普斯被萨珊攻陷，考古证据显示围城战和坑道战极为激烈。","confidence":"high","coordinates":[40.73,34.75]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-262-odaenathus-counteroffensive', '奥登纳图斯反击萨珊', 'sasanian-persia', 262, 263, 'Mesopotamia', 'war', '帕尔米拉的奥登纳图斯代表罗马东方反击萨珊，缓解瓦勒良被俘后的边境危机。', 'medium', '[42.5,35]', '{}', '{"id":"sasanian-262-odaenathus-counteroffensive","title":"奥登纳图斯反击萨珊","region":"sasanian-persia","startYear":262,"endYear":263,"locationName":"Mesopotamia","category":"war","summary":"帕尔米拉的奥登纳图斯代表罗马东方反击萨珊，缓解瓦勒良被俘后的边境危机。","confidence":"medium","coordinates":[42.5,35]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-280-kartir-priestly-power', '卡尔提尔祭司权力上升', 'sasanian-persia', 280, 290, 'Sasanian heartland', 'religion', '卡尔提尔铭文显示祆教祭司集团在萨珊国家结构中取得更突出地位，并影响王权合法性叙事。', 'medium', '[53,29.6]', '{}', '{"id":"sasanian-280-kartir-priestly-power","title":"卡尔提尔祭司权力上升","region":"sasanian-persia","startYear":280,"endYear":290,"locationName":"Sasanian heartland","category":"religion","summary":"卡尔提尔铭文显示祆教祭司集团在萨珊国家结构中取得更突出地位，并影响王权合法性叙事。","confidence":"medium","coordinates":[53,29.6]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-293-narseh-paikuli', '纳尔塞通过 Paikuli 政治联盟即位', 'sasanian-persia', 293, 293, 'Paikuli', 'politics', 'Paikuli 铭文记录纳尔塞获得贵族和地方权力集团支持，击败巴赫拉姆三世并取得王位。', 'high', '[45.7,35.1]', '{}', '{"id":"sasanian-293-narseh-paikuli","title":"纳尔塞通过 Paikuli 政治联盟即位","region":"sasanian-persia","startYear":293,"endYear":293,"locationName":"Paikuli","category":"politics","summary":"Paikuli 铭文记录纳尔塞获得贵族和地方权力集团支持，击败巴赫拉姆三世并取得王位。","confidence":"high","coordinates":[45.7,35.1]}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-298-treaty-of-nisibis', '尼西比斯和约', 'sasanian-persia', 298, 299, 'Nisibis', 'diplomacy', '纳尔塞败于罗马后签订和约，罗马获得美索不达米亚和亚美尼亚方向优势，形成三世纪末东方边界新格局。', 'high', '[41.22,37.08]', '{}', '{"id":"sasanian-298-treaty-of-nisibis","title":"尼西比斯和约","region":"sasanian-persia","startYear":298,"endYear":299,"locationName":"Nisibis","category":"diplomacy","summary":"纳尔塞败于罗马后签订和约，罗马获得美索不达米亚和亚美尼亚方向优势，形成三世纪末东方边界新格局。","confidence":"high","coordinates":[41.22,37.08]}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-234-wuzhang-plains', '诸葛亮卒于五丈原', 'china', 234, 234, '五丈原', 'war', '诸葛亮最后一次北伐时与司马懿对峙于渭水南北，后卒于五丈原。蜀汉北伐进入新的阶段，战略主动性逐渐减弱。', 'high', '[107.65,34.32]', '{
+  "overview": "诸葛亮最后一次北伐时与司马懿对峙于渭水南北，后卒于五丈原。蜀汉北伐进入新的阶段，战略主动性逐渐减弱。",
+  "background": [
+    "刘备去世后，诸葛亮辅政，蜀汉以恢复汉室和北伐曹魏作为重要政治目标。",
+    "多次北伐既是军事行动，也是维持蜀汉政治正当性和军政动员能力的方式。"
+  ],
+  "process": [
+    "234 年诸葛亮出兵五丈原，与司马懿在渭水一线长期对峙。",
+    "司马懿采取持重策略，避免与蜀军进行高风险决战。",
+    "诸葛亮病逝军中，蜀军撤退。"
+  ],
+  "result": [
+    "诸葛亮去世，蜀汉失去最重要的政治和军事组织者。",
+    "北伐并未停止，但后续节奏、资源和政治威望都明显改变。"
+  ],
+  "impact": [
+    "五丈原标志蜀汉前期诸葛亮主导时代结束。",
+    "曹魏西线压力下降，司马氏在长期军政运作中继续积累威望。"
+  ],
+  "sourceNotes": [
+    "《诸葛亮传》《后主传》提供蜀汉角度，《资治通鉴》卷七十二提供编年叙述。",
+    "司马懿与诸葛亮对峙的细节需要避免演义化处理。"
+  ],
+  "uncertainty": [
+    "诸葛亮病情、司马懿应对和军中细节在后世叙事中有文学化扩展，第一版按正史和编年主线处理。"
+  ]
+}', '{
+  "id": "china-234-wuzhang-plains",
+  "title": "诸葛亮卒于五丈原",
+  "startYear": 234,
+  "endYear": 234,
+  "region": "china",
+  "locationName": "五丈原",
+  "coordinates": [
+    107.65,
+    34.32
+  ],
+  "category": "war",
+  "summary": "诸葛亮最后一次北伐时与司马懿对峙于渭水南北，后卒于五丈原。蜀汉北伐进入新的阶段，战略主动性逐渐减弱。",
+  "people": [
+    "诸葛亮",
+    "司马懿",
+    "刘禅"
+  ],
+  "personIds": [
+    "zhuge-liang",
+    "sima-yi",
+    "liu-shan"
+  ],
+  "polities": [
+    "蜀汉",
+    "曹魏"
+  ],
+  "relatedEvents": [
+    "china-207-longzhong-plan",
+    "china-221-liu-bei-founds-shu",
+    "china-263-shu-han-conquered"
+  ],
+  "tags": [
+    "北伐",
+    "五丈原",
+    "蜀汉后期"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·蜀书·诸葛亮传》",
+    "《三国志·蜀书·后主传》",
+    "《资治通鉴》卷七十二"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-shu-zhuge-liang",
+      "locator": "建兴十二年"
+    },
+    {
+      "sourceId": "sanguozhi-shu-houzhu",
+      "locator": "建兴十二年"
+    },
+    {
+      "sourceId": "zizhi-tongjian-72",
+      "locator": "青龙二年 / 建兴十二年"
+    }
+  ],
+  "detail": {
+    "overview": "诸葛亮最后一次北伐时与司马懿对峙于渭水南北，后卒于五丈原。蜀汉北伐进入新的阶段，战略主动性逐渐减弱。",
+    "background": [
+      "刘备去世后，诸葛亮辅政，蜀汉以恢复汉室和北伐曹魏作为重要政治目标。",
+      "多次北伐既是军事行动，也是维持蜀汉政治正当性和军政动员能力的方式。"
+    ],
+    "process": [
+      "234 年诸葛亮出兵五丈原，与司马懿在渭水一线长期对峙。",
+      "司马懿采取持重策略，避免与蜀军进行高风险决战。",
+      "诸葛亮病逝军中，蜀军撤退。"
+    ],
+    "result": [
+      "诸葛亮去世，蜀汉失去最重要的政治和军事组织者。",
+      "北伐并未停止，但后续节奏、资源和政治威望都明显改变。"
+    ],
+    "impact": [
+      "五丈原标志蜀汉前期诸葛亮主导时代结束。",
+      "曹魏西线压力下降，司马氏在长期军政运作中继续积累威望。"
+    ],
+    "sourceNotes": [
+      "《诸葛亮传》《后主传》提供蜀汉角度，《资治通鉴》卷七十二提供编年叙述。",
+      "司马懿与诸葛亮对峙的细节需要避免演义化处理。"
+    ],
+    "uncertainty": [
+      "诸葛亮病情、司马懿应对和军中细节在后世叙事中有文学化扩展，第一版按正史和编年主线处理。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-sasanian-260-valerian-captured', '沙普尔一世俘虏罗马皇帝瓦勒良', 'sasanian-persia', 260, 260, '埃德萨附近', 'war', '沙普尔一世在埃德萨附近俘虏罗马皇帝瓦勒良，使罗马东方威望遭受三世纪最严重打击之一。', 'high', '[39.03,37.16]', '{
+  "overview": "260 年，沙普尔一世在第三次对罗马战争中俘虏皇帝瓦勒良。这是罗马皇帝第一次在对外战争中被敌国君主俘虏，也是萨珊王权宣传中最具象征意义的胜利。",
+  "background": [
+    "三世纪中叶罗马同时面对内战、边境压力、财政和疫病冲击，东方军政体系承受巨大压力。",
+    "沙普尔一世继承阿尔达希尔一世的扩张方向，持续向美索不达米亚、叙利亚和亚美尼亚方向施压。",
+    "瓦勒良亲自东征，说明罗马已经把萨珊威胁视为帝国级危机。"
+  ],
+  "process": [
+    "沙普尔一世在 ŠKZ 铭文中把瓦勒良被俘纳入第三次罗马战役的中心叙述。",
+    "罗马军队在埃德萨附近遭遇严重失败，瓦勒良本人落入萨珊手中。",
+    "萨珊随后把这一胜利用铭文和岩 relief 反复表达，形成王权合法性宣传。"
+  ],
+  "result": [
+    "瓦勒良被俘，罗马东方军政体系出现权力真空和威望危机。",
+    "萨珊获得巨大的象征性胜利，并可能带走大量俘虏和工匠。",
+    "帕尔米拉的奥登纳图斯随后代表罗马东方进行反击，成为 262 年后局势的关键变量。"
+  ],
+  "impact": [
+    "这件事是罗马三世纪危机的标志性节点，也是萨珊一世纪内最重要的对罗马胜利。",
+    "它推动罗马东方边境出现临时性地方军事代理力量，为帕尔米拉崛起铺路。",
+    "在 190-310 范例中，它位于 224 萨珊兴起和 298 尼西比斯和约之间，显示罗马-萨珊力量消长。"
+  ],
+  "sourceNotes": [
+    "ŠKZ / Res Gestae Divi Saporis 是核心萨珊侧一手证据，明确把瓦勒良被俘置于沙普尔胜利叙事中。",
+    "后期罗马和拜占庭传统会扩展瓦勒良受辱细节，其中部分具有道德化或宣传色彩，需要谨慎。",
+    "俘虏迁徙和工匠安置传统可解释萨珊城市与工程叙事，但具体规模和细节需单独核证。"
+  ],
+  "uncertainty": [
+    "战役的细节、瓦勒良被俘的具体谈判或军事过程存在不同传统。",
+    "罗马侧关于瓦勒良受辱的部分叙述可能带有后期道德化加工。",
+    "俘虏人数、迁徙地点和工程贡献不能只凭后期传统直接定量。"
+  ]
+}', '{
+  "id": "rome-sasanian-260-valerian-captured",
+  "title": "沙普尔一世俘虏罗马皇帝瓦勒良",
+  "startYear": 260,
+  "endYear": 260,
+  "region": "sasanian-persia",
+  "locationName": "埃德萨附近",
+  "coordinates": [
+    39.03,
+    37.16
+  ],
+  "category": "war",
+  "summary": "沙普尔一世在埃德萨附近俘虏罗马皇帝瓦勒良，使罗马东方威望遭受三世纪最严重打击之一。",
+  "people": [
+    "沙普尔一世",
+    "瓦勒良"
+  ],
+  "polities": [
+    "萨珊波斯",
+    "罗马帝国"
+  ],
+  "relatedEvents": [
+    "rome-235-start-third-century-crisis",
+    "sasanian-224-ardashir-defeats-parthians",
+    "sasanian-262-odaenathus-counteroffensive"
+  ],
+  "tags": [
+    "罗马",
+    "萨珊波斯",
+    "战争",
+    "war",
+    "edessa",
+    "valerian",
+    "shapur-i",
+    "roman-crisis"
+  ],
+  "confidence": "high",
+  "sources": [
+    "Res Gestae Divi Saporis",
+    "Roman imperial histories"
+  ],
+  "detail": {
+    "overview": "260 年，沙普尔一世在第三次对罗马战争中俘虏皇帝瓦勒良。这是罗马皇帝第一次在对外战争中被敌国君主俘虏，也是萨珊王权宣传中最具象征意义的胜利。",
+    "background": [
+      "三世纪中叶罗马同时面对内战、边境压力、财政和疫病冲击，东方军政体系承受巨大压力。",
+      "沙普尔一世继承阿尔达希尔一世的扩张方向，持续向美索不达米亚、叙利亚和亚美尼亚方向施压。",
+      "瓦勒良亲自东征，说明罗马已经把萨珊威胁视为帝国级危机。"
+    ],
+    "process": [
+      "沙普尔一世在 ŠKZ 铭文中把瓦勒良被俘纳入第三次罗马战役的中心叙述。",
+      "罗马军队在埃德萨附近遭遇严重失败，瓦勒良本人落入萨珊手中。",
+      "萨珊随后把这一胜利用铭文和岩 relief 反复表达，形成王权合法性宣传。"
+    ],
+    "result": [
+      "瓦勒良被俘，罗马东方军政体系出现权力真空和威望危机。",
+      "萨珊获得巨大的象征性胜利，并可能带走大量俘虏和工匠。",
+      "帕尔米拉的奥登纳图斯随后代表罗马东方进行反击，成为 262 年后局势的关键变量。"
+    ],
+    "impact": [
+      "这件事是罗马三世纪危机的标志性节点，也是萨珊一世纪内最重要的对罗马胜利。",
+      "它推动罗马东方边境出现临时性地方军事代理力量，为帕尔米拉崛起铺路。",
+      "在 190-310 范例中，它位于 224 萨珊兴起和 298 尼西比斯和约之间，显示罗马-萨珊力量消长。"
+    ],
+    "sourceNotes": [
+      "ŠKZ / Res Gestae Divi Saporis 是核心萨珊侧一手证据，明确把瓦勒良被俘置于沙普尔胜利叙事中。",
+      "后期罗马和拜占庭传统会扩展瓦勒良受辱细节，其中部分具有道德化或宣传色彩，需要谨慎。",
+      "俘虏迁徙和工匠安置传统可解释萨珊城市与工程叙事，但具体规模和细节需单独核证。"
+    ],
+    "uncertainty": [
+      "战役的细节、瓦勒良被俘的具体谈判或军事过程存在不同传统。",
+      "罗马侧关于瓦勒良受辱的部分叙述可能带有后期道德化加工。",
+      "俘虏人数、迁徙地点和工程贡献不能只凭后期传统直接定量。"
+    ]
+  },
+  "sourceRefs": [
+    {
+      "sourceId": "deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri",
+      "locator": "ŠKZ §15-20",
+      "note": "沙普尔一世铭文中的瓦勒良被俘核心叙述。"
+    },
+    {
+      "sourceId": "deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-deportation-tradition-shapur-i-inscription-",
+      "locator": "ŠKZ §29-30; later deportation tradition",
+      "note": "俘虏迁徙与城市建设传统。"
+    }
+  ],
+  "personIds": [
+    "sasanian-shapur-i",
+    "rome-valerian"
+  ],
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-sasanian-event-details-core-224-280"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-263-shu-han-conquered', '蜀汉灭亡', 'china', 263, 263, '成都', 'war', '曹魏发动灭蜀之战，钟会主力牵制剑阁，邓艾偷渡阴平直入成都，刘禅投降，三国之一的蜀汉灭亡。', 'high', '[104.07,30.67]', '{
+  "overview": "曹魏发动灭蜀之战，钟会主力牵制剑阁，邓艾偷渡阴平直入成都，刘禅投降，三国之一的蜀汉灭亡。",
+  "background": [
+    "诸葛亮去世后，蜀汉仍由姜维等继续北伐，但国力、人口和政治资源长期处于劣势。",
+    "曹魏后期实际权力掌握在司马昭手中，灭蜀既是军事行动，也是司马氏累积禅代资本的政治工程。"
+  ],
+  "process": [
+    "钟会率主力入汉中、压向剑阁，姜维退守剑阁牵制魏军。",
+    "邓艾绕道阴平，越过蜀汉主要防线，直逼成都方向。",
+    "刘禅在成都投降，蜀汉灭亡。"
+  ],
+  "result": [
+    "蜀汉作为三国之一灭亡，益州转入曹魏控制。",
+    "邓艾、钟会随后因功高、猜忌和野心引发冲突，成都局势又出现短暂混乱。"
+  ],
+  "impact": [
+    "灭蜀极大提高司马昭和司马氏的政治威望，为 265 年司马炎代魏铺路。",
+    "三国鼎立从三方变为魏吴对峙，统一趋势明显加速。"
+  ],
+  "sourceNotes": [
+    "《后主传》记录刘禅投降和蜀亡主线，《资治通鉴》卷七十八适合还原景元四年前后的战役顺序。",
+    "姜维、邓艾、钟会后续冲突可后续拆成独立事件。"
+  ],
+  "uncertainty": [
+    "阴平道行军路线和局部战斗细节存在后世讨论，第一版以战略突破和成都投降为核心。"
+  ]
+}', '{
+  "id": "china-263-shu-han-conquered",
+  "title": "蜀汉灭亡",
+  "startYear": 263,
+  "endYear": 263,
+  "region": "china",
+  "locationName": "成都",
+  "coordinates": [
+    104.07,
+    30.67
+  ],
+  "category": "war",
+  "summary": "曹魏发动灭蜀之战，钟会主力牵制剑阁，邓艾偷渡阴平直入成都，刘禅投降，三国之一的蜀汉灭亡。",
+  "people": [
+    "刘禅",
+    "邓艾",
+    "钟会",
+    "姜维",
+    "司马昭"
+  ],
+  "personIds": [
+    "liu-shan",
+    "deng-ai",
+    "zhong-hui",
+    "jiang-wei",
+    "sima-zhao"
+  ],
+  "polities": [
+    "蜀汉",
+    "曹魏"
+  ],
+  "relatedEvents": [
+    "china-234-wuzhang-plains",
+    "china-265-jin-replaces-wei",
+    "china-280-jin-conquers-wu"
+  ],
+  "tags": [
+    "三国",
+    "蜀汉",
+    "曹魏",
+    "灭蜀之战"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《三国志·蜀书·后主传》",
+    "《资治通鉴》卷七十八"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "sanguozhi-shu-houzhu",
+      "locator": "景耀六年 / 炎兴元年"
+    },
+    {
+      "sourceId": "zizhi-tongjian-78",
+      "locator": "景元四年"
+    }
+  ],
+  "detail": {
+    "overview": "曹魏发动灭蜀之战，钟会主力牵制剑阁，邓艾偷渡阴平直入成都，刘禅投降，三国之一的蜀汉灭亡。",
+    "background": [
+      "诸葛亮去世后，蜀汉仍由姜维等继续北伐，但国力、人口和政治资源长期处于劣势。",
+      "曹魏后期实际权力掌握在司马昭手中，灭蜀既是军事行动，也是司马氏累积禅代资本的政治工程。"
+    ],
+    "process": [
+      "钟会率主力入汉中、压向剑阁，姜维退守剑阁牵制魏军。",
+      "邓艾绕道阴平，越过蜀汉主要防线，直逼成都方向。",
+      "刘禅在成都投降，蜀汉灭亡。"
+    ],
+    "result": [
+      "蜀汉作为三国之一灭亡，益州转入曹魏控制。",
+      "邓艾、钟会随后因功高、猜忌和野心引发冲突，成都局势又出现短暂混乱。"
+    ],
+    "impact": [
+      "灭蜀极大提高司马昭和司马氏的政治威望，为 265 年司马炎代魏铺路。",
+      "三国鼎立从三方变为魏吴对峙，统一趋势明显加速。"
+    ],
+    "sourceNotes": [
+      "《后主传》记录刘禅投降和蜀亡主线，《资治通鉴》卷七十八适合还原景元四年前后的战役顺序。",
+      "姜维、邓艾、钟会后续冲突可后续拆成独立事件。"
+    ],
+    "uncertainty": [
+      "阴平道行军路线和局部战斗细节存在后世讨论，第一版以战略突破和成都投降为核心。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-265-jin-replaces-wei', '司马炎代魏，西晋建立', 'china', 265, 265, '洛阳', 'politics', '司马炎接受魏帝禅让，建立西晋。曹魏灭亡后，北方政权进入司马氏统治阶段。', 'high', '[112.45,34.62]', '{
+  "overview": "司马炎接受魏帝禅让，建立西晋。曹魏灭亡后，北方政权进入司马氏统治阶段。",
+  "background": [
+    "高平陵之变后，司马氏逐步控制曹魏朝政。",
+    "司马昭主持灭蜀，使司马氏威望进一步超过曹魏皇室。"
+  ],
+  "process": [
+    "司马昭去世后，司马炎继承晋王地位。",
+    "265 年司马炎接受魏帝禅让，建立西晋，曹魏灭亡。"
+  ],
+  "result": [
+    "北方政权由曹魏转入西晋，司马氏完成制度化代魏。",
+    "孙吴成为唯一尚未并入西晋体系的三国政权。"
+  ],
+  "impact": [
+    "司马炎代魏使统一战争进入最后阶段。",
+    "西晋建立后，北方政权具备了对吴发动全国性战争的名义和资源整合能力。"
+  ],
+  "sourceNotes": [
+    "《晋书·武帝纪》提供司马炎代魏主线，《资治通鉴》卷七十八串联咸熙二年至泰始元年。",
+    "本事件强调政权承继，不把司马懿直接写成 265 年行动者，而是作为司马氏掌权源头。"
+  ],
+  "uncertainty": [
+    "禅代仪式和政治文书细节可后续扩充，本版先处理政权转换。"
+  ]
+}', '{
+  "id": "china-265-jin-replaces-wei",
+  "title": "司马炎代魏，西晋建立",
+  "startYear": 265,
+  "endYear": 265,
+  "region": "china",
+  "locationName": "洛阳",
+  "coordinates": [
+    112.45,
+    34.62
+  ],
+  "category": "politics",
+  "summary": "司马炎接受魏帝禅让，建立西晋。曹魏灭亡后，北方政权进入司马氏统治阶段。",
+  "people": [
+    "司马炎",
+    "司马昭",
+    "司马懿"
+  ],
+  "personIds": [
+    "sima-yan",
+    "sima-zhao",
+    "sima-yi"
+  ],
+  "polities": [
+    "西晋",
+    "曹魏"
+  ],
+  "relatedEvents": [
+    "china-263-shu-han-conquered",
+    "china-280-jin-conquers-wu"
+  ],
+  "tags": [
+    "西晋",
+    "曹魏灭亡",
+    "禅代"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《晋书·武帝纪》",
+    "《资治通鉴》卷七十九"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "jinshu-wudi",
+      "locator": "泰始元年"
+    },
+    {
+      "sourceId": "zizhi-tongjian-78",
+      "locator": "咸熙二年至泰始元年"
+    }
+  ],
+  "detail": {
+    "overview": "司马炎接受魏帝禅让，建立西晋。曹魏灭亡后，北方政权进入司马氏统治阶段。",
+    "background": [
+      "高平陵之变后，司马氏逐步控制曹魏朝政。",
+      "司马昭主持灭蜀，使司马氏威望进一步超过曹魏皇室。"
+    ],
+    "process": [
+      "司马昭去世后，司马炎继承晋王地位。",
+      "265 年司马炎接受魏帝禅让，建立西晋，曹魏灭亡。"
+    ],
+    "result": [
+      "北方政权由曹魏转入西晋，司马氏完成制度化代魏。",
+      "孙吴成为唯一尚未并入西晋体系的三国政权。"
+    ],
+    "impact": [
+      "司马炎代魏使统一战争进入最后阶段。",
+      "西晋建立后，北方政权具备了对吴发动全国性战争的名义和资源整合能力。"
+    ],
+    "sourceNotes": [
+      "《晋书·武帝纪》提供司马炎代魏主线，《资治通鉴》卷七十八串联咸熙二年至泰始元年。",
+      "本事件强调政权承继，不把司马懿直接写成 265 年行动者，而是作为司马氏掌权源头。"
+    ],
+    "uncertainty": [
+      "禅代仪式和政治文书细节可后续扩充，本版先处理政权转换。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-280-jin-conquers-wu', '西晋灭吴，三国归一', 'china', 280, 280, '建业', 'war', '西晋多路伐吴，孙吴末帝投降。三国分裂局面结束，中国再次进入统一王朝框架。', 'high', '[118.8,32.06]', '{
+  "overview": "西晋多路伐吴，孙吴末帝投降。三国分裂局面结束，中国再次进入统一王朝框架。",
+  "background": [
+    "蜀汉灭亡、西晋代魏后，孙吴成为南方最后一个独立政权。",
+    "孙吴后期政治失序，长江防线虽有地理优势，但面对西晋多路统筹压力。"
+  ],
+  "process": [
+    "西晋发动多路伐吴，荆州方向由杜预等推进，益州水军由王濬顺江东下。",
+    "晋军水陆并进，突破长江防线并逼近建业。",
+    "孙皓出降，孙吴灭亡。"
+  ],
+  "result": [
+    "三国鼎立结束，西晋完成形式上的全国统一。",
+    "建业、江东和岭南等地纳入西晋王朝框架。"
+  ],
+  "impact": [
+    "晋灭吴是中国古代大规模水陆协同南征的重要案例。",
+    "统一并不意味着长期稳定，西晋之后仍会面临宗室、门阀和边疆问题，但三国时代至此结束。"
+  ],
+  "sourceNotes": [
+    "《晋书·武帝纪》提供朝廷纪年，《杜预传》《王濬传》提供将领和战役侧面。",
+    "《三国志·吴书·三嗣主传》保留孙皓和吴末政治脉络，《资治通鉴》卷八十一整理太康元年战役顺序。"
+  ],
+  "uncertainty": [
+    "各路晋军推进细节和功劳归属在史传中有不同强调，第一版只展示核心作战轴线和政权结局。"
+  ]
+}', '{
+  "id": "china-280-jin-conquers-wu",
+  "title": "西晋灭吴，三国归一",
+  "startYear": 280,
+  "endYear": 280,
+  "region": "china",
+  "locationName": "建业",
+  "coordinates": [
+    118.8,
+    32.06
+  ],
+  "category": "war",
+  "summary": "西晋多路伐吴，孙吴末帝投降。三国分裂局面结束，中国再次进入统一王朝框架。",
+  "people": [
+    "司马炎",
+    "孙皓",
+    "王濬",
+    "杜预"
+  ],
+  "personIds": [
+    "sima-yan",
+    "sun-hao",
+    "wang-jun",
+    "du-yu"
+  ],
+  "polities": [
+    "西晋",
+    "孙吴"
+  ],
+  "relatedEvents": [
+    "china-229-sun-quan-emperor",
+    "china-265-jin-replaces-wei"
+  ],
+  "tags": [
+    "西晋",
+    "孙吴灭亡",
+    "统一"
+  ],
+  "confidence": "high",
+  "sources": [
+    "《晋书·武帝纪》",
+    "《晋书·杜预传 / 王濬传》",
+    "《三国志·吴书·三嗣主传》",
+    "《资治通鉴》卷八十一"
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "jinshu-wudi",
+      "locator": "太康元年"
+    },
+    {
+      "sourceId": "jinshu-wang-jun-du-yu",
+      "locator": "杜预、王濬传灭吴相关记载"
+    },
+    {
+      "sourceId": "sanguozhi-wu-sun-hao",
+      "locator": "孙皓传降晋相关记载"
+    },
+    {
+      "sourceId": "zizhi-tongjian-81",
+      "locator": "太康元年"
+    }
+  ],
+  "detail": {
+    "overview": "西晋多路伐吴，孙吴末帝投降。三国分裂局面结束，中国再次进入统一王朝框架。",
+    "background": [
+      "蜀汉灭亡、西晋代魏后，孙吴成为南方最后一个独立政权。",
+      "孙吴后期政治失序，长江防线虽有地理优势，但面对西晋多路统筹压力。"
+    ],
+    "process": [
+      "西晋发动多路伐吴，荆州方向由杜预等推进，益州水军由王濬顺江东下。",
+      "晋军水陆并进，突破长江防线并逼近建业。",
+      "孙皓出降，孙吴灭亡。"
+    ],
+    "result": [
+      "三国鼎立结束，西晋完成形式上的全国统一。",
+      "建业、江东和岭南等地纳入西晋王朝框架。"
+    ],
+    "impact": [
+      "晋灭吴是中国古代大规模水陆协同南征的重要案例。",
+      "统一并不意味着长期稳定，西晋之后仍会面临宗室、门阀和边疆问题，但三国时代至此结束。"
+    ],
+    "sourceNotes": [
+      "《晋书·武帝纪》提供朝廷纪年，《杜预传》《王濬传》提供将领和战役侧面。",
+      "《三国志·吴书·三嗣主传》保留孙皓和吴末政治脉络，《资治通鉴》卷八十一整理太康元年战役顺序。"
+    ],
+    "uncertainty": [
+      "各路晋军推进细节和功劳归属在史传中有不同强调，第一版只展示核心作战轴线和政权结局。"
+    ]
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-291-eight-princes-war', '八王之乱展开', 'china', 291, 306, '洛阳及西晋核心州郡', 'politics', '西晋宗室诸王和外戚、朝臣围绕中央权力反复争斗，通常称为八王之乱。其主要阶段一般定为 291-306 年，是西晋由统一转入失序的关键节点。', 'high', '[112.45,34.62]', '{
+  "overview": "西晋宗室诸王和外戚、朝臣围绕中央权力反复争斗，通常称为八王之乱。其主要阶段一般定为 291-306 年，是西晋由统一转入失序的关键节点。",
+  "background": [
+    "280 年灭吴后，西晋实现短暂统一，但分封宗室、皇位继承和外戚干政等问题并未解决。"
+  ],
+  "process": [
+    "291 年前后，围绕杨骏、贾南风和汝南王司马亮等人的冲突揭开序幕。"
+  ],
+  "result": [],
+  "impact": [
+    "八王之乱是西晋迅速衰败的核心原因之一。"
+  ],
+  "sourceNotes": [
+    "本条作为 310 年时间轴提醒事件，先保留总览层级。"
+  ],
+  "uncertainty": []
+}', '{
+  "id": "china-291-eight-princes-war",
+  "title": "八王之乱展开",
+  "region": "china",
+  "startYear": 291,
+  "endYear": 306,
+  "locationName": "洛阳及西晋核心州郡",
+  "category": "politics",
+  "summary": "西晋宗室诸王和外戚、朝臣围绕中央权力反复争斗，通常称为八王之乱。其主要阶段一般定为 291-306 年，是西晋由统一转入失序的关键节点。",
+  "confidence": "high",
+  "coordinates": [
+    112.45,
+    34.62
+  ],
+  "detail": {
+    "overview": "西晋宗室诸王和外戚、朝臣围绕中央权力反复争斗，通常称为八王之乱。其主要阶段一般定为 291-306 年，是西晋由统一转入失序的关键节点。",
+    "background": [
+      "280 年灭吴后，西晋实现短暂统一，但分封宗室、皇位继承和外戚干政等问题并未解决。"
+    ],
+    "process": [
+      "291 年前后，围绕杨骏、贾南风和汝南王司马亮等人的冲突揭开序幕。"
+    ],
+    "result": [],
+    "impact": [
+      "八王之乱是西晋迅速衰败的核心原因之一。"
+    ],
+    "sourceNotes": [
+      "本条作为 310 年时间轴提醒事件，先保留总览层级。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('china-304-five-barbarians-begin', '五胡乱华开端', 'china', 304, 304, '并州、巴蜀及西晋边缘州郡', 'war', '304 年，刘渊在并州建立汉赵政权，李雄在成都称王，通常被视为十六国局面和五胡乱华开端的关键节点。', 'high', '[112.55,37.87]', '{
+  "overview": "304 年，刘渊在并州建立汉赵政权，李雄在成都称王，通常被视为十六国局面和五胡乱华开端的关键节点。",
+  "background": [
+    "八王之乱削弱西晋中央和地方军政秩序，边镇军队和地方豪强获得更大活动空间。"
+  ],
+  "process": [
+    "刘渊、李雄等势力在 304 年前后分别建立政权，西晋边缘控制迅速松动。"
+  ],
+  "result": [],
+  "impact": [
+    "中国北方进入更长期的分裂、迁徙和战争格局。"
+  ],
+  "sourceNotes": [
+    "本条用于 310 年时间轴总览，后续可拆分为汉赵、成汉等事件。"
+  ],
+  "uncertainty": []
+}', '{
+  "id": "china-304-five-barbarians-begin",
+  "title": "五胡乱华开端",
+  "region": "china",
+  "startYear": 304,
+  "endYear": 304,
+  "locationName": "并州、巴蜀及西晋边缘州郡",
+  "category": "war",
+  "summary": "304 年，刘渊在并州建立汉赵政权，李雄在成都称王，通常被视为十六国局面和五胡乱华开端的关键节点。",
+  "confidence": "high",
+  "coordinates": [
+    112.55,
+    37.87
+  ],
+  "detail": {
+    "overview": "304 年，刘渊在并州建立汉赵政权，李雄在成都称王，通常被视为十六国局面和五胡乱华开端的关键节点。",
+    "background": [
+      "八王之乱削弱西晋中央和地方军政秩序，边镇军队和地方豪强获得更大活动空间。"
+    ],
+    "process": [
+      "刘渊、李雄等势力在 304 年前后分别建立政权，西晋边缘控制迅速松动。"
+    ],
+    "result": [],
+    "impact": [
+      "中国北方进入更长期的分裂、迁徙和战争格局。"
+    ],
+    "sourceNotes": [
+      "本条用于 310 年时间轴总览，后续可拆分为汉赵、成汉等事件。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-230-ardashir-roman-frontier', '阿尔达希尔威胁罗马东方边境', 'sasanian-persia', 230, 231, 'Mesopotamia and Syria frontier', 'war', '阿尔达希尔一世在巩固萨珊王权后向罗马东方边境施压，罗马被迫准备大规模东征。', 'medium', '[41.5,36.5]', '{
+  "overview": "230 年前后，阿尔达希尔一世在巩固萨珊王权后向罗马东方边境施压。它显示新兴萨珊国家很快把安息时代的边境问题转化为更主动的帝国竞争。",
+  "background": [
+    "224 年萨珊取代安息后，阿尔达希尔需要以对外扩张巩固新王朝权威。",
+    "美索不达米亚、叙利亚和亚美尼亚一直是罗马与伊朗高原政权竞争的边界地带。",
+    "罗马在亚历山大·塞维鲁时期仍试图维持东方边防秩序。"
+  ],
+  "process": [
+    "Herodian 把阿尔达希尔描写为宣称恢复古波斯领土的人物，并强调其对罗马东方省份的威胁。",
+    "萨珊压力迫使罗马准备更大规模的东方应对。",
+    "这场压力不是一次孤立袭扰，而是萨珊-罗马长期对抗的开端。"
+  ],
+  "result": [
+    "罗马东方边防进入警戒状态，亚历山大·塞维鲁随后组织东征。",
+    "萨珊在罗马视野中取代安息，成为更具意识形态和军事压力的新对手。",
+    "边境争端延伸到 231-233 年罗马东征。"
+  ],
+  "impact": [
+    "此事件连接 224 年萨珊建国和 232 年罗马远征，是罗马-萨珊关系启动阶段的中间环节。",
+    "阿尔达希尔的进攻姿态为沙普尔一世后续更大规模战争奠定模式。",
+    "它说明 190-310 时间段不能只看罗马内部危机，也要看东方新帝国的形成。"
+  ],
+  "sourceNotes": [
+    "Herodian 是这一阶段罗马侧叙述的主要入口，尤其强调波斯新威胁。",
+    "其叙述带有罗马东方恐慌和古波斯复兴框架，需要与萨珊钱币、后续铭文分开使用。"
+  ],
+  "uncertainty": [
+    "Herodian 对阿尔达希尔宣称古波斯领土的表述可能带有修辞化放大。",
+    "具体进攻路线和占领范围不宜按单一文本精确复原。"
+  ]
+}', '{
+  "id": "sasanian-230-ardashir-roman-frontier",
+  "title": "阿尔达希尔威胁罗马东方边境",
+  "region": "sasanian-persia",
+  "startYear": 230,
+  "endYear": 231,
+  "locationName": "Mesopotamia and Syria frontier",
+  "category": "war",
+  "summary": "阿尔达希尔一世在巩固萨珊王权后向罗马东方边境施压，罗马被迫准备大规模东征。",
+  "confidence": "medium",
+  "coordinates": [
+    41.5,
+    36.5
+  ],
+  "detail": {
+    "overview": "230 年前后，阿尔达希尔一世在巩固萨珊王权后向罗马东方边境施压。它显示新兴萨珊国家很快把安息时代的边境问题转化为更主动的帝国竞争。",
+    "background": [
+      "224 年萨珊取代安息后，阿尔达希尔需要以对外扩张巩固新王朝权威。",
+      "美索不达米亚、叙利亚和亚美尼亚一直是罗马与伊朗高原政权竞争的边界地带。",
+      "罗马在亚历山大·塞维鲁时期仍试图维持东方边防秩序。"
+    ],
+    "process": [
+      "Herodian 把阿尔达希尔描写为宣称恢复古波斯领土的人物，并强调其对罗马东方省份的威胁。",
+      "萨珊压力迫使罗马准备更大规模的东方应对。",
+      "这场压力不是一次孤立袭扰，而是萨珊-罗马长期对抗的开端。"
+    ],
+    "result": [
+      "罗马东方边防进入警戒状态，亚历山大·塞维鲁随后组织东征。",
+      "萨珊在罗马视野中取代安息，成为更具意识形态和军事压力的新对手。",
+      "边境争端延伸到 231-233 年罗马东征。"
+    ],
+    "impact": [
+      "此事件连接 224 年萨珊建国和 232 年罗马远征，是罗马-萨珊关系启动阶段的中间环节。",
+      "阿尔达希尔的进攻姿态为沙普尔一世后续更大规模战争奠定模式。",
+      "它说明 190-310 时间段不能只看罗马内部危机，也要看东方新帝国的形成。"
+    ],
+    "sourceNotes": [
+      "Herodian 是这一阶段罗马侧叙述的主要入口，尤其强调波斯新威胁。",
+      "其叙述带有罗马东方恐慌和古波斯复兴框架，需要与萨珊钱币、后续铭文分开使用。"
+    ],
+    "uncertainty": [
+      "Herodian 对阿尔达希尔宣称古波斯领土的表述可能带有修辞化放大。",
+      "具体进攻路线和占领范围不宜按单一文本精确复原。"
+    ]
+  },
+  "sourceRefs": [
+    {
+      "sourceId": "deepseek-sasanian-source-history-of-the-empire-after-marcus-herodian-herodian-history-of-the-empi",
+      "locator": "6.2-6.6",
+      "note": "Herodian 对阿尔达希尔威胁罗马东方边境的叙述。"
+    }
+  ],
+  "relatedEvents": [
+    "sasanian-224-ardashir-defeats-parthians",
+    "sasanian-232-alexander-severus-expedition"
+  ],
+  "personIds": [
+    "sasanian-ardashir-i",
+    "rome-alexander-severus"
+  ],
+  "tags": [
+    "frontier",
+    "roman-sasanian",
+    "mesopotamia"
+  ],
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-event-details-china-sasanian-remaining-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-232-alexander-severus-expedition', '亚历山大·塞维鲁远征波斯', 'sasanian-persia', 231, 233, 'Roman-Persian frontier', 'war', '亚历山大·塞维鲁组织对萨珊波斯的东征，但战果有限，双方边境压力并未根本解除。', 'medium', '[42,36]', '{
+  "overview": "231-233 年亚历山大·塞维鲁组织对萨珊波斯的东征，但战果有限。它反映罗马仍能动员大规模远征，却难以快速压制新兴萨珊边境压力。",
+  "background": [
+    "阿尔达希尔对罗马东方边境的压力迫使罗马进行帝国级回应。",
+    "亚历山大·塞维鲁政权需要通过东方军事行动维护皇帝威望。",
+    "罗马和萨珊都处在新阶段：一方试图恢复边境安全，一方试图证明新王朝能力。"
+  ],
+  "process": [
+    "Herodian 叙述罗马军队分路进入东方战区，计划从多个方向牵制萨珊。",
+    "远征推进并不顺利，分路行动带来协调和补给问题。",
+    "双方都未取得决定性终局，罗马随后转向其他边境危机。"
+  ],
+  "result": [
+    "罗马没有彻底消除萨珊威胁。",
+    "亚历山大·塞维鲁的东方威望有限，回到西部后仍面临军队不满。",
+    "罗马-萨珊边境继续保持高压状态。"
+  ],
+  "impact": [
+    "这次远征预示三世纪罗马皇帝需要在多个边境之间来回应急。",
+    "罗马未能解决萨珊问题，使 240-260 年代更严重冲突成为可能。",
+    "它也帮助理解 235 年亚历山大·塞维鲁被军队杀害前的皇帝威望危机。"
+  ],
+  "sourceNotes": [
+    "Herodian 6.4-6.6 是主要叙述，但其对战果评价和行军细节存在修辞性。",
+    "事件应作为边境战略节点，而非按精确战役复原处理。"
+  ],
+  "uncertainty": [
+    "罗马远征是否可称胜利存在争议，第一版按“战果有限”处理。",
+    "三路进军的实际路线和损失数字不宜精确采用。"
+  ]
+}', '{
+  "id": "sasanian-232-alexander-severus-expedition",
+  "title": "亚历山大·塞维鲁远征波斯",
+  "region": "sasanian-persia",
+  "startYear": 231,
+  "endYear": 233,
+  "locationName": "Roman-Persian frontier",
+  "category": "war",
+  "summary": "亚历山大·塞维鲁组织对萨珊波斯的东征，但战果有限，双方边境压力并未根本解除。",
+  "confidence": "medium",
+  "coordinates": [
+    42,
+    36
+  ],
+  "detail": {
+    "overview": "231-233 年亚历山大·塞维鲁组织对萨珊波斯的东征，但战果有限。它反映罗马仍能动员大规模远征，却难以快速压制新兴萨珊边境压力。",
+    "background": [
+      "阿尔达希尔对罗马东方边境的压力迫使罗马进行帝国级回应。",
+      "亚历山大·塞维鲁政权需要通过东方军事行动维护皇帝威望。",
+      "罗马和萨珊都处在新阶段：一方试图恢复边境安全，一方试图证明新王朝能力。"
+    ],
+    "process": [
+      "Herodian 叙述罗马军队分路进入东方战区，计划从多个方向牵制萨珊。",
+      "远征推进并不顺利，分路行动带来协调和补给问题。",
+      "双方都未取得决定性终局，罗马随后转向其他边境危机。"
+    ],
+    "result": [
+      "罗马没有彻底消除萨珊威胁。",
+      "亚历山大·塞维鲁的东方威望有限，回到西部后仍面临军队不满。",
+      "罗马-萨珊边境继续保持高压状态。"
+    ],
+    "impact": [
+      "这次远征预示三世纪罗马皇帝需要在多个边境之间来回应急。",
+      "罗马未能解决萨珊问题，使 240-260 年代更严重冲突成为可能。",
+      "它也帮助理解 235 年亚历山大·塞维鲁被军队杀害前的皇帝威望危机。"
+    ],
+    "sourceNotes": [
+      "Herodian 6.4-6.6 是主要叙述，但其对战果评价和行军细节存在修辞性。",
+      "事件应作为边境战略节点，而非按精确战役复原处理。"
+    ],
+    "uncertainty": [
+      "罗马远征是否可称胜利存在争议，第一版按“战果有限”处理。",
+      "三路进军的实际路线和损失数字不宜精确采用。"
+    ]
+  },
+  "sourceRefs": [
+    {
+      "sourceId": "deepseek-sasanian-source-history-of-the-empire-after-marcus-herodian-herodian-history-of-the-empi",
+      "locator": "6.4-6.6",
+      "note": "Herodian 对亚历山大·塞维鲁东征的主叙述。"
+    }
+  ],
+  "relatedEvents": [
+    "sasanian-230-ardashir-roman-frontier"
+  ],
+  "personIds": [
+    "rome-alexander-severus",
+    "sasanian-ardashir-i"
+  ],
+  "tags": [
+    "campaign",
+    "alexander-severus",
+    "roman-sasanian"
+  ],
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-event-details-china-sasanian-remaining-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-244-battle-of-misiche', '米西凯会战与戈尔迪安三世之死', 'sasanian-persia', 244, 244, 'Misiche / Mesopotamia', 'war', '沙普尔一世铭文宣称在米西凯击败罗马，戈尔迪安三世随后死亡，罗马与萨珊达成不利和约。', 'medium', '[44.3,32.6]', '{
+  "overview": "244 年米西凯会战是沙普尔一世早期对罗马战争的重要节点。ŠKZ 铭文宣称萨珊获胜，并把戈尔迪安三世之死和腓力阿拉伯人的和约纳入沙普尔胜利叙事。",
+  "background": [
+    "沙普尔一世继承阿尔达希尔的对罗马扩张方向，需要通过战争塑造新王权威望。",
+    "罗马戈尔迪安三世东征，试图恢复东方边境主动权。",
+    "双方围绕美索不达米亚和叙利亚方向展开早期罗马-萨珊军事竞争。"
+  ],
+  "process": [
+    "ŠKZ 记载沙普尔在米西凯附近击败罗马军队。",
+    "铭文把戈尔迪安三世之死与这场战役联系起来。",
+    "腓力阿拉伯人随后成为皇帝，并与萨珊达成和约。"
+  ],
+  "result": [
+    "萨珊获得可用于王权宣传的重要胜利。",
+    "罗马皇帝更替，东方战局以和约暂时收束。",
+    "沙普尔一世的对罗马战争进入更具进攻性的阶段。"
+  ],
+  "impact": [
+    "米西凯为 260 年瓦勒良被俘前的罗马-萨珊冲突奠定叙事连续性。",
+    "沙普尔铭文展示萨珊如何把对罗马胜利用于王权合法化。",
+    "戈尔迪安之死在罗马和萨珊传统中解释不同，是史料证据面板的典型争议案例。"
+  ],
+  "sourceNotes": [
+    "ŠKZ 是核心萨珊侧材料，直接服务于沙普尔一世王权叙事。",
+    "罗马传统对戈尔迪安三世死亡原因有不同解释，需要并列处理。"
+  ],
+  "uncertainty": [
+    "戈尔迪安三世究竟死于战败、疾病、兵变或政治谋杀，传统存在分歧。",
+    "ŠKZ 是胜利铭文，战果和和约条件需与罗马材料互证。"
+  ]
+}', '{
+  "id": "sasanian-244-battle-of-misiche",
+  "title": "米西凯会战与戈尔迪安三世之死",
+  "region": "sasanian-persia",
+  "startYear": 244,
+  "endYear": 244,
+  "locationName": "Misiche / Mesopotamia",
+  "category": "war",
+  "summary": "沙普尔一世铭文宣称在米西凯击败罗马，戈尔迪安三世随后死亡，罗马与萨珊达成不利和约。",
+  "confidence": "medium",
+  "coordinates": [
+    44.3,
+    32.6
+  ],
+  "detail": {
+    "overview": "244 年米西凯会战是沙普尔一世早期对罗马战争的重要节点。ŠKZ 铭文宣称萨珊获胜，并把戈尔迪安三世之死和腓力阿拉伯人的和约纳入沙普尔胜利叙事。",
+    "background": [
+      "沙普尔一世继承阿尔达希尔的对罗马扩张方向，需要通过战争塑造新王权威望。",
+      "罗马戈尔迪安三世东征，试图恢复东方边境主动权。",
+      "双方围绕美索不达米亚和叙利亚方向展开早期罗马-萨珊军事竞争。"
+    ],
+    "process": [
+      "ŠKZ 记载沙普尔在米西凯附近击败罗马军队。",
+      "铭文把戈尔迪安三世之死与这场战役联系起来。",
+      "腓力阿拉伯人随后成为皇帝，并与萨珊达成和约。"
+    ],
+    "result": [
+      "萨珊获得可用于王权宣传的重要胜利。",
+      "罗马皇帝更替，东方战局以和约暂时收束。",
+      "沙普尔一世的对罗马战争进入更具进攻性的阶段。"
+    ],
+    "impact": [
+      "米西凯为 260 年瓦勒良被俘前的罗马-萨珊冲突奠定叙事连续性。",
+      "沙普尔铭文展示萨珊如何把对罗马胜利用于王权合法化。",
+      "戈尔迪安之死在罗马和萨珊传统中解释不同，是史料证据面板的典型争议案例。"
+    ],
+    "sourceNotes": [
+      "ŠKZ 是核心萨珊侧材料，直接服务于沙普尔一世王权叙事。",
+      "罗马传统对戈尔迪安三世死亡原因有不同解释，需要并列处理。"
+    ],
+    "uncertainty": [
+      "戈尔迪安三世究竟死于战败、疾病、兵变或政治谋杀，传统存在分歧。",
+      "ŠKZ 是胜利铭文，战果和和约条件需与罗马材料互证。"
+    ]
+  },
+  "sourceRefs": [
+    {
+      "sourceId": "deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri",
+      "locator": "ŠKZ §6-9",
+      "note": "沙普尔一世铭文中的米西凯战役、戈尔迪安三世和腓力和约叙述。"
+    }
+  ],
+  "relatedEvents": [
+    "rome-sasanian-260-valerian-captured"
+  ],
+  "personIds": [
+    "sasanian-shapur-i",
+    "rome-gordian-iii",
+    "rome-philip-the-arab"
+  ],
+  "tags": [
+    "war",
+    "misiche",
+    "shapur-i",
+    "gordian-iii"
+  ],
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-event-details-china-sasanian-remaining-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-256-dura-europos', '杜拉欧罗普斯陷落', 'sasanian-persia', 256, 256, 'Dura-Europos', 'war', '幼发拉底河边境要塞杜拉欧罗普斯被萨珊攻陷，考古证据显示围城战和坑道战极为激烈。', 'high', '[40.73,34.75]', '{
+  "overview": "256 年前后杜拉欧罗普斯陷落，是罗马幼发拉底河边境被萨珊突破的考古可见节点。它的重要性不只在文本记载，而在围城设施、坑道战和城市废弃层提供了具体物证。",
+  "background": [
+    "杜拉欧罗普斯位于幼发拉底河中游，是罗马东方边境的重要城镇和军事据点。",
+    "沙普尔一世中期攻势扩大，罗马东方边防在多点承压。",
+    "该城保存条件特殊，使考古材料能够补足文本史料的空白。"
+  ],
+  "process": [
+    "萨珊军队围攻杜拉欧罗普斯，考古显示城墙、攻城坡道和坑道战痕迹。",
+    "城内防御设施和建筑改造说明罗马守军曾进行紧急防御。",
+    "城市最终陷落，并在此后不再作为正常城市持续存在。"
+  ],
+  "result": [
+    "杜拉欧罗普斯失守，罗马幼发拉底边境体系遭受打击。",
+    "城市废弃层保存了宗教建筑、军事设施和攻城战遗迹。",
+    "萨珊在 250 年代中期的进攻能力得到具体物证支持。"
+  ],
+  "impact": [
+    "杜拉欧罗普斯是罗马-萨珊战争中少见的考古锚点，可与铭文证据互证。",
+    "它为解释 260 年瓦勒良被俘前罗马东方边防连续受压提供背景。",
+    "后续地图和证据面板应把它作为“物证型事件”的范例。"
+  ],
+  "sourceNotes": [
+    "ŠKZ 提供沙普尔一世攻势的文本框架。",
+    "杜拉欧罗普斯考古报告提供围城、坑道和城市陷落的物质证据。"
+  ],
+  "uncertainty": [
+    "具体陷落年份通常处理为约 256 年，可能存在小幅年代浮动。",
+    "单一城市考古证据不能直接外推整个边境所有战况。"
+  ]
+}', '{
+  "id": "sasanian-256-dura-europos",
+  "title": "杜拉欧罗普斯陷落",
+  "region": "sasanian-persia",
+  "startYear": 256,
+  "endYear": 256,
+  "locationName": "Dura-Europos",
+  "category": "war",
+  "summary": "幼发拉底河边境要塞杜拉欧罗普斯被萨珊攻陷，考古证据显示围城战和坑道战极为激烈。",
+  "confidence": "high",
+  "coordinates": [
+    40.73,
+    34.75
+  ],
+  "detail": {
+    "overview": "256 年前后杜拉欧罗普斯陷落，是罗马幼发拉底河边境被萨珊突破的考古可见节点。它的重要性不只在文本记载，而在围城设施、坑道战和城市废弃层提供了具体物证。",
+    "background": [
+      "杜拉欧罗普斯位于幼发拉底河中游，是罗马东方边境的重要城镇和军事据点。",
+      "沙普尔一世中期攻势扩大，罗马东方边防在多点承压。",
+      "该城保存条件特殊，使考古材料能够补足文本史料的空白。"
+    ],
+    "process": [
+      "萨珊军队围攻杜拉欧罗普斯，考古显示城墙、攻城坡道和坑道战痕迹。",
+      "城内防御设施和建筑改造说明罗马守军曾进行紧急防御。",
+      "城市最终陷落，并在此后不再作为正常城市持续存在。"
+    ],
+    "result": [
+      "杜拉欧罗普斯失守，罗马幼发拉底边境体系遭受打击。",
+      "城市废弃层保存了宗教建筑、军事设施和攻城战遗迹。",
+      "萨珊在 250 年代中期的进攻能力得到具体物证支持。"
+    ],
+    "impact": [
+      "杜拉欧罗普斯是罗马-萨珊战争中少见的考古锚点，可与铭文证据互证。",
+      "它为解释 260 年瓦勒良被俘前罗马东方边防连续受压提供背景。",
+      "后续地图和证据面板应把它作为“物证型事件”的范例。"
+    ],
+    "sourceNotes": [
+      "ŠKZ 提供沙普尔一世攻势的文本框架。",
+      "杜拉欧罗普斯考古报告提供围城、坑道和城市陷落的物质证据。"
+    ],
+    "uncertainty": [
+      "具体陷落年份通常处理为约 256 年，可能存在小幅年代浮动。",
+      "单一城市考古证据不能直接外推整个边境所有战况。"
+    ]
+  },
+  "sourceRefs": [
+    {
+      "sourceId": "deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-dura-europos-excavation-reports-shapur-i-in",
+      "locator": "ŠKZ §14-15; Dura-Europos final reports",
+      "note": "铭文与杜拉欧罗普斯考古证据互证。"
+    }
+  ],
+  "relatedEvents": [
+    "rome-sasanian-260-valerian-captured"
+  ],
+  "personIds": [
+    "sasanian-shapur-i"
+  ],
+  "tags": [
+    "siege",
+    "dura-europos",
+    "archaeology",
+    "frontier"
+  ],
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-event-details-china-sasanian-remaining-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-262-odaenathus-counteroffensive', '奥登纳图斯反击萨珊', 'sasanian-persia', 262, 263, 'Mesopotamia', 'war', '帕尔米拉的奥登纳图斯代表罗马东方反击萨珊，缓解瓦勒良被俘后的边境危机。', 'medium', '[42.5,35]', '{
+  "overview": "262 年前后，帕尔米拉的奥登纳图斯代表罗马东方对萨珊展开反击，缓解瓦勒良被俘后的危机。它是帕尔米拉从地方盟友走向东方强权的关键一步。",
+  "background": [
+    "260 年瓦勒良被俘后，罗马东方权威严重受损，边防出现真空。",
+    "帕尔米拉位于叙利亚沙漠贸易和军事通道上，具备动员地方力量的条件。",
+    "奥登纳图斯以罗马盟友和东方防卫者身份崛起。"
+  ],
+  "process": [
+    "奥登纳图斯集结帕尔米拉力量，对萨珊在美索不达米亚方向进行反击。",
+    "后期传统称其收复部分失地，并威胁萨珊控制区。",
+    "罗马中央在危机中承认或利用奥登纳图斯的东方军事作用。"
+  ],
+  "result": [
+    "萨珊在瓦勒良被俘后的扩张势头受到遏制。",
+    "奥登纳图斯在罗马东方获得突出地位。",
+    "帕尔米拉权力上升，为芝诺比娅时期的帕尔米拉帝国埋下基础。"
+  ],
+  "impact": [
+    "此事件说明罗马危机中的地方代理力量可以暂时维持帝国边防。",
+    "帕尔米拉从罗马盟友转向半独立强权的路径由此展开。",
+    "它连接 260 年罗马惨败和 270-272 年奥勒良收复东方。"
+  ],
+  "sourceNotes": [
+    "Zosimus 保存较详细的后期希腊叙述，是奥登纳图斯反击的主要文本入口。",
+    "相关叙述应和帕尔米拉铭文、罗马后期史料及现代研究互证。"
+  ],
+  "uncertainty": [
+    "奥登纳图斯反击的具体路线、战果和称号变化存在史料限制。",
+    "后期叙述可能把帕尔米拉成就集中化，需要避免夸大其独立性。"
+  ]
+}', '{
+  "id": "sasanian-262-odaenathus-counteroffensive",
+  "title": "奥登纳图斯反击萨珊",
+  "region": "sasanian-persia",
+  "startYear": 262,
+  "endYear": 263,
+  "locationName": "Mesopotamia",
+  "category": "war",
+  "summary": "帕尔米拉的奥登纳图斯代表罗马东方反击萨珊，缓解瓦勒良被俘后的边境危机。",
+  "confidence": "medium",
+  "coordinates": [
+    42.5,
+    35
+  ],
+  "detail": {
+    "overview": "262 年前后，帕尔米拉的奥登纳图斯代表罗马东方对萨珊展开反击，缓解瓦勒良被俘后的危机。它是帕尔米拉从地方盟友走向东方强权的关键一步。",
+    "background": [
+      "260 年瓦勒良被俘后，罗马东方权威严重受损，边防出现真空。",
+      "帕尔米拉位于叙利亚沙漠贸易和军事通道上，具备动员地方力量的条件。",
+      "奥登纳图斯以罗马盟友和东方防卫者身份崛起。"
+    ],
+    "process": [
+      "奥登纳图斯集结帕尔米拉力量，对萨珊在美索不达米亚方向进行反击。",
+      "后期传统称其收复部分失地，并威胁萨珊控制区。",
+      "罗马中央在危机中承认或利用奥登纳图斯的东方军事作用。"
+    ],
+    "result": [
+      "萨珊在瓦勒良被俘后的扩张势头受到遏制。",
+      "奥登纳图斯在罗马东方获得突出地位。",
+      "帕尔米拉权力上升，为芝诺比娅时期的帕尔米拉帝国埋下基础。"
+    ],
+    "impact": [
+      "此事件说明罗马危机中的地方代理力量可以暂时维持帝国边防。",
+      "帕尔米拉从罗马盟友转向半独立强权的路径由此展开。",
+      "它连接 260 年罗马惨败和 270-272 年奥勒良收复东方。"
+    ],
+    "sourceNotes": [
+      "Zosimus 保存较详细的后期希腊叙述，是奥登纳图斯反击的主要文本入口。",
+      "相关叙述应和帕尔米拉铭文、罗马后期史料及现代研究互证。"
+    ],
+    "uncertainty": [
+      "奥登纳图斯反击的具体路线、战果和称号变化存在史料限制。",
+      "后期叙述可能把帕尔米拉成就集中化，需要避免夸大其独立性。"
+    ]
+  },
+  "sourceRefs": [
+    {
+      "sourceId": "deepseek-sasanian-source-zosimus-historia-nova-zosimus-zosimus-historia-nova-new-history",
+      "locator": "1.27-1.28",
+      "note": "Zosimus 对奥登纳图斯反击萨珊的后期希腊叙述。"
+    }
+  ],
+  "relatedEvents": [
+    "rome-sasanian-260-valerian-captured",
+    "rome-270-zenobia-and-the-palmyrene-empire-267-272"
+  ],
+  "personIds": [
+    "rome-odaenathus",
+    "sasanian-shapur-i",
+    "rome-valerian"
+  ],
+  "tags": [
+    "palmyra",
+    "counteroffensive",
+    "roman-east",
+    "sasanian"
+  ],
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-event-details-china-sasanian-remaining-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-280-kartir-priestly-power', '卡尔提尔祭司权力上升', 'sasanian-persia', 280, 290, 'Sasanian heartland', 'religion', '卡尔提尔铭文显示祆教祭司权力在三世纪后期明显上升，并成为萨珊王权结构的一部分。', 'medium', '[53,29.6]', '{
+  "overview": "三世纪后期，卡尔提尔通过多处铭文展示自己在萨珊宫廷和祆教制度中的地位上升。这个事件代表萨珊国家从早期王朝军事扩张，转向更明确的宗教制度化和王权合法性整合。",
+  "background": [
+    "沙普尔一世时期的萨珊宗教环境相对复杂，摩尼等宗教人物仍能在一定阶段接近宫廷。",
+    "沙普尔一世之后，巴赫拉姆一世、巴赫拉姆二世等统治时期，祭司集团与王权关系更紧密。",
+    "卡尔提尔铭文群提供少见的萨珊本土宗教政治材料，能补足单纯王表和战争叙述的不足。"
+  ],
+  "process": [
+    "卡尔提尔在铭文中叙述自己在不同王朝阶段获得职衔、宗教权威和制度扩展机会。",
+    "他把祆教秩序、祭司职权和对竞争宗教群体的限制写入自我叙述。",
+    "这些铭文分布在重要王权纪念空间附近，说明宗教权威与王室公共表达相互嵌合。"
+  ],
+  "result": [
+    "祆教祭司集团在萨珊国家中的可见度和制度地位上升。",
+    "宗教合法性成为王权叙事的重要组成部分，而不只是私人信仰或地方传统。",
+    "摩尼教等竞争性宗教传统在后续叙述中显示出更大压力。"
+  ],
+  "impact": [
+    "卡尔提尔资料说明萨珊史不能只写成国王和战争年表，还必须纳入祭司、宗教制度和合法性语言。",
+    "这个节点帮助解释纳尔塞 Paikuli 铭文中政治合法性语言和贵族支持网络的背景。",
+    "对后续 AI/RAG 来说，卡尔提尔铭文是回答“萨珊是否是宗教国家”“宗教压制如何发生”的核心证据入口。"
+  ],
+  "sourceNotes": [
+    "KKZ §8-12 是卡尔提尔职衔、宗教权力和机构扩展的关键材料。",
+    "KNRb/KSM/KNRm 等铭文群可互相比较，帮助区分卡尔提尔自我塑造和制度变化。",
+    "摩尼教传统可补竞争宗教视角，但不能直接替代卡尔提尔铭文的本土证据。"
+  ],
+  "uncertainty": [
+    "卡尔提尔铭文是强烈自我展示文本，可能扩大自身功绩和权力范围。",
+    "对其他宗教群体的压制程度不能一概而论，需要区分摩尼教、基督徒、犹太人、佛教徒等不同处境。",
+    "具体年代常只能按铭文、王朝阶段和人物活动范围近似处理。"
+  ]
+}', '{
+  "id": "sasanian-280-kartir-priestly-power",
+  "title": "卡尔提尔祭司权力上升",
+  "region": "sasanian-persia",
+  "startYear": 280,
+  "endYear": 290,
+  "locationName": "Sasanian heartland",
+  "category": "religion",
+  "summary": "卡尔提尔铭文显示祆教祭司权力在三世纪后期明显上升，并成为萨珊王权结构的一部分。",
+  "confidence": "medium",
+  "coordinates": [
+    53,
+    29.6
+  ],
+  "detail": {
+    "overview": "三世纪后期，卡尔提尔通过多处铭文展示自己在萨珊宫廷和祆教制度中的地位上升。这个事件代表萨珊国家从早期王朝军事扩张，转向更明确的宗教制度化和王权合法性整合。",
+    "background": [
+      "沙普尔一世时期的萨珊宗教环境相对复杂，摩尼等宗教人物仍能在一定阶段接近宫廷。",
+      "沙普尔一世之后，巴赫拉姆一世、巴赫拉姆二世等统治时期，祭司集团与王权关系更紧密。",
+      "卡尔提尔铭文群提供少见的萨珊本土宗教政治材料，能补足单纯王表和战争叙述的不足。"
+    ],
+    "process": [
+      "卡尔提尔在铭文中叙述自己在不同王朝阶段获得职衔、宗教权威和制度扩展机会。",
+      "他把祆教秩序、祭司职权和对竞争宗教群体的限制写入自我叙述。",
+      "这些铭文分布在重要王权纪念空间附近，说明宗教权威与王室公共表达相互嵌合。"
+    ],
+    "result": [
+      "祆教祭司集团在萨珊国家中的可见度和制度地位上升。",
+      "宗教合法性成为王权叙事的重要组成部分，而不只是私人信仰或地方传统。",
+      "摩尼教等竞争性宗教传统在后续叙述中显示出更大压力。"
+    ],
+    "impact": [
+      "卡尔提尔资料说明萨珊史不能只写成国王和战争年表，还必须纳入祭司、宗教制度和合法性语言。",
+      "这个节点帮助解释纳尔塞 Paikuli 铭文中政治合法性语言和贵族支持网络的背景。",
+      "对后续 AI/RAG 来说，卡尔提尔铭文是回答“萨珊是否是宗教国家”“宗教压制如何发生”的核心证据入口。"
+    ],
+    "sourceNotes": [
+      "KKZ §8-12 是卡尔提尔职衔、宗教权力和机构扩展的关键材料。",
+      "KNRb/KSM/KNRm 等铭文群可互相比较，帮助区分卡尔提尔自我塑造和制度变化。",
+      "摩尼教传统可补竞争宗教视角，但不能直接替代卡尔提尔铭文的本土证据。"
+    ],
+    "uncertainty": [
+      "卡尔提尔铭文是强烈自我展示文本，可能扩大自身功绩和权力范围。",
+      "对其他宗教群体的压制程度不能一概而论，需要区分摩尼教、基督徒、犹太人、佛教徒等不同处境。",
+      "具体年代常只能按铭文、王朝阶段和人物活动范围近似处理。"
+    ]
+  },
+  "sourceRefs": [
+    {
+      "sourceId": "deepseek-sasanian-source-kartirs-inscription-at-kaba-ye-zardosht-kkz-s-kz-kartir-kirder-kkz-karti",
+      "locator": "KKZ §8-12",
+      "note": "卡尔提尔职衔、宗教权力和机构扩展。"
+    },
+    {
+      "sourceId": "deepseek-sasanian-source-kartirs-inscriptions-collective-evidence-kartir-kirder-kkz-knrb-ksm-knrm",
+      "locator": "KKZ/KNRb/KSM/KNRm comparison",
+      "note": "卡尔提尔铭文群互证。"
+    }
+  ],
+  "relatedEvents": [
+    "sasanian-293-narseh-paikuli"
+  ],
+  "personIds": [
+    "sasanian-kartir",
+    "sasanian-mani"
+  ],
+  "tags": [
+    "religion",
+    "zoroastrianism",
+    "kartir",
+    "legitimacy"
+  ],
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-sasanian-event-details-core-224-280"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-293-narseh-paikuli', '纳尔塞通过 Paikuli 政治联盟即位', 'sasanian-persia', 293, 293, 'Paikuli', 'politics', 'Paikuli 铭文记录纳尔塞获得贵族和地方权力集团支持，击败巴赫拉姆三世并取得王位。', 'high', '[45.7,35.1]', '{
+  "overview": "293 年，纳尔塞在萨珊王室继承竞争中取代巴赫拉姆三世。Paikuli 铭文把这场即位叙述为贵族、地方权贵和王室支系共同承认合法王权的政治事件。",
+  "background": [
+    "沙普尔一世去世后，萨珊王位经历霍尔米兹德一世、巴赫拉姆一世、巴赫拉姆二世等短期或连续继承，王权稳定依赖王室支系与贵族网络。",
+    "巴赫拉姆二世死后，巴赫拉姆三世及其支持者与纳尔塞之间出现继承竞争，争夺的核心不是单纯血统，而是谁能获得足够贵族承认。",
+    "Paikuli 铭文是纳尔塞阵营留下的胜利叙述，尤其重要之处在于它保存了支持纳尔塞的权贵名单和合法化语言。"
+  ],
+  "process": [
+    "纳尔塞以亚美尼亚和西北方向的政治基础进入继承争夺，并把自己塑造成被邀请、被承认的合法继承者。",
+    "反对巴赫拉姆三世的贵族、地方首领和宫廷力量陆续向纳尔塞靠拢，形成足以改变王位归属的政治联盟。",
+    "纳尔塞在 Paikuli 地区建立铭文，把即位叙述为纠正不合法秩序、恢复正统王权的过程。"
+  ],
+  "result": [
+    "纳尔塞成为萨珊王，巴赫拉姆三世的短期统治结束。",
+    "贵族和地方权力集团的支持被公开写入铭文，说明萨珊王权并非只由王室血统自动决定。",
+    "萨珊内部政治暂时重整，但新王权随后仍要面对罗马东方边境压力。"
+  ],
+  "impact": [
+    "这个事件是理解三世纪末萨珊政治的关键节点：王权合法性来自王室资格、贵族承认和地方军事政治网络的叠加。",
+    "纳尔塞即位后的对外战略与 296-298 年罗马战争相连，最终导向尼西比斯和约。",
+    "Paikuli 铭文也为后续史料证据面板提供了少见的萨珊侧一手材料。"
+  ],
+  "sourceNotes": [
+    "Paikuli Inscription (NPi)：纳尔塞自述即位合法性、支持者名单和对巴赫拉姆三世阵营的政治否定。",
+    "现代研究通常把 Paikuli 作为萨珊王权合法化和贵族政治网络的核心材料，但会提醒它是胜利者铭文。"
+  ],
+  "uncertainty": [
+    "Paikuli 是纳尔塞阵营的胜利叙述，对巴赫拉姆三世阵营的理由、规模和行动过程呈现不足。",
+    "继承斗争的具体军事过程、各贵族倒向的时间顺序和确切日期仍有不确定性。",
+    "铭文中的合法化语言不能直接等同于客观全过程，需要和钱币、后世叙述及现代研究互证。"
+  ]
+}', '{
+  "id": "sasanian-293-narseh-paikuli",
+  "title": "纳尔塞通过 Paikuli 政治联盟即位",
+  "region": "sasanian-persia",
+  "startYear": 293,
+  "endYear": 293,
+  "locationName": "Paikuli",
+  "category": "politics",
+  "summary": "Paikuli 铭文记录纳尔塞获得贵族和地方权力集团支持，击败巴赫拉姆三世并取得王位。",
+  "confidence": "high",
+  "coordinates": [
+    45.7,
+    35.1
+  ],
+  "detail": {
+    "overview": "293 年，纳尔塞在萨珊王室继承竞争中取代巴赫拉姆三世。Paikuli 铭文把这场即位叙述为贵族、地方权贵和王室支系共同承认合法王权的政治事件。",
+    "background": [
+      "沙普尔一世去世后，萨珊王位经历霍尔米兹德一世、巴赫拉姆一世、巴赫拉姆二世等短期或连续继承，王权稳定依赖王室支系与贵族网络。",
+      "巴赫拉姆二世死后，巴赫拉姆三世及其支持者与纳尔塞之间出现继承竞争，争夺的核心不是单纯血统，而是谁能获得足够贵族承认。",
+      "Paikuli 铭文是纳尔塞阵营留下的胜利叙述，尤其重要之处在于它保存了支持纳尔塞的权贵名单和合法化语言。"
+    ],
+    "process": [
+      "纳尔塞以亚美尼亚和西北方向的政治基础进入继承争夺，并把自己塑造成被邀请、被承认的合法继承者。",
+      "反对巴赫拉姆三世的贵族、地方首领和宫廷力量陆续向纳尔塞靠拢，形成足以改变王位归属的政治联盟。",
+      "纳尔塞在 Paikuli 地区建立铭文，把即位叙述为纠正不合法秩序、恢复正统王权的过程。"
+    ],
+    "result": [
+      "纳尔塞成为萨珊王，巴赫拉姆三世的短期统治结束。",
+      "贵族和地方权力集团的支持被公开写入铭文，说明萨珊王权并非只由王室血统自动决定。",
+      "萨珊内部政治暂时重整，但新王权随后仍要面对罗马东方边境压力。"
+    ],
+    "impact": [
+      "这个事件是理解三世纪末萨珊政治的关键节点：王权合法性来自王室资格、贵族承认和地方军事政治网络的叠加。",
+      "纳尔塞即位后的对外战略与 296-298 年罗马战争相连，最终导向尼西比斯和约。",
+      "Paikuli 铭文也为后续史料证据面板提供了少见的萨珊侧一手材料。"
+    ],
+    "sourceNotes": [
+      "Paikuli Inscription (NPi)：纳尔塞自述即位合法性、支持者名单和对巴赫拉姆三世阵营的政治否定。",
+      "现代研究通常把 Paikuli 作为萨珊王权合法化和贵族政治网络的核心材料，但会提醒它是胜利者铭文。"
+    ],
+    "uncertainty": [
+      "Paikuli 是纳尔塞阵营的胜利叙述，对巴赫拉姆三世阵营的理由、规模和行动过程呈现不足。",
+      "继承斗争的具体军事过程、各贵族倒向的时间顺序和确切日期仍有不确定性。",
+      "铭文中的合法化语言不能直接等同于客观全过程，需要和钱币、后世叙述及现代研究互证。"
+    ]
+  },
+  "sourceRefs": [
+    {
+      "sourceId": "deepseek-sasanian-source-paikuli-inscription-npi-narseh-paikuli-tower-inscription-narseh-middle-p",
+      "locator": "NPi §1-10; supporter list",
+      "note": "核心一手证据：纳尔塞即位叙述与支持者名单。"
+    }
+  ],
+  "relatedEvents": [
+    "sasanian-298-treaty-of-nisibis"
+  ],
+  "personIds": [
+    "sasanian-narseh",
+    "sasanian-bahram-iii"
+  ],
+  "tags": [
+    "succession",
+    "legitimacy",
+    "paikuli",
+    "sasanian"
+  ],
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-sasanian-event-details-293-298"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('sasanian-298-treaty-of-nisibis', '尼西比斯和约', 'sasanian-persia', 298, 299, 'Nisibis', 'diplomacy', '纳尔塞败于罗马后签订尼西比斯和约，罗马在美索不达米亚和亚美尼亚方向取得阶段性优势。', 'high', '[41.22,37.08]', '{
+  "overview": "298 年，纳尔塞在与罗马的战争中失利后达成尼西比斯和约。该和约重置罗马与萨珊在亚美尼亚、美索不达米亚和底格里斯方向的边界关系，是戴克里先四帝共治时期东方政策的高点。",
+  "background": [
+    "293 年戴克里先正式建立四帝共治后，伽列里乌斯承担东方战区的重要军事责任，罗马需要恢复三世纪危机后在东方的威信。",
+    "纳尔塞刚完成王位重组，需要通过边境战争巩固萨珊王权，并重新处理亚美尼亚和美索不达米亚问题。",
+    "260 年瓦勒良被俘曾使罗马东方威望严重受挫，因此 296-298 年战争在罗马政治宣传中具有强烈象征意义。"
+  ],
+  "process": [
+    "296/297 年前后，纳尔塞与罗马在亚美尼亚、美索不达米亚方向发生战争。",
+    "罗马传统称伽列里乌斯早期受挫后重新集结，并在亚美尼亚或萨塔拉附近击败纳尔塞。",
+    "罗马叙述特别强调萨珊王室营帐和家眷被俘，这使纳尔塞在谈判中处于不利位置。",
+    "和约以尼西比斯为重要外交节点，确立罗马在东方边界的一段优势秩序。"
+  ],
+  "result": [
+    "罗马获得或确认美索不达米亚和底格里斯方向的若干边境利益。",
+    "亚美尼亚和伊比利亚方向进入更明显的亲罗马秩序。",
+    "尼西比斯成为罗马与萨珊贸易、外交和边防体系中的关键节点。"
+  ],
+  "impact": [
+    "尼西比斯和约标志着罗马在三世纪末东方边境重新取得主动，是四帝共治军事改革的重要成果之一。",
+    "萨珊在纳尔塞统治后期接受不利边境安排，直到四世纪沙普尔二世时期才重新挑战这一格局。",
+    "在 190-310 范例结构中，它和 224 阿尔达希尔建国、260 瓦勒良被俘构成罗马-萨珊力量消长的关键对照。"
+  ],
+  "sourceNotes": [
+    "Zosimus 与 Zonaras 保存了伽列里乌斯击败纳尔塞、王室营帐被俘和战后安排的罗马/拜占庭传统。",
+    "Dodgeon & Lieu 汇编罗马东方边境材料，可作为追踪晚期传统和条款叙述的参考。",
+    "Paikuli 铭文不能直接证明 298 年和约，但能解释纳尔塞王权形成的政治背景。"
+  ],
+  "uncertainty": [
+    "和约具体条款在不同传统中的表述不完全一致，部分地名和边界细节需要保持审慎。",
+    "战役地点、年份分期和伽列里乌斯前后两阶段战况在现代研究中仍有讨论空间。",
+    "主要叙述来自罗马或后期拜占庭传统，萨珊侧对失败和谈判的直接叙述缺乏。"
+  ]
+}', '{
+  "id": "sasanian-298-treaty-of-nisibis",
+  "title": "尼西比斯和约",
+  "region": "sasanian-persia",
+  "startYear": 298,
+  "endYear": 299,
+  "locationName": "Nisibis",
+  "category": "diplomacy",
+  "summary": "纳尔塞败于罗马后签订尼西比斯和约，罗马在美索不达米亚和亚美尼亚方向取得阶段性优势。",
+  "confidence": "high",
+  "coordinates": [
+    41.22,
+    37.08
+  ],
+  "detail": {
+    "overview": "298 年，纳尔塞在与罗马的战争中失利后达成尼西比斯和约。该和约重置罗马与萨珊在亚美尼亚、美索不达米亚和底格里斯方向的边界关系，是戴克里先四帝共治时期东方政策的高点。",
+    "background": [
+      "293 年戴克里先正式建立四帝共治后，伽列里乌斯承担东方战区的重要军事责任，罗马需要恢复三世纪危机后在东方的威信。",
+      "纳尔塞刚完成王位重组，需要通过边境战争巩固萨珊王权，并重新处理亚美尼亚和美索不达米亚问题。",
+      "260 年瓦勒良被俘曾使罗马东方威望严重受挫，因此 296-298 年战争在罗马政治宣传中具有强烈象征意义。"
+    ],
+    "process": [
+      "296/297 年前后，纳尔塞与罗马在亚美尼亚、美索不达米亚方向发生战争。",
+      "罗马传统称伽列里乌斯早期受挫后重新集结，并在亚美尼亚或萨塔拉附近击败纳尔塞。",
+      "罗马叙述特别强调萨珊王室营帐和家眷被俘，这使纳尔塞在谈判中处于不利位置。",
+      "和约以尼西比斯为重要外交节点，确立罗马在东方边界的一段优势秩序。"
+    ],
+    "result": [
+      "罗马获得或确认美索不达米亚和底格里斯方向的若干边境利益。",
+      "亚美尼亚和伊比利亚方向进入更明显的亲罗马秩序。",
+      "尼西比斯成为罗马与萨珊贸易、外交和边防体系中的关键节点。"
+    ],
+    "impact": [
+      "尼西比斯和约标志着罗马在三世纪末东方边境重新取得主动，是四帝共治军事改革的重要成果之一。",
+      "萨珊在纳尔塞统治后期接受不利边境安排，直到四世纪沙普尔二世时期才重新挑战这一格局。",
+      "在 190-310 范例结构中，它和 224 阿尔达希尔建国、260 瓦勒良被俘构成罗马-萨珊力量消长的关键对照。"
+    ],
+    "sourceNotes": [
+      "Zosimus 与 Zonaras 保存了伽列里乌斯击败纳尔塞、王室营帐被俘和战后安排的罗马/拜占庭传统。",
+      "Dodgeon & Lieu 汇编罗马东方边境材料，可作为追踪晚期传统和条款叙述的参考。",
+      "Paikuli 铭文不能直接证明 298 年和约，但能解释纳尔塞王权形成的政治背景。"
+    ],
+    "uncertainty": [
+      "和约具体条款在不同传统中的表述不完全一致，部分地名和边界细节需要保持审慎。",
+      "战役地点、年份分期和伽列里乌斯前后两阶段战况在现代研究中仍有讨论空间。",
+      "主要叙述来自罗马或后期拜占庭传统，萨珊侧对失败和谈判的直接叙述缺乏。"
+    ]
+  },
+  "sourceRefs": [
+    {
+      "sourceId": "deepseek-sasanian-source-zosimus-historia-nova-zonaras-epitome-zosimus-c-500-ce-zonaras-12th-c-zo",
+      "locator": "Zosimus 1.27; Zonaras 12.23-24",
+      "note": "罗马/拜占庭传统：伽列里乌斯击败纳尔塞、王室营帐被俘。"
+    },
+    {
+      "sourceId": "deepseek-sasanian-source-dodgeon-lieu-the-roman-eastern-frontier-quoting-zonaras-zonaras-12th-cen",
+      "locator": "Zonaras 12.23",
+      "note": "现代汇编引用的尼西比斯和约条款传统。"
+    }
+  ],
+  "relatedEvents": [
+    "sasanian-293-narseh-paikuli",
+    "rome-293-establishment-of-the-tetrarchy",
+    "rome-298-treaty-of-nisibis"
+  ],
+  "personIds": [
+    "sasanian-narseh",
+    "rome-galerius",
+    "rome-diocletian"
+  ],
+  "tags": [
+    "war",
+    "treaty",
+    "nisibis",
+    "roman-sasanian"
+  ],
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-sasanian-event-details-293-298"
+}');
 INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-145-origins-of-septimius-severus-african-provincial-aristocrat', 'Origins of Septimius Severus: African provincial aristocrat', 'rome', 145, 145, 'Leptis Magna', 'politics', '塞维鲁是第一位来自北非的罗马皇帝——他的出身代表了三世纪行省地方贵族上升至帝位的趋势。', 'high', NULL, '{"overview":"塞维鲁是第一位来自北非的罗马皇帝——他的出身代表了三世纪行省地方贵族上升至帝位的趋势。","result":[],"background":["Severan Dynasty"],"process":["塞普蒂米乌斯·塞维鲁（Lucius Septimius Severus）出生于阿非利加行省的沿海城市大列普提斯（Leptis Magna），他的家族是当地最显赫的之一——父亲盖塔（Publius Septimius Geta）是罗马骑士，母亲富尔维亚·皮亚（Fulvia Pia）的家族属于意大利移民后裔。这使他具有双重文化身份——罗马政治精英阶层的一员，却也是北非行省地方社会的产物。他讲话终其一生都带有一种明显的北非口音（据 HA 称，甚至有人说他''讲拉丁语的口音像一名布匿人''）。他的早年仕途是典型的元老通道——但在马可·奥勒留和康茂德统治期间没有特别引人注目。关键的性格特征是巨大的野心和对占星术的迷信——据传他选择娶尤利娅·多姆娜是因为她的星盘预测她将嫁给一位国王。塞维鲁统治期间大力投资于他的出生城市——Leptis Magna 的公共建筑（如宏伟的塞维鲁广场和四向拱门）至今仍是北非最令人印象深刻的罗马遗址之一。他的非洲出身并非偶然——三世纪中后期崛起的众多皇帝（如马克里努斯——毛里塔尼亚人）都来自北非和东部行省，反映了罗马政治精英地理重心的东移和非意大利化。"],"impact":[],"sourceNotes":["The Oxford Classical Dictionary (4th ed., 2012) · s.v. ''Severus, Septimius'' · pp. 1353–1354","待核：塞维鲁的母系是否真的是意大利贵族后裔？或者是地方柏柏尔精英？HA 的描述可能带有修辞夸张。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:b2f0597dac85b1cd6db19753","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":84,"sourceId":"rome-source-the-oxford-classical-dictionary-simon-hornblower-antony-spawforth-eds","sourceTitle":"The Oxford Classical Dictionary","locator":"pp. 1353–1354","originalText":null,"translation":"OCD 总结了塞普蒂米乌斯·塞维鲁的出身和早年仕途。他于 145 年（或 146 年）出生于阿非利加行省的大列普提斯（Leptis Magna，今利比亚霍姆斯附近），出身地方贵族家庭，父系为意大利移民后裔，母系可能为当地柏柏尔-腓尼基贵族。他在雅典和罗马接受了修辞和法律教育，在 Marcus Aurelius 统治时期通过多次低级官职开始了仕途（senatorial cursus——元老仕途路径）。他的第一个重要职位是 170 年代的 quaestor 和之后在西班牙和萨丁尼亚的总督职务。他娶了一位叙利亚女子尤利娅·多姆娜（约 187 年）——这次婚姻据说基于占星术的预测（声称她将嫁给一位国王）。","originalTextMissing":true,"peopleCore":["Septimius Severus"],"peopleMentioned":["Julia Domna","Marcus Aurelius"],"places":["Leptis Magna","Africa","Rome","Athens","Emesa"],"macroEvent":"Severan Dynasty","eventLabel":"Origins of Septimius Severus: African provincial aristocrat","factType":"person-life","questions":["塞维鲁的母系是否真的是意大利贵族后裔？或者是地方柏柏尔精英？HA 的描述可能带有修辞夸张。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-oxford-classical-dictionary-simon-hornblower-antony-spawforth-eds","locator":"pp. 1353–1354"}],"tags":["Roman Empire","Severan Dynasty","person-life","Leptis Magna","Africa","Rome"],"people":["Septimius Severus","Julia Domna","Marcus Aurelius"],"sources":["The Oxford Classical Dictionary (4th ed., 2012)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-180-herodian-as-a-source-for-the-severan-and-early-crisis-period', 'Herodian as a source for the Severan and early crisis period', 'rome', 180, 180, 'Rome', 'culture', 'Herodian 是覆盖从马可·奥勒留之死（180）到戈尔迪安三世登基（238）的唯一完整的当代史家。', 'high', NULL, '{"overview":"Herodian 是覆盖从马可·奥勒留之死（180）到戈尔迪安三世登基（238）的唯一完整的当代史家。","result":[],"background":["Third Century Crisis"],"process":["Herodian（全名 Aelius Herodianus，或可能是来自叙利亚的希腊文人）的地位在 3 世纪史料中既独特又尴尬。他的八卷史书从 180 年写到 238 年——正好接在 Cassius Dio 的塞维鲁末年部分和 Zosimus 的危机后期叙事之间，为我们提供了塞维鲁王朝和早期三世纪危机（235-238 六帝之年）的唯一连续叙事。他的生平几乎完全不为人知——他自己的序言仅说他是当代人且''亲身经历''了他描述的事件。现代学者推测他可能是来自小亚细亚或叙利亚的帝国低级官员（可能为自由人或骑士等级）。他的希腊文比 Dio 更朴素，他的历史解释更倾向于戏剧化和个人化——他强调人物的性格、外貌仪式对事件的推动力——而相对轻视制度和经济的深层原因。他的视角比 Dio 更少元老院色彩，但他对军人皇帝的描述（尤其是对马克西米努斯·色雷克斯的描绘）充满了对低微出身者的文化偏见。尽管存在局限，他是我们理解 238 年六帝之年的唯一连续的第一手叙事。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 1 · 1.1–1.2","待核：Herodian 的真实身份仍是一个谜——他是否就是 Cassius Dio 提到的那位同名语法学家？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:b275a2d208a8310510c1ca06","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":68,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"1.1–1.2","originalText":null,"translation":"Herodian 在其开篇声明中自称是一位''亲身经历''他所记述事件的当代人——''我所写的一切都是我在整个一生中亲眼所见和亲耳所闻的。''他的八卷《马可之后帝国史》覆盖了从 180 年（马可·奥勒留之死）到 238 年（戈尔迪安三世登基）的时期。他可能是一名来自叙利亚或小亚细亚希腊语地区的较低级帝国官员，其著作是介于 Cassius Dio 的元老视角和后期拉丁简史之间的最重要的 3 世纪叙事史料。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Marcus Aurelius","Gordian III","Maximinus Thrax"],"places":["Rome","Syria"],"macroEvent":"Third Century Crisis","eventLabel":"Herodian as a source for the Severan and early crisis period","factType":"source-mention","questions":["Herodian 的真实身份仍是一个谜——他是否就是 Cassius Dio 提到的那位同名语法学家？"],"confidence":"high","importance":"minor","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"1.1–1.2"}],"tags":["Roman Empire","Third Century Crisis","source-mention","Rome","Syria"],"people":["Marcus Aurelius","Gordian III","Maximinus Thrax"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-193-didius-julianus-buys-the-throne-severus-proclaimed-in-pannonia', 'Didius Julianus buys the throne; Severus proclaimed in Pannonia', 'rome', 193, 193, 'Rome', 'politics', '公元 193 年四帝并立，帝国的统治权在禁卫军拍卖和行省军团拥立之间摇摆。', 'high', NULL, '{"overview":"公元 193 年四帝并立，帝国的统治权在禁卫军拍卖和行省军团拥立之间摇摆。","result":[],"background":["Year of the Five Emperors"],"process":["公元 193 年罗马经历了极端的政治混乱。佩尔蒂纳克斯在位仅 87 天即被禁卫军杀害。禁卫军随后公开拍卖皇位，元老尤利安努斯以巨额贿金中标。但各行省军队拒绝承认，上潘诺尼亚总督塞普蒂米乌斯·塞维鲁于卡农图姆（Carnuntum）被军团拥立为帝。同时叙利亚军团拥立了佩斯森尼乌斯·尼格尔，不列颠军团拥立了克洛狄乌斯·阿尔比努斯。塞维鲁率先进入罗马，处决尤利安努斯，遣散原有禁卫军并以自己的多瑙河老兵重建，随后展开一系列内战，最终统一帝国。"],"impact":[],"sourceNotes":["Cassius Dio, Historia Romana · Book 74(73) · 74.14.3–74.15.1","待核：禁卫军拍卖皇位的具体过程是否有更多参与者？","待核：塞维鲁被潘诺尼亚军团拥立的确切日期是否可进一步确认？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:e7112572048ca0785c243fa3","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":0,"sourceId":"rome-source-roman-history-cassius-dio","sourceTitle":"Roman History","locator":"74.14.3–74.15.1","originalText":null,"translation":"Cassius Dio 记载，公元 193 年佩尔蒂纳克斯被弑后，禁卫军公开拍卖皇位，尤利安努斯以每人 25,000 塞斯特斯的价格买得帝位。此举引发各行省军队的强烈不满，潘诺尼亚军团拥立塞维鲁、叙利亚军团拥立尼格尔、不列颠军团拥立阿尔比努斯。","originalTextMissing":true,"peopleCore":["Septimius Severus"],"peopleMentioned":["Pertinax","Didius Julianus","Pescennius Niger","Clodius Albinus"],"places":["Rome","Pannonia","Carnuntum"],"macroEvent":"Year of the Five Emperors","eventLabel":"Didius Julianus buys the throne; Severus proclaimed in Pannonia","factType":"political-event","questions":["禁卫军拍卖皇位的具体过程是否有更多参与者？","塞维鲁被潘诺尼亚军团拥立的确切日期是否可进一步确认？"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"74.14.3–74.15.1"}],"tags":["Roman Empire","Year of the Five Emperors","political-event","Rome","Pannonia","Carnuntum"],"people":["Septimius Severus","Pertinax","Didius Julianus","Pescennius Niger","Clodius Albinus"],"sources":["Cassius Dio, Historia Romana"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-193-severus-marches-on-rome-and-disbands-the-praetorian-guard', 'Severus marches on Rome and disbands the Praetorian Guard', 'rome', 193, 193, 'Rome', 'war', '塞维鲁从潘诺尼亚迅速进军罗马，解散了原有禁卫军并用自己的老兵重建。', 'high', NULL, '{"overview":"塞维鲁从潘诺尼亚迅速进军罗马，解散了原有禁卫军并用自己的老兵重建。","result":[],"background":["Year of the Five Emperors"],"process":["塞维鲁被拥立后，立即以惊人的速度向罗马挺进。他在尤利安努斯被处决后进入罗马城，召集原有禁卫军并公开遣散他们——惩罚他们谋杀佩尔蒂纳克斯并拍卖皇位的行为。塞维鲁命令他们在 100 英里半径之外不得靠近罗马。他随后从多瑙河军团中挑选精锐老兵组建了新的禁卫军。这一举措极大地加强了皇帝与军队的结合，但也打破了禁卫军从意大利本土招募的传统，为后世军队干政埋下伏笔。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 2 · 2.9–2.12","待核：塞维鲁是否真的截断了禁卫军在意大利的传统招募？后续有何后果？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:6bd00929fc1c453aa4fb4855","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":1,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"2.9–2.12","originalText":null,"translation":"Herodian 详细描述了 193 年佩尔蒂纳克斯被弑后罗马的混乱局面，以及塞维鲁如何在潘诺尼亚被军队拥立。Herodian 强调，塞维鲁迅速向罗马进军，在尤利安努斯被杀后入城，随后遣散全部禁卫军，重新招募忠诚于自己的士兵。","originalTextMissing":true,"peopleCore":["Septimius Severus"],"peopleMentioned":["Pertinax","Didius Julianus"],"places":["Rome","Pannonia"],"macroEvent":"Year of the Five Emperors","eventLabel":"Severus marches on Rome and disbands the Praetorian Guard","factType":"military-event","questions":["塞维鲁是否真的截断了禁卫军在意大利的传统招募？后续有何后果？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"2.9–2.12"}],"tags":["Roman Empire","Year of the Five Emperors","military-event","Rome","Pannonia"],"people":["Septimius Severus","Pertinax","Didius Julianus"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-193-severus-establishes-military-monarchy', 'Severus establishes military monarchy', 'rome', 193, 193, 'Rome', 'politics', '塞维鲁将帝国转变为以军队为核心的军事君主制。', 'high', NULL, '{"overview":"塞维鲁将帝国转变为以军队为核心的军事君主制。","result":[],"background":["Severan Dynasty"],"process":["塞维鲁的统治标志着罗马政治体制的根本转变。他公开蔑视元老院的传统权威，将自己的权力单纯建立在军队的忠诚之上。他大幅提升军团士兵的年薪（从 300 第纳里提高到约 400-500 第纳里），放宽了军团士兵的婚姻禁令（允许士兵在服役期间结婚和与家人同住），并提拔大量骑士阶层人士担任原本由元老充任的军政职位。这一系列改革虽巩固了塞维鲁个人的统治，但也大幅增加了帝国财政负担，并为军队日益干预皇位继承开启了先例。"],"impact":[],"sourceNotes":["The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 1 · pp. 1–40","待核：士兵薪资的具体增幅有不同学术观点。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:31748075e68b73b1db339696","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":5,"sourceId":"rome-source-the-cambridge-ancient-history-cambridge-university-press","sourceTitle":"The Cambridge Ancient History","locator":"pp. 1–40","originalText":null,"translation":"现代史学认为，塞普蒂米乌斯·塞维鲁的统治（193-211）标志着罗马政治体制从元首制向公开的军事君主制的转型。他以军队为唯一权力基础，以''将军即皇帝''（imperator）的身份统治，大幅度提升了军团士兵的薪饷并放宽婚姻禁令。元老院的实际权力被大幅削弱，骑士阶层和军人充任高级行政职位。","originalTextMissing":true,"peopleCore":["Septimius Severus"],"peopleMentioned":[],"places":["Rome","Danube"],"macroEvent":"Severan Dynasty","eventLabel":"Severus establishes military monarchy","factType":"reform","questions":["士兵薪资的具体增幅有不同学术观点。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-cambridge-ancient-history-cambridge-university-press","locator":"pp. 1–40"}],"tags":["Roman Empire","Severan Dynasty","reform","Rome","Danube"],"people":["Septimius Severus"],"sources":["The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-193-assassination-of-commodus-and-pertinax-auction-of-the-empire', 'Assassination of Commodus and Pertinax; auction of the empire', 'rome', 193, 193, 'Rome', 'politics', '192 年末康茂德被弑，佩尔蒂纳克斯在位 87 天即被禁卫军杀害，随后禁卫军公开拍卖皇位。', 'high', NULL, '{"overview":"192 年末康茂德被弑，佩尔蒂纳克斯在位 87 天即被禁卫军杀害，随后禁卫军公开拍卖皇位。","result":[],"background":["Year of the Five Emperors"],"process":["五帝之年的序幕始于康茂德（Commodus）在 192 年除夕被其摔跤伙伴纳尔奇苏斯（Narcissus）勒死——背后是由其情妇马西亚（Marcia）和禁卫军长官莱图斯（Laetus）策划的阴谋。元老院迅速宣布康茂德为公敌，并拥立了受人尊敬的元老佩尔蒂纳克斯（Pertinax）为帝。佩尔蒂纳克斯试图清理康茂德留下的财政混乱并恢复军纪，但他的节流措施——尤其是只支付了承诺赏金的一半——激怒了禁卫军。193 年 3 月 28 日，禁卫军冲入皇宫将其杀害（据 Dio 所述仅约 200 人）。然后发生了臭名昭著的皇位拍卖——禁卫军宣布将皇位出售给出价最高者，元老尤利安努斯承诺每人 25,000 塞斯特斯后中选。这一奇耻大辱直接触发了各行省军团的全面反叛。"],"impact":[],"sourceNotes":["Cassius Dio, Historia Romana · Book 74(73) · 74.1–74.3","待核：康茂德被弑的阴谋具体涉及多少人？","待核：禁卫军拍卖皇位的过程是否像 Dio 描述的那么戏剧化？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:3afd4083dd75f9cfbe0cf3cc","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":39,"sourceId":"rome-source-roman-history-cassius-dio","sourceTitle":"Roman History","locator":"74.1–74.3","originalText":null,"translation":"Cassius Dio 记述了 193 年康茂德被弑（192 年 12 月 31 日）后的权力真空。佩尔蒂纳克斯被元老院拥立为帝，但他试图恢复军纪和财政纪律的举措激怒了禁卫军。在位仅 87 天后，约 200 名禁卫军士兵冲击皇宫，杀害了这位试图改革的老人皇帝。Cassius Dio 当时在罗马现场，他的记载具有第一手观察的价值——他对禁卫军的无法无天表示了深刻的恐惧。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Pertinax","Commodus"],"places":["Rome"],"macroEvent":"Year of the Five Emperors","eventLabel":"Assassination of Commodus and Pertinax; auction of the empire","factType":"political-event","questions":["康茂德被弑的阴谋具体涉及多少人？","禁卫军拍卖皇位的过程是否像 Dio 描述的那么戏剧化？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"74.1–74.3"}],"tags":["Roman Empire","Year of the Five Emperors","political-event","Rome"],"people":["Pertinax","Commodus"],"sources":["Cassius Dio, Historia Romana"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-193-severus-enters-rome-and-addresses-the-senate', 'Severus enters Rome and addresses the Senate', 'rome', 193, 193, 'Rome', 'politics', '塞维鲁入主罗马后向元老院发表安抚性讲话，但暗中的威胁令 Dio 深感不安。', 'high', NULL, '{"overview":"塞维鲁入主罗马后向元老院发表安抚性讲话，但暗中的威胁令 Dio 深感不安。","result":[],"background":["Year of the Five Emperors"],"process":["塞维鲁是一个精明的政治操纵者。他进入罗马后公开承诺尊重元老院、不杀元老、效仿马可·奥勒留（Marcus Aurelius）的统治风格。为了建立王朝合法性——他自己与安东尼王朝并无血缘关系——他公开宣称自己是马可·奥勒留的''养子''，甚至追认被元老院宣布为公敌的康茂德为神。他在铸币上自称为 Divi Marci filius（神马可之子）。Cassius Dio 在元老院亲眼见证了塞维鲁的表演，并记录了他的不安——他意识到这位多瑙河统帅的承诺不可轻信。塞维鲁在卢格杜努姆战役后确实处决了数十名元老，证实了 Dio 最初的担忧。"],"impact":[],"sourceNotes":["Cassius Dio, Historia Romana · Book 75(74) · 75.1–75.3","待核：塞维鲁自称马可·奥勒留之子的主张在元老院引发了什么具体反应？Dio 是唯一现场目击者吗？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:b53afb1093ed4aa99d0cfec6","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":40,"sourceId":"rome-source-roman-history-cassius-dio","sourceTitle":"Roman History","locator":"75.1–75.3","originalText":null,"translation":"Cassius Dio 本人作为元老亲历了塞维鲁入城后的政治清洗。Dio 描述了塞维鲁对元老院的首次讲话——他承诺不会处死任何元老，效仿马可·奥勒留的仁慈统治。但他随即要求元老院追认康茂德为神（consecratio），以此暗示自己是马可·奥勒留的''合法''继承者。Dio 感到了深刻的恐惧和不确定性。","originalTextMissing":true,"peopleCore":["Septimius Severus"],"peopleMentioned":["Commodus","Marcus Aurelius"],"places":["Rome"],"macroEvent":"Year of the Five Emperors","eventLabel":"Severus enters Rome and addresses the Senate","factType":"political-event","questions":["塞维鲁自称马可·奥勒留之子的主张在元老院引发了什么具体反应？Dio 是唯一现场目击者吗？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"75.1–75.3"}],"tags":["Roman Empire","Year of the Five Emperors","political-event","Rome"],"people":["Septimius Severus","Commodus","Marcus Aurelius"],"sources":["Cassius Dio, Historia Romana"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-193-severan-military-reforms', 'Severan military reforms', 'rome', 193, 193, 'Rome', 'politics', '塞维鲁大幅提高军饷并增设三个军团，强化了军队但也加重了财政负担。', 'high', NULL, '{"overview":"塞维鲁大幅提高军饷并增设三个军团，强化了军队但也加重了财政负担。","result":[],"background":["Severan Dynasty"],"process":["塞维鲁的军事改革是三世纪帝国军事化的奠基性事件。他将军团士兵的年薪从约 300 第纳里提高至约 400-500 第纳里（具体数字有学术争议），并定期发放大额赏金（donativa）。他废除了奥古斯都以来禁卫军必须从意大利招募的传统，改为从多瑙河军团中选拔。他还首次允许军团士兵在服役期间正式结婚和与家人同住（此前的婚姻禁令虽在实际上被绕过但法理上仍存在）。塞维鲁增设了三个帕提亚军团（I、II、III Parthica），其中第二帕提亚军团历史上首次常驻意大利（驻阿尔班山），打破了意大利无军团的禁忌。这些改革为军队塑造了空前的政治力量——也为三世纪的兵营皇帝现象奠定了制度基础。"],"impact":[],"sourceNotes":["The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 1 · pp. 20–28","待核：士兵薪资的具体增长幅度在不同学术观点中有差异。","待核：婚姻禁令的正式解除是否有法律文件证据？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:27d604608e0caadb32d6b5fe","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":42,"sourceId":"rome-source-the-cambridge-ancient-history-cambridge-university-press","sourceTitle":"The Cambridge Ancient History","locator":"pp. 20–28","originalText":null,"translation":"现代研究认为，塞维鲁的军事改革——包括提升军饷、允许士兵在服役期间结婚、增设三个军团（第一、第二、第三帕提亚军团）——大幅增强了军队的忠诚度和政治力量，但同时也加剧了帝国的财政压力。他将军团的年薪从约 300 第纳里提高到约 450-500 第纳里，并首次给予禁卫军和军团士兵定期的大额赏赐（donativa）。","originalTextMissing":true,"peopleCore":["Septimius Severus"],"peopleMentioned":[],"places":["Rome","Danube","Euphrates"],"macroEvent":"Severan Dynasty","eventLabel":"Severan military reforms","factType":"reform","questions":["士兵薪资的具体增长幅度在不同学术观点中有差异。","婚姻禁令的正式解除是否有法律文件证据？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-cambridge-ancient-history-cambridge-university-press","locator":"pp. 20–28"}],"tags":["Roman Empire","Severan Dynasty","reform","Rome","Danube","Euphrates"],"people":["Septimius Severus"],"sources":["The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-194-severus-defeats-pescennius-niger-at-issus', 'Severus defeats Pescennius Niger at Issus', 'rome', 194, 194, 'Issus', 'war', '塞维鲁于 194 年在伊苏斯击败东部对手尼格尔，统一东方行省。', 'high', NULL, '{"overview":"塞维鲁于 194 年在伊苏斯击败东部对手尼格尔，统一东方行省。","result":[],"background":["Year of the Five Emperors"],"process":["塞维鲁先稳住西方后立即转向东方，对付叙利亚军团拥立的佩斯森尼乌斯·尼格尔。决战发生在奇里乞亚的伊苏斯附近（Issus），数个世纪前亚历山大曾在此击败大流士三世。塞维鲁的潘诺尼亚老兵以数量优势取胜，尼格尔的军队在两次会战（Cyzicus 和 Nicaea）接连失利后最终崩溃。尼格尔在逃亡帕提亚途中被俘杀。塞维鲁随后惩罚支持尼格尔的城市——安条克被降级，拜占庭经历两年多围攻后于 196 年被彻底摧毁。这场战役标志着东方行省完全落入塞维鲁掌控。"],"impact":[],"sourceNotes":["Cassius Dio, Historia Romana · Book 75(74) · 75.6–75.7","待核：伊苏斯战场的具体位置是否与现代考古一致？","待核：拜占庭围城的确切持续时间有异议吗？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:7d251c42eb0ce01abb23d106","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":2,"sourceId":"rome-source-roman-history-cassius-dio","sourceTitle":"Roman History","locator":"75.6–75.7","originalText":null,"translation":"据 Cassius Dio 记载，塞维鲁于 194 年在伊苏斯附近（与小居鲁士和亚历山大大帝的战场相近的地方）击败了佩斯森尼乌斯·尼格尔。尼格尔在逃亡中被杀。塞维鲁随后越过幼发拉底河惩罚支持尼格尔的东方城邦，尤其是拜占庭，经历了漫长的围攻后最终陷落。","originalTextMissing":true,"peopleCore":["Septimius Severus"],"peopleMentioned":["Pescennius Niger"],"places":["Issus","Antioch","Byzantium","Syria"],"macroEvent":"Year of the Five Emperors","eventLabel":"Severus defeats Pescennius Niger at Issus","factType":"military-event","questions":["伊苏斯战场的具体位置是否与现代考古一致？","拜占庭围城的确切持续时间有异议吗？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"75.6–75.7"}],"tags":["Roman Empire","Year of the Five Emperors","military-event","Issus","Antioch","Byzantium"],"people":["Septimius Severus","Pescennius Niger"],"sources":["Cassius Dio, Historia Romana"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-197-battle-of-lugdunum-severus-defeats-clodius-albinus', 'Battle of Lugdunum: Severus defeats Clodius Albinus', 'rome', 197, 197, 'Lugdunum', 'war', '197 年里昂战役，塞维鲁歼灭最后一个对手阿尔比努斯，结束了内战。', 'high', NULL, '{"overview":"197 年里昂战役，塞维鲁歼灭最后一个对手阿尔比努斯，结束了内战。","result":[],"background":["Year of the Five Emperors"],"process":["塞维鲁最初为稳住西方，曾授予不列颠总督克洛狄乌斯·阿尔比努斯凯撒头衔（即储君身份），但随后转而立其子卡拉卡拉为继承人。阿尔比努斯遂于 196 年自立为帝，渡海进入高卢。197 年 2 月 19 日，两军在卢格杜努姆（今里昂）附近决战，双方各投入约 55,000 人，为罗马内战史上规模最大的会战之一。塞维鲁一度在战斗中落马，几乎被俘，但最终右翼骑兵突破敌军侧翼，阿尔比努斯兵败自杀。塞维鲁清洗了数十名支持阿尔比努斯的罗马元老，没收其财产，标志着元老院与军队关系进一步恶化。帝国正式进入军事君主制时代。"],"impact":[],"sourceNotes":["Cassius Dio, Historia Romana · Book 76(75) · 76.6–76.7","待核：双方兵力是否有其他史料不同记载？","待核：阿尔比努斯在元老院支持者的具体名单和清洗规模尚有争议。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:319dce0e9ee69d720338f1f6","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":3,"sourceId":"rome-source-roman-history-cassius-dio","sourceTitle":"Roman History","locator":"76.6–76.7","originalText":null,"translation":"Cassius Dio 记载，197 年 2 月 19 日，塞维鲁率约 55,000 士兵在高卢的卢格杜努姆（里昂）附近与克洛狄乌斯·阿尔比努斯的军队进行了整个帝国史上规模最大的内战之一。双方几乎势均力敌，塞维鲁一度落马陷入危机。最终塞维鲁的多瑙河骑兵突破侧翼，阿尔比努斯兵败自杀。","originalTextMissing":true,"peopleCore":["Septimius Severus"],"peopleMentioned":["Clodius Albinus"],"places":["Lugdunum","Lyon","Gaul"],"macroEvent":"Year of the Five Emperors","eventLabel":"Battle of Lugdunum: Severus defeats Clodius Albinus","factType":"military-event","questions":["双方兵力是否有其他史料不同记载？","阿尔比努斯在元老院支持者的具体名单和清洗规模尚有争议。"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"76.6–76.7"}],"tags":["Roman Empire","Year of the Five Emperors","military-event","Lugdunum","Lyon","Gaul"],"people":["Septimius Severus","Clodius Albinus"],"sources":["Cassius Dio, Historia Romana"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-198-severus-sacks-ctesiphon-and-creates-province-of-mesopotamia', 'Severus sacks Ctesiphon and creates province of Mesopotamia', 'rome', 198, 198, 'Mesopotamia', 'war', '塞维鲁攻陷帕提亚首都泰西封，设立美索不达米亚行省。', 'high', NULL, '{"overview":"塞维鲁攻陷帕提亚首都泰西封，设立美索不达米亚行省。","result":[],"background":["Severan Eastern Campaigns"],"process":["塞维鲁平定内战后立即转向东方，借帕提亚支持过尼格尔为由发动远征。他沿幼发拉底河南下，于 198 年攻陷帕提亚首都泰西封，大肆劫掠，俘获约十万居民为奴隶。塞维鲁设立了美索不达米亚行省，派驻两个军团驻防。此举虽为帝国增添了荣耀，但该行省的防守成本极高，且在东方创造了一个长期与帕提亚（及其后的萨珊波斯）对峙的前线。塞维鲁在此次战役中首次授予年仅 10 岁的卡拉卡拉奥古斯都头衔，正式确立其共治地位。"],"impact":[],"sourceNotes":["Cassius Dio, Historia Romana · Book 76(75) · 76.9–76.12","待核：美索不达米亚行省的确切边界和驻军配置有待进一步确认。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:555b019c9ff5233af76d2c33","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":4,"sourceId":"rome-source-roman-history-cassius-dio","sourceTitle":"Roman History","locator":"76.9–76.12","originalText":null,"translation":"Cassius Dio 记述塞维鲁在内战结束后立即发动对帕提亚帝国的远征（197-199）。他沿幼发拉底河进军，攻占并洗劫了帕提亚首都泰西封（Ctesiphon），俘虏约 10 万人。此次战役建立了罗马的美索不达米亚行省。塞维鲁为表彰军功，授予其子卡拉卡拉共治皇帝头衔。","originalTextMissing":true,"peopleCore":["Septimius Severus","Caracalla"],"peopleMentioned":["Vologases V"],"places":["Mesopotamia","Ctesiphon","Euphrates","Seleucia"],"macroEvent":"Severan Eastern Campaigns","eventLabel":"Severus sacks Ctesiphon and creates province of Mesopotamia","factType":"military-event","questions":["美索不达米亚行省的确切边界和驻军配置有待进一步确认。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"76.9–76.12"}],"tags":["Roman Empire","Severan Eastern Campaigns","military-event","Mesopotamia","Ctesiphon","Euphrates"],"people":["Septimius Severus","Caracalla","Vologases V"],"sources":["Cassius Dio, Historia Romana"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-200-palmyra-the-desert-metropolis-and-its-trade-empire', 'Palmyra: the desert metropolis and its trade empire', 'rome', 200, 200, 'Palmyra', 'politics', '帕尔米拉是 3 世纪叙利亚沙漠中最为繁荣的商都，其财富和军事力量使它得以在罗马的混乱中崛起。', 'high', NULL, '{"overview":"帕尔米拉是 3 世纪叙利亚沙漠中最为繁荣的商都，其财富和军事力量使它得以在罗马的混乱中崛起。","result":[],"background":["Third Century Crisis"],"process":["帕尔米拉（Palmyra / Tadmor）位于叙利亚沙漠中一处富饶的绿洲，位于地中海东岸（距约 200 公里）与幼发拉底河之间的关键节点上。在 1-3 世纪间，帕尔米拉从一个小型沙漠定居点发展成为一个令人惊叹的都市文明——拥有宏伟的列柱大道（Great Colonnade）、贝尔神庙（Temple of Bel，2015 年被 ISIS 摧毁）、巨大的陵墓塔（Tower Tombs）和庞大的水利工程。其独特的文明是阿拉姆-希腊-罗马文化的三重融合——在帕尔米拉的神庙中奉献铭文通常以帕尔米拉-阿拉姆语（Palmyrene Aramaic）和希腊语双语刻写，雕塑既有希腊-罗马理想化肖像的痕迹又保留了东方的静态庄严风格。骆驼商队（caravans）是帕尔米拉经济的命脉——帕尔米拉商人组织起庞大的武装商队穿越最危险的路段，并通过对过往的货物征收通行税和保护费积累了巨大的财富。这些财富使得帕尔米拉能够武装其民兵——包括著名的帕尔米拉马弓手和重甲骑兵——并最终在奥登纳图斯的领导下成为罗马在东方不可替代的军事盟友。但同样巨大的财富也滋生了帕尔米拉自主独立的野心，最终在芝诺比娅时期演变为对罗马的全面反抗。"],"impact":[],"sourceNotes":["Palmyra and Its Empire: Zenobia''s Revolt against Rome (University of Michigan Press, 1992) · Chapters 1-3 · pp. 1–60","待核：帕尔米拉商队的实际贸易距离到底有多远——是否有确凿证据证明其与印度和中国有直接贸易联系？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:07048268775b34f223878ae7","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":85,"sourceId":"rome-source-palmyra-and-its-empire-richard-stoneman","sourceTitle":"Palmyra and Its Empire","locator":"pp. 1–60","originalText":null,"translation":"Stoneman 的综合研究描述了帕尔米拉城邦（Palmyra，当地语 Tadmor——''棕榈之城''）在 1-3 世纪的惊人繁荣。它坐落在叙利亚沙漠中的一片绿洲，是连接罗马帝国与帕提亚（及后来的萨珊波斯）、阿拉伯和更远的印度商路的必经之地。帕尔米拉的商人组织大规模的骆驼商队往来于幼发拉底河与地中海之间，运输丝绸、香料、珠宝和其他奢侈品。其独特的文化融合了阿拉姆语（Aramaic）、希腊文化和罗马元素——公共铭文通常以双语（希腊语和帕尔米拉-阿拉姆语）刻写。到 3 世纪初，帕尔米拉已发展成为一个半自治的城市国家，拥有自己的民兵和强大的地方贵族家族（如奥登纳图斯家族）。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Odaenathus","Zenobia"],"places":["Palmyra","Tadmor","Syria","Euphrates"],"macroEvent":"Third Century Crisis","eventLabel":"Palmyra: the desert metropolis and its trade empire","factType":"political-event","questions":["帕尔米拉商队的实际贸易距离到底有多远——是否有确凿证据证明其与印度和中国有直接贸易联系？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-palmyra-and-its-empire-richard-stoneman","locator":"pp. 1–60"}],"tags":["Roman Empire","Third Century Crisis","political-event","Palmyra","Tadmor","Syria"],"people":["Odaenathus","Zenobia"],"sources":["Palmyra and Its Empire: Zenobia''s Revolt against Rome (University of Michigan Press, 1992)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-208-severus-british-campaign', 'Severus'' British campaign', 'rome', 208, 208, 'Britannia', 'war', '塞维鲁晚年发动远征征服喀里多尼亚，但未能完成即病逝于约克。', 'high', NULL, '{"overview":"塞维鲁晚年发动远征征服喀里多尼亚，但未能完成即病逝于约克。","result":[],"background":["Severan Dynasty"],"process":["塞维鲁晚年亲征不列颠北部，是自 Agricola（1 世纪）以来帝国在岛上最深入的军事行动。他重修了哈德良长城（实际上是安东尼长城更北的位置），率军约 40,000-50,000 人深入喀里多尼亚（今苏格兰），采用焦土战术。罗马军队在穿越高地丛林时遭受了持续的游击骚扰（Dio 称损失了 50,000 人——这个数字可能夸大）。塞维鲁的意图似乎是完全征服该岛，但他在喀里多尼亚人重新叛乱的阴影中于 211 年 2 月病逝于埃布拉库姆（约克）。卡拉卡拉随即放弃了征服，撤回哈德良长城以南。塞维鲁的不列颠远征虽以失败告终，但暂时震慑了北方部落，给不列颠带来了约一个世纪的相对平静。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 3 · 3.10–3.11","待核：罗马军队的具体损失数字 Cassius Dio 和 Herodian 是否一致？","待核：塞维鲁在不列颠的军事基地考古证据如何？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:898066f54f5a90defbc0644f","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":41,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"3.10–3.11","originalText":null,"translation":"Herodian 记述了塞维鲁晚年发动的不列颠远征（208-211）。尽管年事已高且饱受痛风折磨，塞维鲁仍然亲自率军前往不列颠北部，试图征服喀里多尼亚（今苏格兰）部落。Herodian 描述这是一场极其残酷的消耗战——罗马军队在陌生地形中损失惨重。塞维鲁的战术是彻底消灭和驱逐而非征服和管理，但在他去世前不久，喀里多尼亚人又重新叛乱。","originalTextMissing":true,"peopleCore":["Septimius Severus"],"peopleMentioned":[],"places":["Britannia","Caledonia","Hadrian''s Wall","Eboracum"],"macroEvent":"Severan Dynasty","eventLabel":"Severus'' British campaign","factType":"military-event","questions":["罗马军队的具体损失数字 Cassius Dio 和 Herodian 是否一致？","塞维鲁在不列颠的军事基地考古证据如何？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"3.10–3.11"}],"tags":["Roman Empire","Severan Dynasty","military-event","Britannia","Caledonia","Hadrian''s Wall"],"people":["Septimius Severus"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-211-death-of-septimius-severus-at-eboracum', 'Death of Septimius Severus at Eboracum', 'rome', 211, 211, 'Eboracum', 'politics', '公元 211 年 2 月，塞维鲁在不列颠的约克病逝，帝国由其子卡拉卡拉和盖塔共同继承。', 'high', NULL, '{"overview":"公元 211 年 2 月，塞维鲁在不列颠的约克病逝，帝国由其子卡拉卡拉和盖塔共同继承。","result":[],"background":["Severan Dynasty"],"process":["塞维鲁于 208 年前往不列颠亲征喀里多尼亚部落，试图将整个不列颠岛纳入帝国版图。然而他在战役中痛风加重，最终于 211 年 2 月 4 日在埃布拉库姆（今约克）去世。据 Herodian 和 Cassius Dio 记载，他临终前告诫两个儿子和睦相处并笼络军队。塞维鲁的遗言常被后世引为罗马三世纪政治逻辑的缩影：皇位取决于军队支持而非法律或元老院认可。他留下的帝国财政压力巨大，给继任者带来严重挑战。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 3 · 3.15","待核：塞维鲁遗言的确切措辞在不同史料中有差异，Herodian 和 Cassius Dio 的版本不完全一致。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:52e2a3478d4be959e21c3bf7","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":6,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"3.15","originalText":null,"translation":"Herodian 记述塞维鲁于 211 年 2 月在埃布拉库姆（Eboracum，今约克）病逝。临终前他告诫卡拉卡拉和盖塔两子：''和睦相处，赏赐士兵，其余皆不足虑。''（Be harmonious, enrich the soldiers, and scorn all other men — Herodian 3.15.4 的意译）。","originalTextMissing":true,"peopleCore":["Septimius Severus","Caracalla","Geta"],"peopleMentioned":[],"places":["Eboracum","York","Britannia"],"macroEvent":"Severan Dynasty","eventLabel":"Death of Septimius Severus at Eboracum","factType":"person-life","questions":["塞维鲁遗言的确切措辞在不同史料中有差异，Herodian 和 Cassius Dio 的版本不完全一致。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"3.15"}],"tags":["Roman Empire","Severan Dynasty","person-life","Eboracum","York","Britannia"],"people":["Septimius Severus","Caracalla","Geta"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-211-caracalla-and-geta-joint-rule-and-mutual-hostility', 'Caracalla and Geta: joint rule and mutual hostility', 'rome', 211, 211, 'Rome', 'politics', '卡拉卡拉和盖塔在父亲去世后共同统治帝国，但兄弟之间极度不信任，不到一年即以血腥结局收场。', 'high', NULL, '{"overview":"卡拉卡拉和盖塔在父亲去世后共同统治帝国，但兄弟之间极度不信任，不到一年即以血腥结局收场。","result":[],"background":["Severan Dynasty"],"process":["塞维鲁的遗嘱安排卡拉卡拉和盖塔共同继承帝位，但兄弟之间早已心存芥蒂。据 Herodian 记载，两人从约克返回罗马后甚至在修缮皇宫时试图将其分为两个互不相通的独立区域。他们几乎在所有事务上都意见不一，互相猜忌到了连共同进餐都要预先试毒的程度。他们的母亲尤利娅·多姆娜（Julia Domna）是唯一能够暂时调解双方的人。军队和元老院也各自选边站队，帝国面临二次分裂的危险。这种局面最终以卡拉卡拉于 211 年 12 月杀害盖塔而告终。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 4 · 4.1–4.4","待核：兄弟分宫而居的具体细节可能带有修辞夸张，需要与 Cassius Dio 的记载对勘。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:8b408984ffa31bc1474326ef","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":7,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"4.1–4.4","originalText":null,"translation":"Herodian 详细记载了塞维鲁去世后卡拉卡拉和盖塔兄弟之间的紧张关系。两人从父亲去世后就相互不信任，甚至将皇宫一分为二分别居住。元老院和军队试图调解但均告失败。盖塔被其母尤利娅·多姆娜多次保护。","originalTextMissing":true,"peopleCore":["Caracalla","Geta"],"peopleMentioned":["Julia Domna"],"places":["Rome"],"macroEvent":"Severan Dynasty","eventLabel":"Caracalla and Geta: joint rule and mutual hostility","factType":"person-life","questions":["兄弟分宫而居的具体细节可能带有修辞夸张，需要与 Cassius Dio 的记载对勘。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"4.1–4.4"}],"tags":["Roman Empire","Severan Dynasty","person-life","Rome"],"people":["Caracalla","Geta","Julia Domna"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-211-caracalla-murders-geta', 'Caracalla murders Geta', 'rome', 211, 211, 'Rome', 'politics', '211 年 12 月卡拉卡拉杀害弟弟盖塔，实行记忆抹除。', 'high', NULL, '{"overview":"211 年 12 月卡拉卡拉杀害弟弟盖塔，实行记忆抹除。","result":[],"background":["Severan Dynasty"],"process":["卡拉卡拉以和解会面为名将盖塔诱至母亲的住所，派出百夫长当众将其杀害。盖塔受伤后倒在母亲尤利娅·多姆娜怀中死去。卡拉卡拉随后对盖塔的支持者进行了残酷清洗，据 Cassius Dio 估计约有 20,000 人被杀——虽然这个数字可能有所夸大，但无疑包含了大量元老、骑士和盖塔的近臣。卡拉卡拉对盖塔实行了 damnatio memoriae（记忆抹除），从铭文和画像中删除盖塔的名字和面容。Cassius Dio 本人因为是元老而被迫在卡拉卡拉面前噤声。"],"impact":[],"sourceNotes":["Cassius Dio, Historia Romana · Book 78(77) · 78.2.1–78.2.6","待核：Cassius Dio 的 20,000 人屠杀数字可能夸大，实际受清洗人数需要与其他史料（如 Herodian）对勘。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:0b8182bdd2df2d7a01425de3","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":8,"sourceId":"rome-source-roman-history-cassius-dio","sourceTitle":"Roman History","locator":"78.2.1–78.2.6","originalText":null,"translation":"Cassius Dio 记载，211 年 12 月，卡拉卡拉在母亲尤利娅·多姆娜安排的一次''和解会面''中，派人闯入房间杀害了盖塔。盖塔死在母亲怀中。卡拉卡拉随即宣布盖塔为''公敌''（hostis），将其名字从一切公共记录中抹去（damnatio memoriae），并屠杀了盖塔的大批支持者。","originalTextMissing":true,"peopleCore":["Caracalla","Geta"],"peopleMentioned":["Julia Domna"],"places":["Rome"],"macroEvent":"Severan Dynasty","eventLabel":"Caracalla murders Geta","factType":"political-event","questions":["Cassius Dio 的 20,000 人屠杀数字可能夸大，实际受清洗人数需要与其他史料（如 Herodian）对勘。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.2.1–78.2.6"}],"tags":["Roman Empire","Severan Dynasty","political-event","Rome"],"people":["Caracalla","Geta","Julia Domna"],"sources":["Cassius Dio, Historia Romana"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-211-death-of-geta-and-damnatio-memoriae', 'Death of Geta and damnatio memoriae', 'rome', 211, 211, 'Rome', 'politics', '盖塔被杀后遭受记忆抹除，其支持者遭到大规模清洗。', 'high', NULL, '{"overview":"盖塔被杀后遭受记忆抹除，其支持者遭到大规模清洗。","result":[],"background":["Severan Dynasty"],"process":["盖塔于 211 年 12 月下旬被杀，年仅 22 岁。死后卡拉卡拉不仅下令将其名字从一切公共铭文中凿除、画像销毁，还屠杀了盖塔的追随者及一切曾为盖塔说话的人。法学家帕皮尼安（Aemilius Papinianus）因拒绝为卡拉卡拉的弑弟行为辩护而被处死——这一事件被后世法学家视为罗马法理学黄金时代的终结。盖塔的 damnatio memoriae 执行得如此彻底，以至于许多铭文中他的名字被完全凿去，形成明显的空白，成为考古学上 readily identifiable 的证据。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 4 · 4.3–4.4","待核：帕皮尼安被杀的确切原因在史料中有不同叙述，是否仅因拒绝为弑弟辩护还是另有政治原因？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:3d13bfad59f6b18e646c4d2e","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":9,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"4.3–4.4","originalText":null,"translation":"Herodian 记载盖塔之死的版本略不同于 Cassius Dio。Herodian 称谋杀发生在皇宫而非其母住所，但同样确认盖塔的死引发了罗马城内外的政治动乱。盖塔的名字被从铭文中抹去，他的画像被涂毁，其近臣和支持者遭受大规模清洗。","originalTextMissing":true,"peopleCore":["Geta"],"peopleMentioned":["Caracalla","Julia Domna"],"places":["Rome"],"macroEvent":"Severan Dynasty","eventLabel":"Death of Geta and damnatio memoriae","factType":"person-life","questions":["帕皮尼安被杀的确切原因在史料中有不同叙述，是否仅因拒绝为弑弟辩护还是另有政治原因？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"4.3–4.4"}],"tags":["Roman Empire","Severan Dynasty","person-life","Rome"],"people":["Geta","Caracalla","Julia Domna"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-211-caracallas-building-program-and-coinage-reform', 'Caracalla''s building program and coinage reform', 'rome', 211, 211, 'Rome', 'politics', '卡拉卡拉修建了宏伟的浴场，同时引入了安东尼尼安银币——开启了三世纪币值贬值的先例。', 'high', NULL, '{"overview":"卡拉卡拉修建了宏伟的浴场，同时引入了安东尼尼安银币——开启了三世纪币值贬值的先例。","result":[],"background":["Severan Dynasty"],"process":["卡拉卡拉的统治遗产远不止于弑弟和敕令这两件臭名昭著的事件。他在罗马修建的卡拉卡拉浴场（Thermae Antoninianae）是古代世界最宏伟的公共浴场建筑群之一——占地约 25 公顷（62 英亩），可同时容纳约 1,600 人沐浴，包括冷水池（frigidarium）、温水池（tepidarium）、热水池（caldarium）、图书馆、健身房和花园。其建筑规模和精美的马赛克装饰至今令人叹为观止——尤其是那幅著名的运动员马赛克。在货币方面，卡拉卡拉于约 214-215 年引入了新的银币——安东尼尼安银币（antoninianus）——其名义价值为 2 第纳里，但实际白银含量仅为约 1.5 个第纳里的银量。这种''内置贬值''的做法在三世纪中后期被日益频繁地重复——到 260 年代，安东尼尼安银币的含银量已降至不足 5%，导致帝国面临恶性通货膨胀。卡拉卡拉的浴场展示了他对民众支持的渴望——他的货币政策则暴露了他（及后续皇帝）面临的结构性财政困境。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 5 · pp. 180–200","待核：安东尼尼安银币的确切引入年份是 214 还是 215？不同钱币学证据可能有细微差异。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:ad62a7d3cea20360b461f406","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":66,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 180–200","originalText":null,"translation":"Potter 综合分析了卡拉卡拉的统治。除了 Constitutio Antoniniana 外，卡拉卡拉还大修了罗马的卡拉卡拉浴场（Thermae Antoninianae）——三世纪最宏伟的公共建筑工程之一——并在铸币上将安东尼尼安银币（antoninianus）的含银量从塞维鲁时期的约 50% 降低至约 50-51%（初期），但该币种的实际价值已低于面值。这一双重贬值策略——引入新币种并逐步降低其金属含量——为三世纪的经济通胀奠定了基础。","originalTextMissing":true,"peopleCore":["Caracalla"],"peopleMentioned":[],"places":["Rome"],"macroEvent":"Severan Dynasty","eventLabel":"Caracalla''s building program and coinage reform","factType":"reform","questions":["安东尼尼安银币的确切引入年份是 214 还是 215？不同钱币学证据可能有细微差异。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 180–200"}],"tags":["Roman Empire","Severan Dynasty","reform","Rome"],"people":["Caracalla"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-211-the-severan-women-a-dynasty-of-empresses', 'The Severan women: a dynasty of empresses', 'rome', 211, 211, 'Rome', 'politics', '塞维鲁王朝的女性——尤其是尤利娅·多姆娜——在政治、智识和军方都发挥了空前的影响力。', 'high', NULL, '{"overview":"塞维鲁王朝的女性——尤其是尤利娅·多姆娜——在政治、智识和军方都发挥了空前的影响力。","result":[],"background":["Severan Dynasty"],"process":["尤利娅·多姆娜（Julia Domna，约 170-217 CE）是罗马帝政史上最具影响力的女性之一，她在叙利亚埃美萨（Emesa，今霍姆斯）出生，其家族是太阳神埃拉伽巴（Elagabal）的世袭祭司王族。塞维鲁与她的婚姻将他与富庶的叙利亚地方贵族的资源联结了起来——她带来了庞大的财富和政治网络。多姆娜在诸多方面打破了元首制对''silent empress''的期待：她随塞维鲁一同东征（极为罕见的军中随行）、获得了''mater castrorum''（军营之母）的非传统称号、主持了一个重要的智识沙龙——聚集了希腊哲学家菲洛斯特拉图斯（Philostratus，他在多姆娜的鼓励下写作了《提亚纳的阿波罗尼乌斯传》）、医生和文学家达数人之多。她的政治影响力是姐妹梅萨模仿的——后者利用塞维鲁家族的财富和叙利亚关系在 18 年之内两次复辟了塞维鲁王朝（拥立埃拉伽巴路斯和亚历山大·塞维鲁）。她的两个女儿和两个外孙的皇位靠的正是这位叙利亚贵族女性的金钱、人脉和政治胆识。塞维鲁王朝的女性权力网络是古典罗马史上女性影响力在正式制度框架之外运作的最高范例。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 5 · pp. 205–215","待核：尤利娅·多姆娜的知识沙龙是否有具体的成员名单和著述存世？菲洛斯特拉图斯的 Apollonius 传记是否完全是多姆娜授意的？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:3c441450b39ad87a6790a815","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":71,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 205–215","originalText":null,"translation":"Potter 指出塞维鲁王朝的女性——尤利娅·多姆娜（Julia Domna）、其姐尤利娅·梅萨（Julia Maesa）及其女尤利娅·索艾米亚斯（Julia Soaemias）和尤利娅·玛迈亚（Julia Mamaea）——构成了罗马史上最强大的女性权力网络。尤利娅·多姆娜来自叙利亚埃美萨的祭司王族，她不仅在塞维鲁东征时随军同行并获得''奥古斯塔''和''mater castrorum''（军营之母）等称号，还在罗马聚集了一批重要的希腊知识分子——包括哲学家菲洛斯特拉图斯（Philostratus）和医生伽伦（Galen）——形成了非正式的''学术宫廷圆圈''。她的影响力为后来梅萨和玛迈亚作为摄政太后统治帝国提供了先例。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Julia Domna","Julia Maesa","Julia Soaemias","Julia Mamaea","Septimius Severus","Caracalla"],"places":["Rome","Emesa","Syria"],"macroEvent":"Severan Dynasty","eventLabel":"The Severan women: a dynasty of empresses","factType":"person-life","questions":["尤利娅·多姆娜的知识沙龙是否有具体的成员名单和著述存世？菲洛斯特拉图斯的 Apollonius 传记是否完全是多姆娜授意的？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 205–215"}],"tags":["Roman Empire","Severan Dynasty","person-life","Rome","Emesa","Syria"],"people":["Julia Domna","Julia Maesa","Julia Soaemias","Julia Mamaea","Septimius Severus","Caracalla"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-212-constitutio-antoniniana-universal-citizenship', 'Constitutio Antoniniana: universal citizenship', 'rome', 212, 212, 'Rome', 'politics', '212 年《安东尼努斯敕令》授予帝国境内所有自由居民罗马公民权，是罗马史上影响最深远的法令之一。', 'high', NULL, '{"overview":"212 年《安东尼努斯敕令》授予帝国境内所有自由居民罗马公民权，是罗马史上影响最深远的法令之一。","result":[],"background":["Severan Dynasty"],"process":["公元 212 年（一说 213 年初），卡拉卡拉颁布了《安东尼努斯敕令》（Constitutio Antoniniana），授予罗马帝国境内所有自由居民罗马公民权。这是罗马史上范围最大的一次公民权扩展，终结了数百年来公民与非公民（peregrini）的法律区分。Cassius Dio 尖锐地指出其真实动机是财政性的——卡拉卡拉需要更多税收来支撑军费，而罗马公民需缴纳 5%（后提至 10%）的遗产税和释奴税。现代学者对此有不同评价：一些人认为它是帝国融合的必然结果；另一些人同意 Dio 的观点，认为它主要是出于财政考量。无论如何，该法令在法律上统一了帝国，深刻影响了罗马法的发展。"],"impact":[],"sourceNotes":["Cassius Dio, Historia Romana · Book 78(77) · 78.9.4–78.9.5","待核：敕令的文本只有残篇存世（P. Giss. 40），其确切措辞和例外条款（如 dediticii 是否被排除）仍存争议。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:d454c081eda44daa6ef4593c","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":10,"sourceId":"rome-source-roman-history-cassius-dio","sourceTitle":"Roman History","locator":"78.9.4–78.9.5","originalText":null,"translation":"据 Cassius Dio 评述，卡拉卡拉颁布《安东尼努斯敕令》的动机纯粹是为了扩大税收基础——将之前仅罗马公民缴纳的遗产税（vicesima hereditatium）税率从 5% 提高到 10%，并将适用范围扩大到全体新公民。Ulpian（Digest 1.5.17）保留了该法令的正面表述：''所有居住在罗马帝国境内的人均为罗马公民。''","originalTextMissing":true,"peopleCore":["Caracalla"],"peopleMentioned":[],"places":["Rome","Empire-wide"],"macroEvent":"Severan Dynasty","eventLabel":"Constitutio Antoniniana: universal citizenship","factType":"reform","questions":["敕令的文本只有残篇存世（P. Giss. 40），其确切措辞和例外条款（如 dediticii 是否被排除）仍存争议。"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.9.4–78.9.5"}],"tags":["Roman Empire","Severan Dynasty","reform","Rome","Empire-wide"],"people":["Caracalla"],"sources":["Cassius Dio, Historia Romana"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-212-constitutio-antoniniana-the-papyrus-evidence', 'Constitutio Antoniniana: the papyrus evidence', 'rome', 212, 212, 'Rome', 'politics', '《安东尼努斯敕令》的原文仅存埃及出土的一页残片（P. Giss. 40），文本严重残缺。', 'medium', NULL, '{"overview":"《安东尼努斯敕令》的原文仅存埃及出土的一页残片（P. Giss. 40），文本严重残缺。","result":[],"background":["Severan Dynasty"],"process":["P. Giss. 40（吉森纸莎草第 40 号）是 20 世纪初在埃及出土的一组纸莎草纸中最著名的一张。该残片包含了卡拉卡拉 Constitutio Antoniniana 的唯一现存原文——确切说是该敕令在埃及发布的希腊文译本。文本极度残缺，关键段落恰好断裂在讨论例外条款的地方。残存的文字大致为：''[我授予]所有[居住在我的]帝国境内的人罗马公民权，[保留]一切城邦的现有权利……''断裂处之后可能有一个关键的除外条款——''除了 dediticii''（χωρὶς τῶν δεδειτικίων）。dediticii 是指被罗马征服后未组织为城邦共同体的归降群体——如果除外条款成立，可能意味着农村贫困人口被排除在外。A.H.M. Jones 和 Peter Garnsey 等学者对此持不同意见。"],"impact":[],"sourceNotes":["Constitutio Antoniniana (fragmentary papyrus from Egypt) · P. Giss. 40, col. I · P. Giss. 40 I","待核：P. Giss. 40 的 dediticii 除外条款是否真正存在？断裂处的文本复原有多少种可能性？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:164d16a7e69a7643e946e6bd","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":44,"sourceId":"rome-source-p-giss-40-papyrus-giessensis-40-unknown-imperial-edict","sourceTitle":"P. Giss. 40 (Papyrus Giessensis 40)","locator":"P. Giss. 40 I","originalText":null,"translation":"《安东尼努斯敕令》的唯一现存原文残篇来自埃及的纸莎草纸（P. Giss. 40），现已严重破损。残留文字显示：''我（卡拉卡拉）授予所有居住在我帝国境内的人罗马公民权……[残缺]……保留一切城邦的现有权利。''关键条款——是否排除 dediticii（被征服后无组织共同体的归降者）——因纸莎草纸在该处断裂而成永久争议。现代学者对 dediticii 排除条款的解读分为两派。","originalTextMissing":true,"peopleCore":["Caracalla"],"peopleMentioned":[],"places":["Rome","Egypt","Empire-wide"],"macroEvent":"Severan Dynasty","eventLabel":"Constitutio Antoniniana: the papyrus evidence","factType":"reform","questions":["P. Giss. 40 的 dediticii 除外条款是否真正存在？断裂处的文本复原有多少种可能性？"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-p-giss-40-papyrus-giessensis-40-unknown-imperial-edict","locator":"P. Giss. 40 I"}],"tags":["Roman Empire","Severan Dynasty","reform","Rome","Egypt","Empire-wide"],"people":["Caracalla"],"sources":["Constitutio Antoniniana (fragmentary papyrus from Egypt)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-213-caracallas-german-campaign', 'Caracalla''s German campaign', 'rome', 213, 213, 'Rhine', 'war', '213 年卡拉卡拉发动莱茵河战役对抗阿勒曼尼人，赢得以金钱和阴谋而非军事才能换来的胜利。', 'medium', NULL, '{"overview":"213 年卡拉卡拉发动莱茵河战役对抗阿勒曼尼人，赢得以金钱和阴谋而非军事才能换来的胜利。","result":[],"background":["Severan Dynasty"],"process":["卡拉卡拉在杀害盖塔后急于通过军事胜利来获取合法性。213 年他前往莱茵河前线，对抗新兴的阿勒曼尼部落联盟（首次出现在史料中的族群名称）。他取得了一些军事成功——可能包括但不限于通过大量金钱贿赂部落首领来换取和平——并获得了 Germanicus Maximus 的称号。但 Cassius Dio 对其进行了尖锐的讽刺，称他更擅长用金钱解决问题，且滑稽地模仿亚历山大大帝——组建''马其顿方阵''、仿制亚历山大发型和姿势。卡拉卡拉对亚历山大的模仿狂（imitatio Alexandri）在其后的东方远征中达到了顶峰。这些斥资巨大的军事冒险大幅消耗了塞维鲁积累的财政储备。"],"impact":[],"sourceNotes":["Cassius Dio, Historia Romana · Book 78(77) · 78.13–78.17","待核：Cassius Dio 对卡拉卡拉的个人敌意可能影响了他的记述客观性。阿勒曼尼人首次出现的确切日期是否就是 213 年？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:2011198d8287070a2b4102c1","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":43,"sourceId":"rome-source-roman-history-cassius-dio","sourceTitle":"Roman History","locator":"78.13–78.17","originalText":null,"translation":"Cassius Dio 记载卡拉卡拉于 213 年发动对阿勒曼尼人（Alamanni）的莱茵河战役。他赢得了''日耳曼尼库斯''（Germanicus）的称号，但 Dio 暗示这场战争并不光彩——卡拉卡拉更多的是通过金钱收买和卑劣手段而非真正的军事才能取胜。Dio 尖锐地嘲讽卡拉卡拉对亚历山大大帝的痴迷——他模仿亚历山大的发型和姿态，并在军队中组建了一支''马其顿方阵''。","originalTextMissing":true,"peopleCore":["Caracalla"],"peopleMentioned":[],"places":["Rhine","Germania","Raetia"],"macroEvent":"Severan Dynasty","eventLabel":"Caracalla''s German campaign","factType":"military-event","questions":["Cassius Dio 对卡拉卡拉的个人敌意可能影响了他的记述客观性。阿勒曼尼人首次出现的确切日期是否就是 213 年？"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.13–78.17"}],"tags":["Roman Empire","Severan Dynasty","military-event","Rhine","Germania","Raetia"],"people":["Caracalla"],"sources":["Cassius Dio, Historia Romana"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-216-caracallas-parthian-war', 'Caracalla''s Parthian war', 'rome', 216, 216, 'Mesopotamia', 'war', '卡拉卡拉以联姻为名背信弃义对帕提亚发动战争，虽个人获取了一些战利品但军事上无功而返。', 'high', NULL, '{"overview":"卡拉卡拉以联姻为名背信弃义对帕提亚发动战争，虽个人获取了一些战利品但军事上无功而返。","result":[],"background":["Severan Dynasty"],"process":["卡拉卡拉对亚历山大大帝的模仿狂热达到了荒唐的顶峰。他致信帕提亚王阿尔达班五世（Artabanus V）请求联姻——希望娶其公主——以此模仿亚历山大与罗克珊娜的联姻。阿尔达班最初拒绝，但在卡拉卡拉亲率大军前往边境后被迫答应。在婚礼庆典上，卡拉卡拉下令屠杀帕提亚贵族和侍从（此举强烈令人联想到亚历山大对波西斯总督的待遇——但卡拉卡拉缺乏亚历山大的一切美德）。此后他劫掠了阿狄亚贝尼和米底地区，亵渎了帕提亚王陵。Cassius Dio 对这场背信弃义的战争极为鄙夷。卡拉卡拉随后返回埃德萨准备下一场战役，但在途中被刺杀。这场徒劳的战争耗费了大量资源且未获取任何持久的领土收益，直接激励了马克里努斯的刺杀阴谋。"],"impact":[],"sourceNotes":["Cassius Dio, Historia Romana · Book 79(78) · 79.1–79.3","待核：联姻提议是否真实发生——或者这是 Cassius Dio 对卡拉卡拉的反帕提亚借口的一种讽刺性描述？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:a85760b6ceba922158e044d4","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":45,"sourceId":"rome-source-roman-history-cassius-dio","sourceTitle":"Roman History","locator":"79.1–79.3","originalText":null,"translation":"Cassius Dio 记载卡拉卡拉以娶帕提亚公主为名提出联姻，遭拒后发动了对帕提亚的背信弃义式战争（216-217）。他的军队劫掠了阿狄亚贝尼（Adiabene）地区，并亵渎了帕提亚王室的陵墓。Dio 称卡拉卡拉写给元老院的战报充满了自吹自擂的谎言。这场战争军事上无成果且代价巨大，直接触发了马克里努斯的阴谋。","originalTextMissing":true,"peopleCore":["Caracalla"],"peopleMentioned":["Artabanus V"],"places":["Mesopotamia","Arbela","Adiabene","Parthia"],"macroEvent":"Severan Dynasty","eventLabel":"Caracalla''s Parthian war","factType":"military-event","questions":["联姻提议是否真实发生——或者这是 Cassius Dio 对卡拉卡拉的反帕提亚借口的一种讽刺性描述？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"79.1–79.3"}],"tags":["Roman Empire","Severan Dynasty","military-event","Mesopotamia","Arbela","Adiabene"],"people":["Caracalla","Artabanus V"],"sources":["Cassius Dio, Historia Romana"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-217-assassination-of-caracalla-macrinus-proclaimed-emperor', 'Assassination of Caracalla; Macrinus proclaimed emperor', 'rome', 217, 217, 'Carrhae', 'politics', '217 年 4 月卡拉卡拉遇刺身亡，禁卫军长官马克里努斯被拥立为帝。', 'high', NULL, '{"overview":"217 年 4 月卡拉卡拉遇刺身亡，禁卫军长官马克里努斯被拥立为帝。","result":[],"background":["Severan Dynasty"],"process":["卡拉卡拉在 216-217 年发动了对帕提亚的远征，但军事进展不顺利。他的禁卫军长官（praetorian prefect）马克里努斯因恐惧自己可能成为卡拉卡拉疑心之下的下一个牺牲品，暗中策划了刺杀。217 年 4 月 8 日，卡拉卡拉在前往卡雷（Carrhae）途中下马解手时，被一名心怀不满的军官 Martialis 刺杀。马克里努斯随后假装对谋杀表示愤慨，但三天后即被军队拥立为帝。这是第一次由非元老等级（骑士等级）的人出任罗马皇帝，标志着骑士阶层崛起的重要节点。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 4 · 4.13","待核：马克里努斯在刺杀中的具体角色仍存争议：他是否直接指使了 Martialis，还是事后顺势而为？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:2641de665830666a65020b6d","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":11,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"4.13","originalText":null,"translation":"Herodian 详细记载了卡拉卡拉在帕提亚边境遇刺的过程。217 年 4 月 8 日，卡拉卡拉在从埃德萨前往卡雷（Carrhae）途中下马便溺时，被马克里努斯暗中指使的一名军官（Julius Martialis）刺杀。马克里努斯旋即被军队拥立为帝。","originalTextMissing":true,"peopleCore":["Caracalla","Macrinus"],"peopleMentioned":["Julius Martialis"],"places":["Carrhae","Edessa","Mesopotamia"],"macroEvent":"Severan Dynasty","eventLabel":"Assassination of Caracalla; Macrinus proclaimed emperor","factType":"political-event","questions":["马克里努斯在刺杀中的具体角色仍存争议：他是否直接指使了 Martialis，还是事后顺势而为？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"4.13"}],"tags":["Roman Empire","Severan Dynasty","political-event","Carrhae","Edessa","Mesopotamia"],"people":["Caracalla","Macrinus","Julius Martialis"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-217-macrinus-defeated-elagabalus-proclaimed-emperor', 'Macrinus defeated; Elagabalus proclaimed emperor', 'rome', 217, 217, 'Antioch', 'politics', '马克里努斯削减军饷引发军队不满，塞维鲁家族借机拥立埃拉伽巴路斯。218 年马克里努斯战败被杀。', 'high', NULL, '{"overview":"马克里努斯削减军饷引发军队不满，塞维鲁家族借机拥立埃拉伽巴路斯。218 年马克里努斯战败被杀。","result":[],"background":["Severan Dynasty"],"process":["马克里努斯是第一位出身骑士等级的皇帝，从未进入元老院。他试图在帕提亚前线削减开支并降低军团薪资，直接触怒了军队。与此同时，塞维鲁家族的真正权力核心——尤利娅·梅萨（Julia Maesa，尤利娅·多姆娜的姐姐）在叙利亚埃美萨利用家族财富和军队对塞维鲁王朝的忠诚，煽动第三高卢军团拥立其 14 岁的外孙埃拉伽巴路斯。她声称埃拉伽巴路斯是卡拉卡拉的私生子。218 年 6 月 8 日，双方在安条克附近交战，马克里努斯的军队在关键时刻倒戈，他本人逃亡途中被杀。塞维鲁王朝复辟。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 5 · 5.2–5.4","待核：马克里努斯削减军饷的具体幅度有待考证。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:d8d8aca685d6fab0c1901780","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":12,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"5.2–5.4","originalText":null,"translation":"Herodian 记述，马克里努斯即位后试图与帕提亚议和，支付巨额赔款以结束卡拉卡拉发动的战争（约 2 亿塞斯特斯）。但他削减军饷的举措激怒了军队。留守埃美萨（Emesa）的塞维鲁家族女性——尤利娅·梅萨（Julia Maesa）借机煽动军队拥立其外孙埃拉伽巴路斯（Elagabalus）为帝，声称他是卡拉卡拉的私生子。","originalTextMissing":true,"peopleCore":["Macrinus","Elagabalus"],"peopleMentioned":["Julia Maesa","Julia Soaemias"],"places":["Antioch","Emesa","Syria"],"macroEvent":"Severan Dynasty","eventLabel":"Macrinus defeated; Elagabalus proclaimed emperor","factType":"political-event","questions":["马克里努斯削减军饷的具体幅度有待考证。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.2–5.4"}],"tags":["Roman Empire","Severan Dynasty","political-event","Antioch","Emesa","Syria"],"people":["Macrinus","Elagabalus","Julia Maesa","Julia Soaemias"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-217-reign-of-macrinus', 'Reign of Macrinus', 'rome', 217, 217, 'Rome', 'politics', '马克里努斯是第一位骑士出身的皇帝，在位仅 14 个月，因军队不满而覆灭。', 'medium', NULL, '{"overview":"马克里努斯是第一位骑士出身的皇帝，在位仅 14 个月，因军队不满而覆灭。","result":[],"background":["Severan Dynasty"],"process":["马克里努斯（Marcus Opellius Macrinus）生于约 165 年，出身毛里塔尼亚（今阿尔及利亚）的骑士家庭。他经法律和行政职业升迁至禁卫军长官，是第一位完全不属于元老等级的罗马皇帝。他试图恢复财政纪律、削减军费和降低新兵的薪资待遇（恢复到塞维鲁之前的水平），但这些明智的政策在军队看来是吝啬和背叛。驻叙利亚的军团尤其不满，因为他们曾享受卡拉卡拉的慷慨赏赐。218 年尤利娅·梅萨成功策反后，马克里努斯的军队迅速倒戈，他在逃亡中被杀，其子迪亚杜梅尼安（Diadumenian）也被处死。"],"impact":[],"sourceNotes":["Historia Augusta, Vita Macrini · Vita Macrini · Macr. 1–15","待核：Historia Augusta 对马克里努斯的传记充满虚构和偏见，需要与 Herodian 和 Cassius Dio 对勘验证。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:abef8168f6e3bec2e7b10ac9","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":13,"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","sourceTitle":"Historia Augusta","locator":"Macr. 1–15","originalText":null,"translation":"Historia Augusta 对马克里努斯进行了全面负面的记述（需注意 HA 的可靠性问题）。HA 称马克里努斯出身低微，曾为角斗士，后来通过法律职业成为禁卫军长官。他因企图降低士兵薪资和取消卡拉卡拉授予的特权而被军队抛弃。","originalTextMissing":true,"peopleCore":["Macrinus"],"peopleMentioned":[],"places":["Rome","Syria"],"macroEvent":"Severan Dynasty","eventLabel":"Reign of Macrinus","factType":"person-life","questions":["Historia Augusta 对马克里努斯的传记充满虚构和偏见，需要与 Herodian 和 Cassius Dio 对勘验证。"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Macr. 1–15"}],"tags":["Roman Empire","Severan Dynasty","person-life","Rome","Syria"],"people":["Macrinus"],"sources":["Historia Augusta, Vita Macrini"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-217-cassius-dio-as-eyewitness-the-senator-under-tyranny', 'Cassius Dio as eyewitness: the senator under tyranny', 'rome', 217, 217, 'Rome', 'culture', 'Cassius Dio 以第一人称亲历者的身份记录了塞维鲁王朝末期元老与皇帝之间的恐怖关系。', 'high', NULL, '{"overview":"Cassius Dio 以第一人称亲历者的身份记录了塞维鲁王朝末期元老与皇帝之间的恐怖关系。","result":[],"background":["Severan Dynasty"],"process":["Cassius Dio（约 155-235 CE）是所有三世纪危机史料中最重要的一位——不仅因为他写作的时期，还因为他作为参与者在一个历史关键时刻亲身经历了罗马政治。他出身比提尼亚的希腊贵族家庭，在康茂德到亚历山大·塞维鲁统治期间担任元老、执政官和行省总督。他的《罗马史》（共 80 卷）前 70 卷覆盖了从埃涅阿斯到马可·奥勒留的历史，主要依赖早期史料。但最后 10 卷——尤其是第 73-80 卷——是他作为目击者的第一手记录，覆盖了康茂德末年到塞维鲁王朝初期的政治动荡。Dio 对卡拉卡拉的描述尤其充满了亲身恐惧——他被禁止参加元老院会议，被迫坐在一边观看卡拉卡拉在竞技场中屠杀野兽（一种被 Dio 视为有损皇帝尊严的行为）。Dio 的偏见（亲元老院、反军人君主）是显而易见的，但正是这偏见使他成为理解元老院与军人皇帝之间紧张关系的无可替代的史料。"],"impact":[],"sourceNotes":["Cassius Dio, Historia Romana · Book 78(77) · 78.18","待核：Dio 晚年（229-235 年）的资料很少——他是否活着看到了亚历山大·塞维鲁的被杀和马克西米努斯的即位？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:7818066f252fb33f93078a97","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":67,"sourceId":"rome-source-roman-history-cassius-dio","sourceTitle":"Roman History","locator":"78.18","originalText":null,"translation":"Cassius Dio 本人——一位直属元老和前执政官——在卡拉卡拉统治末期被命令离开罗马，前往他在比提尼亚的庄园。Dio 描述他被剥夺了前往元老院的权利，被迫在皇帝面前沉默。他的亲身经历构成了罗马史第 78-80 卷的独特视角——一位在暴君统治下沉默的知识分子的证词。Dio 没有亲眼见证卡拉卡拉之死（他在比提尼亚），但他的愤怒和恐惧成为了 3 世纪元老院与军人皇帝紧张关系的经典文献。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Caracalla","Cassius Dio"],"places":["Rome","Bithynia"],"macroEvent":"Severan Dynasty","eventLabel":"Cassius Dio as eyewitness: the senator under tyranny","factType":"source-mention","questions":["Dio 晚年（229-235 年）的资料很少——他是否活着看到了亚历山大·塞维鲁的被杀和马克西米努斯的即位？"],"confidence":"high","importance":"minor","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.18"}],"tags":["Roman Empire","Severan Dynasty","source-mention","Rome","Bithynia"],"people":["Caracalla","Cassius Dio"],"sources":["Cassius Dio, Historia Romana"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-218-julia-maesa-orchestrates-the-restoration-of-the-severan-dynasty', 'Julia Maesa orchestrates the restoration of the Severan dynasty', 'rome', 218, 218, 'Emesa', 'politics', '尤利娅·梅萨利用塞维鲁家族的财富和军队忠诚，成功拥立外孙埃拉伽巴路斯复辟塞维鲁王朝。', 'high', NULL, '{"overview":"尤利娅·梅萨利用塞维鲁家族的财富和军队忠诚，成功拥立外孙埃拉伽巴路斯复辟塞维鲁王朝。","result":[],"background":["Severan Dynasty"],"process":["尤利娅·梅萨（Julia Maesa）是塞维鲁王朝最重要的权力玩家之一。马克里努斯即位后命令她离开罗马返回叙利亚故乡埃美萨，无意中给了她联络驻叙利亚军团的绝佳机会。她利用塞维鲁家族数十年来积攒的庞大财富，慷慨地向驻拉法尼亚的第三高卢军团分发金钱。她将 14 岁的外孙瓦里乌斯·阿维图斯（Varius Avitus，后来的埃拉伽巴路斯）——埃美萨太阳神的世袭祭司——介绍给士兵们，并声称他是卡拉卡拉的私生子（利用卡拉卡拉在军队中的声望）。士兵们被金钱和忠诚的双重诱惑打动，于 218 年 5 月 16 日宣布拥立埃拉伽巴路斯为帝。Herodian 对这位少年祭司的外貌描写——华丽的东方长袍、化妆和珠宝——充满了罗马人对东方的文化偏见，但也反映了埃梅萨祭司的真实仪容习俗。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 5 · 5.3–5.4","待核：Julia Maesa 在塞维鲁王朝政治中扮演的具体角色是否可以进一步深化——她是否控制着独立的财政和情报网络？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:5c85a0342e446509e5beb18a","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":46,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"5.3–5.4","originalText":null,"translation":"Herodian 详细记载了尤利娅·梅萨（Julia Maesa）——塞维鲁妻子的姐姐——在埃美萨如何策划塞维鲁王朝的复辟。她在军团驻扎的拉法尼亚（Raphanea）附近展示外孙埃拉伽巴路斯，告诉士兵他是卡拉卡拉的私生子，并分发大量金钱。Herodian 还描述了埃拉伽巴路斯的女性化外貌和奇异的东方祭司服饰——''他穿着紫色绣金长袍，戴着项链和手镯，脸上涂脂抹粉''——这些描述既反映了罗马人对东方奢侈的刻板印象，也包含了可观察的事实。","originalTextMissing":true,"peopleCore":["Elagabalus"],"peopleMentioned":["Julia Maesa","Julia Soaemias","Caracalla"],"places":["Emesa","Raphanea","Syria"],"macroEvent":"Severan Dynasty","eventLabel":"Julia Maesa orchestrates the restoration of the Severan dynasty","factType":"political-event","questions":["Julia Maesa 在塞维鲁王朝政治中扮演的具体角色是否可以进一步深化——她是否控制着独立的财政和情报网络？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.3–5.4"}],"tags":["Roman Empire","Severan Dynasty","political-event","Emesa","Raphanea","Syria"],"people":["Elagabalus","Julia Maesa","Julia Soaemias","Caracalla"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-219-elagabalus-introduces-the-cult-of-elagabal-to-rome', 'Elagabalus introduces the cult of Elagabal to Rome', 'rome', 219, 219, 'Rome', 'politics', '埃拉伽巴路斯将叙利亚太阳神崇拜带入罗马，引发政治和宗教上的巨大反弹。', 'high', NULL, '{"overview":"埃拉伽巴路斯将叙利亚太阳神崇拜带入罗马，引发政治和宗教上的巨大反弹。","result":[],"background":["Severan Dynasty"],"process":["埃拉伽巴路斯（Varius Avitus Bassianus，后称 Marcus Aurelius Antoninus）是埃美萨太阳神埃拉伽巴的世袭祭司。即位后来到罗马，他将叙利亚的黑色圣石（baetyl）带到罗马，在帕拉丁山上为太阳神建立新神庙，并试图将罗马的所有神祇——包括朱庇特——置于埃拉伽巴之下。他的东方服饰、异域仪式（如在神庙中赤裸跳舞）、多次迎娶罗马贵族女性（据传包括维斯塔贞女）以及公开的同性倾向，严重冲击了罗马社会传统。他的统治完全由其母尤利娅·索艾米亚斯（Julia Soaemias）和外祖母尤利娅·梅萨实际操纵。梅萨意识到他正在失去军队和民众的支持，转而培养其外孙亚历山大·塞维鲁作为替代。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 5 · 5.5–5.8","待核：Herodian 的描述可能带有修辞夸大，但核心事件得到了多源确认。关于埃拉伽巴路斯的具体宗教行为是否需要与考古证据（钱币和铭文）对照？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:fb2e6dd69440e0769050423d","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":14,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"5.5–5.8","originalText":null,"translation":"Herodian 记述了埃拉伽巴路斯即位后的宗教和文化冲击。这位来自埃美萨的少年皇帝将他崇拜的太阳神埃拉伽巴（Elagabal）带到罗马，试图将罗马国教置于叙利亚巴力（Baal）崇拜之下。Herodian 详细描绘了他身着东方华丽长袍、在罗马大街上举行异域仪式、在公众场合跳舞、以及在维斯塔贞女圣地迎娶维斯塔贞女等震惊罗马社会的事件。","originalTextMissing":true,"peopleCore":["Elagabalus"],"peopleMentioned":["Julia Maesa","Julia Soaemias"],"places":["Rome","Emesa"],"macroEvent":"Severan Dynasty","eventLabel":"Elagabalus introduces the cult of Elagabal to Rome","factType":"person-life","questions":["Herodian 的描述可能带有修辞夸大，但核心事件得到了多源确认。关于埃拉伽巴路斯的具体宗教行为是否需要与考古证据（钱币和铭文）对照？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.5–5.8"}],"tags":["Roman Empire","Severan Dynasty","person-life","Rome","Emesa"],"people":["Elagabalus","Julia Maesa","Julia Soaemias"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-222-assassination-of-elagabalus-alexander-severus-becomes-emperor', 'Assassination of Elagabalus; Alexander Severus becomes emperor', 'rome', 222, 222, 'Rome', 'politics', '222 年埃拉伽巴路斯被弑，亚历山大·塞维鲁即位，皇权回归正常轨道。', 'high', NULL, '{"overview":"222 年埃拉伽巴路斯被弑，亚历山大·塞维鲁即位，皇权回归正常轨道。","result":[],"background":["Severan Dynasty"],"process":["222 年初，尤利娅·梅萨成功说服埃拉伽巴路斯收其表弟亚历山大·塞维鲁为养子和凯撒。但当埃拉伽巴路斯随后试图杀害亚历山大·塞维鲁时，禁卫军倒戈。3 月 11 日（或 12 日），禁卫军在军营中杀死了埃拉伽巴路斯（年仅 18 岁）及其母索艾米亚斯。尸体被当街拖行后扔进台伯河，符合 damnatio memoriae 的全部仪式。亚历山大·塞维鲁年仅 13 岁即位，实际权力掌握在梅萨及其母尤利娅·玛迈亚（Julia Mamaea）手中。他的统治恢复了罗马传统的宗教和元老院尊严，被古代史家评价为一段相对平静的时期。"],"impact":[],"sourceNotes":["Cassius Dio, Historia Romana · Book 80(79) · 80.20","待核：埃拉伽巴路斯死亡的确切日期（3月11日还是12日）在不同史料中有出入。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:fe344207fc788eb759913337","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":15,"sourceId":"rome-source-roman-history-cassius-dio","sourceTitle":"Roman History","locator":"80.20","originalText":null,"translation":"据 Cassius Dio 记载，222 年 3 月 11 日，禁卫军在梅萨策划下杀死了埃拉伽巴路斯及其母索艾米亚斯。两人的尸体被拖过罗马街道，投入台伯河。亚历山大·塞维鲁随即被拥立为帝。Cassius Dio 对埃拉伽巴路斯的评价极为负面，称其为帝国历史上最糟糕的皇帝之一。","originalTextMissing":true,"peopleCore":["Elagabalus","Alexander Severus"],"peopleMentioned":["Julia Maesa","Julia Soaemias"],"places":["Rome"],"macroEvent":"Severan Dynasty","eventLabel":"Assassination of Elagabalus; Alexander Severus becomes emperor","factType":"political-event","questions":["埃拉伽巴路斯死亡的确切日期（3月11日还是12日）在不同史料中有出入。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"80.20"}],"tags":["Roman Empire","Severan Dynasty","political-event","Rome"],"people":["Elagabalus","Alexander Severus","Julia Maesa","Julia Soaemias"],"sources":["Cassius Dio, Historia Romana"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-222-reign-of-alexander-severus-stability-under-maternal-regency', 'Reign of Alexander Severus: stability under maternal regency', 'rome', 222, 222, 'Rome', 'politics', '亚历山大·塞维鲁的 13 年统治是塞维鲁王朝最后一段相对稳定期，但母后干政、军事软弱为接下来的危机埋下伏笔。', 'high', NULL, '{"overview":"亚历山大·塞维鲁的 13 年统治是塞维鲁王朝最后一段相对稳定期，但母后干政、军事软弱为接下来的危机埋下伏笔。","result":[],"background":["Severan Dynasty"],"process":["亚历山大·塞维鲁（Marcus Aurelius Severus Alexander）13 岁即位，终其统治都处于母亲尤利娅·玛迈亚的掌控之下。元老院委员会被重新赋予一定咨询权，法学家乌尔比安（Ulpian）出任禁卫军长官并推进了重要的法律改革。但母后对军队的吝啬态度和在外交上对波斯、日耳曼部落的妥协政策引起了士兵的强烈不满。231-233 年的波斯远征虽然名义上击退了阿尔达希尔一世（Ardashir I）的入侵，但损失惨重且未能取得决定性胜利。234-235 年的日耳曼远征中，他选择支付贿赂而非作战，最终激怒了莱茵河军团。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 6 · 6.1–6.9","待核：乌尔比安的法律改革具体产生了哪些长期影响？","待核：波斯远征的确切伤亡数字缺乏可靠史料。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:2f53cc631e0909d7e56877f0","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":16,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"6.1–6.9","originalText":null,"translation":"Herodian 将亚历山大·塞维鲁的统治（222-235）描述为一个相对稳定但缺乏果断领导的时期。元老院恢复了一定影响力，尤利娅·玛迈亚（皇帝的母亲）是真正的统治者。Herodian 详细记述了他于 231-233 年对新兴萨珊波斯发动的不成功远征，以及他返回莱茵河前线应对日耳曼入侵的过程。","originalTextMissing":true,"peopleCore":["Alexander Severus"],"peopleMentioned":["Julia Mamaea","Ardashir I"],"places":["Rome","Persia","Germania","Moguntiacum"],"macroEvent":"Severan Dynasty","eventLabel":"Reign of Alexander Severus: stability under maternal regency","factType":"person-life","questions":["乌尔比安的法律改革具体产生了哪些长期影响？","波斯远征的确切伤亡数字缺乏可靠史料。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"6.1–6.9"}],"tags":["Roman Empire","Severan Dynasty","person-life","Rome","Persia","Germania"],"people":["Alexander Severus","Julia Mamaea","Ardashir I"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-222-regency-of-julia-mamaea-and-the-role-of-ulpian', 'Regency of Julia Mamaea and the role of Ulpian', 'rome', 222, 222, 'Rome', 'politics', '尤利娅·玛迈亚通过元老院顾问委员会和法学家乌尔比安统治帝国，但母权的过度干涉埋下了灭亡的种子。', 'high', NULL, '{"overview":"尤利娅·玛迈亚通过元老院顾问委员会和法学家乌尔比安统治帝国，但母权的过度干涉埋下了灭亡的种子。","result":[],"background":["Severan Dynasty"],"process":["亚历山大·塞维鲁的统治时期是帝国女性权力最后的辉煌展示（在塞维鲁王朝的意义上）。尤利娅·玛迈亚（Julia Mamaea）——继承了其母尤利娅·梅萨的政治技巧——实际上以''奥古斯塔''和''元老院之母''（mater senatus）的身份统治帝国。她组建了一个由 16 名资深元老组成的顾问委员会（consilium principis），赋予其前所未有的咨询权力——这是元老院自共和制以来最后一次有意义的政治参与。然而玛迈亚对儿子和权力的控制过于严密——亚历山大从未被允许建立独立的军事声誉，这对军人皇帝体制来说是一个致命的缺陷。她任命了伟大的法学家乌尔比安（Ulpian）为禁卫军长官，试图以严格纪律和法律程序约束禁卫军——结果导致了 223 年三天的街头巷战（禁卫军与罗马市民对决），乌尔比安虽然在混乱中被害。玛迈亚的权力网络在母亲梅萨于 224 年去世后被严重削弱——她缺乏梅萨的政治手腕和对军队的慷慨。235 年莱茵河军团在亚历山大选择支付贿赂而非作战时终于爆发——他们杀害了母子两人。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 6 · 6.1–6.4","待核：玛迈亚的 16 人元老院委员会的确切组成和运作方式是否有文献可考？","待核：乌尔比安之死的具体细节在不同史料中有不一致之处。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:c1628a39af903792a6143cd1","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":62,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"6.1–6.4","originalText":null,"translation":"Herodian 详细记录了亚历山大·塞维鲁的母亲尤利娅·玛迈亚（Julia Mamaea）在儿子即位后的摄政以及对元老院权力的部分恢复。她组建了一个由 16 名资深元老组成的''委员会''——其中包括著名的法学家乌尔比安（Domitius Ulpianus）——作为皇帝的顾问团。Herodian 认为玛迈亚过度保护其子，导致亚历山大始终未能建立独立的军事声望。她对军队吝啬且不信任——用乌尔比安作为禁卫军长官——但这位法学家的严格纪律最终激怒了禁卫军。","originalTextMissing":true,"peopleCore":["Alexander Severus"],"peopleMentioned":["Julia Mamaea","Ulpian"],"places":["Rome"],"macroEvent":"Severan Dynasty","eventLabel":"Regency of Julia Mamaea and the role of Ulpian","factType":"person-life","questions":["玛迈亚的 16 人元老院委员会的确切组成和运作方式是否有文献可考？","乌尔比安之死的具体细节在不同史料中有不一致之处。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"6.1–6.4"}],"tags":["Roman Empire","Severan Dynasty","person-life","Rome"],"people":["Alexander Severus","Julia Mamaea","Ulpian"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-224-ardashir-i-overthrows-the-parthians-and-founds-the-sassanid-empire', 'Ardashir I overthrows the Parthians and founds the Sassanid Empire', 'rome', 224, 224, 'Persia', 'politics', '224 年阿尔达希尔一世推翻帕提亚建立萨珊波斯，罗马东部边境面临前所未有的挑战。', 'high', NULL, '{"overview":"224 年阿尔达希尔一世推翻帕提亚建立萨珊波斯，罗马东部边境面临前所未有的挑战。","result":[],"background":["Rise of Sassanid Persia"],"process":["萨珊波斯的崛起是 3 世纪最重要的事件之一。帕提亚帝国（安息）已经统治伊朗和美索不达米亚约 470 年，但其松散的封建体制在面对中央集权化的挑战时暴露了脆弱性。阿尔达希尔一世（Ardashir I）来自法尔斯（Persis，波斯本土）的萨珊家族，在 224 年（或 226 年）的霍尔木兹达干（Hormizdagan）战役中击败并杀死了最后一位帕提亚王阿尔达班五世。萨珊帝国在意识形态上自命为阿契美尼德波斯的直接继承者——这具有深远的地缘政治意义，因为它意味着对一切''曾属于波斯''的领土（包括罗马的东方行省）提出了主权要求。萨珊国家的中央集权化程度远超帕提亚，能够动员更大规模的军队和资源。亚历山大·塞维鲁的波斯远征（231-233）是罗马与萨珊之间长达四个世纪的战争的开端。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 6 · pp. 225–240","待核：萨珊帝国建立的确切日期是 224 还是 226？不同史料使用了不同的纪年系统。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:f8bc37a8dc305adbd898a1d0","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":47,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 225–240","originalText":null,"translation":"公元 224 年（或 226 年），波斯附庸王公阿尔达希尔一世（Ardashir I）击败并杀死了最后一位帕提亚王阿尔达班五世（Artabanus V），建立了萨珊波斯帝国。这一事件深刻改变了罗马东部边境的战略格局。与松散封建式的帕提亚王国不同，萨珊波斯是一个高度中央集权的王朝国家，它在意识形态上自视为阿契美尼德波斯的继承者——这意味着对罗马占据的原波斯领土（美索不达米亚、叙利亚等）提出了主权要求。Potter 将萨珊波斯的崛起列为三世纪危机中仅次于日耳曼入侵的第二大外部压力源。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Ardashir I","Artabanus V","Alexander Severus"],"places":["Persia","Mesopotamia","Ctesiphon","Hormizdagan"],"macroEvent":"Rise of Sassanid Persia","eventLabel":"Ardashir I overthrows the Parthians and founds the Sassanid Empire","factType":"political-event","questions":["萨珊帝国建立的确切日期是 224 还是 226？不同史料使用了不同的纪年系统。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 225–240"}],"tags":["Roman Empire","Rise of Sassanid Persia","political-event","Persia","Mesopotamia","Ctesiphon"],"people":["Ardashir I","Artabanus V","Alexander Severus"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-230-the-collapse-of-roman-coinage-and-hyperinflation', 'The collapse of Roman coinage and hyperinflation', 'rome', 230, 230, 'Rome', 'politics', '三世纪危机时期罗马银币的含银量暴跌至不足 5%，导致帝国财政和军队薪酬体系崩溃。', 'high', NULL, '{"overview":"三世纪危机时期罗马银币的含银量暴跌至不足 5%，导致帝国财政和军队薪酬体系崩溃。","result":[],"background":["Third Century Crisis"],"process":["三世纪危机中最为深刻地改变了罗马社会结构的经济维度是货币的长时段崩溃。第纳里（denarius）——自共和国以来一直是罗马经济的脊梁——在塞维鲁时期仍含银约 50%。卡拉卡拉于约 215 年引入安东尼尼安银币（antoninianus），初始含银量约 50%，名义价值为 2 第纳里但实际含银量仅为 1.5 第纳里的银量——''贬值''被内置在面值与金属含量之间的差距中。此后每一位皇帝都逐步降低安东尼尼安银币的银含量以应对军费压力——到瓦勒良和加里恩努斯时期（253-268），银含量已降至不足 5%，硬币表面仅镀一层薄银（洗涤银）。金币（aureus）也未能幸免——其重量从奥古斯都时期的约 8 克下降至 3 世纪的不足 5 克。政府以贬值的硬币支付军饷，而征收的税收却以求实的金属重量计价——这导致了政府购买力的灾难性下降。军团士兵的名义薪酬翻了数番，但其实际购买力可能只有 2 世纪士兵的零头——这直接激励了军队频繁拥立和杀害皇帝以获取即时的大额赏金（donativa）。奥勒良试图通过提升安东尼尼安银币的含银量（至约 5%）并严厉打击造币厂腐败来遏制这一趋势——但真正的系统性稳定直到戴克里先和君士坦丁的币制改革才实现。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 6 · pp. 230–235","待核：钱币学证据（银含量和金币重量）的精确数据库是否已完整建立？不同造币厂之间的差异有多大？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:c84808eb3cf031de52ab4319","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":76,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 230–235","originalText":null,"translation":"Potter 综合了罗马货币在三世纪危机的崩溃过程。从塞维鲁到加里恩努斯，第纳里（denarius）的银含量从约 50% 下降到不足 5%。卡拉卡拉引入的安东尼尼安银币（antoninianus，含银量约 50% 初始）成为主要的银币，但其银含量在 238-270 年间暴跌至不足 5-2%——实质上成为铜币上覆薄银层的洗涤银（wash silver）。同时金币（aureus）的重量也持续下降。帝国的税收基础因通货膨胀而严重侵蚀——到 260 年代，政府的实际购买力可能只有塞维鲁时期的六分之一。士兵的薪水虽然名义上在增加但实际价值暴跌——这是导致三世纪军队不断哗变和拥立皇帝的关键经济因素。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Caracalla","Gallienus","Aurelian","Diocletian"],"places":["Rome","Empire-wide"],"macroEvent":"Third Century Crisis","eventLabel":"The collapse of Roman coinage and hyperinflation","factType":"reform","questions":["钱币学证据（银含量和金币重量）的精确数据库是否已完整建立？不同造币厂之间的差异有多大？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 230–235"}],"tags":["Roman Empire","Third Century Crisis","reform","Rome","Empire-wide"],"people":["Caracalla","Gallienus","Aurelian","Diocletian"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-235-assassination-of-alexander-severus-beginning-of-the-third-century-crisis', 'Assassination of Alexander Severus; beginning of the Third Century Crisis', 'rome', 235, 235, 'Moguntiacum', 'politics', '235 年亚历山大·塞维鲁被弑，塞维鲁王朝终结，三世纪危机正式开始。', 'high', NULL, '{"overview":"235 年亚历山大·塞维鲁被弑，塞维鲁王朝终结，三世纪危机正式开始。","result":[],"background":["End of Severan Dynasty"],"process":["亚历山大·塞维鲁率军到达莱茵河前线应对日耳曼部落的入侵，但他选择了向蛮族支付巨额贿赂以换取和平，而非发动军事行动。这种软弱政策——加之其母玛迈亚过于明显的幕后操控——彻底激怒了莱茵河军团。235 年 3 月，士兵们在莫贡提亚库姆（今美因茨）附近哗变，闯入皇帝营帐杀死了亚历山大·塞维鲁（年仅 26 岁）和玛迈亚。叛军随即拥立了出身色雷斯的低级军官马克西米努斯（后称 Maximinus Thrax，意为''色雷斯人''）。这次弑君标志着塞维鲁王朝的终结和三世纪危机（235-284）的正式开始——此后五十年间，帝国经历了数十位短命皇帝、外敌入侵、经济崩溃和领土分裂。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 6 · 6.8–6.9","待核：亚历山大·塞维鲁被刺的具体日期（3月18日还是19日？）需要与不同史料交叉验证。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:139c09df90a7732940f23e76","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":17,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"6.8–6.9","originalText":null,"translation":"据 Herodian 记载，235 年 3 月，亚历山大·塞维鲁在莫贡提亚库姆（Moguntiacum，今美因茨）附近的军营中被叛变士兵杀害，其母玛迈亚同时遇害。叛军拥立了半蛮族出身的百夫长马克西米努斯·色雷克斯（Maximinus Thrax）为帝。Herodian 认为士兵们厌恶亚历山大依赖母亲决策、不愿作战而宁愿行贿求和的软弱政策。","originalTextMissing":true,"peopleCore":["Alexander Severus","Maximinus Thrax"],"peopleMentioned":["Julia Mamaea"],"places":["Moguntiacum","Mainz","Germania Superior"],"macroEvent":"End of Severan Dynasty","eventLabel":"Assassination of Alexander Severus; beginning of the Third Century Crisis","factType":"political-event","questions":["亚历山大·塞维鲁被刺的具体日期（3月18日还是19日？）需要与不同史料交叉验证。"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"6.8–6.9"}],"tags":["Roman Empire","End of Severan Dynasty","political-event","Moguntiacum","Mainz","Germania Superior"],"people":["Alexander Severus","Maximinus Thrax","Julia Mamaea"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-235-reign-of-maximinus-thrax-first-soldier-emperor-from-the-ranks', 'Reign of Maximinus Thrax: first soldier-emperor from the ranks', 'rome', 235, 235, 'Germania', 'politics', '马克西米努斯·色雷克斯是第一位从普通士兵逐级晋升至皇帝的军人，他的统治完全以军队为核心。', 'medium', NULL, '{"overview":"马克西米努斯·色雷克斯是第一位从普通士兵逐级晋升至皇帝的军人，他的统治完全以军队为核心。","result":[],"background":["Third Century Crisis"],"process":["马克西米努斯（Gaius Julius Verus Maximinus）据称身高超过 8 英尺（约 2.4 米）——无疑夸大，但他的巨大体格在史料中保持一致。他出身色雷斯贫苦农民家庭（可能是半罗马化的蛮族），从辅助军团基层士兵开始，凭借勇气和体格逐步晋升为军官。成为皇帝后，他从未造访罗马，其统治本质上是纯粹的军事独裁——大幅增加军饷和军费，不加区分地征收行省贵族和城市的财产。他的高压政策和元老院对他的蔑视最终导致了 238 年非洲行省的暴动和元老院对他的公开讨伐。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 7 · 7.1–7.2","待核：马克西米努斯的身高和出身细节主要来自 Herodian 和 HA，可能有夸大。","待核：他从未踏足罗马是否属实？还是他曾短暂到访但没有被记载？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:a96be10ce17d84e0aebe64ef","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":18,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"7.1–7.2","originalText":null,"translation":"Herodian 记述了马克西米努斯·色雷克斯的即位和早期统治。他出身色雷斯农民，早年加入罗马辅助军团，凭借巨大的体格和军事才能一路晋升。但他从底层直接升至皇帝令元老院极度不满。他从未踏足罗马，始终在前线作战（主要在日耳曼和多瑙河地区），通过极度压榨行省贵族来支付军饷。","originalTextMissing":true,"peopleCore":["Maximinus Thrax"],"peopleMentioned":[],"places":["Germania","Pannonia","Danube"],"macroEvent":"Third Century Crisis","eventLabel":"Reign of Maximinus Thrax: first soldier-emperor from the ranks","factType":"person-life","questions":["马克西米努斯的身高和出身细节主要来自 Herodian 和 HA，可能有夸大。","他从未踏足罗马是否属实？还是他曾短暂到访但没有被记载？"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"7.1–7.2"}],"tags":["Roman Empire","Third Century Crisis","person-life","Germania","Pannonia","Danube"],"people":["Maximinus Thrax"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-235-the-third-century-crisis-overview', 'The Third Century Crisis: overview', 'rome', 235, 235, 'Rome', 'politics', '三世纪危机（235-284）是罗马帝国历史上最严重的系统性危机，军事、经济、政治同时崩溃。', 'high', NULL, '{"overview":"三世纪危机（235-284）是罗马帝国历史上最严重的系统性危机，军事、经济、政治同时崩溃。","result":[],"background":["Third Century Crisis"],"process":["三世纪危机是罗马帝国史上最深刻的系统性崩溃时期，持续约 50 年。军事上，莱茵河-多瑙河前线遭到日耳曼部落前所未有的入侵（阿勒曼尼人、法兰克人、哥特人），东部萨珊波斯在 224 年取代帕提亚后成为更具侵略性的对手。政治上，从亚历山大·塞维鲁被弑到戴克里先即位，至少 25 人声称帝位，绝大多数死于非命，平均在位不到 3 年。经济上，银币含银量从塞维鲁时期的约 50% 下降到 260 年代的不足 5%，导致恶性通胀。帝国一度分裂为三：中央帝国、高卢帝国（260-274）、帕尔米拉帝国（267-272）。危机最终由奥勒良的军事收复和戴克里先的制度改革所终结。"],"impact":[],"sourceNotes":["The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 2 · pp. 40–70","待核：三世纪危机的界定时间和具体分期在不同学者间有细微差异。货币政策的数据需要与考古钱币学证据交叉验证。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:d1d2db607cbac21439cb4082","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":21,"sourceId":"rome-source-the-cambridge-ancient-history-cambridge-university-press","sourceTitle":"The Cambridge Ancient History","locator":"pp. 40–70","originalText":null,"translation":"现代史学将 235-284 年定义为''三世纪危机''时期。这一时期的特征包括：军事无政府状态（兵营皇帝频繁更替）、外敌入侵的全面升级（日耳曼部落、萨珊波斯、哥特人、阿勒曼尼人）、严重的经济通胀和货币贬值、以及帝国的领土分裂（高卢帝国 260-274，帕尔米拉帝国 267-272）。公民权扩展后，各行省的地方精英承受了帝国防务的全部财政压力。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":[],"places":["Rome","Rhine","Danube","Euphrates","Gaul","Palmyra"],"macroEvent":"Third Century Crisis","eventLabel":"The Third Century Crisis: overview","factType":"political-event","questions":["三世纪危机的界定时间和具体分期在不同学者间有细微差异。货币政策的数据需要与考古钱币学证据交叉验证。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-cambridge-ancient-history-cambridge-university-press","locator":"pp. 40–70"}],"tags":["Roman Empire","Third Century Crisis","political-event","Rome","Rhine","Danube"],"people":[],"sources":["The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-235-maximinus-thraxs-rhine-and-danube-campaigns', 'Maximinus Thrax''s Rhine and Danube campaigns', 'rome', 235, 235, 'Germania', 'war', '马克西米努斯在位三年间持续在前线作战（日耳曼-萨尔马提亚），从未踏足罗马。', 'high', NULL, '{"overview":"马克西米努斯在位三年间持续在前线作战（日耳曼-萨尔马提亚），从未踏足罗马。","result":[],"background":["Third Century Crisis"],"process":["马克西米努斯·色雷克斯的全程统治都是在战场上度过的——他是''兵营皇帝''（barracks emperor）的原型。235 年被拥立后，他首先在莱茵河前线发动了对阿勒曼尼人（Alamanni）的惩罚性远征——亲自在沼泽和森林中率领军团推进，Herodian 描述他展现了''巨大的个人勇气和体力''。他随后前往多瑙河前线，击败了萨尔马提亚人（Sarmatians）和达契亚部落，在多瑙河中游重建了罗马的防御线。他从未踏足罗马的事实本身就宣示了他的政权性质——帝国现在从军营而非城市中被统治，元老院和罗马民众的意见完全被忽略。但他的军事成功需要支付巨额的军饷——而他的征税机器——主要由骑士阶层的税吏（procuratores）操作——以史无前例的强度压榨行省贵族和城市。这种不加区别的财政榨取最终在 238 年引爆了非洲行省的大规模暴动——地主们武装起他们的佃户（coloni），杀害了帝国税吏，并拥立了年迈的总督戈尔迪安一世（Gordian I），从而触发了''六帝之年''。具有讽刺意味的是——正是马克西米努斯自己的财政政策（而非他的军事能力）导致了他的灭亡。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 6 · pp. 220–228","待核：马克西米努斯是否真的从未踏足罗马——还是可能有一次未能被记载的短暂访问？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:3dc20558f80c225f897e6662","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":81,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 220–228","originalText":null,"translation":"Potter 分析了马克西米努斯·色雷克斯（Maximinus Thrax）的军事行动。他被拥立后没有留在罗马——他从未踏足过这座城市——而是立即发动了对阿勒曼尼人（Alamanni）的惩罚性远征。Herodian 描述他亲临前线，率领军团跨越莱茵河，深入日耳曼腹地，在沼泽和森林中与阿勒曼尼人进行了残酷的近距离战斗。238 年他在得知元老院在戈尔迪安一世领导下宣布他为公敌时，正率军征伐萨尔马提亚人（Sarmatians）和达契亚（Dacian）部落。","originalTextMissing":true,"peopleCore":["Maximinus Thrax"],"peopleMentioned":[],"places":["Germania","Rhine","Danube","Dacia","Pannonia"],"macroEvent":"Third Century Crisis","eventLabel":"Maximinus Thrax''s Rhine and Danube campaigns","factType":"military-event","questions":["马克西米努斯是否真的从未踏足罗马——还是可能有一次未能被记载的短暂访问？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 220–228"}],"tags":["Roman Empire","Third Century Crisis","military-event","Germania","Rhine","Danube"],"people":["Maximinus Thrax"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-238-year-of-the-six-emperors', 'Year of the Six Emperors', 'rome', 238, 238, 'Carthage', 'politics', '公元 238 年出现了六位皇帝——戈尔迪安一世、戈尔迪安二世、马克西米努斯、普皮恩努斯、巴尔比努斯和戈尔迪安三世——帝国政治陷入空前混乱。', 'high', NULL, '{"overview":"公元 238 年出现了六位皇帝——戈尔迪安一世、戈尔迪安二世、马克西米努斯、普皮恩努斯、巴尔比努斯和戈尔迪安三世——帝国政治陷入空前混乱。","result":[],"background":["Third Century Crisis"],"process":["公元 238 年被称为''六帝之年''，是罗马历史上最混乱的年份之一。1）非洲行省因税吏（procurator）的极端榨取而暴动，当地地主拥立总督戈尔迪安一世（约 80 岁）及其子戈尔迪安二世为帝。2）元老院欢欣鼓舞地承认他们，但仅 21 天后努米底亚总督卡佩里亚努斯就击败并杀死了戈尔迪安父子。3）元老院在恐惧中从自己人中选举了普皮恩努斯和巴尔比努斯共治。4）迫于罗马民众压力，元老院又加冕了戈尔迪安一世的外孙戈尔迪安三世为凯撒。5）马克西米努斯率军南下攻打意大利，但在阿奎莱亚（Aquileia）城下受阻，最终被自己的士兵杀死。6）普皮恩努斯和巴尔比努斯随后互相争斗，99 天后被禁卫军杀死。最终 13 岁的戈尔迪安三世成为唯一的皇帝。"],"impact":[],"sourceNotes":["Herodian, History of the Empire from the Death of Marcus · Book 7 · 7.4–7.10","待核：六帝之年的精确时序和每位皇帝的确切在位天数在不同史料中有差异。","待核：戈尔迪安一世在非洲起义是否完全是自发的，还是元老院事先有联系？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:431d77deb80e078a886d79ce","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":19,"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","sourceTitle":"History of the Empire after Marcus","locator":"7.4–7.10","originalText":null,"translation":"Herodian 详细记述了公元 238 年的''六帝之年''。非洲行省的地主因马克西米努斯的横征暴敛而起义，杀死当地 procurator，拥立年迈的非洲总督戈尔迪安一世及其子戈尔迪安二世。元老院立即承认他们并宣布马克西米努斯为公敌。但努米底亚总督卡佩里亚努斯率军击败并杀死了戈尔迪安父子（在位仅 21 天）。元老院随后从元老中选举了普皮恩努斯和巴尔比努斯，并迫于民众压力加冕了戈尔迪安一世的外孙——13 岁的戈尔迪安三世为凯撒。","originalTextMissing":true,"peopleCore":["Gordian III"],"peopleMentioned":["Maximinus Thrax","Gordian I","Gordian II","Pupienus","Balbinus"],"places":["Carthage","Rome","Aquileia"],"macroEvent":"Third Century Crisis","eventLabel":"Year of the Six Emperors","factType":"political-event","questions":["六帝之年的精确时序和每位皇帝的确切在位天数在不同史料中有差异。","戈尔迪安一世在非洲起义是否完全是自发的，还是元老院事先有联系？"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"7.4–7.10"}],"tags":["Roman Empire","Third Century Crisis","political-event","Carthage","Rome","Aquileia"],"people":["Gordian III","Maximinus Thrax","Gordian I","Gordian II","Pupienus","Balbinus"],"sources":["Herodian, History of the Empire from the Death of Marcus"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-238-fall-of-maximinus-thrax-at-aquileia', 'Fall of Maximinus Thrax at Aquileia', 'rome', 238, 238, 'Aquileia', 'war', '238 年马克西米努斯围攻阿奎莱亚失败，被自己的士兵杀死。', 'medium', NULL, '{"overview":"238 年马克西米努斯围攻阿奎莱亚失败，被自己的士兵杀死。","result":[],"background":["Third Century Crisis"],"process":["238 年春，马克西米努斯得知元老院宣布他为公敌后，从潘诺尼亚率军南下意大利。但在阿奎莱亚（Aquileia）城下，他的军队遭遇了顽强抵抗，城市关闭城门拒绝接纳。长时间的围攻导致补给短缺，士兵士气崩溃。据 Herodian 记载，部分士兵的家人恰好被困在城中或附近，加剧了他们的不满。238 年 5 月（或 4 月），第二帕提亚军团的士兵在中午闯入皇帝营帐，杀害了马克西米努斯及其子马克西姆斯。两人的首级被送到罗马，标志着''士兵皇帝''模式的首次失败。"],"impact":[],"sourceNotes":["Historia Augusta, Vita Maximini Duo · Vita Maximini · Maximin. 1–33","待核：HA 对马克西米努斯的体貌描写充满夸张修辞，不可全信。阿奎莱亚围城的具体持续时间和死亡日期需要与 Herodian 对勘。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:0a4a146b334f2f964477abf3","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":20,"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","sourceTitle":"Historia Augusta","locator":"Maximin. 1–33","originalText":null,"translation":"Historia Augusta 对马克西米努斯进行了极度负面的记述（需注意 HA 的可靠性问题）。它声称他残酷、无知、半蛮族，而且身材异常庞大（身高超过 8 英尺，每天能吃 40 磅肉，喝 18 瓶酒）。HA 将 238 年的动乱归咎于马克西米努斯对''文明人''（即元老和富裕公民）的系统性迫害。","originalTextMissing":true,"peopleCore":["Maximinus Thrax"],"peopleMentioned":[],"places":["Aquileia","Rome"],"macroEvent":"Third Century Crisis","eventLabel":"Fall of Maximinus Thrax at Aquileia","factType":"military-event","questions":["HA 对马克西米努斯的体貌描写充满夸张修辞，不可全信。阿奎莱亚围城的具体持续时间和死亡日期需要与 Herodian 对勘。"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Maximin. 1–33"}],"tags":["Roman Empire","Third Century Crisis","military-event","Aquileia","Rome"],"people":["Maximinus Thrax"],"sources":["Historia Augusta, Vita Maximini Duo"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-244-death-of-gordian-iii-philip-the-arab-becomes-emperor', 'Death of Gordian III; Philip the Arab becomes emperor', 'rome', 244, 244, 'Mesopotamia', 'politics', '244 年戈尔迪安三世在对萨珊波斯的远征中死亡，腓力·阿拉伯即位。', 'medium', NULL, '{"overview":"244 年戈尔迪安三世在对萨珊波斯的远征中死亡，腓力·阿拉伯即位。","result":[],"background":["Third Century Crisis"],"process":["戈尔迪安三世于 242 年在禁卫军长官兼岳父提米西修斯（Timesitheus）的辅佐下发动对萨珊波斯的反击。初期在雷塞纳（Resaina）取得胜利，成功收复卡雷和尼西比斯。但提米西修斯于 243 年突然去世（可能是疾病），此后军团由腓力接替指挥。244 年戈尔迪安三世在不明情况下死于美索不达米亚——波斯史料（Shapur I''s Res Gestae）声称他在交战中阵亡于 Mishik，罗马史料（如 Zosimus）多暗示腓力策划了谋杀。腓力立即与沙普尔一世议和，支付巨额赔款，然后返回罗马。他在 248 年主持了罗马建城 1000 年的盛大庆祝活动（Ludi Saeculares），但在庆祝典礼的喧嚣下，边境形势却日益紧张。"],"impact":[],"sourceNotes":["Zosimus, Historia Nova · Book 1 · 1.18–1.19","待核：戈尔迪安三世的死因有争议——波斯史料（Shapur I''s Res Gestae）声称他在战斗中阵亡，罗马史料暗示腓力谋杀了皇帝。确切死因需要双向对勘。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:c0845e4476d31d3d7ced441d","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":22,"sourceId":"rome-source-historia-nova-zosimus","sourceTitle":"Historia Nova","locator":"1.18–1.19","originalText":null,"translation":"据 Zosimus（5 世纪末/6 世纪初的希腊史家，引述失传的 Dexippus 和 Eunapius）记载，戈尔迪安三世在与萨珊波斯的战斗中阵亡。近卫军长官腓力（Marcus Julius Philippus，绰号''阿拉伯人''）随后被军队拥立为帝。但萨珊波斯方面——沙普尔一世在纳克什-鲁斯塔姆的纪功铭文（Res Gestae Divi Saporis）——则宣称戈尔迪安三世死于 Mishik 的战斗，且沙普尔本人迫使他出战并将其击败。罗马史料多暗示腓力通过切断补给或直接谋杀导致了戈尔迪安的死。腓力立即与沙普尔一世签订和约，支付巨额赔款（据称 500,000 金第纳里），然后匆忙返回罗马以巩固其统治。","originalTextMissing":true,"peopleCore":["Philip the Arab","Gordian III"],"peopleMentioned":["Shapur I","Timesitheus"],"places":["Mesopotamia","Zaitha","Rome","Euphrates","Mishik"],"macroEvent":"Third Century Crisis","eventLabel":"Death of Gordian III; Philip the Arab becomes emperor","factType":"political-event","questions":["戈尔迪安三世的死因有争议——波斯史料（Shapur I''s Res Gestae）声称他在战斗中阵亡，罗马史料暗示腓力谋杀了皇帝。确切死因需要双向对勘。"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.18–1.19"}],"tags":["Roman Empire","Third Century Crisis","political-event","Mesopotamia","Zaitha","Rome"],"people":["Philip the Arab","Gordian III","Shapur I","Timesitheus"],"sources":["Zosimus, Historia Nova"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-244-shapur-is-account-of-gordian-iiis-death-battle-or-murder', 'Shapur I''s account of Gordian III''s death: battle or murder?', 'rome', 244, 244, 'Misiche', 'war', '沙普尔一世声称戈尔迪安三世在 Misiche 会战中阵亡——罗马史料则暗示他被腓力谋杀——双方叙事直接矛盾。', 'medium', NULL, '{"overview":"沙普尔一世声称戈尔迪安三世在 Misiche 会战中阵亡——罗马史料则暗示他被腓力谋杀——双方叙事直接矛盾。","result":[],"background":["Third Century Crisis"],"process":["戈尔迪安三世（238-244）是罗马第一位在与萨珊波斯的直接对抗中丧生的皇帝——但他的确切死因至今是古代史研究中最为棘手的历史谜题之一。罗马方面的文献（Zosimus、Eutropius、HA）一致将矛头指向了腓力·阿拉伯（Philip the Arab）——声称这位接替提米西修斯的近卫军长官通过切断补给、散布谣言和最终的直接谋杀导致了戈尔迪安的死亡。但沙普尔一世本人——在 Naqsh-e Rostam 的三语纪功铭文中——提供了截然不同的叙述：他宣称戈尔迪安是在 Misiche（Mishik，位于幼发拉底河附近的某处）的会战中被击败并被杀的。沙普尔甚至将该城更名为 Peroz-Shapur（''沙普尔之胜利''）以纪念这场胜利。这个矛盾提出了一个根本性的解释问题：罗马史料隐晦的''谋杀说''是否是元老院史家掩饰耻辱的战场失败的一个方便的工具——将罪责归于一个内部叛徒（腓力）而非承认罗马军队在波斯人面前败北？还是波斯铭文对''杀死戈尔迪安''的宣称本身是一种宣传性的夸张，借机将一次死亡归功于自己的战绩？没有决定性证据来仲裁这两种叙事。"],"impact":[],"sourceNotes":["Res Gestae Divi Saporis (SKZ, Naqsh-e Rostam) · Lines 6-15 · SKZ §6–15","待核：戈尔迪安三世之死的罗马叙事（被腓力谋杀）是否是对他在战场上失败的一种脸面-saving 的虚构？Misiche 的确切地理位置已被证实或仍有考古争议？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:784b2e6922b80da5956ddd4a","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":83,"sourceId":"rome-source-res-gestae-divi-saporis-shapur-i","sourceTitle":"Res Gestae Divi Saporis","locator":"SKZ §6–15","originalText":null,"translation":"沙普尔一世在纳克什-鲁斯塔姆铭文中对戈尔迪安三世之死的记载与罗马文献直接矛盾。罗马方资料（如 Zosimus 1.19）暗示近卫军长官腓力密谋杀害了戈尔迪安三世。但沙普尔宣称：''凯撒戈尔迪安（Gordianus Caesar）召集了一支来自哥特和日耳曼地区的庞大军队并进军对抗我们……双方在米西克（Mishik，即 Misiche）边境交战……戈尔迪安凯撒被杀，罗马军队被摧毁……我们……将 Misiche 更名为 [Peroz-Shapur]（''沙普尔之胜利''）……''波斯方面的记载与罗马叙事产生了直接的冲突——戈尔迪安三世是战死还是被谋杀？罗马方面的''谋杀说''是否是为了掩盖在战场上的失败？","originalTextMissing":true,"peopleCore":["Gordian III"],"peopleMentioned":["Shapur I","Philip the Arab"],"places":["Misiche","Mishik","Mesopotamia","Peroz-Shapur"],"macroEvent":"Third Century Crisis","eventLabel":"Shapur I''s account of Gordian III''s death: battle or murder?","factType":"military-event","questions":["戈尔迪安三世之死的罗马叙事（被腓力谋杀）是否是对他在战场上失败的一种脸面-saving 的虚构？Misiche 的确切地理位置已被证实或仍有考古争议？"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-res-gestae-divi-saporis-shapur-i","locator":"SKZ §6–15"}],"tags":["Roman Empire","Third Century Crisis","military-event","Misiche","Mishik","Mesopotamia"],"people":["Gordian III","Shapur I","Philip the Arab"],"sources":["Res Gestae Divi Saporis (SKZ, Naqsh-e Rostam)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-248-fall-of-philip-the-arab-decius-becomes-emperor', 'Fall of Philip the Arab; Decius becomes emperor', 'rome', 248, 248, 'Verona', 'politics', '249 年腓力·阿拉伯被德西乌斯击败身亡，帝国陷入新一轮军事动荡。', 'high', NULL, '{"overview":"249 年腓力·阿拉伯被德西乌斯击败身亡，帝国陷入新一轮军事动荡。","result":[],"background":["Third Century Crisis"],"process":["腓力·阿拉伯的统治以罗马建城千年庆典（248年4月）为高光时刻，但边患和内乱随后接踵而至。哥特人和卡尔皮人（Carpi）越过多瑙河肆虐；东方和潘诺尼亚的军团各立僭主。腓力派元老德西乌斯（Gaius Messius Quintus Decius）前往潘诺尼亚镇压叛乱，但德西乌斯成功完成任务后，潘诺尼亚军团反过来说服他接受帝位。德西乌斯虽声称不情愿，但仍率军南下意大利。249 年 9 月（或 10 月），双方在维罗纳附近交战，腓力兵败被杀。他的 11 岁儿子腓力二世随后在罗马被禁卫军杀害。"],"impact":[],"sourceNotes":["Eutropius, Breviarium · Book 9 · 9.3–9.4","待核：德西乌斯是否真的''不情愿''接受帝位，还是事先已经策划？史料对此有不同解读。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:9ceb8660f56057b87f94c35e","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":23,"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","sourceTitle":"Breviarium ab Urbe Condita","locator":"9.3–9.4","originalText":null,"translation":"据 Eutropius 记载，腓力统治后期，多瑙河和东方边境同时出现叛乱。潘诺尼亚军团拥立了将领帕卡提亚努斯（Pacatianus），东方军团则支持约塔皮亚努斯（Jotapianus）。腓力派德西乌斯前去平叛，但潘诺尼亚军团反而拥立德西乌斯为帝（249 年）。德西乌斯率军返回意大利，在维罗纳附近击败并杀死了腓力。Eutropius 简评为''甚短而平静的统治被军队叛乱所终结''。","originalTextMissing":true,"peopleCore":["Philip the Arab","Decius"],"peopleMentioned":["Pacatianus","Jotapianus"],"places":["Verona","Pannonia","Danube","Rome"],"macroEvent":"Third Century Crisis","eventLabel":"Fall of Philip the Arab; Decius becomes emperor","factType":"political-event","questions":["德西乌斯是否真的''不情愿''接受帝位，还是事先已经策划？史料对此有不同解读。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.3–9.4"}],"tags":["Roman Empire","Third Century Crisis","political-event","Verona","Pannonia","Danube"],"people":["Philip the Arab","Decius","Pacatianus","Jotapianus"],"sources":["Eutropius, Breviarium"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-249-decian-persecution-of-christians', 'Decian persecution of Christians', 'rome', 249, 249, 'Rome', 'politics', '德西乌斯于 250 年发动了第一次帝国范围的系统性基督教迫害。', 'high', NULL, '{"overview":"德西乌斯于 250 年发动了第一次帝国范围的系统性基督教迫害。","result":[],"background":["Third Century Crisis"],"process":["德西乌斯认为帝国的危机源于罗马传统宗教的被忽视和基督教的发展触怒了众神。他于 249 年末颁布针对全体帝国居民的强制性献祭法令——每个公民须在地方官员面前向罗马诸神或皇帝守护神献祭，并获取书面证明（libellus，少量纸莎草纸原件在埃及出土）。拒绝者将面临监禁、财产充公甚至死刑。这次迫害规模前所未有，导致罗马主教法比安等大量基督徒殉道。但大量普通基督徒通过购买假证明或通过亲友代替献祭来规避。迫害在 251 年德西乌斯战死后自行停止，但引发了教会内部关于如何处理''失节者''（lapsi）的长期争论。"],"impact":[],"sourceNotes":["Lactantius, De Mortibus Persecutorum · Chapters 3-4 · 3–4","待核：迫害是否是德西乌斯本人发起的，还是地方官员自发执行的？具体执行力度在不同行省是否有差异？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:379f9e6b76db3f68d7982ac3","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":24,"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","sourceTitle":"De Mortibus Persecutorum","locator":"3–4","originalText":null,"translation":"Lactantius 将德西乌斯描述为迫害基督教徒的第一个系统化发动者。249 年末（或 250 年初），德西乌斯颁布法令，要求帝国境内所有公民向罗马诸神献祭并获取证书（libellus）。拒绝者将被处死。罗马主教法比安（Fabian）和许多基督徒殉道。这是罗马帝国第一次普遍的、系统化的对基督教的迫害。","originalTextMissing":true,"peopleCore":["Decius"],"peopleMentioned":["Fabian"],"places":["Rome","Empire-wide"],"macroEvent":"Third Century Crisis","eventLabel":"Decian persecution of Christians","factType":"political-event","questions":["迫害是否是德西乌斯本人发起的，还是地方官员自发执行的？具体执行力度在不同行省是否有差异？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"3–4"}],"tags":["Roman Empire","Third Century Crisis","political-event","Rome","Empire-wide"],"people":["Decius","Fabian"],"sources":["Lactantius, De Mortibus Persecutorum"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-251-battle-of-abrittus-decius-killed-by-goths', 'Battle of Abrittus: Decius killed by Goths', 'rome', 251, 251, 'Abrittus', 'war', '251 年德西乌斯在阿布里图斯战役中被哥特人击杀，成为首位死于蛮族的罗马皇帝。', 'high', NULL, '{"overview":"251 年德西乌斯在阿布里图斯战役中被哥特人击杀，成为首位死于蛮族的罗马皇帝。","result":[],"background":["Third Century Crisis"],"process":["德西乌斯在多瑙河前线迎击哥特王克尼瓦的入侵。初期罗马军队取得了一些成功，但克尼瓦灵活机动，将罗马军队诱入沼泽地带。在阿布里图斯（今保加利亚拉兹格勒附近），德西乌斯的长子赫伦尼乌斯率先战死。德西乌斯试图以''皇帝战死为国捐躯即为最好的葬礼''来鼓舞士气，但军队在沼泽中被哥特人包围歼灭，德西乌斯本人也阵亡（251 年 6 月或 7 月）。这是罗马皇帝首次在对蛮族的战争中战死沙场，对罗马人心理冲击极大。残存军队紧急拥立了特雷波尼亚努斯·加卢斯（Trebonianus Gallus），后者被迫与哥特人签订屈辱和约并纳贡。"],"impact":[],"sourceNotes":["Jordanes, Getica (based on lost work of Cassiodorus) · Chapters 18 · 18.101–18.103","待核：阿布里图斯的具体战场位置和德西乌斯的死亡方式在史料中有不同叙述。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:8d2b2df23b703e165cda47d6","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":25,"sourceId":"rome-source-getica-jordanes","sourceTitle":"Getica","locator":"18.101–18.103","originalText":null,"translation":"据 Jordanes（引述已失传的材料），251 年 6 月，哥特王克尼瓦（Cniva）率军在多瑙河下游的阿布里图斯（Abrittus）附近的沼泽地中伏击并全歼了德西乌斯的罗马军队。德西乌斯和其子赫伦尼乌斯（Herennius Etruscus）双双阵亡。德西乌斯是第一位在对外战争中战死的罗马皇帝。","originalTextMissing":true,"peopleCore":["Decius"],"peopleMentioned":["Cniva","Herennius Etruscus","Trebonianus Gallus"],"places":["Abrittus","Moesia","Danube"],"macroEvent":"Third Century Crisis","eventLabel":"Battle of Abrittus: Decius killed by Goths","factType":"military-event","questions":["阿布里图斯的具体战场位置和德西乌斯的死亡方式在史料中有不同叙述。"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-getica-jordanes","locator":"18.101–18.103"}],"tags":["Roman Empire","Third Century Crisis","military-event","Abrittus","Moesia","Danube"],"people":["Decius","Cniva","Herennius Etruscus","Trebonianus Gallus"],"sources":["Jordanes, Getica (based on lost work of Cassiodorus)"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-252-shapur-is-three-invasions-of-the-roman-east-252-260', 'Shapur I''s three invasions of the Roman East (252-260)', 'rome', 252, 252, 'Mesopotamia', 'war', '沙普尔一世在 252-260 年间三次大规模入侵罗马帝国东部，最终俘虏了皇帝瓦勒良。', 'high', NULL, '{"overview":"沙普尔一世在 252-260 年间三次大规模入侵罗马帝国东部，最终俘虏了皇帝瓦勒良。","result":[],"background":["Third Century Crisis"],"process":["沙普尔一世（统治 240-270）是萨珊波斯最伟大的军事君主之一，他的三次西征将罗马的东方防线推向了崩溃边缘。他于约 252 年发动第一次入侵，摧毁了罗马军队在巴巴利苏斯（Barbalissus）的防御并劫掠了叙利亚的数十个城市——包括安条克本身，这是自共和国以来罗马东方帝国核心城市首次被外敌洗劫。约 256 年的第二次入侵深入卡帕多奇亚（Cappadocia），摧毁了萨塔拉（Satala）要塞。第三次入侵（260 年）以埃德萨战役和瓦勒良本人的被俘为高潮——沙普尔在其铭文中宣称他''亲手俘虏了罗马人的凯撒瓦勒良''并且在战场上俘获了罗马的禁卫军长官、元老和军官。瓦勒良及其军官的余生都在波斯被囚禁。沙普尔充分利用了这一前所未有的宣传胜利——不仅在波斯和罗马边境大肆宣扬，还在纳克什-鲁斯塔姆（Naqsh-e Rostam）和比沙普尔（Bishapur）留下了巨型的岩石浮雕，描绘了瓦勒良在沙普尔面前下跪或被俘虏的场景。这些图像至今清晰可见。"],"impact":[],"sourceNotes":["Res Gestae Divi Saporis (SKZ, Naqsh-e Rostam trilingual inscription) · Lines 1-20 · SKZ §1–20","待核：沙普尔一世宣称的 37 座被征服城市的确切清单是否可以与罗马方面的史料对勘？","待核：安条克是否被毁坏还是仅被劫掠？考古证据如何？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:b2dac33245819feb3849d945","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":69,"sourceId":"rome-source-res-gestae-divi-saporis-shapur-i","sourceTitle":"Res Gestae Divi Saporis","locator":"SKZ §1–20","originalText":null,"translation":"沙普尔一世（Shapur I）的纳克什-鲁斯塔姆三语纪功铭文是研究公元 252-260 年萨珊波斯三次入侵罗马帝国的关键波斯方面的史料。沙普尔声称他在第一次战役（约 252）中征服了罗马的叙利亚和美索不达米亚的 37 座城市；第二次战役（约 256）中入侵了卡帕多奇亚；第三次战役（260）中在埃德萨附近与一支 70,000 人的罗马军队交战，击败了他们并''亲手俘虏了罗马人的凯撒''——瓦勒良（Valerian）。他列出了一长串被征服的城市，包括安条克（Antioch）——帝国东部的最大都市。","originalTextMissing":true,"peopleCore":["Valerian"],"peopleMentioned":["Shapur I","Gallienus"],"places":["Mesopotamia","Antioch","Edessa","Carrhae","Cappadocia","Syria"],"macroEvent":"Third Century Crisis","eventLabel":"Shapur I''s three invasions of the Roman East (252-260)","factType":"military-event","questions":["沙普尔一世宣称的 37 座被征服城市的确切清单是否可以与罗马方面的史料对勘？","安条克是否被毁坏还是仅被劫掠？考古证据如何？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-res-gestae-divi-saporis-shapur-i","locator":"SKZ §1–20"}],"tags":["Roman Empire","Third Century Crisis","military-event","Mesopotamia","Antioch","Edessa"],"people":["Valerian","Shapur I","Gallienus"],"sources":["Res Gestae Divi Saporis (SKZ, Naqsh-e Rostam trilingual inscription)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-252-the-plague-of-cyprian-249-262', 'The Plague of Cyprian (249-262)', 'rome', 252, 252, 'Carthage', 'politics', '西普里安瘟疫（249-262）在帝国面临军事和政治危机的同时对人口造成了毁灭性的打击。', 'medium', NULL, '{"overview":"西普里安瘟疫（249-262）在帝国面临军事和政治危机的同时对人口造成了毁灭性的打击。","result":[],"background":["Third Century Crisis"],"process":["西普里安瘟疫（以迦太基主教 Cyprian 命名，他详细记录了瘟疫的过程）在 249-262 年间肆虐罗马帝国，是三世纪危机中常被忽视但可能最具破坏性的因素。它的病原体至今不确定——可能是天花（Variola）、麻疹或者一种类似埃博拉的出血热（基于其症状描述：''呕吐、眼睛出血、四肢腐烂''）。帝国范围内每天死亡数千人；仅罗马城和亚历山大里亚就发生了大规模的死亡事件。瘟疫对人口和经济的打击与军事危机同时发生——军队招募因人口下降而变得更为困难，粮产因劳动力短缺而萎缩，幸存者中普遍存在的社会不安全感和末世论恐慌为基督教的传播提供了心理土壤。Cyprian 本人的著作 De Mortalitate（''论死亡''）明确地利用瘟疫来论证基督徒应该不惧怕死亡，而异教徒面对同样的死亡却在绝望中崩溃。瘟疫也重创了帝国行政——包括皇帝克劳狄二世（Claudius Gothicus）据信也是 270 年死于该瘟疫的受害者之一。"],"impact":[],"sourceNotes":["Cyprian, De Mortalitate (On the Mortality) · Chapters 14-15 · 14–15","待核：西普里安瘟疫的确切病原体仍然未知——是否有古DNA证据可以从墓葬中提取？","待核：瘟疫对人口和经济的长期影响有多严重？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:a9506a6ad5dcc7297a7cd185","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":72,"sourceId":"rome-source-on-the-mortality-cyprian-of-carthage","sourceTitle":"On the Mortality","locator":"14–15","originalText":null,"translation":"迦太基主教西普里安（Cyprian）在《论死亡》（De Mortalitate）中描述了席卷帝国的可怕瘟疫——后世称为''西普里安瘟疫''（Plague of Cyprian）。他将其解释为基督教徒为即将到来的末日审判做准备的道德试炼。但与此同时，他记录了令人恐惧的流行病学细节：持续的呕吐、眼睛充血发炎、肢体腐烂和坏疽、听力丧失、以及极高的死亡率——在高峰期，仅迦太基每天就有数百人死亡。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Cyprian","Decius"],"places":["Carthage","Alexandria","Empire-wide"],"macroEvent":"Third Century Crisis","eventLabel":"The Plague of Cyprian (249-262)","factType":"political-event","questions":["西普里安瘟疫的确切病原体仍然未知——是否有古DNA证据可以从墓葬中提取？","瘟疫对人口和经济的长期影响有多严重？"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-on-the-mortality-cyprian-of-carthage","locator":"14–15"}],"tags":["Roman Empire","Third Century Crisis","political-event","Carthage","Alexandria","Empire-wide"],"people":["Cyprian","Decius"],"sources":["Cyprian, De Mortalitate (On the Mortality)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-253-valerian-and-gallienus-the-first-systematic-division-of-the-empire', 'Valerian and Gallienus: the first systematic division of the empire', 'rome', 253, 253, 'Rome', 'politics', '253 年瓦勒良与加里恩努斯父子共治，开创了三世纪东西分治帝国的先例。', 'high', NULL, '{"overview":"253 年瓦勒良与加里恩努斯父子共治，开创了三世纪东西分治帝国的先例。","result":[],"background":["Third Century Crisis"],"process":["253 年夏季，瓦勒良（Valerian）在伊利里亚被军队拥立为帝（此前的皇帝——特雷波尼亚努斯·加卢斯和埃米利安努斯——已在短短几个月内相继被杀）。瓦勒良是元老阶层的资深成员（曾任禁卫军长官和行省总督），他立即将儿子加里恩努斯（Gallienus）任命为共治奥古斯都——一位 30 岁左右的贵族。他们的分治安排是此前从未有过的系统化尝试：瓦勒良亲自负责东方前线（萨珊波斯的威胁是当务之急），将司令部设在安条克或萨摩萨塔（Samosata），而加里恩努斯负责西方——莱茵河和多瑙河边界——以米兰或科隆为前线基地。遗憾的是瓦勒良在东方花费了六年时间（254-260）应对沙普尔一世的连番入侵，但他年迈且调度不灵——他的军队遭受了瘟疫和士气的双重打击——最终在 260 年的埃德萨事件中以灾难性的被俘告终。加里恩努斯则独自面对帝国的全面崩溃。这种父子分治的模式虽然以悲剧收场，但它开创的''共治+区域责任''的理念被后来的戴克里先直接继承和制度化。"],"impact":[],"sourceNotes":["The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 2 · pp. 44–47","待核：瓦勒良和加里恩努斯的分治是否有正式的权力分配文件——还是仅仅是实际运营上的安排？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:04b2f37c30d8f70bd8f67ff5","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":70,"sourceId":"rome-source-the-cambridge-ancient-history-cambridge-university-press","sourceTitle":"The Cambridge Ancient History","locator":"pp. 44–47","originalText":null,"translation":"现代学术综合指出，253 年瓦勒良（Publius Licinius Valerianus）和加里恩努斯（Publius Licinius Egnatius Gallienus）父子共同即位，确立了东西分治的共治模式。瓦勒良已经年约 60 岁——一位资深元老和资深军官——而加里恩努斯是年约 30 岁的年轻人。瓦勒良前往东方应对萨珊波斯的威胁，而加里恩努斯留在西部对付莱茵河-多瑙河前线的日耳曼入侵。这种''分治''模式实际上是在奥古斯都以来首次在有生之年系统化地分割帝国管理权——是四帝共治之前的最重要的共治实验。遗憾的是瓦勒良在东部停留了 6 年（254-260），最终导致了他的被俘。","originalTextMissing":true,"peopleCore":["Valerian","Gallienus"],"peopleMentioned":[],"places":["Rome","Antioch","Samosata"],"macroEvent":"Third Century Crisis","eventLabel":"Valerian and Gallienus: the first systematic division of the empire","factType":"political-event","questions":["瓦勒良和加里恩努斯的分治是否有正式的权力分配文件——还是仅仅是实际运营上的安排？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-cambridge-ancient-history-cambridge-university-press","locator":"pp. 44–47"}],"tags":["Roman Empire","Third Century Crisis","political-event","Rome","Antioch","Samosata"],"people":["Valerian","Gallienus"],"sources":["The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-260-capture-of-valerian-by-shapur-i', 'Capture of Valerian by Shapur I', 'rome', 260, 260, 'Edessa', 'war', '260 年罗马皇帝瓦勒良被萨珊波斯国王沙普尔一世俘虏——罗马史上首次皇帝被外敌生擒。', 'high', NULL, '{"overview":"260 年罗马皇帝瓦勒良被萨珊波斯国王沙普尔一世俘虏——罗马史上首次皇帝被外敌生擒。","result":[],"background":["Third Century Crisis"],"process":["260 年是三世纪危机的深渊。瓦勒良皇帝亲率约 70,000 大军东征萨珊波斯，但在埃德萨附近因瘟疫和后勤问题陷入困境。他试图与沙普尔一世谈判，但在和谈中被沙普尔背信擒获。沙普尔一世在其三语纪功铭文（Res Gestae Divi Saporis）中骄傲地宣称亲手俘虏了罗马皇帝。罗马方面的史料对此讳莫如深，仅提及瓦勒良''被俘''。据后来的基督教史家 Lactantius 所述，瓦勒良在波斯被当做人形脚凳和被羞辱，死后其皮被剥下并染成红色展示于神庙——但这些细节可能带有基督教的宣传色彩。瓦勒良被俘后，其子加里恩努斯成为唯一的皇帝，帝国陷入了前所未有的混乱。"],"impact":[],"sourceNotes":["Res Gestae Divi Saporis (SKZ inscription at Naqsh-e Rostam) · Lines 6-15 · SKZ §6–15","待核：瓦勒良在波斯的囚禁生活和死亡方式主要来自后期的基督教史料（如 Lactantius），其可靠性存疑。","待核：70,000 罗马兵力的数字来自波斯方面的记载，可能有所夸大。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:a17eab06ba681ff04e1fa0a5","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":26,"sourceId":"rome-source-res-gestae-divi-saporis-shapur-i","sourceTitle":"Res Gestae Divi Saporis","locator":"SKZ §6–15","originalText":null,"translation":"萨珊波斯王沙普尔一世在其纳克什-鲁斯塔姆（Naqsh-e Rostam）的三语铭文中宣称，他于 260 年在埃德萨（Edessa）附近击败了一支 70,000 人的罗马军队，并亲手俘虏了罗马皇帝瓦勒良。''我亲手俘虏了罗马人的凯撒瓦勒良（Valerianus Caesar）''。这是波斯方面的记载——罗马历史上最屈辱的事件之一。","originalTextMissing":true,"peopleCore":["Valerian"],"peopleMentioned":["Shapur I","Gallienus"],"places":["Edessa","Mesopotamia","Naqsh-e Rostam"],"macroEvent":"Third Century Crisis","eventLabel":"Capture of Valerian by Shapur I","factType":"military-event","questions":["瓦勒良在波斯的囚禁生活和死亡方式主要来自后期的基督教史料（如 Lactantius），其可靠性存疑。","70,000 罗马兵力的数字来自波斯方面的记载，可能有所夸大。"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-res-gestae-divi-saporis-shapur-i","locator":"SKZ §6–15"}],"tags":["Roman Empire","Third Century Crisis","military-event","Edessa","Mesopotamia","Naqsh-e Rostam"],"people":["Valerian","Shapur I","Gallienus"],"sources":["Res Gestae Divi Saporis (SKZ inscription at Naqsh-e Rostam)"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-260-gallienus-sole-reign-gallic-empire-secedes', 'Gallienus sole reign; Gallic Empire secedes', 'rome', 260, 260, 'Gaul', 'politics', '加里恩努斯在父亲被俘后独自统治帝国，面对高卢帝国的分离和多方入侵，艰难支撑。', 'medium', NULL, '{"overview":"加里恩努斯在父亲被俘后独自统治帝国，面对高卢帝国的分离和多方入侵，艰难支撑。","result":[],"background":["Third Century Crisis"],"process":["瓦勒良被俘后，其子加里恩努斯（Publius Licinius Egnatius Gallienus）成为唯一的皇帝。他面临多重灾难：东方帕尔米拉王国在奥登纳图斯（Odaenathus）领导下实际上脱离了罗马控制；高卢、不列颠和西班牙在波斯特穆斯（Postumus）领导下建立了独立的高卢帝国（260-274）；多瑙河和莱茵河遭受日耳曼部落持续入侵。加里恩努斯是文艺复兴以来被传统史学严重低估的皇帝，但他在极端困境下实施了一些重要改革：禁止元老担任军团指挥职务（将军事指挥权转给职业军官）、建立机动骑兵预备队（vexillationes）、以米兰为基地形成flexible防御体系。这些改革为后来的奥勒良收复和戴克里先重组奠定了基础。"],"impact":[],"sourceNotes":["Aurelius Victor, De Caesaribus · 32-33 · 32–33","待核：加里恩努斯禁止元老担任军职的改革在学术上存在争议——是正式法令还是渐进趋势？文献证据主要来自 Aurelius Victor 的简略提及。","待核：高卢帝国的独立程度有多大——是彻底分裂还是某种自治实体？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:4d8e607c61d56c87bdfb54a0","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":27,"sourceId":"rome-source-de-caesaribus-aurelius-victor","sourceTitle":"De Caesaribus","locator":"32–33","originalText":null,"translation":"Aurelius Victor 对加里恩努斯（Gallienus）的统治评价复杂。他承认加里恩努斯在面对父亲被俘、帝国分裂和高卢帝国建立等极端困境时坚持不懈，但也批评他对哲学和文化的过度沉迷而无视帝国瓦解。Aurelius Victor 简明扼要地总结了高卢帝国的建立：''当时波斯特穆斯（Postumus）在高卢自立为帝，统治了十年。''","originalTextMissing":true,"peopleCore":["Gallienus"],"peopleMentioned":["Postumus","Valerian"],"places":["Gaul","Rome","Milan"],"macroEvent":"Third Century Crisis","eventLabel":"Gallienus sole reign; Gallic Empire secedes","factType":"person-life","questions":["加里恩努斯禁止元老担任军职的改革在学术上存在争议——是正式法令还是渐进趋势？文献证据主要来自 Aurelius Victor 的简略提及。","高卢帝国的独立程度有多大——是彻底分裂还是某种自治实体？"],"confidence":"medium","importance":"major","sourceRefs":[{"sourceId":"rome-source-de-caesaribus-aurelius-victor","locator":"32–33"}],"tags":["Roman Empire","Third Century Crisis","person-life","Gaul","Rome","Milan"],"people":["Gallienus","Postumus","Valerian"],"sources":["Aurelius Victor, De Caesaribus"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-260-the-gallic-empire-260-274', 'The Gallic Empire (260-274)', 'rome', 260, 260, 'Gaul', 'politics', '260 年高卢、不列颠和西班牙在波斯特穆斯领导下脱离中央帝国，形成了持续 14 年的高卢帝国。', 'high', NULL, '{"overview":"260 年高卢、不列颠和西班牙在波斯特穆斯领导下脱离中央帝国，形成了持续 14 年的高卢帝国。","result":[],"background":["Third Century Crisis"],"process":["高卢帝国（Imperium Galliarum）的建立是三世纪危机中帝国分裂的最明显标志。260 年，莱茵河军团在指挥官波斯特穆斯（Marcus Cassianius Latinius Postumus）的领导下叛变并杀害了加里恩努斯之子萨洛尼努斯（Saloninus）。波斯特穆斯随后宣布自己为皇帝，建立了以科洛尼亚·阿格里皮纳（Colonia Agrippina，今科隆）为中心的高卢帝国。其疆域包括高卢、不列颠和西班牙——即帝国的整个西部。值得注意的是，高卢帝国的结构并非蛮族式的分离主义——它保留了完整的罗马制度：元老院、执政官、禁卫军、铸币厂。波斯特穆斯发行了质量较高的银币，并成功击退了法兰克人和阿勒曼尼人的入侵，实际上比中央帝国更好地保护了高卢边境。他于 269 年被杀，此后高卢帝国经历了短暂的混乱（莱利安努斯、马里乌斯、维克托里努斯先后被杀），最终由元老泰特里库斯一世统治。泰特里库斯在 274 年向奥勒良投降，结束了高卢帝国的独立。"],"impact":[],"sourceNotes":["Historia Augusta, Tyranni Triginta (The Thirty Tyrants) · Tyranni Triginta · Trig. Tyr. 1–33","待核：HA《三十篡主传》中列举的篡位者有多少是真实的历史人物？","待核：高卢帝国的独立意图与帕尔米拉帝国有何不同？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:932ff14bccc45507fe473df7","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":52,"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","sourceTitle":"Historia Augusta","locator":"Trig. Tyr. 1–33","originalText":null,"translation":"Historia Augusta 的《三十篡主传》是对于高卢帝国的最为详细的拉丁文记载（尽管其可靠性参差不齐）。它声称在加里恩努斯统治期间（260-268），帝国出现了 30 位篡位者——这是对雅典''三十僭主''历史典故的刻意套用（实际数量可能只有约 9-12 人）。其中最为重要的是高卢帝国的系列皇帝：波斯特穆斯（Postumus，260-269）、莱利安努斯（Laelianus）、马里乌斯（Marius）、维克托里努斯（Victorinus，269-271）和泰特里库斯一世与二世（Tetricus I & II，271-274）。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Postumus","Victorinus","Tetricus I","Tetricus II","Gallienus","Aurelian"],"places":["Gaul","Britannia","Hispania","Colonia Agrippina","Trier"],"macroEvent":"Third Century Crisis","eventLabel":"The Gallic Empire (260-274)","factType":"political-event","questions":["HA《三十篡主传》中列举的篡位者有多少是真实的历史人物？","高卢帝国的独立意图与帕尔米拉帝国有何不同？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Trig. Tyr. 1–33"}],"tags":["Roman Empire","Third Century Crisis","political-event","Gaul","Britannia","Hispania"],"people":["Postumus","Victorinus","Tetricus I","Tetricus II","Gallienus","Aurelian"],"sources":["Historia Augusta, Tyranni Triginta (The Thirty Tyrants)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-260-gallienus-faces-the-empires-darkest-hour', 'Gallienus faces the empire''s darkest hour', 'rome', 260, 260, 'Rome', 'politics', '瓦勒良被俘后，加里恩努斯独自面对帝国在最黑暗时期的全面崩溃。', 'medium', NULL, '{"overview":"瓦勒良被俘后，加里恩努斯独自面对帝国在最黑暗时期的全面崩溃。","result":[],"background":["Third Century Crisis"],"process":["加里恩努斯在 260 年的处境是罗马史上最绝望的时刻之一。他同时面临着：1）父亲瓦勒良被俘后在东方的权力真空；2）波斯特穆斯在高卢自立（高卢帝国的建立）；3）奥登纳图斯在东方事实上的独立；4）日耳曼部落——阿勒曼尼人、法兰克人、尤通吉人——同时涌入莱茵河、多瑙河和意大利北部；5）哥特人在黑海和爱琴海的空前规模的海陆入侵。他在位期间至少面临了 9-10 个公开的篡位者。HA 指责他沉溺于哲学和享乐而对帝国的分崩离析漠不关心——但现代史学已大幅修正了这一评价。加里恩努斯事实上在极端困境中坚持了 15 年（253-268），并在军事组织（建立骑兵机动力量）、货币政策和帝国意识形态（容忍基督教）等方面作出了被低估的改革。他还在铸币上引入了一种精美的晚期古典肖像风格。"],"impact":[],"sourceNotes":["Historia Augusta, Vita Gallieni Duo · Vita Gallieni · Gall. 13","待核：加里恩努斯对他父亲被俘的真实反应难以确定——HA 的记载可能带有敌意夸张。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:3d183ba12d706a25ae322b4d","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":53,"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","sourceTitle":"Historia Augusta","locator":"Gall. 13","originalText":null,"translation":"HA 记载加里恩努斯在得知父亲瓦勒良被俘后说了一句著名的话（可能为虚构）：''我父亲是一个凡人，他遭受了凡人的命运。''HA 批评他对父亲的被捕表现出漠不关心的态度（或至少是过于冷静）。但在接下来的十年里，加里恩努斯面临了几乎所有边境的同时崩溃。","originalTextMissing":true,"peopleCore":["Gallienus"],"peopleMentioned":["Valerian","Shapur I"],"places":["Rome","Mediolanum","Milan"],"macroEvent":"Third Century Crisis","eventLabel":"Gallienus faces the empire''s darkest hour","factType":"person-life","questions":["加里恩努斯对他父亲被俘的真实反应难以确定——HA 的记载可能带有敌意夸张。"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Gall. 13"}],"tags":["Roman Empire","Third Century Crisis","person-life","Rome","Mediolanum","Milan"],"people":["Gallienus","Valerian","Shapur I"],"sources":["Historia Augusta, Vita Gallieni Duo"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-260-postumus-founds-the-gallic-empire', 'Postumus founds the Gallic Empire', 'rome', 260, 260, 'Colonia Agrippina', 'politics', '260 年波斯特穆斯被莱茵河军团拥立，杀害加里恩努斯之子后建立了独立的高卢帝国。', 'medium', NULL, '{"overview":"260 年波斯特穆斯被莱茵河军团拥立，杀害加里恩努斯之子后建立了独立的高卢帝国。","result":[],"background":["Third Century Crisis"],"process":["波斯特穆斯（Marcus Cassianius Latinius Postumus）的背景不清楚——他可能出身高卢地方贵族或是一名职业军人。260 年他在莱茵河前线成功击退了一次日耳曼入侵，并在战利品分配上与禁卫军长官西尔瓦努斯发生争执。军团士兵拥立波斯特穆斯为帝——他随即围攻了加里恩努斯之子萨洛尼努斯（Saloninus）据守的科隆。城陷后萨洛尼努斯和西尔瓦努斯被处决。波斯特穆斯随后向元老院致信自称奥古斯都，但并未试图向意大利进军——他满足于统治高卢、不列颠和西班牙构成的''西部帝国''。他的政权保留了完整的罗马制度：他发行了质量高于中央帝国银币的金币和银币（钱币证据是评估其政权稳定的最重要指标），在科隆和特里尔建立了首都，设置了与罗马平行的元老院和禁卫军。他在位十年间（260-269）成功保护了莱茵河防线免受法兰克人和阿勒曼尼人的入侵——就防御成效而言，他甚至比加里恩努斯在意大利面临的局势更为成功。"],"impact":[],"sourceNotes":["Historia Augusta, Tyranni Triginta · Vita Postumi · Trig. Tyr. 3–6","待核：波斯特穆斯是否真的有一位与罗马平行的元老院？这一说法主要来自 HA，可能受到罗马制度的理想化投射。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:33edd426382fe901a4a81cd9","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":74,"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","sourceTitle":"Historia Augusta","locator":"Trig. Tyr. 3–6","originalText":null,"translation":"HA 记载了波斯特穆斯（Marcus Cassianius Latinius Postumus）建立高卢帝国的具体契机。260 年，加里恩努斯之子萨洛尼努斯（Saloninus）——一位年仅约 16 岁的凯撒——留驻于科洛尼亚·阿格里皮纳（科隆）由禁卫军长官西尔瓦努斯（Silvanus）辅佐。波斯特穆斯在击败入侵的日耳曼部落后，被军团拥立为帝。科隆拒绝承认波斯特穆斯，他攻陷了该城并杀害了萨洛尼努斯和西尔瓦努斯。HA 声称波斯特穆斯是''最为公正和能干的皇帝''——他保护高卢免遭日耳曼入侵，发行了质量优良的银币，并建立了持续了 10 年的稳定政权。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Postumus","Gallienus","Saloninus"],"places":["Colonia Agrippina","Cologne","Gaul","Rhine"],"macroEvent":"Third Century Crisis","eventLabel":"Postumus founds the Gallic Empire","factType":"political-event","questions":["波斯特穆斯是否真的有一位与罗马平行的元老院？这一说法主要来自 HA，可能受到罗马制度的理想化投射。"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Trig. Tyr. 3–6"}],"tags":["Roman Empire","Third Century Crisis","political-event","Colonia Agrippina","Cologne","Gaul"],"people":["Postumus","Gallienus","Saloninus"],"sources":["Historia Augusta, Tyranni Triginta"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-260-gallienus-creation-of-a-mobile-cavalry-army', 'Gallienus'' creation of a mobile cavalry army', 'rome', 260, 260, 'Milan', 'politics', '加里恩努斯创建了独立的骑兵预备队，为后来奥勒良和戴克里先的纵深防御奠定了基础。', 'high', NULL, '{"overview":"加里恩努斯创建了独立的骑兵预备队，为后来奥勒良和戴克里先的纵深防御奠定了基础。","result":[],"background":["Third Century Crisis"],"process":["加里恩努斯在三世纪军事史上的重要性近数十年来已被大幅重新评估。在他之前，罗马军队的核心始终是军团步兵（legionary cohorts），骑兵仅作为约 120 人每军团的附属力量。但三世纪的战争现实——敌方包括日耳曼骑兵（阿勒曼尼、哥特和萨尔马提亚重骑兵）和萨珊波斯的重甲骑兵（cataphractarii/clibanarii）——要求罗马拥有能够快速机动和应对骑兵突破的独立骑兵力量。加里恩努斯创造性地建立了独立的骑兵部队（equites Dalmatae、equites Mauri、equites promoti），这些不再是附属步兵的部队，而是直接隶属于皇帝本人的战略预备队。他将帝国机动指挥部从罗马迁至米兰（Mediolanum），因为米兰位于阿尔卑斯山脚下，可以快速向北、向东或向西调兵。这一战略变革——从前线式防御转为纵深机动防御——标志着罗马军事思想的根本转变。达尔马提亚骑兵（equites Dalmatae）在此后的皇帝中继续存在——奥勒良、普罗布斯和戴克里先都倚重这支部队——戴克里先的 comitatenses（野战机动军）直接继承了加里恩努斯的骑兵预备队概念。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 7 · pp. 255–260","待核：equites Dalmatae 的确切组建年份和组织结构是否有更多铭文和纸莎草学证据？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:4f4ec52df15781f489c7efc2","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":77,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 255–260","originalText":null,"translation":"Potter 评价了加里恩努斯的军事改革——尤其是创建独立的骑兵预备队（equites promoti 和 equites Dalmatae）和以米兰为基地的机动战略。最初的罗马军队以步兵军团为战术核心，骑兵仅起辅助作用。到 3 世纪，面对日耳曼骑兵和萨珊波斯重甲骑兵的机动战争，战略需要已经从线式防御转变为纵深防御——需要能够在战区之间快速移动的骑兵预备队。加里恩努斯将独立的骑兵部队从军团中分离出来，组建了几支精锐的骑兵 vexillationes——尤其是达尔马提亚骑兵（equites Dalmatae）——它们可以在多瑙河和莱茵河之间或从意大利快速调往受威胁的前线。","originalTextMissing":true,"peopleCore":["Gallienus"],"peopleMentioned":["Aurelian","Claudius Gothicus"],"places":["Milan","Mediolanum","Dalmatia","Danube"],"macroEvent":"Third Century Crisis","eventLabel":"Gallienus'' creation of a mobile cavalry army","factType":"reform","questions":["equites Dalmatae 的确切组建年份和组织结构是否有更多铭文和纸莎草学证据？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 255–260"}],"tags":["Roman Empire","Third Century Crisis","reform","Milan","Mediolanum","Dalmatia"],"people":["Gallienus","Aurelian","Claudius Gothicus"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-267-odaenathus-romes-eastern-defender-and-the-origin-of-palmyrene-power', 'Odaenathus: Rome''s eastern defender and the origin of Palmyrene power', 'rome', 267, 267, 'Palmyra', 'war', '奥登纳图斯在瓦勒良被俘后击退萨珊波斯，成为实际上的东方最高统帅——为帕尔米拉帝国的崛起创造了条件。', 'high', NULL, '{"overview":"奥登纳图斯在瓦勒良被俘后击退萨珊波斯，成为实际上的东方最高统帅——为帕尔米拉帝国的崛起创造了条件。","result":[],"background":["Third Century Crisis"],"process":["Septimius Odaenathus（乌代纳特）是帕尔米拉的一个地方统治家族的王子——他拥有''领主''（ras Tadmor）和罗马元老头衔。260 年瓦勒良被俘后，罗马在东方出现了权力真空。波斯人以为已经摧毁了罗马在东方的军事力量，但奥登纳图斯集结帕尔米拉的军事资源——包括其著名的沙漠骑兵（马弓手和重甲骑兵）——在波斯军队满载战利品撤退途中突然发动袭击。他在幼发拉底河渡口附近的伏击战中击败了波斯部队，然后重新占领了 Carrhae 和 Nisibis 等关键要塞。加里恩努斯——无法同时应对东西两线——正式授予他曾是其父亲的对头（实际上是叛军）的奥登纳图斯为''全东方总督''（corrector totius Orientis）的头衔。在接下来的几年里（262-266），奥登纳图斯名义上以罗马而非帕尔米拉的名义行动，两次深入波斯腹地——第二次可能已经接近泰西封。但在 267 年，奥登纳图斯和他的长子（来自前妻）被刺杀——凶手身份不明。他的遗孀芝诺比娅迅速接掌了权力，并开始将帕尔米拉从一个罗马的自治联盟转变为一个独立的东方帝国。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 7 · pp. 245–255","待核：奥登纳图斯是否真的独立于罗马行动——还是他与加里恩努斯之间有真正的协调？罗马授予他的确切头衔和权力范围仍有争议。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:4031032faa608b66ff4df7fb","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":73,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 245–255","originalText":null,"translation":"Potter 综合分析了帕尔米拉王子奥登纳图斯（Septimius Odaenathus）的崛起。在 260 年瓦勒良被俘后，沙普尔一世在撤退时遭到奥登纳图斯的伏击（可能在幼发拉底河渡口附近）。奥登纳图斯成功收复了部分被波斯占领的领土并将波斯军队逐回幼发拉底河。加里恩努斯正式承认他为''全东方总督''（corrector totius Orientis），实际上是罗马东方行省的最高军事指挥官。奥登纳图斯随后于 262 年和 266 年两次深入波斯腹地——第二次甚至逼近泰西封——暂时恢复了罗马在东方的军事尊严。他在 267 年被刺杀（可能由其妻芝诺比娅策划），芝诺比娅随即以幼子瓦巴拉图斯的名义控制了帕尔米拉王国。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Odaenathus","Zenobia","Gallienus","Shapur I","Valerian","Vaballathus"],"places":["Palmyra","Euphrates","Mesopotamia","Ctesiphon","Syria"],"macroEvent":"Third Century Crisis","eventLabel":"Odaenathus: Rome''s eastern defender and the origin of Palmyrene power","factType":"military-event","questions":["奥登纳图斯是否真的独立于罗马行动——还是他与加里恩努斯之间有真正的协调？罗马授予他的确切头衔和权力范围仍有争议。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 245–255"}],"tags":["Roman Empire","Third Century Crisis","military-event","Palmyra","Euphrates","Mesopotamia"],"people":["Odaenathus","Zenobia","Gallienus","Shapur I","Valerian","Vaballathus"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-268-reign-of-claudius-gothicus-victory-at-naissus', 'Reign of Claudius Gothicus: victory at Naissus', 'rome', 268, 268, 'Naissus', 'politics', '克劳狄二世（268-270）在纳伊苏斯大破哥特入侵军，但统治仅一年零八个月即因瘟疫而死。', 'medium', NULL, '{"overview":"克劳狄二世（268-270）在纳伊苏斯大破哥特入侵军，但统治仅一年零八个月即因瘟疫而死。","result":[],"background":["Third Century Crisis"],"process":["克劳狄二世是伊利里亚军人皇帝群体中的关键人物。268 年加里恩努斯在米兰城外被刺杀后（据传克劳狄涉及其阴谋），他被军队拥立。269 年他面对自 251 年以来最大规模的哥特入侵——据称 30 万哥特人越过大海和陆地涌入巴尔干。在纳伊苏斯（Naissus，今尼什）附近的会战中，他运用骑兵伏击战术歼灭了大批哥特军队，Zosimus 宣称杀死了 50,000 人。虽然数字夸大，但这场胜利确实瓦解了哥特的大规模入侵，给巴尔干带来了十来年的相对安全。克劳狄被元老院授予 Gothicus Maximus 称号——这一称号后来被君士坦丁大帝用于宣传自己与克劳狄的''血缘关系''（可能是虚构的）。270 年早春，他在西尔米乌姆因瘟疫去世，遗言推荐奥勒良。他的短暂统治（1 年 8 个月）被视为即将降临的奥勒良复兴的过渡期。"],"impact":[],"sourceNotes":["Zosimus, Historia Nova · Book 1 · 1.39–1.46","待核：纳伊苏斯战役的具体战术和双方确切兵力需要与 Dexippus 残篇和考古证据对勘。","待核：克劳狄二世在刺杀加里恩努斯一事中究竟参与了多少？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:8a29ebdf064c1a34e2104cde","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":48,"sourceId":"rome-source-historia-nova-zosimus","sourceTitle":"Historia Nova","locator":"1.39–1.46","originalText":null,"translation":"据 Zosimus 记载，克劳狄二世（Marcus Aurelius Claudius，后称 Gothicus——''哥特征服者''）在加里恩努斯于 268 年被刺杀后被拥立为帝。他是一位经验丰富的伊利里亚军官。269 年他在纳伊苏斯（Naissus，今塞尔维亚尼什）战役中大败哥特入侵军——据称杀死了 50,000 哥特战士（数字可能夸大）。这场胜利为他赢得了''Gothicus''的称号。他于 270 年初在西尔米乌姆因瘟疫（可能是塞浦路斯瘟疫 C 型，即天花或麻疹）去世，死前推荐奥勒良为其继任者。","originalTextMissing":true,"peopleCore":["Claudius Gothicus"],"peopleMentioned":["Gallienus","Aurelian"],"places":["Naissus","Nish","Sirmium","Moesia"],"macroEvent":"Third Century Crisis","eventLabel":"Reign of Claudius Gothicus: victory at Naissus","factType":"person-life","questions":["纳伊苏斯战役的具体战术和双方确切兵力需要与 Dexippus 残篇和考古证据对勘。","克劳狄二世在刺杀加里恩努斯一事中究竟参与了多少？"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.39–1.46"}],"tags":["Roman Empire","Third Century Crisis","person-life","Naissus","Nish","Sirmium"],"people":["Claudius Gothicus","Gallienus","Aurelian"],"sources":["Zosimus, Historia Nova"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-268-claudius-gothicus-and-the-constantinian-connection', 'Claudius Gothicus and the Constantinian connection', 'rome', 268, 268, 'Naissus', 'culture', 'HA 将克劳狄二世神话化为君士坦丁的祖先，但在君士坦丁时代的宣传中这一虚构被广泛接受。', 'low', NULL, '{"overview":"HA 将克劳狄二世神话化为君士坦丁的祖先，但在君士坦丁时代的宣传中这一虚构被广泛接受。","result":[],"background":["Third Century Crisis"],"process":["Historia Augusta 对克劳狄二世的传记是君士坦丁王朝宣传的典型产物。君士坦丁大帝为了建立自己的王朝合法性——他的父亲君士坦提乌斯一世非皇室血统——在 310 年代发明了与克劳狄二世 Gothicus 的虚构血缘关系。HA 的 Vita Divi Claudii 明确反映了这一宣传需要：它将克劳狄描绘为完美的军人皇帝和道德典范，并插入了一个虚构情节——克劳狄的兄弟 Crispus 有一个女儿，她就是君士坦提乌斯一世的妻子（即君士坦丁的母亲海伦娜）。实际上君士坦丁与克劳狄没有血缘关系。但这一虚构在帝国宣传中发挥了巨大作用，甚至在君士坦丁凯旋门上也出现了对''神圣的克劳狄''的铭文致敬。纳伊苏斯战役和死于瘟疫的核心历史事实被保留，但被包裹在王朝神话之中。"],"impact":[],"sourceNotes":["Historia Augusta, Vita Divi Claudii · Vita Divi Claudii · Claud. 1–18","待核：君士坦丁与克劳狄二世之间的虚构血缘关系最早在何时出现？310 年还是 317 年？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:c734fab81ff7b25f31c724cf","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":49,"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","sourceTitle":"Historia Augusta","locator":"Claud. 1–18","originalText":null,"translation":"Historia Augusta 对克劳狄二世的传记进行了理想化的美化（需注意 HA 的可靠性问题）。HA 声称克劳狄是君士坦丁大帝的祖先——这一虚构后来被君士坦丁王朝用于宣传。HA 还将他塑造为''第二奥古斯都''般的美德典范：节俭、勇敢、公正、虔诚。实际上这些描述是为了衬托君士坦丁家族的合法性。关于他在纳伊苏斯的胜利和死于瘟疫的事实核心大致属实。","originalTextMissing":true,"peopleCore":["Claudius Gothicus"],"peopleMentioned":["Constantine I"],"places":["Naissus","Sirmium"],"macroEvent":"Third Century Crisis","eventLabel":"Claudius Gothicus and the Constantinian connection","factType":"source-mention","questions":["君士坦丁与克劳狄二世之间的虚构血缘关系最早在何时出现？310 年还是 317 年？"],"confidence":"low","importance":"minor","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Claud. 1–18"}],"tags":["Roman Empire","Third Century Crisis","source-mention","Naissus","Sirmium"],"people":["Claudius Gothicus","Constantine I"],"sources":["Historia Augusta, Vita Divi Claudii"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-269-eutropius-on-zenobias-regency', 'Eutropius on Zenobia''s regency', 'rome', 269, 269, 'Palmyra', 'culture', 'Eutropius 对芝诺比娅统治的描述相对中性，强调了它作为合法代理而非纯粹叛乱的方面。', 'high', NULL, '{"overview":"Eutropius 对芝诺比娅统治的描述相对中性，强调了它作为合法代理而非纯粹叛乱的方面。","result":[],"background":["Third Century Crisis"],"process":["Eutropius 的《城市简史》是一部 4 世纪中期的拉丁文简明罗马史（写于瓦伦斯皇帝统治期间约 369 年）。他对芝诺比娅的描述非常简洁且相对中性——只说她''在丈夫被刺杀后以儿子们的名义统治东方（Orientem tenebat），维持了帝国的大部分''。Eutropius 没有像 Zosimus 那样详细描写芝诺比娅的野心、能力或外貌，也没有像 HA 那样将其贬为女性篡位者。他的中性叙述反映了一种可能的态度——在 4 世纪中期的回顾中，帕尔米拉事件可以被视为三世纪危机期间一位代理统治者在混乱中对罗马权威施加有效管理的案例，而非完全脱离罗马的叛乱。她的独立可以被视为一种程度的差异而非本质的不同。这种解读与现代学者关于帕尔米拉是否真正意图建立独立帝国的辩论是一致的。"],"impact":[],"sourceNotes":["Eutropius, Breviarium · Book 9 · 9.10–9.12","待核：Eutropius 的中性评价反映了哪些当代政治背景？是否因为 Valens 朝廷也有类似的东方局势考量？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:a27a29c7180f1797aa840f56","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":64,"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","sourceTitle":"Breviarium ab Urbe Condita","locator":"9.10–9.12","originalText":null,"translation":"Eutropius 简洁地记载了芝诺比娅在奥登纳图斯死后取得东方控制权——''芝诺比娅，奥登纳图斯的妻子，在丈夫被刺杀后以儿子们的名义统治东方，维持了帝国的大部分。''（Eutropius 9.11）Eutropius 未提及帕尔米拉的独立意图，仅是陈述了事实——她作为 regent 统治了几年，并在奥勒良到来之前维持了东方行省的运作。这与 Zosimus 和 HA 的详细叙述形成了有趣对比——Eutropius 似乎视其为一种过渡性的合法代理而非叛乱。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Zenobia","Odaenathus","Aurelian","Gallienus"],"places":["Palmyra","Syria","Egypt"],"macroEvent":"Third Century Crisis","eventLabel":"Eutropius on Zenobia''s regency","factType":"source-mention","questions":["Eutropius 的中性评价反映了哪些当代政治背景？是否因为 Valens 朝廷也有类似的东方局势考量？"],"confidence":"high","importance":"minor","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.10–9.12"}],"tags":["Roman Empire","Third Century Crisis","source-mention","Palmyra","Syria","Egypt"],"people":["Zenobia","Odaenathus","Aurelian","Gallienus"],"sources":["Eutropius, Breviarium"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-270-aurelian-becomes-emperor', 'Aurelian becomes emperor', 'rome', 270, 270, 'Sirmium', 'politics', '270 年奥勒良即位，迅速稳定了多瑙河前线并开始收复失地。', 'medium', NULL, '{"overview":"270 年奥勒良即位，迅速稳定了多瑙河前线并开始收复失地。","result":[],"background":["Third Century Crisis"],"process":["奥勒良出身伊利里亚（Illyria）普通家庭，从底层士兵逐步晋升为骑兵指挥官。在克劳狄二世麾下，他在纳伊苏斯（Naissus）战役中发挥了关键作用，重创了哥特人。270 年克劳狄二世因瘟疫去世后，军队在西尔米乌姆拥立奥勒良。克劳狄的兄弟昆提卢斯（Quintillus）在阿奎莱亚短暂自立为帝，但很快被抛弃并自杀。奥勒良随后面临严重的战乱：汪达尔人和尤通吉人入侵意大利北部，多瑙河部落再度南下。他迅速击败来犯之敌，但意识到罗马城本身现在也暴露在蛮族威胁之下，由此开始了罗马奥勒良城墙的修建。他的五年统治（270-275）以惊人的速度和效率统一了分裂的帝国。"],"impact":[],"sourceNotes":["Historia Augusta, Vita Divi Aureliani · Vita Aureliani · Aurel. 1–50","待核：Historia Augusta 对奥勒良的早期生平记载充满修辞修饰和虚构细节，需要与硬币证据和铭文交叉验证。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:381c62a307456593b6104de2","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":28,"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","sourceTitle":"Historia Augusta","locator":"Aurel. 1–50","originalText":null,"translation":"Historia Augusta 记载奥勒良（Lucius Domitius Aurelianus）于 270 年在下潘诺尼亚的西尔米乌姆（Sirmium）被军队拥立为帝。他在克劳狄二世（Claudius Gothicus）因瘟疫去世后继承。HA 称奥勒良是一位卓越的将军、严格的纪律执行者，也是五世纪以来第一位在罗马修建新城墙的皇帝。","originalTextMissing":true,"peopleCore":["Aurelian"],"peopleMentioned":["Claudius Gothicus","Quintillus"],"places":["Sirmium","Pannonia","Rome","Aquileia"],"macroEvent":"Third Century Crisis","eventLabel":"Aurelian becomes emperor","factType":"person-life","questions":["Historia Augusta 对奥勒良的早期生平记载充满修辞修饰和虚构细节，需要与硬币证据和铭文交叉验证。"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Aurel. 1–50"}],"tags":["Roman Empire","Third Century Crisis","person-life","Sirmium","Pannonia","Rome"],"people":["Aurelian","Claudius Gothicus","Quintillus"],"sources":["Historia Augusta, Vita Divi Aureliani"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-270-zenobia-and-the-palmyrene-empire-267-272', 'Zenobia and the Palmyrene Empire (267-272)', 'rome', 270, 270, 'Palmyra', 'politics', '芝诺比娅在丈夫死后将帕尔米拉扩展为一个实际上脱离罗马的东方帝国。', 'high', NULL, '{"overview":"芝诺比娅在丈夫死后将帕尔米拉扩展为一个实际上脱离罗马的东方帝国。","result":[],"background":["Third Century Crisis"],"process":["帕尔米拉（Palmyra，Tadmor）是叙利亚沙漠中的富庶商都，因丝绸之路贸易而繁荣。260 年瓦勒良被俘后，帕尔米拉王子奥登纳图斯（Odaenathus）以罗马的总督身份（corrector totius Orientis）击退了萨珊波斯的入侵，暂时恢复了罗马在东方的权威。但 267 年奥登纳图斯及其长子被刺杀（可能由芝诺比娅策划），其遗孀芝诺比娅以幼子瓦巴拉图斯（Vaballathus）的名义掌控了权力。她趁加里恩努斯无暇东顾之际，迅速将帕尔米拉的控制范围扩展至叙利亚全境、埃及（270 年攻占亚历山大里亚）和小亚细亚东部（安卡拉）。她在硬币上自称奥古斯塔，瓦巴拉图斯称奥古斯都——这公然宣告了独立脱离罗马的意图。芝诺比娅资助希腊哲学家和学者，将帕尔米拉宫廷打造为文化中心（著名学者朗吉努斯 Longinus 是她的顾问）。她的王国仅维持了五年——272 年奥勒良粉碎了这个沙漠帝国。"],"impact":[],"sourceNotes":["Zosimus, Historia Nova · Book 1 · 1.50–1.61","待核：芝诺比娅是否真的谋杀了丈夫奥登纳图斯？史料证据不充分。","待核：帕尔米拉帝国的独立意图到了何种程度——是正式脱离还是某种自治安排？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:167b4c974940d154d35eec22","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":51,"sourceId":"rome-source-historia-nova-zosimus","sourceTitle":"Historia Nova","locator":"1.50–1.61","originalText":null,"translation":"据 Zosimus 记载，帕尔米拉王国在奥登纳图斯（Odaenathus）的遗孀芝诺比娅（Zenobia）领导下，趁罗马深陷三世纪危机之际，将控制范围从叙利亚沙漠商都帕尔米拉扩展至几乎整个罗马东方——埃及、叙利亚、小亚细亚东部、阿拉伯。芝诺比娅声称其为埃及女王克利奥帕特拉的后裔，以子瓦巴拉图斯（Vaballathus）之名为帝，实际上建立了独立的东方王国。Zosimus 将她描述为一个才智卓越、精通多门语言、兼具美貌和军事才能的女性统治者。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Zenobia","Odaenathus","Vaballathus","Aurelian","Gallienus"],"places":["Palmyra","Syria","Egypt","Antioch","Emesa"],"macroEvent":"Third Century Crisis","eventLabel":"Zenobia and the Palmyrene Empire (267-272)","factType":"political-event","questions":["芝诺比娅是否真的谋杀了丈夫奥登纳图斯？史料证据不充分。","帕尔米拉帝国的独立意图到了何种程度——是正式脱离还是某种自治安排？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.50–1.61"}],"tags":["Roman Empire","Third Century Crisis","political-event","Palmyra","Syria","Egypt"],"people":["Zenobia","Odaenathus","Vaballathus","Aurelian","Gallienus"],"sources":["Zosimus, Historia Nova"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-271-aurelians-reforms-walls-coinage-and-sol-invictus', 'Aurelian''s reforms: walls, coinage, and Sol Invictus', 'rome', 271, 271, 'Rome', 'politics', '奥勒良在统一帝国的同时进行了防御、币制、宗教等方面的系统性改革。', 'medium', NULL, '{"overview":"奥勒良在统一帝国的同时进行了防御、币制、宗教等方面的系统性改革。","result":[],"background":["Third Century Crisis"],"process":["奥勒良的统治不仅以军事收复闻名，也以关键改革著称。1）奥勒良城墙：271 年起修建环绕罗马城的城墙，周长约 19 公里，高约 6-8 米。这是罗马共和国晚期塞维安城墙以来的首次大规模城防建设，反映了蛮族入侵对意大利腹地的真实威胁。2）币制改革：奥勒良试图遏制恶性通胀，提高安东尼尼安银币的含银量（从几乎为零提升至约 5%），并在硬币上标明''XXI''（20:1 的比例）。他严厉镇压了罗马造币厂的腐败和暴动，造成了数千人死亡（HA 称 7,000，数字可能夸大）。3）Sol Invictus 崇拜：奥勒良引入索尔·因维克图斯（不可征服的太阳神）的国家崇拜，在罗马建立宏伟神庙。他试图通过一个超越地方传统的单一神祇崇拜来促进帝国统一，这一举措也被视为后来君士坦丁尊崇基督教之前的一神化趋势。"],"impact":[],"sourceNotes":["Historia Augusta, Vita Divi Aureliani · Vita Aureliani · Aurel. 21–22, 39","待核：HA 称造币工人暴动导致 7,000 名士兵死亡的数字可能夸大。奥勒良城墙的原始高度和具体建筑材料有待考古验证。Sol Invictus 崇拜与传统的 Sol 崇拜之间的具体区别仍有学术争议。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:6561ae5543aa62cbc8fee7d9","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":31,"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","sourceTitle":"Historia Augusta","locator":"Aurel. 21–22, 39","originalText":null,"translation":"HA 记载奥勒良开始在罗马修建新城墙（后世称为奥勒良城墙），并在帝国全境推行一系列改革。他处决了腐败的造币官员（monetarii），镇压了罗马造币厂工人的暴动（据称导致数千人死伤）。他提高了银币的含银量和稳定性。他还引入了对索尔·因维克图斯（Sol Invictus，不可征服的太阳神）的国家崇拜，试图以单一的帝国宗教统一帝国。","originalTextMissing":true,"peopleCore":["Aurelian"],"peopleMentioned":[],"places":["Rome"],"macroEvent":"Third Century Crisis","eventLabel":"Aurelian''s reforms: walls, coinage, and Sol Invictus","factType":"reform","questions":["HA 称造币工人暴动导致 7,000 名士兵死亡的数字可能夸大。奥勒良城墙的原始高度和具体建筑材料有待考古验证。Sol Invictus 崇拜与传统的 Sol 崇拜之间的具体区别仍有学术争议。"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Aurel. 21–22, 39"}],"tags":["Roman Empire","Third Century Crisis","reform","Rome"],"people":["Aurelian"],"sources":["Historia Augusta, Vita Divi Aureliani"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-271-construction-of-the-aurelian-walls-rome-is-no-longer-safe', 'Construction of the Aurelian Walls: Rome is no longer safe', 'rome', 271, 271, 'Rome', 'politics', '奥勒良城墙的修建标志着帝国心脏地带自共和国以来首次暴露于蛮族威胁之下。', 'high', NULL, '{"overview":"奥勒良城墙的修建标志着帝国心脏地带自共和国以来首次暴露于蛮族威胁之下。","result":[],"background":["Third Century Crisis"],"process":["奥勒良城墙（Mura Aureliane）是三世纪危机最鲜明的物质遗产——至今仍矗立在罗马，成为从特米尼车站到阿皮亚古道等现代罗马景观的不可分割的一部分。城墙的修建背景是 271 年汪达尔和尤通吉人（Juthungi）部落的联军突然突破意大利北部防线，在普拉森提亚（Placentia，今皮亚琴察）击败了奥勒良匆忙集结的军队，然后顺着弗拉米尼亚大道径直南下直逼罗马——这一事变震撼了所有罗马人，因为在共和时期以来除了高卢洗劫之外，罗马城从未面临过直接的蛮族威胁。蛮族最终在安科纳西北的范努姆（Fanum Fortunae）被截住和击败——但奥勒良从中汲取了教训。他立即下令建造一套环绕罗马的新城墙系统，将马尔斯广场、特拉斯提弗列和台伯河右岸等人口密集区域包含在内。奥勒良城墙全长约 19 公里（12 英里），由砖砌混凝土构成，高约 6-8 米（20-26 英尺），每 100 罗马尺（29.6 米）设一座方形塔楼。原始设计有 14 座大门——每个主要辐射道路都有对应的城门。这座城墙的意义远超出军事防御——它宣告了一个事实：罗马帝国的心脏已不再安全。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 7 · pp. 260–267","待核：奥勒良城墙的原始高度和城门的数量在后续加高和扩建之前的具体数据有待考古验证。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:63295b82974861fccb8a0b31","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":78,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 260–267","originalText":null,"translation":"Potter 详细分析了奥勒良城墙的建造背景。271 年汪达尔人和尤通吉人（Juthungi）的联军入侵意大利北部，在普拉森提亚（Placentia）击败了奥勒良的军队——随后蛮族迅速南下，在罗马城以北仅约 70 公里的范努姆（Fanum Fortunae）才被拦截。自公元 2 世纪马科曼尼战争的阴影以来，意大利再次首度面临严重的蛮族入侵。罗马城自公元前 4 世纪高卢洗劫以来从未修筑过全面城墙——塞维安城墙已因城区的扩展而被包裹在城市内部。奥勒良下令建造一套全新的城墙系统——周长约 19 公里，高约 6-8 米，厚约 3.5 米，每 30 米设一方形塔楼——将罗马城内的大片郊区包含在内。","originalTextMissing":true,"peopleCore":["Aurelian"],"peopleMentioned":[],"places":["Rome","Aurelian Walls","Placentia","Fanum Fortunae"],"macroEvent":"Third Century Crisis","eventLabel":"Construction of the Aurelian Walls: Rome is no longer safe","factType":"reform","questions":["奥勒良城墙的原始高度和城门的数量在后续加高和扩建之前的具体数据有待考古验证。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 260–267"}],"tags":["Roman Empire","Third Century Crisis","reform","Rome","Aurelian Walls","Placentia"],"people":["Aurelian"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-272-aurelian-defeats-zenobia-and-recovers-the-east', 'Aurelian defeats Zenobia and recovers the East', 'rome', 272, 272, 'Palmyra', 'war', '272 年奥勒良击败帕尔米拉的芝诺比娅女王，收复帝国东部行省。', 'high', NULL, '{"overview":"272 年奥勒良击败帕尔米拉的芝诺比娅女王，收复帝国东部行省。","result":[],"background":["Third Century Crisis"],"process":["帕尔米拉王国在奥登纳图斯（Odaenathus，267 年被刺杀）的遗孀芝诺比娅（Zenobia）领导下，将控制范围从叙利亚扩展至埃及、小亚细亚东部和阿拉伯。芝诺比娅以子瓦巴拉图斯（Vaballathus）的名义自称奥古斯塔，实际上建立了东部帝国。272 年春，奥勒良率军东征，在安条克附近的伊迈（Immae）以巧妙战术——佯装撤退引诱芝诺比娅的重甲骑兵（clibanarii）在烈日下耗尽体力后反击——大获全胜。随后在埃美萨取得第二场胜利，围攻帕尔米拉城。芝诺比娅在试图骑骆驼逃往波斯途中被俘。奥勒良起初宽恕了帕尔米拉，但在返回欧洲途中得知该城再次叛乱，折返后将帕尔米拉彻底摧毁，这座曾繁华无比的沙漠商都从此一蹶不振。被俘的芝诺比娅出现在奥勒良 274 年的凯旋式中。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 7 · pp. 259–272","待核：芝诺比娅被俘后的最终命运有不同说法——是嫁给罗马元老平安终老，还是被处死？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:1dc154a566b800a896761e4d","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":29,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 259–272","originalText":null,"translation":"Potter 的现代学术综述指出，272 年奥勒良发动了针对帕尔米拉王国（以芝诺比娅女王和她儿子瓦巴拉图斯名义统治）的东方战役。他在伊迈（Immae，安条克附近）和埃美萨（Emesa）的两场会战中击败了芝诺比娅的重装骑兵。帕尔米拉城被围陷，芝诺比娅在试图逃往波斯时被俘。奥勒良随后暂时宽恕了帕尔米拉城，但在回师途中得知该城再次叛乱后，率军返回进行了毁灭性的惩罚。","originalTextMissing":true,"peopleCore":["Aurelian"],"peopleMentioned":["Zenobia","Vaballathus","Odaenathus"],"places":["Palmyra","Immae","Emesa","Antioch","Syria"],"macroEvent":"Third Century Crisis","eventLabel":"Aurelian defeats Zenobia and recovers the East","factType":"military-event","questions":["芝诺比娅被俘后的最终命运有不同说法——是嫁给罗马元老平安终老，还是被处死？"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 259–272"}],"tags":["Roman Empire","Third Century Crisis","military-event","Palmyra","Immae","Emesa"],"people":["Aurelian","Zenobia","Vaballathus","Odaenathus"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-274-aurelian-defeats-tetricus-and-reunifies-the-roman-empire', 'Aurelian defeats Tetricus and reunifies the Roman Empire', 'rome', 274, 274, 'Châlons', 'war', '274 年奥勒良收复高卢帝国，完成了罗马帝国的再统一。', 'high', NULL, '{"overview":"274 年奥勒良收复高卢帝国，完成了罗马帝国的再统一。","result":[],"background":["Third Century Crisis"],"process":["高卢帝国于 260 年由波斯特穆斯建立，历经多位皇帝，至泰特里库斯一世（Tetricus I）时已是强弩之末。面对日耳曼入侵和内部不稳，泰特里库斯意识到高卢帝国无法长久维持。据 Aurelius Victor 和 Eutropius 所述，泰特里库斯在决战前已秘密致信奥勒良，引用维吉尔的诗句恳求：''不可战胜的人啊，请把我从这些苦难中解救出来。''在沙隆（Châlons-sur-Marne）附近的卡塔劳尼亚平原（Catalaunian Fields）会战中，泰特里库斯临阵投降，但其军队在失去指挥后仍激烈抵抗并被大量屠杀。战后，泰特里库斯被奥勒良带到罗马参加凯旋式，随后被宽恕并被任命为意大利南部一个行省的 governor（一说 lucaniae 的 corrector）。274 年的凯旋式上，奥勒良展示了芝诺比娅、泰特里库斯和来自各部落的俘虏，并自封 Restitutor Orbis（世界恢复者）。"],"impact":[],"sourceNotes":["Eutropius, Breviarium · Book 9 · 9.13–9.14","待核：泰特里库斯投降是否事先密谋，还是战场上不得已的决定？史料对此有不同叙述。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:254ff458199dd11b5a57700d","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":30,"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","sourceTitle":"Breviarium ab Urbe Condita","locator":"9.13–9.14","originalText":null,"translation":"Eutropius 简洁地记述了奥勒良收复高卢帝国：''他在高卢与高卢皇帝泰特里库斯（Tetricus）交战并将其击败……他收复了高卢。''据其他史料（Aurelius Victor 等），泰特里库斯在沙隆（Châlons）附近的决战前已秘密投降奥勒良，他的军队在没有指挥官的情况下仍然抵抗，遭到屠杀。","originalTextMissing":true,"peopleCore":["Aurelian"],"peopleMentioned":["Tetricus I","Tetricus II","Postumus","Victorinus"],"places":["Châlons","Catalaunian Fields","Gaul"],"macroEvent":"Third Century Crisis","eventLabel":"Aurelian defeats Tetricus and reunifies the Roman Empire","factType":"military-event","questions":["泰特里库斯投降是否事先密谋，还是战场上不得已的决定？史料对此有不同叙述。"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.13–9.14"}],"tags":["Roman Empire","Third Century Crisis","military-event","Châlons","Catalaunian Fields","Gaul"],"people":["Aurelian","Tetricus I","Tetricus II","Postumus","Victorinus"],"sources":["Eutropius, Breviarium"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-275-assassination-of-aurelian', 'Assassination of Aurelian', 'rome', 275, 275, 'Caenophrurium', 'politics', '275 年奥勒良被其秘书官伪造名单引发的阴谋杀害，帝国再次陷入空位期。', 'high', NULL, '{"overview":"275 年奥勒良被其秘书官伪造名单引发的阴谋杀害，帝国再次陷入空位期。","result":[],"background":["Third Century Crisis"],"process":["奥勒良在其军事成就和改革的巅峰突然死于一场私人阴谋。他的秘书官（名 Eros 或 Mnestheus）因害怕因轻微腐败行为被皇帝严厉惩罚，遂伪造了一份皇帝即将处决一批高级军官的名单，并故意让名单上的军官看到。出于恐惧，军官们不等核实就突袭了皇帝的行营，在色雷斯的凯诺弗鲁里乌姆（Caenophrurium，今土耳其科尔卢附近）杀害了奥勒良。发现被骗后军队极度悔恨，神化了奥勒良（Divus Aurelianus），并以罕见的姿态请求元老院选举继任者。元老院在犹豫了约六周后选举了年迈的塔西佗（Marcus Claudius Tacitus）。奥勒良在不到五年的统治中统一了帝国，他的死亡使帝国再次经历了短暂的无序。"],"impact":[],"sourceNotes":["Eutropius, Breviarium · Book 9 · 9.15","待核：秘书官的姓名在史料中有不同记载（Eros vs Mnestheus），可能是同一人的希腊名和拉丁名。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:190d0e2c2000cfe5d5ab00bf","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":32,"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","sourceTitle":"Breviarium ab Urbe Condita","locator":"9.15","originalText":null,"translation":"Eutropius 记载奥勒良于 275 年在色雷斯的拜占庭附近被其秘书官（或私人秘书，名为 Eros/Mnestheus）因私人怨恨而设计的阴谋杀害。奥勒良以严格纪律和对腐败零容忍闻名，秘书官伪造了一份处决名单，激起高级军官的恐惧，导致他们先发制人刺杀皇帝。发现真相后军队深感懊悔，没有立即拥立新帝，而是请求元老院选帝。","originalTextMissing":true,"peopleCore":["Aurelian"],"peopleMentioned":["Eros","Mnestheus"],"places":["Caenophrurium","Thrace","Byzantium"],"macroEvent":"Third Century Crisis","eventLabel":"Assassination of Aurelian","factType":"political-event","questions":["秘书官的姓名在史料中有不同记载（Eros vs Mnestheus），可能是同一人的希腊名和拉丁名。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.15"}],"tags":["Roman Empire","Third Century Crisis","political-event","Caenophrurium","Thrace","Byzantium"],"people":["Aurelian","Eros","Mnestheus"],"sources":["Eutropius, Breviarium"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-275-reign-and-death-of-tacitus', 'Reign and death of Tacitus', 'rome', 275, 275, 'Rome', 'politics', '塔西佗被元老院选举为帝但仅在位数月即去世。', 'medium', NULL, '{"overview":"塔西佗被元老院选举为帝但仅在位数月即去世。","result":[],"background":["Third Century Crisis"],"process":["塔西佗（Marcus Claudius Tacitus）是奥勒良和普罗布斯之间的一位过渡性人物。据 HA 所述，他在元老院的选举中即位——这似乎代表了元老院权力的一次短暂复兴——但现代学者普遍怀疑 HA 在此事上进行了亲元老院的夸大。他可能是在军队的认可下（而非元老院主导）即位的。他率军前往东方应对外敌入侵并取得了一些胜利，但不久后即在安纳托利亚的 Tyana 去世（276 年 6 月或 7 月），具体原因不明——可能是自然原因、或是被刺杀、或是在战斗中被杀。他的异母兄弟弗洛里安努斯（Florianus）短暂称帝，但很快被普罗布斯击败。"],"impact":[],"sourceNotes":["Historia Augusta, Vita Taciti · Vita Taciti · Tac. 1–19","待核：HA 对塔西佗即位的元老院中心叙述与钱币证据可能矛盾。他的死亡原因和具体日期在不同史料中有较大差异。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:ab913d4c8b4b4d13ea55508a","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":33,"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","sourceTitle":"Historia Augusta","locator":"Tac. 1–19","originalText":null,"translation":"HA 记载塔西佗（Marcus Claudius Tacitus）在奥勒良被杀后被元老院选举为皇帝。HA 声称元老院在选举中发挥了重要作用（但这一说法在现代史学中受质疑）。塔西佗当时已约 75 岁，富有的元老，据信是历史学家塔西佗的后裔（可能为虚构）。他在位仅约 6-7 个月后即去世（可能自然死亡或被刺杀），其继任者普罗布斯随即即位。","originalTextMissing":true,"peopleCore":["Tacitus"],"peopleMentioned":["Aurelian","Florianus"],"places":["Rome","Asia Minor"],"macroEvent":"Third Century Crisis","eventLabel":"Reign and death of Tacitus","factType":"person-life","questions":["HA 对塔西佗即位的元老院中心叙述与钱币证据可能矛盾。他的死亡原因和具体日期在不同史料中有较大差异。"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Tac. 1–19"}],"tags":["Roman Empire","Third Century Crisis","person-life","Rome","Asia Minor"],"people":["Tacitus","Aurelian","Florianus"],"sources":["Historia Augusta, Vita Taciti"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-276-military-campaigns-and-public-works-of-probus', 'Military campaigns and public works of Probus', 'rome', 276, 276, 'Gaul', 'politics', '普罗布斯通过一系列成功的军事行动巩固了帝国，其让士兵参与公共工程的政策虽高效但引发军队不满。', 'high', NULL, '{"overview":"普罗布斯通过一系列成功的军事行动巩固了帝国，其让士兵参与公共工程的政策虽高效但引发军队不满。","result":[],"background":["Third Century Crisis"],"process":["普罗布斯（Marcus Aurelius Probus）是一位能力卓越的军事指挥官，以冷酷高效著称。他在即位后的前三年（276-278）连续击败了入侵高卢的法兰克人和阿勒曼尼人，随后跨过莱茵河深入日耳曼腹地惩罚部落。在多瑙河前线，他击败了萨尔马提亚人（Sarmatians）和汪达尔人（Vandals），并重新安置了大量被俘的蛮族人口在帝国境内作为农民耕种荒地。他还在埃及镇压了 Blemyes 游牧部落的入侵。但他的最具争议的政策是强制军团士兵在非战时期从事繁重的公共工程——在高卢种植葡萄、在多瑙河下游疏浚沼泽、在城镇修建公共建筑。Eutropius 记载普罗布斯曾说''不久我们将不再需要士兵，和平的时代即将到来''——但这句乐观的话深深激怒了将战争视为唯一荣耀来源的职业军团。282 年当他在家乡西尔米乌姆监督沼泽排干工程时，士兵哗变将其杀害——即使像普罗布斯这样能干的皇帝也无法超越''兵营皇帝''的命运。"],"impact":[],"sourceNotes":["Eutropius, Breviarium · Book 9 · 9.16–9.20","待核：Eutropius 对普罗布斯的积极评价是否存在偏袒？普罗布斯是否也犯过重大的战略错误？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:9edc947aefccda7c5424df96","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":58,"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","sourceTitle":"Breviarium ab Urbe Condita","locator":"9.16–9.20","originalText":null,"translation":"Eutropius 对普罗布斯的统治进行了简洁而积极的评价。他记录了普罗布斯在莱茵河（击败法兰克人和阿勒曼尼人）、多瑙河（击败萨尔马提亚人）以及埃及（镇压了 Blemyes 的叛乱）的连续军事胜利。Eutropius 特别提到普罗布斯在高卢、潘诺尼亚和默西亚让士兵种植葡萄和谷物，并说了一句著名的话：''不久我们将不再需要士兵''——这句话反映了普罗布斯对和平时代的乐观期望（最终被证明为不切实际）。Eutropius 将普罗布斯评价为''杰出而精力充沛的皇帝''。","originalTextMissing":true,"peopleCore":["Probus"],"peopleMentioned":[],"places":["Gaul","Rhine","Danube","Egypt","Pannonia"],"macroEvent":"Third Century Crisis","eventLabel":"Military campaigns and public works of Probus","factType":"person-life","questions":["Eutropius 对普罗布斯的积极评价是否存在偏袒？普罗布斯是否也犯过重大的战略错误？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.16–9.20"}],"tags":["Roman Empire","Third Century Crisis","person-life","Gaul","Rhine","Danube"],"people":["Probus"],"sources":["Eutropius, Breviarium"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-277-reign-of-probus-military-recovery', 'Reign of Probus: military recovery', 'rome', 277, 277, 'Gaul', 'politics', '普罗布斯（276-282）在莱茵河和多瑙河取得了连续的军事胜利，巩固了奥勒良重新统一的帝国。', 'medium', NULL, '{"overview":"普罗布斯（276-282）在莱茵河和多瑙河取得了连续的军事胜利，巩固了奥勒良重新统一的帝国。","result":[],"background":["Third Century Crisis"],"process":["普罗布斯同样出身伊利里亚军人阶层，在奥勒良麾下建立了声望。即位后他首先击败了入侵高卢的法兰克人和阿勒曼尼人，随后跨过莱茵河深入日耳曼腹地，恢复了莱茵河防线的安全。在多瑙河前线，他击败了汪达尔人和萨尔马提亚人。他甚至平定了埃及的叛乱，并在安纳托利亚处置了另一位篡位者。但普罗布斯因要求军团士兵在非战时从事重型公共工程（疏浚沼泽、开垦荒地、在高卢种植葡萄）而得罪了军队——士兵们认为这些劳动有损军人尊严。282 年秋，士兵们在他的家乡西尔米乌姆附近哗变，杀死了普罗布斯。"],"impact":[],"sourceNotes":["Historia Augusta, Vita Probi · Vita Probi · Prob. 1–24","待核：普罗布斯的公共工程项目是否像 HA 描述的那样广泛？让军团士兵从事民用工程的争议是否被夸大了？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:4629fdc5aa162965370dea97","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":34,"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","sourceTitle":"Historia Augusta","locator":"Prob. 1–24","originalText":null,"translation":"HA 记载普罗布斯（Marcus Aurelius Probus）是一位能力极强的伊利里亚裔军人皇帝。他于 276 年击败弗洛里安努斯后被军队拥立。他的统治以在日耳曼和高卢的连续成功战役而著称——他不仅击败入侵者，还跨过莱茵河惩罚蛮族部落。HA 特别记载他让士兵在和平时期从事公共工程建设（如在高卢种植葡萄、在多瑙河疏浚沼泽），这最终引起士兵的不满。","originalTextMissing":true,"peopleCore":["Probus"],"peopleMentioned":["Florianus"],"places":["Gaul","Rhine","Danube","Illyricum","Egypt"],"macroEvent":"Third Century Crisis","eventLabel":"Reign of Probus: military recovery","factType":"person-life","questions":["普罗布斯的公共工程项目是否像 HA 描述的那样广泛？让军团士兵从事民用工程的争议是否被夸大了？"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Prob. 1–24"}],"tags":["Roman Empire","Third Century Crisis","person-life","Gaul","Rhine","Danube"],"people":["Probus","Florianus"],"sources":["Historia Augusta, Vita Probi"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-280-the-transition-from-soldier-emperors-to-diocletians-system', 'The transition from soldier-emperors to Diocletian''s system', 'rome', 280, 280, 'Rome', 'politics', '卡鲁斯短命王朝（282-284）是三世纪危机模式的最后一次重复，此后戴克里先带来了系统性变革。', 'high', NULL, '{"overview":"卡鲁斯短命王朝（282-284）是三世纪危机模式的最后一次重复，此后戴克里先带来了系统性变革。","result":[],"background":["End of Third Century Crisis"],"process":["从奥勒良到戴克里先的十年间（275-284），帝国经历了塔西佗（275-276）、弗洛里安努斯（276）、普罗布斯（276-282）、卡鲁斯（282-283）、卡里努斯（283-285）和努梅里安（283-284）六个统治者和一位共治者。这一序列延续了伊利里亚军功精英主导的模式——每一位都是能干的军事指挥官，但无一能超越个人统治的脆弱性。普罗布斯的命运尤其具有象征意义——他可能是二十年来最能干的皇帝之一，却因为让士兵种田而非打仗这样''失面子''的政策被自己人杀害。这个模式在卡鲁斯家族中走向了终局：父亲在军事胜利的最高点神秘死亡，一子被秘密谋杀，另一子被自己的军官杀害以复仇私仇。戴克里先 284 年即位时的关键创新不在于他的出身或军事能力（这与其他伊利里亚军官无异），而在于他意识到个人意志无法持续——需要一个非个人的、制度化的、以集体领导为核心的统治架构。他在位的 21 年（284-305）从根本上将皇帝的角色从''最幸运的将军''转变为''制度体系的化身''。"],"impact":[],"sourceNotes":["The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 4 · pp. 100–130"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:4f03e01f25246c915bba8b7d","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":63,"sourceId":"rome-source-the-cambridge-ancient-history-cambridge-university-press","sourceTitle":"The Cambridge Ancient History","locator":"pp. 100–130","originalText":null,"translation":"CAH 指出普罗布斯被杀后（282），帝国经历了卡鲁斯-卡里努斯-努梅里安的短命王朝（282-284），然后才迎来了戴克里先。这段短暂的过渡期代表了伊利里亚军人序列的延续——也是一个不可持续的模式的最终耗尽。戴克里先与其他伊利里亚军人皇帝的根本区别在于，他不仅夺取了权力，而且设计了一套能够让权力存续的制度。CAH 将这四年（282-284）定性为三世纪危机模式的最终枯竭——不是危机的结束，而是在戴克里先之前没有一个皇帝能找到超越''优秀军人+幸运''以外的更持久的解决方案。","originalTextMissing":true,"peopleCore":[],"peopleMentioned":["Carus","Carinus","Numerian","Probus","Diocletian"],"places":["Rome","Sirmium","Nicomedia"],"macroEvent":"End of Third Century Crisis","eventLabel":"The transition from soldier-emperors to Diocletian''s system","factType":"political-event","questions":[],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-cambridge-ancient-history-cambridge-university-press","locator":"pp. 100–130"}],"tags":["Roman Empire","End of Third Century Crisis","political-event","Rome","Sirmium","Nicomedia"],"people":["Carus","Carinus","Numerian","Probus","Diocletian"],"sources":["The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-282-reign-of-carus-persian-victory-and-mysterious-death', 'Reign of Carus: Persian victory and mysterious death', 'rome', 282, 282, 'Mesopotamia', 'politics', '卡鲁斯（282-283）成功攻陷泰西封但随即神秘死亡，其子努梅里安的死亡直接触发了戴克里先的崛起。', 'medium', NULL, '{"overview":"卡鲁斯（282-283）成功攻陷泰西封但随即神秘死亡，其子努梅里安的死亡直接触发了戴克里先的崛起。","result":[],"background":["Third Century Crisis"],"process":["卡鲁斯是奥勒良-普罗布斯-卡鲁斯-戴克里先这一伊利里亚军人序列中的关键一环。他在 282 年被军队拥立取代被谋杀的普罗布斯——他本人可能参与了谋杀普罗布斯的阴谋（虽然史料不一致）。他任命其长子卡里努斯（Carinus）为西部凯撒留守高卢，自己则带领幼子努梅里安（Numerian）东征萨珊波斯。283 年他取得了自奥勒良以来最大的一次军事成功——攻陷萨珊首都泰西封。这是罗马军队在一个世纪内第三次（继 116 图拉真、198 塞维鲁之后）攻陷此城。沙普尔一世此时可能已年迈或已死，萨珊处于继承斗争之中。然而在泰西封以东扎营时，卡鲁斯在暴风雨中暴死于营帐——死因不明（雷击是最戏剧化的说法，也可能是疾病或被毒杀）。其子努梅里安率军撤退，但在途中被发现死在密封的轿中——其禁卫军长官阿培尔被指控为凶手。284 年 11 月，军队指挥官戴克里先亲手杀死了阿培尔，并在此过程中将自己确立为皇帝。"],"impact":[],"sourceNotes":["Historia Augusta, Vita Probi, Vita Cari et al. · Vita Cari · Car. 1–21","待核：卡鲁斯的死因有至少三种说法（雷击、疾病、毒杀），哪种最可靠？","待核：努梅里安在密封轿中被发现的细节是否经过了后来的戏剧化修饰？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:ecd40c20b12c2886887f1818","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":50,"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","sourceTitle":"Historia Augusta","locator":"Car. 1–21","originalText":null,"translation":"HA 记载卡鲁斯（Marcus Aurelius Carus）于 282 年被军队拥立，取代被杀害的普罗布斯。他任命其子卡里努斯（Carinus）为西部凯撒，自己亲率远征军东征萨珊波斯。283 年卡鲁斯攻陷了萨珊首都泰西封——这是一项重大军事成就。但很快卡鲁斯在暴风雨中神秘死亡（HA 列举了三种可能：雷击、疾病、或被属下毒杀）。他的另一个儿子努梅里安（Numerian）率军撤退，但在途中离奇死亡（可能被其禁卫军长官阿培尔 Aper 杀害），随后戴克里先被拥立为帝。","originalTextMissing":true,"peopleCore":["Carus"],"peopleMentioned":["Probus","Carinus","Numerian","Diocletian","Aper"],"places":["Mesopotamia","Ctesiphon","Sirmium","Nicomedia"],"macroEvent":"Third Century Crisis","eventLabel":"Reign of Carus: Persian victory and mysterious death","factType":"person-life","questions":["卡鲁斯的死因有至少三种说法（雷击、疾病、毒杀），哪种最可靠？","努梅里安在密封轿中被发现的细节是否经过了后来的戏剧化修饰？"],"confidence":"medium","importance":"medium","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Car. 1–21"}],"tags":["Roman Empire","Third Century Crisis","person-life","Mesopotamia","Ctesiphon","Sirmium"],"people":["Carus","Probus","Carinus","Numerian","Diocletian","Aper"],"sources":["Historia Augusta, Vita Probi, Vita Cari et al."],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-284-diocletian-becomes-emperor', 'Diocletian becomes emperor', 'rome', 284, 284, 'Nicomedia', 'politics', '284 年戴克里先即位，终结了三世纪危机，开启帝国制度性改革的新时代。', 'high', NULL, '{"overview":"284 年戴克里先即位，终结了三世纪危机，开启帝国制度性改革的新时代。","result":[],"background":["End of Third Century Crisis"],"process":["戴克里先（Gaius Aurelius Valerius Diocletianus，原名 Diocles）的崛起标志着三世纪危机的终结。他的出身与之前的伊利里亚军人皇帝相似——出生于达尔马提亚的释放奴家庭（或低微的自由民），从士兵逐级晋升。282-283 年，皇帝卡鲁斯率领一次成功的波斯远征（甚至攻至泰西封），但卡鲁斯在 283 年神秘死亡（史料说法包括雷击、疾病或被刺杀）。其子努梅里安在撤军途中被发现死在密封的轿子里，禁卫军长官阿培尔被指控为凶手。284 年 11 月 20 日，军队在尼科米迪亚集会，指挥官戴克里先公开宣布自己与阿培尔的罪行无关，并亲手用剑杀死了阿培尔——将罪责完全归于这位禁卫军长官。随后他在与卡鲁斯另一子卡里努斯（Carinus）的内战中胜出（285 年马尔古斯河战役），卡里努斯被自己的部下杀死。"],"impact":[],"sourceNotes":["Lactantius, De Mortibus Persecutorum · Chapter 7 · 7","待核：努梅里安之死的真实原因可能永远无法确定。戴克里先亲手杀阿培尔的情节可能有戏剧化包装的成分。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:5ccab4d8b58f054edc7d8e05","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":35,"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","sourceTitle":"De Mortibus Persecutorum","locator":"7","originalText":null,"translation":"Lactantius 记载戴克里先（原名 Diocles）于 284 年 11 月 20 日在尼科米迪亚（Nicomedia）附近被军队拥立为帝。卡鲁斯（Carus）在波斯远征中神秘死亡（据称被雷击），其子努梅里安（Numerian）在返回途中离奇死亡，禁卫军长官阿培尔（Aper）因被指控谋杀努梅里安而被戴克里先当众亲手杀死。Lactantius 特别记载了戴克里先对阿培尔说的一句话：''我以太阳神为证，我没有杀死他''——然后亲手斩杀了阿培尔。","originalTextMissing":true,"peopleCore":["Diocletian"],"peopleMentioned":["Carus","Numerian","Carinus","Aper"],"places":["Nicomedia","Bithynia","Persia","Mesopotamia"],"macroEvent":"End of Third Century Crisis","eventLabel":"Diocletian becomes emperor","factType":"political-event","questions":["努梅里安之死的真实原因可能永远无法确定。戴克里先亲手杀阿培尔的情节可能有戏剧化包装的成分。"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"7"}],"tags":["Roman Empire","End of Third Century Crisis","political-event","Nicomedia","Bithynia","Persia"],"people":["Diocletian","Carus","Numerian","Carinus","Aper"],"sources":["Lactantius, De Mortibus Persecutorum"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-284-battle-of-the-margus-diocletian-defeats-carinus', 'Battle of the Margus: Diocletian defeats Carinus', 'rome', 284, 284, 'Margus River', 'war', '285 年戴克里先在马尔古斯河战役中击败卡里努斯，成为帝国唯一的皇帝。', 'high', NULL, '{"overview":"285 年戴克里先在马尔古斯河战役中击败卡里努斯，成为帝国唯一的皇帝。","result":[],"background":["Third Century Crisis"],"process":["戴克里先在被军队拥立后仍需面对卡里努斯（Carinus）——卡鲁斯的长子，已在西部独立统治了两年。据 Eutropius 所述，卡里努斯在罗马和意大利过着极度腐化的生活，触怒了大批元老和军官。285 年初春，双方在默西亚的马尔古斯河（Margus，今塞尔维亚的摩拉瓦河）展开决战，双方兵力可能各在 20,000-30,000 人左右。战斗中戴克里先一度处于劣势——卡里努斯的军团在正面交锋中更占上风。然而就在即将获胜之际，卡里努斯被自己的一名护卫军官刺杀了——这位军官的动机据称是因为卡里努斯与他的妻子发生了私情（另一种说法是政治阴谋）。失去指挥官的卡里努斯军队随即溃散或投降。戴克里先表现出了惊人的政治克制——他没有惩罚战败的军队，而是将其收编为自己的部队，并宽恕了卡里努斯的大部分支持者。这一仁慈举动使他赢得了残敌及其元老支持者的忠诚，为他即将开始的根本性改革奠定了广泛的政治基础。"],"impact":[],"sourceNotes":["Eutropius, Breviarium · Book 9 · 9.20–9.22","待核：卡里努斯的''腐化和纵欲''是否被后来的史料过分渲染以衬托戴克里先的''清白''形象？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:9008a493692c73b48aac4f52","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":59,"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","sourceTitle":"Breviarium ab Urbe Condita","locator":"9.20–9.22","originalText":null,"translation":"Eutropius 简洁地记述了卡鲁斯之子卡里努斯（Carinus）在帝国西部统治期间的行为——他沉溺于奢华和纵欲之中，据称娶了九个妻子并与众多元老贵族女性有染。285 年春，戴克里先率军从东方进入默西亚（Moesia），在马尔古斯河（Margus，今摩拉瓦河）战役中与卡里努斯决战。战斗对戴克里先不利，但正当卡里努斯即将获胜时，他被自己的一名军官杀死——这位军官据称因为卡里努斯与其妻子通奸而复仇。","originalTextMissing":true,"peopleCore":["Diocletian"],"peopleMentioned":["Carinus","Carus","Numerian"],"places":["Margus River","Moesia","Dalmatia"],"macroEvent":"Third Century Crisis","eventLabel":"Battle of the Margus: Diocletian defeats Carinus","factType":"military-event","questions":["卡里努斯的''腐化和纵欲''是否被后来的史料过分渲染以衬托戴克里先的''清白''形象？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.20–9.22"}],"tags":["Roman Empire","Third Century Crisis","military-event","Margus River","Moesia","Dalmatia"],"people":["Diocletian","Carinus","Carus","Numerian"],"sources":["Eutropius, Breviarium"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-284-diocletians-elevation-from-freedmans-son-to-dominus', 'Diocletian''s elevation: from freedman''s son to dominus', 'rome', 284, 284, 'Nicomedia', 'politics', '戴克里先将皇帝的公众形象从奥古斯都的第一公民转变为波斯式的神圣君主。', 'high', NULL, '{"overview":"戴克里先将皇帝的公众形象从奥古斯都的第一公民转变为波斯式的神圣君主。","result":[],"background":["Tetrarchy"],"process":["戴克里先对皇帝角色的重塑是三世纪最为深远的变化之一（与奥古斯都的创立和君士坦丁的基督教政策并列）。他放弃了奥古斯都三百年来的''元首''（princeps）伪装——皇帝作为''第一公民''在理论上与元老只是同辈中的第一人。取而代之，他采用了''主人''（dominus）这一公开的君主称号。一系列具体的宫廷礼节被引入来神圣化皇帝的存在：adoratio（在皇帝面前双膝跪地——希腊人称为 proskynesis，此前仅在波斯宫廷使用）、皇帝的丝绸和金色锦缎长袍（用金线刺绣、镶满宝石）、以及将皇帝与朱庇特神（Jovius）联系在一起的神圣头衔系统（马克西米安则为 Herculius）。这些变化标志着''元首制''（Principate）的终结和''主宰制''（Dominate）的正式开始——在主宰制下，皇帝不再将自己呈现为同辈中的第一人，而是作为高于任何人的神圣统治者存在。这一制度被君士坦丁继承并进一步基督教化。"],"impact":[],"sourceNotes":["Epitome de Caesaribus · 35-39 · 35–39","待核：adoratio 的具体起源——是通过波斯影响还是帝国自行发展的结果？学者对此有不同看法。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:7de6a80a332bf5e35e10f01e","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":65,"sourceId":"rome-source-epitome-de-caesaribus-pseudo-aurelius-victor","sourceTitle":"Epitome de Caesaribus","locator":"35–39","originalText":null,"translation":"《诸凯撒概要》（Epitome de Caesaribus，一部约 395 年的匿名拉丁简史，常附于 Aurelius Victor 之后）对戴克里先进行了简洁的评价。它强调戴克里先的低微出身——一位达尔马提亚释放奴的儿子，原名 Diocles（希腊名），后改名为 Diocletianus（拉丁化形式）。他亲手杀死阿培尔的行为被描述为''履行了他对军队的承诺''。Epitome 还记录了他引入东方宫廷礼仪（包括跪拜礼 adoratio——在皇帝面前下跪）、穿着金线织成的紫袍、以及佩戴宝石的皇家鞋履——这些波斯式的礼仪象征象征着与奥古斯都式''第一公民''传统的决定性断裂。","originalTextMissing":true,"peopleCore":["Diocletian"],"peopleMentioned":["Aper"],"places":["Nicomedia","Dalmatia","Rome"],"macroEvent":"Tetrarchy","eventLabel":"Diocletian''s elevation: from freedman''s son to dominus","factType":"reform","questions":["adoratio 的具体起源——是通过波斯影响还是帝国自行发展的结果？学者对此有不同看法。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-epitome-de-caesaribus-pseudo-aurelius-victor","locator":"35–39"}],"tags":["Roman Empire","Tetrarchy","reform","Nicomedia","Dalmatia","Rome"],"people":["Diocletian","Aper"],"sources":["Epitome de Caesaribus"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-284-284-ce-as-the-end-of-the-third-century-crisis-and-the-beginning-of-late-', '284 CE as the end of the Third Century Crisis and the beginning of Late Antiquity', 'rome', 284, 284, 'Nicomedia', 'politics', '284 年戴克里先的即位被现代学者视为从三世纪危机向古典晚期转型的转折点。', 'high', NULL, '{"overview":"284 年戴克里先的即位被现代学者视为从三世纪危机向古典晚期转型的转折点。","result":[],"background":["End of Third Century Crisis"],"process":["现代学者普遍同意 284 年戴克里先的即位标志着三世纪危机的结束——但这并不意味着帝国立即恢复了安全，而是意味着从''危机管理''向''制度改革''的范式转变。在此前的五十年间（235-284），军功卓著的将军们一个接一个地登上帝位，每个人凭借个人才能和幸运统治几年——但没有人创建过一个能够超越他们个人寿命的制度。戴克里先的突破在于他意识到问题不在于缺少好的将军（此前的皇帝中不乏杰出的军事人才），而在于制度框架本身不可持续。他的解决方案是多维度的：1）集权分散（四帝共治——让多位有能力的人同时统治并分散风险）；2）权力制度化（将皇帝的身份从个人魅力转变为非个人的神圣办公室）；3）继任规则（凯撒系统——至少理论上应为按能力选任，而非血缘）；4）自愿退位（证明皇权是一个角色而非终生身份）。这些制度创新——即使是短暂的——为君士坦丁的进一步改革（君士坦丁堡的建立、基督教化的帝国意识形态）提供了框架。戴克里先的改革虽然在某些方面（如物价控制和迫害）失败了，但他关于''皇权应当制度化''的洞见彻底改变了罗马政治体系的演变方向。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 330–340","待核：将 284 年作为 Late Antiquity 的确切开端是否得到多数学者的共识？还是有人认为 235 年或 312 年更为重要？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:a818aa9d1179d37a7a1ad339","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":82,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 330–340","originalText":null,"translation":"Potter 将 284 年戴克里先的即位定性为三世纪危机的终结和''古典晚期''（Late Antiquity）的开端。他的论点是戴克里先与在此之前的伊利里亚军人皇帝（奥勒良、普罗布斯、卡鲁斯）的根本区别不在于个人能力——这些前任的能力都不亚于戴克里先——而在于戴克里先意识到仅靠个人的军事才能无法维持帝国：需要一个制度化的治理体系。戴克里先的四帝共治制——多位奥古斯都按能力选任凯撒最终继承奥古斯都——试图解决困扰罗马帝制 300 年的''继承问题''——即王朝血缘与能力之间的永恒张力。他关于皇帝角色的重新定义——从''第一公民''到''主人''——试图创造一种新的、高于个人的权力神圣性，使人民不会因任何一个皇帝的死而推翻整个制度。他的退位进一步强化了这一理念——皇权与个人身体不再是同一体，皇权是一个可转让的制度化角色。","originalTextMissing":true,"peopleCore":["Diocletian"],"peopleMentioned":["Aurelian","Probus","Carus","Maximian"],"places":["Nicomedia","Rome"],"macroEvent":"End of Third Century Crisis","eventLabel":"284 CE as the end of the Third Century Crisis and the beginning of Late Antiquity","factType":"political-event","questions":["将 284 年作为 Late Antiquity 的确切开端是否得到多数学者的共识？还是有人认为 235 年或 312 年更为重要？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 330–340"}],"tags":["Roman Empire","End of Third Century Crisis","political-event","Nicomedia","Rome"],"people":["Diocletian","Aurelian","Probus","Carus","Maximian"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-285-career-of-maximian-the-loyal-colleague', 'Career of Maximian: the loyal colleague', 'rome', 285, 285, 'Milan', 'politics', '马克西米安是戴克里先长达二十年的西部共治者，虽军事才能卓著但缺乏政治自信。', 'high', NULL, '{"overview":"马克西米安是戴克里先长达二十年的西部共治者，虽军事才能卓著但缺乏政治自信。","result":[],"background":["Tetrarchy"],"process":["马克西米安（被戴克里先冠以 Herculius——''赫拉克勒斯之子''——的称号）是四帝共治制度中西部帝国的第一任奥古斯都。他的军事履历同戴克里先一样令人印象深刻：286 年镇压了高卢的巴高达（Bagaudae，反抗重税和高利贷的农民-土匪联盟）起义；随后在莱茵河前线成功击退了勃艮第人、阿勒曼尼人和法兰克人的联合入侵。他还不得不对付割据不列颠的篡位者卡劳修斯（Carausius，286-293）及其继任者阿莱克图斯（Allectus）——最终在 296 年由君士坦提乌斯一世收复不列颠。然而他的政治地位始终依赖于戴克里先——在 305 年的退位中他很不情愿（据称戴克里先以朱庇特的名义强迫他退位）。306 年其子马克森提乌斯在罗马自立为帝，邀请他重新穿上紫袍——他勉强接受了，但在与其子马克森提乌斯和君士坦丁之间的三方权力斗争中被边缘化。310 年他在马赛被君士坦丁围困并抓获，随后被迫自杀。他的一生是军人皇帝在四帝共治框架中挣扎求存的缩影。"],"impact":[],"sourceNotes":["The Prosopography of the Later Roman Empire, Vol. I (AD 260-395) · Maximianus 8 · pp. 573–574","待核：马克西米安在 310 年的死亡——被处死还是被迫自杀？不同史料有细微差异。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:1d0ac9365a33c4faae7570a7","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":60,"sourceId":"rome-source-the-prosopography-of-the-later-roman-empire-a-h-m-jones-j-r-martindale-j","sourceTitle":"The Prosopography of the Later Roman Empire","locator":"pp. 573–574","originalText":null,"translation":"PLRE 综合归纳了马克西米安（Marcus Aurelius Valerius Maximianus）的已知履历。他出生于潘诺尼亚的西尔米乌姆附近，低微的出身（据信为农民或牧羊人家庭），与戴克里先一样从士兵逐级升迁至高级军官。285 年被戴克里先任命为凯撒（Caesar），286 年升格为奥古斯都（Augustus），负责帝国西部（驻地米兰）。他在高卢成功镇压了巴高达（Bagaudae）农民暴动，并在莱茵河击败了日耳曼入侵者。他与戴克里先分享了近 20 年的共治，但在 306 年不甘心地退位后又于 307 年复出，最终于 310 年在君士坦丁逼迫下自杀或被杀。","originalTextMissing":true,"peopleCore":["Maximian"],"peopleMentioned":["Diocletian","Constantine I","Carausius"],"places":["Milan","Sirmium","Gaul","Rhine"],"macroEvent":"Tetrarchy","eventLabel":"Career of Maximian: the loyal colleague","factType":"person-life","questions":["马克西米安在 310 年的死亡——被处死还是被迫自杀？不同史料有细微差异。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-prosopography-of-the-later-roman-empire-a-h-m-jones-j-r-martindale-j","locator":"pp. 573–574"}],"tags":["Roman Empire","Tetrarchy","person-life","Milan","Sirmium","Gaul"],"people":["Maximian","Diocletian","Constantine I","Carausius"],"sources":["The Prosopography of the Later Roman Empire, Vol. I (AD 260-395)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-285-aurelius-victor-on-diocletians-reign', 'Aurelius Victor on Diocletian''s reign', 'rome', 285, 285, 'Nicomedia', 'culture', 'Aurelius Victor 提供了对戴克里先统治的最早拉丁文评价——称赞其成就但也批评其傲慢。', 'high', NULL, '{"overview":"Aurelius Victor 提供了对戴克里先统治的最早拉丁文评价——称赞其成就但也批评其傲慢。","result":[],"background":["Tetrarchy"],"process":["Sextus Aurelius Victor（约 320-390 CE）是在君士坦提乌斯二世和尤利安统治时期写作的拉丁史家，他的短篇著作《诸凯撒》（De Caesaribus）涵盖从奥古斯都到君士坦提乌斯二世（360 年）的全部罗马皇帝。他对戴克里先的评价是 4 世纪中期帝国官方意识形态与历史记忆交织的典型产物：他一方面称赞戴克里先结束了军事混乱并恢复了帝国秩序（特别赞赏了 Maxentius 被击败），另一方面也批评戴克里先''虚荣和傲慢''——引入了波斯式的跪拜礼（adoratio）、黄金和紫色锦缎的皇家服饰、以及将皇帝与凡人隔离的复杂宫廷礼仪。Victor 将这些变化与奥古斯都以来的''第一公民''（princeps）传统做了隐含的对比——提醒读者在戴克里先之前皇帝至少在理论上只是公民中的第一人。然而 Victor 最终的评价仍然是总体上正面的——尤其是对戴克里先自愿退位的赞赏。他的著作是 4 世纪拉丁简史传统（与 Eutropius 和 Festus 并列）的基础性文本。"],"impact":[],"sourceNotes":["Aurelius Victor, De Caesaribus · 35-39 · 35–39","待核：Aurelius Victor 对戴克里先的负面评价是否反映了 4 世纪中期元老院保守派对 dominus 制度持续的不满？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:33acc4462d96fb968f8e4586","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":79,"sourceId":"rome-source-de-caesaribus-aurelius-victor","sourceTitle":"De Caesaribus","locator":"35–39","originalText":null,"translation":"Aurelius Victor（约 360 年代的拉丁作家）对戴克里先进行了简洁但重要的评价。他赞扬了戴克里先恢复帝国稳定的成就，但同时也指出了他的低微出身——一个达尔马提亚释放奴的儿子。Victor 特别提到戴克里先首先将统治权分割给了他的战友——这是''第一位在凯旋后自愿放下权力并回归私人生活的皇帝''（指 305 年的退位）。Victor 还提到了戴克里先引入波斯式宫廷礼仪的决定——包括在皇帝面前跪拜（adoratio）——他将此描述为''傲慢''但''对于维护帝国权威是必要的''。","originalTextMissing":true,"peopleCore":["Diocletian"],"peopleMentioned":["Maximian"],"places":["Nicomedia","Rome","Dalmatia"],"macroEvent":"Tetrarchy","eventLabel":"Aurelius Victor on Diocletian''s reign","factType":"source-mention","questions":["Aurelius Victor 对戴克里先的负面评价是否反映了 4 世纪中期元老院保守派对 dominus 制度持续的不满？"],"confidence":"high","importance":"minor","sourceRefs":[{"sourceId":"rome-source-de-caesaribus-aurelius-victor","locator":"35–39"}],"tags":["Roman Empire","Tetrarchy","source-mention","Nicomedia","Rome","Dalmatia"],"people":["Diocletian","Maximian"],"sources":["Aurelius Victor, De Caesaribus"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-293-establishment-of-the-tetrarchy', 'Establishment of the Tetrarchy', 'rome', 293, 293, 'Nicomedia', 'politics', '戴克里先建立了四帝共治制度（Tetrarchy），以四人分工治理的方式取代一人独治。', 'high', NULL, '{"overview":"戴克里先建立了四帝共治制度（Tetrarchy），以四人分工治理的方式取代一人独治。","result":[],"background":["Tetrarchy"],"process":["戴克里先意识到帝国过于庞大，无法由单一皇帝有效治理和防御。他的解决方案是创造性地将权力制度化地分割。286 年，他提升战友马克西米安为共治奥古斯都，负责帝国西部（以米兰为基地）。293 年，他进一步扩展了这一制度——两位奥古斯都各任命一位凯撒（副帝兼储君）：戴克里先选择伽列里乌斯，马克西米安选择君士坦提乌斯一世。四帝各负责一个区域（戴克里先：东方/尼科米迪亚；伽列里乌斯：多瑙河/西尔米乌姆；马克西米安：意大利非洲/米兰；君士坦提乌斯：高卢不列颠/特里尔）。理论上凯撒将在 20 年后继承奥古斯都之位。这一制度在戴克里先统治期间有效运作，但因忽略了血缘继承的惯性，最终在他退位后崩溃。"],"impact":[],"sourceNotes":["The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 3 · pp. 70–100","待核：四帝共治的具体权力分割是否有正式法律文件？各帝的实际自主权有多大？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:16f9e787b9a025d02943ce14","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":36,"sourceId":"rome-source-the-cambridge-ancient-history-cambridge-university-press","sourceTitle":"The Cambridge Ancient History","locator":"pp. 70–100","originalText":null,"translation":"现代学术综述指出，戴克里先的制度改革——特别是共治制（collegial rule）和四帝共治（Tetrarchy）——彻底改变了罗马帝国的治理结构。286 年他任命战友马克西米安为共治皇帝（奥古斯都）；293 年两位奥古斯都各任命一位凯撒（君士坦提乌斯一世为马克西米安的凯撒，伽列里乌斯为戴克里先的凯撒）。权力在两位奥古斯都和两位凯撒之间分配，各自负责帝国的特定区域，但戴克里先始终保持最高权威。","originalTextMissing":true,"peopleCore":["Diocletian","Maximian","Constantius Chlorus","Galerius"],"peopleMentioned":[],"places":["Nicomedia","Milan","Trier","Sirmium"],"macroEvent":"Tetrarchy","eventLabel":"Establishment of the Tetrarchy","factType":"reform","questions":["四帝共治的具体权力分割是否有正式法律文件？各帝的实际自主权有多大？"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-the-cambridge-ancient-history-cambridge-university-press","locator":"pp. 70–100"}],"tags":["Roman Empire","Tetrarchy","reform","Nicomedia","Milan","Trier"],"people":["Diocletian","Maximian","Constantius Chlorus","Galerius"],"sources":["The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-286-carausius-and-the-secessionist-british-empire-286-296', 'Carausius and the secessionist British Empire (286-296)', 'rome', 286, 286, 'Britannia', 'politics', '海军指挥官卡劳修斯于 286-293 年割据不列颠，建立了独特的海洋帝国。', 'high', NULL, '{"overview":"海军指挥官卡劳修斯于 286-293 年割据不列颠，建立了独特的海洋帝国。","result":[],"background":["Tetrarchy"],"process":["卡劳修斯（Marcus Aurelius Mausaeus Carausius）的崛起是一个非凡的个别案例。这位出身低地国家（现今比利时/荷兰）Menapian 部落的男子凭借海军才能升至英吉利海峡舰队（Classis Britannica）指挥官。286 年马克西米安派他清剿肆虐海峡的法兰克和撒克逊海盗——但他反而与海盗勾结，扣留了从劫掠中回收的货物和珍宝，利用这些财富收买军队并被不列颠军团拥立为帝。他的''帝国''本质上是一个海洋政权——他以不列颠为基地，控制了英吉利海峡和高卢北部沿海（以布洛涅港为核心），发行质量极佳的金银币（其银币纯度远超中央帝国的安东尼尼安币），并在硬币上刻上''et Augusti''的铭文——意思是他承认戴克里先和马克西米安，但同样自称为奥古斯都（Augustus），并希望被正式接纳为共治者之一。他的政权一度拥有海军优势，挫败了马克西米安 289 年的收复尝试。但他最终在 293 年被其财务官阿莱克图斯（Allectus）谋杀，阿莱克图斯取而代之。君士坦提乌斯一世（Constantius Chlorus）于 296 年分两路——海陆并进——收复了不列颠，杀死了阿莱克图斯并重新将不列颠纳入帝国版图。卡劳修斯统治时期发行的高质量硬币至今是钱币学中最精美的三世纪硬币之一。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 275–285","待核：卡劳修斯是否真的希望获得合法承认——还是其硬币上的铭文仅仅是一种政治姿态？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:b7925fd21423c4b3be511b18","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":75,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 275–285","originalText":null,"translation":"Potter 详细分析了卡劳修斯（Carausius）的割据——这位来自低地国家（Menapian）的海军指挥官在 286 年被马克西米安派往英吉利海峡清剿法兰克和撒克逊海盗。卡劳修斯反而扩大了海盗活动，扣留截获的货物，利用这些财富在被军团拥立后割据不列颠和高卢北部沿海地区。他建立了一个独特的''海洋帝国''，发行了质量极高的银币，并在硬币上同时描绘自己与戴克里先和马克西米安——暗示他希望被承认为合法的第三位奥古斯都而非纯粹的篡位者。他在 293 年被其财务官阿莱克图斯（Allectus）谋杀，阿莱克图斯继其后继续割据直至 296 年君士坦提乌斯一世收复不列颠。","originalTextMissing":true,"peopleCore":["Maximian","Constantius Chlorus"],"peopleMentioned":["Carausius","Allectus","Diocletian"],"places":["Britannia","Gaul","Boulogne","English Channel"],"macroEvent":"Tetrarchy","eventLabel":"Carausius and the secessionist British Empire (286-296)","factType":"political-event","questions":["卡劳修斯是否真的希望获得合法承认——还是其硬币上的铭文仅仅是一种政治姿态？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 275–285"}],"tags":["Roman Empire","Tetrarchy","political-event","Britannia","Gaul","Boulogne"],"people":["Maximian","Constantius Chlorus","Carausius","Allectus","Diocletian"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-293-career-of-constantius-chlorus-the-quiet-caesar', 'Career of Constantius Chlorus: the quiet Caesar', 'rome', 293, 293, 'Trier', 'politics', '君士坦提乌斯一世是四帝共治中最不引人注目但最为可靠的凯撒——他收复了不列颠，并在宗教迫害中采取了温和政策。', 'high', NULL, '{"overview":"君士坦提乌斯一世是四帝共治中最不引人注目但最为可靠的凯撒——他收复了不列颠，并在宗教迫害中采取了温和政策。","result":[],"background":["Tetrarchy"],"process":["君士坦提乌斯一世（全名 Flavius Valerius Constantius）是四帝共治中最被低估但最关键的人物之一。他的绰号 Chlorus（''苍白者''）来自后来的拜占庭史料——可能指其皮肤苍白或头发颜色淡。他出生于约 250 年的伊利里亚（可能是达达尼亚），具体的早期仕途不清楚——一些学者推测他最初是戴克里先的保镖（protector），后来晋升为达尔马提亚总督或禁卫军长官。293 年他被任命为马克西米安之下的凯撒，负责帝国西北部——以特里尔（Augusta Treverorum）为都城。他的第一个重大任务是从卡劳修斯和阿莱克图斯手中收复不列颠（293-296）——他分两路进军，海陆并进，在夹击战中击败了阿莱克图斯的军队，将不列颠重新纳入帝国。他在高卢和莱茵河前线取得了对法兰克人和阿勒曼尼人的持续胜利。君士坦提乌斯也以大迫害期间（303-305）执行力度温和而闻名——他仅摧毁了教堂建筑和圣经，未进行大规模处决。他的第一段婚姻（或侍妾关系）与圣海伦娜（Helena）生育了君士坦丁——后者后来奉母为奥古斯塔。其第二段婚姻是戴克里先安排的——迎娶了马克西米安的女儿狄奥多拉（Theodora），生育了六个孩子，维系了四帝之间的家族联盟。"],"impact":[],"sourceNotes":["The Prosopography of the Later Roman Empire, Vol. I (AD 260-395) · Constantius 12 · pp. 227–228","待核：君士坦提乌斯一世与海伦娜的关系是正式婚姻还是侍妾（concubinatus）？这对君士坦丁的合法性有重要影响，但史料不一致。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:da8255257b5ba006264b5480","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":80,"sourceId":"rome-source-the-prosopography-of-the-later-roman-empire-a-h-m-jones-j-r-martindale-j","sourceTitle":"The Prosopography of the Later Roman Empire","locator":"pp. 227–228","originalText":null,"translation":"PLRE 综合了君士坦提乌斯一世（Flavius Valerius Constantius，绰号 Chlorus——''苍白者''）的已知履历。他约 250 年出生于伊利里亚，可能属于地方贵族家庭。他在戴克里先的宫廷中获得升迁——据信担任过禁卫军长官或高级军官（具体职位不确定）。293 年被任命为马克西米安的凯撒，负责高卢、不列颠和西班牙。他在 293-296 年间从篡位者卡劳修斯和阿莱克图斯手中收复了不列颠——这是他最著名的军事成就。他在高卢和日耳曼前线取得了多次胜利。306 年 7 月 25 日在约克去世。","originalTextMissing":true,"peopleCore":["Constantius Chlorus"],"peopleMentioned":["Maximian","Diocletian","Carausius","Constantine I","Helena"],"places":["Trier","York","Gaul","Britannia"],"macroEvent":"Tetrarchy","eventLabel":"Career of Constantius Chlorus: the quiet Caesar","factType":"person-life","questions":["君士坦提乌斯一世与海伦娜的关系是正式婚姻还是侍妾（concubinatus）？这对君士坦丁的合法性有重要影响，但史料不一致。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-prosopography-of-the-later-roman-empire-a-h-m-jones-j-r-martindale-j","locator":"pp. 227–228"}],"tags":["Roman Empire","Tetrarchy","person-life","Trier","York","Gaul"],"people":["Constantius Chlorus","Maximian","Diocletian","Carausius","Constantine I","Helena"],"sources":["The Prosopography of the Later Roman Empire, Vol. I (AD 260-395)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-301-diocletians-administrative-and-economic-reforms', 'Diocletian''s administrative and economic reforms', 'rome', 301, 301, 'Empire-wide', 'politics', '戴克里先进行了罗马帝国史上最大规模的行政、军事和财政制度改革。', 'high', NULL, '{"overview":"戴克里先进行了罗马帝国史上最大规模的行政、军事和财政制度改革。","result":[],"background":["Tetrarchy"],"process":["戴克里先的改革重塑了罗马帝国。政治军事层面：四帝共治将帝国实际管理权分散到四个首都（尼科米迪亚、米兰、特里尔、西尔米乌姆）。罗马城本身不再是行政中心，其地位大幅衰落。行省数量翻倍（约 50 → 约 110），归纳至 12 个管区（dioceses）由代理官（vicarius）管理，每个管区分别属于四位皇帝的管辖范围。军事上他将军队分为两类——边境守备军（limitanei）和中央机动野战部队（comitatenses），后者作为战略预备力量可以随时调往受威胁的前线。财税方面：capitatio-iugatio 制度对土地和人口进行定期普查和统一评估，年度的税收指示（indictio）从此成为帝国的核心财税制度。戴克里先还于约 294 年引入了一种纯度较高的银币（argenteus）和高质量的铜币。但 301 年的《最高价格敕令》——试图为数千种商品和服务设定最高法定价格——是历史上最著名的经济政策失败之一，它导致了黑市泛滥和物资短缺，在戴克里先退位后迅速被废弃。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 294–310","待核：行政行省翻倍的具体数量在 Eastern 和 Western halves 之间是否有差异？","待核：军队规模扩大的确切数字在学术上有争议（John Lydus 的数字可能夸大）。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:c6776da6adb2f36900ba1e20","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":56,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 294–310","originalText":null,"translation":"Potter 的现代学术综述描述了戴克里先在 294-305 年间进行了罗马帝国史上最大规模的结构性改革。行政上他将约 50 个行省重新划分为约 100 个（最终约 110 个）更小的行省，归入 12 个管区（dioceses），废除了行省与前线的直接对应。军事上他将军队分为边防军（limitanei）和机动野战军（comitatenses），增大了军队规模（可能从约 35 万扩至约 45 万）。税制上他引入了 capitatio-iugatio 制度——按土地和人口统一评估纳税义务——更加标准化但负担也更重。经济上他于 301 年颁布了臭名昭著的《最高价格敕令》（Edict on Maximum Prices）——这个试图以死刑惩罚抬高物价者的法令迅速失败。","originalTextMissing":true,"peopleCore":["Diocletian"],"peopleMentioned":[],"places":["Empire-wide"],"macroEvent":"Tetrarchy","eventLabel":"Diocletian''s administrative and economic reforms","factType":"reform","questions":["行政行省翻倍的具体数量在 Eastern 和 Western halves 之间是否有差异？","军队规模扩大的确切数字在学术上有争议（John Lydus 的数字可能夸大）。"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 294–310"}],"tags":["Roman Empire","Tetrarchy","reform","Empire-wide"],"people":["Diocletian"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-301-diocletians-edict-on-maximum-prices-301-ce', 'Diocletian''s Edict on Maximum Prices (301 CE)', 'rome', 301, 301, 'Empire-wide', 'politics', '301 年的《最高价格敕令》是古代世界最著名的经济政策失败案例之一。', 'high', NULL, '{"overview":"301 年的《最高价格敕令》是古代世界最著名的经济政策失败案例之一。","result":[],"background":["Tetrarchy"],"process":["戴克里先的《价格敕令》（Edictum de Pretiis，通常缩写为 Ed. Max.）是了解 3 世纪末罗马经济状况的最详细的文献证据——尽管它作为一项政策完全失败了。301 年 11 月至 12 月（可能）由戴克里先和三位共治者联合颁布，该敕令为超过 1,200 种商品和服务固定了最高法定价格——从基本的粮食和农产品（一莫迪乌斯/约 8.73 升小麦 = 100 第纳里）、到奢侈品（一磅丝绸 = 高达 150,000 第纳里！）、到各种工资（小学校长每月 50 第纳里、高级律师每个案件高达 1,000 第纳里）。敕令的序言是一篇关于如何控制''无情的定价者——他们甚至不尊重丰饶的收成''的慷慨激昂的道德宣言。然而其实际的定价结构揭示了通胀已经严重到什么程度——工资和价格的数字是如此之高以至于它们是以第纳里来表示的，而第纳里本身的购买力已暴跌到几乎为零。法令对违反者的惩罚是死刑——这种极度残酷的执法手段本身就表明戴克里先知道不可能通过市场机制来执行。事实上，敕令迅速失败——商贩退出合法市场而非按照低于成本的价格出售，导致物资短缺和黑市泛滥。戴克里先退位后该敕令被废弃，但其铭文的广泛分布（碎片已在 40 多个地点出土）使其成为经济史和铭文学中最有价值的文献之一。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 288–294","待核：《最高价格敕令》颁布后在各地的实际执行情况是否可以通过考古与铭文证据追踪？黑市泛滥的具体程度如何？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:2118c214150dd82f21aea7f9","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":86,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 288–294","originalText":null,"translation":"Potter 详细分析了戴克里先的《最高价格敕令》（Edictum de Pretiis Rerum Venalium，301 年）。该敕令为超过 1,200 种商品和服务设定了最高法定价格——从谷物、葡萄酒、橄榄油到律师费、教师薪水、奴隶价格和运输费用——死刑作为惩罚违规者的制裁。其序言宣称''贪婪——如同某些宗教——已经膨胀到如此程度以至于无法被约束''。敕令的双语铭文（拉丁文+希腊文）碎片已在帝国各地——从埃及到小亚细亚到希腊——被发现，证明了其广泛传播但最终彻底的失败。商品从被价格上限截断的合法市场流向黑市，导致短缺进一步恶化。敕令在戴克里先退位后被废弃。","originalTextMissing":true,"peopleCore":["Diocletian"],"peopleMentioned":[],"places":["Empire-wide"],"macroEvent":"Tetrarchy","eventLabel":"Diocletian''s Edict on Maximum Prices (301 CE)","factType":"reform","questions":["《最高价格敕令》颁布后在各地的实际执行情况是否可以通过考古与铭文证据追踪？黑市泛滥的具体程度如何？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 288–294"}],"tags":["Roman Empire","Tetrarchy","reform","Empire-wide"],"people":["Diocletian"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-303-the-great-persecution-begins', 'The Great Persecution begins', 'rome', 303, 303, 'Nicomedia', 'politics', '303 年大迫害开始了——戴克里先统治下对基督教最系统性的打击。', 'high', NULL, '{"overview":"303 年大迫害开始了——戴克里先统治下对基督教最系统性的打击。","result":[],"background":["Tetrarchy"],"process":["戴克里先统治的最后几年（303-305）发动了罗马帝国史上最猛烈的一次对基督教的系统性迫害，通常被称为''大迫害''（The Great Persecution）。303 年 2 月 23 日的 Terminalia 节（边界之神节），第一道法令颁布：所有教堂必须拆除、圣经必须焚烧、基督徒被剥夺公职和法律保护。随后三道法令逐步升级——先要求教会领袖献祭，然后扩大到所有基督徒，违者面临监禁、酷刑和处决。Lactantius 指责伽列里乌斯是迫害的主要推动者，戴克里先是在其压力下同意的。Eusebius 在《教会史》中记录了大量的殉道者。迫害在帝国东部尤为严重，而在君士坦提乌斯统治的西部（高卢和不列颠）执行得相对温和。迫害直到 311 年伽列里乌斯临终前颁布宽容敕令才结束，为后来的君士坦丁改革铺平了道路。"],"impact":[],"sourceNotes":["Lactantius, De Mortibus Persecutorum · Chapters 10-15 · 10–15","待核：谁是迫害的主要发起者——戴克里先还是伽列里乌斯？不同基督教史家有不同判断。","待核：迫害的实际死亡人数难以确定，基督教史料可能有所夸大。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:8d49895cd80f47f6fa8e038a","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":37,"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","sourceTitle":"De Mortibus Persecutorum","locator":"10–15","originalText":null,"translation":"Lactantius 详细描述了 303 年 2 月 23 日的大迫害——戴克里先在其凯撒伽列里乌斯的鼓动下，颁布了第一道反基督教法令。命令摧毁所有教堂、烧毁圣经、剥夺基督教徒的法律权利和社会地位。随后颁布的法令越来越严厉，最终要求所有基督教徒向罗马诸神献祭，违者处死。Lactantius 将此视为最残忍的迫害之一。","originalTextMissing":true,"peopleCore":["Diocletian","Galerius"],"peopleMentioned":[],"places":["Nicomedia","Empire-wide"],"macroEvent":"Tetrarchy","eventLabel":"The Great Persecution begins","factType":"political-event","questions":["谁是迫害的主要发起者——戴克里先还是伽列里乌斯？不同基督教史家有不同判断。","迫害的实际死亡人数难以确定，基督教史料可能有所夸大。"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"10–15"}],"tags":["Roman Empire","Tetrarchy","political-event","Nicomedia","Empire-wide"],"people":["Diocletian","Galerius"],"sources":["Lactantius, De Mortibus Persecutorum"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-303-the-great-persecution-regional-variation-and-political-context', 'The Great Persecution: regional variation and political context', 'rome', 303, 303, 'Nicomedia', 'politics', '大迫害的执行力度在帝国不同地区差异极大，反映了四帝之间的政治分歧。', 'high', NULL, '{"overview":"大迫害的执行力度在帝国不同地区差异极大，反映了四帝之间的政治分歧。","result":[],"background":["Tetrarchy"],"process":["大迫害（303-313）实际上是一场在四帝共治框架下由不同统治者按照不同强度执行的行动。303 年 2 月发布的第一道法令要求在帝国全境统一执行——但四位皇帝的意愿各不相同。伽列里乌斯和戴克里先统治的帝国东部（小亚细亚、叙利亚、巴勒斯坦、埃及）经历了最严峻的迫害——Eusebius 记载了巴勒斯坦的大量殉道者（包括著名的圣乔治之死）。马克西米安统治的意大利和非洲执行了法令但相对温和。君士坦提乌斯在高卢和不列颠仅象征性地摧毁了一些教堂建筑和圣经，未进行处决——这使君士坦提乌斯在基督教史家（如 Lactantius 和 Eusebius）那里获得了''相对仁慈''的评价，也为后来其子君士坦丁的基督教政策提供了背景。基督教会虽然被严重打击但并没有被摧毁——它的组织结构（尤其是主教网络和地下集会）经受住了考验。大迫害的真正失败在于它未能根除基督教，反而制造了大量的殉道者叙事，强化了基督教在民众中的吸引力。"],"impact":[],"sourceNotes":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 310–320","待核：不同行省迫害力度的差异是由于皇帝的个人意志还是当地官员的执行力度？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:32b2c0d853be7ae53e6cb0e7","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":57,"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","sourceTitle":"The Roman Empire at Bay","locator":"pp. 310–320","originalText":null,"translation":"Potter 指出大迫害的背景不仅是宗教原因，也涉及四帝内部的政治动态。伽列里乌斯——一位狂热的传统罗马宗教捍卫者——是迫害的主要推手，而戴克里先可能最初不太情愿但最终被说服。迫害在帝国东部——戴克里先和伽列里乌斯直接统治的区域——执行得最为残酷；在君士坦提乌斯统治的高卢和不列颠，执行得相对温和（仅摧毁教堂和圣经，很少处决）。Potter 指出，这场迫害严重削弱了戴克里先在基督教化程度较高的东部行省的政治合法性。","originalTextMissing":true,"peopleCore":["Diocletian","Galerius"],"peopleMentioned":["Constantius Chlorus"],"places":["Nicomedia","Palestine","Egypt","Gaul"],"macroEvent":"Tetrarchy","eventLabel":"The Great Persecution: regional variation and political context","factType":"political-event","questions":["不同行省迫害力度的差异是由于皇帝的个人意志还是当地官员的执行力度？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-the-roman-empire-at-bay-david-s-potter","locator":"pp. 310–320"}],"tags":["Roman Empire","Tetrarchy","political-event","Nicomedia","Palestine","Egypt"],"people":["Diocletian","Galerius","Constantius Chlorus"],"sources":["The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-305-abdication-of-diocletian-and-maximian', 'Abdication of Diocletian and Maximian', 'rome', 305, 305, 'Nicomedia', 'politics', '305 年戴克里先与马克西米安同日退位，君士坦提乌斯一世和伽列里乌斯成为奥古斯都。', 'high', NULL, '{"overview":"305 年戴克里先与马克西米安同日退位，君士坦提乌斯一世和伽列里乌斯成为奥古斯都。","result":[],"background":["Tetrarchy"],"process":["戴克里先的四帝共治制度设计为 20 年任期。305 年 5 月 1 日，戴克里先在尼科米迪亚城外的阅兵场上，面对他曾指挥过的军队，宣布退位。场面的戏剧性不亚于他 20 年前的即位。同一时刻，他要求马克西米安在米兰也宣布退位。君士坦提乌斯一世（Constantius Chlorus，君士坦丁的父亲）晋升为西部奥古斯都，伽列里乌斯为东部奥古斯都。然而在选择新凯撒时，戴克里先绕过了已有继承预期的马克森提乌斯（马克西米安之子）和君士坦丁（君士坦提乌斯之子），选择了自己信赖的军官塞维鲁二世和马克西米努斯·达扎。戴克里先退休至达尔马提亚海岸的斯帕拉图姆宫（Spalatum，今克罗地亚斯普利特），在那里度过了生命的最后几年。但他设计的继任体系很快因对王朝血缘继承的忽视而崩溃。"],"impact":[],"sourceNotes":["Lactantius, De Mortibus Persecutorum · Chapters 18-19 · 18–19","待核：Lactantius 对退位仪式的戏剧化描述是否完全属实？卷心菜的轶事被认为是可信的。","待核：马克西米安是否真的自愿退位——有证据表明他并不情愿。"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:bd8d78f288bd47d59e1b7770","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":38,"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","sourceTitle":"De Mortibus Persecutorum","locator":"18–19","originalText":null,"translation":"Lactantius 生动描述了 305 年 5 月 1 日戴克里先在尼科米迪亚阅兵场上向军队宣布退位，同时要求马克西米安在同一天在米兰退位。君士坦提乌斯一世和伽列里乌斯晋升为奥古斯都，而塞维鲁二世和马克西米努斯·达扎（Maximinus Daza）被任命为新的凯撒。Lactantius 描述戴克里先退位后回到达尔马提亚的斯帕拉图姆宫（Spalatum，今斯普利特）种植卷心菜——当他被请求复出时，他回答''如果你看到我亲手种的卷心菜，你就不会要求我放弃它们去追求权力了''。","originalTextMissing":true,"peopleCore":["Diocletian","Maximian","Constantius Chlorus","Galerius"],"peopleMentioned":["Severus II","Maximinus Daza"],"places":["Nicomedia","Milan","Spalatum","Split"],"macroEvent":"Tetrarchy","eventLabel":"Abdication of Diocletian and Maximian","factType":"political-event","questions":["Lactantius 对退位仪式的戏剧化描述是否完全属实？卷心菜的轶事被认为是可信的。","马克西米安是否真的自愿退位——有证据表明他并不情愿。"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"18–19"}],"tags":["Roman Empire","Tetrarchy","political-event","Nicomedia","Milan","Spalatum"],"people":["Diocletian","Maximian","Constantius Chlorus","Galerius","Severus II","Maximinus Daza"],"sources":["Lactantius, De Mortibus Persecutorum"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-306-death-of-constantius-chlorus-constantine-proclaimed-emperor', 'Death of Constantius Chlorus; Constantine proclaimed emperor', 'rome', 306, 306, 'Eboracum', 'politics', '306 年君士坦提乌斯一世在约克病逝，君士坦丁被不列颠军团拥立为帝——开启了君士坦丁时代。', 'high', NULL, '{"overview":"306 年君士坦提乌斯一世在约克病逝，君士坦丁被不列颠军团拥立为帝——开启了君士坦丁时代。","result":[],"background":["Tetrarchy"],"process":["公元 306 年是四帝共治制度开始崩溃的一年。西部奥古斯都君士坦提乌斯一世（Constantius Chlorus，绰号意为''苍白者''）在率军征伐喀里多尼亚后于 7 月 25 日在约克去世。他的军队——主要由不列颠、高卢和日耳曼军团组成——立即拥立其子君士坦丁（Flavius Valerius Constantinus）为奥古斯都（正帝），这一行为公开违反了戴克里先的继任原则——四帝共治不承认血缘继承。伽列里乌斯（东部奥古斯都和名义上的四帝之首）拒绝承认，仅授予君士坦丁凯撒（副帝）头衔，并将塞维鲁二世提升为西部奥古斯都。君士坦丁隐忍接受了这一降级——暂时。但同年底，马克西米安之子马克森提乌斯（Maxentius）在罗马自立为帝，打破了脆弱的四帝平衡。此后十九年间（306-324），君士坦丁将通过一连串内战和逐步淘汰所有对手来缔造自己的唯一统治。"],"impact":[],"sourceNotes":["Lactantius, De Mortibus Persecutorum · Chapters 24-26 · 24–26","待核：君士坦提乌斯一世是否真的在临终前明确推荐君士坦丁——还是军队自行拥立后由君士坦丁事后编造的叙事？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:93521eb520cfcc1196ee8a75","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":54,"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","sourceTitle":"De Mortibus Persecutorum","locator":"24–26","originalText":null,"translation":"Lactantius 记载了 306 年君士坦丁被拥立的关键事件。君士坦提乌斯一世于 306 年 7 月 25 日在埃布拉库姆（Eboracum，约克）去世，同日军队拥立其子君士坦丁为奥古斯都（Augustus）。Lactantius 指出，君士坦提乌斯在临终前''将自己的儿子交给士兵们''。但伽列里乌斯只承认君士坦丁为凯撒（Caesar），而不是奥古斯都——升格塞维鲁二世为西部奥古斯都。君士坦丁被迫接受这一降级，但此后的近二十年中他将通过连续的战争和阴谋最终胜出。","originalTextMissing":true,"peopleCore":["Constantius Chlorus"],"peopleMentioned":["Constantine I","Galerius","Severus II"],"places":["Eboracum","York","Britannia"],"macroEvent":"Tetrarchy","eventLabel":"Death of Constantius Chlorus; Constantine proclaimed emperor","factType":"political-event","questions":["君士坦提乌斯一世是否真的在临终前明确推荐君士坦丁——还是军队自行拥立后由君士坦丁事后编造的叙事？"],"confidence":"high","importance":"major","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"24–26"}],"tags":["Roman Empire","Tetrarchy","political-event","Eboracum","York","Britannia"],"people":["Constantius Chlorus","Constantine I","Galerius","Severus II"],"sources":["Lactantius, De Mortibus Persecutorum"],"promotedAt":"2026-06-26T07:04:30.464Z","reviewStatus":"reviewed","reviewedBy":"manual-rome-core-event-review-190-310"}');
-INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-308-council-of-carnuntum-diocletians-last-attempt-to-save-the-tetrarchy', 'Council of Carnuntum: Diocletian''s last attempt to save the Tetrarchy', 'rome', 308, 308, 'Carnuntum', 'politics', '308 年卡农图姆会议是戴克里先为挽救四帝共治的最后一次努力，但制度已不可逆转地瓦解。', 'high', NULL, '{"overview":"308 年卡农图姆会议是戴克里先为挽救四帝共治的最后一次努力，但制度已不可逆转地瓦解。","result":[],"background":["Tetrarchy"],"process":["308 年 11 月，退位已三年的戴克里先被说服重返政治舞台，在多瑙河畔的军事重镇卡农图姆（Carnuntum，今奥地利巴特多伊奇阿尔滕堡附近）主持了一次四帝峰会。此时帝国有六位自称皇帝的人：伽列里乌斯（东部奥古斯都）、李锡尼（尚未正式任命）、马克西米努斯·达扎（东部凯撒）、君士坦丁（西部凯撒）、马克森提乌斯（在罗马自立）以及重新自称为奥古斯都的马克西米安。戴克里先利用他仍然巨大的个人威望达成了妥协——将李锡尼直接提升为奥古斯都以平衡各方，并再次说服马克西米安退位。但君士坦丁和马克森提乌斯被拒绝晋升——这促使他们更加坚定地走自己的路。君士坦丁开始自称为''不列颠尼库斯·马克西穆斯''（Britannicus Maximus）来展示其军事独立性。此次会议的失败表明四帝共治制度无法容纳王朝血缘继承的天然要求。311 年伽列里乌斯去世后，四帝制度正式进入解体阶段。"],"impact":[],"sourceNotes":["Lactantius, De Mortibus Persecutorum · Chapters 28-29 · 28–29","待核：卡农图姆会议的确切日期和与会者名单在 Lactantius 和其他史料中是否一致？","待核：戴克里先拒绝复位的立场是否动摇过？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:1608f1ea4f6a5b6f61ec73b7","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":55,"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","sourceTitle":"De Mortibus Persecutorum","locator":"28–29","originalText":null,"translation":"Lactantius 记载 308 年退位的戴克里先短暂复出，在多瑙河畔的卡农图姆（Carnuntum）召集了四帝会议，试图挽救他设计的共治制度。此时帝国已陷入混乱：马克森提乌斯在罗马自立为帝（306），马克西米安重新穿上紫袍（307），君士坦丁和马克西米努斯·达扎各自要求更高的头衔。会议决定：伽列里乌斯的战友李锡尼（Licinius）被直接提升为奥古斯都（跳过凯撒阶段），马克西米安再次被迫退位，君士坦丁和达扎保留凯撒头衔但升格为''凯撒之子''（filii Augustorum）。这次会议未能解决君士坦丁和马克森提乌斯的地位问题（他们被宣布为公敌但并未被废黜），四帝共治实际上已经不可逆转地瓦解了。","originalTextMissing":true,"peopleCore":["Diocletian","Galerius"],"peopleMentioned":["Constantine I","Maximian","Maxentius","Licinius","Maximinus Daza"],"places":["Carnuntum","Pannonia","Danube","Rome"],"macroEvent":"Tetrarchy","eventLabel":"Council of Carnuntum: Diocletian''s last attempt to save the Tetrarchy","factType":"political-event","questions":["卡农图姆会议的确切日期和与会者名单在 Lactantius 和其他史料中是否一致？","戴克里先拒绝复位的立场是否动摇过？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"28–29"}],"tags":["Roman Empire","Tetrarchy","political-event","Carnuntum","Pannonia","Danube"],"people":["Diocletian","Galerius","Constantine I","Maximian","Maxentius","Licinius","Maximinus Daza"],"sources":["Lactantius, De Mortibus Persecutorum"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-180-herodian-as-a-source-for-the-severan-and-early-crisis-period', 'Herodian as a source for the Severan and early crisis period', 'rome', 180, 180, 'Rome', 'culture', 'Herodian 是覆盖从马可·奥勒留之死（180）到戈尔迪安三世登基（238）的唯一完整的当代史家。', 'high', NULL, '{
+  "overview": "Herodian 是覆盖从马可·奥勒留之死（180）到戈尔迪安三世登基（238）的唯一完整的当代史家。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "Herodian（全名 Aelius Herodianus，或可能是来自叙利亚的希腊文人）的地位在 3 世纪史料中既独特又尴尬。他的八卷史书从 180 年写到 238 年——正好接在 Cassius Dio 的塞维鲁末年部分和 Zosimus 的危机后期叙事之间，为我们提供了塞维鲁王朝和早期三世纪危机（235-238 六帝之年）的唯一连续叙事。他的生平几乎完全不为人知——他自己的序言仅说他是当代人且''亲身经历''了他描述的事件。现代学者推测他可能是来自小亚细亚或叙利亚的帝国低级官员（可能为自由人或骑士等级）。他的希腊文比 Dio 更朴素，他的历史解释更倾向于戏剧化和个人化——他强调人物的性格、外貌仪式对事件的推动力——而相对轻视制度和经济的深层原因。他的视角比 Dio 更少元老院色彩，但他对军人皇帝的描述（尤其是对马克西米努斯·色雷克斯的描绘）充满了对低微出身者的文化偏见。尽管存在局限，他是我们理解 238 年六帝之年的唯一连续的第一手叙事。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 1 · 1.1–1.2",
+    "待核：Herodian 的真实身份仍是一个谜——他是否就是 Cassius Dio 提到的那位同名语法学家？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:b275a2d208a8310510c1ca06",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 68,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "1.1–1.2",
+  "originalText": null,
+  "translation": "Herodian 在其开篇声明中自称是一位''亲身经历''他所记述事件的当代人——''我所写的一切都是我在整个一生中亲眼所见和亲耳所闻的。''他的八卷《马可之后帝国史》覆盖了从 180 年（马可·奥勒留之死）到 238 年（戈尔迪安三世登基）的时期。他可能是一名来自叙利亚或小亚细亚希腊语地区的较低级帝国官员，其著作是介于 Cassius Dio 的元老视角和后期拉丁简史之间的最重要的 3 世纪叙事史料。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Marcus Aurelius",
+    "Gordian III",
+    "Maximinus Thrax"
+  ],
+  "places": [
+    "Rome",
+    "Syria"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Herodian as a source for the Severan and early crisis period",
+  "factType": "source-mention",
+  "questions": [
+    "Herodian 的真实身份仍是一个谜——他是否就是 Cassius Dio 提到的那位同名语法学家？"
+  ],
+  "confidence": "high",
+  "importance": "minor",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "1.1–1.2"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "source-mention",
+    "Rome",
+    "Syria"
+  ],
+  "people": [
+    "Marcus Aurelius",
+    "Gordian III",
+    "Maximinus Thrax"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "Herodian 是覆盖从马可·奥勒留之死（180）到戈尔迪安三世登基（238）的唯一完整的当代史家。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "Herodian（全名 Aelius Herodianus，或可能是来自叙利亚的希腊文人）的地位在 3 世纪史料中既独特又尴尬。他的八卷史书从 180 年写到 238 年——正好接在 Cassius Dio 的塞维鲁末年部分和 Zosimus 的危机后期叙事之间，为我们提供了塞维鲁王朝和早期三世纪危机（235-238 六帝之年）的唯一连续叙事。他的生平几乎完全不为人知——他自己的序言仅说他是当代人且''亲身经历''了他描述的事件。现代学者推测他可能是来自小亚细亚或叙利亚的帝国低级官员（可能为自由人或骑士等级）。他的希腊文比 Dio 更朴素，他的历史解释更倾向于戏剧化和个人化——他强调人物的性格、外貌仪式对事件的推动力——而相对轻视制度和经济的深层原因。他的视角比 Dio 更少元老院色彩，但他对军人皇帝的描述（尤其是对马克西米努斯·色雷克斯的描绘）充满了对低微出身者的文化偏见。尽管存在局限，他是我们理解 238 年六帝之年的唯一连续的第一手叙事。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 1 · 1.1–1.2",
+      "待核：Herodian 的真实身份仍是一个谜——他是否就是 Cassius Dio 提到的那位同名语法学家？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-193-didius-julianus-buys-the-throne-severus-proclaimed-in-pannonia', 'Didius Julianus buys the throne; Severus proclaimed in Pannonia', 'rome', 193, 193, 'Rome', 'politics', '公元 193 年四帝并立，帝国的统治权在禁卫军拍卖和行省军团拥立之间摇摆。', 'high', NULL, '{
+  "overview": "公元 193 年四帝并立，帝国的统治权在禁卫军拍卖和行省军团拥立之间摇摆。",
+  "background": [
+    "Year of the Five Emperors"
+  ],
+  "process": [
+    "公元 193 年罗马经历了极端的政治混乱。佩尔蒂纳克斯在位仅 87 天即被禁卫军杀害。禁卫军随后公开拍卖皇位，元老尤利安努斯以巨额贿金中标。但各行省军队拒绝承认，上潘诺尼亚总督塞普蒂米乌斯·塞维鲁于卡农图姆（Carnuntum）被军团拥立为帝。同时叙利亚军团拥立了佩斯森尼乌斯·尼格尔，不列颠军团拥立了克洛狄乌斯·阿尔比努斯。塞维鲁率先进入罗马，处决尤利安努斯，遣散原有禁卫军并以自己的多瑙河老兵重建，随后展开一系列内战，最终统一帝国。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Cassius Dio, Historia Romana · Book 74(73) · 74.14.3–74.15.1",
+    "待核：禁卫军拍卖皇位的具体过程是否有更多参与者？",
+    "待核：塞维鲁被潘诺尼亚军团拥立的确切日期是否可进一步确认？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:e7112572048ca0785c243fa3",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 0,
+  "sourceId": "rome-source-roman-history-cassius-dio",
+  "sourceTitle": "Roman History",
+  "locator": "74.14.3–74.15.1",
+  "originalText": null,
+  "translation": "Cassius Dio 记载，公元 193 年佩尔蒂纳克斯被弑后，禁卫军公开拍卖皇位，尤利安努斯以每人 25,000 塞斯特斯的价格买得帝位。此举引发各行省军队的强烈不满，潘诺尼亚军团拥立塞维鲁、叙利亚军团拥立尼格尔、不列颠军团拥立阿尔比努斯。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Septimius Severus"
+  ],
+  "peopleMentioned": [
+    "Pertinax",
+    "Didius Julianus",
+    "Pescennius Niger",
+    "Clodius Albinus"
+  ],
+  "places": [
+    "Rome",
+    "Pannonia",
+    "Carnuntum"
+  ],
+  "macroEvent": "Year of the Five Emperors",
+  "eventLabel": "Didius Julianus buys the throne; Severus proclaimed in Pannonia",
+  "factType": "political-event",
+  "questions": [
+    "禁卫军拍卖皇位的具体过程是否有更多参与者？",
+    "塞维鲁被潘诺尼亚军团拥立的确切日期是否可进一步确认？"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-roman-history-cassius-dio",
+      "locator": "74.14.3–74.15.1"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Year of the Five Emperors",
+    "political-event",
+    "Rome",
+    "Pannonia",
+    "Carnuntum"
+  ],
+  "people": [
+    "Septimius Severus",
+    "Pertinax",
+    "Didius Julianus",
+    "Pescennius Niger",
+    "Clodius Albinus"
+  ],
+  "sources": [
+    "Cassius Dio, Historia Romana"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "公元 193 年四帝并立，帝国的统治权在禁卫军拍卖和行省军团拥立之间摇摆。",
+    "background": [
+      "Year of the Five Emperors"
+    ],
+    "process": [
+      "公元 193 年罗马经历了极端的政治混乱。佩尔蒂纳克斯在位仅 87 天即被禁卫军杀害。禁卫军随后公开拍卖皇位，元老尤利安努斯以巨额贿金中标。但各行省军队拒绝承认，上潘诺尼亚总督塞普蒂米乌斯·塞维鲁于卡农图姆（Carnuntum）被军团拥立为帝。同时叙利亚军团拥立了佩斯森尼乌斯·尼格尔，不列颠军团拥立了克洛狄乌斯·阿尔比努斯。塞维鲁率先进入罗马，处决尤利安努斯，遣散原有禁卫军并以自己的多瑙河老兵重建，随后展开一系列内战，最终统一帝国。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Cassius Dio, Historia Romana · Book 74(73) · 74.14.3–74.15.1",
+      "待核：禁卫军拍卖皇位的具体过程是否有更多参与者？",
+      "待核：塞维鲁被潘诺尼亚军团拥立的确切日期是否可进一步确认？"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-193-severus-marches-on-rome-and-disbands-the-praetorian-guard', 'Severus marches on Rome and disbands the Praetorian Guard', 'rome', 193, 193, 'Rome', 'war', '塞维鲁从潘诺尼亚迅速进军罗马，解散了原有禁卫军并用自己的老兵重建。', 'high', NULL, '{
+  "overview": "塞维鲁从潘诺尼亚迅速进军罗马，解散了原有禁卫军并用自己的老兵重建。",
+  "background": [
+    "Year of the Five Emperors"
+  ],
+  "process": [
+    "塞维鲁被拥立后，立即以惊人的速度向罗马挺进。他在尤利安努斯被处决后进入罗马城，召集原有禁卫军并公开遣散他们——惩罚他们谋杀佩尔蒂纳克斯并拍卖皇位的行为。塞维鲁命令他们在 100 英里半径之外不得靠近罗马。他随后从多瑙河军团中挑选精锐老兵组建了新的禁卫军。这一举措极大地加强了皇帝与军队的结合，但也打破了禁卫军从意大利本土招募的传统，为后世军队干政埋下伏笔。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 2 · 2.9–2.12",
+    "待核：塞维鲁是否真的截断了禁卫军在意大利的传统招募？后续有何后果？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:6bd00929fc1c453aa4fb4855",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 1,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "2.9–2.12",
+  "originalText": null,
+  "translation": "Herodian 详细描述了 193 年佩尔蒂纳克斯被弑后罗马的混乱局面，以及塞维鲁如何在潘诺尼亚被军队拥立。Herodian 强调，塞维鲁迅速向罗马进军，在尤利安努斯被杀后入城，随后遣散全部禁卫军，重新招募忠诚于自己的士兵。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Septimius Severus"
+  ],
+  "peopleMentioned": [
+    "Pertinax",
+    "Didius Julianus"
+  ],
+  "places": [
+    "Rome",
+    "Pannonia"
+  ],
+  "macroEvent": "Year of the Five Emperors",
+  "eventLabel": "Severus marches on Rome and disbands the Praetorian Guard",
+  "factType": "military-event",
+  "questions": [
+    "塞维鲁是否真的截断了禁卫军在意大利的传统招募？后续有何后果？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "2.9–2.12"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Year of the Five Emperors",
+    "military-event",
+    "Rome",
+    "Pannonia"
+  ],
+  "people": [
+    "Septimius Severus",
+    "Pertinax",
+    "Didius Julianus"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "塞维鲁从潘诺尼亚迅速进军罗马，解散了原有禁卫军并用自己的老兵重建。",
+    "background": [
+      "Year of the Five Emperors"
+    ],
+    "process": [
+      "塞维鲁被拥立后，立即以惊人的速度向罗马挺进。他在尤利安努斯被处决后进入罗马城，召集原有禁卫军并公开遣散他们——惩罚他们谋杀佩尔蒂纳克斯并拍卖皇位的行为。塞维鲁命令他们在 100 英里半径之外不得靠近罗马。他随后从多瑙河军团中挑选精锐老兵组建了新的禁卫军。这一举措极大地加强了皇帝与军队的结合，但也打破了禁卫军从意大利本土招募的传统，为后世军队干政埋下伏笔。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 2 · 2.9–2.12",
+      "待核：塞维鲁是否真的截断了禁卫军在意大利的传统招募？后续有何后果？"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-193-severus-establishes-military-monarchy', 'Severus establishes military monarchy', 'rome', 193, 193, 'Rome', 'politics', '塞维鲁将帝国转变为以军队为核心的军事君主制。', 'high', NULL, '{
+  "overview": "塞维鲁将帝国转变为以军队为核心的军事君主制。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "塞维鲁的统治标志着罗马政治体制的根本转变。他公开蔑视元老院的传统权威，将自己的权力单纯建立在军队的忠诚之上。他大幅提升军团士兵的年薪（从 300 第纳里提高到约 400-500 第纳里），放宽了军团士兵的婚姻禁令（允许士兵在服役期间结婚和与家人同住），并提拔大量骑士阶层人士担任原本由元老充任的军政职位。这一系列改革虽巩固了塞维鲁个人的统治，但也大幅增加了帝国财政负担，并为军队日益干预皇位继承开启了先例。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 1 · pp. 1–40",
+    "待核：士兵薪资的具体增幅有不同学术观点。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:31748075e68b73b1db339696",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 5,
+  "sourceId": "rome-source-the-cambridge-ancient-history-cambridge-university-press",
+  "sourceTitle": "The Cambridge Ancient History",
+  "locator": "pp. 1–40",
+  "originalText": null,
+  "translation": "现代史学认为，塞普蒂米乌斯·塞维鲁的统治（193-211）标志着罗马政治体制从元首制向公开的军事君主制的转型。他以军队为唯一权力基础，以''将军即皇帝''（imperator）的身份统治，大幅度提升了军团士兵的薪饷并放宽婚姻禁令。元老院的实际权力被大幅削弱，骑士阶层和军人充任高级行政职位。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Septimius Severus"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Rome",
+    "Danube"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Severus establishes military monarchy",
+  "factType": "reform",
+  "questions": [
+    "士兵薪资的具体增幅有不同学术观点。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-cambridge-ancient-history-cambridge-university-press",
+      "locator": "pp. 1–40"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "reform",
+    "Rome",
+    "Danube"
+  ],
+  "people": [
+    "Septimius Severus"
+  ],
+  "sources": [
+    "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "塞维鲁将帝国转变为以军队为核心的军事君主制。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "塞维鲁的统治标志着罗马政治体制的根本转变。他公开蔑视元老院的传统权威，将自己的权力单纯建立在军队的忠诚之上。他大幅提升军团士兵的年薪（从 300 第纳里提高到约 400-500 第纳里），放宽了军团士兵的婚姻禁令（允许士兵在服役期间结婚和与家人同住），并提拔大量骑士阶层人士担任原本由元老充任的军政职位。这一系列改革虽巩固了塞维鲁个人的统治，但也大幅增加了帝国财政负担，并为军队日益干预皇位继承开启了先例。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 1 · pp. 1–40",
+      "待核：士兵薪资的具体增幅有不同学术观点。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-193-assassination-of-commodus-and-pertinax-auction-of-the-empire', 'Assassination of Commodus and Pertinax; auction of the empire', 'rome', 193, 193, 'Rome', 'politics', '192 年末康茂德被弑，佩尔蒂纳克斯在位 87 天即被禁卫军杀害，随后禁卫军公开拍卖皇位。', 'high', NULL, '{
+  "overview": "192 年末康茂德被弑，佩尔蒂纳克斯在位 87 天即被禁卫军杀害，随后禁卫军公开拍卖皇位。",
+  "background": [
+    "Year of the Five Emperors"
+  ],
+  "process": [
+    "五帝之年的序幕始于康茂德（Commodus）在 192 年除夕被其摔跤伙伴纳尔奇苏斯（Narcissus）勒死——背后是由其情妇马西亚（Marcia）和禁卫军长官莱图斯（Laetus）策划的阴谋。元老院迅速宣布康茂德为公敌，并拥立了受人尊敬的元老佩尔蒂纳克斯（Pertinax）为帝。佩尔蒂纳克斯试图清理康茂德留下的财政混乱并恢复军纪，但他的节流措施——尤其是只支付了承诺赏金的一半——激怒了禁卫军。193 年 3 月 28 日，禁卫军冲入皇宫将其杀害（据 Dio 所述仅约 200 人）。然后发生了臭名昭著的皇位拍卖——禁卫军宣布将皇位出售给出价最高者，元老尤利安努斯承诺每人 25,000 塞斯特斯后中选。这一奇耻大辱直接触发了各行省军团的全面反叛。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Cassius Dio, Historia Romana · Book 74(73) · 74.1–74.3",
+    "待核：康茂德被弑的阴谋具体涉及多少人？",
+    "待核：禁卫军拍卖皇位的过程是否像 Dio 描述的那么戏剧化？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:3afd4083dd75f9cfbe0cf3cc",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 39,
+  "sourceId": "rome-source-roman-history-cassius-dio",
+  "sourceTitle": "Roman History",
+  "locator": "74.1–74.3",
+  "originalText": null,
+  "translation": "Cassius Dio 记述了 193 年康茂德被弑（192 年 12 月 31 日）后的权力真空。佩尔蒂纳克斯被元老院拥立为帝，但他试图恢复军纪和财政纪律的举措激怒了禁卫军。在位仅 87 天后，约 200 名禁卫军士兵冲击皇宫，杀害了这位试图改革的老人皇帝。Cassius Dio 当时在罗马现场，他的记载具有第一手观察的价值——他对禁卫军的无法无天表示了深刻的恐惧。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Pertinax",
+    "Commodus"
+  ],
+  "places": [
+    "Rome"
+  ],
+  "macroEvent": "Year of the Five Emperors",
+  "eventLabel": "Assassination of Commodus and Pertinax; auction of the empire",
+  "factType": "political-event",
+  "questions": [
+    "康茂德被弑的阴谋具体涉及多少人？",
+    "禁卫军拍卖皇位的过程是否像 Dio 描述的那么戏剧化？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-roman-history-cassius-dio",
+      "locator": "74.1–74.3"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Year of the Five Emperors",
+    "political-event",
+    "Rome"
+  ],
+  "people": [
+    "Pertinax",
+    "Commodus"
+  ],
+  "sources": [
+    "Cassius Dio, Historia Romana"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "192 年末康茂德被弑，佩尔蒂纳克斯在位 87 天即被禁卫军杀害，随后禁卫军公开拍卖皇位。",
+    "background": [
+      "Year of the Five Emperors"
+    ],
+    "process": [
+      "五帝之年的序幕始于康茂德（Commodus）在 192 年除夕被其摔跤伙伴纳尔奇苏斯（Narcissus）勒死——背后是由其情妇马西亚（Marcia）和禁卫军长官莱图斯（Laetus）策划的阴谋。元老院迅速宣布康茂德为公敌，并拥立了受人尊敬的元老佩尔蒂纳克斯（Pertinax）为帝。佩尔蒂纳克斯试图清理康茂德留下的财政混乱并恢复军纪，但他的节流措施——尤其是只支付了承诺赏金的一半——激怒了禁卫军。193 年 3 月 28 日，禁卫军冲入皇宫将其杀害（据 Dio 所述仅约 200 人）。然后发生了臭名昭著的皇位拍卖——禁卫军宣布将皇位出售给出价最高者，元老尤利安努斯承诺每人 25,000 塞斯特斯后中选。这一奇耻大辱直接触发了各行省军团的全面反叛。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Cassius Dio, Historia Romana · Book 74(73) · 74.1–74.3",
+      "待核：康茂德被弑的阴谋具体涉及多少人？",
+      "待核：禁卫军拍卖皇位的过程是否像 Dio 描述的那么戏剧化？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-193-severus-enters-rome-and-addresses-the-senate', 'Severus enters Rome and addresses the Senate', 'rome', 193, 193, 'Rome', 'politics', '塞维鲁入主罗马后向元老院发表安抚性讲话，但暗中的威胁令 Dio 深感不安。', 'high', NULL, '{
+  "overview": "塞维鲁入主罗马后向元老院发表安抚性讲话，但暗中的威胁令 Dio 深感不安。",
+  "background": [
+    "Year of the Five Emperors"
+  ],
+  "process": [
+    "塞维鲁是一个精明的政治操纵者。他进入罗马后公开承诺尊重元老院、不杀元老、效仿马可·奥勒留（Marcus Aurelius）的统治风格。为了建立王朝合法性——他自己与安东尼王朝并无血缘关系——他公开宣称自己是马可·奥勒留的''养子''，甚至追认被元老院宣布为公敌的康茂德为神。他在铸币上自称为 Divi Marci filius（神马可之子）。Cassius Dio 在元老院亲眼见证了塞维鲁的表演，并记录了他的不安——他意识到这位多瑙河统帅的承诺不可轻信。塞维鲁在卢格杜努姆战役后确实处决了数十名元老，证实了 Dio 最初的担忧。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Cassius Dio, Historia Romana · Book 75(74) · 75.1–75.3",
+    "待核：塞维鲁自称马可·奥勒留之子的主张在元老院引发了什么具体反应？Dio 是唯一现场目击者吗？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:b53afb1093ed4aa99d0cfec6",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 40,
+  "sourceId": "rome-source-roman-history-cassius-dio",
+  "sourceTitle": "Roman History",
+  "locator": "75.1–75.3",
+  "originalText": null,
+  "translation": "Cassius Dio 本人作为元老亲历了塞维鲁入城后的政治清洗。Dio 描述了塞维鲁对元老院的首次讲话——他承诺不会处死任何元老，效仿马可·奥勒留的仁慈统治。但他随即要求元老院追认康茂德为神（consecratio），以此暗示自己是马可·奥勒留的''合法''继承者。Dio 感到了深刻的恐惧和不确定性。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Septimius Severus"
+  ],
+  "peopleMentioned": [
+    "Commodus",
+    "Marcus Aurelius"
+  ],
+  "places": [
+    "Rome"
+  ],
+  "macroEvent": "Year of the Five Emperors",
+  "eventLabel": "Severus enters Rome and addresses the Senate",
+  "factType": "political-event",
+  "questions": [
+    "塞维鲁自称马可·奥勒留之子的主张在元老院引发了什么具体反应？Dio 是唯一现场目击者吗？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-roman-history-cassius-dio",
+      "locator": "75.1–75.3"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Year of the Five Emperors",
+    "political-event",
+    "Rome"
+  ],
+  "people": [
+    "Septimius Severus",
+    "Commodus",
+    "Marcus Aurelius"
+  ],
+  "sources": [
+    "Cassius Dio, Historia Romana"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "塞维鲁入主罗马后向元老院发表安抚性讲话，但暗中的威胁令 Dio 深感不安。",
+    "background": [
+      "Year of the Five Emperors"
+    ],
+    "process": [
+      "塞维鲁是一个精明的政治操纵者。他进入罗马后公开承诺尊重元老院、不杀元老、效仿马可·奥勒留（Marcus Aurelius）的统治风格。为了建立王朝合法性——他自己与安东尼王朝并无血缘关系——他公开宣称自己是马可·奥勒留的''养子''，甚至追认被元老院宣布为公敌的康茂德为神。他在铸币上自称为 Divi Marci filius（神马可之子）。Cassius Dio 在元老院亲眼见证了塞维鲁的表演，并记录了他的不安——他意识到这位多瑙河统帅的承诺不可轻信。塞维鲁在卢格杜努姆战役后确实处决了数十名元老，证实了 Dio 最初的担忧。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Cassius Dio, Historia Romana · Book 75(74) · 75.1–75.3",
+      "待核：塞维鲁自称马可·奥勒留之子的主张在元老院引发了什么具体反应？Dio 是唯一现场目击者吗？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-193-severan-military-reforms', 'Severan military reforms', 'rome', 193, 193, 'Rome', 'politics', '塞维鲁大幅提高军饷并增设三个军团，强化了军队但也加重了财政负担。', 'high', NULL, '{
+  "overview": "塞维鲁大幅提高军饷并增设三个军团，强化了军队但也加重了财政负担。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "塞维鲁的军事改革是三世纪帝国军事化的奠基性事件。他将军团士兵的年薪从约 300 第纳里提高至约 400-500 第纳里（具体数字有学术争议），并定期发放大额赏金（donativa）。他废除了奥古斯都以来禁卫军必须从意大利招募的传统，改为从多瑙河军团中选拔。他还首次允许军团士兵在服役期间正式结婚和与家人同住（此前的婚姻禁令虽在实际上被绕过但法理上仍存在）。塞维鲁增设了三个帕提亚军团（I、II、III Parthica），其中第二帕提亚军团历史上首次常驻意大利（驻阿尔班山），打破了意大利无军团的禁忌。这些改革为军队塑造了空前的政治力量——也为三世纪的兵营皇帝现象奠定了制度基础。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 1 · pp. 20–28",
+    "待核：士兵薪资的具体增长幅度在不同学术观点中有差异。",
+    "待核：婚姻禁令的正式解除是否有法律文件证据？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:27d604608e0caadb32d6b5fe",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 42,
+  "sourceId": "rome-source-the-cambridge-ancient-history-cambridge-university-press",
+  "sourceTitle": "The Cambridge Ancient History",
+  "locator": "pp. 20–28",
+  "originalText": null,
+  "translation": "现代研究认为，塞维鲁的军事改革——包括提升军饷、允许士兵在服役期间结婚、增设三个军团（第一、第二、第三帕提亚军团）——大幅增强了军队的忠诚度和政治力量，但同时也加剧了帝国的财政压力。他将军团的年薪从约 300 第纳里提高到约 450-500 第纳里，并首次给予禁卫军和军团士兵定期的大额赏赐（donativa）。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Septimius Severus"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Rome",
+    "Danube",
+    "Euphrates"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Severan military reforms",
+  "factType": "reform",
+  "questions": [
+    "士兵薪资的具体增长幅度在不同学术观点中有差异。",
+    "婚姻禁令的正式解除是否有法律文件证据？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-cambridge-ancient-history-cambridge-university-press",
+      "locator": "pp. 20–28"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "reform",
+    "Rome",
+    "Danube",
+    "Euphrates"
+  ],
+  "people": [
+    "Septimius Severus"
+  ],
+  "sources": [
+    "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "塞维鲁大幅提高军饷并增设三个军团，强化了军队但也加重了财政负担。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "塞维鲁的军事改革是三世纪帝国军事化的奠基性事件。他将军团士兵的年薪从约 300 第纳里提高至约 400-500 第纳里（具体数字有学术争议），并定期发放大额赏金（donativa）。他废除了奥古斯都以来禁卫军必须从意大利招募的传统，改为从多瑙河军团中选拔。他还首次允许军团士兵在服役期间正式结婚和与家人同住（此前的婚姻禁令虽在实际上被绕过但法理上仍存在）。塞维鲁增设了三个帕提亚军团（I、II、III Parthica），其中第二帕提亚军团历史上首次常驻意大利（驻阿尔班山），打破了意大利无军团的禁忌。这些改革为军队塑造了空前的政治力量——也为三世纪的兵营皇帝现象奠定了制度基础。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 1 · pp. 20–28",
+      "待核：士兵薪资的具体增长幅度在不同学术观点中有差异。",
+      "待核：婚姻禁令的正式解除是否有法律文件证据？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-194-severus-defeats-pescennius-niger-at-issus', 'Severus defeats Pescennius Niger at Issus', 'rome', 194, 194, 'Issus', 'war', '塞维鲁于 194 年在伊苏斯击败东部对手尼格尔，统一东方行省。', 'high', NULL, '{
+  "overview": "塞维鲁于 194 年在伊苏斯击败东部对手尼格尔，统一东方行省。",
+  "background": [
+    "Year of the Five Emperors"
+  ],
+  "process": [
+    "塞维鲁先稳住西方后立即转向东方，对付叙利亚军团拥立的佩斯森尼乌斯·尼格尔。决战发生在奇里乞亚的伊苏斯附近（Issus），数个世纪前亚历山大曾在此击败大流士三世。塞维鲁的潘诺尼亚老兵以数量优势取胜，尼格尔的军队在两次会战（Cyzicus 和 Nicaea）接连失利后最终崩溃。尼格尔在逃亡帕提亚途中被俘杀。塞维鲁随后惩罚支持尼格尔的城市——安条克被降级，拜占庭经历两年多围攻后于 196 年被彻底摧毁。这场战役标志着东方行省完全落入塞维鲁掌控。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Cassius Dio, Historia Romana · Book 75(74) · 75.6–75.7",
+    "待核：伊苏斯战场的具体位置是否与现代考古一致？",
+    "待核：拜占庭围城的确切持续时间有异议吗？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:7d251c42eb0ce01abb23d106",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 2,
+  "sourceId": "rome-source-roman-history-cassius-dio",
+  "sourceTitle": "Roman History",
+  "locator": "75.6–75.7",
+  "originalText": null,
+  "translation": "据 Cassius Dio 记载，塞维鲁于 194 年在伊苏斯附近（与小居鲁士和亚历山大大帝的战场相近的地方）击败了佩斯森尼乌斯·尼格尔。尼格尔在逃亡中被杀。塞维鲁随后越过幼发拉底河惩罚支持尼格尔的东方城邦，尤其是拜占庭，经历了漫长的围攻后最终陷落。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Septimius Severus"
+  ],
+  "peopleMentioned": [
+    "Pescennius Niger"
+  ],
+  "places": [
+    "Issus",
+    "Antioch",
+    "Byzantium",
+    "Syria"
+  ],
+  "macroEvent": "Year of the Five Emperors",
+  "eventLabel": "Severus defeats Pescennius Niger at Issus",
+  "factType": "military-event",
+  "questions": [
+    "伊苏斯战场的具体位置是否与现代考古一致？",
+    "拜占庭围城的确切持续时间有异议吗？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-roman-history-cassius-dio",
+      "locator": "75.6–75.7"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Year of the Five Emperors",
+    "military-event",
+    "Issus",
+    "Antioch",
+    "Byzantium"
+  ],
+  "people": [
+    "Septimius Severus",
+    "Pescennius Niger"
+  ],
+  "sources": [
+    "Cassius Dio, Historia Romana"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "塞维鲁于 194 年在伊苏斯击败东部对手尼格尔，统一东方行省。",
+    "background": [
+      "Year of the Five Emperors"
+    ],
+    "process": [
+      "塞维鲁先稳住西方后立即转向东方，对付叙利亚军团拥立的佩斯森尼乌斯·尼格尔。决战发生在奇里乞亚的伊苏斯附近（Issus），数个世纪前亚历山大曾在此击败大流士三世。塞维鲁的潘诺尼亚老兵以数量优势取胜，尼格尔的军队在两次会战（Cyzicus 和 Nicaea）接连失利后最终崩溃。尼格尔在逃亡帕提亚途中被俘杀。塞维鲁随后惩罚支持尼格尔的城市——安条克被降级，拜占庭经历两年多围攻后于 196 年被彻底摧毁。这场战役标志着东方行省完全落入塞维鲁掌控。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Cassius Dio, Historia Romana · Book 75(74) · 75.6–75.7",
+      "待核：伊苏斯战场的具体位置是否与现代考古一致？",
+      "待核：拜占庭围城的确切持续时间有异议吗？"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-197-battle-of-lugdunum-severus-defeats-clodius-albinus', 'Battle of Lugdunum: Severus defeats Clodius Albinus', 'rome', 197, 197, 'Lugdunum', 'war', '197 年里昂战役，塞维鲁歼灭最后一个对手阿尔比努斯，结束了内战。', 'high', NULL, '{
+  "overview": "197 年里昂战役，塞维鲁歼灭最后一个对手阿尔比努斯，结束了内战。",
+  "background": [
+    "Year of the Five Emperors"
+  ],
+  "process": [
+    "塞维鲁最初为稳住西方，曾授予不列颠总督克洛狄乌斯·阿尔比努斯凯撒头衔（即储君身份），但随后转而立其子卡拉卡拉为继承人。阿尔比努斯遂于 196 年自立为帝，渡海进入高卢。197 年 2 月 19 日，两军在卢格杜努姆（今里昂）附近决战，双方各投入约 55,000 人，为罗马内战史上规模最大的会战之一。塞维鲁一度在战斗中落马，几乎被俘，但最终右翼骑兵突破敌军侧翼，阿尔比努斯兵败自杀。塞维鲁清洗了数十名支持阿尔比努斯的罗马元老，没收其财产，标志着元老院与军队关系进一步恶化。帝国正式进入军事君主制时代。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Cassius Dio, Historia Romana · Book 76(75) · 76.6–76.7",
+    "待核：双方兵力是否有其他史料不同记载？",
+    "待核：阿尔比努斯在元老院支持者的具体名单和清洗规模尚有争议。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:319dce0e9ee69d720338f1f6",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 3,
+  "sourceId": "rome-source-roman-history-cassius-dio",
+  "sourceTitle": "Roman History",
+  "locator": "76.6–76.7",
+  "originalText": null,
+  "translation": "Cassius Dio 记载，197 年 2 月 19 日，塞维鲁率约 55,000 士兵在高卢的卢格杜努姆（里昂）附近与克洛狄乌斯·阿尔比努斯的军队进行了整个帝国史上规模最大的内战之一。双方几乎势均力敌，塞维鲁一度落马陷入危机。最终塞维鲁的多瑙河骑兵突破侧翼，阿尔比努斯兵败自杀。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Septimius Severus"
+  ],
+  "peopleMentioned": [
+    "Clodius Albinus"
+  ],
+  "places": [
+    "Lugdunum",
+    "Lyon",
+    "Gaul"
+  ],
+  "macroEvent": "Year of the Five Emperors",
+  "eventLabel": "Battle of Lugdunum: Severus defeats Clodius Albinus",
+  "factType": "military-event",
+  "questions": [
+    "双方兵力是否有其他史料不同记载？",
+    "阿尔比努斯在元老院支持者的具体名单和清洗规模尚有争议。"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-roman-history-cassius-dio",
+      "locator": "76.6–76.7"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Year of the Five Emperors",
+    "military-event",
+    "Lugdunum",
+    "Lyon",
+    "Gaul"
+  ],
+  "people": [
+    "Septimius Severus",
+    "Clodius Albinus"
+  ],
+  "sources": [
+    "Cassius Dio, Historia Romana"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "197 年里昂战役，塞维鲁歼灭最后一个对手阿尔比努斯，结束了内战。",
+    "background": [
+      "Year of the Five Emperors"
+    ],
+    "process": [
+      "塞维鲁最初为稳住西方，曾授予不列颠总督克洛狄乌斯·阿尔比努斯凯撒头衔（即储君身份），但随后转而立其子卡拉卡拉为继承人。阿尔比努斯遂于 196 年自立为帝，渡海进入高卢。197 年 2 月 19 日，两军在卢格杜努姆（今里昂）附近决战，双方各投入约 55,000 人，为罗马内战史上规模最大的会战之一。塞维鲁一度在战斗中落马，几乎被俘，但最终右翼骑兵突破敌军侧翼，阿尔比努斯兵败自杀。塞维鲁清洗了数十名支持阿尔比努斯的罗马元老，没收其财产，标志着元老院与军队关系进一步恶化。帝国正式进入军事君主制时代。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Cassius Dio, Historia Romana · Book 76(75) · 76.6–76.7",
+      "待核：双方兵力是否有其他史料不同记载？",
+      "待核：阿尔比努斯在元老院支持者的具体名单和清洗规模尚有争议。"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-198-severus-sacks-ctesiphon-and-creates-province-of-mesopotamia', 'Severus sacks Ctesiphon and creates province of Mesopotamia', 'rome', 198, 198, 'Mesopotamia', 'war', '塞维鲁攻陷帕提亚首都泰西封，设立美索不达米亚行省。', 'high', NULL, '{
+  "overview": "塞维鲁攻陷帕提亚首都泰西封，设立美索不达米亚行省。",
+  "background": [
+    "Severan Eastern Campaigns"
+  ],
+  "process": [
+    "塞维鲁平定内战后立即转向东方，借帕提亚支持过尼格尔为由发动远征。他沿幼发拉底河南下，于 198 年攻陷帕提亚首都泰西封，大肆劫掠，俘获约十万居民为奴隶。塞维鲁设立了美索不达米亚行省，派驻两个军团驻防。此举虽为帝国增添了荣耀，但该行省的防守成本极高，且在东方创造了一个长期与帕提亚（及其后的萨珊波斯）对峙的前线。塞维鲁在此次战役中首次授予年仅 10 岁的卡拉卡拉奥古斯都头衔，正式确立其共治地位。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Cassius Dio, Historia Romana · Book 76(75) · 76.9–76.12",
+    "待核：美索不达米亚行省的确切边界和驻军配置有待进一步确认。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:555b019c9ff5233af76d2c33",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 4,
+  "sourceId": "rome-source-roman-history-cassius-dio",
+  "sourceTitle": "Roman History",
+  "locator": "76.9–76.12",
+  "originalText": null,
+  "translation": "Cassius Dio 记述塞维鲁在内战结束后立即发动对帕提亚帝国的远征（197-199）。他沿幼发拉底河进军，攻占并洗劫了帕提亚首都泰西封（Ctesiphon），俘虏约 10 万人。此次战役建立了罗马的美索不达米亚行省。塞维鲁为表彰军功，授予其子卡拉卡拉共治皇帝头衔。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Septimius Severus",
+    "Caracalla"
+  ],
+  "peopleMentioned": [
+    "Vologases V"
+  ],
+  "places": [
+    "Mesopotamia",
+    "Ctesiphon",
+    "Euphrates",
+    "Seleucia"
+  ],
+  "macroEvent": "Severan Eastern Campaigns",
+  "eventLabel": "Severus sacks Ctesiphon and creates province of Mesopotamia",
+  "factType": "military-event",
+  "questions": [
+    "美索不达米亚行省的确切边界和驻军配置有待进一步确认。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-roman-history-cassius-dio",
+      "locator": "76.9–76.12"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Eastern Campaigns",
+    "military-event",
+    "Mesopotamia",
+    "Ctesiphon",
+    "Euphrates"
+  ],
+  "people": [
+    "Septimius Severus",
+    "Caracalla",
+    "Vologases V"
+  ],
+  "sources": [
+    "Cassius Dio, Historia Romana"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "塞维鲁攻陷帕提亚首都泰西封，设立美索不达米亚行省。",
+    "background": [
+      "Severan Eastern Campaigns"
+    ],
+    "process": [
+      "塞维鲁平定内战后立即转向东方，借帕提亚支持过尼格尔为由发动远征。他沿幼发拉底河南下，于 198 年攻陷帕提亚首都泰西封，大肆劫掠，俘获约十万居民为奴隶。塞维鲁设立了美索不达米亚行省，派驻两个军团驻防。此举虽为帝国增添了荣耀，但该行省的防守成本极高，且在东方创造了一个长期与帕提亚（及其后的萨珊波斯）对峙的前线。塞维鲁在此次战役中首次授予年仅 10 岁的卡拉卡拉奥古斯都头衔，正式确立其共治地位。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Cassius Dio, Historia Romana · Book 76(75) · 76.9–76.12",
+      "待核：美索不达米亚行省的确切边界和驻军配置有待进一步确认。"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-200-palmyra-the-desert-metropolis-and-its-trade-empire', 'Palmyra: the desert metropolis and its trade empire', 'rome', 200, 200, 'Palmyra', 'politics', '帕尔米拉是 3 世纪叙利亚沙漠中最为繁荣的商都，其财富和军事力量使它得以在罗马的混乱中崛起。', 'high', NULL, '{
+  "overview": "帕尔米拉是 3 世纪叙利亚沙漠中最为繁荣的商都，其财富和军事力量使它得以在罗马的混乱中崛起。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "帕尔米拉（Palmyra / Tadmor）位于叙利亚沙漠中一处富饶的绿洲，位于地中海东岸（距约 200 公里）与幼发拉底河之间的关键节点上。在 1-3 世纪间，帕尔米拉从一个小型沙漠定居点发展成为一个令人惊叹的都市文明——拥有宏伟的列柱大道（Great Colonnade）、贝尔神庙（Temple of Bel，2015 年被 ISIS 摧毁）、巨大的陵墓塔（Tower Tombs）和庞大的水利工程。其独特的文明是阿拉姆-希腊-罗马文化的三重融合——在帕尔米拉的神庙中奉献铭文通常以帕尔米拉-阿拉姆语（Palmyrene Aramaic）和希腊语双语刻写，雕塑既有希腊-罗马理想化肖像的痕迹又保留了东方的静态庄严风格。骆驼商队（caravans）是帕尔米拉经济的命脉——帕尔米拉商人组织起庞大的武装商队穿越最危险的路段，并通过对过往的货物征收通行税和保护费积累了巨大的财富。这些财富使得帕尔米拉能够武装其民兵——包括著名的帕尔米拉马弓手和重甲骑兵——并最终在奥登纳图斯的领导下成为罗马在东方不可替代的军事盟友。但同样巨大的财富也滋生了帕尔米拉自主独立的野心，最终在芝诺比娅时期演变为对罗马的全面反抗。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Palmyra and Its Empire: Zenobia''s Revolt against Rome (University of Michigan Press, 1992) · Chapters 1-3 · pp. 1–60",
+    "待核：帕尔米拉商队的实际贸易距离到底有多远——是否有确凿证据证明其与印度和中国有直接贸易联系？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:07048268775b34f223878ae7",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 85,
+  "sourceId": "rome-source-palmyra-and-its-empire-richard-stoneman",
+  "sourceTitle": "Palmyra and Its Empire",
+  "locator": "pp. 1–60",
+  "originalText": null,
+  "translation": "Stoneman 的综合研究描述了帕尔米拉城邦（Palmyra，当地语 Tadmor——''棕榈之城''）在 1-3 世纪的惊人繁荣。它坐落在叙利亚沙漠中的一片绿洲，是连接罗马帝国与帕提亚（及后来的萨珊波斯）、阿拉伯和更远的印度商路的必经之地。帕尔米拉的商人组织大规模的骆驼商队往来于幼发拉底河与地中海之间，运输丝绸、香料、珠宝和其他奢侈品。其独特的文化融合了阿拉姆语（Aramaic）、希腊文化和罗马元素——公共铭文通常以双语（希腊语和帕尔米拉-阿拉姆语）刻写。到 3 世纪初，帕尔米拉已发展成为一个半自治的城市国家，拥有自己的民兵和强大的地方贵族家族（如奥登纳图斯家族）。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Odaenathus",
+    "Zenobia"
+  ],
+  "places": [
+    "Palmyra",
+    "Tadmor",
+    "Syria",
+    "Euphrates"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Palmyra: the desert metropolis and its trade empire",
+  "factType": "political-event",
+  "questions": [
+    "帕尔米拉商队的实际贸易距离到底有多远——是否有确凿证据证明其与印度和中国有直接贸易联系？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-palmyra-and-its-empire-richard-stoneman",
+      "locator": "pp. 1–60"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "political-event",
+    "Palmyra",
+    "Tadmor",
+    "Syria"
+  ],
+  "people": [
+    "Odaenathus",
+    "Zenobia"
+  ],
+  "sources": [
+    "Palmyra and Its Empire: Zenobia''s Revolt against Rome (University of Michigan Press, 1992)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "帕尔米拉是 3 世纪叙利亚沙漠中最为繁荣的商都，其财富和军事力量使它得以在罗马的混乱中崛起。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "帕尔米拉（Palmyra / Tadmor）位于叙利亚沙漠中一处富饶的绿洲，位于地中海东岸（距约 200 公里）与幼发拉底河之间的关键节点上。在 1-3 世纪间，帕尔米拉从一个小型沙漠定居点发展成为一个令人惊叹的都市文明——拥有宏伟的列柱大道（Great Colonnade）、贝尔神庙（Temple of Bel，2015 年被 ISIS 摧毁）、巨大的陵墓塔（Tower Tombs）和庞大的水利工程。其独特的文明是阿拉姆-希腊-罗马文化的三重融合——在帕尔米拉的神庙中奉献铭文通常以帕尔米拉-阿拉姆语（Palmyrene Aramaic）和希腊语双语刻写，雕塑既有希腊-罗马理想化肖像的痕迹又保留了东方的静态庄严风格。骆驼商队（caravans）是帕尔米拉经济的命脉——帕尔米拉商人组织起庞大的武装商队穿越最危险的路段，并通过对过往的货物征收通行税和保护费积累了巨大的财富。这些财富使得帕尔米拉能够武装其民兵——包括著名的帕尔米拉马弓手和重甲骑兵——并最终在奥登纳图斯的领导下成为罗马在东方不可替代的军事盟友。但同样巨大的财富也滋生了帕尔米拉自主独立的野心，最终在芝诺比娅时期演变为对罗马的全面反抗。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Palmyra and Its Empire: Zenobia''s Revolt against Rome (University of Michigan Press, 1992) · Chapters 1-3 · pp. 1–60",
+      "待核：帕尔米拉商队的实际贸易距离到底有多远——是否有确凿证据证明其与印度和中国有直接贸易联系？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-208-severus-british-campaign', 'Severus'' British campaign', 'rome', 208, 208, 'Britannia', 'war', '塞维鲁晚年发动远征征服喀里多尼亚，但未能完成即病逝于约克。', 'high', NULL, '{
+  "overview": "塞维鲁晚年发动远征征服喀里多尼亚，但未能完成即病逝于约克。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "塞维鲁晚年亲征不列颠北部，是自 Agricola（1 世纪）以来帝国在岛上最深入的军事行动。他重修了哈德良长城（实际上是安东尼长城更北的位置），率军约 40,000-50,000 人深入喀里多尼亚（今苏格兰），采用焦土战术。罗马军队在穿越高地丛林时遭受了持续的游击骚扰（Dio 称损失了 50,000 人——这个数字可能夸大）。塞维鲁的意图似乎是完全征服该岛，但他在喀里多尼亚人重新叛乱的阴影中于 211 年 2 月病逝于埃布拉库姆（约克）。卡拉卡拉随即放弃了征服，撤回哈德良长城以南。塞维鲁的不列颠远征虽以失败告终，但暂时震慑了北方部落，给不列颠带来了约一个世纪的相对平静。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 3 · 3.10–3.11",
+    "待核：罗马军队的具体损失数字 Cassius Dio 和 Herodian 是否一致？",
+    "待核：塞维鲁在不列颠的军事基地考古证据如何？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:898066f54f5a90defbc0644f",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 41,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "3.10–3.11",
+  "originalText": null,
+  "translation": "Herodian 记述了塞维鲁晚年发动的不列颠远征（208-211）。尽管年事已高且饱受痛风折磨，塞维鲁仍然亲自率军前往不列颠北部，试图征服喀里多尼亚（今苏格兰）部落。Herodian 描述这是一场极其残酷的消耗战——罗马军队在陌生地形中损失惨重。塞维鲁的战术是彻底消灭和驱逐而非征服和管理，但在他去世前不久，喀里多尼亚人又重新叛乱。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Septimius Severus"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Britannia",
+    "Caledonia",
+    "Hadrian''s Wall",
+    "Eboracum"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Severus'' British campaign",
+  "factType": "military-event",
+  "questions": [
+    "罗马军队的具体损失数字 Cassius Dio 和 Herodian 是否一致？",
+    "塞维鲁在不列颠的军事基地考古证据如何？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "3.10–3.11"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "military-event",
+    "Britannia",
+    "Caledonia",
+    "Hadrian''s Wall"
+  ],
+  "people": [
+    "Septimius Severus"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "塞维鲁晚年发动远征征服喀里多尼亚，但未能完成即病逝于约克。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "塞维鲁晚年亲征不列颠北部，是自 Agricola（1 世纪）以来帝国在岛上最深入的军事行动。他重修了哈德良长城（实际上是安东尼长城更北的位置），率军约 40,000-50,000 人深入喀里多尼亚（今苏格兰），采用焦土战术。罗马军队在穿越高地丛林时遭受了持续的游击骚扰（Dio 称损失了 50,000 人——这个数字可能夸大）。塞维鲁的意图似乎是完全征服该岛，但他在喀里多尼亚人重新叛乱的阴影中于 211 年 2 月病逝于埃布拉库姆（约克）。卡拉卡拉随即放弃了征服，撤回哈德良长城以南。塞维鲁的不列颠远征虽以失败告终，但暂时震慑了北方部落，给不列颠带来了约一个世纪的相对平静。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 3 · 3.10–3.11",
+      "待核：罗马军队的具体损失数字 Cassius Dio 和 Herodian 是否一致？",
+      "待核：塞维鲁在不列颠的军事基地考古证据如何？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-211-death-of-septimius-severus-at-eboracum', 'Death of Septimius Severus at Eboracum', 'rome', 211, 211, 'Eboracum', 'politics', '公元 211 年 2 月，塞维鲁在不列颠的约克病逝，帝国由其子卡拉卡拉和盖塔共同继承。', 'high', NULL, '{
+  "overview": "公元 211 年 2 月，塞维鲁在不列颠的约克病逝，帝国由其子卡拉卡拉和盖塔共同继承。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "塞维鲁于 208 年前往不列颠亲征喀里多尼亚部落，试图将整个不列颠岛纳入帝国版图。然而他在战役中痛风加重，最终于 211 年 2 月 4 日在埃布拉库姆（今约克）去世。据 Herodian 和 Cassius Dio 记载，他临终前告诫两个儿子和睦相处并笼络军队。塞维鲁的遗言常被后世引为罗马三世纪政治逻辑的缩影：皇位取决于军队支持而非法律或元老院认可。他留下的帝国财政压力巨大，给继任者带来严重挑战。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 3 · 3.15",
+    "待核：塞维鲁遗言的确切措辞在不同史料中有差异，Herodian 和 Cassius Dio 的版本不完全一致。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:52e2a3478d4be959e21c3bf7",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 6,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "3.15",
+  "originalText": null,
+  "translation": "Herodian 记述塞维鲁于 211 年 2 月在埃布拉库姆（Eboracum，今约克）病逝。临终前他告诫卡拉卡拉和盖塔两子：''和睦相处，赏赐士兵，其余皆不足虑。''（Be harmonious, enrich the soldiers, and scorn all other men — Herodian 3.15.4 的意译）。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Septimius Severus",
+    "Caracalla",
+    "Geta"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Eboracum",
+    "York",
+    "Britannia"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Death of Septimius Severus at Eboracum",
+  "factType": "person-life",
+  "questions": [
+    "塞维鲁遗言的确切措辞在不同史料中有差异，Herodian 和 Cassius Dio 的版本不完全一致。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "3.15"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "person-life",
+    "Eboracum",
+    "York",
+    "Britannia"
+  ],
+  "people": [
+    "Septimius Severus",
+    "Caracalla",
+    "Geta"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "公元 211 年 2 月，塞维鲁在不列颠的约克病逝，帝国由其子卡拉卡拉和盖塔共同继承。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "塞维鲁于 208 年前往不列颠亲征喀里多尼亚部落，试图将整个不列颠岛纳入帝国版图。然而他在战役中痛风加重，最终于 211 年 2 月 4 日在埃布拉库姆（今约克）去世。据 Herodian 和 Cassius Dio 记载，他临终前告诫两个儿子和睦相处并笼络军队。塞维鲁的遗言常被后世引为罗马三世纪政治逻辑的缩影：皇位取决于军队支持而非法律或元老院认可。他留下的帝国财政压力巨大，给继任者带来严重挑战。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 3 · 3.15",
+      "待核：塞维鲁遗言的确切措辞在不同史料中有差异，Herodian 和 Cassius Dio 的版本不完全一致。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-211-caracalla-and-geta-joint-rule-and-mutual-hostility', 'Caracalla and Geta: joint rule and mutual hostility', 'rome', 211, 211, 'Rome', 'politics', '卡拉卡拉和盖塔在父亲去世后共同统治帝国，但兄弟之间极度不信任，不到一年即以血腥结局收场。', 'high', NULL, '{
+  "overview": "卡拉卡拉和盖塔在父亲去世后共同统治帝国，但兄弟之间极度不信任，不到一年即以血腥结局收场。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "塞维鲁的遗嘱安排卡拉卡拉和盖塔共同继承帝位，但兄弟之间早已心存芥蒂。据 Herodian 记载，两人从约克返回罗马后甚至在修缮皇宫时试图将其分为两个互不相通的独立区域。他们几乎在所有事务上都意见不一，互相猜忌到了连共同进餐都要预先试毒的程度。他们的母亲尤利娅·多姆娜（Julia Domna）是唯一能够暂时调解双方的人。军队和元老院也各自选边站队，帝国面临二次分裂的危险。这种局面最终以卡拉卡拉于 211 年 12 月杀害盖塔而告终。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 4 · 4.1–4.4",
+    "待核：兄弟分宫而居的具体细节可能带有修辞夸张，需要与 Cassius Dio 的记载对勘。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:8b408984ffa31bc1474326ef",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 7,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "4.1–4.4",
+  "originalText": null,
+  "translation": "Herodian 详细记载了塞维鲁去世后卡拉卡拉和盖塔兄弟之间的紧张关系。两人从父亲去世后就相互不信任，甚至将皇宫一分为二分别居住。元老院和军队试图调解但均告失败。盖塔被其母尤利娅·多姆娜多次保护。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Caracalla",
+    "Geta"
+  ],
+  "peopleMentioned": [
+    "Julia Domna"
+  ],
+  "places": [
+    "Rome"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Caracalla and Geta: joint rule and mutual hostility",
+  "factType": "person-life",
+  "questions": [
+    "兄弟分宫而居的具体细节可能带有修辞夸张，需要与 Cassius Dio 的记载对勘。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "4.1–4.4"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "person-life",
+    "Rome"
+  ],
+  "people": [
+    "Caracalla",
+    "Geta",
+    "Julia Domna"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "卡拉卡拉和盖塔在父亲去世后共同统治帝国，但兄弟之间极度不信任，不到一年即以血腥结局收场。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "塞维鲁的遗嘱安排卡拉卡拉和盖塔共同继承帝位，但兄弟之间早已心存芥蒂。据 Herodian 记载，两人从约克返回罗马后甚至在修缮皇宫时试图将其分为两个互不相通的独立区域。他们几乎在所有事务上都意见不一，互相猜忌到了连共同进餐都要预先试毒的程度。他们的母亲尤利娅·多姆娜（Julia Domna）是唯一能够暂时调解双方的人。军队和元老院也各自选边站队，帝国面临二次分裂的危险。这种局面最终以卡拉卡拉于 211 年 12 月杀害盖塔而告终。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 4 · 4.1–4.4",
+      "待核：兄弟分宫而居的具体细节可能带有修辞夸张，需要与 Cassius Dio 的记载对勘。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-211-caracalla-murders-geta', 'Caracalla murders Geta', 'rome', 211, 211, 'Rome', 'politics', '211 年 12 月卡拉卡拉杀害弟弟盖塔，实行记忆抹除。', 'high', NULL, '{
+  "overview": "211 年 12 月卡拉卡拉杀害弟弟盖塔，实行记忆抹除。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "卡拉卡拉以和解会面为名将盖塔诱至母亲的住所，派出百夫长当众将其杀害。盖塔受伤后倒在母亲尤利娅·多姆娜怀中死去。卡拉卡拉随后对盖塔的支持者进行了残酷清洗，据 Cassius Dio 估计约有 20,000 人被杀——虽然这个数字可能有所夸大，但无疑包含了大量元老、骑士和盖塔的近臣。卡拉卡拉对盖塔实行了 damnatio memoriae（记忆抹除），从铭文和画像中删除盖塔的名字和面容。Cassius Dio 本人因为是元老而被迫在卡拉卡拉面前噤声。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Cassius Dio, Historia Romana · Book 78(77) · 78.2.1–78.2.6",
+    "待核：Cassius Dio 的 20,000 人屠杀数字可能夸大，实际受清洗人数需要与其他史料（如 Herodian）对勘。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:0b8182bdd2df2d7a01425de3",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 8,
+  "sourceId": "rome-source-roman-history-cassius-dio",
+  "sourceTitle": "Roman History",
+  "locator": "78.2.1–78.2.6",
+  "originalText": null,
+  "translation": "Cassius Dio 记载，211 年 12 月，卡拉卡拉在母亲尤利娅·多姆娜安排的一次''和解会面''中，派人闯入房间杀害了盖塔。盖塔死在母亲怀中。卡拉卡拉随即宣布盖塔为''公敌''（hostis），将其名字从一切公共记录中抹去（damnatio memoriae），并屠杀了盖塔的大批支持者。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Caracalla",
+    "Geta"
+  ],
+  "peopleMentioned": [
+    "Julia Domna"
+  ],
+  "places": [
+    "Rome"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Caracalla murders Geta",
+  "factType": "political-event",
+  "questions": [
+    "Cassius Dio 的 20,000 人屠杀数字可能夸大，实际受清洗人数需要与其他史料（如 Herodian）对勘。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-roman-history-cassius-dio",
+      "locator": "78.2.1–78.2.6"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "political-event",
+    "Rome"
+  ],
+  "people": [
+    "Caracalla",
+    "Geta",
+    "Julia Domna"
+  ],
+  "sources": [
+    "Cassius Dio, Historia Romana"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "211 年 12 月卡拉卡拉杀害弟弟盖塔，实行记忆抹除。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "卡拉卡拉以和解会面为名将盖塔诱至母亲的住所，派出百夫长当众将其杀害。盖塔受伤后倒在母亲尤利娅·多姆娜怀中死去。卡拉卡拉随后对盖塔的支持者进行了残酷清洗，据 Cassius Dio 估计约有 20,000 人被杀——虽然这个数字可能有所夸大，但无疑包含了大量元老、骑士和盖塔的近臣。卡拉卡拉对盖塔实行了 damnatio memoriae（记忆抹除），从铭文和画像中删除盖塔的名字和面容。Cassius Dio 本人因为是元老而被迫在卡拉卡拉面前噤声。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Cassius Dio, Historia Romana · Book 78(77) · 78.2.1–78.2.6",
+      "待核：Cassius Dio 的 20,000 人屠杀数字可能夸大，实际受清洗人数需要与其他史料（如 Herodian）对勘。"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-211-death-of-geta-and-damnatio-memoriae', 'Death of Geta and damnatio memoriae', 'rome', 211, 211, 'Rome', 'politics', '盖塔被杀后遭受记忆抹除，其支持者遭到大规模清洗。', 'high', NULL, '{
+  "overview": "盖塔被杀后遭受记忆抹除，其支持者遭到大规模清洗。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "盖塔于 211 年 12 月下旬被杀，年仅 22 岁。死后卡拉卡拉不仅下令将其名字从一切公共铭文中凿除、画像销毁，还屠杀了盖塔的追随者及一切曾为盖塔说话的人。法学家帕皮尼安（Aemilius Papinianus）因拒绝为卡拉卡拉的弑弟行为辩护而被处死——这一事件被后世法学家视为罗马法理学黄金时代的终结。盖塔的 damnatio memoriae 执行得如此彻底，以至于许多铭文中他的名字被完全凿去，形成明显的空白，成为考古学上 readily identifiable 的证据。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 4 · 4.3–4.4",
+    "待核：帕皮尼安被杀的确切原因在史料中有不同叙述，是否仅因拒绝为弑弟辩护还是另有政治原因？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:3d13bfad59f6b18e646c4d2e",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 9,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "4.3–4.4",
+  "originalText": null,
+  "translation": "Herodian 记载盖塔之死的版本略不同于 Cassius Dio。Herodian 称谋杀发生在皇宫而非其母住所，但同样确认盖塔的死引发了罗马城内外的政治动乱。盖塔的名字被从铭文中抹去，他的画像被涂毁，其近臣和支持者遭受大规模清洗。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Geta"
+  ],
+  "peopleMentioned": [
+    "Caracalla",
+    "Julia Domna"
+  ],
+  "places": [
+    "Rome"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Death of Geta and damnatio memoriae",
+  "factType": "person-life",
+  "questions": [
+    "帕皮尼安被杀的确切原因在史料中有不同叙述，是否仅因拒绝为弑弟辩护还是另有政治原因？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "4.3–4.4"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "person-life",
+    "Rome"
+  ],
+  "people": [
+    "Geta",
+    "Caracalla",
+    "Julia Domna"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "盖塔被杀后遭受记忆抹除，其支持者遭到大规模清洗。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "盖塔于 211 年 12 月下旬被杀，年仅 22 岁。死后卡拉卡拉不仅下令将其名字从一切公共铭文中凿除、画像销毁，还屠杀了盖塔的追随者及一切曾为盖塔说话的人。法学家帕皮尼安（Aemilius Papinianus）因拒绝为卡拉卡拉的弑弟行为辩护而被处死——这一事件被后世法学家视为罗马法理学黄金时代的终结。盖塔的 damnatio memoriae 执行得如此彻底，以至于许多铭文中他的名字被完全凿去，形成明显的空白，成为考古学上 readily identifiable 的证据。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 4 · 4.3–4.4",
+      "待核：帕皮尼安被杀的确切原因在史料中有不同叙述，是否仅因拒绝为弑弟辩护还是另有政治原因？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-211-caracallas-building-program-and-coinage-reform', 'Caracalla''s building program and coinage reform', 'rome', 211, 211, 'Rome', 'politics', '卡拉卡拉修建了宏伟的浴场，同时引入了安东尼尼安银币——开启了三世纪币值贬值的先例。', 'high', NULL, '{
+  "overview": "卡拉卡拉修建了宏伟的浴场，同时引入了安东尼尼安银币——开启了三世纪币值贬值的先例。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "卡拉卡拉的统治遗产远不止于弑弟和敕令这两件臭名昭著的事件。他在罗马修建的卡拉卡拉浴场（Thermae Antoninianae）是古代世界最宏伟的公共浴场建筑群之一——占地约 25 公顷（62 英亩），可同时容纳约 1,600 人沐浴，包括冷水池（frigidarium）、温水池（tepidarium）、热水池（caldarium）、图书馆、健身房和花园。其建筑规模和精美的马赛克装饰至今令人叹为观止——尤其是那幅著名的运动员马赛克。在货币方面，卡拉卡拉于约 214-215 年引入了新的银币——安东尼尼安银币（antoninianus）——其名义价值为 2 第纳里，但实际白银含量仅为约 1.5 个第纳里的银量。这种''内置贬值''的做法在三世纪中后期被日益频繁地重复——到 260 年代，安东尼尼安银币的含银量已降至不足 5%，导致帝国面临恶性通货膨胀。卡拉卡拉的浴场展示了他对民众支持的渴望——他的货币政策则暴露了他（及后续皇帝）面临的结构性财政困境。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 5 · pp. 180–200",
+    "待核：安东尼尼安银币的确切引入年份是 214 还是 215？不同钱币学证据可能有细微差异。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:ad62a7d3cea20360b461f406",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 66,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 180–200",
+  "originalText": null,
+  "translation": "Potter 综合分析了卡拉卡拉的统治。除了 Constitutio Antoniniana 外，卡拉卡拉还大修了罗马的卡拉卡拉浴场（Thermae Antoninianae）——三世纪最宏伟的公共建筑工程之一——并在铸币上将安东尼尼安银币（antoninianus）的含银量从塞维鲁时期的约 50% 降低至约 50-51%（初期），但该币种的实际价值已低于面值。这一双重贬值策略——引入新币种并逐步降低其金属含量——为三世纪的经济通胀奠定了基础。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Caracalla"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Rome"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Caracalla''s building program and coinage reform",
+  "factType": "reform",
+  "questions": [
+    "安东尼尼安银币的确切引入年份是 214 还是 215？不同钱币学证据可能有细微差异。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 180–200"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "reform",
+    "Rome"
+  ],
+  "people": [
+    "Caracalla"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "卡拉卡拉修建了宏伟的浴场，同时引入了安东尼尼安银币——开启了三世纪币值贬值的先例。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "卡拉卡拉的统治遗产远不止于弑弟和敕令这两件臭名昭著的事件。他在罗马修建的卡拉卡拉浴场（Thermae Antoninianae）是古代世界最宏伟的公共浴场建筑群之一——占地约 25 公顷（62 英亩），可同时容纳约 1,600 人沐浴，包括冷水池（frigidarium）、温水池（tepidarium）、热水池（caldarium）、图书馆、健身房和花园。其建筑规模和精美的马赛克装饰至今令人叹为观止——尤其是那幅著名的运动员马赛克。在货币方面，卡拉卡拉于约 214-215 年引入了新的银币——安东尼尼安银币（antoninianus）——其名义价值为 2 第纳里，但实际白银含量仅为约 1.5 个第纳里的银量。这种''内置贬值''的做法在三世纪中后期被日益频繁地重复——到 260 年代，安东尼尼安银币的含银量已降至不足 5%，导致帝国面临恶性通货膨胀。卡拉卡拉的浴场展示了他对民众支持的渴望——他的货币政策则暴露了他（及后续皇帝）面临的结构性财政困境。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 5 · pp. 180–200",
+      "待核：安东尼尼安银币的确切引入年份是 214 还是 215？不同钱币学证据可能有细微差异。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-211-the-severan-women-a-dynasty-of-empresses', 'The Severan women: a dynasty of empresses', 'rome', 211, 211, 'Rome', 'politics', '塞维鲁王朝的女性——尤其是尤利娅·多姆娜——在政治、智识和军方都发挥了空前的影响力。', 'high', NULL, '{
+  "overview": "塞维鲁王朝的女性——尤其是尤利娅·多姆娜——在政治、智识和军方都发挥了空前的影响力。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "尤利娅·多姆娜（Julia Domna，约 170-217 CE）是罗马帝政史上最具影响力的女性之一，她在叙利亚埃美萨（Emesa，今霍姆斯）出生，其家族是太阳神埃拉伽巴（Elagabal）的世袭祭司王族。塞维鲁与她的婚姻将他与富庶的叙利亚地方贵族的资源联结了起来——她带来了庞大的财富和政治网络。多姆娜在诸多方面打破了元首制对''silent empress''的期待：她随塞维鲁一同东征（极为罕见的军中随行）、获得了''mater castrorum''（军营之母）的非传统称号、主持了一个重要的智识沙龙——聚集了希腊哲学家菲洛斯特拉图斯（Philostratus，他在多姆娜的鼓励下写作了《提亚纳的阿波罗尼乌斯传》）、医生和文学家达数人之多。她的政治影响力是姐妹梅萨模仿的——后者利用塞维鲁家族的财富和叙利亚关系在 18 年之内两次复辟了塞维鲁王朝（拥立埃拉伽巴路斯和亚历山大·塞维鲁）。她的两个女儿和两个外孙的皇位靠的正是这位叙利亚贵族女性的金钱、人脉和政治胆识。塞维鲁王朝的女性权力网络是古典罗马史上女性影响力在正式制度框架之外运作的最高范例。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 5 · pp. 205–215",
+    "待核：尤利娅·多姆娜的知识沙龙是否有具体的成员名单和著述存世？菲洛斯特拉图斯的 Apollonius 传记是否完全是多姆娜授意的？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:3c441450b39ad87a6790a815",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 71,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 205–215",
+  "originalText": null,
+  "translation": "Potter 指出塞维鲁王朝的女性——尤利娅·多姆娜（Julia Domna）、其姐尤利娅·梅萨（Julia Maesa）及其女尤利娅·索艾米亚斯（Julia Soaemias）和尤利娅·玛迈亚（Julia Mamaea）——构成了罗马史上最强大的女性权力网络。尤利娅·多姆娜来自叙利亚埃美萨的祭司王族，她不仅在塞维鲁东征时随军同行并获得''奥古斯塔''和''mater castrorum''（军营之母）等称号，还在罗马聚集了一批重要的希腊知识分子——包括哲学家菲洛斯特拉图斯（Philostratus）和医生伽伦（Galen）——形成了非正式的''学术宫廷圆圈''。她的影响力为后来梅萨和玛迈亚作为摄政太后统治帝国提供了先例。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Julia Domna",
+    "Julia Maesa",
+    "Julia Soaemias",
+    "Julia Mamaea",
+    "Septimius Severus",
+    "Caracalla"
+  ],
+  "places": [
+    "Rome",
+    "Emesa",
+    "Syria"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "The Severan women: a dynasty of empresses",
+  "factType": "person-life",
+  "questions": [
+    "尤利娅·多姆娜的知识沙龙是否有具体的成员名单和著述存世？菲洛斯特拉图斯的 Apollonius 传记是否完全是多姆娜授意的？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 205–215"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "person-life",
+    "Rome",
+    "Emesa",
+    "Syria"
+  ],
+  "people": [
+    "Julia Domna",
+    "Julia Maesa",
+    "Julia Soaemias",
+    "Julia Mamaea",
+    "Septimius Severus",
+    "Caracalla"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "塞维鲁王朝的女性——尤其是尤利娅·多姆娜——在政治、智识和军方都发挥了空前的影响力。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "尤利娅·多姆娜（Julia Domna，约 170-217 CE）是罗马帝政史上最具影响力的女性之一，她在叙利亚埃美萨（Emesa，今霍姆斯）出生，其家族是太阳神埃拉伽巴（Elagabal）的世袭祭司王族。塞维鲁与她的婚姻将他与富庶的叙利亚地方贵族的资源联结了起来——她带来了庞大的财富和政治网络。多姆娜在诸多方面打破了元首制对''silent empress''的期待：她随塞维鲁一同东征（极为罕见的军中随行）、获得了''mater castrorum''（军营之母）的非传统称号、主持了一个重要的智识沙龙——聚集了希腊哲学家菲洛斯特拉图斯（Philostratus，他在多姆娜的鼓励下写作了《提亚纳的阿波罗尼乌斯传》）、医生和文学家达数人之多。她的政治影响力是姐妹梅萨模仿的——后者利用塞维鲁家族的财富和叙利亚关系在 18 年之内两次复辟了塞维鲁王朝（拥立埃拉伽巴路斯和亚历山大·塞维鲁）。她的两个女儿和两个外孙的皇位靠的正是这位叙利亚贵族女性的金钱、人脉和政治胆识。塞维鲁王朝的女性权力网络是古典罗马史上女性影响力在正式制度框架之外运作的最高范例。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 5 · pp. 205–215",
+      "待核：尤利娅·多姆娜的知识沙龙是否有具体的成员名单和著述存世？菲洛斯特拉图斯的 Apollonius 传记是否完全是多姆娜授意的？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-212-constitutio-antoniniana-universal-citizenship', 'Constitutio Antoniniana: universal citizenship', 'rome', 212, 212, 'Rome', 'politics', '212 年《安东尼努斯敕令》授予帝国境内所有自由居民罗马公民权，是罗马史上影响最深远的法令之一。', 'high', NULL, '{
+  "overview": "212 年《安东尼努斯敕令》授予帝国境内所有自由居民罗马公民权，是罗马史上影响最深远的法令之一。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "公元 212 年（一说 213 年初），卡拉卡拉颁布了《安东尼努斯敕令》（Constitutio Antoniniana），授予罗马帝国境内所有自由居民罗马公民权。这是罗马史上范围最大的一次公民权扩展，终结了数百年来公民与非公民（peregrini）的法律区分。Cassius Dio 尖锐地指出其真实动机是财政性的——卡拉卡拉需要更多税收来支撑军费，而罗马公民需缴纳 5%（后提至 10%）的遗产税和释奴税。现代学者对此有不同评价：一些人认为它是帝国融合的必然结果；另一些人同意 Dio 的观点，认为它主要是出于财政考量。无论如何，该法令在法律上统一了帝国，深刻影响了罗马法的发展。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Cassius Dio, Historia Romana · Book 78(77) · 78.9.4–78.9.5",
+    "待核：敕令的文本只有残篇存世（P. Giss. 40），其确切措辞和例外条款（如 dediticii 是否被排除）仍存争议。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:d454c081eda44daa6ef4593c",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 10,
+  "sourceId": "rome-source-roman-history-cassius-dio",
+  "sourceTitle": "Roman History",
+  "locator": "78.9.4–78.9.5",
+  "originalText": null,
+  "translation": "据 Cassius Dio 评述，卡拉卡拉颁布《安东尼努斯敕令》的动机纯粹是为了扩大税收基础——将之前仅罗马公民缴纳的遗产税（vicesima hereditatium）税率从 5% 提高到 10%，并将适用范围扩大到全体新公民。Ulpian（Digest 1.5.17）保留了该法令的正面表述：''所有居住在罗马帝国境内的人均为罗马公民。''",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Caracalla"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Rome",
+    "Empire-wide"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Constitutio Antoniniana: universal citizenship",
+  "factType": "reform",
+  "questions": [
+    "敕令的文本只有残篇存世（P. Giss. 40），其确切措辞和例外条款（如 dediticii 是否被排除）仍存争议。"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-roman-history-cassius-dio",
+      "locator": "78.9.4–78.9.5"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "reform",
+    "Rome",
+    "Empire-wide"
+  ],
+  "people": [
+    "Caracalla"
+  ],
+  "sources": [
+    "Cassius Dio, Historia Romana"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "212 年《安东尼努斯敕令》授予帝国境内所有自由居民罗马公民权，是罗马史上影响最深远的法令之一。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "公元 212 年（一说 213 年初），卡拉卡拉颁布了《安东尼努斯敕令》（Constitutio Antoniniana），授予罗马帝国境内所有自由居民罗马公民权。这是罗马史上范围最大的一次公民权扩展，终结了数百年来公民与非公民（peregrini）的法律区分。Cassius Dio 尖锐地指出其真实动机是财政性的——卡拉卡拉需要更多税收来支撑军费，而罗马公民需缴纳 5%（后提至 10%）的遗产税和释奴税。现代学者对此有不同评价：一些人认为它是帝国融合的必然结果；另一些人同意 Dio 的观点，认为它主要是出于财政考量。无论如何，该法令在法律上统一了帝国，深刻影响了罗马法的发展。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Cassius Dio, Historia Romana · Book 78(77) · 78.9.4–78.9.5",
+      "待核：敕令的文本只有残篇存世（P. Giss. 40），其确切措辞和例外条款（如 dediticii 是否被排除）仍存争议。"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-212-constitutio-antoniniana-the-papyrus-evidence', 'Constitutio Antoniniana: the papyrus evidence', 'rome', 212, 212, 'Rome', 'politics', '《安东尼努斯敕令》的原文仅存埃及出土的一页残片（P. Giss. 40），文本严重残缺。', 'medium', NULL, '{
+  "overview": "《安东尼努斯敕令》的原文仅存埃及出土的一页残片（P. Giss. 40），文本严重残缺。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "P. Giss. 40（吉森纸莎草第 40 号）是 20 世纪初在埃及出土的一组纸莎草纸中最著名的一张。该残片包含了卡拉卡拉 Constitutio Antoniniana 的唯一现存原文——确切说是该敕令在埃及发布的希腊文译本。文本极度残缺，关键段落恰好断裂在讨论例外条款的地方。残存的文字大致为：''[我授予]所有[居住在我的]帝国境内的人罗马公民权，[保留]一切城邦的现有权利……''断裂处之后可能有一个关键的除外条款——''除了 dediticii''（χωρὶς τῶν δεδειτικίων）。dediticii 是指被罗马征服后未组织为城邦共同体的归降群体——如果除外条款成立，可能意味着农村贫困人口被排除在外。A.H.M. Jones 和 Peter Garnsey 等学者对此持不同意见。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Constitutio Antoniniana (fragmentary papyrus from Egypt) · P. Giss. 40, col. I · P. Giss. 40 I",
+    "待核：P. Giss. 40 的 dediticii 除外条款是否真正存在？断裂处的文本复原有多少种可能性？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:164d16a7e69a7643e946e6bd",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 44,
+  "sourceId": "rome-source-p-giss-40-papyrus-giessensis-40-unknown-imperial-edict",
+  "sourceTitle": "P. Giss. 40 (Papyrus Giessensis 40)",
+  "locator": "P. Giss. 40 I",
+  "originalText": null,
+  "translation": "《安东尼努斯敕令》的唯一现存原文残篇来自埃及的纸莎草纸（P. Giss. 40），现已严重破损。残留文字显示：''我（卡拉卡拉）授予所有居住在我帝国境内的人罗马公民权……[残缺]……保留一切城邦的现有权利。''关键条款——是否排除 dediticii（被征服后无组织共同体的归降者）——因纸莎草纸在该处断裂而成永久争议。现代学者对 dediticii 排除条款的解读分为两派。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Caracalla"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Rome",
+    "Egypt",
+    "Empire-wide"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Constitutio Antoniniana: the papyrus evidence",
+  "factType": "reform",
+  "questions": [
+    "P. Giss. 40 的 dediticii 除外条款是否真正存在？断裂处的文本复原有多少种可能性？"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-p-giss-40-papyrus-giessensis-40-unknown-imperial-edict",
+      "locator": "P. Giss. 40 I"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "reform",
+    "Rome",
+    "Egypt",
+    "Empire-wide"
+  ],
+  "people": [
+    "Caracalla"
+  ],
+  "sources": [
+    "Constitutio Antoniniana (fragmentary papyrus from Egypt)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "《安东尼努斯敕令》的原文仅存埃及出土的一页残片（P. Giss. 40），文本严重残缺。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "P. Giss. 40（吉森纸莎草第 40 号）是 20 世纪初在埃及出土的一组纸莎草纸中最著名的一张。该残片包含了卡拉卡拉 Constitutio Antoniniana 的唯一现存原文——确切说是该敕令在埃及发布的希腊文译本。文本极度残缺，关键段落恰好断裂在讨论例外条款的地方。残存的文字大致为：''[我授予]所有[居住在我的]帝国境内的人罗马公民权，[保留]一切城邦的现有权利……''断裂处之后可能有一个关键的除外条款——''除了 dediticii''（χωρὶς τῶν δεδειτικίων）。dediticii 是指被罗马征服后未组织为城邦共同体的归降群体——如果除外条款成立，可能意味着农村贫困人口被排除在外。A.H.M. Jones 和 Peter Garnsey 等学者对此持不同意见。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Constitutio Antoniniana (fragmentary papyrus from Egypt) · P. Giss. 40, col. I · P. Giss. 40 I",
+      "待核：P. Giss. 40 的 dediticii 除外条款是否真正存在？断裂处的文本复原有多少种可能性？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-213-caracallas-german-campaign', 'Caracalla''s German campaign', 'rome', 213, 213, 'Rhine', 'war', '213 年卡拉卡拉发动莱茵河战役对抗阿勒曼尼人，赢得以金钱和阴谋而非军事才能换来的胜利。', 'medium', NULL, '{
+  "overview": "213 年卡拉卡拉发动莱茵河战役对抗阿勒曼尼人，赢得以金钱和阴谋而非军事才能换来的胜利。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "卡拉卡拉在杀害盖塔后急于通过军事胜利来获取合法性。213 年他前往莱茵河前线，对抗新兴的阿勒曼尼部落联盟（首次出现在史料中的族群名称）。他取得了一些军事成功——可能包括但不限于通过大量金钱贿赂部落首领来换取和平——并获得了 Germanicus Maximus 的称号。但 Cassius Dio 对其进行了尖锐的讽刺，称他更擅长用金钱解决问题，且滑稽地模仿亚历山大大帝——组建''马其顿方阵''、仿制亚历山大发型和姿势。卡拉卡拉对亚历山大的模仿狂（imitatio Alexandri）在其后的东方远征中达到了顶峰。这些斥资巨大的军事冒险大幅消耗了塞维鲁积累的财政储备。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Cassius Dio, Historia Romana · Book 78(77) · 78.13–78.17",
+    "待核：Cassius Dio 对卡拉卡拉的个人敌意可能影响了他的记述客观性。阿勒曼尼人首次出现的确切日期是否就是 213 年？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:2011198d8287070a2b4102c1",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 43,
+  "sourceId": "rome-source-roman-history-cassius-dio",
+  "sourceTitle": "Roman History",
+  "locator": "78.13–78.17",
+  "originalText": null,
+  "translation": "Cassius Dio 记载卡拉卡拉于 213 年发动对阿勒曼尼人（Alamanni）的莱茵河战役。他赢得了''日耳曼尼库斯''（Germanicus）的称号，但 Dio 暗示这场战争并不光彩——卡拉卡拉更多的是通过金钱收买和卑劣手段而非真正的军事才能取胜。Dio 尖锐地嘲讽卡拉卡拉对亚历山大大帝的痴迷——他模仿亚历山大的发型和姿态，并在军队中组建了一支''马其顿方阵''。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Caracalla"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Rhine",
+    "Germania",
+    "Raetia"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Caracalla''s German campaign",
+  "factType": "military-event",
+  "questions": [
+    "Cassius Dio 对卡拉卡拉的个人敌意可能影响了他的记述客观性。阿勒曼尼人首次出现的确切日期是否就是 213 年？"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-roman-history-cassius-dio",
+      "locator": "78.13–78.17"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "military-event",
+    "Rhine",
+    "Germania",
+    "Raetia"
+  ],
+  "people": [
+    "Caracalla"
+  ],
+  "sources": [
+    "Cassius Dio, Historia Romana"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "213 年卡拉卡拉发动莱茵河战役对抗阿勒曼尼人，赢得以金钱和阴谋而非军事才能换来的胜利。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "卡拉卡拉在杀害盖塔后急于通过军事胜利来获取合法性。213 年他前往莱茵河前线，对抗新兴的阿勒曼尼部落联盟（首次出现在史料中的族群名称）。他取得了一些军事成功——可能包括但不限于通过大量金钱贿赂部落首领来换取和平——并获得了 Germanicus Maximus 的称号。但 Cassius Dio 对其进行了尖锐的讽刺，称他更擅长用金钱解决问题，且滑稽地模仿亚历山大大帝——组建''马其顿方阵''、仿制亚历山大发型和姿势。卡拉卡拉对亚历山大的模仿狂（imitatio Alexandri）在其后的东方远征中达到了顶峰。这些斥资巨大的军事冒险大幅消耗了塞维鲁积累的财政储备。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Cassius Dio, Historia Romana · Book 78(77) · 78.13–78.17",
+      "待核：Cassius Dio 对卡拉卡拉的个人敌意可能影响了他的记述客观性。阿勒曼尼人首次出现的确切日期是否就是 213 年？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-216-caracallas-parthian-war', 'Caracalla''s Parthian war', 'rome', 216, 216, 'Mesopotamia', 'war', '卡拉卡拉以联姻为名背信弃义对帕提亚发动战争，虽个人获取了一些战利品但军事上无功而返。', 'high', NULL, '{
+  "overview": "卡拉卡拉以联姻为名背信弃义对帕提亚发动战争，虽个人获取了一些战利品但军事上无功而返。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "卡拉卡拉对亚历山大大帝的模仿狂热达到了荒唐的顶峰。他致信帕提亚王阿尔达班五世（Artabanus V）请求联姻——希望娶其公主——以此模仿亚历山大与罗克珊娜的联姻。阿尔达班最初拒绝，但在卡拉卡拉亲率大军前往边境后被迫答应。在婚礼庆典上，卡拉卡拉下令屠杀帕提亚贵族和侍从（此举强烈令人联想到亚历山大对波西斯总督的待遇——但卡拉卡拉缺乏亚历山大的一切美德）。此后他劫掠了阿狄亚贝尼和米底地区，亵渎了帕提亚王陵。Cassius Dio 对这场背信弃义的战争极为鄙夷。卡拉卡拉随后返回埃德萨准备下一场战役，但在途中被刺杀。这场徒劳的战争耗费了大量资源且未获取任何持久的领土收益，直接激励了马克里努斯的刺杀阴谋。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Cassius Dio, Historia Romana · Book 79(78) · 79.1–79.3",
+    "待核：联姻提议是否真实发生——或者这是 Cassius Dio 对卡拉卡拉的反帕提亚借口的一种讽刺性描述？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:a85760b6ceba922158e044d4",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 45,
+  "sourceId": "rome-source-roman-history-cassius-dio",
+  "sourceTitle": "Roman History",
+  "locator": "79.1–79.3",
+  "originalText": null,
+  "translation": "Cassius Dio 记载卡拉卡拉以娶帕提亚公主为名提出联姻，遭拒后发动了对帕提亚的背信弃义式战争（216-217）。他的军队劫掠了阿狄亚贝尼（Adiabene）地区，并亵渎了帕提亚王室的陵墓。Dio 称卡拉卡拉写给元老院的战报充满了自吹自擂的谎言。这场战争军事上无成果且代价巨大，直接触发了马克里努斯的阴谋。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Caracalla"
+  ],
+  "peopleMentioned": [
+    "Artabanus V"
+  ],
+  "places": [
+    "Mesopotamia",
+    "Arbela",
+    "Adiabene",
+    "Parthia"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Caracalla''s Parthian war",
+  "factType": "military-event",
+  "questions": [
+    "联姻提议是否真实发生——或者这是 Cassius Dio 对卡拉卡拉的反帕提亚借口的一种讽刺性描述？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-roman-history-cassius-dio",
+      "locator": "79.1–79.3"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "military-event",
+    "Mesopotamia",
+    "Arbela",
+    "Adiabene"
+  ],
+  "people": [
+    "Caracalla",
+    "Artabanus V"
+  ],
+  "sources": [
+    "Cassius Dio, Historia Romana"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "卡拉卡拉以联姻为名背信弃义对帕提亚发动战争，虽个人获取了一些战利品但军事上无功而返。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "卡拉卡拉对亚历山大大帝的模仿狂热达到了荒唐的顶峰。他致信帕提亚王阿尔达班五世（Artabanus V）请求联姻——希望娶其公主——以此模仿亚历山大与罗克珊娜的联姻。阿尔达班最初拒绝，但在卡拉卡拉亲率大军前往边境后被迫答应。在婚礼庆典上，卡拉卡拉下令屠杀帕提亚贵族和侍从（此举强烈令人联想到亚历山大对波西斯总督的待遇——但卡拉卡拉缺乏亚历山大的一切美德）。此后他劫掠了阿狄亚贝尼和米底地区，亵渎了帕提亚王陵。Cassius Dio 对这场背信弃义的战争极为鄙夷。卡拉卡拉随后返回埃德萨准备下一场战役，但在途中被刺杀。这场徒劳的战争耗费了大量资源且未获取任何持久的领土收益，直接激励了马克里努斯的刺杀阴谋。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Cassius Dio, Historia Romana · Book 79(78) · 79.1–79.3",
+      "待核：联姻提议是否真实发生——或者这是 Cassius Dio 对卡拉卡拉的反帕提亚借口的一种讽刺性描述？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-217-assassination-of-caracalla-macrinus-proclaimed-emperor', 'Assassination of Caracalla; Macrinus proclaimed emperor', 'rome', 217, 217, 'Carrhae', 'politics', '217 年 4 月卡拉卡拉遇刺身亡，禁卫军长官马克里努斯被拥立为帝。', 'high', NULL, '{
+  "overview": "217 年 4 月卡拉卡拉遇刺身亡，禁卫军长官马克里努斯被拥立为帝。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "卡拉卡拉在 216-217 年发动了对帕提亚的远征，但军事进展不顺利。他的禁卫军长官（praetorian prefect）马克里努斯因恐惧自己可能成为卡拉卡拉疑心之下的下一个牺牲品，暗中策划了刺杀。217 年 4 月 8 日，卡拉卡拉在前往卡雷（Carrhae）途中下马解手时，被一名心怀不满的军官 Martialis 刺杀。马克里努斯随后假装对谋杀表示愤慨，但三天后即被军队拥立为帝。这是第一次由非元老等级（骑士等级）的人出任罗马皇帝，标志着骑士阶层崛起的重要节点。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 4 · 4.13",
+    "待核：马克里努斯在刺杀中的具体角色仍存争议：他是否直接指使了 Martialis，还是事后顺势而为？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:2641de665830666a65020b6d",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 11,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "4.13",
+  "originalText": null,
+  "translation": "Herodian 详细记载了卡拉卡拉在帕提亚边境遇刺的过程。217 年 4 月 8 日，卡拉卡拉在从埃德萨前往卡雷（Carrhae）途中下马便溺时，被马克里努斯暗中指使的一名军官（Julius Martialis）刺杀。马克里努斯旋即被军队拥立为帝。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Caracalla",
+    "Macrinus"
+  ],
+  "peopleMentioned": [
+    "Julius Martialis"
+  ],
+  "places": [
+    "Carrhae",
+    "Edessa",
+    "Mesopotamia"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Assassination of Caracalla; Macrinus proclaimed emperor",
+  "factType": "political-event",
+  "questions": [
+    "马克里努斯在刺杀中的具体角色仍存争议：他是否直接指使了 Martialis，还是事后顺势而为？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "4.13"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "political-event",
+    "Carrhae",
+    "Edessa",
+    "Mesopotamia"
+  ],
+  "people": [
+    "Caracalla",
+    "Macrinus",
+    "Julius Martialis"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "217 年 4 月卡拉卡拉遇刺身亡，禁卫军长官马克里努斯被拥立为帝。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "卡拉卡拉在 216-217 年发动了对帕提亚的远征，但军事进展不顺利。他的禁卫军长官（praetorian prefect）马克里努斯因恐惧自己可能成为卡拉卡拉疑心之下的下一个牺牲品，暗中策划了刺杀。217 年 4 月 8 日，卡拉卡拉在前往卡雷（Carrhae）途中下马解手时，被一名心怀不满的军官 Martialis 刺杀。马克里努斯随后假装对谋杀表示愤慨，但三天后即被军队拥立为帝。这是第一次由非元老等级（骑士等级）的人出任罗马皇帝，标志着骑士阶层崛起的重要节点。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 4 · 4.13",
+      "待核：马克里努斯在刺杀中的具体角色仍存争议：他是否直接指使了 Martialis，还是事后顺势而为？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-217-macrinus-defeated-elagabalus-proclaimed-emperor', 'Macrinus defeated; Elagabalus proclaimed emperor', 'rome', 217, 217, 'Antioch', 'politics', '马克里努斯削减军饷引发军队不满，塞维鲁家族借机拥立埃拉伽巴路斯。218 年马克里努斯战败被杀。', 'high', NULL, '{
+  "overview": "马克里努斯削减军饷引发军队不满，塞维鲁家族借机拥立埃拉伽巴路斯。218 年马克里努斯战败被杀。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "马克里努斯是第一位出身骑士等级的皇帝，从未进入元老院。他试图在帕提亚前线削减开支并降低军团薪资，直接触怒了军队。与此同时，塞维鲁家族的真正权力核心——尤利娅·梅萨（Julia Maesa，尤利娅·多姆娜的姐姐）在叙利亚埃美萨利用家族财富和军队对塞维鲁王朝的忠诚，煽动第三高卢军团拥立其 14 岁的外孙埃拉伽巴路斯。她声称埃拉伽巴路斯是卡拉卡拉的私生子。218 年 6 月 8 日，双方在安条克附近交战，马克里努斯的军队在关键时刻倒戈，他本人逃亡途中被杀。塞维鲁王朝复辟。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 5 · 5.2–5.4",
+    "待核：马克里努斯削减军饷的具体幅度有待考证。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:d8d8aca685d6fab0c1901780",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 12,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "5.2–5.4",
+  "originalText": null,
+  "translation": "Herodian 记述，马克里努斯即位后试图与帕提亚议和，支付巨额赔款以结束卡拉卡拉发动的战争（约 2 亿塞斯特斯）。但他削减军饷的举措激怒了军队。留守埃美萨（Emesa）的塞维鲁家族女性——尤利娅·梅萨（Julia Maesa）借机煽动军队拥立其外孙埃拉伽巴路斯（Elagabalus）为帝，声称他是卡拉卡拉的私生子。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Macrinus",
+    "Elagabalus"
+  ],
+  "peopleMentioned": [
+    "Julia Maesa",
+    "Julia Soaemias"
+  ],
+  "places": [
+    "Antioch",
+    "Emesa",
+    "Syria"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Macrinus defeated; Elagabalus proclaimed emperor",
+  "factType": "political-event",
+  "questions": [
+    "马克里努斯削减军饷的具体幅度有待考证。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "5.2–5.4"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "political-event",
+    "Antioch",
+    "Emesa",
+    "Syria"
+  ],
+  "people": [
+    "Macrinus",
+    "Elagabalus",
+    "Julia Maesa",
+    "Julia Soaemias"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "马克里努斯削减军饷引发军队不满，塞维鲁家族借机拥立埃拉伽巴路斯。218 年马克里努斯战败被杀。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "马克里努斯是第一位出身骑士等级的皇帝，从未进入元老院。他试图在帕提亚前线削减开支并降低军团薪资，直接触怒了军队。与此同时，塞维鲁家族的真正权力核心——尤利娅·梅萨（Julia Maesa，尤利娅·多姆娜的姐姐）在叙利亚埃美萨利用家族财富和军队对塞维鲁王朝的忠诚，煽动第三高卢军团拥立其 14 岁的外孙埃拉伽巴路斯。她声称埃拉伽巴路斯是卡拉卡拉的私生子。218 年 6 月 8 日，双方在安条克附近交战，马克里努斯的军队在关键时刻倒戈，他本人逃亡途中被杀。塞维鲁王朝复辟。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 5 · 5.2–5.4",
+      "待核：马克里努斯削减军饷的具体幅度有待考证。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-217-reign-of-macrinus', 'Reign of Macrinus', 'rome', 217, 217, 'Rome', 'politics', '马克里努斯是第一位骑士出身的皇帝，在位仅 14 个月，因军队不满而覆灭。', 'medium', NULL, '{
+  "overview": "马克里努斯是第一位骑士出身的皇帝，在位仅 14 个月，因军队不满而覆灭。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "马克里努斯（Marcus Opellius Macrinus）生于约 165 年，出身毛里塔尼亚（今阿尔及利亚）的骑士家庭。他经法律和行政职业升迁至禁卫军长官，是第一位完全不属于元老等级的罗马皇帝。他试图恢复财政纪律、削减军费和降低新兵的薪资待遇（恢复到塞维鲁之前的水平），但这些明智的政策在军队看来是吝啬和背叛。驻叙利亚的军团尤其不满，因为他们曾享受卡拉卡拉的慷慨赏赐。218 年尤利娅·梅萨成功策反后，马克里努斯的军队迅速倒戈，他在逃亡中被杀，其子迪亚杜梅尼安（Diadumenian）也被处死。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Historia Augusta, Vita Macrini · Vita Macrini · Macr. 1–15",
+    "待核：Historia Augusta 对马克里努斯的传记充满虚构和偏见，需要与 Herodian 和 Cassius Dio 对勘验证。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:abef8168f6e3bec2e7b10ac9",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 13,
+  "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+  "sourceTitle": "Historia Augusta",
+  "locator": "Macr. 1–15",
+  "originalText": null,
+  "translation": "Historia Augusta 对马克里努斯进行了全面负面的记述（需注意 HA 的可靠性问题）。HA 称马克里努斯出身低微，曾为角斗士，后来通过法律职业成为禁卫军长官。他因企图降低士兵薪资和取消卡拉卡拉授予的特权而被军队抛弃。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Macrinus"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Rome",
+    "Syria"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Reign of Macrinus",
+  "factType": "person-life",
+  "questions": [
+    "Historia Augusta 对马克里努斯的传记充满虚构和偏见，需要与 Herodian 和 Cassius Dio 对勘验证。"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+      "locator": "Macr. 1–15"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "person-life",
+    "Rome",
+    "Syria"
+  ],
+  "people": [
+    "Macrinus"
+  ],
+  "sources": [
+    "Historia Augusta, Vita Macrini"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "马克里努斯是第一位骑士出身的皇帝，在位仅 14 个月，因军队不满而覆灭。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "马克里努斯（Marcus Opellius Macrinus）生于约 165 年，出身毛里塔尼亚（今阿尔及利亚）的骑士家庭。他经法律和行政职业升迁至禁卫军长官，是第一位完全不属于元老等级的罗马皇帝。他试图恢复财政纪律、削减军费和降低新兵的薪资待遇（恢复到塞维鲁之前的水平），但这些明智的政策在军队看来是吝啬和背叛。驻叙利亚的军团尤其不满，因为他们曾享受卡拉卡拉的慷慨赏赐。218 年尤利娅·梅萨成功策反后，马克里努斯的军队迅速倒戈，他在逃亡中被杀，其子迪亚杜梅尼安（Diadumenian）也被处死。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Historia Augusta, Vita Macrini · Vita Macrini · Macr. 1–15",
+      "待核：Historia Augusta 对马克里努斯的传记充满虚构和偏见，需要与 Herodian 和 Cassius Dio 对勘验证。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-217-cassius-dio-as-eyewitness-the-senator-under-tyranny', 'Cassius Dio as eyewitness: the senator under tyranny', 'rome', 217, 217, 'Rome', 'culture', 'Cassius Dio 以第一人称亲历者的身份记录了塞维鲁王朝末期元老与皇帝之间的恐怖关系。', 'high', NULL, '{
+  "overview": "Cassius Dio 以第一人称亲历者的身份记录了塞维鲁王朝末期元老与皇帝之间的恐怖关系。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "Cassius Dio（约 155-235 CE）是所有三世纪危机史料中最重要的一位——不仅因为他写作的时期，还因为他作为参与者在一个历史关键时刻亲身经历了罗马政治。他出身比提尼亚的希腊贵族家庭，在康茂德到亚历山大·塞维鲁统治期间担任元老、执政官和行省总督。他的《罗马史》（共 80 卷）前 70 卷覆盖了从埃涅阿斯到马可·奥勒留的历史，主要依赖早期史料。但最后 10 卷——尤其是第 73-80 卷——是他作为目击者的第一手记录，覆盖了康茂德末年到塞维鲁王朝初期的政治动荡。Dio 对卡拉卡拉的描述尤其充满了亲身恐惧——他被禁止参加元老院会议，被迫坐在一边观看卡拉卡拉在竞技场中屠杀野兽（一种被 Dio 视为有损皇帝尊严的行为）。Dio 的偏见（亲元老院、反军人君主）是显而易见的，但正是这偏见使他成为理解元老院与军人皇帝之间紧张关系的无可替代的史料。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Cassius Dio, Historia Romana · Book 78(77) · 78.18",
+    "待核：Dio 晚年（229-235 年）的资料很少——他是否活着看到了亚历山大·塞维鲁的被杀和马克西米努斯的即位？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:7818066f252fb33f93078a97",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 67,
+  "sourceId": "rome-source-roman-history-cassius-dio",
+  "sourceTitle": "Roman History",
+  "locator": "78.18",
+  "originalText": null,
+  "translation": "Cassius Dio 本人——一位直属元老和前执政官——在卡拉卡拉统治末期被命令离开罗马，前往他在比提尼亚的庄园。Dio 描述他被剥夺了前往元老院的权利，被迫在皇帝面前沉默。他的亲身经历构成了罗马史第 78-80 卷的独特视角——一位在暴君统治下沉默的知识分子的证词。Dio 没有亲眼见证卡拉卡拉之死（他在比提尼亚），但他的愤怒和恐惧成为了 3 世纪元老院与军人皇帝紧张关系的经典文献。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Caracalla",
+    "Cassius Dio"
+  ],
+  "places": [
+    "Rome",
+    "Bithynia"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Cassius Dio as eyewitness: the senator under tyranny",
+  "factType": "source-mention",
+  "questions": [
+    "Dio 晚年（229-235 年）的资料很少——他是否活着看到了亚历山大·塞维鲁的被杀和马克西米努斯的即位？"
+  ],
+  "confidence": "high",
+  "importance": "minor",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-roman-history-cassius-dio",
+      "locator": "78.18"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "source-mention",
+    "Rome",
+    "Bithynia"
+  ],
+  "people": [
+    "Caracalla",
+    "Cassius Dio"
+  ],
+  "sources": [
+    "Cassius Dio, Historia Romana"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "Cassius Dio 以第一人称亲历者的身份记录了塞维鲁王朝末期元老与皇帝之间的恐怖关系。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "Cassius Dio（约 155-235 CE）是所有三世纪危机史料中最重要的一位——不仅因为他写作的时期，还因为他作为参与者在一个历史关键时刻亲身经历了罗马政治。他出身比提尼亚的希腊贵族家庭，在康茂德到亚历山大·塞维鲁统治期间担任元老、执政官和行省总督。他的《罗马史》（共 80 卷）前 70 卷覆盖了从埃涅阿斯到马可·奥勒留的历史，主要依赖早期史料。但最后 10 卷——尤其是第 73-80 卷——是他作为目击者的第一手记录，覆盖了康茂德末年到塞维鲁王朝初期的政治动荡。Dio 对卡拉卡拉的描述尤其充满了亲身恐惧——他被禁止参加元老院会议，被迫坐在一边观看卡拉卡拉在竞技场中屠杀野兽（一种被 Dio 视为有损皇帝尊严的行为）。Dio 的偏见（亲元老院、反军人君主）是显而易见的，但正是这偏见使他成为理解元老院与军人皇帝之间紧张关系的无可替代的史料。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Cassius Dio, Historia Romana · Book 78(77) · 78.18",
+      "待核：Dio 晚年（229-235 年）的资料很少——他是否活着看到了亚历山大·塞维鲁的被杀和马克西米努斯的即位？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-218-julia-maesa-orchestrates-the-restoration-of-the-severan-dynasty', 'Julia Maesa orchestrates the restoration of the Severan dynasty', 'rome', 218, 218, 'Emesa', 'politics', '尤利娅·梅萨利用塞维鲁家族的财富和军队忠诚，成功拥立外孙埃拉伽巴路斯复辟塞维鲁王朝。', 'high', NULL, '{
+  "overview": "尤利娅·梅萨利用塞维鲁家族的财富和军队忠诚，成功拥立外孙埃拉伽巴路斯复辟塞维鲁王朝。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "尤利娅·梅萨（Julia Maesa）是塞维鲁王朝最重要的权力玩家之一。马克里努斯即位后命令她离开罗马返回叙利亚故乡埃美萨，无意中给了她联络驻叙利亚军团的绝佳机会。她利用塞维鲁家族数十年来积攒的庞大财富，慷慨地向驻拉法尼亚的第三高卢军团分发金钱。她将 14 岁的外孙瓦里乌斯·阿维图斯（Varius Avitus，后来的埃拉伽巴路斯）——埃美萨太阳神的世袭祭司——介绍给士兵们，并声称他是卡拉卡拉的私生子（利用卡拉卡拉在军队中的声望）。士兵们被金钱和忠诚的双重诱惑打动，于 218 年 5 月 16 日宣布拥立埃拉伽巴路斯为帝。Herodian 对这位少年祭司的外貌描写——华丽的东方长袍、化妆和珠宝——充满了罗马人对东方的文化偏见，但也反映了埃梅萨祭司的真实仪容习俗。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 5 · 5.3–5.4",
+    "待核：Julia Maesa 在塞维鲁王朝政治中扮演的具体角色是否可以进一步深化——她是否控制着独立的财政和情报网络？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:5c85a0342e446509e5beb18a",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 46,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "5.3–5.4",
+  "originalText": null,
+  "translation": "Herodian 详细记载了尤利娅·梅萨（Julia Maesa）——塞维鲁妻子的姐姐——在埃美萨如何策划塞维鲁王朝的复辟。她在军团驻扎的拉法尼亚（Raphanea）附近展示外孙埃拉伽巴路斯，告诉士兵他是卡拉卡拉的私生子，并分发大量金钱。Herodian 还描述了埃拉伽巴路斯的女性化外貌和奇异的东方祭司服饰——''他穿着紫色绣金长袍，戴着项链和手镯，脸上涂脂抹粉''——这些描述既反映了罗马人对东方奢侈的刻板印象，也包含了可观察的事实。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Elagabalus"
+  ],
+  "peopleMentioned": [
+    "Julia Maesa",
+    "Julia Soaemias",
+    "Caracalla"
+  ],
+  "places": [
+    "Emesa",
+    "Raphanea",
+    "Syria"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Julia Maesa orchestrates the restoration of the Severan dynasty",
+  "factType": "political-event",
+  "questions": [
+    "Julia Maesa 在塞维鲁王朝政治中扮演的具体角色是否可以进一步深化——她是否控制着独立的财政和情报网络？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "5.3–5.4"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "political-event",
+    "Emesa",
+    "Raphanea",
+    "Syria"
+  ],
+  "people": [
+    "Elagabalus",
+    "Julia Maesa",
+    "Julia Soaemias",
+    "Caracalla"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "尤利娅·梅萨利用塞维鲁家族的财富和军队忠诚，成功拥立外孙埃拉伽巴路斯复辟塞维鲁王朝。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "尤利娅·梅萨（Julia Maesa）是塞维鲁王朝最重要的权力玩家之一。马克里努斯即位后命令她离开罗马返回叙利亚故乡埃美萨，无意中给了她联络驻叙利亚军团的绝佳机会。她利用塞维鲁家族数十年来积攒的庞大财富，慷慨地向驻拉法尼亚的第三高卢军团分发金钱。她将 14 岁的外孙瓦里乌斯·阿维图斯（Varius Avitus，后来的埃拉伽巴路斯）——埃美萨太阳神的世袭祭司——介绍给士兵们，并声称他是卡拉卡拉的私生子（利用卡拉卡拉在军队中的声望）。士兵们被金钱和忠诚的双重诱惑打动，于 218 年 5 月 16 日宣布拥立埃拉伽巴路斯为帝。Herodian 对这位少年祭司的外貌描写——华丽的东方长袍、化妆和珠宝——充满了罗马人对东方的文化偏见，但也反映了埃梅萨祭司的真实仪容习俗。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 5 · 5.3–5.4",
+      "待核：Julia Maesa 在塞维鲁王朝政治中扮演的具体角色是否可以进一步深化——她是否控制着独立的财政和情报网络？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-219-elagabalus-introduces-the-cult-of-elagabal-to-rome', 'Elagabalus introduces the cult of Elagabal to Rome', 'rome', 219, 219, 'Rome', 'politics', '埃拉伽巴路斯将叙利亚太阳神崇拜带入罗马，引发政治和宗教上的巨大反弹。', 'high', NULL, '{
+  "overview": "埃拉伽巴路斯将叙利亚太阳神崇拜带入罗马，引发政治和宗教上的巨大反弹。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "埃拉伽巴路斯（Varius Avitus Bassianus，后称 Marcus Aurelius Antoninus）是埃美萨太阳神埃拉伽巴的世袭祭司。即位后来到罗马，他将叙利亚的黑色圣石（baetyl）带到罗马，在帕拉丁山上为太阳神建立新神庙，并试图将罗马的所有神祇——包括朱庇特——置于埃拉伽巴之下。他的东方服饰、异域仪式（如在神庙中赤裸跳舞）、多次迎娶罗马贵族女性（据传包括维斯塔贞女）以及公开的同性倾向，严重冲击了罗马社会传统。他的统治完全由其母尤利娅·索艾米亚斯（Julia Soaemias）和外祖母尤利娅·梅萨实际操纵。梅萨意识到他正在失去军队和民众的支持，转而培养其外孙亚历山大·塞维鲁作为替代。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 5 · 5.5–5.8",
+    "待核：Herodian 的描述可能带有修辞夸大，但核心事件得到了多源确认。关于埃拉伽巴路斯的具体宗教行为是否需要与考古证据（钱币和铭文）对照？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:fb2e6dd69440e0769050423d",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 14,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "5.5–5.8",
+  "originalText": null,
+  "translation": "Herodian 记述了埃拉伽巴路斯即位后的宗教和文化冲击。这位来自埃美萨的少年皇帝将他崇拜的太阳神埃拉伽巴（Elagabal）带到罗马，试图将罗马国教置于叙利亚巴力（Baal）崇拜之下。Herodian 详细描绘了他身着东方华丽长袍、在罗马大街上举行异域仪式、在公众场合跳舞、以及在维斯塔贞女圣地迎娶维斯塔贞女等震惊罗马社会的事件。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Elagabalus"
+  ],
+  "peopleMentioned": [
+    "Julia Maesa",
+    "Julia Soaemias"
+  ],
+  "places": [
+    "Rome",
+    "Emesa"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Elagabalus introduces the cult of Elagabal to Rome",
+  "factType": "person-life",
+  "questions": [
+    "Herodian 的描述可能带有修辞夸大，但核心事件得到了多源确认。关于埃拉伽巴路斯的具体宗教行为是否需要与考古证据（钱币和铭文）对照？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "5.5–5.8"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "person-life",
+    "Rome",
+    "Emesa"
+  ],
+  "people": [
+    "Elagabalus",
+    "Julia Maesa",
+    "Julia Soaemias"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "埃拉伽巴路斯将叙利亚太阳神崇拜带入罗马，引发政治和宗教上的巨大反弹。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "埃拉伽巴路斯（Varius Avitus Bassianus，后称 Marcus Aurelius Antoninus）是埃美萨太阳神埃拉伽巴的世袭祭司。即位后来到罗马，他将叙利亚的黑色圣石（baetyl）带到罗马，在帕拉丁山上为太阳神建立新神庙，并试图将罗马的所有神祇——包括朱庇特——置于埃拉伽巴之下。他的东方服饰、异域仪式（如在神庙中赤裸跳舞）、多次迎娶罗马贵族女性（据传包括维斯塔贞女）以及公开的同性倾向，严重冲击了罗马社会传统。他的统治完全由其母尤利娅·索艾米亚斯（Julia Soaemias）和外祖母尤利娅·梅萨实际操纵。梅萨意识到他正在失去军队和民众的支持，转而培养其外孙亚历山大·塞维鲁作为替代。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 5 · 5.5–5.8",
+      "待核：Herodian 的描述可能带有修辞夸大，但核心事件得到了多源确认。关于埃拉伽巴路斯的具体宗教行为是否需要与考古证据（钱币和铭文）对照？"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-222-assassination-of-elagabalus-alexander-severus-becomes-emperor', 'Assassination of Elagabalus; Alexander Severus becomes emperor', 'rome', 222, 222, 'Rome', 'politics', '222 年埃拉伽巴路斯被弑，亚历山大·塞维鲁即位，皇权回归正常轨道。', 'high', NULL, '{
+  "overview": "222 年埃拉伽巴路斯被弑，亚历山大·塞维鲁即位，皇权回归正常轨道。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "222 年初，尤利娅·梅萨成功说服埃拉伽巴路斯收其表弟亚历山大·塞维鲁为养子和凯撒。但当埃拉伽巴路斯随后试图杀害亚历山大·塞维鲁时，禁卫军倒戈。3 月 11 日（或 12 日），禁卫军在军营中杀死了埃拉伽巴路斯（年仅 18 岁）及其母索艾米亚斯。尸体被当街拖行后扔进台伯河，符合 damnatio memoriae 的全部仪式。亚历山大·塞维鲁年仅 13 岁即位，实际权力掌握在梅萨及其母尤利娅·玛迈亚（Julia Mamaea）手中。他的统治恢复了罗马传统的宗教和元老院尊严，被古代史家评价为一段相对平静的时期。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Cassius Dio, Historia Romana · Book 80(79) · 80.20",
+    "待核：埃拉伽巴路斯死亡的确切日期（3月11日还是12日）在不同史料中有出入。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:fe344207fc788eb759913337",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 15,
+  "sourceId": "rome-source-roman-history-cassius-dio",
+  "sourceTitle": "Roman History",
+  "locator": "80.20",
+  "originalText": null,
+  "translation": "据 Cassius Dio 记载，222 年 3 月 11 日，禁卫军在梅萨策划下杀死了埃拉伽巴路斯及其母索艾米亚斯。两人的尸体被拖过罗马街道，投入台伯河。亚历山大·塞维鲁随即被拥立为帝。Cassius Dio 对埃拉伽巴路斯的评价极为负面，称其为帝国历史上最糟糕的皇帝之一。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Elagabalus",
+    "Alexander Severus"
+  ],
+  "peopleMentioned": [
+    "Julia Maesa",
+    "Julia Soaemias"
+  ],
+  "places": [
+    "Rome"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Assassination of Elagabalus; Alexander Severus becomes emperor",
+  "factType": "political-event",
+  "questions": [
+    "埃拉伽巴路斯死亡的确切日期（3月11日还是12日）在不同史料中有出入。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-roman-history-cassius-dio",
+      "locator": "80.20"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "political-event",
+    "Rome"
+  ],
+  "people": [
+    "Elagabalus",
+    "Alexander Severus",
+    "Julia Maesa",
+    "Julia Soaemias"
+  ],
+  "sources": [
+    "Cassius Dio, Historia Romana"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "222 年埃拉伽巴路斯被弑，亚历山大·塞维鲁即位，皇权回归正常轨道。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "222 年初，尤利娅·梅萨成功说服埃拉伽巴路斯收其表弟亚历山大·塞维鲁为养子和凯撒。但当埃拉伽巴路斯随后试图杀害亚历山大·塞维鲁时，禁卫军倒戈。3 月 11 日（或 12 日），禁卫军在军营中杀死了埃拉伽巴路斯（年仅 18 岁）及其母索艾米亚斯。尸体被当街拖行后扔进台伯河，符合 damnatio memoriae 的全部仪式。亚历山大·塞维鲁年仅 13 岁即位，实际权力掌握在梅萨及其母尤利娅·玛迈亚（Julia Mamaea）手中。他的统治恢复了罗马传统的宗教和元老院尊严，被古代史家评价为一段相对平静的时期。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Cassius Dio, Historia Romana · Book 80(79) · 80.20",
+      "待核：埃拉伽巴路斯死亡的确切日期（3月11日还是12日）在不同史料中有出入。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-222-reign-of-alexander-severus-stability-under-maternal-regency', 'Reign of Alexander Severus: stability under maternal regency', 'rome', 222, 222, 'Rome', 'politics', '亚历山大·塞维鲁的 13 年统治是塞维鲁王朝最后一段相对稳定期，但母后干政、军事软弱为接下来的危机埋下伏笔。', 'high', NULL, '{
+  "overview": "亚历山大·塞维鲁的 13 年统治是塞维鲁王朝最后一段相对稳定期，但母后干政、军事软弱为接下来的危机埋下伏笔。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "亚历山大·塞维鲁（Marcus Aurelius Severus Alexander）13 岁即位，终其统治都处于母亲尤利娅·玛迈亚的掌控之下。元老院委员会被重新赋予一定咨询权，法学家乌尔比安（Ulpian）出任禁卫军长官并推进了重要的法律改革。但母后对军队的吝啬态度和在外交上对波斯、日耳曼部落的妥协政策引起了士兵的强烈不满。231-233 年的波斯远征虽然名义上击退了阿尔达希尔一世（Ardashir I）的入侵，但损失惨重且未能取得决定性胜利。234-235 年的日耳曼远征中，他选择支付贿赂而非作战，最终激怒了莱茵河军团。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 6 · 6.1–6.9",
+    "待核：乌尔比安的法律改革具体产生了哪些长期影响？",
+    "待核：波斯远征的确切伤亡数字缺乏可靠史料。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:2f53cc631e0909d7e56877f0",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 16,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "6.1–6.9",
+  "originalText": null,
+  "translation": "Herodian 将亚历山大·塞维鲁的统治（222-235）描述为一个相对稳定但缺乏果断领导的时期。元老院恢复了一定影响力，尤利娅·玛迈亚（皇帝的母亲）是真正的统治者。Herodian 详细记述了他于 231-233 年对新兴萨珊波斯发动的不成功远征，以及他返回莱茵河前线应对日耳曼入侵的过程。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Alexander Severus"
+  ],
+  "peopleMentioned": [
+    "Julia Mamaea",
+    "Ardashir I"
+  ],
+  "places": [
+    "Rome",
+    "Persia",
+    "Germania",
+    "Moguntiacum"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Reign of Alexander Severus: stability under maternal regency",
+  "factType": "person-life",
+  "questions": [
+    "乌尔比安的法律改革具体产生了哪些长期影响？",
+    "波斯远征的确切伤亡数字缺乏可靠史料。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "6.1–6.9"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "person-life",
+    "Rome",
+    "Persia",
+    "Germania"
+  ],
+  "people": [
+    "Alexander Severus",
+    "Julia Mamaea",
+    "Ardashir I"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "亚历山大·塞维鲁的 13 年统治是塞维鲁王朝最后一段相对稳定期，但母后干政、军事软弱为接下来的危机埋下伏笔。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "亚历山大·塞维鲁（Marcus Aurelius Severus Alexander）13 岁即位，终其统治都处于母亲尤利娅·玛迈亚的掌控之下。元老院委员会被重新赋予一定咨询权，法学家乌尔比安（Ulpian）出任禁卫军长官并推进了重要的法律改革。但母后对军队的吝啬态度和在外交上对波斯、日耳曼部落的妥协政策引起了士兵的强烈不满。231-233 年的波斯远征虽然名义上击退了阿尔达希尔一世（Ardashir I）的入侵，但损失惨重且未能取得决定性胜利。234-235 年的日耳曼远征中，他选择支付贿赂而非作战，最终激怒了莱茵河军团。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 6 · 6.1–6.9",
+      "待核：乌尔比安的法律改革具体产生了哪些长期影响？",
+      "待核：波斯远征的确切伤亡数字缺乏可靠史料。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-222-regency-of-julia-mamaea-and-the-role-of-ulpian', 'Regency of Julia Mamaea and the role of Ulpian', 'rome', 222, 222, 'Rome', 'politics', '尤利娅·玛迈亚通过元老院顾问委员会和法学家乌尔比安统治帝国，但母权的过度干涉埋下了灭亡的种子。', 'high', NULL, '{
+  "overview": "尤利娅·玛迈亚通过元老院顾问委员会和法学家乌尔比安统治帝国，但母权的过度干涉埋下了灭亡的种子。",
+  "background": [
+    "Severan Dynasty"
+  ],
+  "process": [
+    "亚历山大·塞维鲁的统治时期是帝国女性权力最后的辉煌展示（在塞维鲁王朝的意义上）。尤利娅·玛迈亚（Julia Mamaea）——继承了其母尤利娅·梅萨的政治技巧——实际上以''奥古斯塔''和''元老院之母''（mater senatus）的身份统治帝国。她组建了一个由 16 名资深元老组成的顾问委员会（consilium principis），赋予其前所未有的咨询权力——这是元老院自共和制以来最后一次有意义的政治参与。然而玛迈亚对儿子和权力的控制过于严密——亚历山大从未被允许建立独立的军事声誉，这对军人皇帝体制来说是一个致命的缺陷。她任命了伟大的法学家乌尔比安（Ulpian）为禁卫军长官，试图以严格纪律和法律程序约束禁卫军——结果导致了 223 年三天的街头巷战（禁卫军与罗马市民对决），乌尔比安虽然在混乱中被害。玛迈亚的权力网络在母亲梅萨于 224 年去世后被严重削弱——她缺乏梅萨的政治手腕和对军队的慷慨。235 年莱茵河军团在亚历山大选择支付贿赂而非作战时终于爆发——他们杀害了母子两人。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 6 · 6.1–6.4",
+    "待核：玛迈亚的 16 人元老院委员会的确切组成和运作方式是否有文献可考？",
+    "待核：乌尔比安之死的具体细节在不同史料中有不一致之处。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:c1628a39af903792a6143cd1",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 62,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "6.1–6.4",
+  "originalText": null,
+  "translation": "Herodian 详细记录了亚历山大·塞维鲁的母亲尤利娅·玛迈亚（Julia Mamaea）在儿子即位后的摄政以及对元老院权力的部分恢复。她组建了一个由 16 名资深元老组成的''委员会''——其中包括著名的法学家乌尔比安（Domitius Ulpianus）——作为皇帝的顾问团。Herodian 认为玛迈亚过度保护其子，导致亚历山大始终未能建立独立的军事声望。她对军队吝啬且不信任——用乌尔比安作为禁卫军长官——但这位法学家的严格纪律最终激怒了禁卫军。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Alexander Severus"
+  ],
+  "peopleMentioned": [
+    "Julia Mamaea",
+    "Ulpian"
+  ],
+  "places": [
+    "Rome"
+  ],
+  "macroEvent": "Severan Dynasty",
+  "eventLabel": "Regency of Julia Mamaea and the role of Ulpian",
+  "factType": "person-life",
+  "questions": [
+    "玛迈亚的 16 人元老院委员会的确切组成和运作方式是否有文献可考？",
+    "乌尔比安之死的具体细节在不同史料中有不一致之处。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "6.1–6.4"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Severan Dynasty",
+    "person-life",
+    "Rome"
+  ],
+  "people": [
+    "Alexander Severus",
+    "Julia Mamaea",
+    "Ulpian"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "尤利娅·玛迈亚通过元老院顾问委员会和法学家乌尔比安统治帝国，但母权的过度干涉埋下了灭亡的种子。",
+    "background": [
+      "Severan Dynasty"
+    ],
+    "process": [
+      "亚历山大·塞维鲁的统治时期是帝国女性权力最后的辉煌展示（在塞维鲁王朝的意义上）。尤利娅·玛迈亚（Julia Mamaea）——继承了其母尤利娅·梅萨的政治技巧——实际上以''奥古斯塔''和''元老院之母''（mater senatus）的身份统治帝国。她组建了一个由 16 名资深元老组成的顾问委员会（consilium principis），赋予其前所未有的咨询权力——这是元老院自共和制以来最后一次有意义的政治参与。然而玛迈亚对儿子和权力的控制过于严密——亚历山大从未被允许建立独立的军事声誉，这对军人皇帝体制来说是一个致命的缺陷。她任命了伟大的法学家乌尔比安（Ulpian）为禁卫军长官，试图以严格纪律和法律程序约束禁卫军——结果导致了 223 年三天的街头巷战（禁卫军与罗马市民对决），乌尔比安虽然在混乱中被害。玛迈亚的权力网络在母亲梅萨于 224 年去世后被严重削弱——她缺乏梅萨的政治手腕和对军队的慷慨。235 年莱茵河军团在亚历山大选择支付贿赂而非作战时终于爆发——他们杀害了母子两人。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 6 · 6.1–6.4",
+      "待核：玛迈亚的 16 人元老院委员会的确切组成和运作方式是否有文献可考？",
+      "待核：乌尔比安之死的具体细节在不同史料中有不一致之处。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-224-ardashir-i-overthrows-the-parthians-and-founds-the-sassanid-empire', 'Ardashir I overthrows the Parthians and founds the Sassanid Empire', 'rome', 224, 224, 'Persia', 'politics', '224 年阿尔达希尔一世推翻帕提亚建立萨珊波斯，罗马东部边境面临前所未有的挑战。', 'high', NULL, '{
+  "overview": "224 年阿尔达希尔一世推翻帕提亚建立萨珊波斯，罗马东部边境面临前所未有的挑战。",
+  "background": [
+    "Rise of Sassanid Persia"
+  ],
+  "process": [
+    "萨珊波斯的崛起是 3 世纪最重要的事件之一。帕提亚帝国（安息）已经统治伊朗和美索不达米亚约 470 年，但其松散的封建体制在面对中央集权化的挑战时暴露了脆弱性。阿尔达希尔一世（Ardashir I）来自法尔斯（Persis，波斯本土）的萨珊家族，在 224 年（或 226 年）的霍尔木兹达干（Hormizdagan）战役中击败并杀死了最后一位帕提亚王阿尔达班五世。萨珊帝国在意识形态上自命为阿契美尼德波斯的直接继承者——这具有深远的地缘政治意义，因为它意味着对一切''曾属于波斯''的领土（包括罗马的东方行省）提出了主权要求。萨珊国家的中央集权化程度远超帕提亚，能够动员更大规模的军队和资源。亚历山大·塞维鲁的波斯远征（231-233）是罗马与萨珊之间长达四个世纪的战争的开端。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 6 · pp. 225–240",
+    "待核：萨珊帝国建立的确切日期是 224 还是 226？不同史料使用了不同的纪年系统。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:f8bc37a8dc305adbd898a1d0",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 47,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 225–240",
+  "originalText": null,
+  "translation": "公元 224 年（或 226 年），波斯附庸王公阿尔达希尔一世（Ardashir I）击败并杀死了最后一位帕提亚王阿尔达班五世（Artabanus V），建立了萨珊波斯帝国。这一事件深刻改变了罗马东部边境的战略格局。与松散封建式的帕提亚王国不同，萨珊波斯是一个高度中央集权的王朝国家，它在意识形态上自视为阿契美尼德波斯的继承者——这意味着对罗马占据的原波斯领土（美索不达米亚、叙利亚等）提出了主权要求。Potter 将萨珊波斯的崛起列为三世纪危机中仅次于日耳曼入侵的第二大外部压力源。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Ardashir I",
+    "Artabanus V",
+    "Alexander Severus"
+  ],
+  "places": [
+    "Persia",
+    "Mesopotamia",
+    "Ctesiphon",
+    "Hormizdagan"
+  ],
+  "macroEvent": "Rise of Sassanid Persia",
+  "eventLabel": "Ardashir I overthrows the Parthians and founds the Sassanid Empire",
+  "factType": "political-event",
+  "questions": [
+    "萨珊帝国建立的确切日期是 224 还是 226？不同史料使用了不同的纪年系统。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 225–240"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Rise of Sassanid Persia",
+    "political-event",
+    "Persia",
+    "Mesopotamia",
+    "Ctesiphon"
+  ],
+  "people": [
+    "Ardashir I",
+    "Artabanus V",
+    "Alexander Severus"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "224 年阿尔达希尔一世推翻帕提亚建立萨珊波斯，罗马东部边境面临前所未有的挑战。",
+    "background": [
+      "Rise of Sassanid Persia"
+    ],
+    "process": [
+      "萨珊波斯的崛起是 3 世纪最重要的事件之一。帕提亚帝国（安息）已经统治伊朗和美索不达米亚约 470 年，但其松散的封建体制在面对中央集权化的挑战时暴露了脆弱性。阿尔达希尔一世（Ardashir I）来自法尔斯（Persis，波斯本土）的萨珊家族，在 224 年（或 226 年）的霍尔木兹达干（Hormizdagan）战役中击败并杀死了最后一位帕提亚王阿尔达班五世。萨珊帝国在意识形态上自命为阿契美尼德波斯的直接继承者——这具有深远的地缘政治意义，因为它意味着对一切''曾属于波斯''的领土（包括罗马的东方行省）提出了主权要求。萨珊国家的中央集权化程度远超帕提亚，能够动员更大规模的军队和资源。亚历山大·塞维鲁的波斯远征（231-233）是罗马与萨珊之间长达四个世纪的战争的开端。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 6 · pp. 225–240",
+      "待核：萨珊帝国建立的确切日期是 224 还是 226？不同史料使用了不同的纪年系统。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-230-the-collapse-of-roman-coinage-and-hyperinflation', 'The collapse of Roman coinage and hyperinflation', 'rome', 230, 230, 'Rome', 'politics', '三世纪危机时期罗马银币的含银量暴跌至不足 5%，导致帝国财政和军队薪酬体系崩溃。', 'high', NULL, '{
+  "overview": "三世纪危机时期罗马银币的含银量暴跌至不足 5%，导致帝国财政和军队薪酬体系崩溃。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "三世纪危机中最为深刻地改变了罗马社会结构的经济维度是货币的长时段崩溃。第纳里（denarius）——自共和国以来一直是罗马经济的脊梁——在塞维鲁时期仍含银约 50%。卡拉卡拉于约 215 年引入安东尼尼安银币（antoninianus），初始含银量约 50%，名义价值为 2 第纳里但实际含银量仅为 1.5 第纳里的银量——''贬值''被内置在面值与金属含量之间的差距中。此后每一位皇帝都逐步降低安东尼尼安银币的银含量以应对军费压力——到瓦勒良和加里恩努斯时期（253-268），银含量已降至不足 5%，硬币表面仅镀一层薄银（洗涤银）。金币（aureus）也未能幸免——其重量从奥古斯都时期的约 8 克下降至 3 世纪的不足 5 克。政府以贬值的硬币支付军饷，而征收的税收却以求实的金属重量计价——这导致了政府购买力的灾难性下降。军团士兵的名义薪酬翻了数番，但其实际购买力可能只有 2 世纪士兵的零头——这直接激励了军队频繁拥立和杀害皇帝以获取即时的大额赏金（donativa）。奥勒良试图通过提升安东尼尼安银币的含银量（至约 5%）并严厉打击造币厂腐败来遏制这一趋势——但真正的系统性稳定直到戴克里先和君士坦丁的币制改革才实现。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 6 · pp. 230–235",
+    "待核：钱币学证据（银含量和金币重量）的精确数据库是否已完整建立？不同造币厂之间的差异有多大？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:c84808eb3cf031de52ab4319",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 76,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 230–235",
+  "originalText": null,
+  "translation": "Potter 综合了罗马货币在三世纪危机的崩溃过程。从塞维鲁到加里恩努斯，第纳里（denarius）的银含量从约 50% 下降到不足 5%。卡拉卡拉引入的安东尼尼安银币（antoninianus，含银量约 50% 初始）成为主要的银币，但其银含量在 238-270 年间暴跌至不足 5-2%——实质上成为铜币上覆薄银层的洗涤银（wash silver）。同时金币（aureus）的重量也持续下降。帝国的税收基础因通货膨胀而严重侵蚀——到 260 年代，政府的实际购买力可能只有塞维鲁时期的六分之一。士兵的薪水虽然名义上在增加但实际价值暴跌——这是导致三世纪军队不断哗变和拥立皇帝的关键经济因素。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Caracalla",
+    "Gallienus",
+    "Aurelian",
+    "Diocletian"
+  ],
+  "places": [
+    "Rome",
+    "Empire-wide"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "The collapse of Roman coinage and hyperinflation",
+  "factType": "reform",
+  "questions": [
+    "钱币学证据（银含量和金币重量）的精确数据库是否已完整建立？不同造币厂之间的差异有多大？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 230–235"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "reform",
+    "Rome",
+    "Empire-wide"
+  ],
+  "people": [
+    "Caracalla",
+    "Gallienus",
+    "Aurelian",
+    "Diocletian"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "三世纪危机时期罗马银币的含银量暴跌至不足 5%，导致帝国财政和军队薪酬体系崩溃。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "三世纪危机中最为深刻地改变了罗马社会结构的经济维度是货币的长时段崩溃。第纳里（denarius）——自共和国以来一直是罗马经济的脊梁——在塞维鲁时期仍含银约 50%。卡拉卡拉于约 215 年引入安东尼尼安银币（antoninianus），初始含银量约 50%，名义价值为 2 第纳里但实际含银量仅为 1.5 第纳里的银量——''贬值''被内置在面值与金属含量之间的差距中。此后每一位皇帝都逐步降低安东尼尼安银币的银含量以应对军费压力——到瓦勒良和加里恩努斯时期（253-268），银含量已降至不足 5%，硬币表面仅镀一层薄银（洗涤银）。金币（aureus）也未能幸免——其重量从奥古斯都时期的约 8 克下降至 3 世纪的不足 5 克。政府以贬值的硬币支付军饷，而征收的税收却以求实的金属重量计价——这导致了政府购买力的灾难性下降。军团士兵的名义薪酬翻了数番，但其实际购买力可能只有 2 世纪士兵的零头——这直接激励了军队频繁拥立和杀害皇帝以获取即时的大额赏金（donativa）。奥勒良试图通过提升安东尼尼安银币的含银量（至约 5%）并严厉打击造币厂腐败来遏制这一趋势——但真正的系统性稳定直到戴克里先和君士坦丁的币制改革才实现。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 6 · pp. 230–235",
+      "待核：钱币学证据（银含量和金币重量）的精确数据库是否已完整建立？不同造币厂之间的差异有多大？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-235-assassination-of-alexander-severus-beginning-of-the-third-century-crisis', 'Assassination of Alexander Severus; beginning of the Third Century Crisis', 'rome', 235, 235, 'Moguntiacum', 'politics', '235 年亚历山大·塞维鲁被弑，塞维鲁王朝终结，三世纪危机正式开始。', 'high', NULL, '{
+  "overview": "235 年亚历山大·塞维鲁被弑，塞维鲁王朝终结，三世纪危机正式开始。",
+  "background": [
+    "End of Severan Dynasty"
+  ],
+  "process": [
+    "亚历山大·塞维鲁率军到达莱茵河前线应对日耳曼部落的入侵，但他选择了向蛮族支付巨额贿赂以换取和平，而非发动军事行动。这种软弱政策——加之其母玛迈亚过于明显的幕后操控——彻底激怒了莱茵河军团。235 年 3 月，士兵们在莫贡提亚库姆（今美因茨）附近哗变，闯入皇帝营帐杀死了亚历山大·塞维鲁（年仅 26 岁）和玛迈亚。叛军随即拥立了出身色雷斯的低级军官马克西米努斯（后称 Maximinus Thrax，意为''色雷斯人''）。这次弑君标志着塞维鲁王朝的终结和三世纪危机（235-284）的正式开始——此后五十年间，帝国经历了数十位短命皇帝、外敌入侵、经济崩溃和领土分裂。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 6 · 6.8–6.9",
+    "待核：亚历山大·塞维鲁被刺的具体日期（3月18日还是19日？）需要与不同史料交叉验证。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:139c09df90a7732940f23e76",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 17,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "6.8–6.9",
+  "originalText": null,
+  "translation": "据 Herodian 记载，235 年 3 月，亚历山大·塞维鲁在莫贡提亚库姆（Moguntiacum，今美因茨）附近的军营中被叛变士兵杀害，其母玛迈亚同时遇害。叛军拥立了半蛮族出身的百夫长马克西米努斯·色雷克斯（Maximinus Thrax）为帝。Herodian 认为士兵们厌恶亚历山大依赖母亲决策、不愿作战而宁愿行贿求和的软弱政策。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Alexander Severus",
+    "Maximinus Thrax"
+  ],
+  "peopleMentioned": [
+    "Julia Mamaea"
+  ],
+  "places": [
+    "Moguntiacum",
+    "Mainz",
+    "Germania Superior"
+  ],
+  "macroEvent": "End of Severan Dynasty",
+  "eventLabel": "Assassination of Alexander Severus; beginning of the Third Century Crisis",
+  "factType": "political-event",
+  "questions": [
+    "亚历山大·塞维鲁被刺的具体日期（3月18日还是19日？）需要与不同史料交叉验证。"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "6.8–6.9"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "End of Severan Dynasty",
+    "political-event",
+    "Moguntiacum",
+    "Mainz",
+    "Germania Superior"
+  ],
+  "people": [
+    "Alexander Severus",
+    "Maximinus Thrax",
+    "Julia Mamaea"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "235 年亚历山大·塞维鲁被弑，塞维鲁王朝终结，三世纪危机正式开始。",
+    "background": [
+      "End of Severan Dynasty"
+    ],
+    "process": [
+      "亚历山大·塞维鲁率军到达莱茵河前线应对日耳曼部落的入侵，但他选择了向蛮族支付巨额贿赂以换取和平，而非发动军事行动。这种软弱政策——加之其母玛迈亚过于明显的幕后操控——彻底激怒了莱茵河军团。235 年 3 月，士兵们在莫贡提亚库姆（今美因茨）附近哗变，闯入皇帝营帐杀死了亚历山大·塞维鲁（年仅 26 岁）和玛迈亚。叛军随即拥立了出身色雷斯的低级军官马克西米努斯（后称 Maximinus Thrax，意为''色雷斯人''）。这次弑君标志着塞维鲁王朝的终结和三世纪危机（235-284）的正式开始——此后五十年间，帝国经历了数十位短命皇帝、外敌入侵、经济崩溃和领土分裂。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 6 · 6.8–6.9",
+      "待核：亚历山大·塞维鲁被刺的具体日期（3月18日还是19日？）需要与不同史料交叉验证。"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-235-reign-of-maximinus-thrax-first-soldier-emperor-from-the-ranks', 'Reign of Maximinus Thrax: first soldier-emperor from the ranks', 'rome', 235, 235, 'Germania', 'politics', '马克西米努斯·色雷克斯是第一位从普通士兵逐级晋升至皇帝的军人，他的统治完全以军队为核心。', 'medium', NULL, '{
+  "overview": "马克西米努斯·色雷克斯是第一位从普通士兵逐级晋升至皇帝的军人，他的统治完全以军队为核心。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "马克西米努斯（Gaius Julius Verus Maximinus）据称身高超过 8 英尺（约 2.4 米）——无疑夸大，但他的巨大体格在史料中保持一致。他出身色雷斯贫苦农民家庭（可能是半罗马化的蛮族），从辅助军团基层士兵开始，凭借勇气和体格逐步晋升为军官。成为皇帝后，他从未造访罗马，其统治本质上是纯粹的军事独裁——大幅增加军饷和军费，不加区分地征收行省贵族和城市的财产。他的高压政策和元老院对他的蔑视最终导致了 238 年非洲行省的暴动和元老院对他的公开讨伐。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 7 · 7.1–7.2",
+    "待核：马克西米努斯的身高和出身细节主要来自 Herodian 和 HA，可能有夸大。",
+    "待核：他从未踏足罗马是否属实？还是他曾短暂到访但没有被记载？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:a96be10ce17d84e0aebe64ef",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 18,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "7.1–7.2",
+  "originalText": null,
+  "translation": "Herodian 记述了马克西米努斯·色雷克斯的即位和早期统治。他出身色雷斯农民，早年加入罗马辅助军团，凭借巨大的体格和军事才能一路晋升。但他从底层直接升至皇帝令元老院极度不满。他从未踏足罗马，始终在前线作战（主要在日耳曼和多瑙河地区），通过极度压榨行省贵族来支付军饷。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Maximinus Thrax"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Germania",
+    "Pannonia",
+    "Danube"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Reign of Maximinus Thrax: first soldier-emperor from the ranks",
+  "factType": "person-life",
+  "questions": [
+    "马克西米努斯的身高和出身细节主要来自 Herodian 和 HA，可能有夸大。",
+    "他从未踏足罗马是否属实？还是他曾短暂到访但没有被记载？"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "7.1–7.2"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "person-life",
+    "Germania",
+    "Pannonia",
+    "Danube"
+  ],
+  "people": [
+    "Maximinus Thrax"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "马克西米努斯·色雷克斯是第一位从普通士兵逐级晋升至皇帝的军人，他的统治完全以军队为核心。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "马克西米努斯（Gaius Julius Verus Maximinus）据称身高超过 8 英尺（约 2.4 米）——无疑夸大，但他的巨大体格在史料中保持一致。他出身色雷斯贫苦农民家庭（可能是半罗马化的蛮族），从辅助军团基层士兵开始，凭借勇气和体格逐步晋升为军官。成为皇帝后，他从未造访罗马，其统治本质上是纯粹的军事独裁——大幅增加军饷和军费，不加区分地征收行省贵族和城市的财产。他的高压政策和元老院对他的蔑视最终导致了 238 年非洲行省的暴动和元老院对他的公开讨伐。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 7 · 7.1–7.2",
+      "待核：马克西米努斯的身高和出身细节主要来自 Herodian 和 HA，可能有夸大。",
+      "待核：他从未踏足罗马是否属实？还是他曾短暂到访但没有被记载？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-235-the-third-century-crisis-overview', 'The Third Century Crisis: overview', 'rome', 235, 235, 'Rome', 'politics', '三世纪危机（235-284）是罗马帝国历史上最严重的系统性危机，军事、经济、政治同时崩溃。', 'high', NULL, '{
+  "overview": "三世纪危机（235-284）是罗马帝国历史上最严重的系统性危机，军事、经济、政治同时崩溃。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "三世纪危机是罗马帝国史上最深刻的系统性崩溃时期，持续约 50 年。军事上，莱茵河-多瑙河前线遭到日耳曼部落前所未有的入侵（阿勒曼尼人、法兰克人、哥特人），东部萨珊波斯在 224 年取代帕提亚后成为更具侵略性的对手。政治上，从亚历山大·塞维鲁被弑到戴克里先即位，至少 25 人声称帝位，绝大多数死于非命，平均在位不到 3 年。经济上，银币含银量从塞维鲁时期的约 50% 下降到 260 年代的不足 5%，导致恶性通胀。帝国一度分裂为三：中央帝国、高卢帝国（260-274）、帕尔米拉帝国（267-272）。危机最终由奥勒良的军事收复和戴克里先的制度改革所终结。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 2 · pp. 40–70",
+    "待核：三世纪危机的界定时间和具体分期在不同学者间有细微差异。货币政策的数据需要与考古钱币学证据交叉验证。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:d1d2db607cbac21439cb4082",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 21,
+  "sourceId": "rome-source-the-cambridge-ancient-history-cambridge-university-press",
+  "sourceTitle": "The Cambridge Ancient History",
+  "locator": "pp. 40–70",
+  "originalText": null,
+  "translation": "现代史学将 235-284 年定义为''三世纪危机''时期。这一时期的特征包括：军事无政府状态（兵营皇帝频繁更替）、外敌入侵的全面升级（日耳曼部落、萨珊波斯、哥特人、阿勒曼尼人）、严重的经济通胀和货币贬值、以及帝国的领土分裂（高卢帝国 260-274，帕尔米拉帝国 267-272）。公民权扩展后，各行省的地方精英承受了帝国防务的全部财政压力。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [],
+  "places": [
+    "Rome",
+    "Rhine",
+    "Danube",
+    "Euphrates",
+    "Gaul",
+    "Palmyra"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "The Third Century Crisis: overview",
+  "factType": "political-event",
+  "questions": [
+    "三世纪危机的界定时间和具体分期在不同学者间有细微差异。货币政策的数据需要与考古钱币学证据交叉验证。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-cambridge-ancient-history-cambridge-university-press",
+      "locator": "pp. 40–70"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "political-event",
+    "Rome",
+    "Rhine",
+    "Danube"
+  ],
+  "people": [],
+  "sources": [
+    "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "三世纪危机（235-284）是罗马帝国历史上最严重的系统性危机，军事、经济、政治同时崩溃。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "三世纪危机是罗马帝国史上最深刻的系统性崩溃时期，持续约 50 年。军事上，莱茵河-多瑙河前线遭到日耳曼部落前所未有的入侵（阿勒曼尼人、法兰克人、哥特人），东部萨珊波斯在 224 年取代帕提亚后成为更具侵略性的对手。政治上，从亚历山大·塞维鲁被弑到戴克里先即位，至少 25 人声称帝位，绝大多数死于非命，平均在位不到 3 年。经济上，银币含银量从塞维鲁时期的约 50% 下降到 260 年代的不足 5%，导致恶性通胀。帝国一度分裂为三：中央帝国、高卢帝国（260-274）、帕尔米拉帝国（267-272）。危机最终由奥勒良的军事收复和戴克里先的制度改革所终结。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 2 · pp. 40–70",
+      "待核：三世纪危机的界定时间和具体分期在不同学者间有细微差异。货币政策的数据需要与考古钱币学证据交叉验证。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-235-maximinus-thraxs-rhine-and-danube-campaigns', 'Maximinus Thrax''s Rhine and Danube campaigns', 'rome', 235, 235, 'Germania', 'war', '马克西米努斯在位三年间持续在前线作战（日耳曼-萨尔马提亚），从未踏足罗马。', 'high', NULL, '{
+  "overview": "马克西米努斯在位三年间持续在前线作战（日耳曼-萨尔马提亚），从未踏足罗马。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "马克西米努斯·色雷克斯的全程统治都是在战场上度过的——他是''兵营皇帝''（barracks emperor）的原型。235 年被拥立后，他首先在莱茵河前线发动了对阿勒曼尼人（Alamanni）的惩罚性远征——亲自在沼泽和森林中率领军团推进，Herodian 描述他展现了''巨大的个人勇气和体力''。他随后前往多瑙河前线，击败了萨尔马提亚人（Sarmatians）和达契亚部落，在多瑙河中游重建了罗马的防御线。他从未踏足罗马的事实本身就宣示了他的政权性质——帝国现在从军营而非城市中被统治，元老院和罗马民众的意见完全被忽略。但他的军事成功需要支付巨额的军饷——而他的征税机器——主要由骑士阶层的税吏（procuratores）操作——以史无前例的强度压榨行省贵族和城市。这种不加区别的财政榨取最终在 238 年引爆了非洲行省的大规模暴动——地主们武装起他们的佃户（coloni），杀害了帝国税吏，并拥立了年迈的总督戈尔迪安一世（Gordian I），从而触发了''六帝之年''。具有讽刺意味的是——正是马克西米努斯自己的财政政策（而非他的军事能力）导致了他的灭亡。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 6 · pp. 220–228",
+    "待核：马克西米努斯是否真的从未踏足罗马——还是可能有一次未能被记载的短暂访问？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:3dc20558f80c225f897e6662",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 81,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 220–228",
+  "originalText": null,
+  "translation": "Potter 分析了马克西米努斯·色雷克斯（Maximinus Thrax）的军事行动。他被拥立后没有留在罗马——他从未踏足过这座城市——而是立即发动了对阿勒曼尼人（Alamanni）的惩罚性远征。Herodian 描述他亲临前线，率领军团跨越莱茵河，深入日耳曼腹地，在沼泽和森林中与阿勒曼尼人进行了残酷的近距离战斗。238 年他在得知元老院在戈尔迪安一世领导下宣布他为公敌时，正率军征伐萨尔马提亚人（Sarmatians）和达契亚（Dacian）部落。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Maximinus Thrax"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Germania",
+    "Rhine",
+    "Danube",
+    "Dacia",
+    "Pannonia"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Maximinus Thrax''s Rhine and Danube campaigns",
+  "factType": "military-event",
+  "questions": [
+    "马克西米努斯是否真的从未踏足罗马——还是可能有一次未能被记载的短暂访问？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 220–228"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "military-event",
+    "Germania",
+    "Rhine",
+    "Danube"
+  ],
+  "people": [
+    "Maximinus Thrax"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "马克西米努斯在位三年间持续在前线作战（日耳曼-萨尔马提亚），从未踏足罗马。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "马克西米努斯·色雷克斯的全程统治都是在战场上度过的——他是''兵营皇帝''（barracks emperor）的原型。235 年被拥立后，他首先在莱茵河前线发动了对阿勒曼尼人（Alamanni）的惩罚性远征——亲自在沼泽和森林中率领军团推进，Herodian 描述他展现了''巨大的个人勇气和体力''。他随后前往多瑙河前线，击败了萨尔马提亚人（Sarmatians）和达契亚部落，在多瑙河中游重建了罗马的防御线。他从未踏足罗马的事实本身就宣示了他的政权性质——帝国现在从军营而非城市中被统治，元老院和罗马民众的意见完全被忽略。但他的军事成功需要支付巨额的军饷——而他的征税机器——主要由骑士阶层的税吏（procuratores）操作——以史无前例的强度压榨行省贵族和城市。这种不加区别的财政榨取最终在 238 年引爆了非洲行省的大规模暴动——地主们武装起他们的佃户（coloni），杀害了帝国税吏，并拥立了年迈的总督戈尔迪安一世（Gordian I），从而触发了''六帝之年''。具有讽刺意味的是——正是马克西米努斯自己的财政政策（而非他的军事能力）导致了他的灭亡。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 6 · pp. 220–228",
+      "待核：马克西米努斯是否真的从未踏足罗马——还是可能有一次未能被记载的短暂访问？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-238-year-of-the-six-emperors', 'Year of the Six Emperors', 'rome', 238, 238, 'Carthage', 'politics', '公元 238 年出现了六位皇帝——戈尔迪安一世、戈尔迪安二世、马克西米努斯、普皮恩努斯、巴尔比努斯和戈尔迪安三世——帝国政治陷入空前混乱。', 'high', NULL, '{
+  "overview": "公元 238 年出现了六位皇帝——戈尔迪安一世、戈尔迪安二世、马克西米努斯、普皮恩努斯、巴尔比努斯和戈尔迪安三世——帝国政治陷入空前混乱。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "公元 238 年被称为''六帝之年''，是罗马历史上最混乱的年份之一。1）非洲行省因税吏（procurator）的极端榨取而暴动，当地地主拥立总督戈尔迪安一世（约 80 岁）及其子戈尔迪安二世为帝。2）元老院欢欣鼓舞地承认他们，但仅 21 天后努米底亚总督卡佩里亚努斯就击败并杀死了戈尔迪安父子。3）元老院在恐惧中从自己人中选举了普皮恩努斯和巴尔比努斯共治。4）迫于罗马民众压力，元老院又加冕了戈尔迪安一世的外孙戈尔迪安三世为凯撒。5）马克西米努斯率军南下攻打意大利，但在阿奎莱亚（Aquileia）城下受阻，最终被自己的士兵杀死。6）普皮恩努斯和巴尔比努斯随后互相争斗，99 天后被禁卫军杀死。最终 13 岁的戈尔迪安三世成为唯一的皇帝。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Herodian, History of the Empire from the Death of Marcus · Book 7 · 7.4–7.10",
+    "待核：六帝之年的精确时序和每位皇帝的确切在位天数在不同史料中有差异。",
+    "待核：戈尔迪安一世在非洲起义是否完全是自发的，还是元老院事先有联系？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:431d77deb80e078a886d79ce",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 19,
+  "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+  "sourceTitle": "History of the Empire after Marcus",
+  "locator": "7.4–7.10",
+  "originalText": null,
+  "translation": "Herodian 详细记述了公元 238 年的''六帝之年''。非洲行省的地主因马克西米努斯的横征暴敛而起义，杀死当地 procurator，拥立年迈的非洲总督戈尔迪安一世及其子戈尔迪安二世。元老院立即承认他们并宣布马克西米努斯为公敌。但努米底亚总督卡佩里亚努斯率军击败并杀死了戈尔迪安父子（在位仅 21 天）。元老院随后从元老中选举了普皮恩努斯和巴尔比努斯，并迫于民众压力加冕了戈尔迪安一世的外孙——13 岁的戈尔迪安三世为凯撒。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Gordian III"
+  ],
+  "peopleMentioned": [
+    "Maximinus Thrax",
+    "Gordian I",
+    "Gordian II",
+    "Pupienus",
+    "Balbinus"
+  ],
+  "places": [
+    "Carthage",
+    "Rome",
+    "Aquileia"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Year of the Six Emperors",
+  "factType": "political-event",
+  "questions": [
+    "六帝之年的精确时序和每位皇帝的确切在位天数在不同史料中有差异。",
+    "戈尔迪安一世在非洲起义是否完全是自发的，还是元老院事先有联系？"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-history-of-the-empire-after-marcus-herodian",
+      "locator": "7.4–7.10"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "political-event",
+    "Carthage",
+    "Rome",
+    "Aquileia"
+  ],
+  "people": [
+    "Gordian III",
+    "Maximinus Thrax",
+    "Gordian I",
+    "Gordian II",
+    "Pupienus",
+    "Balbinus"
+  ],
+  "sources": [
+    "Herodian, History of the Empire from the Death of Marcus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "公元 238 年出现了六位皇帝——戈尔迪安一世、戈尔迪安二世、马克西米努斯、普皮恩努斯、巴尔比努斯和戈尔迪安三世——帝国政治陷入空前混乱。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "公元 238 年被称为''六帝之年''，是罗马历史上最混乱的年份之一。1）非洲行省因税吏（procurator）的极端榨取而暴动，当地地主拥立总督戈尔迪安一世（约 80 岁）及其子戈尔迪安二世为帝。2）元老院欢欣鼓舞地承认他们，但仅 21 天后努米底亚总督卡佩里亚努斯就击败并杀死了戈尔迪安父子。3）元老院在恐惧中从自己人中选举了普皮恩努斯和巴尔比努斯共治。4）迫于罗马民众压力，元老院又加冕了戈尔迪安一世的外孙戈尔迪安三世为凯撒。5）马克西米努斯率军南下攻打意大利，但在阿奎莱亚（Aquileia）城下受阻，最终被自己的士兵杀死。6）普皮恩努斯和巴尔比努斯随后互相争斗，99 天后被禁卫军杀死。最终 13 岁的戈尔迪安三世成为唯一的皇帝。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Herodian, History of the Empire from the Death of Marcus · Book 7 · 7.4–7.10",
+      "待核：六帝之年的精确时序和每位皇帝的确切在位天数在不同史料中有差异。",
+      "待核：戈尔迪安一世在非洲起义是否完全是自发的，还是元老院事先有联系？"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-238-fall-of-maximinus-thrax-at-aquileia', 'Fall of Maximinus Thrax at Aquileia', 'rome', 238, 238, 'Aquileia', 'war', '238 年马克西米努斯围攻阿奎莱亚失败，被自己的士兵杀死。', 'medium', NULL, '{
+  "overview": "238 年马克西米努斯围攻阿奎莱亚失败，被自己的士兵杀死。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "238 年春，马克西米努斯得知元老院宣布他为公敌后，从潘诺尼亚率军南下意大利。但在阿奎莱亚（Aquileia）城下，他的军队遭遇了顽强抵抗，城市关闭城门拒绝接纳。长时间的围攻导致补给短缺，士兵士气崩溃。据 Herodian 记载，部分士兵的家人恰好被困在城中或附近，加剧了他们的不满。238 年 5 月（或 4 月），第二帕提亚军团的士兵在中午闯入皇帝营帐，杀害了马克西米努斯及其子马克西姆斯。两人的首级被送到罗马，标志着''士兵皇帝''模式的首次失败。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Historia Augusta, Vita Maximini Duo · Vita Maximini · Maximin. 1–33",
+    "待核：HA 对马克西米努斯的体貌描写充满夸张修辞，不可全信。阿奎莱亚围城的具体持续时间和死亡日期需要与 Herodian 对勘。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:0a4a146b334f2f964477abf3",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 20,
+  "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+  "sourceTitle": "Historia Augusta",
+  "locator": "Maximin. 1–33",
+  "originalText": null,
+  "translation": "Historia Augusta 对马克西米努斯进行了极度负面的记述（需注意 HA 的可靠性问题）。它声称他残酷、无知、半蛮族，而且身材异常庞大（身高超过 8 英尺，每天能吃 40 磅肉，喝 18 瓶酒）。HA 将 238 年的动乱归咎于马克西米努斯对''文明人''（即元老和富裕公民）的系统性迫害。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Maximinus Thrax"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Aquileia",
+    "Rome"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Fall of Maximinus Thrax at Aquileia",
+  "factType": "military-event",
+  "questions": [
+    "HA 对马克西米努斯的体貌描写充满夸张修辞，不可全信。阿奎莱亚围城的具体持续时间和死亡日期需要与 Herodian 对勘。"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+      "locator": "Maximin. 1–33"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "military-event",
+    "Aquileia",
+    "Rome"
+  ],
+  "people": [
+    "Maximinus Thrax"
+  ],
+  "sources": [
+    "Historia Augusta, Vita Maximini Duo"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "238 年马克西米努斯围攻阿奎莱亚失败，被自己的士兵杀死。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "238 年春，马克西米努斯得知元老院宣布他为公敌后，从潘诺尼亚率军南下意大利。但在阿奎莱亚（Aquileia）城下，他的军队遭遇了顽强抵抗，城市关闭城门拒绝接纳。长时间的围攻导致补给短缺，士兵士气崩溃。据 Herodian 记载，部分士兵的家人恰好被困在城中或附近，加剧了他们的不满。238 年 5 月（或 4 月），第二帕提亚军团的士兵在中午闯入皇帝营帐，杀害了马克西米努斯及其子马克西姆斯。两人的首级被送到罗马，标志着''士兵皇帝''模式的首次失败。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Historia Augusta, Vita Maximini Duo · Vita Maximini · Maximin. 1–33",
+      "待核：HA 对马克西米努斯的体貌描写充满夸张修辞，不可全信。阿奎莱亚围城的具体持续时间和死亡日期需要与 Herodian 对勘。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-244-death-of-gordian-iii-philip-the-arab-becomes-emperor', 'Death of Gordian III; Philip the Arab becomes emperor', 'rome', 244, 244, 'Mesopotamia', 'politics', '244 年戈尔迪安三世在对萨珊波斯的远征中死亡，腓力·阿拉伯即位。', 'medium', NULL, '{
+  "overview": "244 年戈尔迪安三世在对萨珊波斯的远征中死亡，腓力·阿拉伯即位。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "戈尔迪安三世于 242 年在禁卫军长官兼岳父提米西修斯（Timesitheus）的辅佐下发动对萨珊波斯的反击。初期在雷塞纳（Resaina）取得胜利，成功收复卡雷和尼西比斯。但提米西修斯于 243 年突然去世（可能是疾病），此后军团由腓力接替指挥。244 年戈尔迪安三世在不明情况下死于美索不达米亚——波斯史料（Shapur I''s Res Gestae）声称他在交战中阵亡于 Mishik，罗马史料（如 Zosimus）多暗示腓力策划了谋杀。腓力立即与沙普尔一世议和，支付巨额赔款，然后返回罗马。他在 248 年主持了罗马建城 1000 年的盛大庆祝活动（Ludi Saeculares），但在庆祝典礼的喧嚣下，边境形势却日益紧张。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Zosimus, Historia Nova · Book 1 · 1.18–1.19",
+    "待核：戈尔迪安三世的死因有争议——波斯史料（Shapur I''s Res Gestae）声称他在战斗中阵亡，罗马史料暗示腓力谋杀了皇帝。确切死因需要双向对勘。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:c0845e4476d31d3d7ced441d",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 22,
+  "sourceId": "rome-source-historia-nova-zosimus",
+  "sourceTitle": "Historia Nova",
+  "locator": "1.18–1.19",
+  "originalText": null,
+  "translation": "据 Zosimus（5 世纪末/6 世纪初的希腊史家，引述失传的 Dexippus 和 Eunapius）记载，戈尔迪安三世在与萨珊波斯的战斗中阵亡。近卫军长官腓力（Marcus Julius Philippus，绰号''阿拉伯人''）随后被军队拥立为帝。但萨珊波斯方面——沙普尔一世在纳克什-鲁斯塔姆的纪功铭文（Res Gestae Divi Saporis）——则宣称戈尔迪安三世死于 Mishik 的战斗，且沙普尔本人迫使他出战并将其击败。罗马史料多暗示腓力通过切断补给或直接谋杀导致了戈尔迪安的死。腓力立即与沙普尔一世签订和约，支付巨额赔款（据称 500,000 金第纳里），然后匆忙返回罗马以巩固其统治。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Philip the Arab",
+    "Gordian III"
+  ],
+  "peopleMentioned": [
+    "Shapur I",
+    "Timesitheus"
+  ],
+  "places": [
+    "Mesopotamia",
+    "Zaitha",
+    "Rome",
+    "Euphrates",
+    "Mishik"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Death of Gordian III; Philip the Arab becomes emperor",
+  "factType": "political-event",
+  "questions": [
+    "戈尔迪安三世的死因有争议——波斯史料（Shapur I''s Res Gestae）声称他在战斗中阵亡，罗马史料暗示腓力谋杀了皇帝。确切死因需要双向对勘。"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-nova-zosimus",
+      "locator": "1.18–1.19"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "political-event",
+    "Mesopotamia",
+    "Zaitha",
+    "Rome"
+  ],
+  "people": [
+    "Philip the Arab",
+    "Gordian III",
+    "Shapur I",
+    "Timesitheus"
+  ],
+  "sources": [
+    "Zosimus, Historia Nova"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "244 年戈尔迪安三世在对萨珊波斯的远征中死亡，腓力·阿拉伯即位。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "戈尔迪安三世于 242 年在禁卫军长官兼岳父提米西修斯（Timesitheus）的辅佐下发动对萨珊波斯的反击。初期在雷塞纳（Resaina）取得胜利，成功收复卡雷和尼西比斯。但提米西修斯于 243 年突然去世（可能是疾病），此后军团由腓力接替指挥。244 年戈尔迪安三世在不明情况下死于美索不达米亚——波斯史料（Shapur I''s Res Gestae）声称他在交战中阵亡于 Mishik，罗马史料（如 Zosimus）多暗示腓力策划了谋杀。腓力立即与沙普尔一世议和，支付巨额赔款，然后返回罗马。他在 248 年主持了罗马建城 1000 年的盛大庆祝活动（Ludi Saeculares），但在庆祝典礼的喧嚣下，边境形势却日益紧张。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Zosimus, Historia Nova · Book 1 · 1.18–1.19",
+      "待核：戈尔迪安三世的死因有争议——波斯史料（Shapur I''s Res Gestae）声称他在战斗中阵亡，罗马史料暗示腓力谋杀了皇帝。确切死因需要双向对勘。"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-244-shapur-is-account-of-gordian-iiis-death-battle-or-murder', 'Shapur I''s account of Gordian III''s death: battle or murder?', 'rome', 244, 244, 'Misiche', 'war', '沙普尔一世声称戈尔迪安三世在 Misiche 会战中阵亡——罗马史料则暗示他被腓力谋杀——双方叙事直接矛盾。', 'medium', NULL, '{
+  "overview": "沙普尔一世声称戈尔迪安三世在 Misiche 会战中阵亡——罗马史料则暗示他被腓力谋杀——双方叙事直接矛盾。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "戈尔迪安三世（238-244）是罗马第一位在与萨珊波斯的直接对抗中丧生的皇帝——但他的确切死因至今是古代史研究中最为棘手的历史谜题之一。罗马方面的文献（Zosimus、Eutropius、HA）一致将矛头指向了腓力·阿拉伯（Philip the Arab）——声称这位接替提米西修斯的近卫军长官通过切断补给、散布谣言和最终的直接谋杀导致了戈尔迪安的死亡。但沙普尔一世本人——在 Naqsh-e Rostam 的三语纪功铭文中——提供了截然不同的叙述：他宣称戈尔迪安是在 Misiche（Mishik，位于幼发拉底河附近的某处）的会战中被击败并被杀的。沙普尔甚至将该城更名为 Peroz-Shapur（''沙普尔之胜利''）以纪念这场胜利。这个矛盾提出了一个根本性的解释问题：罗马史料隐晦的''谋杀说''是否是元老院史家掩饰耻辱的战场失败的一个方便的工具——将罪责归于一个内部叛徒（腓力）而非承认罗马军队在波斯人面前败北？还是波斯铭文对''杀死戈尔迪安''的宣称本身是一种宣传性的夸张，借机将一次死亡归功于自己的战绩？没有决定性证据来仲裁这两种叙事。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Res Gestae Divi Saporis (SKZ, Naqsh-e Rostam) · Lines 6-15 · SKZ §6–15",
+    "待核：戈尔迪安三世之死的罗马叙事（被腓力谋杀）是否是对他在战场上失败的一种脸面-saving 的虚构？Misiche 的确切地理位置已被证实或仍有考古争议？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:784b2e6922b80da5956ddd4a",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 83,
+  "sourceId": "rome-source-res-gestae-divi-saporis-shapur-i",
+  "sourceTitle": "Res Gestae Divi Saporis",
+  "locator": "SKZ §6–15",
+  "originalText": null,
+  "translation": "沙普尔一世在纳克什-鲁斯塔姆铭文中对戈尔迪安三世之死的记载与罗马文献直接矛盾。罗马方资料（如 Zosimus 1.19）暗示近卫军长官腓力密谋杀害了戈尔迪安三世。但沙普尔宣称：''凯撒戈尔迪安（Gordianus Caesar）召集了一支来自哥特和日耳曼地区的庞大军队并进军对抗我们……双方在米西克（Mishik，即 Misiche）边境交战……戈尔迪安凯撒被杀，罗马军队被摧毁……我们……将 Misiche 更名为 [Peroz-Shapur]（''沙普尔之胜利''）……''波斯方面的记载与罗马叙事产生了直接的冲突——戈尔迪安三世是战死还是被谋杀？罗马方面的''谋杀说''是否是为了掩盖在战场上的失败？",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Gordian III"
+  ],
+  "peopleMentioned": [
+    "Shapur I",
+    "Philip the Arab"
+  ],
+  "places": [
+    "Misiche",
+    "Mishik",
+    "Mesopotamia",
+    "Peroz-Shapur"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Shapur I''s account of Gordian III''s death: battle or murder?",
+  "factType": "military-event",
+  "questions": [
+    "戈尔迪安三世之死的罗马叙事（被腓力谋杀）是否是对他在战场上失败的一种脸面-saving 的虚构？Misiche 的确切地理位置已被证实或仍有考古争议？"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-res-gestae-divi-saporis-shapur-i",
+      "locator": "SKZ §6–15"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "military-event",
+    "Misiche",
+    "Mishik",
+    "Mesopotamia"
+  ],
+  "people": [
+    "Gordian III",
+    "Shapur I",
+    "Philip the Arab"
+  ],
+  "sources": [
+    "Res Gestae Divi Saporis (SKZ, Naqsh-e Rostam)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "沙普尔一世声称戈尔迪安三世在 Misiche 会战中阵亡——罗马史料则暗示他被腓力谋杀——双方叙事直接矛盾。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "戈尔迪安三世（238-244）是罗马第一位在与萨珊波斯的直接对抗中丧生的皇帝——但他的确切死因至今是古代史研究中最为棘手的历史谜题之一。罗马方面的文献（Zosimus、Eutropius、HA）一致将矛头指向了腓力·阿拉伯（Philip the Arab）——声称这位接替提米西修斯的近卫军长官通过切断补给、散布谣言和最终的直接谋杀导致了戈尔迪安的死亡。但沙普尔一世本人——在 Naqsh-e Rostam 的三语纪功铭文中——提供了截然不同的叙述：他宣称戈尔迪安是在 Misiche（Mishik，位于幼发拉底河附近的某处）的会战中被击败并被杀的。沙普尔甚至将该城更名为 Peroz-Shapur（''沙普尔之胜利''）以纪念这场胜利。这个矛盾提出了一个根本性的解释问题：罗马史料隐晦的''谋杀说''是否是元老院史家掩饰耻辱的战场失败的一个方便的工具——将罪责归于一个内部叛徒（腓力）而非承认罗马军队在波斯人面前败北？还是波斯铭文对''杀死戈尔迪安''的宣称本身是一种宣传性的夸张，借机将一次死亡归功于自己的战绩？没有决定性证据来仲裁这两种叙事。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Res Gestae Divi Saporis (SKZ, Naqsh-e Rostam) · Lines 6-15 · SKZ §6–15",
+      "待核：戈尔迪安三世之死的罗马叙事（被腓力谋杀）是否是对他在战场上失败的一种脸面-saving 的虚构？Misiche 的确切地理位置已被证实或仍有考古争议？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-248-fall-of-philip-the-arab-decius-becomes-emperor', 'Fall of Philip the Arab; Decius becomes emperor', 'rome', 248, 248, 'Verona', 'politics', '249 年腓力·阿拉伯被德西乌斯击败身亡，帝国陷入新一轮军事动荡。', 'high', NULL, '{
+  "overview": "249 年腓力·阿拉伯被德西乌斯击败身亡，帝国陷入新一轮军事动荡。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "腓力·阿拉伯的统治以罗马建城千年庆典（248年4月）为高光时刻，但边患和内乱随后接踵而至。哥特人和卡尔皮人（Carpi）越过多瑙河肆虐；东方和潘诺尼亚的军团各立僭主。腓力派元老德西乌斯（Gaius Messius Quintus Decius）前往潘诺尼亚镇压叛乱，但德西乌斯成功完成任务后，潘诺尼亚军团反过来说服他接受帝位。德西乌斯虽声称不情愿，但仍率军南下意大利。249 年 9 月（或 10 月），双方在维罗纳附近交战，腓力兵败被杀。他的 11 岁儿子腓力二世随后在罗马被禁卫军杀害。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Eutropius, Breviarium · Book 9 · 9.3–9.4",
+    "待核：德西乌斯是否真的''不情愿''接受帝位，还是事先已经策划？史料对此有不同解读。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:9ceb8660f56057b87f94c35e",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 23,
+  "sourceId": "rome-source-breviarium-ab-urbe-condita-eutropius",
+  "sourceTitle": "Breviarium ab Urbe Condita",
+  "locator": "9.3–9.4",
+  "originalText": null,
+  "translation": "据 Eutropius 记载，腓力统治后期，多瑙河和东方边境同时出现叛乱。潘诺尼亚军团拥立了将领帕卡提亚努斯（Pacatianus），东方军团则支持约塔皮亚努斯（Jotapianus）。腓力派德西乌斯前去平叛，但潘诺尼亚军团反而拥立德西乌斯为帝（249 年）。德西乌斯率军返回意大利，在维罗纳附近击败并杀死了腓力。Eutropius 简评为''甚短而平静的统治被军队叛乱所终结''。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Philip the Arab",
+    "Decius"
+  ],
+  "peopleMentioned": [
+    "Pacatianus",
+    "Jotapianus"
+  ],
+  "places": [
+    "Verona",
+    "Pannonia",
+    "Danube",
+    "Rome"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Fall of Philip the Arab; Decius becomes emperor",
+  "factType": "political-event",
+  "questions": [
+    "德西乌斯是否真的''不情愿''接受帝位，还是事先已经策划？史料对此有不同解读。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-breviarium-ab-urbe-condita-eutropius",
+      "locator": "9.3–9.4"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "political-event",
+    "Verona",
+    "Pannonia",
+    "Danube"
+  ],
+  "people": [
+    "Philip the Arab",
+    "Decius",
+    "Pacatianus",
+    "Jotapianus"
+  ],
+  "sources": [
+    "Eutropius, Breviarium"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "249 年腓力·阿拉伯被德西乌斯击败身亡，帝国陷入新一轮军事动荡。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "腓力·阿拉伯的统治以罗马建城千年庆典（248年4月）为高光时刻，但边患和内乱随后接踵而至。哥特人和卡尔皮人（Carpi）越过多瑙河肆虐；东方和潘诺尼亚的军团各立僭主。腓力派元老德西乌斯（Gaius Messius Quintus Decius）前往潘诺尼亚镇压叛乱，但德西乌斯成功完成任务后，潘诺尼亚军团反过来说服他接受帝位。德西乌斯虽声称不情愿，但仍率军南下意大利。249 年 9 月（或 10 月），双方在维罗纳附近交战，腓力兵败被杀。他的 11 岁儿子腓力二世随后在罗马被禁卫军杀害。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Eutropius, Breviarium · Book 9 · 9.3–9.4",
+      "待核：德西乌斯是否真的''不情愿''接受帝位，还是事先已经策划？史料对此有不同解读。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-249-decian-persecution-of-christians', 'Decian persecution of Christians', 'rome', 249, 249, 'Rome', 'politics', '德西乌斯于 250 年发动了第一次帝国范围的系统性基督教迫害。', 'high', NULL, '{
+  "overview": "德西乌斯于 250 年发动了第一次帝国范围的系统性基督教迫害。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "德西乌斯认为帝国的危机源于罗马传统宗教的被忽视和基督教的发展触怒了众神。他于 249 年末颁布针对全体帝国居民的强制性献祭法令——每个公民须在地方官员面前向罗马诸神或皇帝守护神献祭，并获取书面证明（libellus，少量纸莎草纸原件在埃及出土）。拒绝者将面临监禁、财产充公甚至死刑。这次迫害规模前所未有，导致罗马主教法比安等大量基督徒殉道。但大量普通基督徒通过购买假证明或通过亲友代替献祭来规避。迫害在 251 年德西乌斯战死后自行停止，但引发了教会内部关于如何处理''失节者''（lapsi）的长期争论。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Lactantius, De Mortibus Persecutorum · Chapters 3-4 · 3–4",
+    "待核：迫害是否是德西乌斯本人发起的，还是地方官员自发执行的？具体执行力度在不同行省是否有差异？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:379f9e6b76db3f68d7982ac3",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 24,
+  "sourceId": "rome-source-de-mortibus-persecutorum-lactantius",
+  "sourceTitle": "De Mortibus Persecutorum",
+  "locator": "3–4",
+  "originalText": null,
+  "translation": "Lactantius 将德西乌斯描述为迫害基督教徒的第一个系统化发动者。249 年末（或 250 年初），德西乌斯颁布法令，要求帝国境内所有公民向罗马诸神献祭并获取证书（libellus）。拒绝者将被处死。罗马主教法比安（Fabian）和许多基督徒殉道。这是罗马帝国第一次普遍的、系统化的对基督教的迫害。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Decius"
+  ],
+  "peopleMentioned": [
+    "Fabian"
+  ],
+  "places": [
+    "Rome",
+    "Empire-wide"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Decian persecution of Christians",
+  "factType": "political-event",
+  "questions": [
+    "迫害是否是德西乌斯本人发起的，还是地方官员自发执行的？具体执行力度在不同行省是否有差异？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-de-mortibus-persecutorum-lactantius",
+      "locator": "3–4"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "political-event",
+    "Rome",
+    "Empire-wide"
+  ],
+  "people": [
+    "Decius",
+    "Fabian"
+  ],
+  "sources": [
+    "Lactantius, De Mortibus Persecutorum"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "德西乌斯于 250 年发动了第一次帝国范围的系统性基督教迫害。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "德西乌斯认为帝国的危机源于罗马传统宗教的被忽视和基督教的发展触怒了众神。他于 249 年末颁布针对全体帝国居民的强制性献祭法令——每个公民须在地方官员面前向罗马诸神或皇帝守护神献祭，并获取书面证明（libellus，少量纸莎草纸原件在埃及出土）。拒绝者将面临监禁、财产充公甚至死刑。这次迫害规模前所未有，导致罗马主教法比安等大量基督徒殉道。但大量普通基督徒通过购买假证明或通过亲友代替献祭来规避。迫害在 251 年德西乌斯战死后自行停止，但引发了教会内部关于如何处理''失节者''（lapsi）的长期争论。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Lactantius, De Mortibus Persecutorum · Chapters 3-4 · 3–4",
+      "待核：迫害是否是德西乌斯本人发起的，还是地方官员自发执行的？具体执行力度在不同行省是否有差异？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-251-battle-of-abrittus-decius-killed-by-goths', 'Battle of Abrittus: Decius killed by Goths', 'rome', 251, 251, 'Abrittus', 'war', '251 年德西乌斯在阿布里图斯战役中被哥特人击杀，成为首位死于蛮族的罗马皇帝。', 'high', NULL, '{
+  "overview": "251 年德西乌斯在阿布里图斯战役中被哥特人击杀，成为首位死于蛮族的罗马皇帝。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "德西乌斯在多瑙河前线迎击哥特王克尼瓦的入侵。初期罗马军队取得了一些成功，但克尼瓦灵活机动，将罗马军队诱入沼泽地带。在阿布里图斯（今保加利亚拉兹格勒附近），德西乌斯的长子赫伦尼乌斯率先战死。德西乌斯试图以''皇帝战死为国捐躯即为最好的葬礼''来鼓舞士气，但军队在沼泽中被哥特人包围歼灭，德西乌斯本人也阵亡（251 年 6 月或 7 月）。这是罗马皇帝首次在对蛮族的战争中战死沙场，对罗马人心理冲击极大。残存军队紧急拥立了特雷波尼亚努斯·加卢斯（Trebonianus Gallus），后者被迫与哥特人签订屈辱和约并纳贡。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Jordanes, Getica (based on lost work of Cassiodorus) · Chapters 18 · 18.101–18.103",
+    "待核：阿布里图斯的具体战场位置和德西乌斯的死亡方式在史料中有不同叙述。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:8d2b2df23b703e165cda47d6",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 25,
+  "sourceId": "rome-source-getica-jordanes",
+  "sourceTitle": "Getica",
+  "locator": "18.101–18.103",
+  "originalText": null,
+  "translation": "据 Jordanes（引述已失传的材料），251 年 6 月，哥特王克尼瓦（Cniva）率军在多瑙河下游的阿布里图斯（Abrittus）附近的沼泽地中伏击并全歼了德西乌斯的罗马军队。德西乌斯和其子赫伦尼乌斯（Herennius Etruscus）双双阵亡。德西乌斯是第一位在对外战争中战死的罗马皇帝。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Decius"
+  ],
+  "peopleMentioned": [
+    "Cniva",
+    "Herennius Etruscus",
+    "Trebonianus Gallus"
+  ],
+  "places": [
+    "Abrittus",
+    "Moesia",
+    "Danube"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Battle of Abrittus: Decius killed by Goths",
+  "factType": "military-event",
+  "questions": [
+    "阿布里图斯的具体战场位置和德西乌斯的死亡方式在史料中有不同叙述。"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-getica-jordanes",
+      "locator": "18.101–18.103"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "military-event",
+    "Abrittus",
+    "Moesia",
+    "Danube"
+  ],
+  "people": [
+    "Decius",
+    "Cniva",
+    "Herennius Etruscus",
+    "Trebonianus Gallus"
+  ],
+  "sources": [
+    "Jordanes, Getica (based on lost work of Cassiodorus)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "251 年德西乌斯在阿布里图斯战役中被哥特人击杀，成为首位死于蛮族的罗马皇帝。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "德西乌斯在多瑙河前线迎击哥特王克尼瓦的入侵。初期罗马军队取得了一些成功，但克尼瓦灵活机动，将罗马军队诱入沼泽地带。在阿布里图斯（今保加利亚拉兹格勒附近），德西乌斯的长子赫伦尼乌斯率先战死。德西乌斯试图以''皇帝战死为国捐躯即为最好的葬礼''来鼓舞士气，但军队在沼泽中被哥特人包围歼灭，德西乌斯本人也阵亡（251 年 6 月或 7 月）。这是罗马皇帝首次在对蛮族的战争中战死沙场，对罗马人心理冲击极大。残存军队紧急拥立了特雷波尼亚努斯·加卢斯（Trebonianus Gallus），后者被迫与哥特人签订屈辱和约并纳贡。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Jordanes, Getica (based on lost work of Cassiodorus) · Chapters 18 · 18.101–18.103",
+      "待核：阿布里图斯的具体战场位置和德西乌斯的死亡方式在史料中有不同叙述。"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-252-shapur-is-three-invasions-of-the-roman-east-252-260', 'Shapur I''s three invasions of the Roman East (252-260)', 'rome', 252, 252, 'Mesopotamia', 'war', '沙普尔一世在 252-260 年间三次大规模入侵罗马帝国东部，最终俘虏了皇帝瓦勒良。', 'high', NULL, '{
+  "overview": "沙普尔一世在 252-260 年间三次大规模入侵罗马帝国东部，最终俘虏了皇帝瓦勒良。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "沙普尔一世（统治 240-270）是萨珊波斯最伟大的军事君主之一，他的三次西征将罗马的东方防线推向了崩溃边缘。他于约 252 年发动第一次入侵，摧毁了罗马军队在巴巴利苏斯（Barbalissus）的防御并劫掠了叙利亚的数十个城市——包括安条克本身，这是自共和国以来罗马东方帝国核心城市首次被外敌洗劫。约 256 年的第二次入侵深入卡帕多奇亚（Cappadocia），摧毁了萨塔拉（Satala）要塞。第三次入侵（260 年）以埃德萨战役和瓦勒良本人的被俘为高潮——沙普尔在其铭文中宣称他''亲手俘虏了罗马人的凯撒瓦勒良''并且在战场上俘获了罗马的禁卫军长官、元老和军官。瓦勒良及其军官的余生都在波斯被囚禁。沙普尔充分利用了这一前所未有的宣传胜利——不仅在波斯和罗马边境大肆宣扬，还在纳克什-鲁斯塔姆（Naqsh-e Rostam）和比沙普尔（Bishapur）留下了巨型的岩石浮雕，描绘了瓦勒良在沙普尔面前下跪或被俘虏的场景。这些图像至今清晰可见。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Res Gestae Divi Saporis (SKZ, Naqsh-e Rostam trilingual inscription) · Lines 1-20 · SKZ §1–20",
+    "待核：沙普尔一世宣称的 37 座被征服城市的确切清单是否可以与罗马方面的史料对勘？",
+    "待核：安条克是否被毁坏还是仅被劫掠？考古证据如何？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:b2dac33245819feb3849d945",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 69,
+  "sourceId": "rome-source-res-gestae-divi-saporis-shapur-i",
+  "sourceTitle": "Res Gestae Divi Saporis",
+  "locator": "SKZ §1–20",
+  "originalText": null,
+  "translation": "沙普尔一世（Shapur I）的纳克什-鲁斯塔姆三语纪功铭文是研究公元 252-260 年萨珊波斯三次入侵罗马帝国的关键波斯方面的史料。沙普尔声称他在第一次战役（约 252）中征服了罗马的叙利亚和美索不达米亚的 37 座城市；第二次战役（约 256）中入侵了卡帕多奇亚；第三次战役（260）中在埃德萨附近与一支 70,000 人的罗马军队交战，击败了他们并''亲手俘虏了罗马人的凯撒''——瓦勒良（Valerian）。他列出了一长串被征服的城市，包括安条克（Antioch）——帝国东部的最大都市。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Valerian"
+  ],
+  "peopleMentioned": [
+    "Shapur I",
+    "Gallienus"
+  ],
+  "places": [
+    "Mesopotamia",
+    "Antioch",
+    "Edessa",
+    "Carrhae",
+    "Cappadocia",
+    "Syria"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Shapur I''s three invasions of the Roman East (252-260)",
+  "factType": "military-event",
+  "questions": [
+    "沙普尔一世宣称的 37 座被征服城市的确切清单是否可以与罗马方面的史料对勘？",
+    "安条克是否被毁坏还是仅被劫掠？考古证据如何？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-res-gestae-divi-saporis-shapur-i",
+      "locator": "SKZ §1–20"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "military-event",
+    "Mesopotamia",
+    "Antioch",
+    "Edessa"
+  ],
+  "people": [
+    "Valerian",
+    "Shapur I",
+    "Gallienus"
+  ],
+  "sources": [
+    "Res Gestae Divi Saporis (SKZ, Naqsh-e Rostam trilingual inscription)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "沙普尔一世在 252-260 年间三次大规模入侵罗马帝国东部，最终俘虏了皇帝瓦勒良。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "沙普尔一世（统治 240-270）是萨珊波斯最伟大的军事君主之一，他的三次西征将罗马的东方防线推向了崩溃边缘。他于约 252 年发动第一次入侵，摧毁了罗马军队在巴巴利苏斯（Barbalissus）的防御并劫掠了叙利亚的数十个城市——包括安条克本身，这是自共和国以来罗马东方帝国核心城市首次被外敌洗劫。约 256 年的第二次入侵深入卡帕多奇亚（Cappadocia），摧毁了萨塔拉（Satala）要塞。第三次入侵（260 年）以埃德萨战役和瓦勒良本人的被俘为高潮——沙普尔在其铭文中宣称他''亲手俘虏了罗马人的凯撒瓦勒良''并且在战场上俘获了罗马的禁卫军长官、元老和军官。瓦勒良及其军官的余生都在波斯被囚禁。沙普尔充分利用了这一前所未有的宣传胜利——不仅在波斯和罗马边境大肆宣扬，还在纳克什-鲁斯塔姆（Naqsh-e Rostam）和比沙普尔（Bishapur）留下了巨型的岩石浮雕，描绘了瓦勒良在沙普尔面前下跪或被俘虏的场景。这些图像至今清晰可见。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Res Gestae Divi Saporis (SKZ, Naqsh-e Rostam trilingual inscription) · Lines 1-20 · SKZ §1–20",
+      "待核：沙普尔一世宣称的 37 座被征服城市的确切清单是否可以与罗马方面的史料对勘？",
+      "待核：安条克是否被毁坏还是仅被劫掠？考古证据如何？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-252-the-plague-of-cyprian-249-262', 'The Plague of Cyprian (249-262)', 'rome', 252, 252, 'Carthage', 'politics', '西普里安瘟疫（249-262）在帝国面临军事和政治危机的同时对人口造成了毁灭性的打击。', 'medium', NULL, '{
+  "overview": "西普里安瘟疫（249-262）在帝国面临军事和政治危机的同时对人口造成了毁灭性的打击。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "西普里安瘟疫（以迦太基主教 Cyprian 命名，他详细记录了瘟疫的过程）在 249-262 年间肆虐罗马帝国，是三世纪危机中常被忽视但可能最具破坏性的因素。它的病原体至今不确定——可能是天花（Variola）、麻疹或者一种类似埃博拉的出血热（基于其症状描述：''呕吐、眼睛出血、四肢腐烂''）。帝国范围内每天死亡数千人；仅罗马城和亚历山大里亚就发生了大规模的死亡事件。瘟疫对人口和经济的打击与军事危机同时发生——军队招募因人口下降而变得更为困难，粮产因劳动力短缺而萎缩，幸存者中普遍存在的社会不安全感和末世论恐慌为基督教的传播提供了心理土壤。Cyprian 本人的著作 De Mortalitate（''论死亡''）明确地利用瘟疫来论证基督徒应该不惧怕死亡，而异教徒面对同样的死亡却在绝望中崩溃。瘟疫也重创了帝国行政——包括皇帝克劳狄二世（Claudius Gothicus）据信也是 270 年死于该瘟疫的受害者之一。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Cyprian, De Mortalitate (On the Mortality) · Chapters 14-15 · 14–15",
+    "待核：西普里安瘟疫的确切病原体仍然未知——是否有古DNA证据可以从墓葬中提取？",
+    "待核：瘟疫对人口和经济的长期影响有多严重？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:a9506a6ad5dcc7297a7cd185",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 72,
+  "sourceId": "rome-source-on-the-mortality-cyprian-of-carthage",
+  "sourceTitle": "On the Mortality",
+  "locator": "14–15",
+  "originalText": null,
+  "translation": "迦太基主教西普里安（Cyprian）在《论死亡》（De Mortalitate）中描述了席卷帝国的可怕瘟疫——后世称为''西普里安瘟疫''（Plague of Cyprian）。他将其解释为基督教徒为即将到来的末日审判做准备的道德试炼。但与此同时，他记录了令人恐惧的流行病学细节：持续的呕吐、眼睛充血发炎、肢体腐烂和坏疽、听力丧失、以及极高的死亡率——在高峰期，仅迦太基每天就有数百人死亡。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Cyprian",
+    "Decius"
+  ],
+  "places": [
+    "Carthage",
+    "Alexandria",
+    "Empire-wide"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "The Plague of Cyprian (249-262)",
+  "factType": "political-event",
+  "questions": [
+    "西普里安瘟疫的确切病原体仍然未知——是否有古DNA证据可以从墓葬中提取？",
+    "瘟疫对人口和经济的长期影响有多严重？"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-on-the-mortality-cyprian-of-carthage",
+      "locator": "14–15"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "political-event",
+    "Carthage",
+    "Alexandria",
+    "Empire-wide"
+  ],
+  "people": [
+    "Cyprian",
+    "Decius"
+  ],
+  "sources": [
+    "Cyprian, De Mortalitate (On the Mortality)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "西普里安瘟疫（249-262）在帝国面临军事和政治危机的同时对人口造成了毁灭性的打击。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "西普里安瘟疫（以迦太基主教 Cyprian 命名，他详细记录了瘟疫的过程）在 249-262 年间肆虐罗马帝国，是三世纪危机中常被忽视但可能最具破坏性的因素。它的病原体至今不确定——可能是天花（Variola）、麻疹或者一种类似埃博拉的出血热（基于其症状描述：''呕吐、眼睛出血、四肢腐烂''）。帝国范围内每天死亡数千人；仅罗马城和亚历山大里亚就发生了大规模的死亡事件。瘟疫对人口和经济的打击与军事危机同时发生——军队招募因人口下降而变得更为困难，粮产因劳动力短缺而萎缩，幸存者中普遍存在的社会不安全感和末世论恐慌为基督教的传播提供了心理土壤。Cyprian 本人的著作 De Mortalitate（''论死亡''）明确地利用瘟疫来论证基督徒应该不惧怕死亡，而异教徒面对同样的死亡却在绝望中崩溃。瘟疫也重创了帝国行政——包括皇帝克劳狄二世（Claudius Gothicus）据信也是 270 年死于该瘟疫的受害者之一。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Cyprian, De Mortalitate (On the Mortality) · Chapters 14-15 · 14–15",
+      "待核：西普里安瘟疫的确切病原体仍然未知——是否有古DNA证据可以从墓葬中提取？",
+      "待核：瘟疫对人口和经济的长期影响有多严重？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-253-valerian-and-gallienus-the-first-systematic-division-of-the-empire', 'Valerian and Gallienus: the first systematic division of the empire', 'rome', 253, 253, 'Rome', 'politics', '253 年瓦勒良与加里恩努斯父子共治，开创了三世纪东西分治帝国的先例。', 'high', NULL, '{
+  "overview": "253 年瓦勒良与加里恩努斯父子共治，开创了三世纪东西分治帝国的先例。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "253 年夏季，瓦勒良（Valerian）在伊利里亚被军队拥立为帝（此前的皇帝——特雷波尼亚努斯·加卢斯和埃米利安努斯——已在短短几个月内相继被杀）。瓦勒良是元老阶层的资深成员（曾任禁卫军长官和行省总督），他立即将儿子加里恩努斯（Gallienus）任命为共治奥古斯都——一位 30 岁左右的贵族。他们的分治安排是此前从未有过的系统化尝试：瓦勒良亲自负责东方前线（萨珊波斯的威胁是当务之急），将司令部设在安条克或萨摩萨塔（Samosata），而加里恩努斯负责西方——莱茵河和多瑙河边界——以米兰或科隆为前线基地。遗憾的是瓦勒良在东方花费了六年时间（254-260）应对沙普尔一世的连番入侵，但他年迈且调度不灵——他的军队遭受了瘟疫和士气的双重打击——最终在 260 年的埃德萨事件中以灾难性的被俘告终。加里恩努斯则独自面对帝国的全面崩溃。这种父子分治的模式虽然以悲剧收场，但它开创的''共治+区域责任''的理念被后来的戴克里先直接继承和制度化。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 2 · pp. 44–47",
+    "待核：瓦勒良和加里恩努斯的分治是否有正式的权力分配文件——还是仅仅是实际运营上的安排？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:04b2f37c30d8f70bd8f67ff5",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 70,
+  "sourceId": "rome-source-the-cambridge-ancient-history-cambridge-university-press",
+  "sourceTitle": "The Cambridge Ancient History",
+  "locator": "pp. 44–47",
+  "originalText": null,
+  "translation": "现代学术综合指出，253 年瓦勒良（Publius Licinius Valerianus）和加里恩努斯（Publius Licinius Egnatius Gallienus）父子共同即位，确立了东西分治的共治模式。瓦勒良已经年约 60 岁——一位资深元老和资深军官——而加里恩努斯是年约 30 岁的年轻人。瓦勒良前往东方应对萨珊波斯的威胁，而加里恩努斯留在西部对付莱茵河-多瑙河前线的日耳曼入侵。这种''分治''模式实际上是在奥古斯都以来首次在有生之年系统化地分割帝国管理权——是四帝共治之前的最重要的共治实验。遗憾的是瓦勒良在东部停留了 6 年（254-260），最终导致了他的被俘。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Valerian",
+    "Gallienus"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Rome",
+    "Antioch",
+    "Samosata"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Valerian and Gallienus: the first systematic division of the empire",
+  "factType": "political-event",
+  "questions": [
+    "瓦勒良和加里恩努斯的分治是否有正式的权力分配文件——还是仅仅是实际运营上的安排？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-cambridge-ancient-history-cambridge-university-press",
+      "locator": "pp. 44–47"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "political-event",
+    "Rome",
+    "Antioch",
+    "Samosata"
+  ],
+  "people": [
+    "Valerian",
+    "Gallienus"
+  ],
+  "sources": [
+    "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "253 年瓦勒良与加里恩努斯父子共治，开创了三世纪东西分治帝国的先例。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "253 年夏季，瓦勒良（Valerian）在伊利里亚被军队拥立为帝（此前的皇帝——特雷波尼亚努斯·加卢斯和埃米利安努斯——已在短短几个月内相继被杀）。瓦勒良是元老阶层的资深成员（曾任禁卫军长官和行省总督），他立即将儿子加里恩努斯（Gallienus）任命为共治奥古斯都——一位 30 岁左右的贵族。他们的分治安排是此前从未有过的系统化尝试：瓦勒良亲自负责东方前线（萨珊波斯的威胁是当务之急），将司令部设在安条克或萨摩萨塔（Samosata），而加里恩努斯负责西方——莱茵河和多瑙河边界——以米兰或科隆为前线基地。遗憾的是瓦勒良在东方花费了六年时间（254-260）应对沙普尔一世的连番入侵，但他年迈且调度不灵——他的军队遭受了瘟疫和士气的双重打击——最终在 260 年的埃德萨事件中以灾难性的被俘告终。加里恩努斯则独自面对帝国的全面崩溃。这种父子分治的模式虽然以悲剧收场，但它开创的''共治+区域责任''的理念被后来的戴克里先直接继承和制度化。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 2 · pp. 44–47",
+      "待核：瓦勒良和加里恩努斯的分治是否有正式的权力分配文件——还是仅仅是实际运营上的安排？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-260-capture-of-valerian-by-shapur-i', 'Capture of Valerian by Shapur I', 'rome', 260, 260, 'Edessa', 'war', '260 年罗马皇帝瓦勒良被萨珊波斯国王沙普尔一世俘虏——罗马史上首次皇帝被外敌生擒。', 'high', NULL, '{
+  "overview": "260 年罗马皇帝瓦勒良被萨珊波斯国王沙普尔一世俘虏——罗马史上首次皇帝被外敌生擒。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "260 年是三世纪危机的深渊。瓦勒良皇帝亲率约 70,000 大军东征萨珊波斯，但在埃德萨附近因瘟疫和后勤问题陷入困境。他试图与沙普尔一世谈判，但在和谈中被沙普尔背信擒获。沙普尔一世在其三语纪功铭文（Res Gestae Divi Saporis）中骄傲地宣称亲手俘虏了罗马皇帝。罗马方面的史料对此讳莫如深，仅提及瓦勒良''被俘''。据后来的基督教史家 Lactantius 所述，瓦勒良在波斯被当做人形脚凳和被羞辱，死后其皮被剥下并染成红色展示于神庙——但这些细节可能带有基督教的宣传色彩。瓦勒良被俘后，其子加里恩努斯成为唯一的皇帝，帝国陷入了前所未有的混乱。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Res Gestae Divi Saporis (SKZ inscription at Naqsh-e Rostam) · Lines 6-15 · SKZ §6–15",
+    "待核：瓦勒良在波斯的囚禁生活和死亡方式主要来自后期的基督教史料（如 Lactantius），其可靠性存疑。",
+    "待核：70,000 罗马兵力的数字来自波斯方面的记载，可能有所夸大。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:a17eab06ba681ff04e1fa0a5",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 26,
+  "sourceId": "rome-source-res-gestae-divi-saporis-shapur-i",
+  "sourceTitle": "Res Gestae Divi Saporis",
+  "locator": "SKZ §6–15",
+  "originalText": null,
+  "translation": "萨珊波斯王沙普尔一世在其纳克什-鲁斯塔姆（Naqsh-e Rostam）的三语铭文中宣称，他于 260 年在埃德萨（Edessa）附近击败了一支 70,000 人的罗马军队，并亲手俘虏了罗马皇帝瓦勒良。''我亲手俘虏了罗马人的凯撒瓦勒良（Valerianus Caesar）''。这是波斯方面的记载——罗马历史上最屈辱的事件之一。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Valerian"
+  ],
+  "peopleMentioned": [
+    "Shapur I",
+    "Gallienus"
+  ],
+  "places": [
+    "Edessa",
+    "Mesopotamia",
+    "Naqsh-e Rostam"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Capture of Valerian by Shapur I",
+  "factType": "military-event",
+  "questions": [
+    "瓦勒良在波斯的囚禁生活和死亡方式主要来自后期的基督教史料（如 Lactantius），其可靠性存疑。",
+    "70,000 罗马兵力的数字来自波斯方面的记载，可能有所夸大。"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-res-gestae-divi-saporis-shapur-i",
+      "locator": "SKZ §6–15"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "military-event",
+    "Edessa",
+    "Mesopotamia",
+    "Naqsh-e Rostam"
+  ],
+  "people": [
+    "Valerian",
+    "Shapur I",
+    "Gallienus"
+  ],
+  "sources": [
+    "Res Gestae Divi Saporis (SKZ inscription at Naqsh-e Rostam)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "260 年罗马皇帝瓦勒良被萨珊波斯国王沙普尔一世俘虏——罗马史上首次皇帝被外敌生擒。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "260 年是三世纪危机的深渊。瓦勒良皇帝亲率约 70,000 大军东征萨珊波斯，但在埃德萨附近因瘟疫和后勤问题陷入困境。他试图与沙普尔一世谈判，但在和谈中被沙普尔背信擒获。沙普尔一世在其三语纪功铭文（Res Gestae Divi Saporis）中骄傲地宣称亲手俘虏了罗马皇帝。罗马方面的史料对此讳莫如深，仅提及瓦勒良''被俘''。据后来的基督教史家 Lactantius 所述，瓦勒良在波斯被当做人形脚凳和被羞辱，死后其皮被剥下并染成红色展示于神庙——但这些细节可能带有基督教的宣传色彩。瓦勒良被俘后，其子加里恩努斯成为唯一的皇帝，帝国陷入了前所未有的混乱。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Res Gestae Divi Saporis (SKZ inscription at Naqsh-e Rostam) · Lines 6-15 · SKZ §6–15",
+      "待核：瓦勒良在波斯的囚禁生活和死亡方式主要来自后期的基督教史料（如 Lactantius），其可靠性存疑。",
+      "待核：70,000 罗马兵力的数字来自波斯方面的记载，可能有所夸大。"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-260-gallienus-sole-reign-gallic-empire-secedes', 'Gallienus sole reign; Gallic Empire secedes', 'rome', 260, 260, 'Gaul', 'politics', '加里恩努斯在父亲被俘后独自统治帝国，面对高卢帝国的分离和多方入侵，艰难支撑。', 'medium', NULL, '{
+  "overview": "加里恩努斯在父亲被俘后独自统治帝国，面对高卢帝国的分离和多方入侵，艰难支撑。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "瓦勒良被俘后，其子加里恩努斯（Publius Licinius Egnatius Gallienus）成为唯一的皇帝。他面临多重灾难：东方帕尔米拉王国在奥登纳图斯（Odaenathus）领导下实际上脱离了罗马控制；高卢、不列颠和西班牙在波斯特穆斯（Postumus）领导下建立了独立的高卢帝国（260-274）；多瑙河和莱茵河遭受日耳曼部落持续入侵。加里恩努斯是文艺复兴以来被传统史学严重低估的皇帝，但他在极端困境下实施了一些重要改革：禁止元老担任军团指挥职务（将军事指挥权转给职业军官）、建立机动骑兵预备队（vexillationes）、以米兰为基地形成flexible防御体系。这些改革为后来的奥勒良收复和戴克里先重组奠定了基础。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Aurelius Victor, De Caesaribus · 32-33 · 32–33",
+    "待核：加里恩努斯禁止元老担任军职的改革在学术上存在争议——是正式法令还是渐进趋势？文献证据主要来自 Aurelius Victor 的简略提及。",
+    "待核：高卢帝国的独立程度有多大——是彻底分裂还是某种自治实体？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:4d8e607c61d56c87bdfb54a0",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 27,
+  "sourceId": "rome-source-de-caesaribus-aurelius-victor",
+  "sourceTitle": "De Caesaribus",
+  "locator": "32–33",
+  "originalText": null,
+  "translation": "Aurelius Victor 对加里恩努斯（Gallienus）的统治评价复杂。他承认加里恩努斯在面对父亲被俘、帝国分裂和高卢帝国建立等极端困境时坚持不懈，但也批评他对哲学和文化的过度沉迷而无视帝国瓦解。Aurelius Victor 简明扼要地总结了高卢帝国的建立：''当时波斯特穆斯（Postumus）在高卢自立为帝，统治了十年。''",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Gallienus"
+  ],
+  "peopleMentioned": [
+    "Postumus",
+    "Valerian"
+  ],
+  "places": [
+    "Gaul",
+    "Rome",
+    "Milan"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Gallienus sole reign; Gallic Empire secedes",
+  "factType": "person-life",
+  "questions": [
+    "加里恩努斯禁止元老担任军职的改革在学术上存在争议——是正式法令还是渐进趋势？文献证据主要来自 Aurelius Victor 的简略提及。",
+    "高卢帝国的独立程度有多大——是彻底分裂还是某种自治实体？"
+  ],
+  "confidence": "medium",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-de-caesaribus-aurelius-victor",
+      "locator": "32–33"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "person-life",
+    "Gaul",
+    "Rome",
+    "Milan"
+  ],
+  "people": [
+    "Gallienus",
+    "Postumus",
+    "Valerian"
+  ],
+  "sources": [
+    "Aurelius Victor, De Caesaribus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "加里恩努斯在父亲被俘后独自统治帝国，面对高卢帝国的分离和多方入侵，艰难支撑。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "瓦勒良被俘后，其子加里恩努斯（Publius Licinius Egnatius Gallienus）成为唯一的皇帝。他面临多重灾难：东方帕尔米拉王国在奥登纳图斯（Odaenathus）领导下实际上脱离了罗马控制；高卢、不列颠和西班牙在波斯特穆斯（Postumus）领导下建立了独立的高卢帝国（260-274）；多瑙河和莱茵河遭受日耳曼部落持续入侵。加里恩努斯是文艺复兴以来被传统史学严重低估的皇帝，但他在极端困境下实施了一些重要改革：禁止元老担任军团指挥职务（将军事指挥权转给职业军官）、建立机动骑兵预备队（vexillationes）、以米兰为基地形成flexible防御体系。这些改革为后来的奥勒良收复和戴克里先重组奠定了基础。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Aurelius Victor, De Caesaribus · 32-33 · 32–33",
+      "待核：加里恩努斯禁止元老担任军职的改革在学术上存在争议——是正式法令还是渐进趋势？文献证据主要来自 Aurelius Victor 的简略提及。",
+      "待核：高卢帝国的独立程度有多大——是彻底分裂还是某种自治实体？"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-260-the-gallic-empire-260-274', 'The Gallic Empire (260-274)', 'rome', 260, 260, 'Gaul', 'politics', '260 年高卢、不列颠和西班牙在波斯特穆斯领导下脱离中央帝国，形成了持续 14 年的高卢帝国。', 'high', NULL, '{
+  "overview": "260 年高卢、不列颠和西班牙在波斯特穆斯领导下脱离中央帝国，形成了持续 14 年的高卢帝国。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "高卢帝国（Imperium Galliarum）的建立是三世纪危机中帝国分裂的最明显标志。260 年，莱茵河军团在指挥官波斯特穆斯（Marcus Cassianius Latinius Postumus）的领导下叛变并杀害了加里恩努斯之子萨洛尼努斯（Saloninus）。波斯特穆斯随后宣布自己为皇帝，建立了以科洛尼亚·阿格里皮纳（Colonia Agrippina，今科隆）为中心的高卢帝国。其疆域包括高卢、不列颠和西班牙——即帝国的整个西部。值得注意的是，高卢帝国的结构并非蛮族式的分离主义——它保留了完整的罗马制度：元老院、执政官、禁卫军、铸币厂。波斯特穆斯发行了质量较高的银币，并成功击退了法兰克人和阿勒曼尼人的入侵，实际上比中央帝国更好地保护了高卢边境。他于 269 年被杀，此后高卢帝国经历了短暂的混乱（莱利安努斯、马里乌斯、维克托里努斯先后被杀），最终由元老泰特里库斯一世统治。泰特里库斯在 274 年向奥勒良投降，结束了高卢帝国的独立。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Historia Augusta, Tyranni Triginta (The Thirty Tyrants) · Tyranni Triginta · Trig. Tyr. 1–33",
+    "待核：HA《三十篡主传》中列举的篡位者有多少是真实的历史人物？",
+    "待核：高卢帝国的独立意图与帕尔米拉帝国有何不同？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:932ff14bccc45507fe473df7",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 52,
+  "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+  "sourceTitle": "Historia Augusta",
+  "locator": "Trig. Tyr. 1–33",
+  "originalText": null,
+  "translation": "Historia Augusta 的《三十篡主传》是对于高卢帝国的最为详细的拉丁文记载（尽管其可靠性参差不齐）。它声称在加里恩努斯统治期间（260-268），帝国出现了 30 位篡位者——这是对雅典''三十僭主''历史典故的刻意套用（实际数量可能只有约 9-12 人）。其中最为重要的是高卢帝国的系列皇帝：波斯特穆斯（Postumus，260-269）、莱利安努斯（Laelianus）、马里乌斯（Marius）、维克托里努斯（Victorinus，269-271）和泰特里库斯一世与二世（Tetricus I & II，271-274）。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Postumus",
+    "Victorinus",
+    "Tetricus I",
+    "Tetricus II",
+    "Gallienus",
+    "Aurelian"
+  ],
+  "places": [
+    "Gaul",
+    "Britannia",
+    "Hispania",
+    "Colonia Agrippina",
+    "Trier"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "The Gallic Empire (260-274)",
+  "factType": "political-event",
+  "questions": [
+    "HA《三十篡主传》中列举的篡位者有多少是真实的历史人物？",
+    "高卢帝国的独立意图与帕尔米拉帝国有何不同？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+      "locator": "Trig. Tyr. 1–33"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "political-event",
+    "Gaul",
+    "Britannia",
+    "Hispania"
+  ],
+  "people": [
+    "Postumus",
+    "Victorinus",
+    "Tetricus I",
+    "Tetricus II",
+    "Gallienus",
+    "Aurelian"
+  ],
+  "sources": [
+    "Historia Augusta, Tyranni Triginta (The Thirty Tyrants)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "260 年高卢、不列颠和西班牙在波斯特穆斯领导下脱离中央帝国，形成了持续 14 年的高卢帝国。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "高卢帝国（Imperium Galliarum）的建立是三世纪危机中帝国分裂的最明显标志。260 年，莱茵河军团在指挥官波斯特穆斯（Marcus Cassianius Latinius Postumus）的领导下叛变并杀害了加里恩努斯之子萨洛尼努斯（Saloninus）。波斯特穆斯随后宣布自己为皇帝，建立了以科洛尼亚·阿格里皮纳（Colonia Agrippina，今科隆）为中心的高卢帝国。其疆域包括高卢、不列颠和西班牙——即帝国的整个西部。值得注意的是，高卢帝国的结构并非蛮族式的分离主义——它保留了完整的罗马制度：元老院、执政官、禁卫军、铸币厂。波斯特穆斯发行了质量较高的银币，并成功击退了法兰克人和阿勒曼尼人的入侵，实际上比中央帝国更好地保护了高卢边境。他于 269 年被杀，此后高卢帝国经历了短暂的混乱（莱利安努斯、马里乌斯、维克托里努斯先后被杀），最终由元老泰特里库斯一世统治。泰特里库斯在 274 年向奥勒良投降，结束了高卢帝国的独立。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Historia Augusta, Tyranni Triginta (The Thirty Tyrants) · Tyranni Triginta · Trig. Tyr. 1–33",
+      "待核：HA《三十篡主传》中列举的篡位者有多少是真实的历史人物？",
+      "待核：高卢帝国的独立意图与帕尔米拉帝国有何不同？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-260-gallienus-faces-the-empires-darkest-hour', 'Gallienus faces the empire''s darkest hour', 'rome', 260, 260, 'Rome', 'politics', '瓦勒良被俘后，加里恩努斯独自面对帝国在最黑暗时期的全面崩溃。', 'medium', NULL, '{
+  "overview": "瓦勒良被俘后，加里恩努斯独自面对帝国在最黑暗时期的全面崩溃。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "加里恩努斯在 260 年的处境是罗马史上最绝望的时刻之一。他同时面临着：1）父亲瓦勒良被俘后在东方的权力真空；2）波斯特穆斯在高卢自立（高卢帝国的建立）；3）奥登纳图斯在东方事实上的独立；4）日耳曼部落——阿勒曼尼人、法兰克人、尤通吉人——同时涌入莱茵河、多瑙河和意大利北部；5）哥特人在黑海和爱琴海的空前规模的海陆入侵。他在位期间至少面临了 9-10 个公开的篡位者。HA 指责他沉溺于哲学和享乐而对帝国的分崩离析漠不关心——但现代史学已大幅修正了这一评价。加里恩努斯事实上在极端困境中坚持了 15 年（253-268），并在军事组织（建立骑兵机动力量）、货币政策和帝国意识形态（容忍基督教）等方面作出了被低估的改革。他还在铸币上引入了一种精美的晚期古典肖像风格。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Historia Augusta, Vita Gallieni Duo · Vita Gallieni · Gall. 13",
+    "待核：加里恩努斯对他父亲被俘的真实反应难以确定——HA 的记载可能带有敌意夸张。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:3d183ba12d706a25ae322b4d",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 53,
+  "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+  "sourceTitle": "Historia Augusta",
+  "locator": "Gall. 13",
+  "originalText": null,
+  "translation": "HA 记载加里恩努斯在得知父亲瓦勒良被俘后说了一句著名的话（可能为虚构）：''我父亲是一个凡人，他遭受了凡人的命运。''HA 批评他对父亲的被捕表现出漠不关心的态度（或至少是过于冷静）。但在接下来的十年里，加里恩努斯面临了几乎所有边境的同时崩溃。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Gallienus"
+  ],
+  "peopleMentioned": [
+    "Valerian",
+    "Shapur I"
+  ],
+  "places": [
+    "Rome",
+    "Mediolanum",
+    "Milan"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Gallienus faces the empire''s darkest hour",
+  "factType": "person-life",
+  "questions": [
+    "加里恩努斯对他父亲被俘的真实反应难以确定——HA 的记载可能带有敌意夸张。"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+      "locator": "Gall. 13"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "person-life",
+    "Rome",
+    "Mediolanum",
+    "Milan"
+  ],
+  "people": [
+    "Gallienus",
+    "Valerian",
+    "Shapur I"
+  ],
+  "sources": [
+    "Historia Augusta, Vita Gallieni Duo"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "瓦勒良被俘后，加里恩努斯独自面对帝国在最黑暗时期的全面崩溃。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "加里恩努斯在 260 年的处境是罗马史上最绝望的时刻之一。他同时面临着：1）父亲瓦勒良被俘后在东方的权力真空；2）波斯特穆斯在高卢自立（高卢帝国的建立）；3）奥登纳图斯在东方事实上的独立；4）日耳曼部落——阿勒曼尼人、法兰克人、尤通吉人——同时涌入莱茵河、多瑙河和意大利北部；5）哥特人在黑海和爱琴海的空前规模的海陆入侵。他在位期间至少面临了 9-10 个公开的篡位者。HA 指责他沉溺于哲学和享乐而对帝国的分崩离析漠不关心——但现代史学已大幅修正了这一评价。加里恩努斯事实上在极端困境中坚持了 15 年（253-268），并在军事组织（建立骑兵机动力量）、货币政策和帝国意识形态（容忍基督教）等方面作出了被低估的改革。他还在铸币上引入了一种精美的晚期古典肖像风格。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Historia Augusta, Vita Gallieni Duo · Vita Gallieni · Gall. 13",
+      "待核：加里恩努斯对他父亲被俘的真实反应难以确定——HA 的记载可能带有敌意夸张。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-260-postumus-founds-the-gallic-empire', 'Postumus founds the Gallic Empire', 'rome', 260, 260, 'Colonia Agrippina', 'politics', '260 年波斯特穆斯被莱茵河军团拥立，杀害加里恩努斯之子后建立了独立的高卢帝国。', 'medium', NULL, '{
+  "overview": "260 年波斯特穆斯被莱茵河军团拥立，杀害加里恩努斯之子后建立了独立的高卢帝国。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "波斯特穆斯（Marcus Cassianius Latinius Postumus）的背景不清楚——他可能出身高卢地方贵族或是一名职业军人。260 年他在莱茵河前线成功击退了一次日耳曼入侵，并在战利品分配上与禁卫军长官西尔瓦努斯发生争执。军团士兵拥立波斯特穆斯为帝——他随即围攻了加里恩努斯之子萨洛尼努斯（Saloninus）据守的科隆。城陷后萨洛尼努斯和西尔瓦努斯被处决。波斯特穆斯随后向元老院致信自称奥古斯都，但并未试图向意大利进军——他满足于统治高卢、不列颠和西班牙构成的''西部帝国''。他的政权保留了完整的罗马制度：他发行了质量高于中央帝国银币的金币和银币（钱币证据是评估其政权稳定的最重要指标），在科隆和特里尔建立了首都，设置了与罗马平行的元老院和禁卫军。他在位十年间（260-269）成功保护了莱茵河防线免受法兰克人和阿勒曼尼人的入侵——就防御成效而言，他甚至比加里恩努斯在意大利面临的局势更为成功。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Historia Augusta, Tyranni Triginta · Vita Postumi · Trig. Tyr. 3–6",
+    "待核：波斯特穆斯是否真的有一位与罗马平行的元老院？这一说法主要来自 HA，可能受到罗马制度的理想化投射。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:33edd426382fe901a4a81cd9",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 74,
+  "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+  "sourceTitle": "Historia Augusta",
+  "locator": "Trig. Tyr. 3–6",
+  "originalText": null,
+  "translation": "HA 记载了波斯特穆斯（Marcus Cassianius Latinius Postumus）建立高卢帝国的具体契机。260 年，加里恩努斯之子萨洛尼努斯（Saloninus）——一位年仅约 16 岁的凯撒——留驻于科洛尼亚·阿格里皮纳（科隆）由禁卫军长官西尔瓦努斯（Silvanus）辅佐。波斯特穆斯在击败入侵的日耳曼部落后，被军团拥立为帝。科隆拒绝承认波斯特穆斯，他攻陷了该城并杀害了萨洛尼努斯和西尔瓦努斯。HA 声称波斯特穆斯是''最为公正和能干的皇帝''——他保护高卢免遭日耳曼入侵，发行了质量优良的银币，并建立了持续了 10 年的稳定政权。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Postumus",
+    "Gallienus",
+    "Saloninus"
+  ],
+  "places": [
+    "Colonia Agrippina",
+    "Cologne",
+    "Gaul",
+    "Rhine"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Postumus founds the Gallic Empire",
+  "factType": "political-event",
+  "questions": [
+    "波斯特穆斯是否真的有一位与罗马平行的元老院？这一说法主要来自 HA，可能受到罗马制度的理想化投射。"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+      "locator": "Trig. Tyr. 3–6"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "political-event",
+    "Colonia Agrippina",
+    "Cologne",
+    "Gaul"
+  ],
+  "people": [
+    "Postumus",
+    "Gallienus",
+    "Saloninus"
+  ],
+  "sources": [
+    "Historia Augusta, Tyranni Triginta"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "260 年波斯特穆斯被莱茵河军团拥立，杀害加里恩努斯之子后建立了独立的高卢帝国。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "波斯特穆斯（Marcus Cassianius Latinius Postumus）的背景不清楚——他可能出身高卢地方贵族或是一名职业军人。260 年他在莱茵河前线成功击退了一次日耳曼入侵，并在战利品分配上与禁卫军长官西尔瓦努斯发生争执。军团士兵拥立波斯特穆斯为帝——他随即围攻了加里恩努斯之子萨洛尼努斯（Saloninus）据守的科隆。城陷后萨洛尼努斯和西尔瓦努斯被处决。波斯特穆斯随后向元老院致信自称奥古斯都，但并未试图向意大利进军——他满足于统治高卢、不列颠和西班牙构成的''西部帝国''。他的政权保留了完整的罗马制度：他发行了质量高于中央帝国银币的金币和银币（钱币证据是评估其政权稳定的最重要指标），在科隆和特里尔建立了首都，设置了与罗马平行的元老院和禁卫军。他在位十年间（260-269）成功保护了莱茵河防线免受法兰克人和阿勒曼尼人的入侵——就防御成效而言，他甚至比加里恩努斯在意大利面临的局势更为成功。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Historia Augusta, Tyranni Triginta · Vita Postumi · Trig. Tyr. 3–6",
+      "待核：波斯特穆斯是否真的有一位与罗马平行的元老院？这一说法主要来自 HA，可能受到罗马制度的理想化投射。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-260-gallienus-creation-of-a-mobile-cavalry-army', 'Gallienus'' creation of a mobile cavalry army', 'rome', 260, 260, 'Milan', 'politics', '加里恩努斯创建了独立的骑兵预备队，为后来奥勒良和戴克里先的纵深防御奠定了基础。', 'high', NULL, '{
+  "overview": "加里恩努斯创建了独立的骑兵预备队，为后来奥勒良和戴克里先的纵深防御奠定了基础。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "加里恩努斯在三世纪军事史上的重要性近数十年来已被大幅重新评估。在他之前，罗马军队的核心始终是军团步兵（legionary cohorts），骑兵仅作为约 120 人每军团的附属力量。但三世纪的战争现实——敌方包括日耳曼骑兵（阿勒曼尼、哥特和萨尔马提亚重骑兵）和萨珊波斯的重甲骑兵（cataphractarii/clibanarii）——要求罗马拥有能够快速机动和应对骑兵突破的独立骑兵力量。加里恩努斯创造性地建立了独立的骑兵部队（equites Dalmatae、equites Mauri、equites promoti），这些不再是附属步兵的部队，而是直接隶属于皇帝本人的战略预备队。他将帝国机动指挥部从罗马迁至米兰（Mediolanum），因为米兰位于阿尔卑斯山脚下，可以快速向北、向东或向西调兵。这一战略变革——从前线式防御转为纵深机动防御——标志着罗马军事思想的根本转变。达尔马提亚骑兵（equites Dalmatae）在此后的皇帝中继续存在——奥勒良、普罗布斯和戴克里先都倚重这支部队——戴克里先的 comitatenses（野战机动军）直接继承了加里恩努斯的骑兵预备队概念。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 7 · pp. 255–260",
+    "待核：equites Dalmatae 的确切组建年份和组织结构是否有更多铭文和纸莎草学证据？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:4f4ec52df15781f489c7efc2",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 77,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 255–260",
+  "originalText": null,
+  "translation": "Potter 评价了加里恩努斯的军事改革——尤其是创建独立的骑兵预备队（equites promoti 和 equites Dalmatae）和以米兰为基地的机动战略。最初的罗马军队以步兵军团为战术核心，骑兵仅起辅助作用。到 3 世纪，面对日耳曼骑兵和萨珊波斯重甲骑兵的机动战争，战略需要已经从线式防御转变为纵深防御——需要能够在战区之间快速移动的骑兵预备队。加里恩努斯将独立的骑兵部队从军团中分离出来，组建了几支精锐的骑兵 vexillationes——尤其是达尔马提亚骑兵（equites Dalmatae）——它们可以在多瑙河和莱茵河之间或从意大利快速调往受威胁的前线。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Gallienus"
+  ],
+  "peopleMentioned": [
+    "Aurelian",
+    "Claudius Gothicus"
+  ],
+  "places": [
+    "Milan",
+    "Mediolanum",
+    "Dalmatia",
+    "Danube"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Gallienus'' creation of a mobile cavalry army",
+  "factType": "reform",
+  "questions": [
+    "equites Dalmatae 的确切组建年份和组织结构是否有更多铭文和纸莎草学证据？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 255–260"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "reform",
+    "Milan",
+    "Mediolanum",
+    "Dalmatia"
+  ],
+  "people": [
+    "Gallienus",
+    "Aurelian",
+    "Claudius Gothicus"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "加里恩努斯创建了独立的骑兵预备队，为后来奥勒良和戴克里先的纵深防御奠定了基础。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "加里恩努斯在三世纪军事史上的重要性近数十年来已被大幅重新评估。在他之前，罗马军队的核心始终是军团步兵（legionary cohorts），骑兵仅作为约 120 人每军团的附属力量。但三世纪的战争现实——敌方包括日耳曼骑兵（阿勒曼尼、哥特和萨尔马提亚重骑兵）和萨珊波斯的重甲骑兵（cataphractarii/clibanarii）——要求罗马拥有能够快速机动和应对骑兵突破的独立骑兵力量。加里恩努斯创造性地建立了独立的骑兵部队（equites Dalmatae、equites Mauri、equites promoti），这些不再是附属步兵的部队，而是直接隶属于皇帝本人的战略预备队。他将帝国机动指挥部从罗马迁至米兰（Mediolanum），因为米兰位于阿尔卑斯山脚下，可以快速向北、向东或向西调兵。这一战略变革——从前线式防御转为纵深机动防御——标志着罗马军事思想的根本转变。达尔马提亚骑兵（equites Dalmatae）在此后的皇帝中继续存在——奥勒良、普罗布斯和戴克里先都倚重这支部队——戴克里先的 comitatenses（野战机动军）直接继承了加里恩努斯的骑兵预备队概念。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 7 · pp. 255–260",
+      "待核：equites Dalmatae 的确切组建年份和组织结构是否有更多铭文和纸莎草学证据？"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-267-odaenathus-romes-eastern-defender-and-the-origin-of-palmyrene-power', 'Odaenathus: Rome''s eastern defender and the origin of Palmyrene power', 'rome', 267, 267, 'Palmyra', 'war', '奥登纳图斯在瓦勒良被俘后击退萨珊波斯，成为实际上的东方最高统帅——为帕尔米拉帝国的崛起创造了条件。', 'high', NULL, '{
+  "overview": "奥登纳图斯在瓦勒良被俘后击退萨珊波斯，成为实际上的东方最高统帅——为帕尔米拉帝国的崛起创造了条件。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "Septimius Odaenathus（乌代纳特）是帕尔米拉的一个地方统治家族的王子——他拥有''领主''（ras Tadmor）和罗马元老头衔。260 年瓦勒良被俘后，罗马在东方出现了权力真空。波斯人以为已经摧毁了罗马在东方的军事力量，但奥登纳图斯集结帕尔米拉的军事资源——包括其著名的沙漠骑兵（马弓手和重甲骑兵）——在波斯军队满载战利品撤退途中突然发动袭击。他在幼发拉底河渡口附近的伏击战中击败了波斯部队，然后重新占领了 Carrhae 和 Nisibis 等关键要塞。加里恩努斯——无法同时应对东西两线——正式授予他曾是其父亲的对头（实际上是叛军）的奥登纳图斯为''全东方总督''（corrector totius Orientis）的头衔。在接下来的几年里（262-266），奥登纳图斯名义上以罗马而非帕尔米拉的名义行动，两次深入波斯腹地——第二次可能已经接近泰西封。但在 267 年，奥登纳图斯和他的长子（来自前妻）被刺杀——凶手身份不明。他的遗孀芝诺比娅迅速接掌了权力，并开始将帕尔米拉从一个罗马的自治联盟转变为一个独立的东方帝国。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 7 · pp. 245–255",
+    "待核：奥登纳图斯是否真的独立于罗马行动——还是他与加里恩努斯之间有真正的协调？罗马授予他的确切头衔和权力范围仍有争议。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:4031032faa608b66ff4df7fb",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 73,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 245–255",
+  "originalText": null,
+  "translation": "Potter 综合分析了帕尔米拉王子奥登纳图斯（Septimius Odaenathus）的崛起。在 260 年瓦勒良被俘后，沙普尔一世在撤退时遭到奥登纳图斯的伏击（可能在幼发拉底河渡口附近）。奥登纳图斯成功收复了部分被波斯占领的领土并将波斯军队逐回幼发拉底河。加里恩努斯正式承认他为''全东方总督''（corrector totius Orientis），实际上是罗马东方行省的最高军事指挥官。奥登纳图斯随后于 262 年和 266 年两次深入波斯腹地——第二次甚至逼近泰西封——暂时恢复了罗马在东方的军事尊严。他在 267 年被刺杀（可能由其妻芝诺比娅策划），芝诺比娅随即以幼子瓦巴拉图斯的名义控制了帕尔米拉王国。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Odaenathus",
+    "Zenobia",
+    "Gallienus",
+    "Shapur I",
+    "Valerian",
+    "Vaballathus"
+  ],
+  "places": [
+    "Palmyra",
+    "Euphrates",
+    "Mesopotamia",
+    "Ctesiphon",
+    "Syria"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Odaenathus: Rome''s eastern defender and the origin of Palmyrene power",
+  "factType": "military-event",
+  "questions": [
+    "奥登纳图斯是否真的独立于罗马行动——还是他与加里恩努斯之间有真正的协调？罗马授予他的确切头衔和权力范围仍有争议。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 245–255"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "military-event",
+    "Palmyra",
+    "Euphrates",
+    "Mesopotamia"
+  ],
+  "people": [
+    "Odaenathus",
+    "Zenobia",
+    "Gallienus",
+    "Shapur I",
+    "Valerian",
+    "Vaballathus"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "奥登纳图斯在瓦勒良被俘后击退萨珊波斯，成为实际上的东方最高统帅——为帕尔米拉帝国的崛起创造了条件。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "Septimius Odaenathus（乌代纳特）是帕尔米拉的一个地方统治家族的王子——他拥有''领主''（ras Tadmor）和罗马元老头衔。260 年瓦勒良被俘后，罗马在东方出现了权力真空。波斯人以为已经摧毁了罗马在东方的军事力量，但奥登纳图斯集结帕尔米拉的军事资源——包括其著名的沙漠骑兵（马弓手和重甲骑兵）——在波斯军队满载战利品撤退途中突然发动袭击。他在幼发拉底河渡口附近的伏击战中击败了波斯部队，然后重新占领了 Carrhae 和 Nisibis 等关键要塞。加里恩努斯——无法同时应对东西两线——正式授予他曾是其父亲的对头（实际上是叛军）的奥登纳图斯为''全东方总督''（corrector totius Orientis）的头衔。在接下来的几年里（262-266），奥登纳图斯名义上以罗马而非帕尔米拉的名义行动，两次深入波斯腹地——第二次可能已经接近泰西封。但在 267 年，奥登纳图斯和他的长子（来自前妻）被刺杀——凶手身份不明。他的遗孀芝诺比娅迅速接掌了权力，并开始将帕尔米拉从一个罗马的自治联盟转变为一个独立的东方帝国。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 7 · pp. 245–255",
+      "待核：奥登纳图斯是否真的独立于罗马行动——还是他与加里恩努斯之间有真正的协调？罗马授予他的确切头衔和权力范围仍有争议。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-268-reign-of-claudius-gothicus-victory-at-naissus', 'Reign of Claudius Gothicus: victory at Naissus', 'rome', 268, 268, 'Naissus', 'politics', '克劳狄二世（268-270）在纳伊苏斯大破哥特入侵军，但统治仅一年零八个月即因瘟疫而死。', 'medium', NULL, '{
+  "overview": "克劳狄二世（268-270）在纳伊苏斯大破哥特入侵军，但统治仅一年零八个月即因瘟疫而死。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "克劳狄二世是伊利里亚军人皇帝群体中的关键人物。268 年加里恩努斯在米兰城外被刺杀后（据传克劳狄涉及其阴谋），他被军队拥立。269 年他面对自 251 年以来最大规模的哥特入侵——据称 30 万哥特人越过大海和陆地涌入巴尔干。在纳伊苏斯（Naissus，今尼什）附近的会战中，他运用骑兵伏击战术歼灭了大批哥特军队，Zosimus 宣称杀死了 50,000 人。虽然数字夸大，但这场胜利确实瓦解了哥特的大规模入侵，给巴尔干带来了十来年的相对安全。克劳狄被元老院授予 Gothicus Maximus 称号——这一称号后来被君士坦丁大帝用于宣传自己与克劳狄的''血缘关系''（可能是虚构的）。270 年早春，他在西尔米乌姆因瘟疫去世，遗言推荐奥勒良。他的短暂统治（1 年 8 个月）被视为即将降临的奥勒良复兴的过渡期。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Zosimus, Historia Nova · Book 1 · 1.39–1.46",
+    "待核：纳伊苏斯战役的具体战术和双方确切兵力需要与 Dexippus 残篇和考古证据对勘。",
+    "待核：克劳狄二世在刺杀加里恩努斯一事中究竟参与了多少？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:8a29ebdf064c1a34e2104cde",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 48,
+  "sourceId": "rome-source-historia-nova-zosimus",
+  "sourceTitle": "Historia Nova",
+  "locator": "1.39–1.46",
+  "originalText": null,
+  "translation": "据 Zosimus 记载，克劳狄二世（Marcus Aurelius Claudius，后称 Gothicus——''哥特征服者''）在加里恩努斯于 268 年被刺杀后被拥立为帝。他是一位经验丰富的伊利里亚军官。269 年他在纳伊苏斯（Naissus，今塞尔维亚尼什）战役中大败哥特入侵军——据称杀死了 50,000 哥特战士（数字可能夸大）。这场胜利为他赢得了''Gothicus''的称号。他于 270 年初在西尔米乌姆因瘟疫（可能是塞浦路斯瘟疫 C 型，即天花或麻疹）去世，死前推荐奥勒良为其继任者。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Claudius Gothicus"
+  ],
+  "peopleMentioned": [
+    "Gallienus",
+    "Aurelian"
+  ],
+  "places": [
+    "Naissus",
+    "Nish",
+    "Sirmium",
+    "Moesia"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Reign of Claudius Gothicus: victory at Naissus",
+  "factType": "person-life",
+  "questions": [
+    "纳伊苏斯战役的具体战术和双方确切兵力需要与 Dexippus 残篇和考古证据对勘。",
+    "克劳狄二世在刺杀加里恩努斯一事中究竟参与了多少？"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-nova-zosimus",
+      "locator": "1.39–1.46"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "person-life",
+    "Naissus",
+    "Nish",
+    "Sirmium"
+  ],
+  "people": [
+    "Claudius Gothicus",
+    "Gallienus",
+    "Aurelian"
+  ],
+  "sources": [
+    "Zosimus, Historia Nova"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "克劳狄二世（268-270）在纳伊苏斯大破哥特入侵军，但统治仅一年零八个月即因瘟疫而死。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "克劳狄二世是伊利里亚军人皇帝群体中的关键人物。268 年加里恩努斯在米兰城外被刺杀后（据传克劳狄涉及其阴谋），他被军队拥立。269 年他面对自 251 年以来最大规模的哥特入侵——据称 30 万哥特人越过大海和陆地涌入巴尔干。在纳伊苏斯（Naissus，今尼什）附近的会战中，他运用骑兵伏击战术歼灭了大批哥特军队，Zosimus 宣称杀死了 50,000 人。虽然数字夸大，但这场胜利确实瓦解了哥特的大规模入侵，给巴尔干带来了十来年的相对安全。克劳狄被元老院授予 Gothicus Maximus 称号——这一称号后来被君士坦丁大帝用于宣传自己与克劳狄的''血缘关系''（可能是虚构的）。270 年早春，他在西尔米乌姆因瘟疫去世，遗言推荐奥勒良。他的短暂统治（1 年 8 个月）被视为即将降临的奥勒良复兴的过渡期。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Zosimus, Historia Nova · Book 1 · 1.39–1.46",
+      "待核：纳伊苏斯战役的具体战术和双方确切兵力需要与 Dexippus 残篇和考古证据对勘。",
+      "待核：克劳狄二世在刺杀加里恩努斯一事中究竟参与了多少？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-268-claudius-gothicus-and-the-constantinian-connection', 'Claudius Gothicus and the Constantinian connection', 'rome', 268, 268, 'Naissus', 'culture', 'HA 将克劳狄二世神话化为君士坦丁的祖先，但在君士坦丁时代的宣传中这一虚构被广泛接受。', 'low', NULL, '{
+  "overview": "HA 将克劳狄二世神话化为君士坦丁的祖先，但在君士坦丁时代的宣传中这一虚构被广泛接受。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "Historia Augusta 对克劳狄二世的传记是君士坦丁王朝宣传的典型产物。君士坦丁大帝为了建立自己的王朝合法性——他的父亲君士坦提乌斯一世非皇室血统——在 310 年代发明了与克劳狄二世 Gothicus 的虚构血缘关系。HA 的 Vita Divi Claudii 明确反映了这一宣传需要：它将克劳狄描绘为完美的军人皇帝和道德典范，并插入了一个虚构情节——克劳狄的兄弟 Crispus 有一个女儿，她就是君士坦提乌斯一世的妻子（即君士坦丁的母亲海伦娜）。实际上君士坦丁与克劳狄没有血缘关系。但这一虚构在帝国宣传中发挥了巨大作用，甚至在君士坦丁凯旋门上也出现了对''神圣的克劳狄''的铭文致敬。纳伊苏斯战役和死于瘟疫的核心历史事实被保留，但被包裹在王朝神话之中。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Historia Augusta, Vita Divi Claudii · Vita Divi Claudii · Claud. 1–18",
+    "待核：君士坦丁与克劳狄二世之间的虚构血缘关系最早在何时出现？310 年还是 317 年？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:c734fab81ff7b25f31c724cf",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 49,
+  "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+  "sourceTitle": "Historia Augusta",
+  "locator": "Claud. 1–18",
+  "originalText": null,
+  "translation": "Historia Augusta 对克劳狄二世的传记进行了理想化的美化（需注意 HA 的可靠性问题）。HA 声称克劳狄是君士坦丁大帝的祖先——这一虚构后来被君士坦丁王朝用于宣传。HA 还将他塑造为''第二奥古斯都''般的美德典范：节俭、勇敢、公正、虔诚。实际上这些描述是为了衬托君士坦丁家族的合法性。关于他在纳伊苏斯的胜利和死于瘟疫的事实核心大致属实。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Claudius Gothicus"
+  ],
+  "peopleMentioned": [
+    "Constantine I"
+  ],
+  "places": [
+    "Naissus",
+    "Sirmium"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Claudius Gothicus and the Constantinian connection",
+  "factType": "source-mention",
+  "questions": [
+    "君士坦丁与克劳狄二世之间的虚构血缘关系最早在何时出现？310 年还是 317 年？"
+  ],
+  "confidence": "low",
+  "importance": "minor",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+      "locator": "Claud. 1–18"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "source-mention",
+    "Naissus",
+    "Sirmium"
+  ],
+  "people": [
+    "Claudius Gothicus",
+    "Constantine I"
+  ],
+  "sources": [
+    "Historia Augusta, Vita Divi Claudii"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "HA 将克劳狄二世神话化为君士坦丁的祖先，但在君士坦丁时代的宣传中这一虚构被广泛接受。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "Historia Augusta 对克劳狄二世的传记是君士坦丁王朝宣传的典型产物。君士坦丁大帝为了建立自己的王朝合法性——他的父亲君士坦提乌斯一世非皇室血统——在 310 年代发明了与克劳狄二世 Gothicus 的虚构血缘关系。HA 的 Vita Divi Claudii 明确反映了这一宣传需要：它将克劳狄描绘为完美的军人皇帝和道德典范，并插入了一个虚构情节——克劳狄的兄弟 Crispus 有一个女儿，她就是君士坦提乌斯一世的妻子（即君士坦丁的母亲海伦娜）。实际上君士坦丁与克劳狄没有血缘关系。但这一虚构在帝国宣传中发挥了巨大作用，甚至在君士坦丁凯旋门上也出现了对''神圣的克劳狄''的铭文致敬。纳伊苏斯战役和死于瘟疫的核心历史事实被保留，但被包裹在王朝神话之中。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Historia Augusta, Vita Divi Claudii · Vita Divi Claudii · Claud. 1–18",
+      "待核：君士坦丁与克劳狄二世之间的虚构血缘关系最早在何时出现？310 年还是 317 年？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-269-eutropius-on-zenobias-regency', 'Eutropius on Zenobia''s regency', 'rome', 269, 269, 'Palmyra', 'culture', 'Eutropius 对芝诺比娅统治的描述相对中性，强调了它作为合法代理而非纯粹叛乱的方面。', 'high', NULL, '{
+  "overview": "Eutropius 对芝诺比娅统治的描述相对中性，强调了它作为合法代理而非纯粹叛乱的方面。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "Eutropius 的《城市简史》是一部 4 世纪中期的拉丁文简明罗马史（写于瓦伦斯皇帝统治期间约 369 年）。他对芝诺比娅的描述非常简洁且相对中性——只说她''在丈夫被刺杀后以儿子们的名义统治东方（Orientem tenebat），维持了帝国的大部分''。Eutropius 没有像 Zosimus 那样详细描写芝诺比娅的野心、能力或外貌，也没有像 HA 那样将其贬为女性篡位者。他的中性叙述反映了一种可能的态度——在 4 世纪中期的回顾中，帕尔米拉事件可以被视为三世纪危机期间一位代理统治者在混乱中对罗马权威施加有效管理的案例，而非完全脱离罗马的叛乱。她的独立可以被视为一种程度的差异而非本质的不同。这种解读与现代学者关于帕尔米拉是否真正意图建立独立帝国的辩论是一致的。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Eutropius, Breviarium · Book 9 · 9.10–9.12",
+    "待核：Eutropius 的中性评价反映了哪些当代政治背景？是否因为 Valens 朝廷也有类似的东方局势考量？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:a27a29c7180f1797aa840f56",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 64,
+  "sourceId": "rome-source-breviarium-ab-urbe-condita-eutropius",
+  "sourceTitle": "Breviarium ab Urbe Condita",
+  "locator": "9.10–9.12",
+  "originalText": null,
+  "translation": "Eutropius 简洁地记载了芝诺比娅在奥登纳图斯死后取得东方控制权——''芝诺比娅，奥登纳图斯的妻子，在丈夫被刺杀后以儿子们的名义统治东方，维持了帝国的大部分。''（Eutropius 9.11）Eutropius 未提及帕尔米拉的独立意图，仅是陈述了事实——她作为 regent 统治了几年，并在奥勒良到来之前维持了东方行省的运作。这与 Zosimus 和 HA 的详细叙述形成了有趣对比——Eutropius 似乎视其为一种过渡性的合法代理而非叛乱。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Zenobia",
+    "Odaenathus",
+    "Aurelian",
+    "Gallienus"
+  ],
+  "places": [
+    "Palmyra",
+    "Syria",
+    "Egypt"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Eutropius on Zenobia''s regency",
+  "factType": "source-mention",
+  "questions": [
+    "Eutropius 的中性评价反映了哪些当代政治背景？是否因为 Valens 朝廷也有类似的东方局势考量？"
+  ],
+  "confidence": "high",
+  "importance": "minor",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-breviarium-ab-urbe-condita-eutropius",
+      "locator": "9.10–9.12"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "source-mention",
+    "Palmyra",
+    "Syria",
+    "Egypt"
+  ],
+  "people": [
+    "Zenobia",
+    "Odaenathus",
+    "Aurelian",
+    "Gallienus"
+  ],
+  "sources": [
+    "Eutropius, Breviarium"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "Eutropius 对芝诺比娅统治的描述相对中性，强调了它作为合法代理而非纯粹叛乱的方面。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "Eutropius 的《城市简史》是一部 4 世纪中期的拉丁文简明罗马史（写于瓦伦斯皇帝统治期间约 369 年）。他对芝诺比娅的描述非常简洁且相对中性——只说她''在丈夫被刺杀后以儿子们的名义统治东方（Orientem tenebat），维持了帝国的大部分''。Eutropius 没有像 Zosimus 那样详细描写芝诺比娅的野心、能力或外貌，也没有像 HA 那样将其贬为女性篡位者。他的中性叙述反映了一种可能的态度——在 4 世纪中期的回顾中，帕尔米拉事件可以被视为三世纪危机期间一位代理统治者在混乱中对罗马权威施加有效管理的案例，而非完全脱离罗马的叛乱。她的独立可以被视为一种程度的差异而非本质的不同。这种解读与现代学者关于帕尔米拉是否真正意图建立独立帝国的辩论是一致的。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Eutropius, Breviarium · Book 9 · 9.10–9.12",
+      "待核：Eutropius 的中性评价反映了哪些当代政治背景？是否因为 Valens 朝廷也有类似的东方局势考量？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-270-aurelian-becomes-emperor', 'Aurelian becomes emperor', 'rome', 270, 270, 'Sirmium', 'politics', '270 年奥勒良即位，迅速稳定了多瑙河前线并开始收复失地。', 'medium', NULL, '{
+  "overview": "270 年奥勒良即位，迅速稳定了多瑙河前线并开始收复失地。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "奥勒良出身伊利里亚（Illyria）普通家庭，从底层士兵逐步晋升为骑兵指挥官。在克劳狄二世麾下，他在纳伊苏斯（Naissus）战役中发挥了关键作用，重创了哥特人。270 年克劳狄二世因瘟疫去世后，军队在西尔米乌姆拥立奥勒良。克劳狄的兄弟昆提卢斯（Quintillus）在阿奎莱亚短暂自立为帝，但很快被抛弃并自杀。奥勒良随后面临严重的战乱：汪达尔人和尤通吉人入侵意大利北部，多瑙河部落再度南下。他迅速击败来犯之敌，但意识到罗马城本身现在也暴露在蛮族威胁之下，由此开始了罗马奥勒良城墙的修建。他的五年统治（270-275）以惊人的速度和效率统一了分裂的帝国。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Historia Augusta, Vita Divi Aureliani · Vita Aureliani · Aurel. 1–50",
+    "待核：Historia Augusta 对奥勒良的早期生平记载充满修辞修饰和虚构细节，需要与硬币证据和铭文交叉验证。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:381c62a307456593b6104de2",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 28,
+  "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+  "sourceTitle": "Historia Augusta",
+  "locator": "Aurel. 1–50",
+  "originalText": null,
+  "translation": "Historia Augusta 记载奥勒良（Lucius Domitius Aurelianus）于 270 年在下潘诺尼亚的西尔米乌姆（Sirmium）被军队拥立为帝。他在克劳狄二世（Claudius Gothicus）因瘟疫去世后继承。HA 称奥勒良是一位卓越的将军、严格的纪律执行者，也是五世纪以来第一位在罗马修建新城墙的皇帝。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Aurelian"
+  ],
+  "peopleMentioned": [
+    "Claudius Gothicus",
+    "Quintillus"
+  ],
+  "places": [
+    "Sirmium",
+    "Pannonia",
+    "Rome",
+    "Aquileia"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Aurelian becomes emperor",
+  "factType": "person-life",
+  "questions": [
+    "Historia Augusta 对奥勒良的早期生平记载充满修辞修饰和虚构细节，需要与硬币证据和铭文交叉验证。"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+      "locator": "Aurel. 1–50"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "person-life",
+    "Sirmium",
+    "Pannonia",
+    "Rome"
+  ],
+  "people": [
+    "Aurelian",
+    "Claudius Gothicus",
+    "Quintillus"
+  ],
+  "sources": [
+    "Historia Augusta, Vita Divi Aureliani"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "270 年奥勒良即位，迅速稳定了多瑙河前线并开始收复失地。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "奥勒良出身伊利里亚（Illyria）普通家庭，从底层士兵逐步晋升为骑兵指挥官。在克劳狄二世麾下，他在纳伊苏斯（Naissus）战役中发挥了关键作用，重创了哥特人。270 年克劳狄二世因瘟疫去世后，军队在西尔米乌姆拥立奥勒良。克劳狄的兄弟昆提卢斯（Quintillus）在阿奎莱亚短暂自立为帝，但很快被抛弃并自杀。奥勒良随后面临严重的战乱：汪达尔人和尤通吉人入侵意大利北部，多瑙河部落再度南下。他迅速击败来犯之敌，但意识到罗马城本身现在也暴露在蛮族威胁之下，由此开始了罗马奥勒良城墙的修建。他的五年统治（270-275）以惊人的速度和效率统一了分裂的帝国。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Historia Augusta, Vita Divi Aureliani · Vita Aureliani · Aurel. 1–50",
+      "待核：Historia Augusta 对奥勒良的早期生平记载充满修辞修饰和虚构细节，需要与硬币证据和铭文交叉验证。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-270-zenobia-and-the-palmyrene-empire-267-272', 'Zenobia and the Palmyrene Empire (267-272)', 'rome', 270, 270, 'Palmyra', 'politics', '芝诺比娅在丈夫死后将帕尔米拉扩展为一个实际上脱离罗马的东方帝国。', 'high', NULL, '{
+  "overview": "芝诺比娅在丈夫死后将帕尔米拉扩展为一个实际上脱离罗马的东方帝国。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "帕尔米拉（Palmyra，Tadmor）是叙利亚沙漠中的富庶商都，因丝绸之路贸易而繁荣。260 年瓦勒良被俘后，帕尔米拉王子奥登纳图斯（Odaenathus）以罗马的总督身份（corrector totius Orientis）击退了萨珊波斯的入侵，暂时恢复了罗马在东方的权威。但 267 年奥登纳图斯及其长子被刺杀（可能由芝诺比娅策划），其遗孀芝诺比娅以幼子瓦巴拉图斯（Vaballathus）的名义掌控了权力。她趁加里恩努斯无暇东顾之际，迅速将帕尔米拉的控制范围扩展至叙利亚全境、埃及（270 年攻占亚历山大里亚）和小亚细亚东部（安卡拉）。她在硬币上自称奥古斯塔，瓦巴拉图斯称奥古斯都——这公然宣告了独立脱离罗马的意图。芝诺比娅资助希腊哲学家和学者，将帕尔米拉宫廷打造为文化中心（著名学者朗吉努斯 Longinus 是她的顾问）。她的王国仅维持了五年——272 年奥勒良粉碎了这个沙漠帝国。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Zosimus, Historia Nova · Book 1 · 1.50–1.61",
+    "待核：芝诺比娅是否真的谋杀了丈夫奥登纳图斯？史料证据不充分。",
+    "待核：帕尔米拉帝国的独立意图到了何种程度——是正式脱离还是某种自治安排？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:167b4c974940d154d35eec22",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 51,
+  "sourceId": "rome-source-historia-nova-zosimus",
+  "sourceTitle": "Historia Nova",
+  "locator": "1.50–1.61",
+  "originalText": null,
+  "translation": "据 Zosimus 记载，帕尔米拉王国在奥登纳图斯（Odaenathus）的遗孀芝诺比娅（Zenobia）领导下，趁罗马深陷三世纪危机之际，将控制范围从叙利亚沙漠商都帕尔米拉扩展至几乎整个罗马东方——埃及、叙利亚、小亚细亚东部、阿拉伯。芝诺比娅声称其为埃及女王克利奥帕特拉的后裔，以子瓦巴拉图斯（Vaballathus）之名为帝，实际上建立了独立的东方王国。Zosimus 将她描述为一个才智卓越、精通多门语言、兼具美貌和军事才能的女性统治者。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Zenobia",
+    "Odaenathus",
+    "Vaballathus",
+    "Aurelian",
+    "Gallienus"
+  ],
+  "places": [
+    "Palmyra",
+    "Syria",
+    "Egypt",
+    "Antioch",
+    "Emesa"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Zenobia and the Palmyrene Empire (267-272)",
+  "factType": "political-event",
+  "questions": [
+    "芝诺比娅是否真的谋杀了丈夫奥登纳图斯？史料证据不充分。",
+    "帕尔米拉帝国的独立意图到了何种程度——是正式脱离还是某种自治安排？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-nova-zosimus",
+      "locator": "1.50–1.61"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "political-event",
+    "Palmyra",
+    "Syria",
+    "Egypt"
+  ],
+  "people": [
+    "Zenobia",
+    "Odaenathus",
+    "Vaballathus",
+    "Aurelian",
+    "Gallienus"
+  ],
+  "sources": [
+    "Zosimus, Historia Nova"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "芝诺比娅在丈夫死后将帕尔米拉扩展为一个实际上脱离罗马的东方帝国。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "帕尔米拉（Palmyra，Tadmor）是叙利亚沙漠中的富庶商都，因丝绸之路贸易而繁荣。260 年瓦勒良被俘后，帕尔米拉王子奥登纳图斯（Odaenathus）以罗马的总督身份（corrector totius Orientis）击退了萨珊波斯的入侵，暂时恢复了罗马在东方的权威。但 267 年奥登纳图斯及其长子被刺杀（可能由芝诺比娅策划），其遗孀芝诺比娅以幼子瓦巴拉图斯（Vaballathus）的名义掌控了权力。她趁加里恩努斯无暇东顾之际，迅速将帕尔米拉的控制范围扩展至叙利亚全境、埃及（270 年攻占亚历山大里亚）和小亚细亚东部（安卡拉）。她在硬币上自称奥古斯塔，瓦巴拉图斯称奥古斯都——这公然宣告了独立脱离罗马的意图。芝诺比娅资助希腊哲学家和学者，将帕尔米拉宫廷打造为文化中心（著名学者朗吉努斯 Longinus 是她的顾问）。她的王国仅维持了五年——272 年奥勒良粉碎了这个沙漠帝国。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Zosimus, Historia Nova · Book 1 · 1.50–1.61",
+      "待核：芝诺比娅是否真的谋杀了丈夫奥登纳图斯？史料证据不充分。",
+      "待核：帕尔米拉帝国的独立意图到了何种程度——是正式脱离还是某种自治安排？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-271-aurelians-reforms-walls-coinage-and-sol-invictus', 'Aurelian''s reforms: walls, coinage, and Sol Invictus', 'rome', 271, 271, 'Rome', 'politics', '奥勒良在统一帝国的同时进行了防御、币制、宗教等方面的系统性改革。', 'medium', NULL, '{
+  "overview": "奥勒良在统一帝国的同时进行了防御、币制、宗教等方面的系统性改革。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "奥勒良的统治不仅以军事收复闻名，也以关键改革著称。1）奥勒良城墙：271 年起修建环绕罗马城的城墙，周长约 19 公里，高约 6-8 米。这是罗马共和国晚期塞维安城墙以来的首次大规模城防建设，反映了蛮族入侵对意大利腹地的真实威胁。2）币制改革：奥勒良试图遏制恶性通胀，提高安东尼尼安银币的含银量（从几乎为零提升至约 5%），并在硬币上标明''XXI''（20:1 的比例）。他严厉镇压了罗马造币厂的腐败和暴动，造成了数千人死亡（HA 称 7,000，数字可能夸大）。3）Sol Invictus 崇拜：奥勒良引入索尔·因维克图斯（不可征服的太阳神）的国家崇拜，在罗马建立宏伟神庙。他试图通过一个超越地方传统的单一神祇崇拜来促进帝国统一，这一举措也被视为后来君士坦丁尊崇基督教之前的一神化趋势。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Historia Augusta, Vita Divi Aureliani · Vita Aureliani · Aurel. 21–22, 39",
+    "待核：HA 称造币工人暴动导致 7,000 名士兵死亡的数字可能夸大。奥勒良城墙的原始高度和具体建筑材料有待考古验证。Sol Invictus 崇拜与传统的 Sol 崇拜之间的具体区别仍有学术争议。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:6561ae5543aa62cbc8fee7d9",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 31,
+  "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+  "sourceTitle": "Historia Augusta",
+  "locator": "Aurel. 21–22, 39",
+  "originalText": null,
+  "translation": "HA 记载奥勒良开始在罗马修建新城墙（后世称为奥勒良城墙），并在帝国全境推行一系列改革。他处决了腐败的造币官员（monetarii），镇压了罗马造币厂工人的暴动（据称导致数千人死伤）。他提高了银币的含银量和稳定性。他还引入了对索尔·因维克图斯（Sol Invictus，不可征服的太阳神）的国家崇拜，试图以单一的帝国宗教统一帝国。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Aurelian"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Rome"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Aurelian''s reforms: walls, coinage, and Sol Invictus",
+  "factType": "reform",
+  "questions": [
+    "HA 称造币工人暴动导致 7,000 名士兵死亡的数字可能夸大。奥勒良城墙的原始高度和具体建筑材料有待考古验证。Sol Invictus 崇拜与传统的 Sol 崇拜之间的具体区别仍有学术争议。"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+      "locator": "Aurel. 21–22, 39"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "reform",
+    "Rome"
+  ],
+  "people": [
+    "Aurelian"
+  ],
+  "sources": [
+    "Historia Augusta, Vita Divi Aureliani"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "奥勒良在统一帝国的同时进行了防御、币制、宗教等方面的系统性改革。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "奥勒良的统治不仅以军事收复闻名，也以关键改革著称。1）奥勒良城墙：271 年起修建环绕罗马城的城墙，周长约 19 公里，高约 6-8 米。这是罗马共和国晚期塞维安城墙以来的首次大规模城防建设，反映了蛮族入侵对意大利腹地的真实威胁。2）币制改革：奥勒良试图遏制恶性通胀，提高安东尼尼安银币的含银量（从几乎为零提升至约 5%），并在硬币上标明''XXI''（20:1 的比例）。他严厉镇压了罗马造币厂的腐败和暴动，造成了数千人死亡（HA 称 7,000，数字可能夸大）。3）Sol Invictus 崇拜：奥勒良引入索尔·因维克图斯（不可征服的太阳神）的国家崇拜，在罗马建立宏伟神庙。他试图通过一个超越地方传统的单一神祇崇拜来促进帝国统一，这一举措也被视为后来君士坦丁尊崇基督教之前的一神化趋势。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Historia Augusta, Vita Divi Aureliani · Vita Aureliani · Aurel. 21–22, 39",
+      "待核：HA 称造币工人暴动导致 7,000 名士兵死亡的数字可能夸大。奥勒良城墙的原始高度和具体建筑材料有待考古验证。Sol Invictus 崇拜与传统的 Sol 崇拜之间的具体区别仍有学术争议。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-271-construction-of-the-aurelian-walls-rome-is-no-longer-safe', 'Construction of the Aurelian Walls: Rome is no longer safe', 'rome', 271, 271, 'Rome', 'politics', '奥勒良城墙的修建标志着帝国心脏地带自共和国以来首次暴露于蛮族威胁之下。', 'high', NULL, '{
+  "overview": "奥勒良城墙的修建标志着帝国心脏地带自共和国以来首次暴露于蛮族威胁之下。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "奥勒良城墙（Mura Aureliane）是三世纪危机最鲜明的物质遗产——至今仍矗立在罗马，成为从特米尼车站到阿皮亚古道等现代罗马景观的不可分割的一部分。城墙的修建背景是 271 年汪达尔和尤通吉人（Juthungi）部落的联军突然突破意大利北部防线，在普拉森提亚（Placentia，今皮亚琴察）击败了奥勒良匆忙集结的军队，然后顺着弗拉米尼亚大道径直南下直逼罗马——这一事变震撼了所有罗马人，因为在共和时期以来除了高卢洗劫之外，罗马城从未面临过直接的蛮族威胁。蛮族最终在安科纳西北的范努姆（Fanum Fortunae）被截住和击败——但奥勒良从中汲取了教训。他立即下令建造一套环绕罗马的新城墙系统，将马尔斯广场、特拉斯提弗列和台伯河右岸等人口密集区域包含在内。奥勒良城墙全长约 19 公里（12 英里），由砖砌混凝土构成，高约 6-8 米（20-26 英尺），每 100 罗马尺（29.6 米）设一座方形塔楼。原始设计有 14 座大门——每个主要辐射道路都有对应的城门。这座城墙的意义远超出军事防御——它宣告了一个事实：罗马帝国的心脏已不再安全。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 7 · pp. 260–267",
+    "待核：奥勒良城墙的原始高度和城门的数量在后续加高和扩建之前的具体数据有待考古验证。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:63295b82974861fccb8a0b31",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 78,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 260–267",
+  "originalText": null,
+  "translation": "Potter 详细分析了奥勒良城墙的建造背景。271 年汪达尔人和尤通吉人（Juthungi）的联军入侵意大利北部，在普拉森提亚（Placentia）击败了奥勒良的军队——随后蛮族迅速南下，在罗马城以北仅约 70 公里的范努姆（Fanum Fortunae）才被拦截。自公元 2 世纪马科曼尼战争的阴影以来，意大利再次首度面临严重的蛮族入侵。罗马城自公元前 4 世纪高卢洗劫以来从未修筑过全面城墙——塞维安城墙已因城区的扩展而被包裹在城市内部。奥勒良下令建造一套全新的城墙系统——周长约 19 公里，高约 6-8 米，厚约 3.5 米，每 30 米设一方形塔楼——将罗马城内的大片郊区包含在内。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Aurelian"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Rome",
+    "Aurelian Walls",
+    "Placentia",
+    "Fanum Fortunae"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Construction of the Aurelian Walls: Rome is no longer safe",
+  "factType": "reform",
+  "questions": [
+    "奥勒良城墙的原始高度和城门的数量在后续加高和扩建之前的具体数据有待考古验证。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 260–267"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "reform",
+    "Rome",
+    "Aurelian Walls",
+    "Placentia"
+  ],
+  "people": [
+    "Aurelian"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "奥勒良城墙的修建标志着帝国心脏地带自共和国以来首次暴露于蛮族威胁之下。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "奥勒良城墙（Mura Aureliane）是三世纪危机最鲜明的物质遗产——至今仍矗立在罗马，成为从特米尼车站到阿皮亚古道等现代罗马景观的不可分割的一部分。城墙的修建背景是 271 年汪达尔和尤通吉人（Juthungi）部落的联军突然突破意大利北部防线，在普拉森提亚（Placentia，今皮亚琴察）击败了奥勒良匆忙集结的军队，然后顺着弗拉米尼亚大道径直南下直逼罗马——这一事变震撼了所有罗马人，因为在共和时期以来除了高卢洗劫之外，罗马城从未面临过直接的蛮族威胁。蛮族最终在安科纳西北的范努姆（Fanum Fortunae）被截住和击败——但奥勒良从中汲取了教训。他立即下令建造一套环绕罗马的新城墙系统，将马尔斯广场、特拉斯提弗列和台伯河右岸等人口密集区域包含在内。奥勒良城墙全长约 19 公里（12 英里），由砖砌混凝土构成，高约 6-8 米（20-26 英尺），每 100 罗马尺（29.6 米）设一座方形塔楼。原始设计有 14 座大门——每个主要辐射道路都有对应的城门。这座城墙的意义远超出军事防御——它宣告了一个事实：罗马帝国的心脏已不再安全。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 7 · pp. 260–267",
+      "待核：奥勒良城墙的原始高度和城门的数量在后续加高和扩建之前的具体数据有待考古验证。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-272-aurelian-defeats-zenobia-and-recovers-the-east', 'Aurelian defeats Zenobia and recovers the East', 'rome', 272, 272, 'Palmyra', 'war', '272 年奥勒良击败帕尔米拉的芝诺比娅女王，收复帝国东部行省。', 'high', NULL, '{
+  "overview": "272 年奥勒良击败帕尔米拉的芝诺比娅女王，收复帝国东部行省。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "帕尔米拉王国在奥登纳图斯（Odaenathus，267 年被刺杀）的遗孀芝诺比娅（Zenobia）领导下，将控制范围从叙利亚扩展至埃及、小亚细亚东部和阿拉伯。芝诺比娅以子瓦巴拉图斯（Vaballathus）的名义自称奥古斯塔，实际上建立了东部帝国。272 年春，奥勒良率军东征，在安条克附近的伊迈（Immae）以巧妙战术——佯装撤退引诱芝诺比娅的重甲骑兵（clibanarii）在烈日下耗尽体力后反击——大获全胜。随后在埃美萨取得第二场胜利，围攻帕尔米拉城。芝诺比娅在试图骑骆驼逃往波斯途中被俘。奥勒良起初宽恕了帕尔米拉，但在返回欧洲途中得知该城再次叛乱，折返后将帕尔米拉彻底摧毁，这座曾繁华无比的沙漠商都从此一蹶不振。被俘的芝诺比娅出现在奥勒良 274 年的凯旋式中。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 7 · pp. 259–272",
+    "待核：芝诺比娅被俘后的最终命运有不同说法——是嫁给罗马元老平安终老，还是被处死？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:1dc154a566b800a896761e4d",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 29,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 259–272",
+  "originalText": null,
+  "translation": "Potter 的现代学术综述指出，272 年奥勒良发动了针对帕尔米拉王国（以芝诺比娅女王和她儿子瓦巴拉图斯名义统治）的东方战役。他在伊迈（Immae，安条克附近）和埃美萨（Emesa）的两场会战中击败了芝诺比娅的重装骑兵。帕尔米拉城被围陷，芝诺比娅在试图逃往波斯时被俘。奥勒良随后暂时宽恕了帕尔米拉城，但在回师途中得知该城再次叛乱后，率军返回进行了毁灭性的惩罚。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Aurelian"
+  ],
+  "peopleMentioned": [
+    "Zenobia",
+    "Vaballathus",
+    "Odaenathus"
+  ],
+  "places": [
+    "Palmyra",
+    "Immae",
+    "Emesa",
+    "Antioch",
+    "Syria"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Aurelian defeats Zenobia and recovers the East",
+  "factType": "military-event",
+  "questions": [
+    "芝诺比娅被俘后的最终命运有不同说法——是嫁给罗马元老平安终老，还是被处死？"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 259–272"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "military-event",
+    "Palmyra",
+    "Immae",
+    "Emesa"
+  ],
+  "people": [
+    "Aurelian",
+    "Zenobia",
+    "Vaballathus",
+    "Odaenathus"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "272 年奥勒良击败帕尔米拉的芝诺比娅女王，收复帝国东部行省。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "帕尔米拉王国在奥登纳图斯（Odaenathus，267 年被刺杀）的遗孀芝诺比娅（Zenobia）领导下，将控制范围从叙利亚扩展至埃及、小亚细亚东部和阿拉伯。芝诺比娅以子瓦巴拉图斯（Vaballathus）的名义自称奥古斯塔，实际上建立了东部帝国。272 年春，奥勒良率军东征，在安条克附近的伊迈（Immae）以巧妙战术——佯装撤退引诱芝诺比娅的重甲骑兵（clibanarii）在烈日下耗尽体力后反击——大获全胜。随后在埃美萨取得第二场胜利，围攻帕尔米拉城。芝诺比娅在试图骑骆驼逃往波斯途中被俘。奥勒良起初宽恕了帕尔米拉，但在返回欧洲途中得知该城再次叛乱，折返后将帕尔米拉彻底摧毁，这座曾繁华无比的沙漠商都从此一蹶不振。被俘的芝诺比娅出现在奥勒良 274 年的凯旋式中。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 7 · pp. 259–272",
+      "待核：芝诺比娅被俘后的最终命运有不同说法——是嫁给罗马元老平安终老，还是被处死？"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-274-aurelian-defeats-tetricus-and-reunifies-the-roman-empire', 'Aurelian defeats Tetricus and reunifies the Roman Empire', 'rome', 274, 274, 'Châlons', 'war', '274 年奥勒良收复高卢帝国，完成了罗马帝国的再统一。', 'high', NULL, '{
+  "overview": "274 年奥勒良收复高卢帝国，完成了罗马帝国的再统一。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "高卢帝国于 260 年由波斯特穆斯建立，历经多位皇帝，至泰特里库斯一世（Tetricus I）时已是强弩之末。面对日耳曼入侵和内部不稳，泰特里库斯意识到高卢帝国无法长久维持。据 Aurelius Victor 和 Eutropius 所述，泰特里库斯在决战前已秘密致信奥勒良，引用维吉尔的诗句恳求：''不可战胜的人啊，请把我从这些苦难中解救出来。''在沙隆（Châlons-sur-Marne）附近的卡塔劳尼亚平原（Catalaunian Fields）会战中，泰特里库斯临阵投降，但其军队在失去指挥后仍激烈抵抗并被大量屠杀。战后，泰特里库斯被奥勒良带到罗马参加凯旋式，随后被宽恕并被任命为意大利南部一个行省的 governor（一说 lucaniae 的 corrector）。274 年的凯旋式上，奥勒良展示了芝诺比娅、泰特里库斯和来自各部落的俘虏，并自封 Restitutor Orbis（世界恢复者）。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Eutropius, Breviarium · Book 9 · 9.13–9.14",
+    "待核：泰特里库斯投降是否事先密谋，还是战场上不得已的决定？史料对此有不同叙述。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:254ff458199dd11b5a57700d",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 30,
+  "sourceId": "rome-source-breviarium-ab-urbe-condita-eutropius",
+  "sourceTitle": "Breviarium ab Urbe Condita",
+  "locator": "9.13–9.14",
+  "originalText": null,
+  "translation": "Eutropius 简洁地记述了奥勒良收复高卢帝国：''他在高卢与高卢皇帝泰特里库斯（Tetricus）交战并将其击败……他收复了高卢。''据其他史料（Aurelius Victor 等），泰特里库斯在沙隆（Châlons）附近的决战前已秘密投降奥勒良，他的军队在没有指挥官的情况下仍然抵抗，遭到屠杀。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Aurelian"
+  ],
+  "peopleMentioned": [
+    "Tetricus I",
+    "Tetricus II",
+    "Postumus",
+    "Victorinus"
+  ],
+  "places": [
+    "Châlons",
+    "Catalaunian Fields",
+    "Gaul"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Aurelian defeats Tetricus and reunifies the Roman Empire",
+  "factType": "military-event",
+  "questions": [
+    "泰特里库斯投降是否事先密谋，还是战场上不得已的决定？史料对此有不同叙述。"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-breviarium-ab-urbe-condita-eutropius",
+      "locator": "9.13–9.14"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "military-event",
+    "Châlons",
+    "Catalaunian Fields",
+    "Gaul"
+  ],
+  "people": [
+    "Aurelian",
+    "Tetricus I",
+    "Tetricus II",
+    "Postumus",
+    "Victorinus"
+  ],
+  "sources": [
+    "Eutropius, Breviarium"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "274 年奥勒良收复高卢帝国，完成了罗马帝国的再统一。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "高卢帝国于 260 年由波斯特穆斯建立，历经多位皇帝，至泰特里库斯一世（Tetricus I）时已是强弩之末。面对日耳曼入侵和内部不稳，泰特里库斯意识到高卢帝国无法长久维持。据 Aurelius Victor 和 Eutropius 所述，泰特里库斯在决战前已秘密致信奥勒良，引用维吉尔的诗句恳求：''不可战胜的人啊，请把我从这些苦难中解救出来。''在沙隆（Châlons-sur-Marne）附近的卡塔劳尼亚平原（Catalaunian Fields）会战中，泰特里库斯临阵投降，但其军队在失去指挥后仍激烈抵抗并被大量屠杀。战后，泰特里库斯被奥勒良带到罗马参加凯旋式，随后被宽恕并被任命为意大利南部一个行省的 governor（一说 lucaniae 的 corrector）。274 年的凯旋式上，奥勒良展示了芝诺比娅、泰特里库斯和来自各部落的俘虏，并自封 Restitutor Orbis（世界恢复者）。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Eutropius, Breviarium · Book 9 · 9.13–9.14",
+      "待核：泰特里库斯投降是否事先密谋，还是战场上不得已的决定？史料对此有不同叙述。"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-275-assassination-of-aurelian', 'Assassination of Aurelian', 'rome', 275, 275, 'Caenophrurium', 'politics', '275 年奥勒良被其秘书官伪造名单引发的阴谋杀害，帝国再次陷入空位期。', 'high', NULL, '{
+  "overview": "275 年奥勒良被其秘书官伪造名单引发的阴谋杀害，帝国再次陷入空位期。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "奥勒良在其军事成就和改革的巅峰突然死于一场私人阴谋。他的秘书官（名 Eros 或 Mnestheus）因害怕因轻微腐败行为被皇帝严厉惩罚，遂伪造了一份皇帝即将处决一批高级军官的名单，并故意让名单上的军官看到。出于恐惧，军官们不等核实就突袭了皇帝的行营，在色雷斯的凯诺弗鲁里乌姆（Caenophrurium，今土耳其科尔卢附近）杀害了奥勒良。发现被骗后军队极度悔恨，神化了奥勒良（Divus Aurelianus），并以罕见的姿态请求元老院选举继任者。元老院在犹豫了约六周后选举了年迈的塔西佗（Marcus Claudius Tacitus）。奥勒良在不到五年的统治中统一了帝国，他的死亡使帝国再次经历了短暂的无序。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Eutropius, Breviarium · Book 9 · 9.15",
+    "待核：秘书官的姓名在史料中有不同记载（Eros vs Mnestheus），可能是同一人的希腊名和拉丁名。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:190d0e2c2000cfe5d5ab00bf",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 32,
+  "sourceId": "rome-source-breviarium-ab-urbe-condita-eutropius",
+  "sourceTitle": "Breviarium ab Urbe Condita",
+  "locator": "9.15",
+  "originalText": null,
+  "translation": "Eutropius 记载奥勒良于 275 年在色雷斯的拜占庭附近被其秘书官（或私人秘书，名为 Eros/Mnestheus）因私人怨恨而设计的阴谋杀害。奥勒良以严格纪律和对腐败零容忍闻名，秘书官伪造了一份处决名单，激起高级军官的恐惧，导致他们先发制人刺杀皇帝。发现真相后军队深感懊悔，没有立即拥立新帝，而是请求元老院选帝。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Aurelian"
+  ],
+  "peopleMentioned": [
+    "Eros",
+    "Mnestheus"
+  ],
+  "places": [
+    "Caenophrurium",
+    "Thrace",
+    "Byzantium"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Assassination of Aurelian",
+  "factType": "political-event",
+  "questions": [
+    "秘书官的姓名在史料中有不同记载（Eros vs Mnestheus），可能是同一人的希腊名和拉丁名。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-breviarium-ab-urbe-condita-eutropius",
+      "locator": "9.15"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "political-event",
+    "Caenophrurium",
+    "Thrace",
+    "Byzantium"
+  ],
+  "people": [
+    "Aurelian",
+    "Eros",
+    "Mnestheus"
+  ],
+  "sources": [
+    "Eutropius, Breviarium"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "275 年奥勒良被其秘书官伪造名单引发的阴谋杀害，帝国再次陷入空位期。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "奥勒良在其军事成就和改革的巅峰突然死于一场私人阴谋。他的秘书官（名 Eros 或 Mnestheus）因害怕因轻微腐败行为被皇帝严厉惩罚，遂伪造了一份皇帝即将处决一批高级军官的名单，并故意让名单上的军官看到。出于恐惧，军官们不等核实就突袭了皇帝的行营，在色雷斯的凯诺弗鲁里乌姆（Caenophrurium，今土耳其科尔卢附近）杀害了奥勒良。发现被骗后军队极度悔恨，神化了奥勒良（Divus Aurelianus），并以罕见的姿态请求元老院选举继任者。元老院在犹豫了约六周后选举了年迈的塔西佗（Marcus Claudius Tacitus）。奥勒良在不到五年的统治中统一了帝国，他的死亡使帝国再次经历了短暂的无序。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Eutropius, Breviarium · Book 9 · 9.15",
+      "待核：秘书官的姓名在史料中有不同记载（Eros vs Mnestheus），可能是同一人的希腊名和拉丁名。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-275-reign-and-death-of-tacitus', 'Reign and death of Tacitus', 'rome', 275, 275, 'Rome', 'politics', '塔西佗被元老院选举为帝但仅在位数月即去世。', 'medium', NULL, '{
+  "overview": "塔西佗被元老院选举为帝但仅在位数月即去世。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "塔西佗（Marcus Claudius Tacitus）是奥勒良和普罗布斯之间的一位过渡性人物。据 HA 所述，他在元老院的选举中即位——这似乎代表了元老院权力的一次短暂复兴——但现代学者普遍怀疑 HA 在此事上进行了亲元老院的夸大。他可能是在军队的认可下（而非元老院主导）即位的。他率军前往东方应对外敌入侵并取得了一些胜利，但不久后即在安纳托利亚的 Tyana 去世（276 年 6 月或 7 月），具体原因不明——可能是自然原因、或是被刺杀、或是在战斗中被杀。他的异母兄弟弗洛里安努斯（Florianus）短暂称帝，但很快被普罗布斯击败。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Historia Augusta, Vita Taciti · Vita Taciti · Tac. 1–19",
+    "待核：HA 对塔西佗即位的元老院中心叙述与钱币证据可能矛盾。他的死亡原因和具体日期在不同史料中有较大差异。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:ab913d4c8b4b4d13ea55508a",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 33,
+  "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+  "sourceTitle": "Historia Augusta",
+  "locator": "Tac. 1–19",
+  "originalText": null,
+  "translation": "HA 记载塔西佗（Marcus Claudius Tacitus）在奥勒良被杀后被元老院选举为皇帝。HA 声称元老院在选举中发挥了重要作用（但这一说法在现代史学中受质疑）。塔西佗当时已约 75 岁，富有的元老，据信是历史学家塔西佗的后裔（可能为虚构）。他在位仅约 6-7 个月后即去世（可能自然死亡或被刺杀），其继任者普罗布斯随即即位。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Tacitus"
+  ],
+  "peopleMentioned": [
+    "Aurelian",
+    "Florianus"
+  ],
+  "places": [
+    "Rome",
+    "Asia Minor"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Reign and death of Tacitus",
+  "factType": "person-life",
+  "questions": [
+    "HA 对塔西佗即位的元老院中心叙述与钱币证据可能矛盾。他的死亡原因和具体日期在不同史料中有较大差异。"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+      "locator": "Tac. 1–19"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "person-life",
+    "Rome",
+    "Asia Minor"
+  ],
+  "people": [
+    "Tacitus",
+    "Aurelian",
+    "Florianus"
+  ],
+  "sources": [
+    "Historia Augusta, Vita Taciti"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "塔西佗被元老院选举为帝但仅在位数月即去世。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "塔西佗（Marcus Claudius Tacitus）是奥勒良和普罗布斯之间的一位过渡性人物。据 HA 所述，他在元老院的选举中即位——这似乎代表了元老院权力的一次短暂复兴——但现代学者普遍怀疑 HA 在此事上进行了亲元老院的夸大。他可能是在军队的认可下（而非元老院主导）即位的。他率军前往东方应对外敌入侵并取得了一些胜利，但不久后即在安纳托利亚的 Tyana 去世（276 年 6 月或 7 月），具体原因不明——可能是自然原因、或是被刺杀、或是在战斗中被杀。他的异母兄弟弗洛里安努斯（Florianus）短暂称帝，但很快被普罗布斯击败。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Historia Augusta, Vita Taciti · Vita Taciti · Tac. 1–19",
+      "待核：HA 对塔西佗即位的元老院中心叙述与钱币证据可能矛盾。他的死亡原因和具体日期在不同史料中有较大差异。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-276-military-campaigns-and-public-works-of-probus', 'Military campaigns and public works of Probus', 'rome', 276, 276, 'Gaul', 'politics', '普罗布斯通过一系列成功的军事行动巩固了帝国，其让士兵参与公共工程的政策虽高效但引发军队不满。', 'high', NULL, '{
+  "overview": "普罗布斯通过一系列成功的军事行动巩固了帝国，其让士兵参与公共工程的政策虽高效但引发军队不满。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "普罗布斯（Marcus Aurelius Probus）是一位能力卓越的军事指挥官，以冷酷高效著称。他在即位后的前三年（276-278）连续击败了入侵高卢的法兰克人和阿勒曼尼人，随后跨过莱茵河深入日耳曼腹地惩罚部落。在多瑙河前线，他击败了萨尔马提亚人（Sarmatians）和汪达尔人（Vandals），并重新安置了大量被俘的蛮族人口在帝国境内作为农民耕种荒地。他还在埃及镇压了 Blemyes 游牧部落的入侵。但他的最具争议的政策是强制军团士兵在非战时期从事繁重的公共工程——在高卢种植葡萄、在多瑙河下游疏浚沼泽、在城镇修建公共建筑。Eutropius 记载普罗布斯曾说''不久我们将不再需要士兵，和平的时代即将到来''——但这句乐观的话深深激怒了将战争视为唯一荣耀来源的职业军团。282 年当他在家乡西尔米乌姆监督沼泽排干工程时，士兵哗变将其杀害——即使像普罗布斯这样能干的皇帝也无法超越''兵营皇帝''的命运。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Eutropius, Breviarium · Book 9 · 9.16–9.20",
+    "待核：Eutropius 对普罗布斯的积极评价是否存在偏袒？普罗布斯是否也犯过重大的战略错误？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:9edc947aefccda7c5424df96",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 58,
+  "sourceId": "rome-source-breviarium-ab-urbe-condita-eutropius",
+  "sourceTitle": "Breviarium ab Urbe Condita",
+  "locator": "9.16–9.20",
+  "originalText": null,
+  "translation": "Eutropius 对普罗布斯的统治进行了简洁而积极的评价。他记录了普罗布斯在莱茵河（击败法兰克人和阿勒曼尼人）、多瑙河（击败萨尔马提亚人）以及埃及（镇压了 Blemyes 的叛乱）的连续军事胜利。Eutropius 特别提到普罗布斯在高卢、潘诺尼亚和默西亚让士兵种植葡萄和谷物，并说了一句著名的话：''不久我们将不再需要士兵''——这句话反映了普罗布斯对和平时代的乐观期望（最终被证明为不切实际）。Eutropius 将普罗布斯评价为''杰出而精力充沛的皇帝''。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Probus"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Gaul",
+    "Rhine",
+    "Danube",
+    "Egypt",
+    "Pannonia"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Military campaigns and public works of Probus",
+  "factType": "person-life",
+  "questions": [
+    "Eutropius 对普罗布斯的积极评价是否存在偏袒？普罗布斯是否也犯过重大的战略错误？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-breviarium-ab-urbe-condita-eutropius",
+      "locator": "9.16–9.20"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "person-life",
+    "Gaul",
+    "Rhine",
+    "Danube"
+  ],
+  "people": [
+    "Probus"
+  ],
+  "sources": [
+    "Eutropius, Breviarium"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "普罗布斯通过一系列成功的军事行动巩固了帝国，其让士兵参与公共工程的政策虽高效但引发军队不满。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "普罗布斯（Marcus Aurelius Probus）是一位能力卓越的军事指挥官，以冷酷高效著称。他在即位后的前三年（276-278）连续击败了入侵高卢的法兰克人和阿勒曼尼人，随后跨过莱茵河深入日耳曼腹地惩罚部落。在多瑙河前线，他击败了萨尔马提亚人（Sarmatians）和汪达尔人（Vandals），并重新安置了大量被俘的蛮族人口在帝国境内作为农民耕种荒地。他还在埃及镇压了 Blemyes 游牧部落的入侵。但他的最具争议的政策是强制军团士兵在非战时期从事繁重的公共工程——在高卢种植葡萄、在多瑙河下游疏浚沼泽、在城镇修建公共建筑。Eutropius 记载普罗布斯曾说''不久我们将不再需要士兵，和平的时代即将到来''——但这句乐观的话深深激怒了将战争视为唯一荣耀来源的职业军团。282 年当他在家乡西尔米乌姆监督沼泽排干工程时，士兵哗变将其杀害——即使像普罗布斯这样能干的皇帝也无法超越''兵营皇帝''的命运。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Eutropius, Breviarium · Book 9 · 9.16–9.20",
+      "待核：Eutropius 对普罗布斯的积极评价是否存在偏袒？普罗布斯是否也犯过重大的战略错误？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-277-reign-of-probus-military-recovery', 'Reign of Probus: military recovery', 'rome', 277, 277, 'Gaul', 'politics', '普罗布斯（276-282）在莱茵河和多瑙河取得了连续的军事胜利，巩固了奥勒良重新统一的帝国。', 'medium', NULL, '{
+  "overview": "普罗布斯（276-282）在莱茵河和多瑙河取得了连续的军事胜利，巩固了奥勒良重新统一的帝国。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "普罗布斯同样出身伊利里亚军人阶层，在奥勒良麾下建立了声望。即位后他首先击败了入侵高卢的法兰克人和阿勒曼尼人，随后跨过莱茵河深入日耳曼腹地，恢复了莱茵河防线的安全。在多瑙河前线，他击败了汪达尔人和萨尔马提亚人。他甚至平定了埃及的叛乱，并在安纳托利亚处置了另一位篡位者。但普罗布斯因要求军团士兵在非战时从事重型公共工程（疏浚沼泽、开垦荒地、在高卢种植葡萄）而得罪了军队——士兵们认为这些劳动有损军人尊严。282 年秋，士兵们在他的家乡西尔米乌姆附近哗变，杀死了普罗布斯。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Historia Augusta, Vita Probi · Vita Probi · Prob. 1–24",
+    "待核：普罗布斯的公共工程项目是否像 HA 描述的那样广泛？让军团士兵从事民用工程的争议是否被夸大了？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:4629fdc5aa162965370dea97",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 34,
+  "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+  "sourceTitle": "Historia Augusta",
+  "locator": "Prob. 1–24",
+  "originalText": null,
+  "translation": "HA 记载普罗布斯（Marcus Aurelius Probus）是一位能力极强的伊利里亚裔军人皇帝。他于 276 年击败弗洛里安努斯后被军队拥立。他的统治以在日耳曼和高卢的连续成功战役而著称——他不仅击败入侵者，还跨过莱茵河惩罚蛮族部落。HA 特别记载他让士兵在和平时期从事公共工程建设（如在高卢种植葡萄、在多瑙河疏浚沼泽），这最终引起士兵的不满。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Probus"
+  ],
+  "peopleMentioned": [
+    "Florianus"
+  ],
+  "places": [
+    "Gaul",
+    "Rhine",
+    "Danube",
+    "Illyricum",
+    "Egypt"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Reign of Probus: military recovery",
+  "factType": "person-life",
+  "questions": [
+    "普罗布斯的公共工程项目是否像 HA 描述的那样广泛？让军团士兵从事民用工程的争议是否被夸大了？"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+      "locator": "Prob. 1–24"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "person-life",
+    "Gaul",
+    "Rhine",
+    "Danube"
+  ],
+  "people": [
+    "Probus",
+    "Florianus"
+  ],
+  "sources": [
+    "Historia Augusta, Vita Probi"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "普罗布斯（276-282）在莱茵河和多瑙河取得了连续的军事胜利，巩固了奥勒良重新统一的帝国。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "普罗布斯同样出身伊利里亚军人阶层，在奥勒良麾下建立了声望。即位后他首先击败了入侵高卢的法兰克人和阿勒曼尼人，随后跨过莱茵河深入日耳曼腹地，恢复了莱茵河防线的安全。在多瑙河前线，他击败了汪达尔人和萨尔马提亚人。他甚至平定了埃及的叛乱，并在安纳托利亚处置了另一位篡位者。但普罗布斯因要求军团士兵在非战时从事重型公共工程（疏浚沼泽、开垦荒地、在高卢种植葡萄）而得罪了军队——士兵们认为这些劳动有损军人尊严。282 年秋，士兵们在他的家乡西尔米乌姆附近哗变，杀死了普罗布斯。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Historia Augusta, Vita Probi · Vita Probi · Prob. 1–24",
+      "待核：普罗布斯的公共工程项目是否像 HA 描述的那样广泛？让军团士兵从事民用工程的争议是否被夸大了？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-280-the-transition-from-soldier-emperors-to-diocletians-system', 'The transition from soldier-emperors to Diocletian''s system', 'rome', 280, 280, 'Rome', 'politics', '卡鲁斯短命王朝（282-284）是三世纪危机模式的最后一次重复，此后戴克里先带来了系统性变革。', 'high', NULL, '{
+  "overview": "卡鲁斯短命王朝（282-284）是三世纪危机模式的最后一次重复，此后戴克里先带来了系统性变革。",
+  "background": [
+    "End of Third Century Crisis"
+  ],
+  "process": [
+    "从奥勒良到戴克里先的十年间（275-284），帝国经历了塔西佗（275-276）、弗洛里安努斯（276）、普罗布斯（276-282）、卡鲁斯（282-283）、卡里努斯（283-285）和努梅里安（283-284）六个统治者和一位共治者。这一序列延续了伊利里亚军功精英主导的模式——每一位都是能干的军事指挥官，但无一能超越个人统治的脆弱性。普罗布斯的命运尤其具有象征意义——他可能是二十年来最能干的皇帝之一，却因为让士兵种田而非打仗这样''失面子''的政策被自己人杀害。这个模式在卡鲁斯家族中走向了终局：父亲在军事胜利的最高点神秘死亡，一子被秘密谋杀，另一子被自己的军官杀害以复仇私仇。戴克里先 284 年即位时的关键创新不在于他的出身或军事能力（这与其他伊利里亚军官无异），而在于他意识到个人意志无法持续——需要一个非个人的、制度化的、以集体领导为核心的统治架构。他在位的 21 年（284-305）从根本上将皇帝的角色从''最幸运的将军''转变为''制度体系的化身''。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 4 · pp. 100–130"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:4f03e01f25246c915bba8b7d",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 63,
+  "sourceId": "rome-source-the-cambridge-ancient-history-cambridge-university-press",
+  "sourceTitle": "The Cambridge Ancient History",
+  "locator": "pp. 100–130",
+  "originalText": null,
+  "translation": "CAH 指出普罗布斯被杀后（282），帝国经历了卡鲁斯-卡里努斯-努梅里安的短命王朝（282-284），然后才迎来了戴克里先。这段短暂的过渡期代表了伊利里亚军人序列的延续——也是一个不可持续的模式的最终耗尽。戴克里先与其他伊利里亚军人皇帝的根本区别在于，他不仅夺取了权力，而且设计了一套能够让权力存续的制度。CAH 将这四年（282-284）定性为三世纪危机模式的最终枯竭——不是危机的结束，而是在戴克里先之前没有一个皇帝能找到超越''优秀军人+幸运''以外的更持久的解决方案。",
+  "originalTextMissing": true,
+  "peopleCore": [],
+  "peopleMentioned": [
+    "Carus",
+    "Carinus",
+    "Numerian",
+    "Probus",
+    "Diocletian"
+  ],
+  "places": [
+    "Rome",
+    "Sirmium",
+    "Nicomedia"
+  ],
+  "macroEvent": "End of Third Century Crisis",
+  "eventLabel": "The transition from soldier-emperors to Diocletian''s system",
+  "factType": "political-event",
+  "questions": [],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-cambridge-ancient-history-cambridge-university-press",
+      "locator": "pp. 100–130"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "End of Third Century Crisis",
+    "political-event",
+    "Rome",
+    "Sirmium",
+    "Nicomedia"
+  ],
+  "people": [
+    "Carus",
+    "Carinus",
+    "Numerian",
+    "Probus",
+    "Diocletian"
+  ],
+  "sources": [
+    "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "卡鲁斯短命王朝（282-284）是三世纪危机模式的最后一次重复，此后戴克里先带来了系统性变革。",
+    "background": [
+      "End of Third Century Crisis"
+    ],
+    "process": [
+      "从奥勒良到戴克里先的十年间（275-284），帝国经历了塔西佗（275-276）、弗洛里安努斯（276）、普罗布斯（276-282）、卡鲁斯（282-283）、卡里努斯（283-285）和努梅里安（283-284）六个统治者和一位共治者。这一序列延续了伊利里亚军功精英主导的模式——每一位都是能干的军事指挥官，但无一能超越个人统治的脆弱性。普罗布斯的命运尤其具有象征意义——他可能是二十年来最能干的皇帝之一，却因为让士兵种田而非打仗这样''失面子''的政策被自己人杀害。这个模式在卡鲁斯家族中走向了终局：父亲在军事胜利的最高点神秘死亡，一子被秘密谋杀，另一子被自己的军官杀害以复仇私仇。戴克里先 284 年即位时的关键创新不在于他的出身或军事能力（这与其他伊利里亚军官无异），而在于他意识到个人意志无法持续——需要一个非个人的、制度化的、以集体领导为核心的统治架构。他在位的 21 年（284-305）从根本上将皇帝的角色从''最幸运的将军''转变为''制度体系的化身''。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 4 · pp. 100–130"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-282-reign-of-carus-persian-victory-and-mysterious-death', 'Reign of Carus: Persian victory and mysterious death', 'rome', 282, 282, 'Mesopotamia', 'politics', '卡鲁斯（282-283）成功攻陷泰西封但随即神秘死亡，其子努梅里安的死亡直接触发了戴克里先的崛起。', 'medium', NULL, '{
+  "overview": "卡鲁斯（282-283）成功攻陷泰西封但随即神秘死亡，其子努梅里安的死亡直接触发了戴克里先的崛起。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "卡鲁斯是奥勒良-普罗布斯-卡鲁斯-戴克里先这一伊利里亚军人序列中的关键一环。他在 282 年被军队拥立取代被谋杀的普罗布斯——他本人可能参与了谋杀普罗布斯的阴谋（虽然史料不一致）。他任命其长子卡里努斯（Carinus）为西部凯撒留守高卢，自己则带领幼子努梅里安（Numerian）东征萨珊波斯。283 年他取得了自奥勒良以来最大的一次军事成功——攻陷萨珊首都泰西封。这是罗马军队在一个世纪内第三次（继 116 图拉真、198 塞维鲁之后）攻陷此城。沙普尔一世此时可能已年迈或已死，萨珊处于继承斗争之中。然而在泰西封以东扎营时，卡鲁斯在暴风雨中暴死于营帐——死因不明（雷击是最戏剧化的说法，也可能是疾病或被毒杀）。其子努梅里安率军撤退，但在途中被发现死在密封的轿中——其禁卫军长官阿培尔被指控为凶手。284 年 11 月，军队指挥官戴克里先亲手杀死了阿培尔，并在此过程中将自己确立为皇帝。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Historia Augusta, Vita Probi, Vita Cari et al. · Vita Cari · Car. 1–21",
+    "待核：卡鲁斯的死因有至少三种说法（雷击、疾病、毒杀），哪种最可靠？",
+    "待核：努梅里安在密封轿中被发现的细节是否经过了后来的戏剧化修饰？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:ecd40c20b12c2886887f1818",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 50,
+  "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+  "sourceTitle": "Historia Augusta",
+  "locator": "Car. 1–21",
+  "originalText": null,
+  "translation": "HA 记载卡鲁斯（Marcus Aurelius Carus）于 282 年被军队拥立，取代被杀害的普罗布斯。他任命其子卡里努斯（Carinus）为西部凯撒，自己亲率远征军东征萨珊波斯。283 年卡鲁斯攻陷了萨珊首都泰西封——这是一项重大军事成就。但很快卡鲁斯在暴风雨中神秘死亡（HA 列举了三种可能：雷击、疾病、或被属下毒杀）。他的另一个儿子努梅里安（Numerian）率军撤退，但在途中离奇死亡（可能被其禁卫军长官阿培尔 Aper 杀害），随后戴克里先被拥立为帝。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Carus"
+  ],
+  "peopleMentioned": [
+    "Probus",
+    "Carinus",
+    "Numerian",
+    "Diocletian",
+    "Aper"
+  ],
+  "places": [
+    "Mesopotamia",
+    "Ctesiphon",
+    "Sirmium",
+    "Nicomedia"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Reign of Carus: Persian victory and mysterious death",
+  "factType": "person-life",
+  "questions": [
+    "卡鲁斯的死因有至少三种说法（雷击、疾病、毒杀），哪种最可靠？",
+    "努梅里安在密封轿中被发现的细节是否经过了后来的戏剧化修饰？"
+  ],
+  "confidence": "medium",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-historia-augusta-scriptores-historiae-augustae",
+      "locator": "Car. 1–21"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "person-life",
+    "Mesopotamia",
+    "Ctesiphon",
+    "Sirmium"
+  ],
+  "people": [
+    "Carus",
+    "Probus",
+    "Carinus",
+    "Numerian",
+    "Diocletian",
+    "Aper"
+  ],
+  "sources": [
+    "Historia Augusta, Vita Probi, Vita Cari et al."
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "卡鲁斯（282-283）成功攻陷泰西封但随即神秘死亡，其子努梅里安的死亡直接触发了戴克里先的崛起。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "卡鲁斯是奥勒良-普罗布斯-卡鲁斯-戴克里先这一伊利里亚军人序列中的关键一环。他在 282 年被军队拥立取代被谋杀的普罗布斯——他本人可能参与了谋杀普罗布斯的阴谋（虽然史料不一致）。他任命其长子卡里努斯（Carinus）为西部凯撒留守高卢，自己则带领幼子努梅里安（Numerian）东征萨珊波斯。283 年他取得了自奥勒良以来最大的一次军事成功——攻陷萨珊首都泰西封。这是罗马军队在一个世纪内第三次（继 116 图拉真、198 塞维鲁之后）攻陷此城。沙普尔一世此时可能已年迈或已死，萨珊处于继承斗争之中。然而在泰西封以东扎营时，卡鲁斯在暴风雨中暴死于营帐——死因不明（雷击是最戏剧化的说法，也可能是疾病或被毒杀）。其子努梅里安率军撤退，但在途中被发现死在密封的轿中——其禁卫军长官阿培尔被指控为凶手。284 年 11 月，军队指挥官戴克里先亲手杀死了阿培尔，并在此过程中将自己确立为皇帝。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Historia Augusta, Vita Probi, Vita Cari et al. · Vita Cari · Car. 1–21",
+      "待核：卡鲁斯的死因有至少三种说法（雷击、疾病、毒杀），哪种最可靠？",
+      "待核：努梅里安在密封轿中被发现的细节是否经过了后来的戏剧化修饰？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-284-diocletian-becomes-emperor', 'Diocletian becomes emperor', 'rome', 284, 284, 'Nicomedia', 'politics', '284 年戴克里先即位，终结了三世纪危机，开启帝国制度性改革的新时代。', 'high', NULL, '{
+  "overview": "284 年戴克里先即位，终结了三世纪危机，开启帝国制度性改革的新时代。",
+  "background": [
+    "End of Third Century Crisis"
+  ],
+  "process": [
+    "戴克里先（Gaius Aurelius Valerius Diocletianus，原名 Diocles）的崛起标志着三世纪危机的终结。他的出身与之前的伊利里亚军人皇帝相似——出生于达尔马提亚的释放奴家庭（或低微的自由民），从士兵逐级晋升。282-283 年，皇帝卡鲁斯率领一次成功的波斯远征（甚至攻至泰西封），但卡鲁斯在 283 年神秘死亡（史料说法包括雷击、疾病或被刺杀）。其子努梅里安在撤军途中被发现死在密封的轿子里，禁卫军长官阿培尔被指控为凶手。284 年 11 月 20 日，军队在尼科米迪亚集会，指挥官戴克里先公开宣布自己与阿培尔的罪行无关，并亲手用剑杀死了阿培尔——将罪责完全归于这位禁卫军长官。随后他在与卡鲁斯另一子卡里努斯（Carinus）的内战中胜出（285 年马尔古斯河战役），卡里努斯被自己的部下杀死。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Lactantius, De Mortibus Persecutorum · Chapter 7 · 7",
+    "待核：努梅里安之死的真实原因可能永远无法确定。戴克里先亲手杀阿培尔的情节可能有戏剧化包装的成分。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:5ccab4d8b58f054edc7d8e05",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 35,
+  "sourceId": "rome-source-de-mortibus-persecutorum-lactantius",
+  "sourceTitle": "De Mortibus Persecutorum",
+  "locator": "7",
+  "originalText": null,
+  "translation": "Lactantius 记载戴克里先（原名 Diocles）于 284 年 11 月 20 日在尼科米迪亚（Nicomedia）附近被军队拥立为帝。卡鲁斯（Carus）在波斯远征中神秘死亡（据称被雷击），其子努梅里安（Numerian）在返回途中离奇死亡，禁卫军长官阿培尔（Aper）因被指控谋杀努梅里安而被戴克里先当众亲手杀死。Lactantius 特别记载了戴克里先对阿培尔说的一句话：''我以太阳神为证，我没有杀死他''——然后亲手斩杀了阿培尔。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Diocletian"
+  ],
+  "peopleMentioned": [
+    "Carus",
+    "Numerian",
+    "Carinus",
+    "Aper"
+  ],
+  "places": [
+    "Nicomedia",
+    "Bithynia",
+    "Persia",
+    "Mesopotamia"
+  ],
+  "macroEvent": "End of Third Century Crisis",
+  "eventLabel": "Diocletian becomes emperor",
+  "factType": "political-event",
+  "questions": [
+    "努梅里安之死的真实原因可能永远无法确定。戴克里先亲手杀阿培尔的情节可能有戏剧化包装的成分。"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-de-mortibus-persecutorum-lactantius",
+      "locator": "7"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "End of Third Century Crisis",
+    "political-event",
+    "Nicomedia",
+    "Bithynia",
+    "Persia"
+  ],
+  "people": [
+    "Diocletian",
+    "Carus",
+    "Numerian",
+    "Carinus",
+    "Aper"
+  ],
+  "sources": [
+    "Lactantius, De Mortibus Persecutorum"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "284 年戴克里先即位，终结了三世纪危机，开启帝国制度性改革的新时代。",
+    "background": [
+      "End of Third Century Crisis"
+    ],
+    "process": [
+      "戴克里先（Gaius Aurelius Valerius Diocletianus，原名 Diocles）的崛起标志着三世纪危机的终结。他的出身与之前的伊利里亚军人皇帝相似——出生于达尔马提亚的释放奴家庭（或低微的自由民），从士兵逐级晋升。282-283 年，皇帝卡鲁斯率领一次成功的波斯远征（甚至攻至泰西封），但卡鲁斯在 283 年神秘死亡（史料说法包括雷击、疾病或被刺杀）。其子努梅里安在撤军途中被发现死在密封的轿子里，禁卫军长官阿培尔被指控为凶手。284 年 11 月 20 日，军队在尼科米迪亚集会，指挥官戴克里先公开宣布自己与阿培尔的罪行无关，并亲手用剑杀死了阿培尔——将罪责完全归于这位禁卫军长官。随后他在与卡鲁斯另一子卡里努斯（Carinus）的内战中胜出（285 年马尔古斯河战役），卡里努斯被自己的部下杀死。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Lactantius, De Mortibus Persecutorum · Chapter 7 · 7",
+      "待核：努梅里安之死的真实原因可能永远无法确定。戴克里先亲手杀阿培尔的情节可能有戏剧化包装的成分。"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-284-battle-of-the-margus-diocletian-defeats-carinus', 'Battle of the Margus: Diocletian defeats Carinus', 'rome', 284, 284, 'Margus River', 'war', '285 年戴克里先在马尔古斯河战役中击败卡里努斯，成为帝国唯一的皇帝。', 'high', NULL, '{
+  "overview": "285 年戴克里先在马尔古斯河战役中击败卡里努斯，成为帝国唯一的皇帝。",
+  "background": [
+    "Third Century Crisis"
+  ],
+  "process": [
+    "戴克里先在被军队拥立后仍需面对卡里努斯（Carinus）——卡鲁斯的长子，已在西部独立统治了两年。据 Eutropius 所述，卡里努斯在罗马和意大利过着极度腐化的生活，触怒了大批元老和军官。285 年初春，双方在默西亚的马尔古斯河（Margus，今塞尔维亚的摩拉瓦河）展开决战，双方兵力可能各在 20,000-30,000 人左右。战斗中戴克里先一度处于劣势——卡里努斯的军团在正面交锋中更占上风。然而就在即将获胜之际，卡里努斯被自己的一名护卫军官刺杀了——这位军官的动机据称是因为卡里努斯与他的妻子发生了私情（另一种说法是政治阴谋）。失去指挥官的卡里努斯军队随即溃散或投降。戴克里先表现出了惊人的政治克制——他没有惩罚战败的军队，而是将其收编为自己的部队，并宽恕了卡里努斯的大部分支持者。这一仁慈举动使他赢得了残敌及其元老支持者的忠诚，为他即将开始的根本性改革奠定了广泛的政治基础。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Eutropius, Breviarium · Book 9 · 9.20–9.22",
+    "待核：卡里努斯的''腐化和纵欲''是否被后来的史料过分渲染以衬托戴克里先的''清白''形象？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:9008a493692c73b48aac4f52",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 59,
+  "sourceId": "rome-source-breviarium-ab-urbe-condita-eutropius",
+  "sourceTitle": "Breviarium ab Urbe Condita",
+  "locator": "9.20–9.22",
+  "originalText": null,
+  "translation": "Eutropius 简洁地记述了卡鲁斯之子卡里努斯（Carinus）在帝国西部统治期间的行为——他沉溺于奢华和纵欲之中，据称娶了九个妻子并与众多元老贵族女性有染。285 年春，戴克里先率军从东方进入默西亚（Moesia），在马尔古斯河（Margus，今摩拉瓦河）战役中与卡里努斯决战。战斗对戴克里先不利，但正当卡里努斯即将获胜时，他被自己的一名军官杀死——这位军官据称因为卡里努斯与其妻子通奸而复仇。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Diocletian"
+  ],
+  "peopleMentioned": [
+    "Carinus",
+    "Carus",
+    "Numerian"
+  ],
+  "places": [
+    "Margus River",
+    "Moesia",
+    "Dalmatia"
+  ],
+  "macroEvent": "Third Century Crisis",
+  "eventLabel": "Battle of the Margus: Diocletian defeats Carinus",
+  "factType": "military-event",
+  "questions": [
+    "卡里努斯的''腐化和纵欲''是否被后来的史料过分渲染以衬托戴克里先的''清白''形象？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-breviarium-ab-urbe-condita-eutropius",
+      "locator": "9.20–9.22"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Third Century Crisis",
+    "military-event",
+    "Margus River",
+    "Moesia",
+    "Dalmatia"
+  ],
+  "people": [
+    "Diocletian",
+    "Carinus",
+    "Carus",
+    "Numerian"
+  ],
+  "sources": [
+    "Eutropius, Breviarium"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "285 年戴克里先在马尔古斯河战役中击败卡里努斯，成为帝国唯一的皇帝。",
+    "background": [
+      "Third Century Crisis"
+    ],
+    "process": [
+      "戴克里先在被军队拥立后仍需面对卡里努斯（Carinus）——卡鲁斯的长子，已在西部独立统治了两年。据 Eutropius 所述，卡里努斯在罗马和意大利过着极度腐化的生活，触怒了大批元老和军官。285 年初春，双方在默西亚的马尔古斯河（Margus，今塞尔维亚的摩拉瓦河）展开决战，双方兵力可能各在 20,000-30,000 人左右。战斗中戴克里先一度处于劣势——卡里努斯的军团在正面交锋中更占上风。然而就在即将获胜之际，卡里努斯被自己的一名护卫军官刺杀了——这位军官的动机据称是因为卡里努斯与他的妻子发生了私情（另一种说法是政治阴谋）。失去指挥官的卡里努斯军队随即溃散或投降。戴克里先表现出了惊人的政治克制——他没有惩罚战败的军队，而是将其收编为自己的部队，并宽恕了卡里努斯的大部分支持者。这一仁慈举动使他赢得了残敌及其元老支持者的忠诚，为他即将开始的根本性改革奠定了广泛的政治基础。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Eutropius, Breviarium · Book 9 · 9.20–9.22",
+      "待核：卡里努斯的''腐化和纵欲''是否被后来的史料过分渲染以衬托戴克里先的''清白''形象？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-284-diocletians-elevation-from-freedmans-son-to-dominus', 'Diocletian''s elevation: from freedman''s son to dominus', 'rome', 284, 284, 'Nicomedia', 'politics', '戴克里先将皇帝的公众形象从奥古斯都的第一公民转变为波斯式的神圣君主。', 'high', NULL, '{
+  "overview": "戴克里先将皇帝的公众形象从奥古斯都的第一公民转变为波斯式的神圣君主。",
+  "background": [
+    "Tetrarchy"
+  ],
+  "process": [
+    "戴克里先对皇帝角色的重塑是三世纪最为深远的变化之一（与奥古斯都的创立和君士坦丁的基督教政策并列）。他放弃了奥古斯都三百年来的''元首''（princeps）伪装——皇帝作为''第一公民''在理论上与元老只是同辈中的第一人。取而代之，他采用了''主人''（dominus）这一公开的君主称号。一系列具体的宫廷礼节被引入来神圣化皇帝的存在：adoratio（在皇帝面前双膝跪地——希腊人称为 proskynesis，此前仅在波斯宫廷使用）、皇帝的丝绸和金色锦缎长袍（用金线刺绣、镶满宝石）、以及将皇帝与朱庇特神（Jovius）联系在一起的神圣头衔系统（马克西米安则为 Herculius）。这些变化标志着''元首制''（Principate）的终结和''主宰制''（Dominate）的正式开始——在主宰制下，皇帝不再将自己呈现为同辈中的第一人，而是作为高于任何人的神圣统治者存在。这一制度被君士坦丁继承并进一步基督教化。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Epitome de Caesaribus · 35-39 · 35–39",
+    "待核：adoratio 的具体起源——是通过波斯影响还是帝国自行发展的结果？学者对此有不同看法。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:7de6a80a332bf5e35e10f01e",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 65,
+  "sourceId": "rome-source-epitome-de-caesaribus-pseudo-aurelius-victor",
+  "sourceTitle": "Epitome de Caesaribus",
+  "locator": "35–39",
+  "originalText": null,
+  "translation": "《诸凯撒概要》（Epitome de Caesaribus，一部约 395 年的匿名拉丁简史，常附于 Aurelius Victor 之后）对戴克里先进行了简洁的评价。它强调戴克里先的低微出身——一位达尔马提亚释放奴的儿子，原名 Diocles（希腊名），后改名为 Diocletianus（拉丁化形式）。他亲手杀死阿培尔的行为被描述为''履行了他对军队的承诺''。Epitome 还记录了他引入东方宫廷礼仪（包括跪拜礼 adoratio——在皇帝面前下跪）、穿着金线织成的紫袍、以及佩戴宝石的皇家鞋履——这些波斯式的礼仪象征象征着与奥古斯都式''第一公民''传统的决定性断裂。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Diocletian"
+  ],
+  "peopleMentioned": [
+    "Aper"
+  ],
+  "places": [
+    "Nicomedia",
+    "Dalmatia",
+    "Rome"
+  ],
+  "macroEvent": "Tetrarchy",
+  "eventLabel": "Diocletian''s elevation: from freedman''s son to dominus",
+  "factType": "reform",
+  "questions": [
+    "adoratio 的具体起源——是通过波斯影响还是帝国自行发展的结果？学者对此有不同看法。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-epitome-de-caesaribus-pseudo-aurelius-victor",
+      "locator": "35–39"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Tetrarchy",
+    "reform",
+    "Nicomedia",
+    "Dalmatia",
+    "Rome"
+  ],
+  "people": [
+    "Diocletian",
+    "Aper"
+  ],
+  "sources": [
+    "Epitome de Caesaribus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "戴克里先将皇帝的公众形象从奥古斯都的第一公民转变为波斯式的神圣君主。",
+    "background": [
+      "Tetrarchy"
+    ],
+    "process": [
+      "戴克里先对皇帝角色的重塑是三世纪最为深远的变化之一（与奥古斯都的创立和君士坦丁的基督教政策并列）。他放弃了奥古斯都三百年来的''元首''（princeps）伪装——皇帝作为''第一公民''在理论上与元老只是同辈中的第一人。取而代之，他采用了''主人''（dominus）这一公开的君主称号。一系列具体的宫廷礼节被引入来神圣化皇帝的存在：adoratio（在皇帝面前双膝跪地——希腊人称为 proskynesis，此前仅在波斯宫廷使用）、皇帝的丝绸和金色锦缎长袍（用金线刺绣、镶满宝石）、以及将皇帝与朱庇特神（Jovius）联系在一起的神圣头衔系统（马克西米安则为 Herculius）。这些变化标志着''元首制''（Principate）的终结和''主宰制''（Dominate）的正式开始——在主宰制下，皇帝不再将自己呈现为同辈中的第一人，而是作为高于任何人的神圣统治者存在。这一制度被君士坦丁继承并进一步基督教化。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Epitome de Caesaribus · 35-39 · 35–39",
+      "待核：adoratio 的具体起源——是通过波斯影响还是帝国自行发展的结果？学者对此有不同看法。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-284-284-ce-as-the-end-of-the-third-century-crisis-and-the-beginning-of-late-', '284 CE as the end of the Third Century Crisis and the beginning of Late Antiquity', 'rome', 284, 284, 'Nicomedia', 'politics', '284 年戴克里先的即位被现代学者视为从三世纪危机向古典晚期转型的转折点。', 'high', NULL, '{
+  "overview": "284 年戴克里先的即位被现代学者视为从三世纪危机向古典晚期转型的转折点。",
+  "background": [
+    "End of Third Century Crisis"
+  ],
+  "process": [
+    "现代学者普遍同意 284 年戴克里先的即位标志着三世纪危机的结束——但这并不意味着帝国立即恢复了安全，而是意味着从''危机管理''向''制度改革''的范式转变。在此前的五十年间（235-284），军功卓著的将军们一个接一个地登上帝位，每个人凭借个人才能和幸运统治几年——但没有人创建过一个能够超越他们个人寿命的制度。戴克里先的突破在于他意识到问题不在于缺少好的将军（此前的皇帝中不乏杰出的军事人才），而在于制度框架本身不可持续。他的解决方案是多维度的：1）集权分散（四帝共治——让多位有能力的人同时统治并分散风险）；2）权力制度化（将皇帝的身份从个人魅力转变为非个人的神圣办公室）；3）继任规则（凯撒系统——至少理论上应为按能力选任，而非血缘）；4）自愿退位（证明皇权是一个角色而非终生身份）。这些制度创新——即使是短暂的——为君士坦丁的进一步改革（君士坦丁堡的建立、基督教化的帝国意识形态）提供了框架。戴克里先的改革虽然在某些方面（如物价控制和迫害）失败了，但他关于''皇权应当制度化''的洞见彻底改变了罗马政治体系的演变方向。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 330–340",
+    "待核：将 284 年作为 Late Antiquity 的确切开端是否得到多数学者的共识？还是有人认为 235 年或 312 年更为重要？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:a818aa9d1179d37a7a1ad339",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 82,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 330–340",
+  "originalText": null,
+  "translation": "Potter 将 284 年戴克里先的即位定性为三世纪危机的终结和''古典晚期''（Late Antiquity）的开端。他的论点是戴克里先与在此之前的伊利里亚军人皇帝（奥勒良、普罗布斯、卡鲁斯）的根本区别不在于个人能力——这些前任的能力都不亚于戴克里先——而在于戴克里先意识到仅靠个人的军事才能无法维持帝国：需要一个制度化的治理体系。戴克里先的四帝共治制——多位奥古斯都按能力选任凯撒最终继承奥古斯都——试图解决困扰罗马帝制 300 年的''继承问题''——即王朝血缘与能力之间的永恒张力。他关于皇帝角色的重新定义——从''第一公民''到''主人''——试图创造一种新的、高于个人的权力神圣性，使人民不会因任何一个皇帝的死而推翻整个制度。他的退位进一步强化了这一理念——皇权与个人身体不再是同一体，皇权是一个可转让的制度化角色。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Diocletian"
+  ],
+  "peopleMentioned": [
+    "Aurelian",
+    "Probus",
+    "Carus",
+    "Maximian"
+  ],
+  "places": [
+    "Nicomedia",
+    "Rome"
+  ],
+  "macroEvent": "End of Third Century Crisis",
+  "eventLabel": "284 CE as the end of the Third Century Crisis and the beginning of Late Antiquity",
+  "factType": "political-event",
+  "questions": [
+    "将 284 年作为 Late Antiquity 的确切开端是否得到多数学者的共识？还是有人认为 235 年或 312 年更为重要？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 330–340"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "End of Third Century Crisis",
+    "political-event",
+    "Nicomedia",
+    "Rome"
+  ],
+  "people": [
+    "Diocletian",
+    "Aurelian",
+    "Probus",
+    "Carus",
+    "Maximian"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "284 年戴克里先的即位被现代学者视为从三世纪危机向古典晚期转型的转折点。",
+    "background": [
+      "End of Third Century Crisis"
+    ],
+    "process": [
+      "现代学者普遍同意 284 年戴克里先的即位标志着三世纪危机的结束——但这并不意味着帝国立即恢复了安全，而是意味着从''危机管理''向''制度改革''的范式转变。在此前的五十年间（235-284），军功卓著的将军们一个接一个地登上帝位，每个人凭借个人才能和幸运统治几年——但没有人创建过一个能够超越他们个人寿命的制度。戴克里先的突破在于他意识到问题不在于缺少好的将军（此前的皇帝中不乏杰出的军事人才），而在于制度框架本身不可持续。他的解决方案是多维度的：1）集权分散（四帝共治——让多位有能力的人同时统治并分散风险）；2）权力制度化（将皇帝的身份从个人魅力转变为非个人的神圣办公室）；3）继任规则（凯撒系统——至少理论上应为按能力选任，而非血缘）；4）自愿退位（证明皇权是一个角色而非终生身份）。这些制度创新——即使是短暂的——为君士坦丁的进一步改革（君士坦丁堡的建立、基督教化的帝国意识形态）提供了框架。戴克里先的改革虽然在某些方面（如物价控制和迫害）失败了，但他关于''皇权应当制度化''的洞见彻底改变了罗马政治体系的演变方向。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 330–340",
+      "待核：将 284 年作为 Late Antiquity 的确切开端是否得到多数学者的共识？还是有人认为 235 年或 312 年更为重要？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-285-career-of-maximian-the-loyal-colleague', 'Career of Maximian: the loyal colleague', 'rome', 285, 285, 'Milan', 'politics', '马克西米安是戴克里先长达二十年的西部共治者，虽军事才能卓著但缺乏政治自信。', 'high', NULL, '{
+  "overview": "马克西米安是戴克里先长达二十年的西部共治者，虽军事才能卓著但缺乏政治自信。",
+  "background": [
+    "Tetrarchy"
+  ],
+  "process": [
+    "马克西米安（被戴克里先冠以 Herculius——''赫拉克勒斯之子''——的称号）是四帝共治制度中西部帝国的第一任奥古斯都。他的军事履历同戴克里先一样令人印象深刻：286 年镇压了高卢的巴高达（Bagaudae，反抗重税和高利贷的农民-土匪联盟）起义；随后在莱茵河前线成功击退了勃艮第人、阿勒曼尼人和法兰克人的联合入侵。他还不得不对付割据不列颠的篡位者卡劳修斯（Carausius，286-293）及其继任者阿莱克图斯（Allectus）——最终在 296 年由君士坦提乌斯一世收复不列颠。然而他的政治地位始终依赖于戴克里先——在 305 年的退位中他很不情愿（据称戴克里先以朱庇特的名义强迫他退位）。306 年其子马克森提乌斯在罗马自立为帝，邀请他重新穿上紫袍——他勉强接受了，但在与其子马克森提乌斯和君士坦丁之间的三方权力斗争中被边缘化。310 年他在马赛被君士坦丁围困并抓获，随后被迫自杀。他的一生是军人皇帝在四帝共治框架中挣扎求存的缩影。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Prosopography of the Later Roman Empire, Vol. I (AD 260-395) · Maximianus 8 · pp. 573–574",
+    "待核：马克西米安在 310 年的死亡——被处死还是被迫自杀？不同史料有细微差异。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:1d0ac9365a33c4faae7570a7",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 60,
+  "sourceId": "rome-source-the-prosopography-of-the-later-roman-empire-a-h-m-jones-j-r-martindale-j",
+  "sourceTitle": "The Prosopography of the Later Roman Empire",
+  "locator": "pp. 573–574",
+  "originalText": null,
+  "translation": "PLRE 综合归纳了马克西米安（Marcus Aurelius Valerius Maximianus）的已知履历。他出生于潘诺尼亚的西尔米乌姆附近，低微的出身（据信为农民或牧羊人家庭），与戴克里先一样从士兵逐级升迁至高级军官。285 年被戴克里先任命为凯撒（Caesar），286 年升格为奥古斯都（Augustus），负责帝国西部（驻地米兰）。他在高卢成功镇压了巴高达（Bagaudae）农民暴动，并在莱茵河击败了日耳曼入侵者。他与戴克里先分享了近 20 年的共治，但在 306 年不甘心地退位后又于 307 年复出，最终于 310 年在君士坦丁逼迫下自杀或被杀。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Maximian"
+  ],
+  "peopleMentioned": [
+    "Diocletian",
+    "Constantine I",
+    "Carausius"
+  ],
+  "places": [
+    "Milan",
+    "Sirmium",
+    "Gaul",
+    "Rhine"
+  ],
+  "macroEvent": "Tetrarchy",
+  "eventLabel": "Career of Maximian: the loyal colleague",
+  "factType": "person-life",
+  "questions": [
+    "马克西米安在 310 年的死亡——被处死还是被迫自杀？不同史料有细微差异。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-prosopography-of-the-later-roman-empire-a-h-m-jones-j-r-martindale-j",
+      "locator": "pp. 573–574"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Tetrarchy",
+    "person-life",
+    "Milan",
+    "Sirmium",
+    "Gaul"
+  ],
+  "people": [
+    "Maximian",
+    "Diocletian",
+    "Constantine I",
+    "Carausius"
+  ],
+  "sources": [
+    "The Prosopography of the Later Roman Empire, Vol. I (AD 260-395)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "马克西米安是戴克里先长达二十年的西部共治者，虽军事才能卓著但缺乏政治自信。",
+    "background": [
+      "Tetrarchy"
+    ],
+    "process": [
+      "马克西米安（被戴克里先冠以 Herculius——''赫拉克勒斯之子''——的称号）是四帝共治制度中西部帝国的第一任奥古斯都。他的军事履历同戴克里先一样令人印象深刻：286 年镇压了高卢的巴高达（Bagaudae，反抗重税和高利贷的农民-土匪联盟）起义；随后在莱茵河前线成功击退了勃艮第人、阿勒曼尼人和法兰克人的联合入侵。他还不得不对付割据不列颠的篡位者卡劳修斯（Carausius，286-293）及其继任者阿莱克图斯（Allectus）——最终在 296 年由君士坦提乌斯一世收复不列颠。然而他的政治地位始终依赖于戴克里先——在 305 年的退位中他很不情愿（据称戴克里先以朱庇特的名义强迫他退位）。306 年其子马克森提乌斯在罗马自立为帝，邀请他重新穿上紫袍——他勉强接受了，但在与其子马克森提乌斯和君士坦丁之间的三方权力斗争中被边缘化。310 年他在马赛被君士坦丁围困并抓获，随后被迫自杀。他的一生是军人皇帝在四帝共治框架中挣扎求存的缩影。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Prosopography of the Later Roman Empire, Vol. I (AD 260-395) · Maximianus 8 · pp. 573–574",
+      "待核：马克西米安在 310 年的死亡——被处死还是被迫自杀？不同史料有细微差异。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-285-aurelius-victor-on-diocletians-reign', 'Aurelius Victor on Diocletian''s reign', 'rome', 285, 285, 'Nicomedia', 'culture', 'Aurelius Victor 提供了对戴克里先统治的最早拉丁文评价——称赞其成就但也批评其傲慢。', 'high', NULL, '{
+  "overview": "Aurelius Victor 提供了对戴克里先统治的最早拉丁文评价——称赞其成就但也批评其傲慢。",
+  "background": [
+    "Tetrarchy"
+  ],
+  "process": [
+    "Sextus Aurelius Victor（约 320-390 CE）是在君士坦提乌斯二世和尤利安统治时期写作的拉丁史家，他的短篇著作《诸凯撒》（De Caesaribus）涵盖从奥古斯都到君士坦提乌斯二世（360 年）的全部罗马皇帝。他对戴克里先的评价是 4 世纪中期帝国官方意识形态与历史记忆交织的典型产物：他一方面称赞戴克里先结束了军事混乱并恢复了帝国秩序（特别赞赏了 Maxentius 被击败），另一方面也批评戴克里先''虚荣和傲慢''——引入了波斯式的跪拜礼（adoratio）、黄金和紫色锦缎的皇家服饰、以及将皇帝与凡人隔离的复杂宫廷礼仪。Victor 将这些变化与奥古斯都以来的''第一公民''（princeps）传统做了隐含的对比——提醒读者在戴克里先之前皇帝至少在理论上只是公民中的第一人。然而 Victor 最终的评价仍然是总体上正面的——尤其是对戴克里先自愿退位的赞赏。他的著作是 4 世纪拉丁简史传统（与 Eutropius 和 Festus 并列）的基础性文本。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Aurelius Victor, De Caesaribus · 35-39 · 35–39",
+    "待核：Aurelius Victor 对戴克里先的负面评价是否反映了 4 世纪中期元老院保守派对 dominus 制度持续的不满？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:33acc4462d96fb968f8e4586",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 79,
+  "sourceId": "rome-source-de-caesaribus-aurelius-victor",
+  "sourceTitle": "De Caesaribus",
+  "locator": "35–39",
+  "originalText": null,
+  "translation": "Aurelius Victor（约 360 年代的拉丁作家）对戴克里先进行了简洁但重要的评价。他赞扬了戴克里先恢复帝国稳定的成就，但同时也指出了他的低微出身——一个达尔马提亚释放奴的儿子。Victor 特别提到戴克里先首先将统治权分割给了他的战友——这是''第一位在凯旋后自愿放下权力并回归私人生活的皇帝''（指 305 年的退位）。Victor 还提到了戴克里先引入波斯式宫廷礼仪的决定——包括在皇帝面前跪拜（adoratio）——他将此描述为''傲慢''但''对于维护帝国权威是必要的''。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Diocletian"
+  ],
+  "peopleMentioned": [
+    "Maximian"
+  ],
+  "places": [
+    "Nicomedia",
+    "Rome",
+    "Dalmatia"
+  ],
+  "macroEvent": "Tetrarchy",
+  "eventLabel": "Aurelius Victor on Diocletian''s reign",
+  "factType": "source-mention",
+  "questions": [
+    "Aurelius Victor 对戴克里先的负面评价是否反映了 4 世纪中期元老院保守派对 dominus 制度持续的不满？"
+  ],
+  "confidence": "high",
+  "importance": "minor",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-de-caesaribus-aurelius-victor",
+      "locator": "35–39"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Tetrarchy",
+    "source-mention",
+    "Nicomedia",
+    "Rome",
+    "Dalmatia"
+  ],
+  "people": [
+    "Diocletian",
+    "Maximian"
+  ],
+  "sources": [
+    "Aurelius Victor, De Caesaribus"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "Aurelius Victor 提供了对戴克里先统治的最早拉丁文评价——称赞其成就但也批评其傲慢。",
+    "background": [
+      "Tetrarchy"
+    ],
+    "process": [
+      "Sextus Aurelius Victor（约 320-390 CE）是在君士坦提乌斯二世和尤利安统治时期写作的拉丁史家，他的短篇著作《诸凯撒》（De Caesaribus）涵盖从奥古斯都到君士坦提乌斯二世（360 年）的全部罗马皇帝。他对戴克里先的评价是 4 世纪中期帝国官方意识形态与历史记忆交织的典型产物：他一方面称赞戴克里先结束了军事混乱并恢复了帝国秩序（特别赞赏了 Maxentius 被击败），另一方面也批评戴克里先''虚荣和傲慢''——引入了波斯式的跪拜礼（adoratio）、黄金和紫色锦缎的皇家服饰、以及将皇帝与凡人隔离的复杂宫廷礼仪。Victor 将这些变化与奥古斯都以来的''第一公民''（princeps）传统做了隐含的对比——提醒读者在戴克里先之前皇帝至少在理论上只是公民中的第一人。然而 Victor 最终的评价仍然是总体上正面的——尤其是对戴克里先自愿退位的赞赏。他的著作是 4 世纪拉丁简史传统（与 Eutropius 和 Festus 并列）的基础性文本。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Aurelius Victor, De Caesaribus · 35-39 · 35–39",
+      "待核：Aurelius Victor 对戴克里先的负面评价是否反映了 4 世纪中期元老院保守派对 dominus 制度持续的不满？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-293-establishment-of-the-tetrarchy', 'Establishment of the Tetrarchy', 'rome', 293, 293, 'Nicomedia', 'politics', '戴克里先建立了四帝共治制度（Tetrarchy），以四人分工治理的方式取代一人独治。', 'high', NULL, '{
+  "overview": "戴克里先建立了四帝共治制度（Tetrarchy），以四人分工治理的方式取代一人独治。",
+  "background": [
+    "Tetrarchy"
+  ],
+  "process": [
+    "戴克里先意识到帝国过于庞大，无法由单一皇帝有效治理和防御。他的解决方案是创造性地将权力制度化地分割。286 年，他提升战友马克西米安为共治奥古斯都，负责帝国西部（以米兰为基地）。293 年，他进一步扩展了这一制度——两位奥古斯都各任命一位凯撒（副帝兼储君）：戴克里先选择伽列里乌斯，马克西米安选择君士坦提乌斯一世。四帝各负责一个区域（戴克里先：东方/尼科米迪亚；伽列里乌斯：多瑙河/西尔米乌姆；马克西米安：意大利非洲/米兰；君士坦提乌斯：高卢不列颠/特里尔）。理论上凯撒将在 20 年后继承奥古斯都之位。这一制度在戴克里先统治期间有效运作，但因忽略了血缘继承的惯性，最终在他退位后崩溃。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 3 · pp. 70–100",
+    "待核：四帝共治的具体权力分割是否有正式法律文件？各帝的实际自主权有多大？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:16f9e787b9a025d02943ce14",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 36,
+  "sourceId": "rome-source-the-cambridge-ancient-history-cambridge-university-press",
+  "sourceTitle": "The Cambridge Ancient History",
+  "locator": "pp. 70–100",
+  "originalText": null,
+  "translation": "现代学术综述指出，戴克里先的制度改革——特别是共治制（collegial rule）和四帝共治（Tetrarchy）——彻底改变了罗马帝国的治理结构。286 年他任命战友马克西米安为共治皇帝（奥古斯都）；293 年两位奥古斯都各任命一位凯撒（君士坦提乌斯一世为马克西米安的凯撒，伽列里乌斯为戴克里先的凯撒）。权力在两位奥古斯都和两位凯撒之间分配，各自负责帝国的特定区域，但戴克里先始终保持最高权威。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Diocletian",
+    "Maximian",
+    "Constantius Chlorus",
+    "Galerius"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Nicomedia",
+    "Milan",
+    "Trier",
+    "Sirmium"
+  ],
+  "macroEvent": "Tetrarchy",
+  "eventLabel": "Establishment of the Tetrarchy",
+  "factType": "reform",
+  "questions": [
+    "四帝共治的具体权力分割是否有正式法律文件？各帝的实际自主权有多大？"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-cambridge-ancient-history-cambridge-university-press",
+      "locator": "pp. 70–100"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Tetrarchy",
+    "reform",
+    "Nicomedia",
+    "Milan",
+    "Trier"
+  ],
+  "people": [
+    "Diocletian",
+    "Maximian",
+    "Constantius Chlorus",
+    "Galerius"
+  ],
+  "sources": [
+    "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "戴克里先建立了四帝共治制度（Tetrarchy），以四人分工治理的方式取代一人独治。",
+    "background": [
+      "Tetrarchy"
+    ],
+    "process": [
+      "戴克里先意识到帝国过于庞大，无法由单一皇帝有效治理和防御。他的解决方案是创造性地将权力制度化地分割。286 年，他提升战友马克西米安为共治奥古斯都，负责帝国西部（以米兰为基地）。293 年，他进一步扩展了这一制度——两位奥古斯都各任命一位凯撒（副帝兼储君）：戴克里先选择伽列里乌斯，马克西米安选择君士坦提乌斯一世。四帝各负责一个区域（戴克里先：东方/尼科米迪亚；伽列里乌斯：多瑙河/西尔米乌姆；马克西米安：意大利非洲/米兰；君士坦提乌斯：高卢不列颠/特里尔）。理论上凯撒将在 20 年后继承奥古斯都之位。这一制度在戴克里先统治期间有效运作，但因忽略了血缘继承的惯性，最终在他退位后崩溃。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Cambridge Ancient History, Vol. XII: The Crisis of Empire, A.D. 193-337 · Chapter 3 · pp. 70–100",
+      "待核：四帝共治的具体权力分割是否有正式法律文件？各帝的实际自主权有多大？"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-286-carausius-and-the-secessionist-british-empire-286-296', 'Carausius and the secessionist British Empire (286-296)', 'rome', 286, 286, 'Britannia', 'politics', '海军指挥官卡劳修斯于 286-293 年割据不列颠，建立了独特的海洋帝国。', 'high', NULL, '{
+  "overview": "海军指挥官卡劳修斯于 286-293 年割据不列颠，建立了独特的海洋帝国。",
+  "background": [
+    "Tetrarchy"
+  ],
+  "process": [
+    "卡劳修斯（Marcus Aurelius Mausaeus Carausius）的崛起是一个非凡的个别案例。这位出身低地国家（现今比利时/荷兰）Menapian 部落的男子凭借海军才能升至英吉利海峡舰队（Classis Britannica）指挥官。286 年马克西米安派他清剿肆虐海峡的法兰克和撒克逊海盗——但他反而与海盗勾结，扣留了从劫掠中回收的货物和珍宝，利用这些财富收买军队并被不列颠军团拥立为帝。他的''帝国''本质上是一个海洋政权——他以不列颠为基地，控制了英吉利海峡和高卢北部沿海（以布洛涅港为核心），发行质量极佳的金银币（其银币纯度远超中央帝国的安东尼尼安币），并在硬币上刻上''et Augusti''的铭文——意思是他承认戴克里先和马克西米安，但同样自称为奥古斯都（Augustus），并希望被正式接纳为共治者之一。他的政权一度拥有海军优势，挫败了马克西米安 289 年的收复尝试。但他最终在 293 年被其财务官阿莱克图斯（Allectus）谋杀，阿莱克图斯取而代之。君士坦提乌斯一世（Constantius Chlorus）于 296 年分两路——海陆并进——收复了不列颠，杀死了阿莱克图斯并重新将不列颠纳入帝国版图。卡劳修斯统治时期发行的高质量硬币至今是钱币学中最精美的三世纪硬币之一。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 275–285",
+    "待核：卡劳修斯是否真的希望获得合法承认——还是其硬币上的铭文仅仅是一种政治姿态？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:b7925fd21423c4b3be511b18",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 75,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 275–285",
+  "originalText": null,
+  "translation": "Potter 详细分析了卡劳修斯（Carausius）的割据——这位来自低地国家（Menapian）的海军指挥官在 286 年被马克西米安派往英吉利海峡清剿法兰克和撒克逊海盗。卡劳修斯反而扩大了海盗活动，扣留截获的货物，利用这些财富在被军团拥立后割据不列颠和高卢北部沿海地区。他建立了一个独特的''海洋帝国''，发行了质量极高的银币，并在硬币上同时描绘自己与戴克里先和马克西米安——暗示他希望被承认为合法的第三位奥古斯都而非纯粹的篡位者。他在 293 年被其财务官阿莱克图斯（Allectus）谋杀，阿莱克图斯继其后继续割据直至 296 年君士坦提乌斯一世收复不列颠。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Maximian",
+    "Constantius Chlorus"
+  ],
+  "peopleMentioned": [
+    "Carausius",
+    "Allectus",
+    "Diocletian"
+  ],
+  "places": [
+    "Britannia",
+    "Gaul",
+    "Boulogne",
+    "English Channel"
+  ],
+  "macroEvent": "Tetrarchy",
+  "eventLabel": "Carausius and the secessionist British Empire (286-296)",
+  "factType": "political-event",
+  "questions": [
+    "卡劳修斯是否真的希望获得合法承认——还是其硬币上的铭文仅仅是一种政治姿态？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 275–285"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Tetrarchy",
+    "political-event",
+    "Britannia",
+    "Gaul",
+    "Boulogne"
+  ],
+  "people": [
+    "Maximian",
+    "Constantius Chlorus",
+    "Carausius",
+    "Allectus",
+    "Diocletian"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "海军指挥官卡劳修斯于 286-293 年割据不列颠，建立了独特的海洋帝国。",
+    "background": [
+      "Tetrarchy"
+    ],
+    "process": [
+      "卡劳修斯（Marcus Aurelius Mausaeus Carausius）的崛起是一个非凡的个别案例。这位出身低地国家（现今比利时/荷兰）Menapian 部落的男子凭借海军才能升至英吉利海峡舰队（Classis Britannica）指挥官。286 年马克西米安派他清剿肆虐海峡的法兰克和撒克逊海盗——但他反而与海盗勾结，扣留了从劫掠中回收的货物和珍宝，利用这些财富收买军队并被不列颠军团拥立为帝。他的''帝国''本质上是一个海洋政权——他以不列颠为基地，控制了英吉利海峡和高卢北部沿海（以布洛涅港为核心），发行质量极佳的金银币（其银币纯度远超中央帝国的安东尼尼安币），并在硬币上刻上''et Augusti''的铭文——意思是他承认戴克里先和马克西米安，但同样自称为奥古斯都（Augustus），并希望被正式接纳为共治者之一。他的政权一度拥有海军优势，挫败了马克西米安 289 年的收复尝试。但他最终在 293 年被其财务官阿莱克图斯（Allectus）谋杀，阿莱克图斯取而代之。君士坦提乌斯一世（Constantius Chlorus）于 296 年分两路——海陆并进——收复了不列颠，杀死了阿莱克图斯并重新将不列颠纳入帝国版图。卡劳修斯统治时期发行的高质量硬币至今是钱币学中最精美的三世纪硬币之一。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 275–285",
+      "待核：卡劳修斯是否真的希望获得合法承认——还是其硬币上的铭文仅仅是一种政治姿态？"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-293-career-of-constantius-chlorus-the-quiet-caesar', 'Career of Constantius Chlorus: the quiet Caesar', 'rome', 293, 293, 'Trier', 'politics', '君士坦提乌斯一世是四帝共治中最不引人注目但最为可靠的凯撒——他收复了不列颠，并在宗教迫害中采取了温和政策。', 'high', NULL, '{
+  "overview": "君士坦提乌斯一世是四帝共治中最不引人注目但最为可靠的凯撒——他收复了不列颠，并在宗教迫害中采取了温和政策。",
+  "background": [
+    "Tetrarchy"
+  ],
+  "process": [
+    "君士坦提乌斯一世（全名 Flavius Valerius Constantius）是四帝共治中最被低估但最关键的人物之一。他的绰号 Chlorus（''苍白者''）来自后来的拜占庭史料——可能指其皮肤苍白或头发颜色淡。他出生于约 250 年的伊利里亚（可能是达达尼亚），具体的早期仕途不清楚——一些学者推测他最初是戴克里先的保镖（protector），后来晋升为达尔马提亚总督或禁卫军长官。293 年他被任命为马克西米安之下的凯撒，负责帝国西北部——以特里尔（Augusta Treverorum）为都城。他的第一个重大任务是从卡劳修斯和阿莱克图斯手中收复不列颠（293-296）——他分两路进军，海陆并进，在夹击战中击败了阿莱克图斯的军队，将不列颠重新纳入帝国。他在高卢和莱茵河前线取得了对法兰克人和阿勒曼尼人的持续胜利。君士坦提乌斯也以大迫害期间（303-305）执行力度温和而闻名——他仅摧毁了教堂建筑和圣经，未进行大规模处决。他的第一段婚姻（或侍妾关系）与圣海伦娜（Helena）生育了君士坦丁——后者后来奉母为奥古斯塔。其第二段婚姻是戴克里先安排的——迎娶了马克西米安的女儿狄奥多拉（Theodora），生育了六个孩子，维系了四帝之间的家族联盟。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Prosopography of the Later Roman Empire, Vol. I (AD 260-395) · Constantius 12 · pp. 227–228",
+    "待核：君士坦提乌斯一世与海伦娜的关系是正式婚姻还是侍妾（concubinatus）？这对君士坦丁的合法性有重要影响，但史料不一致。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:da8255257b5ba006264b5480",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 80,
+  "sourceId": "rome-source-the-prosopography-of-the-later-roman-empire-a-h-m-jones-j-r-martindale-j",
+  "sourceTitle": "The Prosopography of the Later Roman Empire",
+  "locator": "pp. 227–228",
+  "originalText": null,
+  "translation": "PLRE 综合了君士坦提乌斯一世（Flavius Valerius Constantius，绰号 Chlorus——''苍白者''）的已知履历。他约 250 年出生于伊利里亚，可能属于地方贵族家庭。他在戴克里先的宫廷中获得升迁——据信担任过禁卫军长官或高级军官（具体职位不确定）。293 年被任命为马克西米安的凯撒，负责高卢、不列颠和西班牙。他在 293-296 年间从篡位者卡劳修斯和阿莱克图斯手中收复了不列颠——这是他最著名的军事成就。他在高卢和日耳曼前线取得了多次胜利。306 年 7 月 25 日在约克去世。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Constantius Chlorus"
+  ],
+  "peopleMentioned": [
+    "Maximian",
+    "Diocletian",
+    "Carausius",
+    "Constantine I",
+    "Helena"
+  ],
+  "places": [
+    "Trier",
+    "York",
+    "Gaul",
+    "Britannia"
+  ],
+  "macroEvent": "Tetrarchy",
+  "eventLabel": "Career of Constantius Chlorus: the quiet Caesar",
+  "factType": "person-life",
+  "questions": [
+    "君士坦提乌斯一世与海伦娜的关系是正式婚姻还是侍妾（concubinatus）？这对君士坦丁的合法性有重要影响，但史料不一致。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-prosopography-of-the-later-roman-empire-a-h-m-jones-j-r-martindale-j",
+      "locator": "pp. 227–228"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Tetrarchy",
+    "person-life",
+    "Trier",
+    "York",
+    "Gaul"
+  ],
+  "people": [
+    "Constantius Chlorus",
+    "Maximian",
+    "Diocletian",
+    "Carausius",
+    "Constantine I",
+    "Helena"
+  ],
+  "sources": [
+    "The Prosopography of the Later Roman Empire, Vol. I (AD 260-395)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "君士坦提乌斯一世是四帝共治中最不引人注目但最为可靠的凯撒——他收复了不列颠，并在宗教迫害中采取了温和政策。",
+    "background": [
+      "Tetrarchy"
+    ],
+    "process": [
+      "君士坦提乌斯一世（全名 Flavius Valerius Constantius）是四帝共治中最被低估但最关键的人物之一。他的绰号 Chlorus（''苍白者''）来自后来的拜占庭史料——可能指其皮肤苍白或头发颜色淡。他出生于约 250 年的伊利里亚（可能是达达尼亚），具体的早期仕途不清楚——一些学者推测他最初是戴克里先的保镖（protector），后来晋升为达尔马提亚总督或禁卫军长官。293 年他被任命为马克西米安之下的凯撒，负责帝国西北部——以特里尔（Augusta Treverorum）为都城。他的第一个重大任务是从卡劳修斯和阿莱克图斯手中收复不列颠（293-296）——他分两路进军，海陆并进，在夹击战中击败了阿莱克图斯的军队，将不列颠重新纳入帝国。他在高卢和莱茵河前线取得了对法兰克人和阿勒曼尼人的持续胜利。君士坦提乌斯也以大迫害期间（303-305）执行力度温和而闻名——他仅摧毁了教堂建筑和圣经，未进行大规模处决。他的第一段婚姻（或侍妾关系）与圣海伦娜（Helena）生育了君士坦丁——后者后来奉母为奥古斯塔。其第二段婚姻是戴克里先安排的——迎娶了马克西米安的女儿狄奥多拉（Theodora），生育了六个孩子，维系了四帝之间的家族联盟。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Prosopography of the Later Roman Empire, Vol. I (AD 260-395) · Constantius 12 · pp. 227–228",
+      "待核：君士坦提乌斯一世与海伦娜的关系是正式婚姻还是侍妾（concubinatus）？这对君士坦丁的合法性有重要影响，但史料不一致。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-301-diocletians-administrative-and-economic-reforms', 'Diocletian''s administrative and economic reforms', 'rome', 301, 301, 'Empire-wide', 'politics', '戴克里先进行了罗马帝国史上最大规模的行政、军事和财政制度改革。', 'high', NULL, '{
+  "overview": "戴克里先进行了罗马帝国史上最大规模的行政、军事和财政制度改革。",
+  "background": [
+    "Tetrarchy"
+  ],
+  "process": [
+    "戴克里先的改革重塑了罗马帝国。政治军事层面：四帝共治将帝国实际管理权分散到四个首都（尼科米迪亚、米兰、特里尔、西尔米乌姆）。罗马城本身不再是行政中心，其地位大幅衰落。行省数量翻倍（约 50 → 约 110），归纳至 12 个管区（dioceses）由代理官（vicarius）管理，每个管区分别属于四位皇帝的管辖范围。军事上他将军队分为两类——边境守备军（limitanei）和中央机动野战部队（comitatenses），后者作为战略预备力量可以随时调往受威胁的前线。财税方面：capitatio-iugatio 制度对土地和人口进行定期普查和统一评估，年度的税收指示（indictio）从此成为帝国的核心财税制度。戴克里先还于约 294 年引入了一种纯度较高的银币（argenteus）和高质量的铜币。但 301 年的《最高价格敕令》——试图为数千种商品和服务设定最高法定价格——是历史上最著名的经济政策失败之一，它导致了黑市泛滥和物资短缺，在戴克里先退位后迅速被废弃。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 294–310",
+    "待核：行政行省翻倍的具体数量在 Eastern 和 Western halves 之间是否有差异？",
+    "待核：军队规模扩大的确切数字在学术上有争议（John Lydus 的数字可能夸大）。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:c6776da6adb2f36900ba1e20",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 56,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 294–310",
+  "originalText": null,
+  "translation": "Potter 的现代学术综述描述了戴克里先在 294-305 年间进行了罗马帝国史上最大规模的结构性改革。行政上他将约 50 个行省重新划分为约 100 个（最终约 110 个）更小的行省，归入 12 个管区（dioceses），废除了行省与前线的直接对应。军事上他将军队分为边防军（limitanei）和机动野战军（comitatenses），增大了军队规模（可能从约 35 万扩至约 45 万）。税制上他引入了 capitatio-iugatio 制度——按土地和人口统一评估纳税义务——更加标准化但负担也更重。经济上他于 301 年颁布了臭名昭著的《最高价格敕令》（Edict on Maximum Prices）——这个试图以死刑惩罚抬高物价者的法令迅速失败。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Diocletian"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Empire-wide"
+  ],
+  "macroEvent": "Tetrarchy",
+  "eventLabel": "Diocletian''s administrative and economic reforms",
+  "factType": "reform",
+  "questions": [
+    "行政行省翻倍的具体数量在 Eastern 和 Western halves 之间是否有差异？",
+    "军队规模扩大的确切数字在学术上有争议（John Lydus 的数字可能夸大）。"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 294–310"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Tetrarchy",
+    "reform",
+    "Empire-wide"
+  ],
+  "people": [
+    "Diocletian"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "戴克里先进行了罗马帝国史上最大规模的行政、军事和财政制度改革。",
+    "background": [
+      "Tetrarchy"
+    ],
+    "process": [
+      "戴克里先的改革重塑了罗马帝国。政治军事层面：四帝共治将帝国实际管理权分散到四个首都（尼科米迪亚、米兰、特里尔、西尔米乌姆）。罗马城本身不再是行政中心，其地位大幅衰落。行省数量翻倍（约 50 → 约 110），归纳至 12 个管区（dioceses）由代理官（vicarius）管理，每个管区分别属于四位皇帝的管辖范围。军事上他将军队分为两类——边境守备军（limitanei）和中央机动野战部队（comitatenses），后者作为战略预备力量可以随时调往受威胁的前线。财税方面：capitatio-iugatio 制度对土地和人口进行定期普查和统一评估，年度的税收指示（indictio）从此成为帝国的核心财税制度。戴克里先还于约 294 年引入了一种纯度较高的银币（argenteus）和高质量的铜币。但 301 年的《最高价格敕令》——试图为数千种商品和服务设定最高法定价格——是历史上最著名的经济政策失败之一，它导致了黑市泛滥和物资短缺，在戴克里先退位后迅速被废弃。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 294–310",
+      "待核：行政行省翻倍的具体数量在 Eastern 和 Western halves 之间是否有差异？",
+      "待核：军队规模扩大的确切数字在学术上有争议（John Lydus 的数字可能夸大）。"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-301-diocletians-edict-on-maximum-prices-301-ce', 'Diocletian''s Edict on Maximum Prices (301 CE)', 'rome', 301, 301, 'Empire-wide', 'politics', '301 年的《最高价格敕令》是古代世界最著名的经济政策失败案例之一。', 'high', NULL, '{
+  "overview": "301 年的《最高价格敕令》是古代世界最著名的经济政策失败案例之一。",
+  "background": [
+    "Tetrarchy"
+  ],
+  "process": [
+    "戴克里先的《价格敕令》（Edictum de Pretiis，通常缩写为 Ed. Max.）是了解 3 世纪末罗马经济状况的最详细的文献证据——尽管它作为一项政策完全失败了。301 年 11 月至 12 月（可能）由戴克里先和三位共治者联合颁布，该敕令为超过 1,200 种商品和服务固定了最高法定价格——从基本的粮食和农产品（一莫迪乌斯/约 8.73 升小麦 = 100 第纳里）、到奢侈品（一磅丝绸 = 高达 150,000 第纳里！）、到各种工资（小学校长每月 50 第纳里、高级律师每个案件高达 1,000 第纳里）。敕令的序言是一篇关于如何控制''无情的定价者——他们甚至不尊重丰饶的收成''的慷慨激昂的道德宣言。然而其实际的定价结构揭示了通胀已经严重到什么程度——工资和价格的数字是如此之高以至于它们是以第纳里来表示的，而第纳里本身的购买力已暴跌到几乎为零。法令对违反者的惩罚是死刑——这种极度残酷的执法手段本身就表明戴克里先知道不可能通过市场机制来执行。事实上，敕令迅速失败——商贩退出合法市场而非按照低于成本的价格出售，导致物资短缺和黑市泛滥。戴克里先退位后该敕令被废弃，但其铭文的广泛分布（碎片已在 40 多个地点出土）使其成为经济史和铭文学中最有价值的文献之一。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 288–294",
+    "待核：《最高价格敕令》颁布后在各地的实际执行情况是否可以通过考古与铭文证据追踪？黑市泛滥的具体程度如何？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:2118c214150dd82f21aea7f9",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 86,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 288–294",
+  "originalText": null,
+  "translation": "Potter 详细分析了戴克里先的《最高价格敕令》（Edictum de Pretiis Rerum Venalium，301 年）。该敕令为超过 1,200 种商品和服务设定了最高法定价格——从谷物、葡萄酒、橄榄油到律师费、教师薪水、奴隶价格和运输费用——死刑作为惩罚违规者的制裁。其序言宣称''贪婪——如同某些宗教——已经膨胀到如此程度以至于无法被约束''。敕令的双语铭文（拉丁文+希腊文）碎片已在帝国各地——从埃及到小亚细亚到希腊——被发现，证明了其广泛传播但最终彻底的失败。商品从被价格上限截断的合法市场流向黑市，导致短缺进一步恶化。敕令在戴克里先退位后被废弃。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Diocletian"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Empire-wide"
+  ],
+  "macroEvent": "Tetrarchy",
+  "eventLabel": "Diocletian''s Edict on Maximum Prices (301 CE)",
+  "factType": "reform",
+  "questions": [
+    "《最高价格敕令》颁布后在各地的实际执行情况是否可以通过考古与铭文证据追踪？黑市泛滥的具体程度如何？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 288–294"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Tetrarchy",
+    "reform",
+    "Empire-wide"
+  ],
+  "people": [
+    "Diocletian"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "301 年的《最高价格敕令》是古代世界最著名的经济政策失败案例之一。",
+    "background": [
+      "Tetrarchy"
+    ],
+    "process": [
+      "戴克里先的《价格敕令》（Edictum de Pretiis，通常缩写为 Ed. Max.）是了解 3 世纪末罗马经济状况的最详细的文献证据——尽管它作为一项政策完全失败了。301 年 11 月至 12 月（可能）由戴克里先和三位共治者联合颁布，该敕令为超过 1,200 种商品和服务固定了最高法定价格——从基本的粮食和农产品（一莫迪乌斯/约 8.73 升小麦 = 100 第纳里）、到奢侈品（一磅丝绸 = 高达 150,000 第纳里！）、到各种工资（小学校长每月 50 第纳里、高级律师每个案件高达 1,000 第纳里）。敕令的序言是一篇关于如何控制''无情的定价者——他们甚至不尊重丰饶的收成''的慷慨激昂的道德宣言。然而其实际的定价结构揭示了通胀已经严重到什么程度——工资和价格的数字是如此之高以至于它们是以第纳里来表示的，而第纳里本身的购买力已暴跌到几乎为零。法令对违反者的惩罚是死刑——这种极度残酷的执法手段本身就表明戴克里先知道不可能通过市场机制来执行。事实上，敕令迅速失败——商贩退出合法市场而非按照低于成本的价格出售，导致物资短缺和黑市泛滥。戴克里先退位后该敕令被废弃，但其铭文的广泛分布（碎片已在 40 多个地点出土）使其成为经济史和铭文学中最有价值的文献之一。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 288–294",
+      "待核：《最高价格敕令》颁布后在各地的实际执行情况是否可以通过考古与铭文证据追踪？黑市泛滥的具体程度如何？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-303-the-great-persecution-begins', 'The Great Persecution begins', 'rome', 303, 303, 'Nicomedia', 'politics', '303 年大迫害开始了——戴克里先统治下对基督教最系统性的打击。', 'high', NULL, '{
+  "overview": "303 年大迫害开始了——戴克里先统治下对基督教最系统性的打击。",
+  "background": [
+    "Tetrarchy"
+  ],
+  "process": [
+    "戴克里先统治的最后几年（303-305）发动了罗马帝国史上最猛烈的一次对基督教的系统性迫害，通常被称为''大迫害''（The Great Persecution）。303 年 2 月 23 日的 Terminalia 节（边界之神节），第一道法令颁布：所有教堂必须拆除、圣经必须焚烧、基督徒被剥夺公职和法律保护。随后三道法令逐步升级——先要求教会领袖献祭，然后扩大到所有基督徒，违者面临监禁、酷刑和处决。Lactantius 指责伽列里乌斯是迫害的主要推动者，戴克里先是在其压力下同意的。Eusebius 在《教会史》中记录了大量的殉道者。迫害在帝国东部尤为严重，而在君士坦提乌斯统治的西部（高卢和不列颠）执行得相对温和。迫害直到 311 年伽列里乌斯临终前颁布宽容敕令才结束，为后来的君士坦丁改革铺平了道路。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Lactantius, De Mortibus Persecutorum · Chapters 10-15 · 10–15",
+    "待核：谁是迫害的主要发起者——戴克里先还是伽列里乌斯？不同基督教史家有不同判断。",
+    "待核：迫害的实际死亡人数难以确定，基督教史料可能有所夸大。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:8d49895cd80f47f6fa8e038a",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 37,
+  "sourceId": "rome-source-de-mortibus-persecutorum-lactantius",
+  "sourceTitle": "De Mortibus Persecutorum",
+  "locator": "10–15",
+  "originalText": null,
+  "translation": "Lactantius 详细描述了 303 年 2 月 23 日的大迫害——戴克里先在其凯撒伽列里乌斯的鼓动下，颁布了第一道反基督教法令。命令摧毁所有教堂、烧毁圣经、剥夺基督教徒的法律权利和社会地位。随后颁布的法令越来越严厉，最终要求所有基督教徒向罗马诸神献祭，违者处死。Lactantius 将此视为最残忍的迫害之一。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Diocletian",
+    "Galerius"
+  ],
+  "peopleMentioned": [],
+  "places": [
+    "Nicomedia",
+    "Empire-wide"
+  ],
+  "macroEvent": "Tetrarchy",
+  "eventLabel": "The Great Persecution begins",
+  "factType": "political-event",
+  "questions": [
+    "谁是迫害的主要发起者——戴克里先还是伽列里乌斯？不同基督教史家有不同判断。",
+    "迫害的实际死亡人数难以确定，基督教史料可能有所夸大。"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-de-mortibus-persecutorum-lactantius",
+      "locator": "10–15"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Tetrarchy",
+    "political-event",
+    "Nicomedia",
+    "Empire-wide"
+  ],
+  "people": [
+    "Diocletian",
+    "Galerius"
+  ],
+  "sources": [
+    "Lactantius, De Mortibus Persecutorum"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "303 年大迫害开始了——戴克里先统治下对基督教最系统性的打击。",
+    "background": [
+      "Tetrarchy"
+    ],
+    "process": [
+      "戴克里先统治的最后几年（303-305）发动了罗马帝国史上最猛烈的一次对基督教的系统性迫害，通常被称为''大迫害''（The Great Persecution）。303 年 2 月 23 日的 Terminalia 节（边界之神节），第一道法令颁布：所有教堂必须拆除、圣经必须焚烧、基督徒被剥夺公职和法律保护。随后三道法令逐步升级——先要求教会领袖献祭，然后扩大到所有基督徒，违者面临监禁、酷刑和处决。Lactantius 指责伽列里乌斯是迫害的主要推动者，戴克里先是在其压力下同意的。Eusebius 在《教会史》中记录了大量的殉道者。迫害在帝国东部尤为严重，而在君士坦提乌斯统治的西部（高卢和不列颠）执行得相对温和。迫害直到 311 年伽列里乌斯临终前颁布宽容敕令才结束，为后来的君士坦丁改革铺平了道路。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Lactantius, De Mortibus Persecutorum · Chapters 10-15 · 10–15",
+      "待核：谁是迫害的主要发起者——戴克里先还是伽列里乌斯？不同基督教史家有不同判断。",
+      "待核：迫害的实际死亡人数难以确定，基督教史料可能有所夸大。"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-303-the-great-persecution-regional-variation-and-political-context', 'The Great Persecution: regional variation and political context', 'rome', 303, 303, 'Nicomedia', 'politics', '大迫害的执行力度在帝国不同地区差异极大，反映了四帝之间的政治分歧。', 'high', NULL, '{
+  "overview": "大迫害的执行力度在帝国不同地区差异极大，反映了四帝之间的政治分歧。",
+  "background": [
+    "Tetrarchy"
+  ],
+  "process": [
+    "大迫害（303-313）实际上是一场在四帝共治框架下由不同统治者按照不同强度执行的行动。303 年 2 月发布的第一道法令要求在帝国全境统一执行——但四位皇帝的意愿各不相同。伽列里乌斯和戴克里先统治的帝国东部（小亚细亚、叙利亚、巴勒斯坦、埃及）经历了最严峻的迫害——Eusebius 记载了巴勒斯坦的大量殉道者（包括著名的圣乔治之死）。马克西米安统治的意大利和非洲执行了法令但相对温和。君士坦提乌斯在高卢和不列颠仅象征性地摧毁了一些教堂建筑和圣经，未进行处决——这使君士坦提乌斯在基督教史家（如 Lactantius 和 Eusebius）那里获得了''相对仁慈''的评价，也为后来其子君士坦丁的基督教政策提供了背景。基督教会虽然被严重打击但并没有被摧毁——它的组织结构（尤其是主教网络和地下集会）经受住了考验。大迫害的真正失败在于它未能根除基督教，反而制造了大量的殉道者叙事，强化了基督教在民众中的吸引力。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 310–320",
+    "待核：不同行省迫害力度的差异是由于皇帝的个人意志还是当地官员的执行力度？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:32b2c0d853be7ae53e6cb0e7",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 57,
+  "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+  "sourceTitle": "The Roman Empire at Bay",
+  "locator": "pp. 310–320",
+  "originalText": null,
+  "translation": "Potter 指出大迫害的背景不仅是宗教原因，也涉及四帝内部的政治动态。伽列里乌斯——一位狂热的传统罗马宗教捍卫者——是迫害的主要推手，而戴克里先可能最初不太情愿但最终被说服。迫害在帝国东部——戴克里先和伽列里乌斯直接统治的区域——执行得最为残酷；在君士坦提乌斯统治的高卢和不列颠，执行得相对温和（仅摧毁教堂和圣经，很少处决）。Potter 指出，这场迫害严重削弱了戴克里先在基督教化程度较高的东部行省的政治合法性。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Diocletian",
+    "Galerius"
+  ],
+  "peopleMentioned": [
+    "Constantius Chlorus"
+  ],
+  "places": [
+    "Nicomedia",
+    "Palestine",
+    "Egypt",
+    "Gaul"
+  ],
+  "macroEvent": "Tetrarchy",
+  "eventLabel": "The Great Persecution: regional variation and political context",
+  "factType": "political-event",
+  "questions": [
+    "不同行省迫害力度的差异是由于皇帝的个人意志还是当地官员的执行力度？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-the-roman-empire-at-bay-david-s-potter",
+      "locator": "pp. 310–320"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Tetrarchy",
+    "political-event",
+    "Nicomedia",
+    "Palestine",
+    "Egypt"
+  ],
+  "people": [
+    "Diocletian",
+    "Galerius",
+    "Constantius Chlorus"
+  ],
+  "sources": [
+    "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014)"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "大迫害的执行力度在帝国不同地区差异极大，反映了四帝之间的政治分歧。",
+    "background": [
+      "Tetrarchy"
+    ],
+    "process": [
+      "大迫害（303-313）实际上是一场在四帝共治框架下由不同统治者按照不同强度执行的行动。303 年 2 月发布的第一道法令要求在帝国全境统一执行——但四位皇帝的意愿各不相同。伽列里乌斯和戴克里先统治的帝国东部（小亚细亚、叙利亚、巴勒斯坦、埃及）经历了最严峻的迫害——Eusebius 记载了巴勒斯坦的大量殉道者（包括著名的圣乔治之死）。马克西米安统治的意大利和非洲执行了法令但相对温和。君士坦提乌斯在高卢和不列颠仅象征性地摧毁了一些教堂建筑和圣经，未进行处决——这使君士坦提乌斯在基督教史家（如 Lactantius 和 Eusebius）那里获得了''相对仁慈''的评价，也为后来其子君士坦丁的基督教政策提供了背景。基督教会虽然被严重打击但并没有被摧毁——它的组织结构（尤其是主教网络和地下集会）经受住了考验。大迫害的真正失败在于它未能根除基督教，反而制造了大量的殉道者叙事，强化了基督教在民众中的吸引力。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "The Roman Empire at Bay, AD 180-395 (2nd ed., Routledge, 2014) · Chapter 8 · pp. 310–320",
+      "待核：不同行省迫害力度的差异是由于皇帝的个人意志还是当地官员的执行力度？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-305-abdication-of-diocletian-and-maximian', 'Abdication of Diocletian and Maximian', 'rome', 305, 305, 'Nicomedia', 'politics', '305 年戴克里先与马克西米安同日退位，君士坦提乌斯一世和伽列里乌斯成为奥古斯都。', 'high', NULL, '{
+  "overview": "305 年戴克里先与马克西米安同日退位，君士坦提乌斯一世和伽列里乌斯成为奥古斯都。",
+  "background": [
+    "Tetrarchy"
+  ],
+  "process": [
+    "戴克里先的四帝共治制度设计为 20 年任期。305 年 5 月 1 日，戴克里先在尼科米迪亚城外的阅兵场上，面对他曾指挥过的军队，宣布退位。场面的戏剧性不亚于他 20 年前的即位。同一时刻，他要求马克西米安在米兰也宣布退位。君士坦提乌斯一世（Constantius Chlorus，君士坦丁的父亲）晋升为西部奥古斯都，伽列里乌斯为东部奥古斯都。然而在选择新凯撒时，戴克里先绕过了已有继承预期的马克森提乌斯（马克西米安之子）和君士坦丁（君士坦提乌斯之子），选择了自己信赖的军官塞维鲁二世和马克西米努斯·达扎。戴克里先退休至达尔马提亚海岸的斯帕拉图姆宫（Spalatum，今克罗地亚斯普利特），在那里度过了生命的最后几年。但他设计的继任体系很快因对王朝血缘继承的忽视而崩溃。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Lactantius, De Mortibus Persecutorum · Chapters 18-19 · 18–19",
+    "待核：Lactantius 对退位仪式的戏剧化描述是否完全属实？卷心菜的轶事被认为是可信的。",
+    "待核：马克西米安是否真的自愿退位——有证据表明他并不情愿。"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:bd8d78f288bd47d59e1b7770",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 38,
+  "sourceId": "rome-source-de-mortibus-persecutorum-lactantius",
+  "sourceTitle": "De Mortibus Persecutorum",
+  "locator": "18–19",
+  "originalText": null,
+  "translation": "Lactantius 生动描述了 305 年 5 月 1 日戴克里先在尼科米迪亚阅兵场上向军队宣布退位，同时要求马克西米安在同一天在米兰退位。君士坦提乌斯一世和伽列里乌斯晋升为奥古斯都，而塞维鲁二世和马克西米努斯·达扎（Maximinus Daza）被任命为新的凯撒。Lactantius 描述戴克里先退位后回到达尔马提亚的斯帕拉图姆宫（Spalatum，今斯普利特）种植卷心菜——当他被请求复出时，他回答''如果你看到我亲手种的卷心菜，你就不会要求我放弃它们去追求权力了''。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Diocletian",
+    "Maximian",
+    "Constantius Chlorus",
+    "Galerius"
+  ],
+  "peopleMentioned": [
+    "Severus II",
+    "Maximinus Daza"
+  ],
+  "places": [
+    "Nicomedia",
+    "Milan",
+    "Spalatum",
+    "Split"
+  ],
+  "macroEvent": "Tetrarchy",
+  "eventLabel": "Abdication of Diocletian and Maximian",
+  "factType": "political-event",
+  "questions": [
+    "Lactantius 对退位仪式的戏剧化描述是否完全属实？卷心菜的轶事被认为是可信的。",
+    "马克西米安是否真的自愿退位——有证据表明他并不情愿。"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-de-mortibus-persecutorum-lactantius",
+      "locator": "18–19"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Tetrarchy",
+    "political-event",
+    "Nicomedia",
+    "Milan",
+    "Spalatum"
+  ],
+  "people": [
+    "Diocletian",
+    "Maximian",
+    "Constantius Chlorus",
+    "Galerius",
+    "Severus II",
+    "Maximinus Daza"
+  ],
+  "sources": [
+    "Lactantius, De Mortibus Persecutorum"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "305 年戴克里先与马克西米安同日退位，君士坦提乌斯一世和伽列里乌斯成为奥古斯都。",
+    "background": [
+      "Tetrarchy"
+    ],
+    "process": [
+      "戴克里先的四帝共治制度设计为 20 年任期。305 年 5 月 1 日，戴克里先在尼科米迪亚城外的阅兵场上，面对他曾指挥过的军队，宣布退位。场面的戏剧性不亚于他 20 年前的即位。同一时刻，他要求马克西米安在米兰也宣布退位。君士坦提乌斯一世（Constantius Chlorus，君士坦丁的父亲）晋升为西部奥古斯都，伽列里乌斯为东部奥古斯都。然而在选择新凯撒时，戴克里先绕过了已有继承预期的马克森提乌斯（马克西米安之子）和君士坦丁（君士坦提乌斯之子），选择了自己信赖的军官塞维鲁二世和马克西米努斯·达扎。戴克里先退休至达尔马提亚海岸的斯帕拉图姆宫（Spalatum，今克罗地亚斯普利特），在那里度过了生命的最后几年。但他设计的继任体系很快因对王朝血缘继承的忽视而崩溃。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Lactantius, De Mortibus Persecutorum · Chapters 18-19 · 18–19",
+      "待核：Lactantius 对退位仪式的戏剧化描述是否完全属实？卷心菜的轶事被认为是可信的。",
+      "待核：马克西米安是否真的自愿退位——有证据表明他并不情愿。"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-306-death-of-constantius-chlorus-constantine-proclaimed-emperor', 'Death of Constantius Chlorus; Constantine proclaimed emperor', 'rome', 306, 306, 'Eboracum', 'politics', '306 年君士坦提乌斯一世在约克病逝，君士坦丁被不列颠军团拥立为帝——开启了君士坦丁时代。', 'high', NULL, '{
+  "overview": "306 年君士坦提乌斯一世在约克病逝，君士坦丁被不列颠军团拥立为帝——开启了君士坦丁时代。",
+  "background": [
+    "Tetrarchy"
+  ],
+  "process": [
+    "公元 306 年是四帝共治制度开始崩溃的一年。西部奥古斯都君士坦提乌斯一世（Constantius Chlorus，绰号意为''苍白者''）在率军征伐喀里多尼亚后于 7 月 25 日在约克去世。他的军队——主要由不列颠、高卢和日耳曼军团组成——立即拥立其子君士坦丁（Flavius Valerius Constantinus）为奥古斯都（正帝），这一行为公开违反了戴克里先的继任原则——四帝共治不承认血缘继承。伽列里乌斯（东部奥古斯都和名义上的四帝之首）拒绝承认，仅授予君士坦丁凯撒（副帝）头衔，并将塞维鲁二世提升为西部奥古斯都。君士坦丁隐忍接受了这一降级——暂时。但同年底，马克西米安之子马克森提乌斯（Maxentius）在罗马自立为帝，打破了脆弱的四帝平衡。此后十九年间（306-324），君士坦丁将通过一连串内战和逐步淘汰所有对手来缔造自己的唯一统治。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Lactantius, De Mortibus Persecutorum · Chapters 24-26 · 24–26",
+    "待核：君士坦提乌斯一世是否真的在临终前明确推荐君士坦丁——还是军队自行拥立后由君士坦丁事后编造的叙事？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:93521eb520cfcc1196ee8a75",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 54,
+  "sourceId": "rome-source-de-mortibus-persecutorum-lactantius",
+  "sourceTitle": "De Mortibus Persecutorum",
+  "locator": "24–26",
+  "originalText": null,
+  "translation": "Lactantius 记载了 306 年君士坦丁被拥立的关键事件。君士坦提乌斯一世于 306 年 7 月 25 日在埃布拉库姆（Eboracum，约克）去世，同日军队拥立其子君士坦丁为奥古斯都（Augustus）。Lactantius 指出，君士坦提乌斯在临终前''将自己的儿子交给士兵们''。但伽列里乌斯只承认君士坦丁为凯撒（Caesar），而不是奥古斯都——升格塞维鲁二世为西部奥古斯都。君士坦丁被迫接受这一降级，但此后的近二十年中他将通过连续的战争和阴谋最终胜出。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Constantius Chlorus"
+  ],
+  "peopleMentioned": [
+    "Constantine I",
+    "Galerius",
+    "Severus II"
+  ],
+  "places": [
+    "Eboracum",
+    "York",
+    "Britannia"
+  ],
+  "macroEvent": "Tetrarchy",
+  "eventLabel": "Death of Constantius Chlorus; Constantine proclaimed emperor",
+  "factType": "political-event",
+  "questions": [
+    "君士坦提乌斯一世是否真的在临终前明确推荐君士坦丁——还是军队自行拥立后由君士坦丁事后编造的叙事？"
+  ],
+  "confidence": "high",
+  "importance": "major",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-de-mortibus-persecutorum-lactantius",
+      "locator": "24–26"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Tetrarchy",
+    "political-event",
+    "Eboracum",
+    "York",
+    "Britannia"
+  ],
+  "people": [
+    "Constantius Chlorus",
+    "Constantine I",
+    "Galerius",
+    "Severus II"
+  ],
+  "sources": [
+    "Lactantius, De Mortibus Persecutorum"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "reviewStatus": "reviewed",
+  "reviewedBy": "manual-rome-core-event-review-190-310",
+  "detail": {
+    "overview": "306 年君士坦提乌斯一世在约克病逝，君士坦丁被不列颠军团拥立为帝——开启了君士坦丁时代。",
+    "background": [
+      "Tetrarchy"
+    ],
+    "process": [
+      "公元 306 年是四帝共治制度开始崩溃的一年。西部奥古斯都君士坦提乌斯一世（Constantius Chlorus，绰号意为''苍白者''）在率军征伐喀里多尼亚后于 7 月 25 日在约克去世。他的军队——主要由不列颠、高卢和日耳曼军团组成——立即拥立其子君士坦丁（Flavius Valerius Constantinus）为奥古斯都（正帝），这一行为公开违反了戴克里先的继任原则——四帝共治不承认血缘继承。伽列里乌斯（东部奥古斯都和名义上的四帝之首）拒绝承认，仅授予君士坦丁凯撒（副帝）头衔，并将塞维鲁二世提升为西部奥古斯都。君士坦丁隐忍接受了这一降级——暂时。但同年底，马克西米安之子马克森提乌斯（Maxentius）在罗马自立为帝，打破了脆弱的四帝平衡。此后十九年间（306-324），君士坦丁将通过一连串内战和逐步淘汰所有对手来缔造自己的唯一统治。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Lactantius, De Mortibus Persecutorum · Chapters 24-26 · 24–26",
+      "待核：君士坦提乌斯一世是否真的在临终前明确推荐君士坦丁——还是军队自行拥立后由君士坦丁事后编造的叙事？"
+    ],
+    "uncertainty": []
+  }
+}');
+INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-308-council-of-carnuntum-diocletians-last-attempt-to-save-the-tetrarchy', 'Council of Carnuntum: Diocletian''s last attempt to save the Tetrarchy', 'rome', 308, 308, 'Carnuntum', 'politics', '308 年卡农图姆会议是戴克里先为挽救四帝共治的最后一次努力，但制度已不可逆转地瓦解。', 'high', NULL, '{
+  "overview": "308 年卡农图姆会议是戴克里先为挽救四帝共治的最后一次努力，但制度已不可逆转地瓦解。",
+  "background": [
+    "Tetrarchy"
+  ],
+  "process": [
+    "308 年 11 月，退位已三年的戴克里先被说服重返政治舞台，在多瑙河畔的军事重镇卡农图姆（Carnuntum，今奥地利巴特多伊奇阿尔滕堡附近）主持了一次四帝峰会。此时帝国有六位自称皇帝的人：伽列里乌斯（东部奥古斯都）、李锡尼（尚未正式任命）、马克西米努斯·达扎（东部凯撒）、君士坦丁（西部凯撒）、马克森提乌斯（在罗马自立）以及重新自称为奥古斯都的马克西米安。戴克里先利用他仍然巨大的个人威望达成了妥协——将李锡尼直接提升为奥古斯都以平衡各方，并再次说服马克西米安退位。但君士坦丁和马克森提乌斯被拒绝晋升——这促使他们更加坚定地走自己的路。君士坦丁开始自称为''不列颠尼库斯·马克西穆斯''（Britannicus Maximus）来展示其军事独立性。此次会议的失败表明四帝共治制度无法容纳王朝血缘继承的天然要求。311 年伽列里乌斯去世后，四帝制度正式进入解体阶段。"
+  ],
+  "result": [],
+  "impact": [],
+  "sourceNotes": [
+    "Lactantius, De Mortibus Persecutorum · Chapters 28-29 · 28–29",
+    "待核：卡农图姆会议的确切日期和与会者名单在 Lactantius 和其他史料中是否一致？",
+    "待核：戴克里先拒绝复位的立场是否动摇过？"
+  ],
+  "uncertainty": []
+}', '{
+  "promotedFromBatch": "deepseek-rome-190-310",
+  "cardId": "card:1608f1ea4f6a5b6f61ec73b7",
+  "fileId": "file:e5b9e42f7814555fdcecebe0",
+  "cardIndex": 55,
+  "sourceId": "rome-source-de-mortibus-persecutorum-lactantius",
+  "sourceTitle": "De Mortibus Persecutorum",
+  "locator": "28–29",
+  "originalText": null,
+  "translation": "Lactantius 记载 308 年退位的戴克里先短暂复出，在多瑙河畔的卡农图姆（Carnuntum）召集了四帝会议，试图挽救他设计的共治制度。此时帝国已陷入混乱：马克森提乌斯在罗马自立为帝（306），马克西米安重新穿上紫袍（307），君士坦丁和马克西米努斯·达扎各自要求更高的头衔。会议决定：伽列里乌斯的战友李锡尼（Licinius）被直接提升为奥古斯都（跳过凯撒阶段），马克西米安再次被迫退位，君士坦丁和达扎保留凯撒头衔但升格为''凯撒之子''（filii Augustorum）。这次会议未能解决君士坦丁和马克森提乌斯的地位问题（他们被宣布为公敌但并未被废黜），四帝共治实际上已经不可逆转地瓦解了。",
+  "originalTextMissing": true,
+  "peopleCore": [
+    "Diocletian",
+    "Galerius"
+  ],
+  "peopleMentioned": [
+    "Constantine I",
+    "Maximian",
+    "Maxentius",
+    "Licinius",
+    "Maximinus Daza"
+  ],
+  "places": [
+    "Carnuntum",
+    "Pannonia",
+    "Danube",
+    "Rome"
+  ],
+  "macroEvent": "Tetrarchy",
+  "eventLabel": "Council of Carnuntum: Diocletian''s last attempt to save the Tetrarchy",
+  "factType": "political-event",
+  "questions": [
+    "卡农图姆会议的确切日期和与会者名单在 Lactantius 和其他史料中是否一致？",
+    "戴克里先拒绝复位的立场是否动摇过？"
+  ],
+  "confidence": "high",
+  "importance": "medium",
+  "sourceRefs": [
+    {
+      "sourceId": "rome-source-de-mortibus-persecutorum-lactantius",
+      "locator": "28–29"
+    }
+  ],
+  "tags": [
+    "Roman Empire",
+    "Tetrarchy",
+    "political-event",
+    "Carnuntum",
+    "Pannonia",
+    "Danube"
+  ],
+  "people": [
+    "Diocletian",
+    "Galerius",
+    "Constantine I",
+    "Maximian",
+    "Maxentius",
+    "Licinius",
+    "Maximinus Daza"
+  ],
+  "sources": [
+    "Lactantius, De Mortibus Persecutorum"
+  ],
+  "promotedAt": "2026-06-26T07:04:30.464Z",
+  "detail": {
+    "overview": "308 年卡农图姆会议是戴克里先为挽救四帝共治的最后一次努力，但制度已不可逆转地瓦解。",
+    "background": [
+      "Tetrarchy"
+    ],
+    "process": [
+      "308 年 11 月，退位已三年的戴克里先被说服重返政治舞台，在多瑙河畔的军事重镇卡农图姆（Carnuntum，今奥地利巴特多伊奇阿尔滕堡附近）主持了一次四帝峰会。此时帝国有六位自称皇帝的人：伽列里乌斯（东部奥古斯都）、李锡尼（尚未正式任命）、马克西米努斯·达扎（东部凯撒）、君士坦丁（西部凯撒）、马克森提乌斯（在罗马自立）以及重新自称为奥古斯都的马克西米安。戴克里先利用他仍然巨大的个人威望达成了妥协——将李锡尼直接提升为奥古斯都以平衡各方，并再次说服马克西米安退位。但君士坦丁和马克森提乌斯被拒绝晋升——这促使他们更加坚定地走自己的路。君士坦丁开始自称为''不列颠尼库斯·马克西穆斯''（Britannicus Maximus）来展示其军事独立性。此次会议的失败表明四帝共治制度无法容纳王朝血缘继承的天然要求。311 年伽列里乌斯去世后，四帝制度正式进入解体阶段。"
+    ],
+    "result": [],
+    "impact": [],
+    "sourceNotes": [
+      "Lactantius, De Mortibus Persecutorum · Chapters 28-29 · 28–29",
+      "待核：卡农图姆会议的确切日期和与会者名单在 Lactantius 和其他史料中是否一致？",
+      "待核：戴克里先拒绝复位的立场是否动摇过？"
+    ],
+    "uncertainty": []
+  },
+  "reviewedBy": "manual-normalize-event-detail-shape-190-310"
+}');
 INSERT INTO "historical_events" ("id", "title", "region", "start_year", "end_year", "location_name", "category", "summary", "confidence", "coordinates_json", "detail_json", "raw_json") VALUES ('rome-311-death-of-galerius-and-the-edict-of-toleration', 'Death of Galerius and the Edict of Toleration', 'rome', 311, 311, 'Nicomedia', 'politics', '311 年伽列里乌斯在临终前颁布宽容敕令，承认迫害基督教失败并允许基督教的存在。', 'high', NULL, '{"overview":"311 年伽列里乌斯在临终前颁布宽容敕令，承认迫害基督教失败并允许基督教的存在。","result":[],"background":["Tetrarchy"],"process":["伽列里乌斯（Gaius Galerius Valerius Maximianus）是四帝共治中最强硬的反基督教者。Lactantius 和 Eusebius 一致将他描述为大迫害的真正推动者——戴克里先只是在其压力下同意的。311 年春天，伽列里乌斯在尼科米迪亚或塞尔迪卡（Serdica，今索菲亚）患上了可怕的不治之症。Lactantius 以近乎色情的细节描述了他的腐烂病状——虽然这些描述带有明显的基督教宣传色彩，但现代医学诊断认为是晚期肠癌或严重的败血症/坏疽。在垂死之际，伽列里乌斯颁布了著名的《311 年 4 月 30 日敕令》——罗马法史上的一道转折点。敕令承认出发点是''纠正一切不符合罗马古老纪律的事物''并迫使其回归到传统宗教，但承认''其中许多人（基督徒）坚持自己的决心……因此……我们决定将我们的宽容扩展到他们身上。''他最后请求基督徒''为我们的安全、国家的安全和他们自己的安全向神祈祷''——这是罗马帝国首次在法律上承认（虽非正式合法化）基督教的存在。伽列里乌斯在颁布敕令后仅六天就去世了（311 年 5 月 5 日）。"],"impact":[],"sourceNotes":["Lactantius, De Mortibus Persecutorum · Chapters 31-33 · 31–33","待核：伽列里乌斯的具体病因是什么？Lactantius 的症状描述是否符合现代医学诊断？","待核：宽容敕令的实际法律效力——是否有独立的铭文或纸莎草副本存世？"],"uncertainty":[]}', '{"promotedFromBatch":"deepseek-rome-190-310","cardId":"card:36870cad18968a94aacac651","fileId":"file:e5b9e42f7814555fdcecebe0","cardIndex":61,"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","sourceTitle":"De Mortibus Persecutorum","locator":"31–33","originalText":null,"translation":"Lactantius 对伽列里乌斯（Galerius）在 311 年临终前颁布宽容敕令的经过进行了生动（且充满敌意）的描述。Lactantius 将伽列里乌斯描绘为大迫害的罪魁祸首，声称他患了一种可怕的腐烂疾病（可能是肠癌、坏疽或 Fournier 坏疽——现代医学猜測），''身体内外都布满了蛆虫，恶臭弥漫整座宫殿''。垂死之际，伽列里乌斯终于颁布了著名的 311 年 4 月 30 日《伽列里乌斯宽容敕令》——承认对基督教的迫害政策已经失败，允许基督徒''再次成为基督徒并重建他们的集会场所''。不过他同时也要求基督徒''为皇帝和帝国的福祉向他们的神祈祷''——该敕令并未授予基督教完全合法地位。","originalTextMissing":true,"peopleCore":["Galerius"],"peopleMentioned":["Diocletian","Constantine I","Licinius"],"places":["Nicomedia","Serdica"],"macroEvent":"Tetrarchy","eventLabel":"Death of Galerius and the Edict of Toleration","factType":"political-event","questions":["伽列里乌斯的具体病因是什么？Lactantius 的症状描述是否符合现代医学诊断？","宽容敕令的实际法律效力——是否有独立的铭文或纸莎草副本存世？"],"confidence":"high","importance":"medium","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"31–33"}],"tags":["Roman Empire","Tetrarchy","political-event","Nicomedia","Serdica"],"people":["Galerius","Diocletian","Constantine I","Licinius"],"sources":["Lactantius, De Mortibus Persecutorum"],"promotedAt":"2026-06-26T07:04:30.464Z"}');
 
 -- historical_event_i18n
@@ -2909,6 +14622,25 @@ INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "b
 INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('mention-zztj-77-260-cao-mao-death', 'zizhi-tongjian-77', NULL, '资治通鉴', '魏纪九', '高贵乡公下', '景元元年五月己丑', 260, '中护军贾充自外入，逆与帝战于南阙下。济即抽戈前刺帝，殒于车下。', NULL, 'high', 'reviewed', '{"id":"mention-zztj-77-260-cao-mao-death","sourceId":"zizhi-tongjian-77","workTitle":"资治通鉴","bookTitle":"魏纪九","chapterTitle":"高贵乡公下","locator":"景元元年五月己丑","year":260,"text":"中护军贾充自外入，逆与帝战于南阙下。济即抽戈前刺帝，殒于车下。","personIds":["cao-mao","sima-zhao"],"placeIds":["luoyang"],"tags":["曹髦被弑","贾充","成济"],"confidence":"high","reviewStatus":"reviewed"}');
 INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('mention-zztj-78-263-shu-surrender', 'zizhi-tongjian-78', NULL, '资治通鉴', '魏纪十', '元皇帝下', '景元四年冬十月', 263, '汉主乃遣侍中张绍等奉玺绶以降于艾。艾至成都城北，汉主率太子诸王及群臣六十余人，面缚舆榇诣军门。', NULL, 'high', 'reviewed', '{"id":"mention-zztj-78-263-shu-surrender","sourceId":"zizhi-tongjian-78","workTitle":"资治通鉴","bookTitle":"魏纪十","chapterTitle":"元皇帝下","locator":"景元四年冬十月","year":263,"text":"汉主乃遣侍中张绍等奉玺绶以降于艾。艾至成都城北，汉主率太子诸王及群臣六十余人，面缚舆榇诣军门。","personIds":["liu-shan","deng-ai","zhong-hui","cao-huan"],"eventIds":["china-263-shu-han-conquered"],"placeIds":["chengdu"],"tags":["灭蜀","邓艾","刘禅"],"confidence":"high","reviewStatus":"reviewed"}');
 INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('mention-zztj-78-264-zhong-hui-deng-ai', 'zizhi-tongjian-78', NULL, '资治通鉴', '魏纪十', '元皇帝下', '咸熙元年正月', 264, '争前杀会。会将士死者数百人。邓艾本营将士追出艾于槛车，迎还。卫瓘乃遣护军田续等将兵袭艾，遇于绵竹西，斩艾父子。', NULL, 'high', 'reviewed', '{"id":"mention-zztj-78-264-zhong-hui-deng-ai","sourceId":"zizhi-tongjian-78","workTitle":"资治通鉴","bookTitle":"魏纪十","chapterTitle":"元皇帝下","locator":"咸熙元年正月","year":264,"text":"争前杀会。会将士死者数百人。邓艾本营将士追出艾于槛车，迎还。卫瓘乃遣护军田续等将兵袭艾，遇于绵竹西，斩艾父子。","personIds":["zhong-hui","deng-ai","jiang-wei"],"eventIds":["china-263-shu-han-conquered"],"placeIds":["chengdu","mianzhu"],"tags":["钟会之乱","邓艾","成都"],"confidence":"high","reviewStatus":"reviewed"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:shkz-royal-genealogy', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri', NULL, 'ŠKZ / Res Gestae Divi Saporis', '', 'royal genealogy and titulature', 'opening genealogy', 240, 'Shapur identifies himself through Ardashir and Papak and frames the dynasty with royal titulature.', '沙普尔一世铭文开篇以阿尔达希尔、帕帕克等谱系和王号说明王权来源，这是早期萨珊王朝自我合法化的核心材料。', 'high', 'reviewed', '{"id":"sasanian-ancient:shkz-royal-genealogy","cardId":"shkz-royal-genealogy","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"political_structure","peopleCore":["sasanian-ardashir-i","sasanian-shapur-i"],"eventIds":[],"tags":["inscription","royal-legitimacy","genealogy"],"interpretation":"这不是传记，而是王权声明。它能支撑阿尔达希尔一世、沙普尔一世的继承关系和萨珊王号变化。","disputeNote":"铭文是王室自我叙述，合法化意图很强；具体继承细节仍需钱币和后期叙事互证。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:ardashir-coinage-kingship', 'deepseek-sasanian-source-sasanian-coinage-ardashir-i-ardashir-i-royal-mint-early-sasanian-coinage', NULL, 'Sasanian Coinage (Ardashir I)', '', 'early royal coinage', 'early Ardashir types', 224, 'Early coin types document Ardashir''s transition from local dynastic rule to universal royal claims.', '阿尔达希尔早期钱币比后期叙事更接近同时代，能显示其王号和政治身份逐步扩大。', 'high', 'reviewed', '{"id":"sasanian-ancient:ardashir-coinage-kingship","cardId":"ardashir-coinage-kingship","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"political_structure","peopleCore":["sasanian-ardashir-i"],"eventIds":["sasanian-224-ardashir-defeats-parthians"],"tags":["coinage","royal-title","chronology"],"interpretation":"用于补足阿尔达希尔一世传记材料不足的问题：钱币不是故事，但能证明王权身份和年代层次。","disputeNote":"钱币能证明王号与统治宣称，不能单独还原具体战役经过。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:herodian-ardashir-roman-frontier', 'deepseek-sasanian-source-history-of-the-empire-after-marcus-herodian-herodian-history-of-the-empi', NULL, 'Herodian, History of the Empire after Marcus', '', 'Alexander Severus and Persia', '6.2-6.6', 230, 'Herodian presents the Persian threat as a challenge to Rome''s eastern provinces.', '赫罗狄安把阿尔达希尔的扩张描述为罗马东方行省面临的新波斯威胁。', 'medium', 'reviewed', '{"id":"sasanian-ancient:herodian-ardashir-roman-frontier","cardId":"herodian-ardashir-roman-frontier","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"military","peopleCore":["sasanian-ardashir-i","rome-alexander-severus"],"eventIds":["sasanian-230-ardashir-roman-frontier","sasanian-232-alexander-severus-expedition"],"tags":["roman-source","frontier","campaign"],"interpretation":"它适合解释罗马为什么在亚历山大·塞维鲁时期组织东方行动，但它是罗马视角，容易放大“波斯威胁”的政治语言。","disputeNote":"Herodian 的叙事服务于罗马帝国危机背景，对波斯目标的表述需要与萨珊铭文分开看。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:shkz-misiche-gordian', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri', NULL, 'ŠKZ / Res Gestae Divi Saporis', '', 'first Roman campaign', 'ŠKZ §6-8', 244, 'The inscription claims a Persian victory and connects the campaign with Gordian''s death.', '沙普尔一世铭文把 244 年战事叙述为萨珊胜利，并把戈尔迪安三世之死纳入这一胜利叙事。', 'high', 'reviewed', '{"id":"sasanian-ancient:shkz-misiche-gordian","cardId":"shkz-misiche-gordian","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"military","peopleCore":["sasanian-shapur-i","rome-gordian-iii","rome-philip-the-arab"],"eventIds":["sasanian-244-battle-of-misiche"],"tags":["inscription","roman-war","misiche"],"interpretation":"这是米西切战役最重要的萨珊侧证据，但与罗马传统对戈尔迪安死因的表述并不完全一致。","disputeNote":"铭文本身是胜利铭文，不能直接等同于中立战报；罗马资料对戈尔迪安三世死亡机制存在不同叙述。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:shkz-philip-settlement', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri', NULL, 'ŠKZ / Res Gestae Divi Saporis', '', 'settlement after Gordian', 'ŠKZ §8-9', 244, 'Shapur''s inscription presents Philip as entering a settlement after Gordian''s death.', '沙普尔一世铭文把腓力阿拉伯人的继位和战后安排放在萨珊胜利之后叙述。', 'medium', 'reviewed', '{"id":"sasanian-ancient:shkz-philip-settlement","cardId":"shkz-philip-settlement","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"political_structure","peopleCore":["sasanian-shapur-i","rome-philip-the-arab"],"eventIds":["sasanian-244-battle-of-misiche"],"tags":["diplomacy","treaty","roman-war"],"interpretation":"这条资料适合支撑“罗马在 244 年后选择停战/和约”的结构，但具体条款需要谨慎。","disputeNote":"铭文强调腓力处于不利地位；罗马政治内部继承和谈判细节不能只靠 ŠKZ 判断。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:shkz-dura-europos', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-dura-europos-excavation-reports-shapur-i-in', NULL, 'ŠKZ / Res Gestae Divi Saporis + Dura-Europos archaeology', '', 'second campaign and frontier archaeology', 'ŠKZ §14-15; Dura-Europos final reports', 256, 'Dura-Europos provides archaeological context for the mid-third-century Sasanian offensive.', '杜拉欧罗普斯约在 256 年陷落，考古证据与沙普尔一世战役叙事共同显示罗马东方防线承压。', 'high', 'reviewed', '{"id":"sasanian-ancient:shkz-dura-europos","cardId":"shkz-dura-europos","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"military","peopleCore":["sasanian-shapur-i"],"eventIds":["sasanian-256-dura-europos"],"tags":["archaeology","frontier","siege"],"interpretation":"这类资料比单一叙事史更可靠：城防、围攻痕迹和铭文战役列表能互相校验。","disputeNote":"陷落精确年份仍有讨论，通常以约 256 年处理。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:shkz-valerian-capture', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri', NULL, 'ŠKZ / Res Gestae Divi Saporis', '', 'third Roman campaign', 'ŠKZ §18-20', 260, 'The inscription places Valerian''s capture at the center of Shapur''s third Roman campaign.', '沙普尔一世铭文把瓦勒良被俘置于第三次罗马战役核心，是萨珊王权宣传中最强的军事胜利证据。', 'high', 'reviewed', '{"id":"sasanian-ancient:shkz-valerian-capture","cardId":"shkz-valerian-capture","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"military","peopleCore":["sasanian-shapur-i","rome-valerian"],"eventIds":["rome-sasanian-260-valerian-captured"],"tags":["inscription","valerian","roman-war"],"interpretation":"这是罗马-萨珊关系里最关键的一条本土材料，可以直接关联沙普尔、瓦勒良和三世纪罗马危机。","disputeNote":"战役经过和瓦勒良后续命运在罗马、基督教和后期传统中有夸张成分；被俘事实本身可信度高。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:shkz-deportation-gundeshapur', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-deportation-tradition-shapur-i-inscription-', NULL, 'ŠKZ / Res Gestae Divi Saporis + later deportation tradition', '', 'captives and deportation', 'ŠKZ §29-30; Tabari later tradition', 260, 'Shapur''s inscription and later Iranian traditions connect Roman captives with settlement and building activity.', '沙普尔一世铭文和后期伊朗传统都把罗马俘虏与迁徙、安置、城市建设联系起来。', 'medium', 'reviewed', '{"id":"sasanian-ancient:shkz-deportation-gundeshapur","cardId":"shkz-deportation-gundeshapur","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"political_structure","peopleCore":["sasanian-shapur-i","rome-valerian"],"eventIds":["rome-sasanian-260-valerian-captured"],"tags":["deportation","captives","urban-history"],"interpretation":"这能解释为什么萨珊资料中常出现“罗马俘虏参与建设”的主题，但具体城市和工程细节应分级处理。","disputeNote":"迁徙事实有较强基础；后期关于具体工程和人物的叙述可能被文学化。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:kartir-shapur-court', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-dodgeon-lieu-shapur-i-s-kz-18-20-early-admi', NULL, 'ŠKZ / Res Gestae Divi Saporis + court list', '', 'court list', 'ŠKZ §18-20 court list', 260, 'The court list places Kartir within the early Sasanian court milieu.', '沙普尔一世铭文中的宫廷名单让卡尔提尔进入可考的萨珊政治世界。', 'high', 'reviewed', '{"id":"sasanian-ancient:kartir-shapur-court","cardId":"kartir-shapur-court","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"political_structure","peopleCore":["sasanian-shapur-i","sasanian-kartir"],"eventIds":[],"tags":["court","religion","inscription"],"interpretation":"这比后期宗教传统更早，说明卡尔提尔不是纯粹后世宗教记忆，而是三世纪宫廷人物。","disputeNote":"名单能证明其宫廷存在和身份，但不能单独证明其后期权力范围。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:kartir-kkz-priestly-power', 'deepseek-sasanian-source-kartirs-inscription-at-kaba-ye-zardosht-kkz-s-kz-kartir-kirder-kkz-karti', NULL, 'Kartir''s Inscription at Ka''ba-ye Zardosht', '', 'priestly career and institutions', 'KKZ §8-12', 280, 'Kartir describes offices, religious authority, and expansion of priestly institutions.', '卡尔提尔在铭文中叙述自己的职衔、宗教权力和宗教机构扩张，是早期萨珊宗教制度化的核心证据。', 'high', 'reviewed', '{"id":"sasanian-ancient:kartir-kkz-priestly-power","cardId":"kartir-kkz-priestly-power","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"political_structure","peopleCore":["sasanian-kartir"],"eventIds":["sasanian-280-kartir-priestly-power"],"tags":["kartir","zoroastrianism","state-religion"],"interpretation":"它能支撑“萨珊不是只有国王军事史，也有祭司与宗教制度上升”的结构。","disputeNote":"铭文是卡尔提尔自我表述，权力范围可能被强化；但作为本土一手资料价值很高。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:kartir-religious-persecution', 'deepseek-sasanian-source-kartirs-inscriptions-collective-evidence-kartir-kirder-kkz-knrb-ksm-knrm', NULL, 'Kartir''s Inscriptions (collective evidence)', '', 'non-Mazdayasnian communities', 'KKZ/KNRb/KSM/KNRm comparison', 280, 'Kartir''s corpus presents religious ordering and opposition to rival communities.', '卡尔提尔铭文群显示其推动祆教秩序、限制竞争宗教群体，但具体对象和程度需要逐条拆分。', 'medium', 'reviewed', '{"id":"sasanian-ancient:kartir-religious-persecution","cardId":"kartir-religious-persecution","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"political_structure","peopleCore":["sasanian-kartir","sasanian-mani"],"eventIds":["sasanian-280-kartir-priestly-power"],"tags":["religion","persecution","source-criticism"],"interpretation":"对摩尼、基督徒、犹太人、佛教徒等群体的叙述要分开处理，不能一句话概括成统一迫害政策。","disputeNote":"卡尔提尔铭文具有强烈自我塑造性质；不同宗教群体的处境不能等量齐观。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:mani-court-mission', 'deepseek-sasanian-source-mani-and-manichaeism-manichaean-texts-kephalaia-cologne-mani-codex-mani-', NULL, 'Manichaean texts', '', 'Mani''s life and mission', 'Cologne Mani Codex; Kephalaia', 242, 'Manichaean traditions place Mani''s mission within the early Sasanian court environment.', '摩尼教传统把摩尼早期传教放在沙普尔一世宫廷环境中，说明萨珊早期宗教空间并非一开始就是单一闭合结构。', 'medium', 'reviewed', '{"id":"sasanian-ancient:mani-court-mission","cardId":"mani-court-mission","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"political_structure","peopleCore":["sasanian-mani","sasanian-shapur-i"],"eventIds":[],"tags":["manichaeism","court","religion"],"interpretation":"这条资料可用来平衡卡尔提尔视角：沙普尔时期可能更开放，巴赫拉姆时期才明显转紧。","disputeNote":"摩尼教文本有圣传性质，需避免把宗教记忆直接当作宫廷档案。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:mani-death-bahram', 'deepseek-sasanian-source-mani-and-manichaeism-manichaean-texts-kephalaia-cologne-mani-codex-mani-', NULL, 'Manichaean texts', '', 'Mani''s death tradition', 'Manichaean hagiographical tradition', 277, 'The Manichaean tradition remembers Mani''s death under Bahram I as persecution.', '摩尼教传统把摩尼在巴赫拉姆一世时期的死亡解释为受压制和殉教记忆。', 'medium', 'reviewed', '{"id":"sasanian-ancient:mani-death-bahram","cardId":"mani-death-bahram","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"political_structure","peopleCore":["sasanian-mani","sasanian-kartir"],"eventIds":[],"tags":["manichaeism","death","religion"],"interpretation":"可作为摩尼人物卡核心证据，但不能脱离卡尔提尔铭文和萨珊继承政治来解释。","disputeNote":"死亡年份和细节在传统中有差异；作为摩尼教内部记忆可信，但政治细节需交叉验证。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:paikuli-narseh-legitimacy', 'deepseek-sasanian-source-paikuli-inscription-npi-narseh-paikuli-tower-inscription-narseh-middle-p', NULL, 'Paikuli Inscription', '', 'Narseh''s claim to kingship', 'NPi §1-10', 293, 'Narseh presents his accession as the correction of dynastic disorder through elite support.', '纳尔塞在 Paikuli 铭文中把自己的即位叙述为在贵族和地方精英支持下恢复合法继承秩序。', 'high', 'reviewed', '{"id":"sasanian-ancient:paikuli-narseh-legitimacy","cardId":"paikuli-narseh-legitimacy","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"succession","peopleCore":["sasanian-narseh","sasanian-kartir"],"eventIds":["sasanian-293-narseh-paikuli"],"tags":["paikuli","succession","elite-politics"],"interpretation":"这是 293 年萨珊继承危机的核心一手材料，比后期王表更重要。","disputeNote":"铭文是胜利者纳尔塞的合法化文本，对巴赫拉姆三世一方立场呈现不足。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:paikuli-nobles-list', 'deepseek-sasanian-source-paikuli-inscription-npi-narseh-paikuli-tower-inscription-narseh-middle-p', NULL, 'Paikuli Inscription', '', 'supporters and nobles', 'NPi nobles and magnates list', 293, 'The inscription preserves a list of nobles and magnates supporting Narseh.', 'Paikuli 铭文保留了支持纳尔塞的贵族和权贵名单，说明萨珊王位竞争依赖地方与贵族网络。', 'high', 'reviewed', '{"id":"sasanian-ancient:paikuli-nobles-list","cardId":"paikuli-nobles-list","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"political_structure","peopleCore":["sasanian-narseh"],"eventIds":["sasanian-293-narseh-paikuli"],"tags":["nobility","succession","political-network"],"interpretation":"这能支撑后续做萨珊政治结构，而不是只做国王年表。","disputeNote":"名单反映纳尔塞阵营的政治展示，不能代表全部萨珊贵族结构。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:galerius-narseh-defeat', 'deepseek-sasanian-source-zosimus-historia-nova-zonaras-epitome-zosimus-c-500-ce-zonaras-12th-c-zo', NULL, 'Zosimus, Historia Nova + Zonaras, Epitome', '', 'Galerius and Narseh', 'Zosimus 1.27; Zonaras 12.23-24', 297, 'The later Greek tradition presents Galerius'' victory over Narseh and the capture of the royal camp.', '希腊-拜占庭传统叙述伽列里乌斯击败纳尔塞，并强调萨珊王室营帐和家眷被俘带来的政治冲击。', 'high', 'reviewed', '{"id":"sasanian-ancient:galerius-narseh-defeat","cardId":"galerius-narseh-defeat","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"military","peopleCore":["sasanian-narseh","rome-galerius","rome-diocletian"],"eventIds":["sasanian-298-treaty-of-nisibis"],"tags":["roman-source","galerius","narseh"],"interpretation":"这条适合连接罗马四帝共治和萨珊 293 年后外交转向。","disputeNote":"Zonaras 较晚，但可能保存早期材料；细节需与和约结果互证。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:nisibis-treaty', 'deepseek-sasanian-source-dodgeon-lieu-the-roman-eastern-frontier-quoting-zonaras-zonaras-12th-cen', NULL, 'Zonaras via Dodgeon & Lieu', '', 'Treaty of Nisibis', 'Zonaras 12.23', 298, 'The treaty tradition places Nisibis at the center of the postwar diplomatic settlement.', '尼西比斯和约传统把 298 年战后安排集中在边境、亚美尼亚和美索不达米亚秩序重置上。', 'high', 'reviewed', '{"id":"sasanian-ancient:nisibis-treaty","cardId":"nisibis-treaty","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"political_structure","peopleCore":["sasanian-narseh","rome-galerius","rome-diocletian"],"eventIds":["sasanian-298-treaty-of-nisibis"],"tags":["treaty","nisibis","diplomacy"],"interpretation":"这是 190-310 时间段萨珊与罗马关系的收束点，可与 224 建国、260 瓦勒良被俘形成三段结构。","disputeNote":"具体条款在不同传统中细节不同，但罗马取得阶段性优势这一结构可靠。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:tabari-ardashir-late-tradition', 'deepseek-sasanian-source-tabari-tarikh-al-rusul-wal-muluk-history-of-prophets-and-kings-al-tabari', NULL, 'Tabari, Ta''rikh al-Rusul wa''l-Muluk', '', 'Sasanian section', 'Sasanian origin tradition', 224, 'Tabari preserves later Iranian traditions about Ardashir, Papak and the Sasanian rise.', 'Tabari 保存了阿尔达希尔、帕帕克和萨珊兴起的后期伊朗传统，对故事脉络有用，但年代和细节不能等同同期记录。', 'medium', 'reviewed', '{"id":"sasanian-ancient:tabari-ardashir-late-tradition","cardId":"tabari-ardashir-late-tradition","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"source_criticism","peopleCore":["sasanian-ardashir-i"],"eventIds":["sasanian-224-ardashir-defeats-parthians"],"tags":["tabari","late-tradition","source-criticism"],"interpretation":"这张卡用于 AI 回答时提醒：后期波斯-阿拉伯传统可以补叙事，但优先级低于铭文、钱币和罗马同时代材料。","disputeNote":"Tabari 成书较晚，材料层次复杂；适合标为后期传统或低/中可信补充。"}');
+INSERT INTO "source_mentions" ("id", "source_id", "passage_id", "work_title", "book_title", "chapter_title", "locator", "year", "text", "translation", "confidence", "review_status", "raw_json") VALUES ('sasanian-ancient:coinage-succession-hormizd-bahram', 'deepseek-sasanian-source-sasanian-coinage-tabari-late-tradition-multiple-mints-sasanian-coinage-a', NULL, 'Sasanian Coinage + Tabari late tradition', '', 'succession after Shapur I', 'Ardashir I, Shapur I, Hormizd I, Bahram I coinage', 270, 'Coinage anchors the succession from Shapur I to Hormizd I and Bahram I more securely than narrative detail.', '钱币能较稳定地固定沙普尔一世之后霍尔米兹德一世、巴赫拉姆一世等短期继承链，比后期故事细节更可靠。', 'medium', 'reviewed', '{"id":"sasanian-ancient:coinage-succession-hormizd-bahram","cardId":"coinage-succession-hormizd-bahram","importedFromBatch":"manual-sasanian-ancient-knowledge-190-310","regionId":"sasanian-persia","periodId":"sasanian-persia-224-310","topicId":"succession","peopleCore":["sasanian-shapur-i"],"eventIds":[],"tags":["coinage","succession","source-criticism"],"interpretation":"后续补霍尔米兹德一世、巴赫拉姆一世、巴赫拉姆二世人物时，应以钱币/铭文确定框架，再用 Tabari 补叙事。","disputeNote":"王表顺序相对可用，但短期统治的具体事件较少，不能强行写成完整传记。"}');
 
 -- source_mention_i18n
 INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('mention-sgz-wei-wudi-cao-cao-origin', 'zh', '三国志', '魏书', '武帝纪', NULL, NULL, '{}');
@@ -3061,6 +14793,25 @@ INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_t
 INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('mention-zztj-77-260-cao-mao-death', 'zh', '资治通鉴', '魏纪九', '高贵乡公下', NULL, NULL, '{}');
 INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('mention-zztj-78-263-shu-surrender', 'zh', '资治通鉴', '魏纪十', '元皇帝下', NULL, NULL, '{}');
 INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('mention-zztj-78-264-zhong-hui-deng-ai', 'zh', '资治通鉴', '魏纪十', '元皇帝下', NULL, NULL, '{}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:shkz-royal-genealogy', 'zh', 'ŠKZ / Res Gestae Divi Saporis', '', 'royal genealogy and titulature', '沙普尔一世铭文开篇以阿尔达希尔、帕帕克等谱系和王号说明王权来源，这是早期萨珊王朝自我合法化的核心材料。', '铭文是王室自我叙述，合法化意图很强；具体继承细节仍需钱币和后期叙事互证。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:ardashir-coinage-kingship', 'zh', 'Sasanian Coinage (Ardashir I)', '', 'early royal coinage', '阿尔达希尔早期钱币比后期叙事更接近同时代，能显示其王号和政治身份逐步扩大。', '钱币能证明王号与统治宣称，不能单独还原具体战役经过。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:herodian-ardashir-roman-frontier', 'zh', 'Herodian, History of the Empire after Marcus', '', 'Alexander Severus and Persia', '赫罗狄安把阿尔达希尔的扩张描述为罗马东方行省面临的新波斯威胁。', 'Herodian 的叙事服务于罗马帝国危机背景，对波斯目标的表述需要与萨珊铭文分开看。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:shkz-misiche-gordian', 'zh', 'ŠKZ / Res Gestae Divi Saporis', '', 'first Roman campaign', '沙普尔一世铭文把 244 年战事叙述为萨珊胜利，并把戈尔迪安三世之死纳入这一胜利叙事。', '铭文本身是胜利铭文，不能直接等同于中立战报；罗马资料对戈尔迪安三世死亡机制存在不同叙述。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:shkz-philip-settlement', 'zh', 'ŠKZ / Res Gestae Divi Saporis', '', 'settlement after Gordian', '沙普尔一世铭文把腓力阿拉伯人的继位和战后安排放在萨珊胜利之后叙述。', '铭文强调腓力处于不利地位；罗马政治内部继承和谈判细节不能只靠 ŠKZ 判断。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:shkz-dura-europos', 'zh', 'ŠKZ / Res Gestae Divi Saporis + Dura-Europos archaeology', '', 'second campaign and frontier archaeology', '杜拉欧罗普斯约在 256 年陷落，考古证据与沙普尔一世战役叙事共同显示罗马东方防线承压。', '陷落精确年份仍有讨论，通常以约 256 年处理。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:shkz-valerian-capture', 'zh', 'ŠKZ / Res Gestae Divi Saporis', '', 'third Roman campaign', '沙普尔一世铭文把瓦勒良被俘置于第三次罗马战役核心，是萨珊王权宣传中最强的军事胜利证据。', '战役经过和瓦勒良后续命运在罗马、基督教和后期传统中有夸张成分；被俘事实本身可信度高。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:shkz-deportation-gundeshapur', 'zh', 'ŠKZ / Res Gestae Divi Saporis + later deportation tradition', '', 'captives and deportation', '沙普尔一世铭文和后期伊朗传统都把罗马俘虏与迁徙、安置、城市建设联系起来。', '迁徙事实有较强基础；后期关于具体工程和人物的叙述可能被文学化。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:kartir-shapur-court', 'zh', 'ŠKZ / Res Gestae Divi Saporis + court list', '', 'court list', '沙普尔一世铭文中的宫廷名单让卡尔提尔进入可考的萨珊政治世界。', '名单能证明其宫廷存在和身份，但不能单独证明其后期权力范围。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:kartir-kkz-priestly-power', 'zh', 'Kartir''s Inscription at Ka''ba-ye Zardosht', '', 'priestly career and institutions', '卡尔提尔在铭文中叙述自己的职衔、宗教权力和宗教机构扩张，是早期萨珊宗教制度化的核心证据。', '铭文是卡尔提尔自我表述，权力范围可能被强化；但作为本土一手资料价值很高。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:kartir-religious-persecution', 'zh', 'Kartir''s Inscriptions (collective evidence)', '', 'non-Mazdayasnian communities', '卡尔提尔铭文群显示其推动祆教秩序、限制竞争宗教群体，但具体对象和程度需要逐条拆分。', '卡尔提尔铭文具有强烈自我塑造性质；不同宗教群体的处境不能等量齐观。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:mani-court-mission', 'zh', 'Manichaean texts', '', 'Mani''s life and mission', '摩尼教传统把摩尼早期传教放在沙普尔一世宫廷环境中，说明萨珊早期宗教空间并非一开始就是单一闭合结构。', '摩尼教文本有圣传性质，需避免把宗教记忆直接当作宫廷档案。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:mani-death-bahram', 'zh', 'Manichaean texts', '', 'Mani''s death tradition', '摩尼教传统把摩尼在巴赫拉姆一世时期的死亡解释为受压制和殉教记忆。', '死亡年份和细节在传统中有差异；作为摩尼教内部记忆可信，但政治细节需交叉验证。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:paikuli-narseh-legitimacy', 'zh', 'Paikuli Inscription', '', 'Narseh''s claim to kingship', '纳尔塞在 Paikuli 铭文中把自己的即位叙述为在贵族和地方精英支持下恢复合法继承秩序。', '铭文是胜利者纳尔塞的合法化文本，对巴赫拉姆三世一方立场呈现不足。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:paikuli-nobles-list', 'zh', 'Paikuli Inscription', '', 'supporters and nobles', 'Paikuli 铭文保留了支持纳尔塞的贵族和权贵名单，说明萨珊王位竞争依赖地方与贵族网络。', '名单反映纳尔塞阵营的政治展示，不能代表全部萨珊贵族结构。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:galerius-narseh-defeat', 'zh', 'Zosimus, Historia Nova + Zonaras, Epitome', '', 'Galerius and Narseh', '希腊-拜占庭传统叙述伽列里乌斯击败纳尔塞，并强调萨珊王室营帐和家眷被俘带来的政治冲击。', 'Zonaras 较晚，但可能保存早期材料；细节需与和约结果互证。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:nisibis-treaty', 'zh', 'Zonaras via Dodgeon & Lieu', '', 'Treaty of Nisibis', '尼西比斯和约传统把 298 年战后安排集中在边境、亚美尼亚和美索不达米亚秩序重置上。', '具体条款在不同传统中细节不同，但罗马取得阶段性优势这一结构可靠。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:tabari-ardashir-late-tradition', 'zh', 'Tabari, Ta''rikh al-Rusul wa''l-Muluk', '', 'Sasanian section', 'Tabari 保存了阿尔达希尔、帕帕克和萨珊兴起的后期伊朗传统，对故事脉络有用，但年代和细节不能等同同期记录。', 'Tabari 成书较晚，材料层次复杂；适合标为后期传统或低/中可信补充。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
+INSERT INTO "source_mention_i18n" ("mention_id", "locale", "work_title", "book_title", "chapter_title", "translation", "dispute_note", "raw_json") VALUES ('sasanian-ancient:coinage-succession-hormizd-bahram', 'zh', 'Sasanian Coinage + Tabari late tradition', '', 'succession after Shapur I', '钱币能较稳定地固定沙普尔一世之后霍尔米兹德一世、巴赫拉姆一世等短期继承链，比后期故事细节更可靠。', '王表顺序相对可用，但短期统治的具体事件较少，不能强行写成完整传记。', '{"importedFromBatch":"manual-sasanian-ancient-knowledge-190-310"}');
 
 -- source_mention_people
 INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('mention-sgz-wei-wudi-cao-cao-origin', 'cao-cao', 0);
@@ -3414,6 +15165,41 @@ INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VA
 INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('mention-zztj-78-264-zhong-hui-deng-ai', 'zhong-hui', 0);
 INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('mention-zztj-78-264-zhong-hui-deng-ai', 'deng-ai', 1);
 INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('mention-zztj-78-264-zhong-hui-deng-ai', 'jiang-wei', 2);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:shkz-royal-genealogy', 'sasanian-ardashir-i', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:shkz-royal-genealogy', 'sasanian-shapur-i', 1);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:ardashir-coinage-kingship', 'sasanian-ardashir-i', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:herodian-ardashir-roman-frontier', 'sasanian-ardashir-i', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:herodian-ardashir-roman-frontier', 'rome-alexander-severus', 1);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:shkz-misiche-gordian', 'sasanian-shapur-i', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:shkz-misiche-gordian', 'rome-gordian-iii', 1);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:shkz-misiche-gordian', 'rome-philip-the-arab', 2);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:shkz-philip-settlement', 'sasanian-shapur-i', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:shkz-philip-settlement', 'rome-philip-the-arab', 1);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:shkz-dura-europos', 'sasanian-shapur-i', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:shkz-valerian-capture', 'sasanian-shapur-i', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:shkz-valerian-capture', 'rome-valerian', 1);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:shkz-deportation-gundeshapur', 'sasanian-shapur-i', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:shkz-deportation-gundeshapur', 'rome-valerian', 1);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:kartir-shapur-court', 'sasanian-shapur-i', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:kartir-shapur-court', 'sasanian-kartir', 1);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:kartir-kkz-priestly-power', 'sasanian-kartir', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:kartir-religious-persecution', 'sasanian-kartir', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:kartir-religious-persecution', 'sasanian-mani', 1);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:mani-court-mission', 'sasanian-mani', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:mani-court-mission', 'sasanian-shapur-i', 1);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:mani-death-bahram', 'sasanian-mani', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:mani-death-bahram', 'sasanian-kartir', 1);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:paikuli-narseh-legitimacy', 'sasanian-narseh', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:paikuli-narseh-legitimacy', 'sasanian-kartir', 1);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:paikuli-nobles-list', 'sasanian-narseh', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:galerius-narseh-defeat', 'sasanian-narseh', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:galerius-narseh-defeat', 'rome-galerius', 1);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:galerius-narseh-defeat', 'rome-diocletian', 2);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:nisibis-treaty', 'sasanian-narseh', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:nisibis-treaty', 'rome-galerius', 1);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:nisibis-treaty', 'rome-diocletian', 2);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:tabari-ardashir-late-tradition', 'sasanian-ardashir-i', 0);
+INSERT INTO "source_mention_people" ("mention_id", "person_id", "sort_order") VALUES ('sasanian-ancient:coinage-succession-hormizd-bahram', 'sasanian-shapur-i', 0);
 
 -- source_mention_events
 INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('mention-sgz-wei-wudi-cao-cao-xu', 'china-196-cao-cao-escorts-emperor', 0);
@@ -3447,6 +15233,21 @@ INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VAL
 INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('mention-sgz-wei-mingdi-cao-rui-wuzhang', 'china-234-wuzhang-plains', 0);
 INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('mention-zztj-78-263-shu-surrender', 'china-263-shu-han-conquered', 0);
 INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('mention-zztj-78-264-zhong-hui-deng-ai', 'china-263-shu-han-conquered', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:ardashir-coinage-kingship', 'sasanian-224-ardashir-defeats-parthians', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:herodian-ardashir-roman-frontier', 'sasanian-230-ardashir-roman-frontier', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:herodian-ardashir-roman-frontier', 'sasanian-232-alexander-severus-expedition', 1);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:shkz-misiche-gordian', 'sasanian-244-battle-of-misiche', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:shkz-philip-settlement', 'sasanian-244-battle-of-misiche', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:shkz-dura-europos', 'sasanian-256-dura-europos', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:shkz-valerian-capture', 'rome-sasanian-260-valerian-captured', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:shkz-deportation-gundeshapur', 'rome-sasanian-260-valerian-captured', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:kartir-kkz-priestly-power', 'sasanian-280-kartir-priestly-power', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:kartir-religious-persecution', 'sasanian-280-kartir-priestly-power', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:paikuli-narseh-legitimacy', 'sasanian-293-narseh-paikuli', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:paikuli-nobles-list', 'sasanian-293-narseh-paikuli', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:galerius-narseh-defeat', 'sasanian-298-treaty-of-nisibis', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:nisibis-treaty', 'sasanian-298-treaty-of-nisibis', 0);
+INSERT INTO "source_mention_events" ("mention_id", "event_id", "sort_order") VALUES ('sasanian-ancient:tabari-ardashir-late-tradition', 'sasanian-224-ardashir-defeats-parthians', 0);
 
 -- source_mention_places
 INSERT INTO "source_mention_places" ("mention_id", "place_id", "sort_order") VALUES ('mention-sgz-wei-wudi-cao-cao-origin', 'qiao', 0);
@@ -4006,6 +15807,63 @@ INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('m
 INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('mention-zztj-78-264-zhong-hui-deng-ai', '钟会之乱', 0);
 INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('mention-zztj-78-264-zhong-hui-deng-ai', '邓艾', 1);
 INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('mention-zztj-78-264-zhong-hui-deng-ai', '成都', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-royal-genealogy', 'inscription', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-royal-genealogy', 'royal-legitimacy', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-royal-genealogy', 'genealogy', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:ardashir-coinage-kingship', 'coinage', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:ardashir-coinage-kingship', 'royal-title', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:ardashir-coinage-kingship', 'chronology', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:herodian-ardashir-roman-frontier', 'roman-source', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:herodian-ardashir-roman-frontier', 'frontier', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:herodian-ardashir-roman-frontier', 'campaign', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-misiche-gordian', 'inscription', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-misiche-gordian', 'roman-war', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-misiche-gordian', 'misiche', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-philip-settlement', 'diplomacy', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-philip-settlement', 'treaty', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-philip-settlement', 'roman-war', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-dura-europos', 'archaeology', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-dura-europos', 'frontier', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-dura-europos', 'siege', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-valerian-capture', 'inscription', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-valerian-capture', 'valerian', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-valerian-capture', 'roman-war', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-deportation-gundeshapur', 'deportation', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-deportation-gundeshapur', 'captives', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:shkz-deportation-gundeshapur', 'urban-history', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:kartir-shapur-court', 'court', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:kartir-shapur-court', 'religion', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:kartir-shapur-court', 'inscription', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:kartir-kkz-priestly-power', 'kartir', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:kartir-kkz-priestly-power', 'zoroastrianism', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:kartir-kkz-priestly-power', 'state-religion', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:kartir-religious-persecution', 'religion', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:kartir-religious-persecution', 'persecution', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:kartir-religious-persecution', 'source-criticism', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:mani-court-mission', 'manichaeism', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:mani-court-mission', 'court', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:mani-court-mission', 'religion', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:mani-death-bahram', 'manichaeism', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:mani-death-bahram', 'death', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:mani-death-bahram', 'religion', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:paikuli-narseh-legitimacy', 'paikuli', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:paikuli-narseh-legitimacy', 'succession', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:paikuli-narseh-legitimacy', 'elite-politics', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:paikuli-nobles-list', 'nobility', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:paikuli-nobles-list', 'succession', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:paikuli-nobles-list', 'political-network', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:galerius-narseh-defeat', 'roman-source', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:galerius-narseh-defeat', 'galerius', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:galerius-narseh-defeat', 'narseh', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:nisibis-treaty', 'treaty', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:nisibis-treaty', 'nisibis', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:nisibis-treaty', 'diplomacy', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:tabari-ardashir-late-tradition', 'tabari', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:tabari-ardashir-late-tradition', 'late-tradition', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:tabari-ardashir-late-tradition', 'source-criticism', 2);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:coinage-succession-hormizd-bahram', 'coinage', 0);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:coinage-succession-hormizd-bahram', 'succession', 1);
+INSERT INTO "source_mention_tags" ("mention_id", "tag", "sort_order") VALUES ('sasanian-ancient:coinage-succession-hormizd-bahram', 'source-criticism', 2);
 
 -- person_life_events
 INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('zhang-jiao-unknown-birth', 'zhang-jiao', NULL, NULL, '生年不详', 'birth', '生年不详', '张角的早年经历与出生年份缺乏可靠纪年，本项目暂以黄巾起义前的太平道活动作为可追踪起点。', 'low', 0, '{"id":"zhang-jiao-unknown-birth","personId":"zhang-jiao","year":null,"displayYear":"生年不详","type":"birth","title":"生年不详","summary":"张角的早年经历与出生年份缺乏可靠纪年，本项目暂以黄巾起义前的太平道活动作为可追踪起点。","relatedEventIds":[],"confidence":"low","sourceRefs":[{"sourceId":"houhanshu-huangfu-song","locator":"黄巾起义相关记载"}]}');
@@ -4600,6 +16458,16 @@ INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "displa
 INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-postumus-death', 'rome-postumus', 269, NULL, '269', 'death', '波斯图穆斯去世', '波斯图穆斯约于 269 年去世或败亡。', 'medium', 1, '{"batchId":"manual-rome-persons-190-310","sourceRefs":[{"sourceId":"rome-source-de-caesaribus-aurelius-victor","locator":"33"}]}');
 INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-carausius-death', 'rome-carausius', 293, NULL, '293', 'death', '卡劳修斯去世', '卡劳修斯约于 293 年去世或败亡。', 'medium', 1, '{"batchId":"manual-rome-persons-190-310","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.21"}]}');
 INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-allectus-death', 'rome-allectus', 296, NULL, '296', 'death', '阿莱克图斯去世', '阿莱克图斯约于 296 年去世或败亡。', 'medium', 1, '{"batchId":"manual-rome-persons-190-310","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.22"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-julia-domna-birth', 'rome-julia-domna', 160, NULL, '160', 'birth', '尤利娅·多姆娜出生', '尤利娅·多姆娜约于 160 年出生。', 'medium', 1, '{"batchId":"manual-rome-persons-190-310","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.2-78.24"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-julia-domna-death', 'rome-julia-domna', 217, NULL, '217', 'death', '尤利娅·多姆娜去世', '尤利娅·多姆娜约于 217 年去世或败亡。', 'medium', 1, '{"batchId":"manual-rome-persons-190-310","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.2-78.24"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-julia-maesa-birth', 'rome-julia-maesa', 165, NULL, '165', 'birth', '尤利娅·玛伊萨出生', '尤利娅·玛伊萨约于 165 年出生。', 'medium', 1, '{"batchId":"manual-rome-persons-190-310","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.3-5.8"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-julia-maesa-death', 'rome-julia-maesa', 224, NULL, '224', 'death', '尤利娅·玛伊萨去世', '尤利娅·玛伊萨约于 224 年去世或败亡。', 'medium', 1, '{"batchId":"manual-rome-persons-190-310","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.3-5.8"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-julia-soaemias-birth', 'rome-julia-soaemias', 180, NULL, '180', 'birth', '尤利娅·索艾米亚斯出生', '尤利娅·索艾米亚斯约于 180 年出生。', 'medium', 1, '{"batchId":"manual-rome-persons-190-310","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.3-5.8"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-julia-soaemias-death', 'rome-julia-soaemias', 222, NULL, '222', 'death', '尤利娅·索艾米亚斯去世', '尤利娅·索艾米亚斯约于 222 年去世或败亡。', 'medium', 1, '{"batchId":"manual-rome-persons-190-310","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.3-5.8"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-julia-mamaea-birth', 'rome-julia-mamaea', 180, NULL, '180', 'birth', '尤利娅·玛迈亚出生', '尤利娅·玛迈亚约于 180 年出生。', 'medium', 1, '{"batchId":"manual-rome-persons-190-310","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"6.1-6.9"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-julia-mamaea-death', 'rome-julia-mamaea', 235, NULL, '235', 'death', '尤利娅·玛迈亚去世', '尤利娅·玛迈亚约于 235 年去世或败亡。', 'medium', 1, '{"batchId":"manual-rome-persons-190-310","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"6.1-6.9"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-macrianus-death', 'rome-macrianus', 261, NULL, '261', 'death', '马克里亚努斯去世', '马克里亚努斯约于 261 年去世或败亡。', 'medium', 1, '{"batchId":"manual-rome-persons-190-310","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.39-1.40"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-quietus-death', 'rome-quietus', 261, NULL, '261', 'death', '奎埃图斯去世', '奎埃图斯约于 261 年去世或败亡。', 'medium', 1, '{"batchId":"manual-rome-persons-190-310","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.39-1.40"}]}');
 INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-septimius-severus:193:accession', 'rome-septimius-severus', 193, NULL, '193', 'accession', '潘诺尼亚军队拥立', '193 年塞维鲁被潘诺尼亚军团拥立，并迅速进军罗马。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-septimius-severus","year":193,"type":"accession","title":"潘诺尼亚军队拥立","summary":"193 年塞维鲁被潘诺尼亚军团拥立，并迅速进军罗马。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"2.9-2.12"}]}');
 INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-septimius-severus:197:war', 'rome-septimius-severus', 197, NULL, '197', 'war', '击败阿尔比努斯', '197 年里昂战役后，塞维鲁消灭西方竞争者。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-septimius-severus","year":197,"type":"war","title":"击败阿尔比努斯","summary":"197 年里昂战役后，塞维鲁消灭西方竞争者。","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"76.6-76.7"}]}');
 INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-septimius-severus:208:war', 'rome-septimius-severus', 208, NULL, '208', 'war', '不列颠远征', '208 年后塞维鲁亲征不列颠，最终死于约克。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-septimius-severus","year":208,"type":"war","title":"不列颠远征","summary":"208 年后塞维鲁亲征不列颠，最终死于约克。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"3.14-3.15"}]}');
@@ -4661,6 +16529,86 @@ INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "displa
 INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-carausius:286:accession', 'rome-carausius', 286, NULL, '286', 'accession', '割据不列颠', '卡劳修斯在不列颠割据，形成西部海防危机。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-carausius","year":286,"type":"accession","title":"割据不列颠","summary":"卡劳修斯在不列颠割据，形成西部海防危机。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.21"}]}');
 INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-allectus:293:accession', 'rome-allectus', 293, NULL, '293', 'accession', '取代卡劳修斯', '阿莱克图斯杀卡劳修斯后继续控制不列颠。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-allectus","year":293,"type":"accession","title":"取代卡劳修斯","summary":"阿莱克图斯杀卡劳修斯后继续控制不列颠。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.22"}]}');
 INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-allectus:296:death', 'rome-allectus', 296, NULL, '296', 'death', '被君士坦提乌斯击败', '296 年阿莱克图斯被击败，不列颠重新归入帝国。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-allectus","year":296,"type":"death","title":"被君士坦提乌斯击败","summary":"296 年阿莱克图斯被击败，不列颠重新归入帝国。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.22"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-septimius-severus:194:war', 'rome-septimius-severus', 194, NULL, '194', 'war', '击败尼格尔', '塞维鲁东进击败佩斯凯尼乌斯·尼格尔，掌握东方行省承认。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-septimius-severus","year":194,"type":"war","title":"击败尼格尔","summary":"塞维鲁东进击败佩斯凯尼乌斯·尼格尔，掌握东方行省承认。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"3.1-3.4"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-septimius-severus:202:reign', 'rome-septimius-severus', 202, NULL, '202', 'reign', '王朝继承安排成形', '塞维鲁把皇权与军队、家族继承绑定，卡拉卡拉和盖塔的继承地位更加明确。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-septimius-severus","year":202,"type":"reign","title":"王朝继承安排成形","summary":"塞维鲁把皇权与军队、家族继承绑定，卡拉卡拉和盖塔的继承地位更加明确。","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"76.15-76.17"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-caracalla:213:war', 'rome-caracalla', 213, NULL, '213', 'war', '莱茵与日耳曼战事', '卡拉卡拉在北方边境展开军事行动，强化其军人皇帝形象。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-caracalla","year":213,"type":"war","title":"莱茵与日耳曼战事","summary":"卡拉卡拉在北方边境展开军事行动，强化其军人皇帝形象。","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.13-78.14"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-caracalla:217:death', 'rome-caracalla', 217, NULL, '217', 'death', '东方行军途中遇刺', '卡拉卡拉在对帕提亚方向行动期间遇刺，马克里努斯随后取得皇位。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-caracalla","year":217,"type":"death","title":"东方行军途中遇刺","summary":"卡拉卡拉在对帕提亚方向行动期间遇刺，马克里努斯随后取得皇位。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"4.12-4.13"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-elagabalus:221:reign', 'rome-elagabalus', 221, NULL, '221', 'reign', '宗教与宫廷冲突加深', '埃拉伽巴路斯把埃梅萨神祇崇拜带入罗马政治核心，引发元老院和禁卫军反感。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-elagabalus","year":221,"type":"reign","title":"宗教与宫廷冲突加深","summary":"埃拉伽巴路斯把埃梅萨神祇崇拜带入罗马政治核心，引发元老院和禁卫军反感。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.5-5.7"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-gordian-i:238:death', 'rome-gordian-i', 238, NULL, '238', 'death', '起义失败后自尽', '非洲起义迅速失败后，戈尔迪安一世自尽，六帝之年的动荡继续扩大。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-gordian-i","year":238,"type":"death","title":"起义失败后自尽","summary":"非洲起义迅速失败后，戈尔迪安一世自尽，六帝之年的动荡继续扩大。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"7.9"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-pupienus:238:death', 'rome-pupienus', 238, NULL, '238', 'death', '被禁卫军杀害', '普皮恩努斯与巴尔比努斯共治关系紧张，最终同被禁卫军杀害。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-pupienus","year":238,"type":"death","title":"被禁卫军杀害","summary":"普皮恩努斯与巴尔比努斯共治关系紧张，最终同被禁卫军杀害。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"8.8"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-balbinus:238:death', 'rome-balbinus', 238, NULL, '238', 'death', '与普皮恩努斯同死', '巴尔比努斯在罗马城内权力冲突中被禁卫军杀害，戈尔迪安三世成为唯一皇帝。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-balbinus","year":238,"type":"death","title":"与普皮恩努斯同死","summary":"巴尔比努斯在罗马城内权力冲突中被禁卫军杀害，戈尔迪安三世成为唯一皇帝。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"8.8"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-gordian-iii:242:war', 'rome-gordian-iii', 242, NULL, '242', 'war', '东方远征开始', '戈尔迪安三世在近臣和军队辅佐下发动东方远征，应对萨珊压力。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-gordian-iii","year":242,"type":"war","title":"东方远征开始","summary":"戈尔迪安三世在近臣和军队辅佐下发动东方远征，应对萨珊压力。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.2"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-philip-the-arab:249:death', 'rome-philip-the-arab', 249, NULL, '249', 'death', '败于德西乌斯', '腓力在与德西乌斯的冲突中败亡，罗马再次进入军队拥立的新一轮更替。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-philip-the-arab","year":249,"type":"death","title":"败于德西乌斯","summary":"腓力在与德西乌斯的冲突中败亡，罗马再次进入军队拥立的新一轮更替。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.4"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-gallienus:262:reform', 'rome-gallienus', 262, NULL, '262', 'reform', '依赖骑兵与机动军力', '加里恩努斯时期的军事调整强化机动反应能力，是三世纪危机后期恢复的一部分。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-gallienus","year":262,"type":"reform","title":"依赖骑兵与机动军力","summary":"加里恩努斯时期的军事调整强化机动反应能力，是三世纪危机后期恢复的一部分。","sourceRefs":[{"sourceId":"rome-source-de-caesaribus-aurelius-victor","locator":"33"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-claudius-ii:270:death', 'rome-claudius-ii', 270, NULL, '270', 'death', '疫病中去世', '克劳狄二世在短暂恢复军威后去世，奥勒良随后进入核心竞争。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-claudius-ii","year":270,"type":"death","title":"疫病中去世","summary":"克劳狄二世在短暂恢复军威后去世，奥勒良随后进入核心竞争。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.11"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-aurelian:271:war', 'rome-aurelian', 271, NULL, '271', 'war', '稳住多瑙河与意大利', '奥勒良先处理北方入侵和意大利安全问题，为随后东征和西征创造条件。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-aurelian","year":271,"type":"war","title":"稳住多瑙河与意大利","summary":"奥勒良先处理北方入侵和意大利安全问题，为随后东征和西征创造条件。","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Aurelian 18-22"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-aurelian:274:reform', 'rome-aurelian', 274, NULL, '274', 'reform', '太阳神崇拜与帝国整合', '奥勒良用宗教和胜利仪式强调帝国重新统一后的中心权威。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-aurelian","year":274,"type":"reform","title":"太阳神崇拜与帝国整合","summary":"奥勒良用宗教和胜利仪式强调帝国重新统一后的中心权威。","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Aurelian 35"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-aurelian:275:death', 'rome-aurelian', 275, NULL, '275', 'death', '东方行军前遇害', '奥勒良在筹备新一轮东方行动时被近臣和军人谋杀。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-aurelian","year":275,"type":"death","title":"东方行军前遇害","summary":"奥勒良在筹备新一轮东方行动时被近臣和军人谋杀。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.15"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-tacitus:275:accession', 'rome-tacitus', 275, NULL, '275', 'accession', '奥勒良死后被推为皇帝', '塔西佗在奥勒良遇害后的权力空档中取得皇位。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-tacitus","year":275,"type":"accession","title":"奥勒良死后被推为皇帝","summary":"塔西佗在奥勒良遇害后的权力空档中取得皇位。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.16"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-tacitus:276:death', 'rome-tacitus', 276, NULL, '276', 'death', '短暂在位后去世', '塔西佗统治时间很短，死后普罗布斯成为新的核心军人皇帝。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-tacitus","year":276,"type":"death","title":"短暂在位后去世","summary":"塔西佗统治时间很短，死后普罗布斯成为新的核心军人皇帝。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.16-9.17"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-probus:277:war', 'rome-probus', 277, NULL, '277', 'war', '清理高卢与莱茵压力', '普罗布斯在西方边境继续清理外部入侵和地方混乱。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-probus","year":277,"type":"war","title":"清理高卢与莱茵压力","summary":"普罗布斯在西方边境继续清理外部入侵和地方混乱。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.17"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-probus:282:death', 'rome-probus', 282, NULL, '282', 'death', '被军队杀害', '普罗布斯在军队不满中被杀，卡鲁斯随后称帝。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-probus","year":282,"type":"death","title":"被军队杀害","summary":"普罗布斯在军队不满中被杀，卡鲁斯随后称帝。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.17-9.18"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-carus:283:death', 'rome-carus', 283, NULL, '283', 'death', '东方远征途中死亡', '卡鲁斯东征取得进展后突然死亡，继承局势转向努梅里安和卡里努斯。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-carus","year":283,"type":"death","title":"东方远征途中死亡","summary":"卡鲁斯东征取得进展后突然死亡，继承局势转向努梅里安和卡里努斯。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.18"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-numerian:283:accession', 'rome-numerian', 283, NULL, '283', 'accession', '随父东方远征后继位', '卡鲁斯死后，努梅里安在东方军队中继承皇位。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-numerian","year":283,"type":"accession","title":"随父东方远征后继位","summary":"卡鲁斯死后，努梅里安在东方军队中继承皇位。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.18-9.20"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-numerian:284:death', 'rome-numerian', 284, NULL, '284', 'death', '撤军途中死亡', '努梅里安在东方撤军途中死亡，军队随后拥立戴克里先。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-numerian","year":284,"type":"death","title":"撤军途中死亡","summary":"努梅里安在东方撤军途中死亡，军队随后拥立戴克里先。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.20"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-carinus:283:accession', 'rome-carinus', 283, NULL, '283', 'accession', '统治西部', '卡里努斯作为卡鲁斯之子在西部维持统治，与东方军队拥立的戴克里先对峙。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-carinus","year":283,"type":"accession","title":"统治西部","summary":"卡里努斯作为卡鲁斯之子在西部维持统治，与东方军队拥立的戴克里先对峙。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.19-9.20"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-carinus:285:death', 'rome-carinus', 285, NULL, '285', 'death', '败于戴克里先阵营', '卡里努斯与戴克里先竞争失败，戴克里先成为帝国唯一奥古斯都。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-carinus","year":285,"type":"death","title":"败于戴克里先阵营","summary":"卡里努斯与戴克里先竞争失败，戴克里先成为帝国唯一奥古斯都。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.20"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-diocletian:285:war', 'rome-diocletian', 285, NULL, '285', 'war', '击败卡里努斯', '戴克里先击败卡里努斯后结束卡鲁斯家族的继承竞争。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-diocletian","year":285,"type":"war","title":"击败卡里努斯","summary":"戴克里先击败卡里努斯后结束卡鲁斯家族的继承竞争。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.20"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-diocletian:286:reform', 'rome-diocletian', 286, NULL, '286', 'reform', '任命马克西米安分担西部', '戴克里先把马克西米安提升为共治者，帝国东西分担治理开始制度化。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-diocletian","year":286,"type":"reform","title":"任命马克西米安分担西部","summary":"戴克里先把马克西米安提升为共治者，帝国东西分担治理开始制度化。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"7-8"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-diocletian:301:reform', 'rome-diocletian', 301, NULL, '301', 'reform', '价格敕令', '戴克里先晚期用最高价格敕令尝试管控通货、军费和市场压力。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-diocletian","year":301,"type":"reform","title":"价格敕令","summary":"戴克里先晚期用最高价格敕令尝试管控通货、军费和市场压力。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"7"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-maximian:293:reform', 'rome-maximian', 293, NULL, '293', 'reform', '成为西部奥古斯都核心', '四帝共治形成后，马克西米安负责西部军事和政治压力。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-maximian","year":293,"type":"reform","title":"成为西部奥古斯都核心","summary":"四帝共治形成后，马克西米安负责西部军事和政治压力。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"7-8"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-maximian:310:death', 'rome-maximian', 310, NULL, '310', 'death', '复出失败后死亡', '马克西米安退位后多次试图重返权力，最终在君士坦丁阵营压力下死亡。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-maximian","year":310,"type":"death","title":"复出失败后死亡","summary":"马克西米安退位后多次试图重返权力，最终在君士坦丁阵营压力下死亡。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"29-30"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-galerius:311:death', 'rome-galerius', 311, NULL, '311', 'death', '临终宽容敕令后去世', '伽列里乌斯在晚年病重时发布宽容敕令，随后去世。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-galerius","year":311,"type":"death","title":"临终宽容敕令后去世","summary":"伽列里乌斯在晚年病重时发布宽容敕令，随后去世。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"33-35"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-severus-ii:305:accession', 'rome-severus-ii', 305, NULL, '305', 'accession', '成为西部凯撒', '戴克里先和马克西米安退位后，塞维鲁二世按四帝共治安排成为西部凯撒。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-severus-ii","year":305,"type":"accession","title":"成为西部凯撒","summary":"戴克里先和马克西米安退位后，塞维鲁二世按四帝共治安排成为西部凯撒。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"18-19"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-severus-ii:306:war', 'rome-severus-ii', 306, NULL, '306', 'war', '卷入马克森提乌斯危机', '马克森提乌斯起事后，塞维鲁二世受命压制罗马局势，但西部军队忠诚发生动摇。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-severus-ii","year":306,"type":"war","title":"卷入马克森提乌斯危机","summary":"马克森提乌斯起事后，塞维鲁二世受命压制罗马局势，但西部军队忠诚发生动摇。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"24-26"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-severus-ii:307:death', 'rome-severus-ii', 307, NULL, '307', 'death', '被迫投降后死亡', '塞维鲁二世在对马克森提乌斯行动失败后被迫投降，随后死亡。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-severus-ii","year":307,"type":"death","title":"被迫投降后死亡","summary":"塞维鲁二世在对马克森提乌斯行动失败后被迫投降，随后死亡。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"26"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-maximinus-daia:305:accession', 'rome-maximinus-daia', 305, NULL, '305', 'accession', '成为东部凯撒', '马克西米努斯·达扎在 305 年继承安排中成为东部凯撒。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-maximinus-daia","year":305,"type":"accession","title":"成为东部凯撒","summary":"马克西米努斯·达扎在 305 年继承安排中成为东部凯撒。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"18-19"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-maximinus-daia:310:reign', 'rome-maximinus-daia', 310, NULL, '310', 'reign', '争取奥古斯都地位', '四帝共治秩序破裂后，马克西米努斯·达扎要求更高名位并扩张东部权力。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-maximinus-daia","year":310,"type":"reign","title":"争取奥古斯都地位","summary":"四帝共治秩序破裂后，马克西米努斯·达扎要求更高名位并扩张东部权力。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"32"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-constantine:307:reign', 'rome-constantine', 307, NULL, '307', 'reign', '巩固高卢与不列颠基础', '君士坦丁被拥立后先稳住西北行省基础，与四帝共治旧秩序保持紧张关系。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-constantine","year":307,"type":"reign","title":"巩固高卢与不列颠基础","summary":"君士坦丁被拥立后先稳住西北行省基础，与四帝共治旧秩序保持紧张关系。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"24-26"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-constantine:310:reign', 'rome-constantine', 310, NULL, '310', 'reign', '与马克西米安决裂', '君士坦丁镇压马克西米安复出企图，进一步巩固自己的西部权力。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-constantine","year":310,"type":"reign","title":"与马克西米安决裂","summary":"君士坦丁镇压马克西米安复出企图，进一步巩固自己的西部权力。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"29-30"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-maxentius:307:war', 'rome-maxentius', 307, NULL, '307', 'war', '击退塞维鲁二世', '马克森提乌斯依靠罗马和意大利军政网络击退塞维鲁二世，四帝共治继承安排进一步崩解。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-maxentius","year":307,"type":"war","title":"击退塞维鲁二世","summary":"马克森提乌斯依靠罗马和意大利军政网络击退塞维鲁二世，四帝共治继承安排进一步崩解。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"24-26"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-maxentius:308:reign', 'rome-maxentius', 308, NULL, '308', 'reign', '卡农图姆会议后仍据罗马', '卡农图姆会议试图重排合法名位，但马克森提乌斯仍控制罗马和意大利。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-maxentius","year":308,"type":"reign","title":"卡农图姆会议后仍据罗马","summary":"卡农图姆会议试图重排合法名位，但马克森提乌斯仍控制罗马和意大利。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"29-30"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-julia-domna:193:reign', 'rome-julia-domna', 193, NULL, '193', 'reign', '成为塞维鲁王朝皇后', '塞维鲁夺取皇位后，尤利娅·多姆娜成为王朝宫廷的核心女性成员。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-julia-domna","year":193,"type":"reign","title":"成为塞维鲁王朝皇后","summary":"塞维鲁夺取皇位后，尤利娅·多姆娜成为王朝宫廷的核心女性成员。","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"76.15-76.17"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-julia-domna:211:crisis', 'rome-julia-domna', 211, NULL, '211', 'crisis', '调停卡拉卡拉与盖塔失败', '塞维鲁死后，尤利娅·多姆娜处于两子共治冲突中心，兄弟共治很快破裂。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-julia-domna","year":211,"type":"crisis","title":"调停卡拉卡拉与盖塔失败","summary":"塞维鲁死后，尤利娅·多姆娜处于两子共治冲突中心，兄弟共治很快破裂。","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.2-78.4"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-julia-domna:217:death', 'rome-julia-domna', 217, NULL, '217', 'death', '卡拉卡拉死后去世', '卡拉卡拉遇刺和马克里努斯上台后，尤利娅·多姆娜失去政治基础并去世。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-julia-domna","year":217,"type":"death","title":"卡拉卡拉死后去世","summary":"卡拉卡拉遇刺和马克里努斯上台后，尤利娅·多姆娜失去政治基础并去世。","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.23-78.24"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-julia-maesa:218:accession', 'rome-julia-maesa', 218, NULL, '218', 'accession', '推动埃拉伽巴路斯称帝', '尤利娅·玛伊萨利用塞维鲁家族声望和东方军队网络推动埃拉伽巴路斯取代马克里努斯。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-julia-maesa","year":218,"type":"accession","title":"推动埃拉伽巴路斯称帝","summary":"尤利娅·玛伊萨利用塞维鲁家族声望和东方军队网络推动埃拉伽巴路斯取代马克里努斯。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.3-5.4"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-julia-maesa:221:reign', 'rome-julia-maesa', 221, NULL, '221', 'reign', '转向扶持亚历山大', '埃拉伽巴路斯失去支持后，尤利娅·玛伊萨推动亚历山大·塞维鲁成为继承选择。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-julia-maesa","year":221,"type":"reign","title":"转向扶持亚历山大","summary":"埃拉伽巴路斯失去支持后，尤利娅·玛伊萨推动亚历山大·塞维鲁成为继承选择。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.7-5.8"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-julia-soaemias:218:accession', 'rome-julia-soaemias', 218, NULL, '218', 'accession', '随埃拉伽巴路斯入主罗马', '尤利娅·索艾米亚斯作为埃拉伽巴路斯之母进入皇权核心。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-julia-soaemias","year":218,"type":"accession","title":"随埃拉伽巴路斯入主罗马","summary":"尤利娅·索艾米亚斯作为埃拉伽巴路斯之母进入皇权核心。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.3-5.5"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-julia-soaemias:222:death', 'rome-julia-soaemias', 222, NULL, '222', 'death', '与埃拉伽巴路斯同死', '222 年禁卫军杀死埃拉伽巴路斯，尤利娅·索艾米亚斯也一同遇害。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-julia-soaemias","year":222,"type":"death","title":"与埃拉伽巴路斯同死","summary":"222 年禁卫军杀死埃拉伽巴路斯，尤利娅·索艾米亚斯也一同遇害。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.8"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-julia-mamaea:222:accession', 'rome-julia-mamaea', 222, NULL, '222', 'accession', '辅佐亚历山大·塞维鲁上台', '亚历山大·塞维鲁即位后，尤利娅·玛迈亚成为宫廷和政策运作中的关键人物。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-julia-mamaea","year":222,"type":"accession","title":"辅佐亚历山大·塞维鲁上台","summary":"亚历山大·塞维鲁即位后，尤利娅·玛迈亚成为宫廷和政策运作中的关键人物。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.8"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-julia-mamaea:231:war', 'rome-julia-mamaea', 231, NULL, '231', 'war', '参与东方战争决策环境', '亚历山大·塞维鲁东征萨珊时，玛迈亚仍深度影响皇帝和宫廷决策。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-julia-mamaea","year":231,"type":"war","title":"参与东方战争决策环境","summary":"亚历山大·塞维鲁东征萨珊时，玛迈亚仍深度影响皇帝和宫廷决策。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"6.2-6.6"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-julia-mamaea:235:death', 'rome-julia-mamaea', 235, NULL, '235', 'death', '莱茵军营中被杀', '莱茵前线军队不满亚历山大和玛迈亚的统治方式，母子二人一同被杀。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-julia-mamaea","year":235,"type":"death","title":"莱茵军营中被杀","summary":"莱茵前线军队不满亚历山大和玛迈亚的统治方式，母子二人一同被杀。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"6.8-6.9"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-macrianus:260:accession', 'rome-macrianus', 260, NULL, '260', 'accession', '瓦勒良被俘后争夺东方', '瓦勒良被俘后，马克里亚努斯集团在东方军政真空中挑战加里恩努斯。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-macrianus","year":260,"type":"accession","title":"瓦勒良被俘后争夺东方","summary":"瓦勒良被俘后，马克里亚努斯集团在东方军政真空中挑战加里恩努斯。","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.39-1.40"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-macrianus:261:death', 'rome-macrianus', 261, NULL, '261', 'death', '向西进攻失败', '马克里亚努斯势力向西挑战加里恩努斯失败，集团迅速瓦解。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-macrianus","year":261,"type":"death","title":"向西进攻失败","summary":"马克里亚努斯势力向西挑战加里恩努斯失败，集团迅速瓦解。","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.40"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-quietus:260:accession', 'rome-quietus', 260, NULL, '260', 'accession', '东方割据称号', '奎埃图斯在瓦勒良被俘后的东方割据中获得皇帝称号。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-quietus","year":260,"type":"accession","title":"东方割据称号","summary":"奎埃图斯在瓦勒良被俘后的东方割据中获得皇帝称号。","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.39-1.40"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-quietus:261:death', 'rome-quietus', 261, NULL, '261', 'death', '在东方失败身亡', '马克里亚努斯集团失败后，奎埃图斯也在东方局势中败亡。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-quietus","year":261,"type":"death","title":"在东方失败身亡","summary":"马克里亚努斯集团失败后，奎埃图斯也在东方局势中败亡。","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.40"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-tetricus:271:accession', 'rome-tetricus', 271, NULL, '271', 'accession', '成为高卢帝国统治者', '维多利努斯之后，提特里库斯成为高卢帝国后期核心统治者。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-tetricus","year":271,"type":"accession","title":"成为高卢帝国统治者","summary":"维多利努斯之后，提特里库斯成为高卢帝国后期核心统治者。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.13"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-tetricus:274:deposition', 'rome-tetricus', 274, NULL, '274', 'deposition', '向奥勒良投降', '274 年奥勒良收复高卢时，提特里库斯投降，西部割据结束。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-tetricus","year":274,"type":"deposition","title":"向奥勒良投降","summary":"274 年奥勒良收复高卢时，提特里库斯投降，西部割据结束。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.13"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:palmyra-odaenathus:260:reign', 'palmyra-odaenathus', 260, NULL, '260', 'reign', '东方危机中的罗马盟友', '瓦勒良被俘后，奥登纳图斯成为罗马东方秩序恢复的重要地方强人。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"palmyra-odaenathus","year":260,"type":"reign","title":"东方危机中的罗马盟友","summary":"瓦勒良被俘后，奥登纳图斯成为罗马东方秩序恢复的重要地方强人。","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.39-1.40"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:palmyra-odaenathus:267:death', 'palmyra-odaenathus', 267, NULL, '267', 'death', '被刺杀', '奥登纳图斯被刺杀后，帕尔米拉权力转入芝诺比娅和瓦巴拉图斯体系。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"palmyra-odaenathus","year":267,"type":"death","title":"被刺杀","summary":"奥登纳图斯被刺杀后，帕尔米拉权力转入芝诺比娅和瓦巴拉图斯体系。","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.39-1.40"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:palmyra-zenobia:267:accession', 'palmyra-zenobia', 267, NULL, '267', 'accession', '掌握帕尔米拉权力', '奥登纳图斯死后，芝诺比娅以摄政和王权保护者身份控制帕尔米拉政权。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"palmyra-zenobia","year":267,"type":"accession","title":"掌握帕尔米拉权力","summary":"奥登纳图斯死后，芝诺比娅以摄政和王权保护者身份控制帕尔米拉政权。","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Aurelian 24-26"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:palmyra-zenobia:270:war', 'palmyra-zenobia', 270, NULL, '270', 'war', '扩张至埃及和东方', '芝诺比娅政权向埃及和叙利亚周边扩张，成为奥勒良必须处理的东方割据力量。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"palmyra-zenobia","year":270,"type":"war","title":"扩张至埃及和东方","summary":"芝诺比娅政权向埃及和叙利亚周边扩张，成为奥勒良必须处理的东方割据力量。","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.50-1.51"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-postumus:261:reign', 'rome-postumus', 261, NULL, '261', 'reign', '建立高卢政权制度', '波斯图穆斯在高卢建立独立的皇帝、执政官和军政体系，维持西部防务。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-postumus","year":261,"type":"reign","title":"建立高卢政权制度","summary":"波斯图穆斯在高卢建立独立的皇帝、执政官和军政体系，维持西部防务。","sourceRefs":[{"sourceId":"rome-source-de-caesaribus-aurelius-victor","locator":"33"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-postumus:269:death', 'rome-postumus', 269, NULL, '269', 'death', '军队骚乱中被杀', '波斯图穆斯在西部割据政权内部军队冲突中被杀，高卢帝国进入继承动荡。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-postumus","year":269,"type":"death","title":"军队骚乱中被杀","summary":"波斯图穆斯在西部割据政权内部军队冲突中被杀，高卢帝国进入继承动荡。","sourceRefs":[{"sourceId":"rome-source-de-caesaribus-aurelius-victor","locator":"33"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-carausius:287:reign', 'rome-carausius', 287, NULL, '287', 'reign', '控制海峡与不列颠', '卡劳修斯利用舰队和不列颠资源维持割据，使西部海防成为戴克里先体系的难题。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-carausius","year":287,"type":"reign","title":"控制海峡与不列颠","summary":"卡劳修斯利用舰队和不列颠资源维持割据，使西部海防成为戴克里先体系的难题。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.21"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('rome-life:rome-carausius:293:death', 'rome-carausius', 293, NULL, '293', 'death', '被阿莱克图斯杀害', '卡劳修斯被部下阿莱克图斯杀害，不列颠割据政权继续存在到 296 年。', 'medium', 0, '{"batchId":"manual-rome-persons-190-310","personId":"rome-carausius","year":293,"type":"death","title":"被阿莱克图斯杀害","summary":"卡劳修斯被部下阿莱克图斯杀害，不列颠割据政权继续存在到 296 年。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.22"}]}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-ardashir-i:224:accession:0', 'sasanian-ardashir-i', 224, 224, '224 年', 'accession', '击败阿尔达班四世，萨珊王朝形成', '阿尔达希尔击败安息末王阿尔达班四世，萨珊王权由波斯地方势力上升为伊朗高原的新主导政权。', 'high', 0, '{"id":"sasanian-life:sasanian-ardashir-i:224:accession:0","personId":"sasanian-ardashir-i","year":224,"endYear":224,"displayYear":"224 年","type":"accession","title":"击败阿尔达班四世，萨珊王朝形成","summary":"阿尔达希尔击败安息末王阿尔达班四世，萨珊王权由波斯地方势力上升为伊朗高原的新主导政权。","confidence":"high","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-sasanian-coinage-ardashir-i-ardashir-i-royal-mint-early-sasanian-coinage","locator":"early Sasanian coinage; Hormozdgan tradition"}],"relatedEventIds":["sasanian-224-ardashir-defeats-parthians"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-ardashir-i:230:war:1', 'sasanian-ardashir-i', 230, 230, '230 年', 'war', '向罗马东方边境施压', '阿尔达希尔一世向美索不达米亚、叙利亚方向施压，使罗马在亚历山大·塞维鲁时期组织东方应对。', 'medium', 0, '{"id":"sasanian-life:sasanian-ardashir-i:230:war:1","personId":"sasanian-ardashir-i","year":230,"endYear":230,"displayYear":"230 年","type":"war","title":"向罗马东方边境施压","summary":"阿尔达希尔一世向美索不达米亚、叙利亚方向施压，使罗马在亚历山大·塞维鲁时期组织东方应对。","confidence":"medium","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-history-of-the-empire-after-marcus-herodian-herodian-history-of-the-empi","locator":"Herodian 6.2-6.6"}],"relatedEventIds":["sasanian-230-ardashir-roman-frontier","sasanian-232-alexander-severus-expedition"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-ardashir-i:242:death:2', 'sasanian-ardashir-i', 242, 242, '242 年', 'death', '去世，沙普尔一世继承王权', '阿尔达希尔一世去世前后，沙普尔一世继承并延续对罗马东方边境的压力。', 'medium', 0, '{"id":"sasanian-life:sasanian-ardashir-i:242:death:2","personId":"sasanian-ardashir-i","year":242,"endYear":242,"displayYear":"242 年","type":"death","title":"去世，沙普尔一世继承王权","summary":"阿尔达希尔一世去世前后，沙普尔一世继承并延续对罗马东方边境的压力。","confidence":"medium","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri","locator":"ŠKZ opening genealogy"}],"relatedEventIds":[],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-shapur-i:244:war:3', 'sasanian-shapur-i', 244, 244, '244 年', 'war', '米西切战役与戈尔迪安三世之死', 'ŠKZ 把 244 年战事描述为沙普尔一世击败罗马，并把戈尔迪安三世之死纳入萨珊胜利叙事；罗马传统则叙述更复杂。', 'high', 0, '{"id":"sasanian-life:sasanian-shapur-i:244:war:3","personId":"sasanian-shapur-i","year":244,"endYear":244,"displayYear":"244 年","type":"war","title":"米西切战役与戈尔迪安三世之死","summary":"ŠKZ 把 244 年战事描述为沙普尔一世击败罗马，并把戈尔迪安三世之死纳入萨珊胜利叙事；罗马传统则叙述更复杂。","confidence":"high","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri","locator":"ŠKZ §6-8"}],"relatedEventIds":["sasanian-244-battle-of-misiche"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-shapur-i:256:war:4', 'sasanian-shapur-i', 256, 256, '256 年', 'war', '杜拉欧罗普斯陷落', '杜拉欧罗普斯约在 256 年落入萨珊控制，是沙普尔一世时期罗马东方防线受压的重要考古节点。', 'high', 0, '{"id":"sasanian-life:sasanian-shapur-i:256:war:4","personId":"sasanian-shapur-i","year":256,"endYear":256,"displayYear":"256 年","type":"war","title":"杜拉欧罗普斯陷落","summary":"杜拉欧罗普斯约在 256 年落入萨珊控制，是沙普尔一世时期罗马东方防线受压的重要考古节点。","confidence":"high","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri","locator":"ŠKZ §14-15; Dura-Europos excavation evidence"}],"relatedEventIds":["sasanian-256-dura-europos"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-shapur-i:260:war:5', 'sasanian-shapur-i', 260, 260, '260 年', 'war', '俘虏罗马皇帝瓦勒良', '沙普尔一世在埃德萨附近俘虏罗马皇帝瓦勒良，这成为三世纪罗马危机中最具象征性的东方失败。', 'high', 0, '{"id":"sasanian-life:sasanian-shapur-i:260:war:5","personId":"sasanian-shapur-i","year":260,"endYear":260,"displayYear":"260 年","type":"war","title":"俘虏罗马皇帝瓦勒良","summary":"沙普尔一世在埃德萨附近俘虏罗马皇帝瓦勒良，这成为三世纪罗马危机中最具象征性的东方失败。","confidence":"high","approximate":false,"sourceRefs":[{"sourceId":"rome-source-res-gestae-divi-saporis-shapur-i","locator":"Res Gestae Divi Saporis"}],"relatedEventIds":["rome-sasanian-260-valerian-captured"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-shapur-i:262:war:6', 'sasanian-shapur-i', 262, 262, '262 年', 'war', '遭奥登纳图斯反击', '瓦勒良被俘后，帕尔米拉强人奥登纳图斯代表罗马东方秩序反击萨珊军，限制沙普尔一世进一步扩张。', 'medium', 0, '{"id":"sasanian-life:sasanian-shapur-i:262:war:6","personId":"sasanian-shapur-i","year":262,"endYear":262,"displayYear":"262 年","type":"war","title":"遭奥登纳图斯反击","summary":"瓦勒良被俘后，帕尔米拉强人奥登纳图斯代表罗马东方秩序反击萨珊军，限制沙普尔一世进一步扩张。","confidence":"medium","approximate":false,"sourceRefs":[{"sourceId":"rome-source-res-gestae-divi-saporis-shapur-i","locator":"Roman eastern frontier traditions"}],"relatedEventIds":["sasanian-262-odaenathus-counteroffensive"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-shapur-i:270:death:7', 'sasanian-shapur-i', 270, 270, '270 年', 'death', '沙普尔一世去世', '沙普尔一世去世后，萨珊王权进入连续继承与宫廷宗教权力上升的阶段。', 'medium', 0, '{"id":"sasanian-life:sasanian-shapur-i:270:death:7","personId":"sasanian-shapur-i","year":270,"endYear":270,"displayYear":"270 年","type":"death","title":"沙普尔一世去世","summary":"沙普尔一世去世后，萨珊王权进入连续继承与宫廷宗教权力上升的阶段。","confidence":"medium","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri","locator":"ŠKZ and later succession evidence"}],"relatedEventIds":[],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-narseh:293:accession:8', 'sasanian-narseh', 293, 293, '293 年', 'accession', '通过 Paikuli 联盟取得王位', '纳尔塞在 Paikuli 铭文中把自身即位叙述为贵族与地方精英支持下纠正继承秩序的行动。', 'high', 0, '{"id":"sasanian-life:sasanian-narseh:293:accession:8","personId":"sasanian-narseh","year":293,"endYear":293,"displayYear":"293 年","type":"accession","title":"通过 Paikuli 联盟取得王位","summary":"纳尔塞在 Paikuli 铭文中把自身即位叙述为贵族与地方精英支持下纠正继承秩序的行动。","confidence":"high","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-paikuli-inscription-npi-narseh-paikuli-tower-inscription-narseh-middle-p","locator":"NPi §1-10"}],"relatedEventIds":["sasanian-293-narseh-paikuli"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-narseh:297:war:9', 'sasanian-narseh', 297, 297, '297 年', 'war', '败于伽列里乌斯', '纳尔塞在与罗马的战争中被伽列里乌斯击败，罗马叙事强调其家眷与营帐被俘的政治震动。', 'high', 0, '{"id":"sasanian-life:sasanian-narseh:297:war:9","personId":"sasanian-narseh","year":297,"endYear":297,"displayYear":"297 年","type":"war","title":"败于伽列里乌斯","summary":"纳尔塞在与罗马的战争中被伽列里乌斯击败，罗马叙事强调其家眷与营帐被俘的政治震动。","confidence":"high","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-zosimus-historia-nova-zonaras-epitome-zosimus-c-500-ce-zonaras-12th-c-zo","locator":"Zosimus 1.27; Zonaras 12.23-24"}],"relatedEventIds":["sasanian-298-treaty-of-nisibis"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-narseh:298:diplomacy:10', 'sasanian-narseh', 298, 298, '298 年', 'diplomacy', '签订尼西比斯和约', '尼西比斯和约确认罗马在亚美尼亚、美索不达米亚边境上的优势，是戴克里先体系东方安全安排的重要成果。', 'high', 0, '{"id":"sasanian-life:sasanian-narseh:298:diplomacy:10","personId":"sasanian-narseh","year":298,"endYear":298,"displayYear":"298 年","type":"diplomacy","title":"签订尼西比斯和约","summary":"尼西比斯和约确认罗马在亚美尼亚、美索不达米亚边境上的优势，是戴克里先体系东方安全安排的重要成果。","confidence":"high","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-dodgeon-lieu-the-roman-eastern-frontier-quoting-zonaras-zonaras-12th-cen","locator":"Zonaras 12.23"}],"relatedEventIds":["sasanian-298-treaty-of-nisibis"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-narseh:303:death:11', 'sasanian-narseh', 303, 303, '303 年', 'death', '纳尔塞去世', '纳尔塞去世后，萨珊王位由霍尔米兹德二世继承，尼西比斯和约后的边境秩序继续影响罗马-萨珊关系。', 'medium', 0, '{"id":"sasanian-life:sasanian-narseh:303:death:11","personId":"sasanian-narseh","year":303,"endYear":303,"displayYear":"303 年","type":"death","title":"纳尔塞去世","summary":"纳尔塞去世后，萨珊王位由霍尔米兹德二世继承，尼西比斯和约后的边境秩序继续影响罗马-萨珊关系。","confidence":"medium","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-paikuli-inscription-npi-narseh-paikuli-tower-inscription-narseh-middle-p","locator":"Paikuli and later succession tradition"}],"relatedEventIds":[],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-kartir:260:religion:12', 'sasanian-kartir', 260, 260, '260 年', 'religion', '在沙普尔一世宫廷中上升', '卡尔提尔的铭文把其职业生涯追溯到沙普尔一世时期，显示萨珊宫廷宗教权力正在制度化。', 'high', 0, '{"id":"sasanian-life:sasanian-kartir:260:religion:12","personId":"sasanian-kartir","year":260,"endYear":260,"displayYear":"260 年","type":"religion","title":"在沙普尔一世宫廷中上升","summary":"卡尔提尔的铭文把其职业生涯追溯到沙普尔一世时期，显示萨珊宫廷宗教权力正在制度化。","confidence":"high","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-kartirs-inscriptions-collective-evidence-kartir-kirder-kkz-knrb-ksm-knrm","locator":"collective evidence from Kartir inscriptions"}],"relatedEventIds":[],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-kartir:280:religion:13', 'sasanian-kartir', 280, 280, '280 年', 'religion', '铭文显示祭司权力扩大', '卡尔提尔铭文记录其祭司权力、宗教裁判和跨地区宗教机构影响，是萨珊国家宗教制度化的核心证据。', 'high', 0, '{"id":"sasanian-life:sasanian-kartir:280:religion:13","personId":"sasanian-kartir","year":280,"endYear":280,"displayYear":"280 年","type":"religion","title":"铭文显示祭司权力扩大","summary":"卡尔提尔铭文记录其祭司权力、宗教裁判和跨地区宗教机构影响，是萨珊国家宗教制度化的核心证据。","confidence":"high","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-kartirs-inscription-at-kaba-ye-zardosht-kkz-s-kz-kartir-kirder-kkz-karti","locator":"KKZ §8-12"}],"relatedEventIds":["sasanian-280-kartir-priestly-power"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-mani:216:birth:14', 'sasanian-mani', 216, 216, '216 年', 'birth', '摩尼出生', '摩尼约生于 216 年，后形成跨语际、跨区域传播的摩尼教传统。', 'medium', 0, '{"id":"sasanian-life:sasanian-mani:216:birth:14","personId":"sasanian-mani","year":216,"endYear":216,"displayYear":"216 年","type":"birth","title":"摩尼出生","summary":"摩尼约生于 216 年，后形成跨语际、跨区域传播的摩尼教传统。","confidence":"medium","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-mani-and-manichaeism-manichaean-texts-kephalaia-cologne-mani-codex-mani-","locator":"Cologne Mani Codex"}],"relatedEventIds":[],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-mani:242:religion:15', 'sasanian-mani', 242, 242, '242 年', 'religion', '在萨珊宫廷环境中传教', '摩尼传统叙述其早期曾在沙普尔一世时期进入宫廷环境传教，但其地位与王权支持程度仍需谨慎表述。', 'medium', 0, '{"id":"sasanian-life:sasanian-mani:242:religion:15","personId":"sasanian-mani","year":242,"endYear":242,"displayYear":"242 年","type":"religion","title":"在萨珊宫廷环境中传教","summary":"摩尼传统叙述其早期曾在沙普尔一世时期进入宫廷环境传教，但其地位与王权支持程度仍需谨慎表述。","confidence":"medium","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-mani-and-manichaeism-manichaean-texts-kephalaia-cologne-mani-codex-mani-","locator":"Kephalaia; Cologne Mani Codex"}],"relatedEventIds":[],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_events" ("id", "person_id", "year", "end_year", "display_year", "type", "title", "summary", "confidence", "approximate", "raw_json") VALUES ('sasanian-life:sasanian-mani:277:death:16', 'sasanian-mani', 277, 277, '277 年', 'death', '在巴赫拉姆一世时期死亡', '摩尼在巴赫拉姆一世时期受压制并死亡；后续摩尼教传统把这一节点视为创教者殉难记忆。', 'medium', 0, '{"id":"sasanian-life:sasanian-mani:277:death:16","personId":"sasanian-mani","year":277,"endYear":277,"displayYear":"277 年","type":"death","title":"在巴赫拉姆一世时期死亡","summary":"摩尼在巴赫拉姆一世时期受压制并死亡；后续摩尼教传统把这一节点视为创教者殉难记忆。","confidence":"medium","approximate":false,"sourceRefs":[{"sourceId":"deepseek-sasanian-source-mani-and-manichaeism-manichaean-texts-kephalaia-cologne-mani-codex-mani-","locator":"Manichaean hagiographical tradition"}],"relatedEventIds":[],"importedFromBatch":"manual-sasanian-persons-190-310"}');
 
 -- person_life_event_i18n
 INSERT INTO "person_life_event_i18n" ("life_event_id", "locale", "display_year", "title", "summary", "raw_json") VALUES ('zhang-jiao-unknown-birth', 'zh', '生年不详', '生年不详', '张角的早年经历与出生年份缺乏可靠纪年，本项目暂以黄巾起义前的太平道活动作为可追踪起点。', '{}');
@@ -5359,6 +17307,17 @@ INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", 
 INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('cao-cao-189-dong-zhuo-east', 'china-189-dong-zhuo-enters-luoyang', 0);
 INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('cao-pi-222-south-campaign', 'china-222-yiling', 0);
 INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('cao-rui-234-wuzhang', 'china-234-wuzhang-plains', 0);
+INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('sasanian-life:sasanian-ardashir-i:224:accession:0', 'sasanian-224-ardashir-defeats-parthians', 0);
+INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('sasanian-life:sasanian-ardashir-i:230:war:1', 'sasanian-230-ardashir-roman-frontier', 0);
+INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('sasanian-life:sasanian-ardashir-i:230:war:1', 'sasanian-232-alexander-severus-expedition', 1);
+INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('sasanian-life:sasanian-shapur-i:244:war:3', 'sasanian-244-battle-of-misiche', 0);
+INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('sasanian-life:sasanian-shapur-i:256:war:4', 'sasanian-256-dura-europos', 0);
+INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('sasanian-life:sasanian-shapur-i:260:war:5', 'rome-sasanian-260-valerian-captured', 0);
+INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('sasanian-life:sasanian-shapur-i:262:war:6', 'sasanian-262-odaenathus-counteroffensive', 0);
+INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('sasanian-life:sasanian-narseh:293:accession:8', 'sasanian-293-narseh-paikuli', 0);
+INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('sasanian-life:sasanian-narseh:297:war:9', 'sasanian-298-treaty-of-nisibis', 0);
+INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('sasanian-life:sasanian-narseh:298:diplomacy:10', 'sasanian-298-treaty-of-nisibis', 0);
+INSERT INTO "person_life_event_historical_events" ("life_event_id", "event_id", "sort_order") VALUES ('sasanian-life:sasanian-kartir:280:religion:13', 'sasanian-280-kartir-priestly-power', 0);
 
 -- person_life_event_source_mentions
 INSERT INTO "person_life_event_source_mentions" ("life_event_id", "mention_id", "sort_order") VALUES ('cao-cao-155-born', 'mention-sgz-wei-wudi-cao-cao-origin', 0);
@@ -6229,6 +18188,16 @@ INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "loca
 INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-postumus-death', 'rome-source-de-caesaribus-aurelius-victor', '33', NULL, '{"batchId":"manual-rome-persons-190-310"}');
 INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-carausius-death', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.21', NULL, '{"batchId":"manual-rome-persons-190-310"}');
 INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-allectus-death', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.22', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-julia-domna-birth', 'rome-source-roman-history-cassius-dio', '78.2-78.24', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-julia-domna-death', 'rome-source-roman-history-cassius-dio', '78.2-78.24', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-julia-maesa-birth', 'rome-source-history-of-the-empire-after-marcus-herodian', '5.3-5.8', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-julia-maesa-death', 'rome-source-history-of-the-empire-after-marcus-herodian', '5.3-5.8', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-julia-soaemias-birth', 'rome-source-history-of-the-empire-after-marcus-herodian', '5.3-5.8', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-julia-soaemias-death', 'rome-source-history-of-the-empire-after-marcus-herodian', '5.3-5.8', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-julia-mamaea-birth', 'rome-source-history-of-the-empire-after-marcus-herodian', '6.1-6.9', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-julia-mamaea-death', 'rome-source-history-of-the-empire-after-marcus-herodian', '6.1-6.9', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-macrianus-death', 'rome-source-historia-nova-zosimus', '1.39-1.40', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-quietus-death', 'rome-source-historia-nova-zosimus', '1.39-1.40', NULL, '{"batchId":"manual-rome-persons-190-310"}');
 INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-septimius-severus:193:accession', 'rome-source-history-of-the-empire-after-marcus-herodian', '2.9-2.12', NULL, '{"batchId":"manual-rome-persons-190-310"}');
 INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-septimius-severus:197:war', 'rome-source-roman-history-cassius-dio', '76.6-76.7', NULL, '{"batchId":"manual-rome-persons-190-310"}');
 INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-septimius-severus:208:war', 'rome-source-history-of-the-empire-after-marcus-herodian', '3.14-3.15', NULL, '{"batchId":"manual-rome-persons-190-310"}');
@@ -6290,6 +18259,86 @@ INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "loca
 INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-carausius:286:accession', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.21', NULL, '{"batchId":"manual-rome-persons-190-310"}');
 INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-allectus:293:accession', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.22', NULL, '{"batchId":"manual-rome-persons-190-310"}');
 INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-allectus:296:death', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.22', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-septimius-severus:194:war', 'rome-source-history-of-the-empire-after-marcus-herodian', '3.1-3.4', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-septimius-severus:202:reign', 'rome-source-roman-history-cassius-dio', '76.15-76.17', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-caracalla:213:war', 'rome-source-roman-history-cassius-dio', '78.13-78.14', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-caracalla:217:death', 'rome-source-history-of-the-empire-after-marcus-herodian', '4.12-4.13', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-elagabalus:221:reign', 'rome-source-history-of-the-empire-after-marcus-herodian', '5.5-5.7', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-gordian-i:238:death', 'rome-source-history-of-the-empire-after-marcus-herodian', '7.9', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-pupienus:238:death', 'rome-source-history-of-the-empire-after-marcus-herodian', '8.8', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-balbinus:238:death', 'rome-source-history-of-the-empire-after-marcus-herodian', '8.8', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-gordian-iii:242:war', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.2', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-philip-the-arab:249:death', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.4', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-gallienus:262:reform', 'rome-source-de-caesaribus-aurelius-victor', '33', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-claudius-ii:270:death', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.11', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-aurelian:271:war', 'rome-source-historia-augusta-scriptores-historiae-augustae', 'Aurelian 18-22', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-aurelian:274:reform', 'rome-source-historia-augusta-scriptores-historiae-augustae', 'Aurelian 35', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-aurelian:275:death', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.15', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-tacitus:275:accession', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.16', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-tacitus:276:death', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.16-9.17', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-probus:277:war', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.17', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-probus:282:death', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.17-9.18', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-carus:283:death', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.18', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-numerian:283:accession', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.18-9.20', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-numerian:284:death', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.20', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-carinus:283:accession', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.19-9.20', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-carinus:285:death', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.20', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-diocletian:285:war', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.20', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-diocletian:286:reform', 'rome-source-de-mortibus-persecutorum-lactantius', '7-8', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-diocletian:301:reform', 'rome-source-de-mortibus-persecutorum-lactantius', '7', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-maximian:293:reform', 'rome-source-de-mortibus-persecutorum-lactantius', '7-8', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-maximian:310:death', 'rome-source-de-mortibus-persecutorum-lactantius', '29-30', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-galerius:311:death', 'rome-source-de-mortibus-persecutorum-lactantius', '33-35', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-severus-ii:305:accession', 'rome-source-de-mortibus-persecutorum-lactantius', '18-19', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-severus-ii:306:war', 'rome-source-de-mortibus-persecutorum-lactantius', '24-26', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-severus-ii:307:death', 'rome-source-de-mortibus-persecutorum-lactantius', '26', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-maximinus-daia:305:accession', 'rome-source-de-mortibus-persecutorum-lactantius', '18-19', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-maximinus-daia:310:reign', 'rome-source-de-mortibus-persecutorum-lactantius', '32', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-constantine:307:reign', 'rome-source-de-mortibus-persecutorum-lactantius', '24-26', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-constantine:310:reign', 'rome-source-de-mortibus-persecutorum-lactantius', '29-30', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-maxentius:307:war', 'rome-source-de-mortibus-persecutorum-lactantius', '24-26', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-maxentius:308:reign', 'rome-source-de-mortibus-persecutorum-lactantius', '29-30', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-julia-domna:193:reign', 'rome-source-roman-history-cassius-dio', '76.15-76.17', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-julia-domna:211:crisis', 'rome-source-roman-history-cassius-dio', '78.2-78.4', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-julia-domna:217:death', 'rome-source-roman-history-cassius-dio', '78.23-78.24', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-julia-maesa:218:accession', 'rome-source-history-of-the-empire-after-marcus-herodian', '5.3-5.4', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-julia-maesa:221:reign', 'rome-source-history-of-the-empire-after-marcus-herodian', '5.7-5.8', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-julia-soaemias:218:accession', 'rome-source-history-of-the-empire-after-marcus-herodian', '5.3-5.5', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-julia-soaemias:222:death', 'rome-source-history-of-the-empire-after-marcus-herodian', '5.8', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-julia-mamaea:222:accession', 'rome-source-history-of-the-empire-after-marcus-herodian', '5.8', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-julia-mamaea:231:war', 'rome-source-history-of-the-empire-after-marcus-herodian', '6.2-6.6', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-julia-mamaea:235:death', 'rome-source-history-of-the-empire-after-marcus-herodian', '6.8-6.9', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-macrianus:260:accession', 'rome-source-historia-nova-zosimus', '1.39-1.40', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-macrianus:261:death', 'rome-source-historia-nova-zosimus', '1.40', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-quietus:260:accession', 'rome-source-historia-nova-zosimus', '1.39-1.40', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-quietus:261:death', 'rome-source-historia-nova-zosimus', '1.40', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-tetricus:271:accession', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.13', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-tetricus:274:deposition', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.13', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:palmyra-odaenathus:260:reign', 'rome-source-historia-nova-zosimus', '1.39-1.40', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:palmyra-odaenathus:267:death', 'rome-source-historia-nova-zosimus', '1.39-1.40', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:palmyra-zenobia:267:accession', 'rome-source-historia-augusta-scriptores-historiae-augustae', 'Aurelian 24-26', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:palmyra-zenobia:270:war', 'rome-source-historia-nova-zosimus', '1.50-1.51', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-postumus:261:reign', 'rome-source-de-caesaribus-aurelius-victor', '33', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-postumus:269:death', 'rome-source-de-caesaribus-aurelius-victor', '33', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-carausius:287:reign', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.21', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('rome-life:rome-carausius:293:death', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.22', NULL, '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-ardashir-i:224:accession:0', 'deepseek-sasanian-source-sasanian-coinage-ardashir-i-ardashir-i-royal-mint-early-sasanian-coinage', 'early Sasanian coinage; Hormozdgan tradition', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-ardashir-i:230:war:1', 'deepseek-sasanian-source-history-of-the-empire-after-marcus-herodian-herodian-history-of-the-empi', 'Herodian 6.2-6.6', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-ardashir-i:242:death:2', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri', 'ŠKZ opening genealogy', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-shapur-i:244:war:3', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri', 'ŠKZ §6-8', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-shapur-i:256:war:4', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri', 'ŠKZ §14-15; Dura-Europos excavation evidence', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-shapur-i:260:war:5', 'rome-source-res-gestae-divi-saporis-shapur-i', 'Res Gestae Divi Saporis', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-shapur-i:262:war:6', 'rome-source-res-gestae-divi-saporis-shapur-i', 'Roman eastern frontier traditions', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-shapur-i:270:death:7', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri', 'ŠKZ and later succession evidence', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-narseh:293:accession:8', 'deepseek-sasanian-source-paikuli-inscription-npi-narseh-paikuli-tower-inscription-narseh-middle-p', 'NPi §1-10', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-narseh:297:war:9', 'deepseek-sasanian-source-zosimus-historia-nova-zonaras-epitome-zosimus-c-500-ce-zonaras-12th-c-zo', 'Zosimus 1.27; Zonaras 12.23-24', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-narseh:298:diplomacy:10', 'deepseek-sasanian-source-dodgeon-lieu-the-roman-eastern-frontier-quoting-zonaras-zonaras-12th-cen', 'Zonaras 12.23', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-narseh:303:death:11', 'deepseek-sasanian-source-paikuli-inscription-npi-narseh-paikuli-tower-inscription-narseh-middle-p', 'Paikuli and later succession tradition', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-kartir:260:religion:12', 'deepseek-sasanian-source-kartirs-inscriptions-collective-evidence-kartir-kirder-kkz-knrb-ksm-knrm', 'collective evidence from Kartir inscriptions', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-kartir:280:religion:13', 'deepseek-sasanian-source-kartirs-inscription-at-kaba-ye-zardosht-kkz-s-kz-kartir-kirder-kkz-karti', 'KKZ §8-12', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-mani:216:birth:14', 'deepseek-sasanian-source-mani-and-manichaeism-manichaean-texts-kephalaia-cologne-mani-codex-mani-', 'Cologne Mani Codex', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-mani:242:religion:15', 'deepseek-sasanian-source-mani-and-manichaeism-manichaean-texts-kephalaia-cologne-mani-codex-mani-', 'Kephalaia; Cologne Mani Codex', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_life_event_source_refs" ("life_event_id", "source_id", "locator", "quote", "raw_json") VALUES ('sasanian-life:sasanian-mani:277:death:16', 'deepseek-sasanian-source-mani-and-manichaeism-manichaean-texts-kephalaia-cologne-mani-codex-mani-', 'Manichaean hagiographical tradition', NULL, '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
 
 -- person_relations
 INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('cao-cao-han-xiandi-court-control', 'cao-cao', 'han-xiandi', 'court-control', 196, 220, '曹操迎献帝至许，以汉廷名义整合政治合法性，同时实际掌握朝政。', 'medium', '{"id":"cao-cao-han-xiandi-court-control","sourcePersonId":"cao-cao","targetPersonId":"han-xiandi","type":"court-control","startYear":196,"endYear":220,"summary":"曹操迎献帝至许，以汉廷名义整合政治合法性，同时实际掌握朝政。","sourceRefs":[{"sourceId":"sanguozhi-wei-wudi","locator":"建安元年前后"},{"sourceId":"houhanshu-xiandi","locator":"建安元年"}]}');
@@ -6419,6 +18468,64 @@ INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "t
 INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('cao-mao-sima-zhao-conflict', 'cao-mao', 'sima-zhao', 'political-conflict', 260, 260, '曹髦因不满司马昭权势日盛而亲自出讨，最终被弑。', 'medium', '{"id":"cao-mao-sima-zhao-conflict","sourcePersonId":"cao-mao","targetPersonId":"sima-zhao","type":"political-conflict","startYear":260,"endYear":260,"summary":"曹髦因不满司马昭权势日盛而亲自出讨，最终被弑。","sourceRefs":[{"sourceId":"sanguozhi-wei-gaogui-xianggong","locator":"甘露五年五月","quote":"司马昭之心，路人所知也。吾不能坐受废辱，今日当与卿等自出讨之。"}]}');
 INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('cao-huan-sima-yan-abdication', 'cao-huan', 'sima-yan', 'abdication', 265, 265, '曹奂咸熙二年禅位于晋王司马炎，曹魏结束。', 'medium', '{"id":"cao-huan-sima-yan-abdication","sourcePersonId":"cao-huan","targetPersonId":"sima-yan","type":"abdication","startYear":265,"endYear":265,"summary":"曹奂咸熙二年禅位于晋王司马炎，曹魏结束。","sourceRefs":[{"sourceId":"sanguozhi-wei-chenliu-wang","locator":"咸熙二年十二月","quote":"使使者奉皇帝玺绶册，禅位于晋嗣王，如汉魏故事。"}]}');
 INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('cao-biao-wang-ling-plot', 'cao-biao', 'wang-ling', 'political-plot', 249, 251, '王凌与令狐愚曾谋迎楚王曹彪都许昌，案发后曹彪被迫自尽。', 'medium', '{"id":"cao-biao-wang-ling-plot","sourcePersonId":"cao-biao","targetPersonId":"wang-ling","type":"political-plot","startYear":249,"endYear":251,"summary":"王凌与令狐愚曾谋迎楚王曹彪都许昌，案发后曹彪被迫自尽。","sourceRefs":[{"sourceId":"sanguozhi-wei-cao-biao","locator":"嘉平元年","quote":"嘉平元年，兖州刺史令狐愚与太尉王凌谋迎彪都许昌。"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-septimius-severus:rome-julia-domna:spouse', 'rome-septimius-severus', 'rome-julia-domna', 'spouse', 187, 211, '塞普蒂米乌斯·塞维鲁与尤利娅·多姆娜的婚姻把叙利亚埃梅萨精英网络带入塞维鲁王朝核心。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-septimius-severus:rome-julia-domna:spouse","sourcePersonId":"rome-septimius-severus","targetPersonId":"rome-julia-domna","type":"spouse","startYear":187,"endYear":211,"summary":"塞普蒂米乌斯·塞维鲁与尤利娅·多姆娜的婚姻把叙利亚埃梅萨精英网络带入塞维鲁王朝核心。","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"76.15-76.17"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-septimius-severus:rome-caracalla:family-successor', 'rome-septimius-severus', 'rome-caracalla', 'family-successor', 188, 211, '卡拉卡拉为塞维鲁之子，塞维鲁晚年安排其进入继承结构并与盖塔共同继承。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-septimius-severus:rome-caracalla:family-successor","sourcePersonId":"rome-septimius-severus","targetPersonId":"rome-caracalla","type":"family-successor","startYear":188,"endYear":211,"summary":"卡拉卡拉为塞维鲁之子，塞维鲁晚年安排其进入继承结构并与盖塔共同继承。","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.1-78.4"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-septimius-severus:rome-geta:family-successor', 'rome-septimius-severus', 'rome-geta', 'family-successor', 189, 211, '盖塔为塞维鲁之子，与卡拉卡拉同为王朝继承安排的一部分。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-septimius-severus:rome-geta:family-successor","sourcePersonId":"rome-septimius-severus","targetPersonId":"rome-geta","type":"family-successor","startYear":189,"endYear":211,"summary":"盖塔为塞维鲁之子，与卡拉卡拉同为王朝继承安排的一部分。","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.1-78.4"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-julia-domna:rome-caracalla:mother', 'rome-julia-domna', 'rome-caracalla', 'mother', 188, 217, '尤利娅·多姆娜是卡拉卡拉之母，塞维鲁死后仍处在王朝权力核心。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-julia-domna:rome-caracalla:mother","sourcePersonId":"rome-julia-domna","targetPersonId":"rome-caracalla","type":"mother","startYear":188,"endYear":217,"summary":"尤利娅·多姆娜是卡拉卡拉之母，塞维鲁死后仍处在王朝权力核心。","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.2-78.24"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-julia-domna:rome-geta:mother', 'rome-julia-domna', 'rome-geta', 'mother', 189, 211, '尤利娅·多姆娜是盖塔之母，曾被卷入卡拉卡拉与盖塔的共治冲突。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-julia-domna:rome-geta:mother","sourcePersonId":"rome-julia-domna","targetPersonId":"rome-geta","type":"mother","startYear":189,"endYear":211,"summary":"尤利娅·多姆娜是盖塔之母，曾被卷入卡拉卡拉与盖塔的共治冲突。","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.2-78.4"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-caracalla:rome-geta:succession-rival', 'rome-caracalla', 'rome-geta', 'succession-rival', 211, 211, '卡拉卡拉与盖塔短暂共治后迅速转为继承竞争，盖塔被杀。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-caracalla:rome-geta:succession-rival","sourcePersonId":"rome-caracalla","targetPersonId":"rome-geta","type":"succession-rival","startYear":211,"endYear":211,"summary":"卡拉卡拉与盖塔短暂共治后迅速转为继承竞争，盖塔被杀。","sourceRefs":[{"sourceId":"rome-source-roman-history-cassius-dio","locator":"78.2-78.4"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-caracalla:rome-macrinus:assassination-succession', 'rome-caracalla', 'rome-macrinus', 'assassination-succession', 217, 217, '卡拉卡拉遇刺后，禁卫军长官马克里努斯取得皇位。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-caracalla:rome-macrinus:assassination-succession","sourcePersonId":"rome-caracalla","targetPersonId":"rome-macrinus","type":"assassination-succession","startYear":217,"endYear":217,"summary":"卡拉卡拉遇刺后，禁卫军长官马克里努斯取得皇位。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"4.12-5.1"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-julia-maesa:rome-elagabalus:dynastic-sponsor', 'rome-julia-maesa', 'rome-elagabalus', 'dynastic-sponsor', 218, 222, '尤利娅·玛伊萨利用塞维鲁家族声望和东方军队网络推动埃拉伽巴路斯上台。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-julia-maesa:rome-elagabalus:dynastic-sponsor","sourcePersonId":"rome-julia-maesa","targetPersonId":"rome-elagabalus","type":"dynastic-sponsor","startYear":218,"endYear":222,"summary":"尤利娅·玛伊萨利用塞维鲁家族声望和东方军队网络推动埃拉伽巴路斯上台。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.3-5.4"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-julia-soaemias:rome-elagabalus:mother', 'rome-julia-soaemias', 'rome-elagabalus', 'mother', 204, 222, '尤利娅·索艾米亚斯是埃拉伽巴路斯之母，并随其进入罗马政治核心。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-julia-soaemias:rome-elagabalus:mother","sourcePersonId":"rome-julia-soaemias","targetPersonId":"rome-elagabalus","type":"mother","startYear":204,"endYear":222,"summary":"尤利娅·索艾米亚斯是埃拉伽巴路斯之母，并随其进入罗马政治核心。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.3-5.8"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-julia-maesa:rome-alexander-severus:dynastic-sponsor', 'rome-julia-maesa', 'rome-alexander-severus', 'dynastic-sponsor', 221, 224, '埃拉伽巴路斯失去支持后，尤利娅·玛伊萨转向扶持亚历山大·塞维鲁。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-julia-maesa:rome-alexander-severus:dynastic-sponsor","sourcePersonId":"rome-julia-maesa","targetPersonId":"rome-alexander-severus","type":"dynastic-sponsor","startYear":221,"endYear":224,"summary":"埃拉伽巴路斯失去支持后，尤利娅·玛伊萨转向扶持亚历山大·塞维鲁。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"5.7-5.8"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-julia-mamaea:rome-alexander-severus:mother-regent', 'rome-julia-mamaea', 'rome-alexander-severus', 'mother-regent', 208, 235, '尤利娅·玛迈亚是亚历山大·塞维鲁之母，在其统治中长期影响宫廷与政策。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-julia-mamaea:rome-alexander-severus:mother-regent","sourcePersonId":"rome-julia-mamaea","targetPersonId":"rome-alexander-severus","type":"mother-regent","startYear":208,"endYear":235,"summary":"尤利娅·玛迈亚是亚历山大·塞维鲁之母，在其统治中长期影响宫廷与政策。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"6.1-6.9"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-alexander-severus:rome-maximinus-thrax:military-overthrow', 'rome-alexander-severus', 'rome-maximinus-thrax', 'military-overthrow', 235, 235, '亚历山大·塞维鲁被军队杀害后，马克西米努斯·色雷克斯被拥立，三世纪危机进入新阶段。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-alexander-severus:rome-maximinus-thrax:military-overthrow","sourcePersonId":"rome-alexander-severus","targetPersonId":"rome-maximinus-thrax","type":"military-overthrow","startYear":235,"endYear":235,"summary":"亚历山大·塞维鲁被军队杀害后，马克西米努斯·色雷克斯被拥立，三世纪危机进入新阶段。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"6.8-6.9"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-maximinus-thrax:rome-gordian-i:civil-war-opponent', 'rome-maximinus-thrax', 'rome-gordian-i', 'civil-war-opponent', 238, 238, '非洲起义拥立戈尔迪安一世反对马克西米努斯，六帝之年由此展开。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-maximinus-thrax:rome-gordian-i:civil-war-opponent","sourcePersonId":"rome-maximinus-thrax","targetPersonId":"rome-gordian-i","type":"civil-war-opponent","startYear":238,"endYear":238,"summary":"非洲起义拥立戈尔迪安一世反对马克西米努斯，六帝之年由此展开。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"7.5-7.9"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-gordian-i:rome-gordian-ii:father-son-co-ruler', 'rome-gordian-i', 'rome-gordian-ii', 'father-son-co-ruler', 238, 238, '戈尔迪安二世为戈尔迪安一世之子，非洲起义中父子共同称帝。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-gordian-i:rome-gordian-ii:father-son-co-ruler","sourcePersonId":"rome-gordian-i","targetPersonId":"rome-gordian-ii","type":"father-son-co-ruler","startYear":238,"endYear":238,"summary":"戈尔迪安二世为戈尔迪安一世之子，非洲起义中父子共同称帝。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"7.5-7.9"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-pupienus:rome-balbinus:senatorial-co-ruler', 'rome-pupienus', 'rome-balbinus', 'senatorial-co-ruler', 238, 238, '元老院拥立普皮恩努斯与巴尔比努斯共治，以对抗马克西米努斯。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-pupienus:rome-balbinus:senatorial-co-ruler","sourcePersonId":"rome-pupienus","targetPersonId":"rome-balbinus","type":"senatorial-co-ruler","startYear":238,"endYear":238,"summary":"元老院拥立普皮恩努斯与巴尔比努斯共治，以对抗马克西米努斯。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"7.10-8.8"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-pupienus:rome-gordian-iii:co-ruler-successor', 'rome-pupienus', 'rome-gordian-iii', 'co-ruler-successor', 238, 238, '戈尔迪安三世在六帝之年成为年轻的继承中心，普皮恩努斯和巴尔比努斯死后独掌帝位。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-pupienus:rome-gordian-iii:co-ruler-successor","sourcePersonId":"rome-pupienus","targetPersonId":"rome-gordian-iii","type":"co-ruler-successor","startYear":238,"endYear":238,"summary":"戈尔迪安三世在六帝之年成为年轻的继承中心，普皮恩努斯和巴尔比努斯死后独掌帝位。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"8.8"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-balbinus:rome-gordian-iii:co-ruler-successor', 'rome-balbinus', 'rome-gordian-iii', 'co-ruler-successor', 238, 238, '巴尔比努斯与普皮恩努斯共治失败后，戈尔迪安三世成为唯一皇帝。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-balbinus:rome-gordian-iii:co-ruler-successor","sourcePersonId":"rome-balbinus","targetPersonId":"rome-gordian-iii","type":"co-ruler-successor","startYear":238,"endYear":238,"summary":"巴尔比努斯与普皮恩努斯共治失败后，戈尔迪安三世成为唯一皇帝。","sourceRefs":[{"sourceId":"rome-source-history-of-the-empire-after-marcus-herodian","locator":"8.8"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-gordian-iii:rome-philip-the-arab:succession', 'rome-gordian-iii', 'rome-philip-the-arab', 'succession', 244, 244, '戈尔迪安三世在东方战争背景下死亡后，腓力继位并与波斯议和。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-gordian-iii:rome-philip-the-arab:succession","sourcePersonId":"rome-gordian-iii","targetPersonId":"rome-philip-the-arab","type":"succession","startYear":244,"endYear":244,"summary":"戈尔迪安三世在东方战争背景下死亡后，腓力继位并与波斯议和。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.2-9.3"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-philip-the-arab:rome-decius:civil-war-opponent', 'rome-philip-the-arab', 'rome-decius', 'civil-war-opponent', 249, 249, '德西乌斯在军队政治中取代腓力，成为三世纪危机中又一次军队拥立的皇帝。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-philip-the-arab:rome-decius:civil-war-opponent","sourcePersonId":"rome-philip-the-arab","targetPersonId":"rome-decius","type":"civil-war-opponent","startYear":249,"endYear":249,"summary":"德西乌斯在军队政治中取代腓力，成为三世纪危机中又一次军队拥立的皇帝。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.4"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-valerian:rome-gallienus:father-son-co-ruler', 'rome-valerian', 'rome-gallienus', 'father-son-co-ruler', 253, 260, '瓦勒良与其子加里恩努斯共治，分别面对东方和西方压力。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-valerian:rome-gallienus:father-son-co-ruler","sourcePersonId":"rome-valerian","targetPersonId":"rome-gallienus","type":"father-son-co-ruler","startYear":253,"endYear":260,"summary":"瓦勒良与其子加里恩努斯共治，分别面对东方和西方压力。","sourceRefs":[{"sourceId":"rome-source-de-caesaribus-aurelius-victor","locator":"33"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-valerian:palmyra-odaenathus:eastern-ally-after-capture', 'rome-valerian', 'palmyra-odaenathus', 'eastern-ally-after-capture', 260, 267, '瓦勒良被俘后，奥登纳图斯作为东方强人帮助罗马反击波斯并维持局势。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-valerian:palmyra-odaenathus:eastern-ally-after-capture","sourcePersonId":"rome-valerian","targetPersonId":"palmyra-odaenathus","type":"eastern-ally-after-capture","startYear":260,"endYear":267,"summary":"瓦勒良被俘后，奥登纳图斯作为东方强人帮助罗马反击波斯并维持局势。","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.39-1.40"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-gallienus:rome-postumus:breakaway-rival', 'rome-gallienus', 'rome-postumus', 'breakaway-rival', 260, 268, '加里恩努斯独自面对帝国分裂时，波斯图穆斯在高卢建立西部割据政权。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-gallienus:rome-postumus:breakaway-rival","sourcePersonId":"rome-gallienus","targetPersonId":"rome-postumus","type":"breakaway-rival","startYear":260,"endYear":268,"summary":"加里恩努斯独自面对帝国分裂时，波斯图穆斯在高卢建立西部割据政权。","sourceRefs":[{"sourceId":"rome-source-de-caesaribus-aurelius-victor","locator":"33"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-gallienus:rome-macrianus:breakaway-rival', 'rome-gallienus', 'rome-macrianus', 'breakaway-rival', 260, 261, '瓦勒良被俘后，马克里亚努斯集团在东方挑战加里恩努斯。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-gallienus:rome-macrianus:breakaway-rival","sourcePersonId":"rome-gallienus","targetPersonId":"rome-macrianus","type":"breakaway-rival","startYear":260,"endYear":261,"summary":"瓦勒良被俘后，马克里亚努斯集团在东方挑战加里恩努斯。","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.39-1.40"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-macrianus:rome-quietus:breakaway-co-ruler', 'rome-macrianus', 'rome-quietus', 'breakaway-co-ruler', 260, 261, '马克里亚努斯与奎埃图斯同属瓦勒良被俘后的东方割据集团。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-macrianus:rome-quietus:breakaway-co-ruler","sourcePersonId":"rome-macrianus","targetPersonId":"rome-quietus","type":"breakaway-co-ruler","startYear":260,"endYear":261,"summary":"马克里亚努斯与奎埃图斯同属瓦勒良被俘后的东方割据集团。","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.39-1.40"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-gallienus:rome-claudius-ii:succession', 'rome-gallienus', 'rome-claudius-ii', 'succession', 268, 268, '加里恩努斯遇害后，克劳狄二世取得皇位并继续处理帝国危机。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-gallienus:rome-claudius-ii:succession","sourcePersonId":"rome-gallienus","targetPersonId":"rome-claudius-ii","type":"succession","startYear":268,"endYear":268,"summary":"加里恩努斯遇害后，克劳狄二世取得皇位并继续处理帝国危机。","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.40-1.41"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-claudius-ii:rome-aurelian:succession', 'rome-claudius-ii', 'rome-aurelian', 'succession', 270, 270, '克劳狄二世死后，奥勒良进入皇位竞争并成为危机后期的恢复者。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-claudius-ii:rome-aurelian:succession","sourcePersonId":"rome-claudius-ii","targetPersonId":"rome-aurelian","type":"succession","startYear":270,"endYear":270,"summary":"克劳狄二世死后，奥勒良进入皇位竞争并成为危机后期的恢复者。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.11-9.13"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:palmyra-odaenathus:palmyra-zenobia:spouse-successor', 'palmyra-odaenathus', 'palmyra-zenobia', 'spouse-successor', 267, 272, '奥登纳图斯死后，芝诺比娅执掌帕尔米拉权力并扩大东方割据。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:palmyra-odaenathus:palmyra-zenobia:spouse-successor","sourcePersonId":"palmyra-odaenathus","targetPersonId":"palmyra-zenobia","type":"spouse-successor","startYear":267,"endYear":272,"summary":"奥登纳图斯死后，芝诺比娅执掌帕尔米拉权力并扩大东方割据。","sourceRefs":[{"sourceId":"rome-source-historia-augusta-scriptores-historiae-augustae","locator":"Aurelian 24-30"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-aurelian:palmyra-zenobia:campaign-opponent', 'rome-aurelian', 'palmyra-zenobia', 'campaign-opponent', 272, 272, '奥勒良东征击败芝诺比娅，恢复罗马东方控制。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-aurelian:palmyra-zenobia:campaign-opponent","sourcePersonId":"rome-aurelian","targetPersonId":"palmyra-zenobia","type":"campaign-opponent","startYear":272,"endYear":272,"summary":"奥勒良东征击败芝诺比娅，恢复罗马东方控制。","sourceRefs":[{"sourceId":"rome-source-historia-nova-zosimus","locator":"1.50-1.61"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-aurelian:rome-tetricus:campaign-opponent', 'rome-aurelian', 'rome-tetricus', 'campaign-opponent', 274, 274, '奥勒良收复高卢时，提特里库斯投降，西部割据结束。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-aurelian:rome-tetricus:campaign-opponent","sourcePersonId":"rome-aurelian","targetPersonId":"rome-tetricus","type":"campaign-opponent","startYear":274,"endYear":274,"summary":"奥勒良收复高卢时，提特里库斯投降，西部割据结束。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.13"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-aurelian:rome-tacitus:succession', 'rome-aurelian', 'rome-tacitus', 'succession', 275, 275, '奥勒良遇害后，塔西佗在权力空档中取得皇位。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-aurelian:rome-tacitus:succession","sourcePersonId":"rome-aurelian","targetPersonId":"rome-tacitus","type":"succession","startYear":275,"endYear":275,"summary":"奥勒良遇害后，塔西佗在权力空档中取得皇位。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.15-9.16"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-tacitus:rome-probus:succession', 'rome-tacitus', 'rome-probus', 'succession', 276, 276, '塔西佗短暂在位后，普罗布斯成为新的核心军人皇帝。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-tacitus:rome-probus:succession","sourcePersonId":"rome-tacitus","targetPersonId":"rome-probus","type":"succession","startYear":276,"endYear":276,"summary":"塔西佗短暂在位后，普罗布斯成为新的核心军人皇帝。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.16-9.17"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-probus:rome-carus:succession', 'rome-probus', 'rome-carus', 'succession', 282, 282, '普罗布斯被军队杀害后，卡鲁斯称帝并发动东方远征。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-probus:rome-carus:succession","sourcePersonId":"rome-probus","targetPersonId":"rome-carus","type":"succession","startYear":282,"endYear":282,"summary":"普罗布斯被军队杀害后，卡鲁斯称帝并发动东方远征。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.17-9.18"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-carus:rome-numerian:father-son-successor', 'rome-carus', 'rome-numerian', 'father-son-successor', 253, 284, '努梅里安为卡鲁斯之子，卡鲁斯死后在东方继承皇位。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-carus:rome-numerian:father-son-successor","sourcePersonId":"rome-carus","targetPersonId":"rome-numerian","type":"father-son-successor","startYear":253,"endYear":284,"summary":"努梅里安为卡鲁斯之子，卡鲁斯死后在东方继承皇位。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.18-9.20"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-carus:rome-carinus:father-son-successor', 'rome-carus', 'rome-carinus', 'father-son-successor', 250, 285, '卡里努斯为卡鲁斯之子，在西部继承并与戴克里先竞争。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-carus:rome-carinus:father-son-successor","sourcePersonId":"rome-carus","targetPersonId":"rome-carinus","type":"father-son-successor","startYear":250,"endYear":285,"summary":"卡里努斯为卡鲁斯之子，在西部继承并与戴克里先竞争。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.19-9.20"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-numerian:rome-diocletian:succession-crisis', 'rome-numerian', 'rome-diocletian', 'succession-crisis', 284, 284, '努梅里安死亡后，东方军队拥立戴克里先，继承危机转向与卡里努斯的竞争。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-numerian:rome-diocletian:succession-crisis","sourcePersonId":"rome-numerian","targetPersonId":"rome-diocletian","type":"succession-crisis","startYear":284,"endYear":284,"summary":"努梅里安死亡后，东方军队拥立戴克里先，继承危机转向与卡里努斯的竞争。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.20"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-diocletian:rome-carinus:civil-war-opponent', 'rome-diocletian', 'rome-carinus', 'civil-war-opponent', 285, 285, '戴克里先击败卡里努斯后成为帝国唯一奥古斯都。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-diocletian:rome-carinus:civil-war-opponent","sourcePersonId":"rome-diocletian","targetPersonId":"rome-carinus","type":"civil-war-opponent","startYear":285,"endYear":285,"summary":"戴克里先击败卡里努斯后成为帝国唯一奥古斯都。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.20"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-diocletian:rome-maximian:tetrarchic-co-ruler', 'rome-diocletian', 'rome-maximian', 'tetrarchic-co-ruler', 286, 305, '戴克里先提升马克西米安分担西部压力，四帝共治的双奥古斯都基础形成。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-diocletian:rome-maximian:tetrarchic-co-ruler","sourcePersonId":"rome-diocletian","targetPersonId":"rome-maximian","type":"tetrarchic-co-ruler","startYear":286,"endYear":305,"summary":"戴克里先提升马克西米安分担西部压力，四帝共治的双奥古斯都基础形成。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"7-8"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-diocletian:rome-galerius:tetrarchic-caesar', 'rome-diocletian', 'rome-galerius', 'tetrarchic-caesar', 293, 305, '伽列里乌斯成为东部凯撒，构成戴克里先体系下的继承与军政分担结构。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-diocletian:rome-galerius:tetrarchic-caesar","sourcePersonId":"rome-diocletian","targetPersonId":"rome-galerius","type":"tetrarchic-caesar","startYear":293,"endYear":305,"summary":"伽列里乌斯成为东部凯撒，构成戴克里先体系下的继承与军政分担结构。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"18-19"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-maximian:rome-constantius-chlorus:tetrarchic-caesar', 'rome-maximian', 'rome-constantius-chlorus', 'tetrarchic-caesar', 293, 305, '君士坦提乌斯成为西部凯撒，名义上服务于马克西米安的西部奥古斯都体系。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-maximian:rome-constantius-chlorus:tetrarchic-caesar","sourcePersonId":"rome-maximian","targetPersonId":"rome-constantius-chlorus","type":"tetrarchic-caesar","startYear":293,"endYear":305,"summary":"君士坦提乌斯成为西部凯撒，名义上服务于马克西米安的西部奥古斯都体系。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"7-8"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-constantius-chlorus:rome-constantine:father-son-successor', 'rome-constantius-chlorus', 'rome-constantine', 'father-son-successor', 272, 306, '君士坦提乌斯死于不列颠后，军队拥立其子君士坦丁。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-constantius-chlorus:rome-constantine:father-son-successor","sourcePersonId":"rome-constantius-chlorus","targetPersonId":"rome-constantine","type":"father-son-successor","startYear":272,"endYear":306,"summary":"君士坦提乌斯死于不列颠后，军队拥立其子君士坦丁。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"24-26"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-galerius:rome-maximinus-daia:tetrarchic-caesar', 'rome-galerius', 'rome-maximinus-daia', 'tetrarchic-caesar', 305, 311, '305 年后马克西米努斯·达扎成为东部凯撒，并在四帝共治崩解中追求更高名位。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-galerius:rome-maximinus-daia:tetrarchic-caesar","sourcePersonId":"rome-galerius","targetPersonId":"rome-maximinus-daia","type":"tetrarchic-caesar","startYear":305,"endYear":311,"summary":"305 年后马克西米努斯·达扎成为东部凯撒，并在四帝共治崩解中追求更高名位。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"18-19"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-galerius:rome-severus-ii:tetrarchic-colleague', 'rome-galerius', 'rome-severus-ii', 'tetrarchic-colleague', 305, 307, '塞维鲁二世按 305 年继承安排成为西部凯撒，伽列里乌斯在新体系中居于关键地位。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-galerius:rome-severus-ii:tetrarchic-colleague","sourcePersonId":"rome-galerius","targetPersonId":"rome-severus-ii","type":"tetrarchic-colleague","startYear":305,"endYear":307,"summary":"塞维鲁二世按 305 年继承安排成为西部凯撒，伽列里乌斯在新体系中居于关键地位。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"18-26"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-severus-ii:rome-maxentius:succession-conflict', 'rome-severus-ii', 'rome-maxentius', 'succession-conflict', 306, 307, '马克森提乌斯起事后，塞维鲁二世奉命压制但失败，西部继承秩序进一步崩解。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-severus-ii:rome-maxentius:succession-conflict","sourcePersonId":"rome-severus-ii","targetPersonId":"rome-maxentius","type":"succession-conflict","startYear":306,"endYear":307,"summary":"马克森提乌斯起事后，塞维鲁二世奉命压制但失败，西部继承秩序进一步崩解。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"24-26"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-maximian:rome-maxentius:father-son-ally', 'rome-maximian', 'rome-maxentius', 'father-son-ally', 306, 308, '马克西米安退位后卷入其子马克森提乌斯的罗马政权，使四帝共治合法性更复杂。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-maximian:rome-maxentius:father-son-ally","sourcePersonId":"rome-maximian","targetPersonId":"rome-maxentius","type":"father-son-ally","startYear":306,"endYear":308,"summary":"马克西米安退位后卷入其子马克森提乌斯的罗马政权，使四帝共治合法性更复杂。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"24-30"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-constantine:rome-maximian:ally-to-rival', 'rome-constantine', 'rome-maximian', 'ally-to-rival', 307, 310, '君士坦丁曾借助马克西米安的政治声望，后在马克西米安复出失败中与其决裂。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-constantine:rome-maximian:ally-to-rival","sourcePersonId":"rome-constantine","targetPersonId":"rome-maximian","type":"ally-to-rival","startYear":307,"endYear":310,"summary":"君士坦丁曾借助马克西米安的政治声望，后在马克西米安复出失败中与其决裂。","sourceRefs":[{"sourceId":"rome-source-de-mortibus-persecutorum-lactantius","locator":"29-30"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-carausius:rome-allectus:usurpation-successor', 'rome-carausius', 'rome-allectus', 'usurpation-successor', 293, 293, '阿莱克图斯杀卡劳修斯后继续控制不列颠割据政权。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-carausius:rome-allectus:usurpation-successor","sourcePersonId":"rome-carausius","targetPersonId":"rome-allectus","type":"usurpation-successor","startYear":293,"endYear":293,"summary":"阿莱克图斯杀卡劳修斯后继续控制不列颠割据政权。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.22"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('rome-relation:rome-constantius-chlorus:rome-allectus:campaign-opponent', 'rome-constantius-chlorus', 'rome-allectus', 'campaign-opponent', 296, 296, '君士坦提乌斯击败阿莱克图斯，收复不列颠。', 'medium', '{"batchId":"manual-rome-persons-190-310","id":"rome-relation:rome-constantius-chlorus:rome-allectus:campaign-opponent","sourcePersonId":"rome-constantius-chlorus","targetPersonId":"rome-allectus","type":"campaign-opponent","startYear":296,"endYear":296,"summary":"君士坦提乌斯击败阿莱克图斯，收复不列颠。","sourceRefs":[{"sourceId":"rome-source-breviarium-ab-urbe-condita-eutropius","locator":"9.22"}]}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('sasanian-relation:sasanian-ardashir-i:sasanian-shapur-i:father-successor:240', 'sasanian-ardashir-i', 'sasanian-shapur-i', 'father-successor', 240, 242, '沙普尔一世继承阿尔达希尔一世的王权，并延续对罗马东方边境的军事压力。', 'high', '{"id":"sasanian-relation:sasanian-ardashir-i:sasanian-shapur-i:father-successor:240","sourcePersonId":"sasanian-ardashir-i","targetPersonId":"sasanian-shapur-i","type":"father-successor","startYear":240,"endYear":242,"summary":"沙普尔一世继承阿尔达希尔一世的王权，并延续对罗马东方边境的军事压力。","confidence":"high","sourceRefs":[{"sourceId":"deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri","locator":"ŠKZ opening genealogy"}],"relatedEventIds":[],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('sasanian-relation:sasanian-ardashir-i:rome-alexander-severus:campaign-opponent:230', 'sasanian-ardashir-i', 'rome-alexander-severus', 'campaign-opponent', 230, 233, '阿尔达希尔一世的东方扩张触发亚历山大·塞维鲁组织罗马东方远征。', 'medium', '{"id":"sasanian-relation:sasanian-ardashir-i:rome-alexander-severus:campaign-opponent:230","sourcePersonId":"sasanian-ardashir-i","targetPersonId":"rome-alexander-severus","type":"campaign-opponent","startYear":230,"endYear":233,"summary":"阿尔达希尔一世的东方扩张触发亚历山大·塞维鲁组织罗马东方远征。","confidence":"medium","sourceRefs":[{"sourceId":"deepseek-sasanian-source-history-of-the-empire-after-marcus-herodian-herodian-history-of-the-empi","locator":"Herodian 6.2-6.6"}],"relatedEventIds":["sasanian-230-ardashir-roman-frontier","sasanian-232-alexander-severus-expedition"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('sasanian-relation:sasanian-shapur-i:rome-gordian-iii:campaign-opponent:242', 'sasanian-shapur-i', 'rome-gordian-iii', 'campaign-opponent', 242, 244, '沙普尔一世与戈尔迪安三世在罗马东方远征中对抗，萨珊铭文把米西切战役叙述为王权胜利。', 'high', '{"id":"sasanian-relation:sasanian-shapur-i:rome-gordian-iii:campaign-opponent:242","sourcePersonId":"sasanian-shapur-i","targetPersonId":"rome-gordian-iii","type":"campaign-opponent","startYear":242,"endYear":244,"summary":"沙普尔一世与戈尔迪安三世在罗马东方远征中对抗，萨珊铭文把米西切战役叙述为王权胜利。","confidence":"high","sourceRefs":[{"sourceId":"deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri","locator":"ŠKZ §6-8"}],"relatedEventIds":["sasanian-244-battle-of-misiche"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('sasanian-relation:sasanian-shapur-i:rome-philip-the-arab:treaty-counterparty:244', 'sasanian-shapur-i', 'rome-philip-the-arab', 'treaty-counterparty', 244, 244, '戈尔迪安三世死后，腓力阿拉伯人与沙普尔一世达成东方停战或和约安排。', 'medium', '{"id":"sasanian-relation:sasanian-shapur-i:rome-philip-the-arab:treaty-counterparty:244","sourcePersonId":"sasanian-shapur-i","targetPersonId":"rome-philip-the-arab","type":"treaty-counterparty","startYear":244,"endYear":244,"summary":"戈尔迪安三世死后，腓力阿拉伯人与沙普尔一世达成东方停战或和约安排。","confidence":"medium","sourceRefs":[{"sourceId":"deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri","locator":"ŠKZ §8-9"}],"relatedEventIds":["sasanian-244-battle-of-misiche"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('sasanian-relation:sasanian-shapur-i:rome-valerian:captor-opponent:260', 'sasanian-shapur-i', 'rome-valerian', 'captor-opponent', 260, 260, '沙普尔一世俘虏罗马皇帝瓦勒良，成为罗马三世纪危机和萨珊王权宣传的关键节点。', 'high', '{"id":"sasanian-relation:sasanian-shapur-i:rome-valerian:captor-opponent:260","sourcePersonId":"sasanian-shapur-i","targetPersonId":"rome-valerian","type":"captor-opponent","startYear":260,"endYear":260,"summary":"沙普尔一世俘虏罗马皇帝瓦勒良，成为罗马三世纪危机和萨珊王权宣传的关键节点。","confidence":"high","sourceRefs":[{"sourceId":"rome-source-res-gestae-divi-saporis-shapur-i","locator":"Res Gestae Divi Saporis"}],"relatedEventIds":["rome-sasanian-260-valerian-captured"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('sasanian-relation:sasanian-shapur-i:palmyra-odaenathus:campaign-opponent:260', 'sasanian-shapur-i', 'palmyra-odaenathus', 'campaign-opponent', 260, 262, '奥登纳图斯在瓦勒良被俘后的罗马东方真空中反击沙普尔一世，维持叙利亚与美索不达米亚方向秩序。', 'medium', '{"id":"sasanian-relation:sasanian-shapur-i:palmyra-odaenathus:campaign-opponent:260","sourcePersonId":"sasanian-shapur-i","targetPersonId":"palmyra-odaenathus","type":"campaign-opponent","startYear":260,"endYear":262,"summary":"奥登纳图斯在瓦勒良被俘后的罗马东方真空中反击沙普尔一世，维持叙利亚与美索不达米亚方向秩序。","confidence":"medium","sourceRefs":[{"sourceId":"rome-source-res-gestae-divi-saporis-shapur-i","locator":"Roman eastern frontier traditions"}],"relatedEventIds":["sasanian-262-odaenathus-counteroffensive"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('sasanian-relation:sasanian-shapur-i:sasanian-mani:court-religious-contact:242', 'sasanian-shapur-i', 'sasanian-mani', 'court-religious-contact', 242, 270, '摩尼传统把早期传教置于沙普尔一世宫廷环境中，但具体支持程度需保持中等可信度。', 'medium', '{"id":"sasanian-relation:sasanian-shapur-i:sasanian-mani:court-religious-contact:242","sourcePersonId":"sasanian-shapur-i","targetPersonId":"sasanian-mani","type":"court-religious-contact","startYear":242,"endYear":270,"summary":"摩尼传统把早期传教置于沙普尔一世宫廷环境中，但具体支持程度需保持中等可信度。","confidence":"medium","sourceRefs":[{"sourceId":"deepseek-sasanian-source-mani-and-manichaeism-manichaean-texts-kephalaia-cologne-mani-codex-mani-","locator":"Kephalaia; Cologne Mani Codex"}],"relatedEventIds":[],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('sasanian-relation:sasanian-kartir:sasanian-shapur-i:court-priest:260', 'sasanian-kartir', 'sasanian-shapur-i', 'court-priest', 260, 270, '卡尔提尔铭文把其早期上升追溯到沙普尔一世时期，显示祭司权力进入王权政治。', 'high', '{"id":"sasanian-relation:sasanian-kartir:sasanian-shapur-i:court-priest:260","sourcePersonId":"sasanian-kartir","targetPersonId":"sasanian-shapur-i","type":"court-priest","startYear":260,"endYear":270,"summary":"卡尔提尔铭文把其早期上升追溯到沙普尔一世时期，显示祭司权力进入王权政治。","confidence":"high","sourceRefs":[{"sourceId":"deepseek-sasanian-source-kartirs-inscriptions-collective-evidence-kartir-kirder-kkz-knrb-ksm-knrm","locator":"collective evidence from Kartir inscriptions"}],"relatedEventIds":[],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('sasanian-relation:sasanian-kartir:sasanian-mani:religious-opponent:276', 'sasanian-kartir', 'sasanian-mani', 'religious-opponent', 276, 280, '卡尔提尔铭文和摩尼教传统共同指向巴赫拉姆一世、巴赫拉姆二世时期的宗教压制环境，摩尼派处境恶化。', 'medium', '{"id":"sasanian-relation:sasanian-kartir:sasanian-mani:religious-opponent:276","sourcePersonId":"sasanian-kartir","targetPersonId":"sasanian-mani","type":"religious-opponent","startYear":276,"endYear":280,"summary":"卡尔提尔铭文和摩尼教传统共同指向巴赫拉姆一世、巴赫拉姆二世时期的宗教压制环境，摩尼派处境恶化。","confidence":"medium","sourceRefs":[{"sourceId":"deepseek-sasanian-source-kartirs-inscription-at-kaba-ye-zardosht-kkz-s-kz-kartir-kirder-kkz-karti","locator":"KKZ §8-12"}],"relatedEventIds":["sasanian-280-kartir-priestly-power"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('sasanian-relation:sasanian-narseh:rome-galerius:campaign-opponent:297', 'sasanian-narseh', 'rome-galerius', 'campaign-opponent', 297, 298, '纳尔塞在与四帝共治体系的战争中被伽列里乌斯击败，直接导致尼西比斯和约。', 'high', '{"id":"sasanian-relation:sasanian-narseh:rome-galerius:campaign-opponent:297","sourcePersonId":"sasanian-narseh","targetPersonId":"rome-galerius","type":"campaign-opponent","startYear":297,"endYear":298,"summary":"纳尔塞在与四帝共治体系的战争中被伽列里乌斯击败，直接导致尼西比斯和约。","confidence":"high","sourceRefs":[{"sourceId":"deepseek-sasanian-source-zosimus-historia-nova-zonaras-epitome-zosimus-c-500-ce-zonaras-12th-c-zo","locator":"Zosimus 1.27; Zonaras 12.23-24"}],"relatedEventIds":["sasanian-298-treaty-of-nisibis"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relations" ("id", "source_person_id", "target_person_id", "type", "start_year", "end_year", "summary", "confidence", "raw_json") VALUES ('sasanian-relation:sasanian-narseh:rome-diocletian:treaty-counterparty:298', 'sasanian-narseh', 'rome-diocletian', 'treaty-counterparty', 298, 298, '尼西比斯和约把纳尔塞的萨珊王权纳入戴克里先东方安全安排之后的边境秩序。', 'high', '{"id":"sasanian-relation:sasanian-narseh:rome-diocletian:treaty-counterparty:298","sourcePersonId":"sasanian-narseh","targetPersonId":"rome-diocletian","type":"treaty-counterparty","startYear":298,"endYear":298,"summary":"尼西比斯和约把纳尔塞的萨珊王权纳入戴克里先东方安全安排之后的边境秩序。","confidence":"high","sourceRefs":[{"sourceId":"deepseek-sasanian-source-dodgeon-lieu-the-roman-eastern-frontier-quoting-zonaras-zonaras-12th-cen","locator":"Zonaras 12.23"}],"relatedEventIds":["sasanian-298-treaty-of-nisibis"],"importedFromBatch":"manual-sasanian-persons-190-310"}');
 
 -- person_relation_i18n
 INSERT INTO "person_relation_i18n" ("relation_id", "locale", "summary", "raw_json") VALUES ('cao-cao-han-xiandi-court-control', 'zh', '曹操迎献帝至许，以汉廷名义整合政治合法性，同时实际掌握朝政。', '{}');
@@ -6581,6 +18688,15 @@ INSERT INTO "person_relation_events" ("relation_id", "event_id", "sort_order") V
 INSERT INTO "person_relation_events" ("relation_id", "event_id", "sort_order") VALUES ('zang-ba-cao-cao-east-security', 'china-200-guandu', 1);
 INSERT INTO "person_relation_events" ("relation_id", "event_id", "sort_order") VALUES ('zang-ba-zhang-liao-east-front', 'china-222-yiling', 0);
 INSERT INTO "person_relation_events" ("relation_id", "event_id", "sort_order") VALUES ('li-tong-cao-cao-service', 'china-208-red-cliffs', 0);
+INSERT INTO "person_relation_events" ("relation_id", "event_id", "sort_order") VALUES ('sasanian-relation:sasanian-ardashir-i:rome-alexander-severus:campaign-opponent:230', 'sasanian-230-ardashir-roman-frontier', 0);
+INSERT INTO "person_relation_events" ("relation_id", "event_id", "sort_order") VALUES ('sasanian-relation:sasanian-ardashir-i:rome-alexander-severus:campaign-opponent:230', 'sasanian-232-alexander-severus-expedition', 1);
+INSERT INTO "person_relation_events" ("relation_id", "event_id", "sort_order") VALUES ('sasanian-relation:sasanian-shapur-i:rome-gordian-iii:campaign-opponent:242', 'sasanian-244-battle-of-misiche', 0);
+INSERT INTO "person_relation_events" ("relation_id", "event_id", "sort_order") VALUES ('sasanian-relation:sasanian-shapur-i:rome-philip-the-arab:treaty-counterparty:244', 'sasanian-244-battle-of-misiche', 0);
+INSERT INTO "person_relation_events" ("relation_id", "event_id", "sort_order") VALUES ('sasanian-relation:sasanian-shapur-i:rome-valerian:captor-opponent:260', 'rome-sasanian-260-valerian-captured', 0);
+INSERT INTO "person_relation_events" ("relation_id", "event_id", "sort_order") VALUES ('sasanian-relation:sasanian-shapur-i:palmyra-odaenathus:campaign-opponent:260', 'sasanian-262-odaenathus-counteroffensive', 0);
+INSERT INTO "person_relation_events" ("relation_id", "event_id", "sort_order") VALUES ('sasanian-relation:sasanian-kartir:sasanian-mani:religious-opponent:276', 'sasanian-280-kartir-priestly-power', 0);
+INSERT INTO "person_relation_events" ("relation_id", "event_id", "sort_order") VALUES ('sasanian-relation:sasanian-narseh:rome-galerius:campaign-opponent:297', 'sasanian-298-treaty-of-nisibis', 0);
+INSERT INTO "person_relation_events" ("relation_id", "event_id", "sort_order") VALUES ('sasanian-relation:sasanian-narseh:rome-diocletian:treaty-counterparty:298', 'sasanian-298-treaty-of-nisibis', 0);
 
 -- person_relation_source_refs
 INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('cao-cao-han-xiandi-court-control', 'sanguozhi-wei-wudi', '建安元年前后', '{"sourceId":"sanguozhi-wei-wudi","locator":"建安元年前后"}');
@@ -6784,6 +18900,64 @@ INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator"
 INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('cao-shuang-sima-yi-regency-rivalry', 'zizhi-tongjian-75', '嘉平元年春正月甲午', '{"quote":"帝谒高平陵，大将军爽与弟中领军羲、武卫将军训、散骑常侍彦皆从。太傅懿以皇太后令，闭诸城门，勒兵据武库。"}');
 INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('cao-biao-wang-ling-plot', 'zizhi-tongjian-75', '嘉平元年秋九月', '{"quote":"凌与愚阴谋，以帝暗弱，制于强臣，闻楚王彪有智勇，欲共立之，迎都许昌。"}');
 INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('cao-biao-wang-ling-plot', 'zizhi-tongjian-75', '嘉平三年六月', '{"quote":"六月，赐楚王彪死。"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-septimius-severus:rome-julia-domna:spouse', 'rome-source-roman-history-cassius-dio', '76.15-76.17', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-septimius-severus:rome-caracalla:family-successor', 'rome-source-roman-history-cassius-dio', '78.1-78.4', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-septimius-severus:rome-geta:family-successor', 'rome-source-roman-history-cassius-dio', '78.1-78.4', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-julia-domna:rome-caracalla:mother', 'rome-source-roman-history-cassius-dio', '78.2-78.24', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-julia-domna:rome-geta:mother', 'rome-source-roman-history-cassius-dio', '78.2-78.4', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-caracalla:rome-geta:succession-rival', 'rome-source-roman-history-cassius-dio', '78.2-78.4', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-caracalla:rome-macrinus:assassination-succession', 'rome-source-history-of-the-empire-after-marcus-herodian', '4.12-5.1', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-julia-maesa:rome-elagabalus:dynastic-sponsor', 'rome-source-history-of-the-empire-after-marcus-herodian', '5.3-5.4', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-julia-soaemias:rome-elagabalus:mother', 'rome-source-history-of-the-empire-after-marcus-herodian', '5.3-5.8', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-julia-maesa:rome-alexander-severus:dynastic-sponsor', 'rome-source-history-of-the-empire-after-marcus-herodian', '5.7-5.8', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-julia-mamaea:rome-alexander-severus:mother-regent', 'rome-source-history-of-the-empire-after-marcus-herodian', '6.1-6.9', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-alexander-severus:rome-maximinus-thrax:military-overthrow', 'rome-source-history-of-the-empire-after-marcus-herodian', '6.8-6.9', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-maximinus-thrax:rome-gordian-i:civil-war-opponent', 'rome-source-history-of-the-empire-after-marcus-herodian', '7.5-7.9', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-gordian-i:rome-gordian-ii:father-son-co-ruler', 'rome-source-history-of-the-empire-after-marcus-herodian', '7.5-7.9', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-pupienus:rome-balbinus:senatorial-co-ruler', 'rome-source-history-of-the-empire-after-marcus-herodian', '7.10-8.8', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-pupienus:rome-gordian-iii:co-ruler-successor', 'rome-source-history-of-the-empire-after-marcus-herodian', '8.8', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-balbinus:rome-gordian-iii:co-ruler-successor', 'rome-source-history-of-the-empire-after-marcus-herodian', '8.8', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-gordian-iii:rome-philip-the-arab:succession', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.2-9.3', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-philip-the-arab:rome-decius:civil-war-opponent', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.4', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-valerian:rome-gallienus:father-son-co-ruler', 'rome-source-de-caesaribus-aurelius-victor', '33', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-valerian:palmyra-odaenathus:eastern-ally-after-capture', 'rome-source-historia-nova-zosimus', '1.39-1.40', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-gallienus:rome-postumus:breakaway-rival', 'rome-source-de-caesaribus-aurelius-victor', '33', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-gallienus:rome-macrianus:breakaway-rival', 'rome-source-historia-nova-zosimus', '1.39-1.40', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-macrianus:rome-quietus:breakaway-co-ruler', 'rome-source-historia-nova-zosimus', '1.39-1.40', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-gallienus:rome-claudius-ii:succession', 'rome-source-historia-nova-zosimus', '1.40-1.41', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-claudius-ii:rome-aurelian:succession', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.11-9.13', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:palmyra-odaenathus:palmyra-zenobia:spouse-successor', 'rome-source-historia-augusta-scriptores-historiae-augustae', 'Aurelian 24-30', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-aurelian:palmyra-zenobia:campaign-opponent', 'rome-source-historia-nova-zosimus', '1.50-1.61', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-aurelian:rome-tetricus:campaign-opponent', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.13', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-aurelian:rome-tacitus:succession', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.15-9.16', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-tacitus:rome-probus:succession', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.16-9.17', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-probus:rome-carus:succession', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.17-9.18', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-carus:rome-numerian:father-son-successor', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.18-9.20', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-carus:rome-carinus:father-son-successor', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.19-9.20', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-numerian:rome-diocletian:succession-crisis', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.20', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-diocletian:rome-carinus:civil-war-opponent', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.20', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-diocletian:rome-maximian:tetrarchic-co-ruler', 'rome-source-de-mortibus-persecutorum-lactantius', '7-8', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-diocletian:rome-galerius:tetrarchic-caesar', 'rome-source-de-mortibus-persecutorum-lactantius', '18-19', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-maximian:rome-constantius-chlorus:tetrarchic-caesar', 'rome-source-de-mortibus-persecutorum-lactantius', '7-8', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-constantius-chlorus:rome-constantine:father-son-successor', 'rome-source-de-mortibus-persecutorum-lactantius', '24-26', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-galerius:rome-maximinus-daia:tetrarchic-caesar', 'rome-source-de-mortibus-persecutorum-lactantius', '18-19', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-galerius:rome-severus-ii:tetrarchic-colleague', 'rome-source-de-mortibus-persecutorum-lactantius', '18-26', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-severus-ii:rome-maxentius:succession-conflict', 'rome-source-de-mortibus-persecutorum-lactantius', '24-26', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-maximian:rome-maxentius:father-son-ally', 'rome-source-de-mortibus-persecutorum-lactantius', '24-30', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-constantine:rome-maximian:ally-to-rival', 'rome-source-de-mortibus-persecutorum-lactantius', '29-30', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-carausius:rome-allectus:usurpation-successor', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.22', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('rome-relation:rome-constantius-chlorus:rome-allectus:campaign-opponent', 'rome-source-breviarium-ab-urbe-condita-eutropius', '9.22', '{"batchId":"manual-rome-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('sasanian-relation:sasanian-ardashir-i:sasanian-shapur-i:father-successor:240', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri', 'ŠKZ opening genealogy', '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('sasanian-relation:sasanian-ardashir-i:rome-alexander-severus:campaign-opponent:230', 'deepseek-sasanian-source-history-of-the-empire-after-marcus-herodian-herodian-history-of-the-empi', 'Herodian 6.2-6.6', '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('sasanian-relation:sasanian-shapur-i:rome-gordian-iii:campaign-opponent:242', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri', 'ŠKZ §6-8', '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('sasanian-relation:sasanian-shapur-i:rome-philip-the-arab:treaty-counterparty:244', 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri', 'ŠKZ §8-9', '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('sasanian-relation:sasanian-shapur-i:rome-valerian:captor-opponent:260', 'rome-source-res-gestae-divi-saporis-shapur-i', 'Res Gestae Divi Saporis', '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('sasanian-relation:sasanian-shapur-i:palmyra-odaenathus:campaign-opponent:260', 'rome-source-res-gestae-divi-saporis-shapur-i', 'Roman eastern frontier traditions', '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('sasanian-relation:sasanian-shapur-i:sasanian-mani:court-religious-contact:242', 'deepseek-sasanian-source-mani-and-manichaeism-manichaean-texts-kephalaia-cologne-mani-codex-mani-', 'Kephalaia; Cologne Mani Codex', '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('sasanian-relation:sasanian-kartir:sasanian-shapur-i:court-priest:260', 'deepseek-sasanian-source-kartirs-inscriptions-collective-evidence-kartir-kirder-kkz-knrb-ksm-knrm', 'collective evidence from Kartir inscriptions', '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('sasanian-relation:sasanian-kartir:sasanian-mani:religious-opponent:276', 'deepseek-sasanian-source-kartirs-inscription-at-kaba-ye-zardosht-kkz-s-kz-kartir-kirder-kkz-karti', 'KKZ §8-12', '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('sasanian-relation:sasanian-narseh:rome-galerius:campaign-opponent:297', 'deepseek-sasanian-source-zosimus-historia-nova-zonaras-epitome-zosimus-c-500-ce-zonaras-12th-c-zo', 'Zosimus 1.27; Zonaras 12.23-24', '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
+INSERT INTO "person_relation_source_refs" ("relation_id", "source_id", "locator", "raw_json") VALUES ('sasanian-relation:sasanian-narseh:rome-diocletian:treaty-counterparty:298', 'deepseek-sasanian-source-dodgeon-lieu-the-roman-eastern-frontier-quoting-zonaras-zonaras-12th-cen', 'Zonaras 12.23', '{"importedFromBatch":"manual-sasanian-persons-190-310"}');
 
 -- coverage_status
 INSERT INTO "coverage_status" ("person_id", "corpus_id", "status", "last_reviewed_at", "notes", "raw_json") VALUES ('zhang-jiao', 'china-three-kingdoms', 'partial', NULL, '由现有人物档案自动生成；后续应按《三国志》《资治通鉴》等逐条审校。', '{"generatedFrom":"china-persons.json"}');

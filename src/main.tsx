@@ -76,6 +76,7 @@ type HistoricalEvent = {
 };
 
 type EventDeepDetail = {
+  overview?: string;
   background?: string[];
   process?: string[];
   result?: string[];
@@ -165,6 +166,7 @@ type PersonLifeEvent = {
     | "office"
     | "politics"
     | "reform"
+    | "religion"
     | "reign"
     | "service"
     | "strategy"
@@ -186,6 +188,7 @@ type PersonRelation = {
   startYear?: number;
   endYear?: number;
   summary: string;
+  relatedEventIds?: string[];
   sourceRefs: SourceRef[];
 };
 
@@ -913,63 +916,7 @@ const ageRegionFilters: Array<{ id: AgeRegionFilter; label: string }> = [
   { id: "sasanian-persia", label: "萨珊" },
 ];
 
-const ageSupplementPeople: AgePerson[] = [
-  {
-    id: "sasanian-ardashir-i",
-    name: "阿尔达希尔一世",
-    region: "sasanian-persia",
-    polity: "萨珊波斯",
-    roles: ["国王"],
-    birthYear: 180,
-    deathYear: 242,
-    summary: "萨珊王朝建立者，224 年击败安息末王阿尔达班四世。",
-    source: "age-supplement",
-  },
-  {
-    id: "sasanian-shapur-i",
-    name: "沙普尔一世",
-    region: "sasanian-persia",
-    polity: "萨珊波斯",
-    roles: ["国王"],
-    birthYear: 215,
-    deathYear: 270,
-    summary: "萨珊王朝早期君主，多次与罗马作战。",
-    source: "age-supplement",
-  },
-  {
-    id: "sasanian-narseh",
-    name: "纳尔塞",
-    region: "sasanian-persia",
-    polity: "萨珊波斯",
-    roles: ["国王"],
-    birthYear: 228,
-    deathYear: 303,
-    summary: "萨珊国王，293 年通过 Paikuli 铭文所反映的政治联盟取得王位，后与戴克里先体系下的罗马作战。",
-    source: "age-supplement",
-  },
-  {
-    id: "sasanian-kartir",
-    name: "卡尔提尔",
-    region: "sasanian-persia",
-    polity: "萨珊波斯",
-    roles: ["祭司"],
-    birthYear: 240,
-    deathYear: 293,
-    summary: "萨珊早期重要祆教祭司，以多处铭文记录自身宗教权力和宫廷地位。",
-    source: "age-supplement",
-  },
-  {
-    id: "sasanian-mani",
-    name: "摩尼",
-    region: "sasanian-persia",
-    polity: "萨珊波斯",
-    roles: ["宗教创立者"],
-    birthYear: 216,
-    deathYear: 277,
-    summary: "摩尼教创立者，早期曾在萨珊宫廷环境中传教，后在巴赫拉姆一世时期遇害。",
-    source: "age-supplement",
-  },
-];
+const ageSupplementPeople: AgePerson[] = [];
 
 const eventImportanceLabels: Record<EventImportance, string> = {
   major: "大型事件",
@@ -1779,6 +1726,28 @@ function getPersonAnnualTimeline(person: HistoricalPerson, lifeEvents: PersonLif
   return items;
 }
 
+function getEventsByIds(allEvents: HistoricalEvent[], eventIds: string[]) {
+  const seen = new Set<string>();
+  return eventIds
+    .map((eventId) => allEvents.find((event) => event.id === eventId))
+    .filter((event): event is HistoricalEvent => {
+      if (!event || seen.has(event.id)) {
+        return false;
+      }
+      seen.add(event.id);
+      return true;
+    });
+}
+
+function getPersonRegionLabel(person?: HistoricalPerson) {
+  if (!person) {
+    return "";
+  }
+
+  const region = person.region === "rome" || person.region === "sasanian-persia" || person.region === "india" ? person.region : "china";
+  return getAgeRegionLabel(region);
+}
+
 function eventMatchesQuery(event: HistoricalEvent, normalizedQuery: string) {
   if (!normalizedQuery) {
     return true;
@@ -2560,6 +2529,7 @@ function normalizePersonRelation(relation: PersonRelation): PersonRelation {
   return {
     ...relation,
     summary: relation.summary ?? "",
+    relatedEventIds: relation.relatedEventIds ?? [],
     sourceRefs: relation.sourceRefs ?? [],
   };
 }
@@ -2649,6 +2619,7 @@ function getLifeEventTypeLabel(type: PersonLifeEvent["type"]) {
     office: "任位",
     politics: "政治",
     reform: "改革",
+    religion: "宗教",
     reign: "统治",
     service: "仕历",
     strategy: "谋略",
@@ -3913,15 +3884,19 @@ function App() {
         (relation) => relation.sourcePersonId === selectedPerson.id || relation.targetPersonId === selectedPerson.id,
       )
     : [];
-  const selectedPersonEvents = selectedPerson
-    ? events
-        .filter((event) => event.personIds?.includes(selectedPerson.id))
-        .sort((left, right) => left.startYear - right.startYear || left.endYear - right.endYear)
-    : [];
   const selectedPersonLifeEvents = selectedPerson
     ? chinaPersonLifeEvents
         .filter((lifeEvent) => lifeEvent.personId === selectedPerson.id)
         .sort((left, right) => getLifeEventSortValue(left) - getLifeEventSortValue(right) || left.displayYear.localeCompare(right.displayYear))
+    : [];
+  const selectedPersonEvents = selectedPerson
+    ? [
+        ...events.filter((event) => event.personIds?.includes(selectedPerson.id)),
+        ...getEventsByIds(events, selectedPersonLifeEvents.flatMap((lifeEvent) => lifeEvent.relatedEventIds)),
+        ...getEventsByIds(events, selectedPersonRelations.flatMap((relation) => relation.relatedEventIds ?? [])),
+      ]
+        .filter((event, index, eventList) => eventList.findIndex((item) => item.id === event.id) === index)
+        .sort((left, right) => left.startYear - right.startYear || left.endYear - right.endYear)
     : [];
   const selectedPersonSourceMentions = useMemo(
     () =>
@@ -3963,27 +3938,46 @@ function App() {
     return counts;
   }, [peopleDataVersion]);
   const personEventCounts = useMemo(() => {
-    const counts = new Map<string, number>();
+    const eventIdsByPerson = new Map<string, Set<string>>();
+    const addEvent = (personId: string, eventId: string) => {
+      if (!eventIdsByPerson.has(personId)) {
+        eventIdsByPerson.set(personId, new Set());
+      }
+      eventIdsByPerson.get(personId)?.add(eventId);
+    };
+
     events.forEach((event) => {
-      event.personIds?.forEach((personId) => counts.set(personId, (counts.get(personId) ?? 0) + 1));
+      event.personIds?.forEach((personId) => addEvent(personId, event.id));
     });
+
+    const knownEventIds = new Set(events.map((event) => event.id));
+    chinaPersonLifeEvents.forEach((lifeEvent) => {
+      lifeEvent.relatedEventIds.filter((eventId) => knownEventIds.has(eventId)).forEach((eventId) => addEvent(lifeEvent.personId, eventId));
+    });
+    chinaPersonRelations.forEach((relation) => {
+      (relation.relatedEventIds ?? []).filter((eventId) => knownEventIds.has(eventId)).forEach((eventId) => {
+        addEvent(relation.sourcePersonId, eventId);
+        addEvent(relation.targetPersonId, eventId);
+      });
+    });
+
+    const counts = new Map<string, number>();
+    eventIdsByPerson.forEach((eventIds, personId) => counts.set(personId, eventIds.size));
     return counts;
-  }, [events]);
+  }, [events, peopleDataVersion]);
   const personIndexEventCounts = useMemo(() => {
     const counts = new Map<string, number>();
     personIndexItems.forEach((person) => {
-      counts.set(
-        person.id,
-        events.filter(
-          (event) =>
-            event.personIds?.includes(person.id) ||
-            event.personIds?.includes(person.id.replace(/^china-/, "")) ||
-            event.people.includes(person.name),
-        ).length,
-      );
+      const directCount = events.filter(
+        (event) =>
+          event.personIds?.includes(person.id) ||
+          event.personIds?.includes(person.id.replace(/^china-/, "")) ||
+          event.people.includes(person.name),
+      ).length;
+      counts.set(person.id, Math.max(personEventCounts.get(person.id) ?? 0, directCount));
     });
     return counts;
-  }, [events, personIndexItems]);
+  }, [events, personEventCounts, personIndexItems]);
   const personIndexCounts = Object.fromEntries(
     personIndexFilters.map((filter) => [
       filter.id,
@@ -6822,6 +6816,11 @@ function App() {
                             <span>{getRelationTypeLabel(relation.type)}</span>
                             <strong>{counterpart?.name ?? counterpartId}</strong>
                           </span>
+                          {counterpart && (
+                            <span className="relationship-counterpart-meta">
+                              {getPersonRegionLabel(counterpart)} · {counterpart.primaryPolity}
+                            </span>
+                          )}
                           <small>{formatYearSpan(relation.startYear, relation.endYear)}</small>
                           <span className="relationship-summary">{relation.summary}</span>
                         </button>
@@ -7096,10 +7095,24 @@ function App() {
 
           {selectedEventDetail && (
             <section className="detail-section event-deep-detail">
-              <h3>
-                <BookOpen size={17} aria-hidden="true" />
-                事件详解
-              </h3>
+              <div className="event-detail-heading">
+                <h3>
+                  <BookOpen size={17} aria-hidden="true" />
+                  事件详解
+                </h3>
+                <span>{formatYearRange(selectedEvent)}</span>
+              </div>
+              <div className="event-detail-overview-card">
+                <span>核心判断</span>
+                <p>{selectedEventDetail.overview ?? selectedEvent.summary}</p>
+                {hasDetailItems(selectedEventDetail.result) && (
+                  <div className="event-detail-result-strip">
+                    {selectedEventDetail.result!.slice(0, 2).map((item, index) => (
+                      <strong key={`summary-result-${index}-${item}`}>{item}</strong>
+                    ))}
+                  </div>
+                )}
+              </div>
               <div className="event-detail-tabs" role="tablist" aria-label={`${selectedEvent.title}结构化详情`}>
                 {eventDetailTabs.map((tab) => (
                   <button
@@ -7117,44 +7130,62 @@ function App() {
               </div>
               <div className="event-detail-panel" role="tabpanel">
                 {eventDetailTab === "overview" && (
-                  <div className="event-detail-grid">
-                    <article>
-                      <span>核心判断</span>
-                      <p>{selectedEvent.summary}</p>
-                    </article>
+                  <div className="event-detail-flow">
+                    {hasDetailItems(selectedEventDetail.background) && (
+                      <article className="event-detail-flow-card">
+                        <span>背景</span>
+                        <p>{selectedEventDetail.background![0]}</p>
+                      </article>
+                    )}
                     {hasDetailItems(selectedEventDetail.result) && (
-                      <article>
+                      <article className="event-detail-flow-card">
                         <span>结果</span>
                         <ul>
-                          {selectedEventDetail.result!.map((item) => (
-                            <li key={item}>{item}</li>
+                          {selectedEventDetail.result!.slice(0, 3).map((item, index) => (
+                            <li key={`overview-result-${index}-${item}`}>{item}</li>
                           ))}
                         </ul>
+                      </article>
+                    )}
+                    {hasDetailItems(selectedEventDetail.impact) && (
+                      <article className="event-detail-flow-card">
+                        <span>影响</span>
+                        <p>{selectedEventDetail.impact![0]}</p>
                       </article>
                     )}
                   </div>
                 )}
 
                 {eventDetailTab === "background" && (
-                  <ul className="event-detail-list">
-                    {selectedEventDetail.background?.map((item) => <li key={item}>{item}</li>)}
-                  </ul>
+                  <div className="event-detail-flow">
+                    {selectedEventDetail.background?.map((item, index) => (
+                      <article className="event-detail-flow-card" key={`background-${index}-${item}`}>
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        <p>{item}</p>
+                      </article>
+                    ))}
+                  </div>
                 )}
 
                 {eventDetailTab === "process" && (
-                  <ul className="event-detail-list">
-                    {selectedEventDetail.process?.map((item) => <li key={item}>{item}</li>)}
-                  </ul>
+                  <div className="event-detail-flow">
+                    {selectedEventDetail.process?.map((item, index) => (
+                      <article className="event-detail-flow-card" key={`process-${index}-${item}`}>
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        <p>{item}</p>
+                      </article>
+                    ))}
+                  </div>
                 )}
 
                 {eventDetailTab === "impact" && (
-                  <div className="event-detail-grid">
+                  <div className="event-detail-grid two-column">
                     {hasDetailItems(selectedEventDetail.result) && (
                       <article>
                         <span>直接结果</span>
                         <ul>
-                          {selectedEventDetail.result!.map((item) => (
-                            <li key={item}>{item}</li>
+                          {selectedEventDetail.result!.map((item, index) => (
+                            <li key={`impact-result-${index}-${item}`}>{item}</li>
                           ))}
                         </ul>
                       </article>
@@ -7163,8 +7194,8 @@ function App() {
                       <article>
                         <span>后续影响</span>
                         <ul>
-                          {selectedEventDetail.impact!.map((item) => (
-                            <li key={item}>{item}</li>
+                          {selectedEventDetail.impact!.map((item, index) => (
+                            <li key={`impact-${index}-${item}`}>{item}</li>
                           ))}
                         </ul>
                       </article>
@@ -7178,8 +7209,8 @@ function App() {
                       <article>
                         <span>史料说明</span>
                         <ul>
-                          {selectedEventDetail.sourceNotes!.map((item) => (
-                            <li key={item}>{item}</li>
+                          {selectedEventDetail.sourceNotes!.map((item, index) => (
+                            <li key={`source-note-${index}-${item}`}>{item}</li>
                           ))}
                         </ul>
                       </article>
@@ -7188,8 +7219,8 @@ function App() {
                       <article>
                         <span>不确定性</span>
                         <ul>
-                          {selectedEventDetail.uncertainty!.map((item) => (
-                            <li key={item}>{item}</li>
+                          {selectedEventDetail.uncertainty!.map((item, index) => (
+                            <li key={`uncertainty-${index}-${item}`}>{item}</li>
                           ))}
                         </ul>
                       </article>
@@ -7231,7 +7262,7 @@ function App() {
                   );
                 })
               ) : selectedEvent.people.length ? (
-                selectedEvent.people.map((person) => <span key={person}>{person}</span>)
+                selectedEvent.people.map((person, index) => <span key={`${person}-${index}`}>{person}</span>)
               ) : (
                 <span>待补充</span>
               )}
@@ -7361,6 +7392,11 @@ function App() {
                             <span>{getRelationTypeLabel(relation.type)}</span>
                             <strong>{counterpart?.name ?? counterpartId}</strong>
                           </span>
+                          {counterpart && (
+                            <span className="relationship-counterpart-meta">
+                              {getPersonRegionLabel(counterpart)} · {counterpart.primaryPolity}
+                            </span>
+                          )}
                           <small>{formatYearSpan(relation.startYear, relation.endYear)}</small>
                           <span className="relationship-summary">{relation.summary}</span>
                           <span className="relationship-sources">
@@ -7467,8 +7503,8 @@ function App() {
                   );
                 })
               ) : selectedEvent.sources.length ? (
-                selectedEvent.sources.map((source) => (
-                  <article className="source-item" key={source}>
+                selectedEvent.sources.map((source, index) => (
+                  <article className="source-item" key={`${source}-${index}`}>
                     <strong>{source}</strong>
                   </article>
                 ))

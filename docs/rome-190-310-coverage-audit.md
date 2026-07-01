@@ -13,9 +13,10 @@ This audit checks whether Rome can work as part of the 190-310 reference period,
 | Draft Roman documents | about 80 | Mostly promoted DeepSeek/staging event cards; usable, but not formally reviewed. |
 | Roman ancient `source_passages` | 32 | New formal evidence passages. |
 | Roman ancient `evidence_links` | 32 | Linked to search documents and source passages. |
-| Formal Roman person records | 36 | Added for emperor/person index and age comparison scaffolding. |
-| Roman person life events | 66 | Birth/death scaffold, with source refs where available. |
-| Roman-linked person chunk links | 386 | Enables person-scoped evidence retrieval. |
+| Formal Roman person records | 43 | P0 emperors plus first P1 network figures for Severan women and third-century breakaway regimes. |
+| Roman person life events | 200 | 76 birth/death scaffold nodes plus 124 detailed reign, war, reform, accession, deposition, and crisis nodes. |
+| Roman person relations | 47 | First-pass relationship graph for Severan family politics, the 238 crisis, Valerian/Gallienus fragmentation, Palmyra/Gallic breakaways, and the Tetrarchy. |
+| Roman-linked person chunk links | 422 | Enables person-scoped evidence retrieval. |
 
 ## Ancient-Source Coverage Added
 
@@ -45,19 +46,22 @@ Important caution: these cards currently store paraphrased evidence notes rather
 
 ## Main Gaps
 
-### 1. Person Layer Is Now Scaffolded, But Not Yet Rich
+### 1. Person Layer Has A First Detailed Pass
 
-Rome now has formal `persons`, `entities`, aliases, birth/death scaffold life events, and document chunk links for the P0 Roman/Palmyrene figures. This is enough for person index and basic age comparison, but it is not yet equivalent to the China model because most people only have birth/death scaffold events.
+Rome now has formal `persons`, `entities`, aliases, birth/death scaffold life events, detailed reign/service nodes, and document chunk links for the P0 Roman/Palmyrene figures plus a first P1 network pass. This is enough for person index, age comparison, and first-pass person detail pages. It is still not equivalent to the China model because the Roman nodes are mostly compact synthetic summaries, while China has deeper source-driven biographies for many figures.
+
+The first relationship graph is also in place. It covers the Severan family and court network, the 238 succession crisis, Valerian/Gallienus fragmentation, Palmyra and Gallic breakaway regimes, Britain under Carausius/Allectus, and the Tetrarchy through Constantine's early rise.
 
 Needed for parity with China:
 
 | Priority | Person Group | Reason |
 |---|---|---|
-| Done as scaffold | Septimius Severus, Caracalla, Geta, Macrinus, Elagabalus, Alexander Severus | Still needs reign/service/death-detail life nodes. |
-| P0 | Maximinus Thrax, Gordian I, Gordian II, Pupienus, Balbinus, Gordian III, Philip the Arab, Decius | Required for early crisis and 238-251 sequence. |
-| P0 | Valerian, Gallienus, Claudius II, Aurelian, Tacitus, Probus, Carus, Carinus, Numerian | Required for 253-285 crisis/recovery. |
-| P0 | Diocletian, Maximian, Galerius, Constantius Chlorus, Severus II, Maximinus Daia, Constantine, Maxentius | Required for Tetrarchy and 305-310 transition. |
-| P1 | Julia Domna, Julia Maesa, Julia Soaemias, Julia Mamaea, Zenobia, Odaenathus, Tetricus, Postumus | Needed for political network and non-emperor power holders. |
+| Done first pass | Septimius Severus, Caracalla, Geta, Macrinus, Elagabalus, Alexander Severus | Has core accession/reign/war/death nodes; later pass should add family and court network nodes. |
+| Done first pass | Maximinus Thrax, Gordian I, Gordian II, Pupienus, Balbinus, Gordian III, Philip the Arab, Decius | Covers early crisis and 238-251 sequence at reference-period level. |
+| Done first pass | Valerian, Gallienus, Claudius II, Aurelian, Tacitus, Probus, Carus, Carinus, Numerian | Covers 253-285 crisis/recovery at reference-period level. |
+| Done first pass | Diocletian, Maximian, Galerius, Constantius Chlorus, Severus II, Maximinus Daia, Constantine, Maxentius | Covers Tetrarchy and 305-310 transition at reference-period level. |
+| Done P1 first pass | Julia Domna, Julia Maesa, Julia Soaemias, Julia Mamaea, Tetricus, Macrianus, Quietus | Adds the first political network and non-emperor power-holder layer beyond the P0 set. |
+| P1 remaining | Julia Mammaea network subfigures, Tetricus II, Victorinus, Marius, Regalianus, Aureolus, major prefects and generals | Needed for a denser crisis-network graph and evidence panel cross-links. |
 
 Minimum formal fields should match the China person pattern:
 
@@ -141,8 +145,8 @@ Major event candidates:
 
 ## Recommended Next Work
 
-1. Enrich the Roman person seed.
-   The formal rows exist now; next pass should add reign, war, accession, deposition, and relationship life nodes.
+1. Add the next P1/P2 Roman network figures.
+   The P0 rows and first P1 rows now have detailed life nodes and a first relationship graph. The next person pass should add Victorinus, Marius, Tetricus II, Regalianus, Aureolus, major prefects, generals, and court actors.
 
 2. Promote key Roman draft cards from `draft` to `reviewed`.
    Prioritize the 20-30 major/medium cards that drive the main timeline and map, not every detail card.
