@@ -40,6 +40,8 @@
     "seed:china-310-589-primary-excerpts-2": "node --no-warnings scripts/seed-china-310-589-primary-source-excerpts-batch2-ctext-guoxue.mjs",
     "seed:china-310-589-additional-claims": "node --no-warnings scripts/seed-china-310-589-additional-evidence-claims.mjs",
     "seed:china-310-589-core-persons": "node --no-warnings scripts/seed-china-310-589-core-persons.mjs",
+    "seed:china-310-589-persons-batch2": "node --no-warnings scripts/seed-china-310-589-persons-batch2.mjs",
+    "seed:china-310-589-persons-batch3": "node --no-warnings scripts/seed-china-310-589-persons-batch3.mjs",
     "normalize:china-310-589-sources": "node --no-warnings scripts/normalize-china-310-589-transcription-sources.mjs",
     "seed:evidence-graph": "node --no-warnings scripts/seed-evidence-graph-sample-claims.mjs",
     "refine:evidence-claims": "node --no-warnings scripts/refine-evidence-graph-core-claims-190-310.mjs",

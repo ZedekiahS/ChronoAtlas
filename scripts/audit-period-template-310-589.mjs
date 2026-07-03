@@ -38,9 +38,9 @@ const thresholds = {
   forbiddenWikisourceMentions: 0,
   locatorOnlyOrPendingMentions: 0,
   eventEvidenceWithoutQuote: 0,
-  corePersons: 30,
-  personLifeEvents: 35,
-  personEventLinks: 35,
+  corePersons: 80,
+  personLifeEvents: 100,
+  personEventLinks: 100,
 };
 
 function all(sql, ...params) {
@@ -163,7 +163,7 @@ const metrics = {
     `
       SELECT count(*) AS count
       FROM person_life_events
-      WHERE id LIKE 'china-310-589-life:%'
+      WHERE id LIKE 'china-310-589-life%'
     `,
   )?.count ?? 0,
   personEventLinks: one(
