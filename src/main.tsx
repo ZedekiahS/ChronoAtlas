@@ -205,7 +205,7 @@ type PersonAnnualTimelineItem = {
   year: number;
 };
 
-type Page = "home" | "world" | "china" | "rome" | "people" | "age" | "evidence" | "compare" | "coverage" | "map-debug" | "ai-debug" | "ai-history";
+type Page = "home" | "learning" | "world" | "china" | "rome" | "people" | "age" | "evidence" | "evidence-graph" | "compare" | "coverage" | "map-debug" | "rag-eval" | "ai-debug" | "ai-history";
 type ChinaMapMode = "political" | "terrain" | "three-d" | "commandery";
 type ThreeKingdomsFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "war" | "politics";
 type PersonIndexFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "rome" | "sasanian-persia";
@@ -276,6 +276,87 @@ type EvidenceSearchResult = {
     regionId: string | null;
     role: string;
   }>;
+};
+
+type EvidenceGraphEvent = {
+  schemaVersion: number;
+  purpose: "frontend-evidence-graph-event" | "frontend-evidence-graph-person";
+  event?: {
+    id: string;
+    title: string;
+    display_time: string | null;
+    region_id: Region | string;
+    time_start: number | null;
+    time_end: number | null;
+    summary: string | null;
+    confidence: string;
+    review_status: string;
+  };
+  person?: {
+    id: string;
+    entity_type: string;
+    label: string;
+    region_id: Region | string | null;
+    time_start: number | null;
+    time_end: number | null;
+    summary: string | null;
+    confidence: string;
+    review_status: string;
+  };
+  events?: Array<{
+    id: string;
+    title: string;
+    display_time: string | null;
+    region_id: Region | string;
+    time_start: number | null;
+    time_end: number | null;
+    summary: string | null;
+  }>;
+  claims: Array<{
+    id: string;
+    claimType: string;
+    statement: string;
+    statementZh: string;
+    statementEn: string | null;
+    timeStart: number | null;
+    timeEnd: number | null;
+    regionId: string | null;
+    periodId: string | null;
+    confidence: string;
+    reviewStatus: string;
+    disputeStatus: string;
+  }>;
+  sources: Array<{
+    claimId: string;
+    sourceId: string | null;
+    sourceTitle: string | null;
+    citationShort: string | null;
+    url: string | null;
+    mentionId: string | null;
+    passageId: string | null;
+    locator: string | null;
+    quote: string | null;
+    translation: string | null;
+    sourceRole: string;
+    confidence: string;
+  }>;
+  subjects: Array<{
+    claimId: string;
+    subjectTable: string;
+    subjectId: string;
+    subjectRole: string;
+    sortOrder: number;
+    entityType: string | null;
+    label: string;
+    regionId: string | null;
+  }>;
+  summary: {
+    claims: number;
+    sources: number;
+    linkedSubjects: number;
+    linkedEvents?: number;
+    reviewedClaims: number;
+  };
 };
 
 type AiRetrieveItem = {
@@ -384,6 +465,60 @@ type AiAnswerHistoryResult = {
   total: number;
   limit: number;
   offset: number;
+};
+
+type RagEvalRunSummary = {
+  id: string;
+  createdAt: string;
+  provider: string | null;
+  model: string | null;
+  retrievalStrategy: string;
+  questionSetId: string;
+  resultCount: number;
+  averageScore: number | null;
+  failureCount: number;
+};
+
+type RagEvalRunDetail = {
+  run: {
+    id: string;
+    createdAt: string;
+    provider: string | null;
+    model: string | null;
+    retrievalStrategy: string;
+    questionSetId: string;
+  };
+  summary: {
+    results: number;
+    averageScore: number | null;
+    failures: number;
+  };
+  results: Array<{
+    questionId: string;
+    questionZh: string;
+    questionEn: string | null;
+    questionType: string;
+    regionId: string | null;
+    periodId: string | null;
+    expectedSubjectTable: string | null;
+    expectedSubjectId: string | null;
+    retrievalRunId: string | null;
+    scoreTotal: number;
+    scoreRetrieval: number;
+    scoreCitation: number;
+    scoreFactuality: number;
+    scoreCoverage: number;
+    scoreNoHallucination: number;
+    failureType: string | null;
+    judgeNote: string | null;
+    raw: {
+      expectedClaims?: string[];
+      expectedSources?: string[];
+      retrievedSources?: string[];
+      retrievedSubjects?: string[];
+      queryPlan?: { strategy?: string; steps?: string[] };
+    };
+  }>;
 };
 
 type RegionInfo = {
@@ -609,11 +744,41 @@ type CoverageRegion = {
   missingOriginalExamples: Array<{ id: string; title: string; year: number | null }>;
 };
 
+type CoverageTemplateAudit = {
+  purpose: "period-template-audit-190-310";
+  pass: boolean;
+  metrics: {
+    events: Record<string, number>;
+    people: Record<string, number>;
+    eventEvidenceLinks: Record<string, number>;
+    evidenceClaims: Record<string, number>;
+    ragQuestions: number;
+    latestRagRun: {
+      id: string | null;
+      created_at: string | null;
+      total_questions: number;
+      passed_questions: number;
+      failed_questions: number;
+      average_score: number | null;
+    } | null;
+    mapControlRecords: number;
+  };
+  thresholds: Record<string, unknown>;
+  checks: Array<{
+    id: string;
+    label: string;
+    actual: number;
+    threshold: number;
+    pass: boolean;
+  }>;
+};
+
 type FrontendCoverageDb = {
   schemaVersion: number;
-  purpose: "frontend-coverage-190-310";
+  purpose: "frontend-coverage-190-310" | "frontend-coverage-310-589";
   range: [number, number];
   generatedAt: string;
+  templateAudit?: CoverageTemplateAudit;
   regions: CoverageRegion[];
 };
 
@@ -662,6 +827,26 @@ type FrontendMapGeometryDebugDb = {
     control_record_count: number;
     source_count: number;
   }>;
+  displayFeatures?: Array<{
+    id: string;
+    name: string;
+    featureType: string;
+    confidence: string;
+    approximate: number;
+    center: [number, number] | null;
+    bounds: [number, number, number, number] | null;
+    geometryType: string | null;
+    coordinates: number[][][] | null;
+    activeControl: {
+      controller_id: string;
+      controller: string;
+      color: string;
+      start_year: number;
+      end_year: number;
+      confidence: string;
+    } | null;
+  }>;
+  selectedYear?: number | null;
   controllers: Array<{ id: string; label: string; color: string; sort_order: number }>;
   controlRecords: Array<{
     id: string;
@@ -933,8 +1118,15 @@ const coverageGapFilters: Array<{ id: CoverageGapFilter; label: Record<Locale, s
   { id: "period-mismatch", label: { zh: "时期错位", en: "Period mismatch" } },
 ];
 
+type CoveragePeriodId = "190-310" | "310-589";
+
+const coveragePeriods: Array<{ id: CoveragePeriodId; endpoint: string; label: Record<Locale, string> }> = [
+  { id: "190-310", endpoint: "/api/frontend-coverage-190-310", label: { zh: "190-310 三国/罗马/萨珊", en: "190-310 China/Rome/Sasanian" } },
+  { id: "310-589", endpoint: "/api/frontend-coverage-310-589", label: { zh: "310-589 魏晋南北朝", en: "310-589 Wei-Jin-Northern-Southern" } },
+];
+
 const uiText: Record<Locale, {
-  nav: Partial<Record<"home" | "people" | "age" | "evidence" | "compare" | "coverage" | "mapDebug" | "aiDebug" | "aiHistory", string>>;
+  nav: Partial<Record<"home" | "learning" | "people" | "age" | "evidence" | "evidenceGraph" | "compare" | "coverage" | "mapDebug" | "ragEval" | "aiDebug" | "aiHistory", string>>;
   pageTitle: Partial<Record<Page, string>>;
   search: {
     people: string;
@@ -1047,24 +1239,30 @@ const uiText: Record<Locale, {
   zh: {
     nav: {
       home: "时期总览",
+      learning: "学习模式",
       people: "人物索引",
       age: "年龄对比",
       evidence: "史料证据",
+      evidenceGraph: "证据图谱",
       compare: "事件对比",
       coverage: "覆盖度",
       mapDebug: "地图调试",
+      ragEval: "RAG 评测",
     },
     pageTitle: {
       home: "世界历史总览：前 550 至 1644",
+      learning: "190-310 学习模式",
       world: "中国、罗马与萨珊同年对照",
       china: "中国区域：三国格局",
       rome: "罗马省份控制 190-310 CE",
       people: "人物索引：跨区域人物与生年",
       age: "年龄对比：同年人物年龄",
       evidence: "史料证据：原文、译文与出处",
+      "evidence-graph": "证据图谱：事件、断言与出处",
       compare: "事件对比：中国、罗马与萨珊",
-      coverage: "190-310 覆盖度检查",
+      coverage: "覆盖度检查",
       "map-debug": "地图调试",
+      "rag-eval": "RAG 评测",
     },
     search: {
       people: "搜索人物、字、势力",
@@ -1072,10 +1270,10 @@ const uiText: Record<Locale, {
       default: "搜索人物、政权、事件",
     },
     coverage: {
-      aria: "190-310 覆盖度检查",
-      kicker: "190-310 范例检查",
-      title: "中国、罗马、萨珊覆盖度",
-      summary: "按区域检查事件、人物、证据和原文缺口。这个页面只做范例质量判断，不替代正文地图和史料证据页。",
+      aria: "覆盖度检查",
+      kicker: "范例质量检查",
+      title: "时期覆盖度",
+      summary: "按时期和区域检查事件、人物、证据和原文缺口。这个页面只做范例质量判断，不替代正文地图和史料证据页。",
       regions: "区域",
       gaps: "缺口",
       missingOriginal: "缺原文",
@@ -1177,25 +1375,31 @@ const uiText: Record<Locale, {
   en: {
     nav: {
       home: "Periods",
+      learning: "Learn",
       people: "People",
       age: "Age",
       evidence: "Evidence",
+      evidenceGraph: "Evidence Graph",
       compare: "Compare",
       coverage: "Coverage",
       mapDebug: "Map Debug",
+      ragEval: "RAG Eval",
       aiHistory: "AI History",
     },
     pageTitle: {
       home: "World History Overview: 550 BCE to 1644",
+      learning: "190-310 Learning Mode",
       world: "China, Rome, and Sasanian Persia by Year",
       china: "China: Three Kingdoms Map",
       rome: "Roman Provincial Control, 190-310 CE",
       people: "People Index: Cross-Regional Lives",
       age: "Age Comparison: People in the Same Year",
       evidence: "Historical Evidence: Texts, Translations, Sources",
+      "evidence-graph": "Evidence Graph: Events, Claims, Sources",
       compare: "Event Comparison: China, Rome, and Sasanian Persia",
-      coverage: "190-310 Coverage Audit",
+      coverage: "Coverage Audit",
       "map-debug": "Map Debug",
+      "rag-eval": "RAG Evaluation",
       "ai-history": "AI Answer History",
     },
     search: {
@@ -1204,10 +1408,10 @@ const uiText: Record<Locale, {
       default: "Search people, polities, events",
     },
     coverage: {
-      aria: "190-310 coverage audit",
-      kicker: "190-310 Sample Audit",
-      title: "China, Rome, and Sasanian Coverage",
-      summary: "Audit events, people, evidence cards, and missing original passages by region. This is a quality-control page for the model period.",
+      aria: "coverage audit",
+      kicker: "Sample Quality Audit",
+      title: "Period Coverage",
+      summary: "Audit events, people, evidence cards, and missing original passages by period and region. This is a quality-control page for model periods.",
       regions: "Regions",
       gaps: "Gaps",
       missingOriginal: "Missing originals",
@@ -1898,8 +2102,8 @@ function SourceMentionCard({ compact = false, mention }: { compact?: boolean; me
         <div className="source-mention-tags">
           <span>{getConfidenceLabel(mention.confidence)}</span>
           <span>{mention.reviewStatus === "reviewed" ? "已审" : "草稿"}</span>
-          {mention.tags.slice(0, 4).map((tag) => (
-            <span key={`${mention.id}-${tag}`}>{tag}</span>
+          {mention.tags.slice(0, 4).map((tag, index) => (
+            <span key={`${mention.id}-tag-${index}-${tag}`}>{tag}</span>
           ))}
         </div>
       )}
@@ -1935,8 +2139,8 @@ function LifeEventSources({ lifeEvent }: { lifeEvent: PersonLifeEvent }) {
     <div className="life-event-source-list">
       <div className="life-event-meta">
         <span>{getConfidenceLabel(lifeEvent.confidence)}</span>
-        {lifeEvent.sourceRefs.slice(0, 2).map((ref) => (
-          <SourceRefLink key={`${lifeEvent.id}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
+        {lifeEvent.sourceRefs.slice(0, 2).map((ref, index) => (
+          <SourceRefLink key={`${lifeEvent.id}-ref-${index}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
         ))}
         {sourceMentions.length > 0 && <span>{sourceMentions.length} 条原文段落</span>}
       </div>
@@ -1951,8 +2155,8 @@ function LifeEventSources({ lifeEvent }: { lifeEvent: PersonLifeEvent }) {
         <div className="life-event-excerpts">
           {lifeEvent.sourceRefs
             .filter((ref) => ref.quote)
-            .map((ref) => (
-              <div className="life-event-excerpt" key={`${lifeEvent.id}-${ref.sourceId}-${ref.locator ?? ""}-quote`}>
+            .map((ref, index) => (
+              <div className="life-event-excerpt" key={`${lifeEvent.id}-quote-${index}-${ref.sourceId}-${ref.locator ?? ""}`}>
                 <span>{formatSourceRef(ref)}</span>
                 <SourceExcerpt quote={ref.quote} />
               </div>
@@ -3601,6 +3805,9 @@ function App() {
   const [evidenceRegionFilter, setEvidenceRegionFilter] = useState<EvidenceRegionFilter>("all");
   const [evidenceResults, setEvidenceResults] = useState<EvidenceSearchResult[]>([]);
   const [evidenceStatus, setEvidenceStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const [evidenceGraphTarget, setEvidenceGraphTarget] = useState<{ type: "event" | "person"; id: string }>({ type: "event", id: "china-208-red-cliffs" });
+  const [evidenceGraphData, setEvidenceGraphData] = useState<EvidenceGraphEvent | null>(null);
+  const [evidenceGraphStatus, setEvidenceGraphStatus] = useState<"loading" | "ready" | "error">("loading");
   const [aiDebugQuestion, setAiDebugQuestion] = useState("赤壁之战有哪些史料依据？");
   const [aiDebugEventId, setAiDebugEventId] = useState("");
   const [aiDebugPersonId, setAiDebugPersonId] = useState("");
@@ -3613,6 +3820,11 @@ function App() {
   const [aiAnswerError, setAiAnswerError] = useState<string | null>(null);
   const [aiHistory, setAiHistory] = useState<AiAnswerHistoryResult | null>(null);
   const [aiHistoryStatus, setAiHistoryStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [ragEvalRuns, setRagEvalRuns] = useState<RagEvalRunSummary[]>([]);
+  const [selectedRagEvalRunId, setSelectedRagEvalRunId] = useState<string | null>(null);
+  const [ragEvalDetail, setRagEvalDetail] = useState<RagEvalRunDetail | null>(null);
+  const [ragEvalStatus, setRagEvalStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [ragEvalFilter, setRagEvalFilter] = useState<"all" | "failures" | "low-score">("all");
   const [showMediumEvents, setShowMediumEvents] = useState(false);
   const [events, setEvents] = useState<HistoricalEvent[]>([]);
   const [eventsStatus, setEventsStatus] = useState<"loading" | "ready" | "error">("loading");
@@ -3636,11 +3848,13 @@ function App() {
   const [runtimeRomanControlDb, setRuntimeRomanControlDb] = useState<FrontendRomanControlDb>(emptyRomanControlDb);
   const [romanControlDbStatus, setRomanControlDbStatus] = useState<"loading" | "ready" | "error">("loading");
   const [selectedRomanProvinceId, setSelectedRomanProvinceId] = useState<number | null>(null);
+  const [coveragePeriodId, setCoveragePeriodId] = useState<CoveragePeriodId>("190-310");
   const [coverageData, setCoverageData] = useState<FrontendCoverageDb | null>(null);
   const [coverageDataStatus, setCoverageDataStatus] = useState<"loading" | "ready" | "error">("loading");
   const [coverageGapFilter, setCoverageGapFilter] = useState<CoverageGapFilter>("all");
   const [mapDebugData, setMapDebugData] = useState<FrontendMapGeometryDebugDb | null>(null);
   const [mapDebugDataStatus, setMapDebugDataStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [mapDebugYear, setMapDebugYear] = useState(310);
   void eventImportanceStatus;
   void regionsDataStatus;
   void overviewDataVersion;
@@ -3650,6 +3864,7 @@ function App() {
   void coverageDataStatus;
   void mapDebugDataStatus;
   void aiHistoryStatus;
+  void ragEvalStatus;
 
   const t = uiText[locale];
   const normalizedQuery = query.trim().toLowerCase();
@@ -4381,9 +4596,11 @@ function App() {
 
   useEffect(() => {
     let cancelled = false;
+    const coveragePeriod = coveragePeriods.find((period) => period.id === coveragePeriodId) ?? coveragePeriods[0];
 
     setCoverageDataStatus("loading");
-    fetch("/api/frontend-coverage-190-310")
+    setCoverageGapFilter("all");
+    fetch(coveragePeriod.endpoint)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Coverage API failed: ${response.status}`);
@@ -4411,13 +4628,13 @@ function App() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [coveragePeriodId]);
 
   useEffect(() => {
     let cancelled = false;
 
     setMapDebugDataStatus("loading");
-    fetch("/api/frontend-map-geometry-debug?dataset=china-admin-block-map-190-280&limit=180")
+    fetch(`/api/frontend-map-geometry-debug?dataset=china-power-zone-map-310-589&limit=180&year=${mapDebugYear}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Map geometry debug API failed: ${response.status}`);
@@ -4445,7 +4662,7 @@ function App() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [mapDebugYear]);
 
   useEffect(() => {
     let cancelled = false;
@@ -4480,6 +4697,72 @@ function App() {
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    setRagEvalStatus("loading");
+    fetch("/api/rag-eval/runs?set=sample-190-310-v1&limit=8")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`RAG eval runs API failed: ${response.status}`);
+        }
+        return response.json() as Promise<{ runs: RagEvalRunSummary[] }>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+        setRagEvalRuns(data.runs);
+        setSelectedRagEvalRunId((current) => current ?? data.runs[0]?.id ?? null);
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+        setRagEvalRuns([]);
+        setRagEvalDetail(null);
+        setRagEvalStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!selectedRagEvalRunId) {
+      return;
+    }
+
+    let cancelled = false;
+    setRagEvalStatus("loading");
+    fetch(`/api/rag-eval/runs/${encodeURIComponent(selectedRagEvalRunId)}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`RAG eval detail API failed: ${response.status}`);
+        }
+        return response.json() as Promise<RagEvalRunDetail>;
+      })
+      .then((data) => {
+        if (cancelled) {
+          return;
+        }
+        setRagEvalDetail(data);
+        setRagEvalStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) {
+          return;
+        }
+        setRagEvalDetail(null);
+        setRagEvalStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedRagEvalRunId]);
 
   useEffect(() => {
     let cancelled = false;
@@ -4593,6 +4876,37 @@ function App() {
       controller.abort();
     };
   }, [evidenceRegionFilter, evidenceSearchTerm, page]);
+
+  useEffect(() => {
+    if (page !== "evidence-graph" || !evidenceGraphTarget.id) {
+      return;
+    }
+
+    const controller = new AbortController();
+    setEvidenceGraphStatus("loading");
+    fetch(`/api/evidence-graph/${evidenceGraphTarget.type}/${encodeURIComponent(evidenceGraphTarget.id)}?locale=${locale}`, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Evidence graph API failed: ${response.status}`);
+        }
+        return response.json() as Promise<EvidenceGraphEvent>;
+      })
+      .then((payload) => {
+        setEvidenceGraphData(payload);
+        setEvidenceGraphStatus("ready");
+      })
+      .catch((error) => {
+        if (error.name === "AbortError") {
+          return;
+        }
+        setEvidenceGraphData(null);
+        setEvidenceGraphStatus("error");
+      });
+
+    return () => {
+      controller.abort();
+    };
+  }, [evidenceGraphTarget, locale, page]);
 
   useEffect(() => {
     setSelectedPersonId((current) =>
@@ -4729,8 +5043,19 @@ function App() {
     setSelectedPersonId((current) => current ?? "cao-cao");
   }
 
+  function openLearningGuide() {
+    setPage("learning");
+    setQuery("");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+    setSelectedRomanProvinceId(null);
+  }
+
   function openAgeComparison() {
     setPage("age");
+    setQuery("");
     setSummaryRegion(null);
     setHoveredRegion(null);
     setSelectedChinaBlockId(null);
@@ -4759,6 +5084,28 @@ function App() {
     openEvidenceSearch(event.title, event.region);
   }
 
+  function openEvidenceGraph(event: HistoricalEvent = selectedEvent) {
+    setEvidenceGraphTarget({ type: "event", id: event.id });
+    setPage("evidence-graph");
+    setQuery("");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+    setSelectedRomanProvinceId(null);
+  }
+
+  function openPersonEvidenceGraph(personId: string) {
+    setEvidenceGraphTarget({ type: "person", id: personId });
+    setPage("evidence-graph");
+    setQuery("");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+    setSelectedRomanProvinceId(null);
+  }
+
   function openEventComparison() {
     setPage("compare");
     setQuery("");
@@ -4781,6 +5128,16 @@ function App() {
 
   function openMapDebugPanel() {
     setPage("map-debug");
+    setQuery("");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+    setSelectedRomanProvinceId(null);
+  }
+
+  function openRagEvalPanel() {
+    setPage("rag-eval");
     setQuery("");
     setSummaryRegion(null);
     setHoveredRegion(null);
@@ -4989,6 +5346,27 @@ function App() {
     }
   }
 
+  function openLearningEvent(eventId: string) {
+    const event = events.find((item) => item.id === eventId);
+    if (!event) {
+      return;
+    }
+    selectHistoricalEvent(event);
+  }
+
+  function askLearningQuestion(question: string, region: EvidenceRegionFilter = "all", questionYear = year) {
+    setAiDebugQuestion(question);
+    setAiDebugRegion(region);
+    setAiDebugYear(String(questionYear));
+    setAiDebugEventId("");
+    setAiDebugPersonId("");
+    setAiDebugResult(null);
+    setAiAnswerResult(null);
+    setAiDebugStatus("idle");
+    setAiAnswerStatus("idle");
+    setPage("ai-debug");
+  }
+
   const coverageTotals = coverageData?.regions.reduce(
     (totals, region) => ({
       gaps: totals.gaps + region.gaps.length,
@@ -5004,17 +5382,150 @@ function App() {
       coverageData?.regions.filter((region) => coverageRegionMatchesFilter(region, filter.id)).length ?? 0,
     ]),
   ) as Record<CoverageGapFilter, number>;
+  const coverageTemplateAudit = coverageData?.templateAudit;
+  const coverageTemplateFailedChecks = coverageTemplateAudit?.checks.filter((check) => !check.pass) ?? [];
+  const mapDebugDisplayFeatures = mapDebugData?.displayFeatures?.filter((feature) => feature.coordinates && feature.bounds) ?? [];
+  const mapDebugBounds = mapDebugDisplayFeatures.reduce<[number, number, number, number] | null>((bounds, feature) => {
+    if (!feature.bounds) {
+      return bounds;
+    }
+    return bounds
+      ? [
+          Math.min(bounds[0], feature.bounds[0]),
+          Math.min(bounds[1], feature.bounds[1]),
+          Math.max(bounds[2], feature.bounds[2]),
+          Math.max(bounds[3], feature.bounds[3]),
+        ]
+      : feature.bounds;
+  }, null);
+  const projectMapDebugPoint = (point: [number, number]) => {
+    const bounds = mapDebugBounds ?? [94, 21, 126, 43];
+    const width = 760;
+    const height = 360;
+    const pad = 24;
+    const lonSpan = Math.max(1, bounds[2] - bounds[0]);
+    const latSpan = Math.max(1, bounds[3] - bounds[1]);
+    const x = pad + ((point[0] - bounds[0]) / lonSpan) * (width - pad * 2);
+    const y = pad + ((bounds[3] - point[1]) / latSpan) * (height - pad * 2);
+    return [x, y] as const;
+  };
   const pageHeadingTitle =
     t.pageTitle[page] ??
     (page === "ai-history"
       ? (locale === "zh" ? "AI 回答记录" : "AI Answer History")
       : (locale === "zh" ? "AI 问答" : "AI Q&A"));
+  const visibleRagEvalResults = ragEvalDetail?.results.filter((result) => {
+    if (ragEvalFilter === "failures") {
+      return Boolean(result.failureType);
+    }
+    if (ragEvalFilter === "low-score") {
+      return result.scoreTotal < 0.9;
+    }
+    return true;
+  }) ?? [];
+  const ragEvalTypeCounts = ragEvalDetail?.results.reduce<Record<string, number>>((counts, result) => {
+    counts[result.questionType] = (counts[result.questionType] ?? 0) + 1;
+    return counts;
+  }, {}) ?? {};
   const showTimelineDock = page === "world" || page === "china" || page === "rome" || page === "age";
   const showDetailPanel = page === "world" || page === "china" || page === "rome" || page === "people";
   const showRegionalEventSections = page === "world" || page === "china" || page === "rome";
+  const learningEventGroups = [
+    {
+      id: "china",
+      label: locale === "zh" ? "中国主线" : "China",
+      summary: locale === "zh" ? "东汉崩解、三国成形、魏晋统一，是本时期最完整的范例线。" : "Late Han collapse, Three Kingdoms formation, and Jin reunification are the most complete model line.",
+      eventIds: [
+        "china-190-coalition-against-dong-zhuo",
+        "china-200-battle-of-guandu",
+        "china-208-red-cliffs",
+        "china-220-cao-pi-founds-wei",
+        "china-263-shu-han-conquered",
+        "china-280-jin-conquers-wu",
+      ],
+    },
+    {
+      id: "rome",
+      label: locale === "zh" ? "罗马主线" : "Rome",
+      summary: locale === "zh" ? "从塞维鲁王朝到三世纪危机，再到戴克里先改革和四帝共治。" : "From the Severans through the third-century crisis to Diocletian's reforms and the Tetrarchy.",
+      eventIds: [
+        "rome-193-didius-julianus-buys-the-throne-severus-proclaimed-in-pannonia",
+        "rome-212-antonine-constitution",
+        "rome-235-assassination-of-alexander-severus-beginning-of-the-third-century-crisis",
+        "rome-260-capture-of-valerian-by-shapur-i",
+        "rome-272-aurelian-defeats-zenobia-and-recovers-the-east",
+        "rome-293-diocletian-creates-the-tetrarchy",
+      ],
+    },
+    {
+      id: "sasanian-persia",
+      label: locale === "zh" ? "萨珊主线" : "Sasanian Persia",
+      summary: locale === "zh" ? "安息旧秩序瓦解后，萨珊成为罗马东方最强对手。" : "After the fall of Parthia, the Sasanians became Rome's strongest eastern rival.",
+      eventIds: [
+        "sasanian-224-ardashir-defeats-parthians",
+        "sasanian-230-ardashir-roman-frontier",
+        "sasanian-244-battle-of-misiche",
+        "rome-sasanian-260-valerian-captured",
+        "sasanian-293-narseh-paikuli",
+        "sasanian-298-peace-of-nisibis",
+      ],
+    },
+  ].map((group) => ({
+    ...group,
+    events: group.eventIds.map((eventId) => events.find((event) => event.id === eventId)).filter((event): event is HistoricalEvent => Boolean(event)),
+  }));
+  const learningRequiredEvents = learningEventGroups.flatMap((group) => group.events);
+  const learningPeopleTargets = [
+    { id: "cao-cao", fallback: "曹操" },
+    { id: "liu-bei", fallback: "刘备" },
+    { id: "sun-quan", fallback: "孙权" },
+    { id: "zhuge-liang", fallback: "诸葛亮" },
+    { id: "diocletian", fallback: "Diocletian" },
+    { id: "aurelian", fallback: "Aurelian" },
+    { id: "shapur-i", fallback: "Shapur" },
+    { id: "ardashir-i", fallback: "Ardashir" },
+  ];
+  const learningPeople = learningPeopleTargets
+    .map((target) => (
+      personIndexItems.find((person) => person.id === target.id) ??
+      personIndexItems.find((person) => person.name.toLowerCase().includes(target.fallback.toLowerCase()))
+    ))
+    .reduce<PersonIndexItem[]>((people, person) => {
+      if (person && !people.some((item) => item.id === person.id)) {
+        people.push(person);
+      }
+      return people;
+    }, []);
+  const learningYearAnchors = [
+    { year: 190, label: locale === "zh" ? "东汉失控" : "Late Han rupture" },
+    { year: 208, label: locale === "zh" ? "赤壁之后" : "After Red Cliffs" },
+    { year: 220, label: locale === "zh" ? "魏代汉" : "Wei replaces Han" },
+    { year: 235, label: locale === "zh" ? "罗马危机起点" : "Roman crisis begins" },
+    { year: 260, label: locale === "zh" ? "瓦勒良被俘" : "Valerian captured" },
+    { year: 280, label: locale === "zh" ? "西晋统一" : "Jin reunifies China" },
+    { year: 293, label: locale === "zh" ? "四帝共治" : "Tetrarchy" },
+    { year: 310, label: locale === "zh" ? "范例终点" : "Model endpoint" },
+  ];
+  const learningQuestions = [
+    {
+      question: locale === "zh" ? "曹操死的时候，罗马处于什么政治阶段？" : "What was happening in Rome when Cao Cao died?",
+      region: "all" as EvidenceRegionFilter,
+      year: 220,
+    },
+    {
+      question: locale === "zh" ? "260 年瓦勒良被俘为什么是罗马和萨珊关系的关键事件？" : "Why was Valerian's capture in 260 a key event in Roman-Sasanian relations?",
+      region: "rome" as EvidenceRegionFilter,
+      year: 260,
+    },
+    {
+      question: locale === "zh" ? "三国到西晋统一这条线有哪些关键史料？" : "Which sources support the line from the Three Kingdoms to Jin reunification?",
+      region: "china" as EvidenceRegionFilter,
+      year: 280,
+    },
+  ];
 
   return (
-    <main className={`app-shell ${page === "home" || page === "evidence" || page === "compare" || page === "coverage" || page === "map-debug" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""}`}>
+    <main className={`app-shell ${page === "home" || page === "learning" || page === "evidence" || page === "evidence-graph" || page === "compare" || page === "coverage" || page === "map-debug" || page === "rag-eval" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""}`}>
       <section className="map-workspace">
         <header className="topbar">
           <div>
@@ -5030,6 +5541,15 @@ function App() {
             >
               <Compass size={17} aria-hidden="true" />
               <span>{t.nav.home}</span>
+            </button>
+            <button
+              className={`topbar-action ${page === "learning" ? "active" : ""}`}
+              type="button"
+              aria-pressed={page === "learning"}
+              onClick={openLearningGuide}
+            >
+              <BookOpen size={17} aria-hidden="true" />
+              <span>{t.nav.learning}</span>
             </button>
             <button
               className={`topbar-action ${page === "people" ? "active" : ""}`}
@@ -5059,6 +5579,15 @@ function App() {
               <span>{t.nav.evidence}</span>
             </button>
             <button
+              className={`topbar-action ${page === "evidence-graph" ? "active" : ""}`}
+              type="button"
+              aria-pressed={page === "evidence-graph"}
+              onClick={() => openEvidenceGraph(selectedEvent)}
+            >
+              <Network size={17} aria-hidden="true" />
+              <span>{t.nav.evidenceGraph}</span>
+            </button>
+            <button
               className={`topbar-action ${page === "compare" ? "active" : ""}`}
               type="button"
               aria-pressed={page === "compare"}
@@ -5086,6 +5615,15 @@ function App() {
               <span>{t.nav.mapDebug}</span>
             </button>
             <button
+              className={`topbar-action ${page === "rag-eval" ? "active" : ""}`}
+              type="button"
+              aria-pressed={page === "rag-eval"}
+              onClick={openRagEvalPanel}
+            >
+              <Grid3x3 size={17} aria-hidden="true" />
+              <span>{t.nav.ragEval}</span>
+            </button>
+            <button
               className={`topbar-action ${page === "ai-debug" ? "active" : ""}`}
               type="button"
               aria-pressed={page === "ai-debug"}
@@ -5111,7 +5649,7 @@ function App() {
             >
               <span>{locale === "zh" ? "English" : "中文"}</span>
             </button>
-            {page !== "home" && page !== "coverage" && page !== "map-debug" && page !== "ai-debug" && page !== "ai-history" && (
+            {page !== "home" && page !== "learning" && page !== "coverage" && page !== "map-debug" && page !== "rag-eval" && page !== "ai-debug" && page !== "ai-history" && (
               <label className="search-box">
                 <Search size={18} aria-hidden="true" />
                 <input
@@ -5389,11 +5927,181 @@ function App() {
 
               <div className="overview-context-list">
                 <span>{t.common.contextNotes}</span>
-                {activeOverviewPeriod.context.map((contextItem) => (
-                  <p key={`${activeOverviewPeriod.id}-${contextItem}`}>{contextItem}</p>
+                {activeOverviewPeriod.context.map((contextItem, index) => (
+                  <p key={`${activeOverviewPeriod.id}-context-${index}`}>{contextItem}</p>
                 ))}
               </div>
             </aside>
+          </section>
+        ) : page === "learning" ? (
+          <section className="learning-stage" aria-label={locale === "zh" ? "190-310 学习模式" : "190-310 learning mode"}>
+            <div className="learning-hero">
+              <div>
+                <p className="kicker">{locale === "zh" ? "范例时期" : "Model Period"}</p>
+                <h2>{locale === "zh" ? "190-310：从三国形成到罗马三世纪危机" : "190-310: From the Three Kingdoms to Rome's Third-Century Crisis"}</h2>
+                <p>
+                  {locale === "zh"
+                    ? "这个页面把地图、事件、人物、史料、AI 问答和覆盖度检查串成一条学习路径。后续每个正式时间段都应按这个结构复用。"
+                    : "This page turns maps, events, people, evidence, AI Q&A, and coverage checks into one learning path. Future formal periods should reuse this structure."}
+                </p>
+              </div>
+              <div className="learning-hero-metrics">
+                <EvidenceField label={locale === "zh" ? "时间跨度" : "span"} value="120" />
+                <EvidenceField label={locale === "zh" ? "主线" : "threads"} value={learningEventGroups.length} />
+                <EvidenceField label={locale === "zh" ? "必看事件" : "core events"} value={learningRequiredEvents.length} />
+                <EvidenceField label={locale === "zh" ? "关键人物" : "people"} value={learningPeople.length} />
+              </div>
+            </div>
+
+            <div className="learning-layout">
+              <div className="learning-main">
+                <article className="learning-card learning-path-card">
+                  <header>
+                    <span>01</span>
+                    <div>
+                      <h3>{locale === "zh" ? "先看全局" : "Start with the whole picture"}</h3>
+                      <p>{locale === "zh" ? "拖时间条理解同年格局，再进入事件对比。" : "Use the year slider to understand the same-year layout, then compare events."}</p>
+                    </div>
+                  </header>
+                  <div className="learning-action-row">
+                    <button className="primary-action" type="button" onClick={returnToWorld}>
+                      <MapPinned size={18} aria-hidden="true" />
+                      {locale === "zh" ? "打开同年地图" : "Open Year Map"}
+                    </button>
+                    <button className="secondary-action" type="button" onClick={openEventComparison}>
+                      <CircleDot size={18} aria-hidden="true" />
+                      {locale === "zh" ? "事件对比" : "Compare Events"}
+                    </button>
+                  </div>
+                </article>
+
+                <article className="learning-card">
+                  <header>
+                    <span>02</span>
+                    <div>
+                      <h3>{locale === "zh" ? "关键年份" : "Anchor Years"}</h3>
+                      <p>{locale === "zh" ? "这些年份是本时期讲解、地图快照和问答的骨架。" : "These years form the backbone for maps, narration, and Q&A."}</p>
+                    </div>
+                  </header>
+                  <div className="learning-year-grid">
+                    {learningYearAnchors.map((anchor) => (
+                      <button
+                        key={`learning-year-${anchor.year}`}
+                        type="button"
+                        onClick={() => {
+                          setYear(anchor.year);
+                          setPage("world");
+                        }}
+                      >
+                        <strong>{anchor.year}</strong>
+                        <span>{anchor.label}</span>
+                      </button>
+                    ))}
+                  </div>
+                </article>
+
+                <article className="learning-card">
+                  <header>
+                    <span>03</span>
+                    <div>
+                      <h3>{locale === "zh" ? "三条主线" : "Three Threads"}</h3>
+                      <p>{locale === "zh" ? "每条线都能点进地图事件，也能进入证据图谱。" : "Each thread can open map events or the evidence graph."}</p>
+                    </div>
+                  </header>
+                  <div className="learning-lanes">
+                    {learningEventGroups.map((group) => (
+                      <section className="learning-lane" key={group.id}>
+                        <h4>{group.label}</h4>
+                        <p>{group.summary}</p>
+                        <div className="learning-event-list">
+                          {group.events.map((event) => {
+                            const display = getEventDisplayTitle(event, locale);
+                            return (
+                              <button key={event.id} type="button" onClick={() => openLearningEvent(event.id)}>
+                                <span>{event.startYear}</span>
+                                <strong>{display.primary}</strong>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </section>
+                    ))}
+                  </div>
+                </article>
+              </div>
+
+              <aside className="learning-side">
+                <article className="learning-card">
+                  <header>
+                    <span>04</span>
+                    <div>
+                      <h3>{locale === "zh" ? "关键人物" : "Key People"}</h3>
+                      <p>{locale === "zh" ? "人物页可继续看生平、关系和年龄对比。" : "Open people pages for lives, relations, and age comparisons."}</p>
+                    </div>
+                  </header>
+                  <div className="learning-people-grid">
+                    {learningPeople.map((person) => (
+                      <button
+                        key={`learning-person-${person.id}`}
+                        type="button"
+                        onClick={() => {
+                          selectPerson(person.id);
+                          setPage("people");
+                        }}
+                      >
+                        <strong>{person.name}</strong>
+                        <span>{[person.life, person.primaryPolity].filter(Boolean).join(" · ")}</span>
+                      </button>
+                    ))}
+                  </div>
+                </article>
+
+                <article className="learning-card">
+                  <header>
+                    <span>05</span>
+                    <div>
+                      <h3>{locale === "zh" ? "史料入口" : "Evidence Entry"}</h3>
+                      <p>{locale === "zh" ? "先用史料证据页查原文，再用图谱看断言和出处绑定。" : "Use evidence search for texts, then the graph for claims and source links."}</p>
+                    </div>
+                  </header>
+                  <div className="learning-action-stack">
+                    <button className="secondary-action" type="button" onClick={() => openEvidenceSearch(locale === "zh" ? "三国 西晋 罗马 萨珊" : "Three Kingdoms Jin Rome Sasanian")}>
+                      <BookOpen size={18} aria-hidden="true" />
+                      {locale === "zh" ? "检索史料" : "Search Evidence"}
+                    </button>
+                    <button className="secondary-action" type="button" onClick={() => openEvidenceGraph(learningRequiredEvents[0] ?? selectedEvent)}>
+                      <Network size={18} aria-hidden="true" />
+                      {locale === "zh" ? "打开证据图谱" : "Open Evidence Graph"}
+                    </button>
+                    <button className="secondary-action" type="button" onClick={openCoveragePanel}>
+                      <Grid3x3 size={18} aria-hidden="true" />
+                      {locale === "zh" ? "查看覆盖度" : "View Coverage"}
+                    </button>
+                  </div>
+                </article>
+
+                <article className="learning-card">
+                  <header>
+                    <span>06</span>
+                    <div>
+                      <h3>{locale === "zh" ? "AI 提问 / 自测" : "AI Q&A / Self-Test"}</h3>
+                      <p>{locale === "zh" ? "问题会带年份和区域上下文，回答优先使用 SQLite 证据。" : "Questions include year and region context; answers prioritize SQLite evidence."}</p>
+                    </div>
+                  </header>
+                  <div className="learning-question-list">
+                    {learningQuestions.map((item) => (
+                      <button
+                        key={item.question}
+                        type="button"
+                        onClick={() => askLearningQuestion(item.question, item.region, item.year)}
+                      >
+                        {item.question}
+                      </button>
+                    ))}
+                  </div>
+                </article>
+              </aside>
+            </div>
           </section>
         ) : page === "ai-history" ? (
           <section className="evidence-stage ai-history-stage" aria-label={locale === "zh" ? "AI 回答记录" : "AI answer history"}>
@@ -5446,7 +6154,7 @@ function App() {
                       <div className="ai-quality-list yellow">
                         <strong>{locale === "zh" ? "Warnings" : "Warnings"}</strong>
                         <ul>
-                          {answer.warnings.map((warning) => <li key={warning}>{warning}</li>)}
+                          {answer.warnings.map((warning, index) => <li key={`${answer.id}-warning-${index}`}>{warning}</li>)}
                         </ul>
                       </div>
                     )}
@@ -5454,8 +6162,8 @@ function App() {
                       <details className="ai-citation-details">
                         <summary>{locale === "zh" ? "查看引用" : "View citations"}</summary>
                         <div className="ai-citation-list">
-                          {answer.citations.map((citation) => (
-                            <article key={`${answer.id}-${citation.ref}-${citation.sourceId}-${citation.locator}`}>
+                          {answer.citations.map((citation, index) => (
+                            <article key={`${answer.id}-citation-${index}-${citation.ref}-${citation.sourceId}-${citation.locator}`}>
                               <header>
                                 <strong>{citation.ref}</strong>
                                 <span>{[citation.sourceTitle ?? citation.sourceId, citation.locator].filter(Boolean).join(" · ")}</span>
@@ -5620,8 +6328,8 @@ function App() {
                             </span>
                             {aiAnswerResult.qualityChecks.uncitedClaimSamples.length > 0 && (
                               <ul>
-                                {aiAnswerResult.qualityChecks.uncitedClaimSamples.map((sample) => (
-                                  <li key={sample}>{sample}</li>
+                                {aiAnswerResult.qualityChecks.uncitedClaimSamples.map((sample, index) => (
+                                  <li key={`uncited-claim-${index}`}>{sample}</li>
                                 ))}
                               </ul>
                             )}
@@ -5632,8 +6340,8 @@ function App() {
                           <div className="coverage-examples">
                             <div>
                               <span>citations</span>
-                              {aiAnswerResult.citations.slice(0, 8).map((citation) => (
-                                <p key={`${citation.ref}-${citation.sourceId}-${citation.locator}`}>
+                              {aiAnswerResult.citations.slice(0, 8).map((citation, index) => (
+                                <p key={`answer-citation-${index}-${citation.ref}-${citation.sourceId}-${citation.locator}`}>
                                   {citation.ref}: {[citation.sourceId, citation.locator].filter(Boolean).join(" · ") || citation.subjectId}
                                 </p>
                               ))}
@@ -5648,8 +6356,8 @@ function App() {
                   <details className="ai-related-evidence">
                     <summary>{locale === "zh" ? `相关证据 ${aiDebugResult.items.length}` : `Relevant Evidence ${aiDebugResult.items.length}`}</summary>
                     <div className="ai-related-list">
-                      {aiDebugResult.items.slice(0, 6).map((item) => (
-                        <article key={`related-${item.rank}-${item.chunkId ?? item.subjectId ?? item.sourceId}`}>
+                      {aiDebugResult.items.slice(0, 6).map((item, index) => (
+                        <article key={`related-${index}-${item.rank}-${item.chunkId ?? item.subjectId ?? item.sourceId}`}>
                           <header>
                             <strong>{item.title ?? item.sourceTitle ?? item.subjectId ?? item.chunkId}</strong>
                             <span>{item.regionId ?? "n/a"} {item.timeStart ?? ""}</span>
@@ -5676,15 +6384,15 @@ function App() {
                     {aiDebugResult.warnings.length > 0 && (
                       <div>
                         <span>warnings</span>
-                        {aiDebugResult.warnings.map((warning) => <p key={warning}>{warning}</p>)}
+                        {aiDebugResult.warnings.map((warning, index) => <p key={`ai-warning-${index}`}>{warning}</p>)}
                       </div>
                     )}
                   </div>
                 </article>
 
                 <div className="evidence-results ai-technical-panel">
-                  {aiDebugResult.items.length ? aiDebugResult.items.map((item) => (
-                    <article className="evidence-card" key={`${item.rank}-${item.chunkId ?? item.subjectId ?? item.sourceId}`}>
+                  {aiDebugResult.items.length ? aiDebugResult.items.map((item, index) => (
+                    <article className="evidence-card" key={`debug-result-${index}-${item.rank}-${item.chunkId ?? item.subjectId ?? item.sourceId}`}>
                       <div className="evidence-card-heading">
                         <div>
                           <span>#{item.rank} · {item.reason ?? "unknown"} · score {item.score ?? "n/a"}</span>
@@ -5743,7 +6451,60 @@ function App() {
             ) : mapDebugDataStatus === "error" || !mapDebugData ? (
               <div className="empty-state">地图几何调试 API 暂时不可用。</div>
             ) : (
-              <div className="coverage-grid">
+              <>
+                <article className="coverage-card map-debug-visual-card">
+                  <header>
+                    <div>
+                      <span>{mapDebugData.controlDataset?.label ?? "control timeline"}</span>
+                      <h3>{mapDebugYear} 年势力区块</h3>
+                    </div>
+                    <strong>{mapDebugDisplayFeatures.length} zones</strong>
+                  </header>
+                  <div className="map-debug-year-control">
+                    <input
+                      type="range"
+                      min={mapDebugData.controlDataset?.time_start ?? 310}
+                      max={mapDebugData.controlDataset?.time_end ?? 589}
+                      value={mapDebugYear}
+                      onChange={(event) => setMapDebugYear(Number(event.target.value))}
+                      aria-label="地图调试年份"
+                    />
+                    <span>{mapDebugYear}</span>
+                  </div>
+                  <svg className="map-debug-preview" viewBox="0 0 760 360" role="img" aria-label={`${mapDebugYear} 年中国粗略势力区块`}>
+                    <rect x="0" y="0" width="760" height="360" rx="8" />
+                    {mapDebugDisplayFeatures.map((feature) => {
+                      const ring = feature.coordinates?.[0] ?? [];
+                      const points = ring
+                        .map((point) => projectMapDebugPoint([point[0], point[1]]))
+                        .map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`)
+                        .join(" ");
+                      const labelPoint = feature.center ? projectMapDebugPoint(feature.center) : null;
+                      return (
+                        <g key={feature.id}>
+                          <polygon
+                            points={points}
+                            fill={feature.activeControl?.color ?? "#8b8a80"}
+                            stroke="#2b2217"
+                            strokeWidth="1.4"
+                            opacity={feature.approximate ? 0.82 : 0.95}
+                          />
+                          {labelPoint && (
+                            <>
+                              <text x={labelPoint[0]} y={labelPoint[1] - 5} textAnchor="middle">
+                                {feature.name}
+                              </text>
+                              <text x={labelPoint[0]} y={labelPoint[1] + 12} textAnchor="middle" className="map-debug-controller-label">
+                                {feature.activeControl?.controller ?? "无记录"}
+                              </text>
+                            </>
+                          )}
+                        </g>
+                      );
+                    })}
+                  </svg>
+                </article>
+                <div className="coverage-grid">
                 <article className="coverage-card">
                   <header>
                     <div>
@@ -5823,6 +6584,131 @@ function App() {
                   </div>
                 </article>
               </div>
+              </>
+            )}
+          </section>
+        ) : page === "rag-eval" ? (
+          <section className="coverage-stage rag-eval-stage" aria-label={locale === "zh" ? "RAG 评测" : "RAG evaluation"}>
+            <div className="coverage-summary">
+              <div>
+                <p className="kicker">RAG eval</p>
+                <h2>{locale === "zh" ? "证据召回质量仪表盘" : "Evidence Retrieval Quality Dashboard"}</h2>
+                <p>
+                  {locale === "zh"
+                    ? "读取 SQLite 中保存的评测结果，查看每题分数、命中证据、失败原因和检索路径。"
+                    : "Review saved SQLite evaluation runs, per-question scores, evidence hits, failure reasons, and retrieval plans."}
+                </p>
+              </div>
+              <div className="coverage-metrics compact">
+                <EvidenceField label={locale === "zh" ? "题目" : "questions"} value={ragEvalDetail?.summary.results ?? 0} />
+                <EvidenceField label={locale === "zh" ? "均分" : "avg"} value={ragEvalDetail?.summary.averageScore ?? "n/a"} />
+                <EvidenceField label={locale === "zh" ? "失败" : "failures"} value={ragEvalDetail?.summary.failures ?? 0} />
+                <EvidenceField label={locale === "zh" ? "显示" : "shown"} value={visibleRagEvalResults.length} />
+              </div>
+            </div>
+
+            <div className="rag-eval-toolbar">
+              <div className="coverage-filter-bar compact" role="group" aria-label={locale === "zh" ? "选择评测 run" : "Select evaluation run"}>
+                {ragEvalRuns.map((run) => (
+                  <button
+                    className={selectedRagEvalRunId === run.id ? "selected" : ""}
+                    key={run.id}
+                    type="button"
+                    onClick={() => setSelectedRagEvalRunId(run.id)}
+                  >
+                    {new Date(run.createdAt).toLocaleString(locale === "zh" ? "zh-CN" : "en-US")}
+                    <small>{run.resultCount} / {run.averageScore ?? "n/a"}</small>
+                  </button>
+                ))}
+              </div>
+              <div className="coverage-filter-bar compact" role="group" aria-label={locale === "zh" ? "筛选结果" : "Filter results"}>
+                {[
+                  { id: "all", label: locale === "zh" ? "全部" : "All" },
+                  { id: "failures", label: locale === "zh" ? "失败" : "Failures" },
+                  { id: "low-score", label: locale === "zh" ? "低分" : "Low Score" },
+                ].map((filter) => (
+                  <button
+                    className={ragEvalFilter === filter.id ? "selected" : ""}
+                    key={filter.id}
+                    type="button"
+                    onClick={() => setRagEvalFilter(filter.id as typeof ragEvalFilter)}
+                  >
+                    {filter.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {ragEvalStatus === "loading" ? (
+              <div className="empty-state">{locale === "zh" ? "正在读取评测结果..." : "Loading evaluation results..."}</div>
+            ) : ragEvalStatus === "error" || !ragEvalDetail ? (
+              <div className="empty-state">{locale === "zh" ? "RAG 评测 API 暂时不可用。" : "RAG evaluation API is unavailable."}</div>
+            ) : (
+              <>
+                <div className="rag-eval-type-strip">
+                  {Object.entries(ragEvalTypeCounts).map(([type, count]) => (
+                    <span key={type}>
+                      {type}
+                      <strong>{count}</strong>
+                    </span>
+                  ))}
+                </div>
+
+                <div className="rag-eval-list">
+                  {visibleRagEvalResults.map((result) => {
+                    const scoreClass = result.failureType ? "fail" : result.scoreTotal >= 0.95 ? "pass" : "review";
+                    const expectedSources = result.raw.expectedSources ?? [];
+                    const retrievedSources = result.raw.retrievedSources ?? [];
+                    const retrievedSubjects = result.raw.retrievedSubjects ?? [];
+                    return (
+                      <article className={`rag-eval-card ${scoreClass}`} key={result.questionId}>
+                        <header>
+                          <div>
+                            <span>{result.questionType} · {result.regionId ?? "all"} · {result.questionId}</span>
+                            <h3>{locale === "zh" ? result.questionZh : (result.questionEn ?? result.questionZh)}</h3>
+                          </div>
+                          <strong>{result.scoreTotal.toFixed(3)}</strong>
+                        </header>
+                        <div className="rag-eval-score-grid">
+                          <EvidenceField label="retrieval" value={result.scoreRetrieval.toFixed(2)} />
+                          <EvidenceField label="citation" value={result.scoreCitation.toFixed(2)} />
+                          <EvidenceField label="factuality" value={result.scoreFactuality.toFixed(2)} />
+                          <EvidenceField label="coverage" value={result.scoreCoverage.toFixed(2)} />
+                        </div>
+                        <div className="rag-eval-note-row">
+                          <span>{result.failureType ?? (locale === "zh" ? "通过" : "pass")}</span>
+                          <small>{result.judgeNote}</small>
+                        </div>
+                        <details className="rag-eval-detail">
+                          <summary>{locale === "zh" ? "命中证据与检索路径" : "Evidence hits and query plan"}</summary>
+                          <div className="rag-eval-detail-grid">
+                            <div>
+                              <span>expected</span>
+                              <p>{[result.expectedSubjectId, ...(result.raw.expectedClaims ?? [])].filter(Boolean).join(" · ") || "none"}</p>
+                            </div>
+                            <div>
+                              <span>expected sources</span>
+                              <p>{expectedSources.length ? expectedSources.join(" · ") : "none"}</p>
+                            </div>
+                            <div>
+                              <span>retrieved subjects</span>
+                              <p>{retrievedSubjects.slice(0, 10).join(" · ") || "none"}</p>
+                            </div>
+                            <div>
+                              <span>retrieved sources</span>
+                              <p>{retrievedSources.slice(0, 10).join(" · ") || "none"}</p>
+                            </div>
+                            <div className="wide">
+                              <span>query plan</span>
+                              <p>{result.raw.queryPlan?.steps?.join(" -> ") || result.raw.queryPlan?.strategy || "none"}</p>
+                            </div>
+                          </div>
+                        </details>
+                      </article>
+                    );
+                  })}
+                </div>
+              </>
             )}
           </section>
         ) : page === "coverage" ? (
@@ -5832,6 +6718,19 @@ function App() {
                 <p className="kicker">{t.coverage.kicker}</p>
                 <h2>{t.coverage.title}</h2>
                 <p>{t.coverage.summary}</p>
+                <div className="coverage-filter-bar compact" role="group" aria-label={t.coverage.aria}>
+                  {coveragePeriods.map((period) => (
+                    <button
+                      className={`event-filter-button ${coveragePeriodId === period.id ? "selected" : ""}`}
+                      key={period.id}
+                      type="button"
+                      aria-pressed={coveragePeriodId === period.id}
+                      onClick={() => setCoveragePeriodId(period.id)}
+                    >
+                      <span>{period.label[locale]}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
               <div className="age-index-metrics">
                 <div>
@@ -5855,6 +6754,51 @@ function App() {
               <div className="empty-state">{t.coverage.error}</div>
             ) : (
               <>
+                {coverageTemplateAudit && (
+                  <article className={`coverage-template-card ${coverageTemplateAudit.pass ? "ok" : "warn"}`}>
+                    <div>
+                      <p className="kicker">{locale === "zh" ? "模板期验收" : "Template Audit"}</p>
+                      <h3>{locale === "zh" ? "190-310 范例标准" : "190-310 Model Period Standard"}</h3>
+                      <p>
+                        {coverageTemplateAudit.pass
+                          ? (locale === "zh"
+                              ? "当前时期已满足事件、人物、证据、地图控制和 RAG 评测的模板期最低标准。"
+                              : "This period meets the baseline standard for events, people, evidence, map control, and RAG evaluation.")
+                          : (locale === "zh"
+                              ? "当前时期还有模板期验收项未达标，优先处理下方失败项。"
+                              : "This period still has failed template checks. Fix the failed items first.")}
+                      </p>
+                    </div>
+                    <div className="coverage-template-metrics">
+                      <EvidenceField
+                        label={locale === "zh" ? "通过项" : "passed"}
+                        value={`${coverageTemplateAudit.checks.length - coverageTemplateFailedChecks.length}/${coverageTemplateAudit.checks.length}`}
+                      />
+                      <EvidenceField
+                        label="RAG"
+                        value={`${coverageTemplateAudit.metrics.latestRagRun?.passed_questions ?? 0}/${coverageTemplateAudit.metrics.latestRagRun?.total_questions ?? coverageTemplateAudit.metrics.ragQuestions}`}
+                      />
+                      <EvidenceField
+                        label={locale === "zh" ? "均分" : "avg"}
+                        value={(coverageTemplateAudit.metrics.latestRagRun?.average_score ?? 0).toFixed(2)}
+                      />
+                      <EvidenceField
+                        label={locale === "zh" ? "地图控制" : "map control"}
+                        value={coverageTemplateAudit.metrics.mapControlRecords}
+                      />
+                    </div>
+                    {coverageTemplateFailedChecks.length > 0 && (
+                      <div className="coverage-template-failures">
+                        {coverageTemplateFailedChecks.slice(0, 4).map((check) => (
+                          <span key={check.id}>
+                            {check.label}: {check.actual}/{check.threshold}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </article>
+                )}
+
                 <div className="coverage-filter-bar" role="group" aria-label={t.coverage.filterAria}>
                   {coverageGapFilters.map((filter) => (
                     <button
@@ -5932,7 +6876,7 @@ function App() {
                         <div className="coverage-gap-list">
                           <span>{t.coverage.currentGaps}</span>
                           {region.gaps.length ? (
-                            region.gaps.map((gap) => <p key={`${region.id}-${gap}`}>{gap}</p>)
+                            region.gaps.map((gap, index) => <p key={`${region.id}-gap-${index}`}>{gap}</p>)
                           ) : (
                             <p>{t.coverage.noGaps}</p>
                           )}
@@ -5970,6 +6914,139 @@ function App() {
                 }) : (
                   <div className="empty-state">{t.coverage.noFilteredGaps}</div>
                 )}
+                </div>
+              </>
+            )}
+          </section>
+        ) : page === "evidence-graph" ? (
+          <section className="evidence-stage evidence-graph-stage" aria-label={locale === "zh" ? "证据图谱" : "Evidence graph"}>
+            <div className="evidence-summary">
+              <div>
+                <p className="kicker">{locale === "zh" ? "证据图谱" : "Evidence Graph"}</p>
+                <h2>{evidenceGraphData?.person?.label ?? evidenceGraphData?.event?.title ?? (locale === "zh" ? "证据图谱" : "Evidence Graph")}</h2>
+                <p>
+                  {locale === "zh"
+                    ? "把事件或人物拆成可核查断言，并连接到原始出处、人物、政权和事件。"
+                    : "Break an event or person into verifiable claims linked to source evidence, people, polities, and events."}
+                </p>
+              </div>
+              <div className="evidence-quick-searches" aria-label={locale === "zh" ? "图谱事件切换" : "Evidence graph event switcher"}>
+                <button type="button" onClick={() => openEvidenceGraph(selectedEvent)}>
+                  {locale === "zh" ? "当前事件" : "Current event"}: {getEventDisplayTitle(selectedEvent, locale).primary}
+                </button>
+                {selectedPersonIndexItem && (
+                  <button type="button" onClick={() => openPersonEvidenceGraph(selectedPersonIndexItem.id)}>
+                    {locale === "zh" ? "当前人物" : "Current person"}: {selectedPersonIndexItem.name}
+                  </button>
+                )}
+                {events
+                  .filter((event) => ["china-208-red-cliffs", "rome-260-capture-of-valerian-by-shapur-i", "rome-sasanian-260-valerian-captured", "china-383-fei-river", "china-420-liu-yu-founds-song", "china-589-sui-conquers-chen"].includes(event.id))
+                  .map((event) => (
+                    <button key={event.id} type="button" onClick={() => openEvidenceGraph(event)}>
+                      {getEventDisplayTitle(event, locale).primary}
+                    </button>
+                  ))}
+              </div>
+            </div>
+
+            {evidenceGraphStatus === "loading" ? (
+              <div className="empty-state">{locale === "zh" ? "正在读取证据图谱..." : "Loading evidence graph..."}</div>
+            ) : evidenceGraphStatus === "error" || !evidenceGraphData ? (
+              <div className="empty-state">{locale === "zh" ? "证据图谱 API 暂时不可用。" : "Evidence graph API is not available."}</div>
+            ) : (
+              <>
+                <div className="coverage-metrics evidence-graph-metrics">
+                  <EvidenceField label={locale === "zh" ? "断言" : "claims"} value={evidenceGraphData.summary.claims} />
+                  <EvidenceField label={locale === "zh" ? "出处" : "sources"} value={evidenceGraphData.summary.sources} />
+                  <EvidenceField label={locale === "zh" ? "关联对象" : "linked subjects"} value={evidenceGraphData.summary.linkedSubjects} />
+                  {evidenceGraphData.person && <EvidenceField label={locale === "zh" ? "关联事件" : "linked events"} value={evidenceGraphData.summary.linkedEvents ?? evidenceGraphData.events?.length ?? 0} />}
+                  <EvidenceField label={locale === "zh" ? "已审断言" : "reviewed"} value={evidenceGraphData.summary.reviewedClaims} />
+                </div>
+
+                <div className="evidence-graph-grid">
+                  <article className="coverage-card evidence-graph-panel">
+                    <header>
+                      <div>
+                        <span>{evidenceGraphData.person ? (locale === "zh" ? "人物" : "Person") : (locale === "zh" ? "事件" : "Event")}</span>
+                        <h3>{evidenceGraphData.person?.label ?? evidenceGraphData.event?.title}</h3>
+                      </div>
+                    </header>
+                    <p>{evidenceGraphData.person?.summary ?? evidenceGraphData.event?.summary}</p>
+                    <div className="coverage-metrics compact">
+                      <EvidenceField label={locale === "zh" ? "年份" : "year"} value={evidenceGraphData.person?.time_start ?? evidenceGraphData.event?.time_start ?? "?"} />
+                      <EvidenceField label={locale === "zh" ? "区域" : "region"} value={regions.find((region) => region.id === (evidenceGraphData.person?.region_id ?? evidenceGraphData.event?.region_id))?.label ?? evidenceGraphData.person?.region_id ?? evidenceGraphData.event?.region_id} />
+                      <EvidenceField label={locale === "zh" ? "状态" : "status"} value={evidenceGraphData.person?.review_status ?? evidenceGraphData.event?.review_status} />
+                    </div>
+                    {evidenceGraphData.person && evidenceGraphData.events?.length ? (
+                      <div className="evidence-graph-mini-events">
+                        {evidenceGraphData.events.map((event) => (
+                          <button key={event.id} type="button" onClick={() => setEvidenceGraphTarget({ type: "event", id: event.id })}>
+                            <span>{event.time_start ?? "?"}</span>
+                            {event.title}
+                          </button>
+                        ))}
+                      </div>
+                    ) : null}
+                  </article>
+
+                  <article className="coverage-card evidence-graph-panel evidence-graph-claims">
+                    <header>
+                      <div>
+                        <span>{locale === "zh" ? "历史断言" : "Claims"}</span>
+                        <h3>{evidenceGraphData.person ? (locale === "zh" ? "此人物牵涉哪些可核查断言" : "Verifiable claims involving this person") : (locale === "zh" ? "该事件能被哪些话支撑" : "What this event asserts")}</h3>
+                      </div>
+                    </header>
+                    <div className="evidence-graph-list">
+                      {evidenceGraphData.claims.map((claim) => (
+                        <div className="evidence-graph-claim" key={claim.id}>
+                          <strong>{claim.statement}</strong>
+                          <div>
+                            <span>{claim.claimType}</span>
+                            <span>{claim.confidence}</span>
+                            <span>{claim.reviewStatus}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </article>
+
+                  <article className="coverage-card evidence-graph-panel">
+                    <header>
+                      <div>
+                        <span>{locale === "zh" ? "出处" : "Sources"}</span>
+                        <h3>{locale === "zh" ? "原文与定位" : "Text and locator"}</h3>
+                      </div>
+                    </header>
+                    <div className="evidence-graph-list">
+                      {evidenceGraphData.sources.map((source, index) => (
+                        <div className="evidence-graph-source" key={`${source.claimId}-${source.sourceId ?? "source"}-${source.locator ?? index}`}>
+                          <strong>{source.citationShort ?? source.sourceTitle ?? source.sourceId}</strong>
+                          <span>{source.locator}</span>
+                          {source.quote && <p>{source.quote}</p>}
+                          {source.translation && <small>{source.translation}</small>}
+                        </div>
+                      ))}
+                    </div>
+                  </article>
+
+                  <article className="coverage-card evidence-graph-panel">
+                    <header>
+                      <div>
+                        <span>{locale === "zh" ? "关联对象" : "Linked Subjects"}</span>
+                        <h3>{locale === "zh" ? "人物、政权、事件节点" : "People, polities, and event nodes"}</h3>
+                      </div>
+                    </header>
+                    <div className="evidence-graph-subjects">
+                      {evidenceGraphData.subjects
+                        .filter((subject) => subject.subjectTable !== "events")
+                        .map((subject) => (
+                          <span key={`${subject.claimId}-${subject.subjectTable}-${subject.subjectId}-${subject.subjectRole}`}>
+                            {subject.label}
+                            <small>{subject.subjectRole}</small>
+                          </span>
+                        ))}
+                    </div>
+                  </article>
                 </div>
               </>
             )}
@@ -6308,6 +7385,7 @@ function App() {
                     key={person.id}
                     type="button"
                     onClick={() => selectPerson(person.id)}
+                    onDoubleClick={() => openPersonEvidenceGraph(person.id)}
                   >
                     <span className="person-index-name">
                       <strong>{person.name}</strong>
@@ -6594,14 +7672,14 @@ function App() {
             <div className="timeline-track">
               {page === "world" && (
                 <div className="timeline-marker-layer" aria-hidden="true">
-                  {timelineMarkers.map((marker) => {
+                  {timelineMarkers.map((marker, index) => {
                     const regionIndex = Math.max(0, worldComparisonRegionOrder.indexOf(marker.region.id));
                     const offset = ((marker.year - yearMin) / (yearMax - yearMin)) * 100;
 
                     return (
                       <span
                         className="timeline-marker"
-                        key={`${marker.region.id}-${marker.year}`}
+                        key={`${marker.region.id}-${marker.year}-${index}`}
                         style={
                           {
                             "--marker-color": marker.region.accent,
@@ -6700,12 +7778,17 @@ function App() {
                       {selectedPerson.courtesyName ? ` · ${selectedPerson.courtesyName}` : ""}
                     </h4>
                   </div>
-                  <strong>{selectedPerson.life ?? "生卒未详"}</strong>
+                  <div className="person-card-actions">
+                    <strong>{selectedPerson.life ?? "生卒未详"}</strong>
+                    <button type="button" onClick={() => openPersonEvidenceGraph(selectedPerson.id)}>
+                      {locale === "zh" ? "图谱" : "Graph"}
+                    </button>
+                  </div>
                 </div>
                 <div className="person-meta">
                   <span>{selectedPerson.primaryPolity}</span>
-                  {selectedPerson.roles.map((role) => (
-                    <span key={role}>{role}</span>
+                  {selectedPerson.roles.map((role, index) => (
+                    <span key={`${selectedPerson.id}-role-${index}-${role}`}>{role}</span>
                   ))}
                 </div>
                 <div className="person-annual-panel">
@@ -6857,8 +7940,8 @@ function App() {
                 </div>
 
                 <div className="source-list compact">
-                  {selectedPerson.sourceRefs.map((ref) => (
-                    <SourceRefLink key={`${selectedPerson.id}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
+                  {selectedPerson.sourceRefs.map((ref, index) => (
+                    <SourceRefLink key={`${selectedPerson.id}-source-ref-${index}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
                   ))}
                 </div>
               </article>
@@ -7278,13 +8361,18 @@ function App() {
                       {selectedPerson.courtesyName ? ` · ${selectedPerson.courtesyName}` : ""}
                     </h4>
                   </div>
-                  <strong>{selectedPerson.life ?? "生卒未详"}</strong>
+                  <div className="person-card-actions">
+                    <strong>{selectedPerson.life ?? "生卒未详"}</strong>
+                    <button type="button" onClick={() => openPersonEvidenceGraph(selectedPerson.id)}>
+                      {locale === "zh" ? "图谱" : "Graph"}
+                    </button>
+                  </div>
                 </div>
                 <p>{selectedPerson.summary}</p>
                 <div className="person-meta">
                   <span>{selectedPerson.primaryPolity}</span>
-                  {selectedPerson.roles.map((role) => (
-                    <span key={role}>{role}</span>
+                  {selectedPerson.roles.map((role, index) => (
+                    <span key={`${selectedPerson.id}-detail-role-${index}-${role}`}>{role}</span>
                   ))}
                 </div>
                 <div className="person-stats">
@@ -7400,8 +8488,8 @@ function App() {
                           <small>{formatYearSpan(relation.startYear, relation.endYear)}</small>
                           <span className="relationship-summary">{relation.summary}</span>
                           <span className="relationship-sources">
-                            {relation.sourceRefs.slice(0, 2).map((ref) => (
-                              <SourceRefLink interactive={false} key={`${relation.id}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
+                            {relation.sourceRefs.slice(0, 2).map((ref, index) => (
+                              <SourceRefLink interactive={false} key={`${relation.id}-ref-${index}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
                             ))}
                           </span>
                         </button>
@@ -7432,8 +8520,8 @@ function App() {
                         <small>{event.locationName ?? "地点待补"}</small>
                         <span className="person-event-tags">
                           <span>{categoryLabels[event.category]}</span>
-                          {event.polities.slice(0, 2).map((polity) => (
-                            <span key={`${event.id}-${polity}`}>{polity}</span>
+                          {event.polities.slice(0, 2).map((polity, index) => (
+                            <span key={`${event.id}-polity-${index}-${polity}`}>{polity}</span>
                           ))}
                         </span>
                       </button>
@@ -7444,8 +8532,8 @@ function App() {
                 </div>
 
                 <div className="source-list compact">
-                  {selectedPerson.sourceRefs.map((ref) => (
-                    <SourceRefLink key={`${selectedPerson.id}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
+                  {selectedPerson.sourceRefs.map((ref, index) => (
+                    <SourceRefLink key={`${selectedPerson.id}-detail-source-ref-${index}-${ref.sourceId}-${ref.locator ?? ""}`} sourceRef={ref} />
                   ))}
                 </div>
               </article>
@@ -7491,11 +8579,11 @@ function App() {
             </h3>
             <div className="source-list">
               {selectedEventSourceRefs.length ? (
-                selectedEventSourceRefs.map((ref) => {
+                selectedEventSourceRefs.map((ref, index) => {
                   const source = chinaSourceById.get(ref.sourceId);
 
                   return (
-                    <article className="source-item" key={`${ref.sourceId}-${ref.locator ?? ""}`}>
+                    <article className="source-item" key={`${selectedEvent.id}-source-ref-${index}-${ref.sourceId}-${ref.locator ?? ""}`}>
                       <SourceRefLink className="source-title-link" sourceRef={ref} />
                       <SourceExcerpt quote={ref.quote} />
                       {source?.note && <span>{source.note}</span>}
