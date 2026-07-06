@@ -16,14 +16,18 @@ import {
   ChevronRight,
   CircleDot,
   Compass,
+  Globe2,
   Grid3x3,
   Info,
   Layers,
   Link2,
   MapPinned,
+  Menu,
   Mountain,
   Network,
+  Plus,
   Search,
+  UserRound,
   UsersRound,
   X,
 } from "lucide-react";
@@ -43,6 +47,7 @@ type EventCategory =
   | "religion"
   | "frontier";
 type EventImportance = "major" | "medium" | "minor" | "detail";
+type EventCompareType = "military" | "domestic" | "diplomacy";
 type Locale = "zh" | "en";
 type LonLat = [number, number];
 
@@ -137,6 +142,8 @@ type HistoricalPerson = {
   id: string;
   region?: string;
   name: string;
+  en?: string;
+  aliases?: string[];
   courtesyName: string | null;
   life: string | null;
   birthYear?: number | null;
@@ -206,6 +213,7 @@ type PersonAnnualTimelineItem = {
 };
 
 type Page = "home" | "learning" | "world" | "china" | "rome" | "people" | "age" | "evidence" | "evidence-graph" | "compare" | "coverage" | "map-debug" | "rag-eval" | "ai-debug" | "ai-history";
+type TopbarMenu = "people" | "sources" | "events" | "ai" | "tools";
 type ChinaMapMode = "political" | "terrain" | "three-d" | "commandery";
 type ThreeKingdomsFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "war" | "politics";
 type PersonIndexFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "rome" | "sasanian-persia";
@@ -216,18 +224,26 @@ type EvidenceRegionFilter = "all" | Region;
 type AgePerson = {
   id: string;
   name: string;
+  aliases?: string[];
   region: AgeRegionFilter;
   polity: string;
   roles: string[];
   birthYear: number;
+  birthYearRange?: {
+    min: number;
+    max: number;
+  };
   deathYear?: number | null;
   summary: string;
   source: "person-index" | "age-supplement";
+  agePrecision: "exact" | "estimated";
+  ageNote?: string;
 };
 
 type PersonIndexItem = {
   id: string;
   name: string;
+  aliases?: string[];
   courtesyName: string | null;
   life: string | null;
   primaryPolity: string;
@@ -572,6 +588,57 @@ type OverviewPeriod = {
   detailEntryYear?: number;
 };
 
+type OverviewRegionTimelineEra = {
+  id: string;
+  title: string;
+  startYear: number;
+  endYear: number;
+  color: string;
+  status?: PeriodStatus;
+  summary?: string;
+  detailPeriodId?: string;
+  detailEntryYear?: number;
+  formalStartYear?: number;
+  formalEndYear?: number;
+  sourceStartYear?: number;
+  keyCause?: string;
+  keyClimax?: string;
+  keyResult?: string;
+  sources?: string[];
+};
+
+type OverviewRegionTimeline = {
+  id: string;
+  label: string;
+  color: string;
+  eras: OverviewRegionTimelineEra[];
+};
+
+type OverviewGlobalAnchor = {
+  id: string;
+  title: string;
+  year: number;
+  regionId?: string;
+  importance?: "major" | "context";
+};
+
+type OverviewMapRegion = OverviewFocusRegion & {
+  color: string;
+  status?: PeriodStatus;
+  timelineId: string;
+};
+
+type DetailPeriodContext = {
+  title: string;
+  summary: string;
+  startYear: number;
+  endYear: number;
+  timelineId: string;
+  regionId: Region;
+  regionLabel: string;
+  color: string;
+};
+
 type ChinaPolity = BoundaryGroup & {
   accent: string;
   capitalName: string;
@@ -714,6 +781,8 @@ type FrontendPeriodOverviewDb = {
   overviewYearMin?: number;
   overviewYearMax?: number;
   periods?: OverviewPeriod[];
+  regionTimelines?: OverviewRegionTimeline[];
+  globalAnchors?: OverviewGlobalAnchor[];
   regionCoordinates?: Record<string, LonLat>;
   periodRegionCoordinates?: Record<string, Record<string, LonLat>>;
   regionZoneSizes?: Record<string, { width: number; height: number; rotate?: number }>;
@@ -1023,10 +1092,9 @@ const chinaMapModes: Array<{
   label: string;
   Icon: typeof Layers;
 }> = [
-  { id: "political", label: "控制", Icon: Layers },
+  { id: "political", label: "郡界", Icon: Grid3x3 },
   { id: "terrain", label: "地形", Icon: Mountain },
   { id: "three-d", label: "3D", Icon: Box },
-  { id: "commandery", label: "郡界拼图", Icon: Grid3x3 },
 ];
 
 const threeKingdomsFilters: Array<{
@@ -1071,13 +1139,15 @@ const eventDetailTabs: Array<{
   { id: "sources", label: "史料" },
 ];
 
-const yearMin = 190;
-const yearMax = 310;
+const defaultDetailYearMin = 190;
+const defaultDetailYearMax = 310;
 const worldComparisonRegionOrder: Region[] = ["china", "rome", "sasanian-persia"];
 const chinaFocusPersonIds = ["cao-cao", "sun-quan", "liu-bei"];
-let overviewYearMin = -550;
-let overviewYearMax = 1644;
+let overviewYearMin = -900;
+let overviewYearMax = 1912;
 let overviewPeriods: OverviewPeriod[] = [];
+let overviewRegionTimelines: OverviewRegionTimeline[] = [];
+let overviewGlobalAnchors: OverviewGlobalAnchor[] = [];
 let overviewRegionCoordinates: Record<string, LonLat> = {};
 let overviewPeriodRegionCoordinates: Record<string, Record<string, LonLat>> = {};
 let overviewRegionZoneSizes: Record<string, { width: number; height: number; rotate?: number }> = {};
@@ -1085,13 +1155,13 @@ let overviewRegionZoneSizes: Record<string, { width: number; height: number; rot
 const emptyOverviewPeriod: OverviewPeriod = {
   id: "runtime-loading",
   title: "Overview loading",
-  startYear: -550,
-  endYear: 1644,
+  startYear: -900,
+  endYear: 1912,
   color: "#6f766d",
   status: "background",
   focusRegions: [],
   context: [],
-  snapshotYears: [-550],
+  snapshotYears: [-900],
   summary: "Overview period data is loading from the API.",
 };
 const ageRegionFilters: Array<{ id: AgeRegionFilter; label: string }> = [
@@ -1109,6 +1179,16 @@ const eventImportanceLabels: Record<EventImportance, string> = {
   minor: "小型事件",
   detail: "细节事件",
 };
+
+const eventCompareTypes: Array<{
+  id: EventCompareType;
+  label: string;
+  hint: string;
+}> = [
+  { id: "military", label: "军事", hint: "战役、围攻、征伐、军事失败" },
+  { id: "domestic", label: "内政", hint: "继承、禅让、政变、政策与统治调整" },
+  { id: "diplomacy", label: "外交", hint: "跨政权谈判、联盟、边境冲突与和约" },
+];
 
 const coverageGapFilters: Array<{ id: CoverageGapFilter; label: Record<Locale, string> }> = [
   { id: "all", label: { zh: "全部", en: "All" } },
@@ -1220,6 +1300,18 @@ const uiText: Record<Locale, {
     deathYear: string;
     unknownDeath: string;
     empty: string;
+    selectedPeople: string;
+    addPerson: string;
+    removePerson: string;
+    openProfile: string;
+    openEvidence: string;
+    openGraph: string;
+    compareHint: string;
+    livingPool: string;
+    poolHint: string;
+    lifeAtYear: string;
+    recentLife: string;
+    noLifeContext: string;
   };
   peoplePage: {
     aria: string;
@@ -1250,10 +1342,10 @@ const uiText: Record<Locale, {
       ragEval: "RAG 评测",
     },
     pageTitle: {
-      home: "世界历史总览：前 550 至 1644",
+      home: "世界历史总览：前 900 至 1912",
       learning: "190-310 学习模式",
       world: "中国、罗马与萨珊同年对照",
-      china: "中国区域：三国格局",
+      china: "中国",
       rome: "罗马省份控制 190-310 CE",
       people: "人物索引：跨区域人物与生年",
       age: "年龄对比：同年人物年龄",
@@ -1356,6 +1448,18 @@ const uiText: Record<Locale, {
       deathYear: "卒年",
       unknownDeath: "卒年未详",
       empty: "暂无匹配人物",
+      selectedPeople: "已选对比",
+      addPerson: "加入对比",
+      removePerson: "移除对比",
+      openProfile: "人物档案",
+      openEvidence: "查史料",
+      openGraph: "证据图谱",
+      compareHint: "先从搜索结果加入人物；已选人物会固定在上方，方便跨年份对照。",
+      livingPool: "在世人物池",
+      poolHint: "只显示当前年份仍在世的人物；可用搜索框按姓名、字、势力继续缩小范围。",
+      lifeAtYear: "本年节点",
+      recentLife: "此前节点",
+      noLifeContext: "此年附近暂无已整理生平节点，可打开人物档案继续查看。",
     },
     peoplePage: {
       aria: "人物索引",
@@ -1387,10 +1491,10 @@ const uiText: Record<Locale, {
       aiHistory: "AI History",
     },
     pageTitle: {
-      home: "World History Overview: 550 BCE to 1644",
+      home: "World History Overview: 900 BCE to 1912",
       learning: "190-310 Learning Mode",
       world: "China, Rome, and Sasanian Persia by Year",
-      china: "China: Three Kingdoms Map",
+      china: "China",
       rome: "Roman Provincial Control, 190-310 CE",
       people: "People Index: Cross-Regional Lives",
       age: "Age Comparison: People in the Same Year",
@@ -1494,6 +1598,18 @@ const uiText: Record<Locale, {
       deathYear: "Died",
       unknownDeath: "Death unknown",
       empty: "No matching people",
+      selectedPeople: "Selected",
+      addPerson: "Add",
+      removePerson: "Remove",
+      openProfile: "Profile",
+      openEvidence: "Sources",
+      openGraph: "Graph",
+      compareHint: "Add people from the results; selected people stay pinned above for year-by-year comparison.",
+      livingPool: "Living Pool",
+      poolHint: "Only people alive in the selected year are shown. Use search to narrow by name, courtesy name, or polity.",
+      lifeAtYear: "This year",
+      recentLife: "Recent node",
+      noLifeContext: "No life node is available around this year; open the profile for more context.",
     },
     peoplePage: {
       aria: "People index",
@@ -1542,8 +1658,56 @@ function getOverviewPeriod(year: number) {
   );
 }
 
+function getOverviewRegionTimeline(timelineId: string) {
+  return (
+    overviewRegionTimelines.find((timeline) => timeline.id === timelineId) ??
+    overviewRegionTimelines.find((timeline) => timeline.id === "china") ??
+    null
+  );
+}
+
+function getOverviewTimelineEra(timeline: OverviewRegionTimeline | null, year: number) {
+  if (!timeline) {
+    return null;
+  }
+
+  return (
+    timeline.eras
+      .filter((era) => era.startYear <= year && era.endYear >= year)
+      .sort((left, right) => right.startYear - left.startYear)[0] ?? null
+  );
+}
+
 function getPeriodMidpoint(period: OverviewPeriod) {
   return Math.round((Math.max(period.startYear, overviewYearMin) + Math.min(period.endYear, overviewYearMax)) / 2);
+}
+
+function getOverviewEraMidpoint(era: OverviewRegionTimelineEra) {
+  return Math.round((Math.max(era.startYear, overviewYearMin) + Math.min(era.endYear, overviewYearMax)) / 2);
+}
+
+function getDetailRegionIdFromTimeline(timelineId: string): Region {
+  if (timelineId === "rome") {
+    return "rome";
+  }
+
+  if (timelineId === "central-asia") {
+    return "sasanian-persia";
+  }
+
+  return "china";
+}
+
+function getOverviewTimelineIdFromDetailRegion(region: Region) {
+  if (region === "rome") {
+    return "rome";
+  }
+
+  if (region === "sasanian-persia") {
+    return "central-asia";
+  }
+
+  return "china";
 }
 
 function getOverviewYearPercent(year: number) {
@@ -1569,7 +1733,7 @@ function getOverviewRegionPosition(period: OverviewPeriod, region: OverviewFocus
 function getOverviewRegionZoneStyle(period: OverviewPeriod, region: OverviewFocusRegion) {
   const size = overviewRegionZoneSizes[region.id] ?? { width: 12, height: 8, rotate: 0 };
   return {
-    "--period-color": period.color,
+    "--period-color": "color" in region ? (region as OverviewMapRegion).color : period.color,
     "--zone-width": `${size.width}%`,
     "--zone-height": `${size.height}%`,
     "--zone-rotate": `${size.rotate ?? 0}deg`,
@@ -1613,7 +1777,7 @@ function getPinnedYears(event: HistoricalEvent) {
     years.push(event.endYear);
   }
 
-  return years.filter((eventYear) => eventYear >= yearMin && eventYear <= yearMax);
+  return years;
 }
 
 function sortEventsByYearThenTitle(left: HistoricalEvent, right: HistoricalEvent) {
@@ -1627,6 +1791,205 @@ function getEventImportance(event: HistoricalEvent): EventImportance {
 function shouldShowWorldEvent(event: HistoricalEvent, showMediumEvents: boolean) {
   const importance = getEventImportance(event);
   return importance === "major" || (showMediumEvents && importance === "medium");
+}
+
+function isConcreteComparableEvent(event: HistoricalEvent) {
+  const text = [
+    event.id,
+    event.title,
+    event.titleZh,
+    event.eventLabel,
+    event.macroEvent,
+    event.summary,
+    ...(event.tags ?? []),
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  const overviewTerms = [
+    "overview",
+    "transition",
+    "system",
+    "phase",
+    "crisis overview",
+    "long-term",
+    "metropolis",
+    "trade empire",
+    "dynasty of",
+    "career of",
+    "building program",
+    "coinage reform",
+    "military reforms",
+    "mobile cavalry",
+    "darkest hour",
+    "the gallic empire",
+    "establishment of the tetrarchy",
+    "military monarchy",
+    "长期",
+    "概览",
+    "总体",
+    "体系",
+    "制度化",
+    "转型",
+    "阶段",
+    "生涯",
+    "改革",
+    "贸易帝国",
+  ];
+
+  if (overviewTerms.some((term) => text.includes(term))) {
+    return false;
+  }
+
+  if (event.category === "society" || event.category === "economy" || event.category === "culture") {
+    return false;
+  }
+
+  return (
+    event.category === "war" ||
+    event.category === "campaign" ||
+    event.category === "succession" ||
+    event.category === "politics" ||
+    event.category === "diplomacy" ||
+    event.category === "frontier" ||
+    event.people.length > 0 ||
+    Boolean(event.locationName)
+  );
+}
+
+function shouldShowComparableEvent(event: HistoricalEvent, showMediumEvents: boolean) {
+  if (!isConcreteComparableEvent(event)) {
+    return false;
+  }
+
+  const importance = getEventImportance(event);
+  return importance === "major" || importance === "medium" || (showMediumEvents && importance === "minor");
+}
+
+function getEventCompareType(event: HistoricalEvent): EventCompareType {
+  const text = `${event.id} ${event.title} ${event.titleZh ?? ""} ${event.eventLabel ?? ""} ${event.macroEvent ?? ""} ${event.summary} ${(event.tags ?? []).join(" ")}`.toLowerCase();
+
+  if (event.category === "war" || event.category === "campaign" || /battle|war|campaign|siege|defeat|sack|capture|march|战争|战|围|攻|征|破|俘虏|灭亡/.test(text)) {
+    return "military";
+  }
+
+  if (event.category === "diplomacy" || /diplomacy|treaty|alliance|embassy|negotiat|和约|联盟|遣使|交涉|外交/.test(text)) {
+    return "diplomacy";
+  }
+
+  return "domestic";
+}
+
+function getComparableEventKind(event: HistoricalEvent) {
+  const title = `${event.title} ${event.titleZh ?? ""} ${event.eventLabel ?? ""} ${event.summary}`.toLowerCase();
+
+  if (event.category === "war" || event.category === "campaign" || /battle|war|campaign|siege|defeat|sack|战争|战|围|攻|征|破/.test(title)) {
+    return "军事冲突";
+  }
+
+  if (event.category === "succession" || /succession|proclaimed|abdication|usurp|throne|禅让|称帝|即位|继位|篡|退位/.test(title)) {
+    return "权力交接";
+  }
+
+  if (/assassination|murder|court|praetorian|palace|宫廷|刺杀|政变|诛|废/.test(title)) {
+    return "宫廷斗争";
+  }
+
+  if (event.category === "diplomacy") {
+    return "外交关系";
+  }
+
+  return categoryLabels[event.category];
+}
+
+function getComparableEventPeople(event: HistoricalEvent) {
+  const names = new Set<string>();
+  event.people.forEach((name) => names.add(name));
+  event.personIds?.forEach((personId) => {
+    const person = chinaPersonById.get(personId);
+    if (person?.name) {
+      names.add(person.name);
+    }
+  });
+
+  return [...names];
+}
+
+function getComparableEventImpact(event: HistoricalEvent) {
+  return event.detail?.result?.[0] ?? event.detail?.impact?.[0] ?? event.summary;
+}
+
+function getComparableEventPolicy(event: HistoricalEvent) {
+  return event.detail?.process?.[0] ?? event.detail?.background?.[0] ?? event.summary;
+}
+
+function getComparableEventCasualtyLabel(event: HistoricalEvent) {
+  const text = [event.summary, ...(event.detail?.process ?? []), ...(event.detail?.result ?? []), ...(event.detail?.uncertainty ?? [])].join(" ");
+  const match = text.match(/(?:死者|战死|斩|坑杀|casualt(?:y|ies)|killed|dead|slain)[^。；;.，,]{0,18}(?:\d+|[一二三四五六七八九十百千万数]+)[^。；;.，,]{0,12}/i);
+  return match?.[0] ?? "伤亡未结构化";
+}
+
+function getEventCompareFields(event: HistoricalEvent, compareType: EventCompareType) {
+  const people = getComparableEventPeople(event);
+  const polities = event.polities.length ? event.polities.join("、") : "未标注";
+
+  if (compareType === "military") {
+    return [
+      { label: "地点", value: event.locationName ?? event.places?.[0] ?? "未标注" },
+      { label: "参战方", value: polities },
+      { label: "人物", value: people.length ? people.slice(0, 5).join("、") : "未绑定" },
+      { label: "伤亡", value: getComparableEventCasualtyLabel(event) },
+      { label: "结果", value: getComparableEventImpact(event) },
+    ];
+  }
+
+  if (compareType === "diplomacy") {
+    return [
+      { label: "双方", value: polities },
+      { label: "场域", value: event.locationName ?? event.places?.[0] ?? "未标注" },
+      { label: "人物", value: people.length ? people.slice(0, 5).join("、") : "未绑定" },
+      { label: "交涉内容", value: getComparableEventPolicy(event) },
+      { label: "后果", value: getComparableEventImpact(event) },
+    ];
+  }
+
+  return [
+    { label: "议题", value: getComparableEventKind(event) },
+    { label: "核心人物", value: people.length ? people.slice(0, 5).join("、") : "未绑定" },
+    { label: "涉及政权", value: polities },
+    { label: "政策/行动", value: getComparableEventPolicy(event) },
+    { label: "影响", value: getComparableEventImpact(event) },
+  ];
+}
+
+function eventMatchesCompareQuery(event: HistoricalEvent, normalizedCompareQuery: string) {
+  if (!normalizedCompareQuery) {
+    return true;
+  }
+
+  const text = [
+    event.id,
+    event.title,
+    event.titleZh,
+    event.titleEn,
+    event.eventLabel,
+    event.macroEvent,
+    event.summary,
+    event.locationName,
+    ...(event.places ?? []),
+    ...(event.people ?? []),
+    ...(event.polities ?? []),
+    ...(event.tags ?? []),
+    ...(event.detail?.background ?? []),
+    ...(event.detail?.process ?? []),
+    ...(event.detail?.result ?? []),
+    ...(event.detail?.impact ?? []),
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+
+  return text.includes(normalizedCompareQuery);
 }
 
 function coverageRegionMatchesFilter(region: CoverageRegion, filter: CoverageGapFilter) {
@@ -1960,7 +2323,7 @@ function eventMatchesQuery(event: HistoricalEvent, normalizedQuery: string) {
   const linkedPeople = (event.personIds ?? [])
     .map((personId) => chinaPersonById.get(personId))
     .filter((person): person is HistoricalPerson => Boolean(person))
-    .flatMap((person) => [person.name, person.courtesyName, person.primaryPolity, ...person.roles]);
+    .flatMap((person) => [person.name, person.courtesyName, person.primaryPolity, ...person.roles, ...(person.aliases ?? [])]);
   const text = [
     event.title,
     event.summary,
@@ -2082,8 +2445,6 @@ function SourceMentionCard({ compact = false, mention }: { compact?: boolean; me
       </div>
       {!compact && (
         <div className="source-mention-standard">
-          <EvidenceField label="source_id" value={mention.sourceId} />
-          <EvidenceField label="locator" value={mention.locator} />
           <EvidenceField label="人物" value={<CompactEvidenceList values={mention.mentionedPersonIds} />} />
           <EvidenceField label="事件" value={<CompactEvidenceList values={mention.mentionedEventIds} />} />
           <EvidenceField label="地点" value={<CompactEvidenceList values={mention.mentionedPlaceIds} />} />
@@ -2094,14 +2455,12 @@ function SourceMentionCard({ compact = false, mention }: { compact?: boolean; me
       {!compact && (
         <div className="source-mention-standard">
           <EvidenceField label="可信度" value={getConfidenceLabel(mention.confidence)} />
-          <EvidenceField label="审核" value={mention.reviewStatus === "reviewed" ? "已审" : "草稿"} />
           <EvidenceField label="争议" value={mention.disputeNote ?? "未标注"} />
         </div>
       )}
       {!compact && (
         <div className="source-mention-tags">
           <span>{getConfidenceLabel(mention.confidence)}</span>
-          <span>{mention.reviewStatus === "reviewed" ? "已审" : "草稿"}</span>
           {mention.tags.slice(0, 4).map((tag, index) => (
             <span key={`${mention.id}-tag-${index}-${tag}`}>{tag}</span>
           ))}
@@ -2259,7 +2618,7 @@ function eventContainsAny(event: HistoricalEvent, terms: string[]) {
   const linkedPeople = (event.personIds ?? [])
     .map((personId) => chinaPersonById.get(personId))
     .filter((person): person is HistoricalPerson => Boolean(person))
-    .flatMap((person) => [person.name, person.courtesyName, person.primaryPolity, ...person.roles]);
+    .flatMap((person) => [person.name, person.courtesyName, person.primaryPolity, ...person.roles, ...(person.aliases ?? [])]);
   const text = [event.title, event.summary, event.locationName, ...event.people, ...linkedPeople, ...event.polities, ...event.tags]
     .filter(Boolean)
     .join(" ");
@@ -2268,7 +2627,86 @@ function eventContainsAny(event: HistoricalEvent, terms: string[]) {
 }
 
 function getPersonSearchFields(person: HistoricalPerson | PersonIndexItem) {
-  return [person.name, person.courtesyName, person.primaryPolity, ...person.roles, person.summary].filter(Boolean) as string[];
+  return [person.name, ...(person.aliases ?? []), person.courtesyName, person.primaryPolity, ...person.roles, person.summary].filter(Boolean) as string[];
+}
+
+function stemRomanLookupToken(token: string) {
+  if (/[\u4e00-\u9fff]/.test(token) || token.length < 5) {
+    return token;
+  }
+
+  if (token.endsWith("ianus")) {
+    return token.slice(0, -2);
+  }
+
+  if (token.endsWith("anus")) {
+    return token.slice(0, -2);
+  }
+
+  if (token.endsWith("ius")) {
+    return token.slice(0, -3);
+  }
+
+  if (token.endsWith("us")) {
+    return token.slice(0, -2);
+  }
+
+  if (token.endsWith("a") && token.length > 6) {
+    return token.slice(0, -1);
+  }
+
+  return token;
+}
+
+function normalizePersonLookupText(text: string, stemRomanNames = false) {
+  const normalized = text
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[·.'’`-]/g, " ")
+    .replace(/[^a-z0-9\u4e00-\u9fff]+/g, " ")
+    .trim()
+    .replace(/\s+/g, " ");
+
+  if (!stemRomanNames) {
+    return normalized;
+  }
+
+  return normalized
+    .split(" ")
+    .map(stemRomanLookupToken)
+    .join(" ")
+    .trim();
+}
+
+function getLookupKeysFromText(text?: string | null) {
+  if (!text) {
+    return [];
+  }
+
+  const keys = new Set<string>();
+  [normalizePersonLookupText(text), normalizePersonLookupText(text, true)].forEach((key) => {
+    if (!key) {
+      return;
+    }
+    keys.add(key);
+    const tokens = key.split(" ").filter(Boolean);
+    if (tokens.length > 1 && /^[a-z0-9 ]+$/.test(key)) {
+      for (let index = 1; index < tokens.length; index += 1) {
+        const suffixTokens = tokens.slice(index);
+        const suffix = suffixTokens.join(" ");
+        if (suffixTokens.length > 1) {
+          keys.add(suffix);
+        }
+      }
+    }
+  });
+
+  return [...keys].filter((key) => key.length >= 2);
+}
+
+function getPersonLookupKeys(person: HistoricalPerson | PersonIndexItem | AgePerson) {
+  return [person.name, ...(person.aliases ?? [])].flatMap(getLookupKeysFromText);
 }
 
 function personContainsAny(person: HistoricalPerson | PersonIndexItem, terms: string[]) {
@@ -2318,6 +2756,7 @@ function chinaPersonToPersonIndexItem(person: HistoricalPerson): PersonIndexItem
   return {
     id: person.id,
     name: person.name,
+    aliases: person.aliases ?? [],
     courtesyName: person.courtesyName,
     life: person.life,
     primaryPolity: person.primaryPolity,
@@ -2334,8 +2773,9 @@ function agePersonToPersonIndexItem(person: AgePerson): PersonIndexItem {
   return {
     id: person.id,
     name: person.name,
+    aliases: person.aliases ?? [],
     courtesyName: null,
-    life: `${person.birthYear}-${person.deathYear ?? "?"}`,
+    life: person.birthYearRange ? `${person.birthYearRange.min}-${person.birthYearRange.max}?-${person.deathYear ?? "?"}` : `${person.birthYear}-${person.deathYear ?? "?"}`,
     primaryPolity: person.polity,
     roles: person.roles,
     summary: person.summary,
@@ -2361,24 +2801,71 @@ function parseLifeSpan(life: string | null) {
   };
 }
 
+function inferBirthYearRange(person: HistoricalPerson, deathYear: number | null) {
+  const activityYears = chinaPersonLifeEvents
+    .filter((lifeEvent) => lifeEvent.personId === person.id && !["birth", "death", "later-tradition"].includes(lifeEvent.type))
+    .map(getLifeEventStartYear)
+    .filter((lifeEventYear): lifeEventYear is number => lifeEventYear !== null);
+  const earliestActivityYear = activityYears.length ? Math.min(...activityYears) : null;
+  const lowerBounds: number[] = [];
+  const upperBounds: number[] = [];
+
+  if (earliestActivityYear !== null) {
+    lowerBounds.push(earliestActivityYear - 45);
+    upperBounds.push(earliestActivityYear - 20);
+  }
+
+  if (deathYear !== null) {
+    lowerBounds.push(deathYear - 75);
+    upperBounds.push(deathYear - 35);
+  }
+
+  if (!lowerBounds.length || !upperBounds.length) {
+    return null;
+  }
+
+  const min = Math.max(...lowerBounds);
+  const max = Math.min(...upperBounds);
+  if (!Number.isFinite(min) || !Number.isFinite(max) || min > max) {
+    return null;
+  }
+
+  return {
+    min,
+    max,
+    note: earliestActivityYear !== null && deathYear !== null
+      ? `按最早活动 ${earliestActivityYear} 年约 20-45 岁、卒年 ${deathYear} 年约 35-75 岁估算`
+      : earliestActivityYear !== null
+        ? `按最早活动 ${earliestActivityYear} 年约 20-45 岁估算`
+        : `按卒年 ${deathYear} 年约 35-75 岁估算`,
+  };
+}
+
 function chinaPersonToAgePerson(person: HistoricalPerson): AgePerson | null {
   const lifeSpan = parseLifeSpan(person.life);
   const birthYear = person.birthYear ?? lifeSpan.birthYear;
-  if (!birthYear) {
+  const deathYear = person.deathYear ?? lifeSpan.deathYear;
+  const inferredBirthYearRange = birthYear ? null : inferBirthYearRange(person, deathYear);
+  if (!birthYear && !inferredBirthYearRange) {
     return null;
   }
   const region = (person.region === "rome" || person.region === "sasanian-persia" || person.region === "india" ? person.region : "china") as AgeRegionFilter;
+  const displayBirthYear = birthYear ?? Math.round(((inferredBirthYearRange?.min ?? 0) + (inferredBirthYearRange?.max ?? 0)) / 2);
 
   return {
     id: person.id,
     name: person.name,
+    aliases: person.aliases ?? [],
     region,
     polity: person.primaryPolity,
     roles: person.roles,
-    birthYear,
-    deathYear: person.deathYear ?? lifeSpan.deathYear,
+    birthYear: displayBirthYear,
+    birthYearRange: inferredBirthYearRange ? { min: inferredBirthYearRange.min, max: inferredBirthYearRange.max } : undefined,
+    deathYear,
     summary: person.summary,
     source: "person-index",
+    agePrecision: birthYear ? "exact" : "estimated",
+    ageNote: inferredBirthYearRange?.note,
   };
 }
 
@@ -2387,6 +2874,41 @@ function getAgeRegionLabel(region: AgeRegionFilter) {
 }
 
 function getAgePersonState(person: AgePerson, targetYear: number) {
+  if (person.birthYearRange) {
+    const minAge = targetYear - person.birthYearRange.max;
+    const maxAge = targetYear - person.birthYearRange.min;
+    const deathAgeMin = person.deathYear ? person.deathYear - person.birthYearRange.max : null;
+    const deathAgeMax = person.deathYear ? person.deathYear - person.birthYearRange.min : null;
+
+    if (targetYear < person.birthYearRange.min) {
+      return {
+        age: maxAge,
+        category: "unborn" as const,
+        label: `${person.birthYearRange.min - targetYear} 年后出生？`,
+        sortRank: 2,
+        precision: "estimated" as const,
+      };
+    }
+
+    if (person.deathYear && targetYear > person.deathYear) {
+      return {
+        age: Math.round(((deathAgeMin ?? 0) + (deathAgeMax ?? 0)) / 2),
+        category: "deceased" as const,
+        label: `已故 ${targetYear - person.deathYear} 年，终年约 ${deathAgeMin}-${deathAgeMax} 岁`,
+        sortRank: 1,
+        precision: "estimated" as const,
+      };
+    }
+
+    return {
+      age: Math.round((minAge + maxAge) / 2),
+      category: "alive" as const,
+      label: `约 ${Math.max(0, minAge)}-${maxAge} 岁`,
+      sortRank: 0,
+      precision: "estimated" as const,
+    };
+  }
+
   const age = targetYear - person.birthYear;
 
   if (targetYear < person.birthYear) {
@@ -2395,6 +2917,7 @@ function getAgePersonState(person: AgePerson, targetYear: number) {
       category: "unborn" as const,
       label: `${person.birthYear - targetYear} 年后出生`,
       sortRank: 2,
+      precision: "exact" as const,
     };
   }
 
@@ -2404,6 +2927,7 @@ function getAgePersonState(person: AgePerson, targetYear: number) {
       category: "deceased" as const,
       label: `已故 ${targetYear - person.deathYear} 年，终年 ${person.deathYear - person.birthYear} 岁`,
       sortRank: 1,
+      precision: "exact" as const,
     };
   }
 
@@ -2412,6 +2936,7 @@ function getAgePersonState(person: AgePerson, targetYear: number) {
     category: "alive" as const,
     label: `${age} 岁`,
     sortRank: 0,
+    precision: "exact" as const,
   };
 }
 
@@ -2420,7 +2945,7 @@ function agePersonSearchRank(person: AgePerson, normalizedQuery: string) {
     return 0;
   }
 
-  const fields = [person.name, person.polity, getAgeRegionLabel(person.region), ...person.roles]
+  const fields = [person.name, ...(person.aliases ?? []), person.polity, getAgeRegionLabel(person.region), ...person.roles]
     .filter(Boolean)
     .map((field) => field.toLowerCase());
 
@@ -2705,9 +3230,12 @@ function normalizeHistoricalEvent(event: HistoricalEvent): HistoricalEvent {
 }
 
 function normalizeHistoricalPerson(person: HistoricalPerson): HistoricalPerson {
+  const aliases = [...(person.aliases ?? []), person.en].filter((alias): alias is string => Boolean(alias));
+
   return {
     ...person,
     region: person.region ?? "china",
+    aliases: [...new Set(aliases)],
     courtesyName: person.courtesyName ?? null,
     life: person.life ?? null,
     birthYear: person.birthYear ?? null,
@@ -2788,9 +3316,11 @@ function applyEventImportanceData(data: EventImportanceDataset) {
 }
 
 function applyPeriodOverviewData(data: FrontendPeriodOverviewDb) {
-  overviewYearMin = data.overviewYearMin ?? data.range?.[0] ?? -550;
-  overviewYearMax = data.overviewYearMax ?? data.range?.[1] ?? 1644;
+  overviewYearMin = data.overviewYearMin ?? data.range?.[0] ?? -900;
+  overviewYearMax = data.overviewYearMax ?? data.range?.[1] ?? 1912;
   overviewPeriods = data.periods ?? [];
+  overviewRegionTimelines = data.regionTimelines ?? [];
+  overviewGlobalAnchors = data.globalAnchors ?? [];
   overviewRegionCoordinates = data.regionCoordinates ?? {};
   overviewPeriodRegionCoordinates = data.periodRegionCoordinates ?? {};
   overviewRegionZoneSizes = data.regionZoneSizes ?? {};
@@ -3786,11 +4316,27 @@ function RomanRegionMap({
 
 function App() {
   const [page, setPage] = useState<Page>("home");
+  const [previousPage, setPreviousPage] = useState<Page | null>(null);
+  const lastPageRef = useRef<Page>("home");
   const [locale, setLocale] = useState<Locale>("zh");
+  const [openTopbarMenu, setOpenTopbarMenu] = useState<TopbarMenu | null>(null);
   const [year, setYear] = useState(220);
+  const [detailPeriodContext, setDetailPeriodContext] = useState<DetailPeriodContext>({
+    title: "汉末三国与罗马危机前夜",
+    summary: "当前模板期。中国主叙事从黄巾之乱开始，而不是从 220 年三国政权正式成立才开始。",
+    startYear: defaultDetailYearMin,
+    endYear: defaultDetailYearMax,
+    timelineId: "china",
+    regionId: "china",
+    regionLabel: "中国",
+    color: "#b45235",
+  });
+  const yearMin = detailPeriodContext.startYear;
+  const yearMax = detailPeriodContext.endYear;
   const [overviewYear, setOverviewYear] = useState(190);
+  const [overviewTimelineId, setOverviewTimelineId] = useState("china");
   const [query, setQuery] = useState("");
-  const [chinaMapMode, setChinaMapMode] = useState<ChinaMapMode>("commandery");
+  const [chinaMapMode, setChinaMapMode] = useState<ChinaMapMode>("political");
   const [selectedRegion, setSelectedRegion] = useState<Region>("china");
   const [hoveredRegion, setHoveredRegion] = useState<Region | null>(null);
   const [summaryRegion, setSummaryRegion] = useState<Region | null>("china");
@@ -3802,6 +4348,7 @@ function App() {
   const [selectedPersonId, setSelectedPersonId] = useState<string | null>(null);
   const [personIndexFilter, setPersonIndexFilter] = useState<PersonIndexFilter>("all");
   const [ageRegionFilter, setAgeRegionFilter] = useState<AgeRegionFilter>("all");
+  const [selectedAgePersonIds, setSelectedAgePersonIds] = useState<string[]>(["cao-cao", "liu-bei", "sun-quan", "zhuge-liang", "sima-yi"]);
   const [evidenceRegionFilter, setEvidenceRegionFilter] = useState<EvidenceRegionFilter>("all");
   const [evidenceResults, setEvidenceResults] = useState<EvidenceSearchResult[]>([]);
   const [evidenceStatus, setEvidenceStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
@@ -3826,6 +4373,11 @@ function App() {
   const [ragEvalStatus, setRagEvalStatus] = useState<"loading" | "ready" | "error">("loading");
   const [ragEvalFilter, setRagEvalFilter] = useState<"all" | "failures" | "low-score">("all");
   const [showMediumEvents, setShowMediumEvents] = useState(false);
+  const [eventCompareType, setEventCompareType] = useState<EventCompareType>("military");
+  const [eventCompareQuery, setEventCompareQuery] = useState("");
+  const [eventCompareStartYear, setEventCompareStartYear] = useState(year - 5);
+  const [eventCompareEndYear, setEventCompareEndYear] = useState(year + 5);
+  const [selectedCompareEventIds, setSelectedCompareEventIds] = useState<string[]>([]);
   const [events, setEvents] = useState<HistoricalEvent[]>([]);
   const [eventsStatus, setEventsStatus] = useState<"loading" | "ready" | "error">("loading");
   const [peopleDataVersion, setPeopleDataVersion] = useState(0);
@@ -3868,6 +4420,19 @@ function App() {
 
   const t = uiText[locale];
   const normalizedQuery = query.trim().toLowerCase();
+  const normalizedCompareQuery = eventCompareQuery.trim().toLowerCase();
+  const compareStartYear = Math.max(yearMin, Math.min(eventCompareStartYear, eventCompareEndYear));
+  const compareEndYear = Math.min(yearMax, Math.max(eventCompareStartYear, eventCompareEndYear));
+
+  useEffect(() => {
+    if (lastPageRef.current === page) {
+      return;
+    }
+
+    setPreviousPage(lastPageRef.current);
+    lastPageRef.current = page;
+  }, [page]);
+
   const chinaBlocks = runtimeChinaControlDb.adminBlocks.blocks;
   const chinaControlTimeline = runtimeChinaControlDb.controlTimeline;
   const chinaBlockById = useMemo(() => new Map(chinaBlocks.map((block) => [block.id, block])), [chinaBlocks]);
@@ -3876,12 +4441,32 @@ function App() {
     [chinaControlTimeline.controllers],
   );
   const activeOverviewPeriod = getOverviewPeriod(overviewYear);
+  const activeOverviewTimeline = getOverviewRegionTimeline(overviewTimelineId);
+  const activeOverviewTimelineEra = getOverviewTimelineEra(activeOverviewTimeline, overviewYear);
+  const activeOverviewMapRegions = overviewRegionTimelines.reduce<OverviewMapRegion[]>((regions, timeline) => {
+      const era = getOverviewTimelineEra(timeline, overviewYear);
+
+      if (!era) {
+        return regions;
+      }
+
+      regions.push({
+        id: timeline.id,
+        label: era.title,
+        tier: era.status === "background" ? "secondary" : "core",
+        summary: `${timeline.label} · ${formatHistoricalYear(era.startYear)}-${formatHistoricalYear(era.endYear)}：${era.summary ?? ""}`,
+        coordinates: overviewRegionCoordinates[timeline.id],
+        color: era.color,
+        status: era.status,
+        timelineId: timeline.id,
+      });
+
+      return regions;
+    }, []);
   const activeOverviewSnapshotYear =
     activeOverviewPeriod.snapshotYears
       .filter((snapshotYear) => snapshotYear >= overviewYearMin && snapshotYear <= overviewYearMax)
       .sort((left, right) => Math.abs(left - overviewYear) - Math.abs(right - overviewYear))[0] ?? overviewYear;
-  const activeOverviewCoreRegions = activeOverviewPeriod.focusRegions.filter((region) => region.tier === "core");
-  const activeOverviewSupportRegions = activeOverviewPeriod.focusRegions.filter((region) => region.tier !== "core");
   const selectedRomanProvince = selectedRomanProvinceId === null
     ? null
     : runtimeRomanControlDb.provinces.find((province) => province.id === selectedRomanProvinceId) ?? null;
@@ -3916,6 +4501,10 @@ function App() {
         }
 
         getPinnedYears(event).forEach((eventYear) => {
+          if (eventYear < yearMin || eventYear > yearMax) {
+            return;
+          }
+
           const markerKey = `${event.region}-${eventYear}`;
           const marker = markers.get(markerKey) ?? {
             eventCount: 0,
@@ -3931,7 +4520,7 @@ function App() {
       });
 
     return [...markers.values()].sort((left, right) => left.year - right.year || left.region.label.localeCompare(right.region.label, "zh-Hans-CN"));
-  }, [eventImportanceVersion, matchingEvents, regionsDataVersion]);
+  }, [eventImportanceVersion, matchingEvents, regionsDataVersion, yearMax, yearMin]);
   const worldComparisonItems = worldComparisonRegionOrder
     .map((regionId) => regions.find((region) => region.id === regionId))
     .filter((region): region is RegionInfo => Boolean(region))
@@ -4091,6 +4680,18 @@ function App() {
     () => [...chinaPersons.map(chinaPersonToPersonIndexItem), ...ageSupplementPeople.map(agePersonToPersonIndexItem)],
     [peopleDataVersion],
   );
+  const personIdsByLookupKey = useMemo(() => {
+    const lookup = new Map<string, string[]>();
+    personIndexItems.forEach((person) => {
+      getPersonLookupKeys(person).forEach((key) => {
+        const ids = lookup.get(key) ?? [];
+        if (!ids.includes(person.id)) {
+          lookup.set(key, [...ids, person.id]);
+        }
+      });
+    });
+    return lookup;
+  }, [personIndexItems]);
   const selectedPerson = selectedPersonId ? (chinaPersonById.get(selectedPersonId) ?? null) : null;
   const selectedPersonIndexItem = selectedPersonId ? (personIndexItems.find((person) => person.id === selectedPersonId) ?? null) : null;
   const activeSelectedPersonId = selectedPersonIndexItem?.id ?? selectedPerson?.id ?? null;
@@ -4229,6 +4830,7 @@ function App() {
   const agePeople = useMemo(() => {
     return [...chinaPersons.map(chinaPersonToAgePerson).filter((person): person is AgePerson => Boolean(person)), ...ageSupplementPeople];
   }, [peopleDataVersion]);
+  const agePersonById = useMemo(() => new Map(agePeople.map((person) => [person.id, person])), [agePeople]);
   const ageComparisonItems = useMemo(() => {
     return agePeople
       .map((person) => ({
@@ -4259,10 +4861,43 @@ function App() {
         },
       );
   }, [agePeople, ageRegionFilter, normalizedQuery, year]);
+  const selectedAgeComparisonItems = selectedAgePersonIds
+    .map((personId) => agePersonById.get(personId))
+    .filter((person): person is AgePerson => Boolean(person))
+    .map((person) => ({ person, state: getAgePersonState(person, year) }))
+    .sort((left, right) => left.state.sortRank - right.state.sortRank || right.state.age - left.state.age);
+  const selectedAgePersonIdSet = new Set(selectedAgeComparisonItems.map((item) => item.person.id));
+  const livingAgeComparisonItems = ageComparisonItems.filter((item) => item.state.category === "alive");
+  const candidateAgeComparisonItems = livingAgeComparisonItems.filter((item) => !selectedAgePersonIdSet.has(item.person.id));
+  const ageLifeContextByPersonId = useMemo(() => {
+    const context = new Map<string, { label: string; title: string; summary: string; year: number | null }>();
+    for (const personId of selectedAgePersonIds) {
+      const personEvents = chinaPersonLifeEvents
+        .filter((lifeEvent) => lifeEvent.personId === personId && !["birth", "death", "later-tradition"].includes(lifeEvent.type))
+        .sort((left, right) => getLifeEventSortValue(left) - getLifeEventSortValue(right));
+      const exactEvent = personEvents.find((lifeEvent) => isLifeEventInYear(lifeEvent, year));
+      const previousEvent = [...personEvents]
+        .filter((lifeEvent) => {
+          const startYear = getLifeEventStartYear(lifeEvent);
+          return startYear !== null && startYear <= year;
+        })
+        .sort((left, right) => getLifeEventSortValue(right) - getLifeEventSortValue(left))[0];
+      const lifeEvent = exactEvent ?? previousEvent;
+      if (lifeEvent) {
+        context.set(personId, {
+          label: exactEvent ? t.agePage.lifeAtYear : t.agePage.recentLife,
+          title: lifeEvent.title,
+          summary: lifeEvent.summary,
+          year: getLifeEventStartYear(lifeEvent),
+        });
+      }
+    }
+    return context;
+  }, [selectedAgePersonIds, t.agePage.lifeAtYear, t.agePage.recentLife, year, peopleDataVersion]);
   const ageRegionCounts = Object.fromEntries(
     ageRegionFilters.map((filter) => [
       filter.id,
-      agePeople.filter((person) => filter.id === "all" || person.region === filter.id).length,
+      agePeople.filter((person) => (filter.id === "all" || person.region === filter.id) && getAgePersonState(person, year).category === "alive").length,
     ]),
   ) as Record<AgeRegionFilter, number>;
   const currentYearEvents = matchingEvents
@@ -4275,32 +4910,40 @@ function App() {
       filter === "all" ? evidenceResults.length : evidenceResults.filter((result) => result.regionId === filter).length,
     ]),
   ) as Record<EvidenceRegionFilter, number>;
-  const eventComparisonItems = worldComparisonRegionOrder
-    .map((regionId) => regions.find((region) => region.id === regionId))
-    .filter((region): region is RegionInfo => Boolean(region))
-    .map((region) => {
-      const regionEvents = matchingEvents.filter((event) => event.region === region.id);
-      const exactEvents = regionEvents
-        .filter((event) => isPinnedToYear(event, year) && shouldShowWorldEvent(event, showMediumEvents))
-        .sort(sortEventsByYearThenTitle);
-      const hiddenMediumEvents = showMediumEvents
-        ? []
-        : regionEvents.filter((event) => isPinnedToYear(event, year) && getEventImportance(event) === "medium").sort(sortEventsByYearThenTitle);
-      const nearbyEvents = regionEvents
-        .filter((event) => !isPinnedToYear(event, year) && Math.abs(event.startYear - year) <= 3 && shouldShowWorldEvent(event, showMediumEvents))
-        .sort((left, right) => Math.abs(left.startYear - year) - Math.abs(right.startYear - year) || sortEventsByYearThenTitle(left, right))
-        .slice(0, 3);
-
-      return {
-        region,
-        era: getRegionEra(region, year),
-        exactEvents,
-        hiddenMediumEvents,
-        nearbyEvents,
-        focusLifeEvents: region.id === "china" && exactEvents.length === 0 && hiddenMediumEvents.length === 0 ? getChinaFocusLifeEvents(year) : [],
-      };
-    });
-  const eventComparisonCount = eventComparisonItems.reduce((total, item) => total + item.exactEvents.length, 0);
+  const compareCandidateEvents = matchingEvents
+    .filter(
+      (event) =>
+        event.startYear >= compareStartYear &&
+        event.startYear <= compareEndYear &&
+        getEventCompareType(event) === eventCompareType &&
+        shouldShowComparableEvent(event, showMediumEvents) &&
+        eventMatchesCompareQuery(event, normalizedCompareQuery),
+    )
+    .sort(
+      (left, right) =>
+        Math.abs(left.startYear - year) - Math.abs(right.startYear - year) ||
+        worldComparisonRegionOrder.indexOf(left.region) - worldComparisonRegionOrder.indexOf(right.region) ||
+        sortEventsByYearThenTitle(left, right),
+    );
+  const compareCandidateCounts = Object.fromEntries(
+    eventCompareTypes.map((type) => [
+      type.id,
+      matchingEvents.filter(
+        (event) =>
+          event.startYear >= compareStartYear &&
+          event.startYear <= compareEndYear &&
+          getEventCompareType(event) === type.id &&
+          shouldShowComparableEvent(event, showMediumEvents) &&
+          eventMatchesCompareQuery(event, normalizedCompareQuery),
+      ).length,
+    ]),
+  ) as Record<EventCompareType, number>;
+  const selectedCompareEvents = selectedCompareEventIds
+    .map((eventId) => events.find((event) => event.id === eventId))
+    .filter((event): event is HistoricalEvent => Boolean(event))
+    .filter((event) => getEventCompareType(event) === eventCompareType && shouldShowComparableEvent(event, showMediumEvents))
+    .slice(0, 3);
+  const displayedCompareEvents = selectedCompareEvents;
   const selectedPersonIsInEvent = selectedPerson ? selectedEventPersonIds.includes(selectedPerson.id) : false;
 
   useEffect(() => {
@@ -4472,16 +5115,21 @@ function App() {
         setOverviewDataVersion((version) => version + 1);
         setOverviewDataStatus("ready");
       })
-      .catch(() => {
+      .catch((error) => {
         if (cancelled) {
           return;
         }
 
+        console.error("Period overview API failed", error);
         applyPeriodOverviewData({
-          schemaVersion: 1,
+          schemaVersion: 2,
           model: "period-overview",
-          range: [-550, 1644],
+          range: [-900, 1912],
+          overviewYearMin: -900,
+          overviewYearMax: 1912,
           periods: [],
+          regionTimelines: [],
+          globalAnchors: [],
         });
         setOverviewDataVersion((version) => version + 1);
         setOverviewDataStatus("error");
@@ -4943,7 +5591,41 @@ function App() {
     }
   }, [chinaBlockById, chinaMapMode, page, selectedChinaBlockId]);
 
+  function syncDetailPeriodToRegion(region: Region, entryYear = year) {
+    const timelineId = getOverviewTimelineIdFromDetailRegion(region);
+    const timeline = getOverviewRegionTimeline(timelineId);
+    const era = getOverviewTimelineEra(timeline, entryYear);
+
+    if (!timeline || !era) {
+      return null;
+    }
+
+    const detailStartYear = Math.max(era.startYear, overviewYearMin);
+    const detailEndYear = Math.min(era.endYear, overviewYearMax);
+    const boundedEntryYear = Math.min(detailEndYear, Math.max(detailStartYear, entryYear));
+    const detailRegionId = getDetailRegionIdFromTimeline(timeline.id);
+
+    setDetailPeriodContext({
+      title: era.title,
+      summary: era.summary ?? timeline.label,
+      startYear: detailStartYear,
+      endYear: detailEndYear,
+      timelineId: timeline.id,
+      regionId: detailRegionId,
+      regionLabel: timeline.label,
+      color: era.color,
+    });
+    setOverviewTimelineId(timeline.id);
+    setOverviewYear(boundedEntryYear);
+    setYear(boundedEntryYear);
+    setEventCompareStartYear(Math.max(detailStartYear, boundedEntryYear - 5));
+    setEventCompareEndYear(Math.min(detailEndYear, boundedEntryYear + 5));
+
+    return { detailEndYear, detailStartYear, regionId: detailRegionId };
+  }
+
   function previewRegion(region: Region) {
+    syncDetailPeriodToRegion(region);
     setSelectedRegion(region);
     setSummaryRegion(region);
     setHoveredRegion(null);
@@ -4960,8 +5642,9 @@ function App() {
 
   function selectRegion(region: Region) {
     if (region === "china") {
+      syncDetailPeriodToRegion("china");
       setPage("china");
-      setChinaMapMode("commandery");
+      setChinaMapMode("political");
       setSelectedRegion("china");
       setSummaryRegion(null);
       setHoveredRegion(null);
@@ -4976,6 +5659,7 @@ function App() {
     }
 
     if (region === "rome") {
+      syncDetailPeriodToRegion("rome");
       setPage("rome");
       setSelectedRegion("rome");
       setSummaryRegion(null);
@@ -5007,9 +5691,52 @@ function App() {
     setSelectedRomanProvinceId(null);
   }
 
+  function returnToPreviousPage() {
+    if (!previousPage || previousPage === page) {
+      return;
+    }
+
+    setOpenTopbarMenu(null);
+    setPage(previousPage);
+  }
+
   function returnToHome() {
     setPage("home");
     setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+    setSelectedRomanProvinceId(null);
+  }
+
+  function enterOverviewEra(timeline: OverviewRegionTimeline | null, era: OverviewRegionTimelineEra | null, entryYear = overviewYear) {
+    if (!timeline || !era) {
+      enterOverviewPeriod(activeOverviewPeriod, entryYear);
+      return;
+    }
+
+    const detailStartYear = Math.max(era.startYear, overviewYearMin);
+    const detailEndYear = Math.min(era.endYear, overviewYearMax);
+    const boundedEntryYear = Math.min(detailEndYear, Math.max(detailStartYear, entryYear));
+    const regionId = getDetailRegionIdFromTimeline(timeline.id);
+
+    setDetailPeriodContext({
+      title: era.title,
+      summary: era.summary ?? timeline.label,
+      startYear: detailStartYear,
+      endYear: detailEndYear,
+      timelineId: timeline.id,
+      regionId,
+      regionLabel: timeline.label,
+      color: era.color,
+    });
+    setOverviewYear(boundedEntryYear);
+    setYear(boundedEntryYear);
+    setEventCompareStartYear(Math.max(detailStartYear, boundedEntryYear - 5));
+    setEventCompareEndYear(Math.min(detailEndYear, boundedEntryYear + 5));
+    setPage("world");
+    setSelectedRegion(regionId);
+    setSummaryRegion(regionId);
     setHoveredRegion(null);
     setSelectedChinaBlockId(null);
     setHoveredChinaBlockId(null);
@@ -5022,7 +5749,23 @@ function App() {
       return;
     }
 
-    setYear(Math.min(yearMax, Math.max(yearMin, entryYear)));
+    const detailStartYear = Math.max(period.startYear, overviewYearMin);
+    const detailEndYear = Math.min(period.endYear, overviewYearMax);
+    const boundedEntryYear = Math.min(detailEndYear, Math.max(detailStartYear, entryYear));
+
+    setDetailPeriodContext({
+      title: period.title,
+      summary: period.summary,
+      startYear: detailStartYear,
+      endYear: detailEndYear,
+      timelineId: "global",
+      regionId: "china",
+      regionLabel: "中国",
+      color: period.color,
+    });
+    setYear(boundedEntryYear);
+    setEventCompareStartYear(Math.max(detailStartYear, boundedEntryYear - 5));
+    setEventCompareEndYear(Math.min(detailEndYear, boundedEntryYear + 5));
     setPage("world");
     setSelectedRegion("china");
     setSummaryRegion("china");
@@ -5030,6 +5773,11 @@ function App() {
     setSelectedChinaBlockId(null);
     setHoveredChinaBlockId(null);
     setSelectedRomanProvinceId(null);
+  }
+
+  function focusOverviewTimelineEra(era: OverviewRegionTimelineEra) {
+    const entryYear = era.detailEntryYear ?? getOverviewEraMidpoint(era);
+    setOverviewYear(Math.min(overviewYearMax, Math.max(overviewYearMin, entryYear)));
   }
 
   function openPeopleIndex() {
@@ -5109,6 +5857,8 @@ function App() {
   function openEventComparison() {
     setPage("compare");
     setQuery("");
+    setEventCompareStartYear(Math.max(yearMin, year - 5));
+    setEventCompareEndYear(Math.min(yearMax, year + 5));
     setSummaryRegion(null);
     setHoveredRegion(null);
     setSelectedChinaBlockId(null);
@@ -5323,7 +6073,7 @@ function App() {
     }
     if (event.region === "china") {
       setPage("china");
-      setChinaMapMode("commandery");
+      setChinaMapMode("political");
       if (!matchesThreeKingdomsFilter(event, eventFilter)) {
         setEventFilter("all");
       }
@@ -5344,6 +6094,99 @@ function App() {
       setQuery(indexPerson.name);
       setPage("age");
     }
+  }
+
+  function addAgePerson(personId: string) {
+    setSelectedAgePersonIds((current) => current.includes(personId) ? current : [...current, personId]);
+  }
+
+  function removeAgePerson(personId: string) {
+    setSelectedAgePersonIds((current) => current.filter((id) => id !== personId));
+  }
+
+  function selectEventCompareType(compareType: EventCompareType) {
+    setEventCompareType(compareType);
+    setSelectedCompareEventIds([]);
+  }
+
+  function addCompareEvent(event: HistoricalEvent) {
+    if (getEventCompareType(event) !== eventCompareType) {
+      return;
+    }
+
+    setSelectedCompareEventIds((current) => {
+      if (current.includes(event.id)) {
+        return current.filter((eventId) => eventId !== event.id);
+      }
+
+      return [...current, event.id].slice(-3);
+    });
+  }
+
+  function removeCompareEvent(eventId: string) {
+    setSelectedCompareEventIds((current) => current.filter((id) => id !== eventId));
+  }
+
+  function getEventLinkedPersonIds(event: HistoricalEvent) {
+    const ids = new Set<string>();
+    event.personIds?.forEach((personId) => {
+      if (chinaPersonById.has(personId) || agePersonById.has(personId)) {
+        ids.add(personId);
+      }
+    });
+    event.people.forEach((name) => {
+      getLookupKeysFromText(name).forEach((key) => {
+        personIdsByLookupKey.get(key)?.forEach((personId) => ids.add(personId));
+      });
+    });
+    chinaPersonLifeEvents.forEach((lifeEvent) => {
+      if (lifeEvent.relatedEventIds.includes(event.id)) {
+        ids.add(lifeEvent.personId);
+      }
+    });
+    return [...ids];
+  }
+
+  function getAgeEventPersonIds(event: HistoricalEvent) {
+    const ids = new Set<string>();
+    getEventLinkedPersonIds(event).forEach((personId) => {
+      if (agePersonById.has(personId)) {
+        ids.add(personId);
+      }
+    });
+    return [...ids].filter((personId) => {
+      const person = agePersonById.get(personId);
+      return person ? getAgePersonState(person, event.startYear).category === "alive" : false;
+    });
+  }
+
+  function addAgeEventPeople(event: HistoricalEvent) {
+    const eventPersonIds = getAgeEventPersonIds(event);
+    setYear(Math.min(yearMax, Math.max(yearMin, event.startYear)));
+    setSelectedId(event.id);
+    if (!eventPersonIds.length) {
+      return;
+    }
+    setSelectedAgePersonIds((current) => {
+      const next = [...current];
+      eventPersonIds.forEach((personId) => {
+        if (!next.includes(personId)) {
+          next.push(personId);
+        }
+      });
+      return next;
+    });
+  }
+
+  function openAgePersonProfile(person: AgePerson) {
+    setSelectedPersonId(person.id);
+    setQuery(person.name);
+    if (person.source === "age-supplement") {
+      setAgeRegionFilter(person.region);
+      setPage("age");
+      return;
+    }
+    setPage("people");
   }
 
   function openLearningEvent(eventId: string) {
@@ -5410,10 +6253,21 @@ function App() {
     return [x, y] as const;
   };
   const pageHeadingTitle =
-    t.pageTitle[page] ??
+    page === "rome"
+      ? `${locale === "zh" ? "罗马省份控制" : "Roman Provincial Control"} ${detailPeriodContext.startYear}-${detailPeriodContext.endYear} CE`
+      : page === "world"
+        ? `${locale === "zh" ? "中国、罗马与萨珊同年对照" : "China, Rome, and Sasanian same-year comparison"}`
+        : t.pageTitle[page] ??
     (page === "ai-history"
       ? (locale === "zh" ? "AI 回答记录" : "AI Answer History")
       : (locale === "zh" ? "AI 问答" : "AI Q&A"));
+  const previousPageLabel = previousPage
+    ? (previousPage === "rome"
+      ? `${locale === "zh" ? "罗马省份控制" : "Roman Provincial Control"} ${detailPeriodContext.startYear}-${detailPeriodContext.endYear} CE`
+      : previousPage === "world"
+        ? (locale === "zh" ? "同年对照" : "Same-year comparison")
+        : t.pageTitle[previousPage] ?? (previousPage === "ai-history" ? (locale === "zh" ? "AI 回答记录" : "AI Answer History") : previousPage))
+    : "";
   const visibleRagEvalResults = ragEvalDetail?.results.filter((result) => {
     if (ragEvalFilter === "failures") {
       return Boolean(result.failureType);
@@ -5523,132 +6377,255 @@ function App() {
       year: 280,
     },
   ];
+  const detailRangeMiddleYear = Math.round((yearMin + yearMax) / 2);
+  const detailRangeLabels = [
+    yearMin,
+    detailRangeMiddleYear,
+    yearMax,
+  ].filter((labelYear, index, labelYears) => labelYears.indexOf(labelYear) === index);
+  const detailTimeline = getOverviewRegionTimeline(detailPeriodContext.timelineId);
+  const detailTimelineEras = detailTimeline?.eras ?? [];
+  const currentDetailEraIndex = detailTimelineEras.findIndex(
+    (era) => era.startYear === detailPeriodContext.startYear && era.endYear === detailPeriodContext.endYear,
+  );
+  const previousDetailEra = currentDetailEraIndex > 0 ? detailTimelineEras[currentDetailEraIndex - 1] : null;
+  const nextDetailEra =
+    currentDetailEraIndex >= 0 && currentDetailEraIndex < detailTimelineEras.length - 1
+      ? detailTimelineEras[currentDetailEraIndex + 1]
+      : null;
+
+  function switchDetailPeriod(targetEra: OverviewRegionTimelineEra | null, direction: -1 | 1) {
+    if (!targetEra || !detailTimeline) {
+      return;
+    }
+
+    const detailStartYear = Math.max(targetEra.startYear, overviewYearMin);
+    const detailEndYear = Math.min(targetEra.endYear, overviewYearMax);
+    const rawEntryYear = direction < 0
+      ? targetEra.endYear === detailPeriodContext.startYear
+        ? targetEra.endYear - 1
+        : targetEra.endYear
+      : targetEra.startYear;
+    const entryYear = Math.min(detailEndYear, Math.max(detailStartYear, rawEntryYear));
+    const regionId = getDetailRegionIdFromTimeline(detailTimeline.id);
+
+    setDetailPeriodContext({
+      title: targetEra.title,
+      summary: targetEra.summary ?? detailTimeline.label,
+      startYear: detailStartYear,
+      endYear: detailEndYear,
+      timelineId: detailTimeline.id,
+      regionId,
+      regionLabel: detailTimeline.label,
+      color: targetEra.color,
+    });
+    setOverviewTimelineId(detailTimeline.id);
+    setOverviewYear(entryYear);
+    setYear(entryYear);
+    setEventCompareStartYear(Math.max(detailStartYear, entryYear - 5));
+    setEventCompareEndYear(Math.min(detailEndYear, entryYear + 5));
+    setSelectedRegion(regionId);
+    setSummaryRegion(page === "world" ? regionId : null);
+    setHoveredRegion(null);
+  }
+
+  const timelineDock = (
+    <section className={`timeline-dock ${page === "age" ? "age-timeline-dock" : ""}`} aria-label="时间轴">
+      <button
+        className="icon-button"
+        type="button"
+        aria-label={page === "age" ? "上一年" : "上一个时间段"}
+        disabled={page !== "age" && !previousDetailEra}
+        title={page === "age" ? "上一年" : previousDetailEra ? `上一个时间段：${previousDetailEra.title}` : "没有上一个时间段"}
+        onClick={() => {
+          if (page === "age") {
+            setYear((current) => Math.max(yearMin, current - 1));
+            return;
+          }
+
+          switchDetailPeriod(previousDetailEra, -1);
+        }}
+      >
+        <ChevronLeft size={20} />
+      </button>
+      <div className="year-control">
+        <div className="year-readout">
+          <CalendarDays size={19} aria-hidden="true" />
+          <span>{year}</span>
+          <small>CE</small>
+        </div>
+        <div className="timeline-track">
+          {page === "world" && (
+            <div className="timeline-marker-layer" aria-hidden="true">
+              {timelineMarkers.map((marker, index) => {
+                const regionIndex = Math.max(0, worldComparisonRegionOrder.indexOf(marker.region.id));
+                const offset = ((marker.year - yearMin) / (yearMax - yearMin)) * 100;
+
+                return (
+                  <span
+                    className="timeline-marker"
+                    key={`${marker.region.id}-${marker.year}-${index}`}
+                    style={
+                      {
+                        "--marker-color": marker.region.accent,
+                        "--marker-row": regionIndex,
+                        left: `${offset}%`,
+                      } as React.CSSProperties
+                    }
+                    title={`${marker.year} 年 · ${marker.region.label} · ${marker.titles.slice(0, 2).join("、")}${
+                      marker.eventCount > 2 ? `?${marker.eventCount} 件` : ""
+                    }`}
+                  />
+                );
+              })}
+            </div>
+          )}
+          <input
+            aria-label="选择年份"
+            type="range"
+            min={yearMin}
+            max={yearMax}
+            step={1}
+            value={year}
+            onInput={(event) => setYear(Number(event.currentTarget.value))}
+            onChange={(event) => setYear(Number(event.target.value))}
+          />
+          <div className="range-labels">
+            {detailRangeLabels.map((labelYear) => (
+              <span key={labelYear}>{labelYear}</span>
+            ))}
+          </div>
+          {page === "world" && (
+            <div className="timeline-region-legend" aria-label="区域颜色">
+              {worldComparisonItems.map((item) => (
+                <span key={item.region.id} style={{ "--accent": item.region.accent } as React.CSSProperties}>
+                  <i aria-hidden="true" />
+                  {item.region.label}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+      <button
+        className="icon-button"
+        type="button"
+        aria-label={page === "age" ? "下一年" : "下一个时间段"}
+        disabled={page !== "age" && !nextDetailEra}
+        title={page === "age" ? "下一年" : nextDetailEra ? `下一个时间段：${nextDetailEra.title}` : "没有下一个时间段"}
+        onClick={() => {
+          if (page === "age") {
+            setYear((current) => Math.min(yearMax, current + 1));
+            return;
+          }
+
+          switchDetailPeriod(nextDetailEra, 1);
+        }}
+      >
+        <ChevronRight size={20} />
+      </button>
+    </section>
+  );
 
   return (
-    <main className={`app-shell ${page === "home" || page === "learning" || page === "evidence" || page === "evidence-graph" || page === "compare" || page === "coverage" || page === "map-debug" || page === "rag-eval" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""}`}>
+    <main className={`app-shell ${page === "home" || page === "learning" || page === "age" || page === "evidence" || page === "evidence-graph" || page === "compare" || page === "coverage" || page === "map-debug" || page === "rag-eval" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""}`}>
+      <header className="global-topbar" aria-label={locale === "zh" ? "站点工具栏" : "Site toolbar"}>
+        <button
+          className="utility-menu-button"
+          type="button"
+          aria-label={locale === "zh" ? "打开用户菜单" : "Open user menu"}
+          title={locale === "zh" ? "用户、收藏与浏览记录" : "User, saved events, and history"}
+          onClick={() => setOpenTopbarMenu(null)}
+        >
+          <Menu size={20} aria-hidden="true" />
+        </button>
+        <button
+          className="topbar-action locale-toggle topbar-language"
+          type="button"
+          aria-label={locale === "zh" ? "Switch to English" : "切换到中文"}
+          onClick={() => {
+            setOpenTopbarMenu(null);
+            setLocale((current) => current === "zh" ? "en" : "zh");
+          }}
+        >
+          <Globe2 size={17} aria-hidden="true" />
+          <span>{locale === "zh" ? "EN" : "中文"}</span>
+        </button>
+      </header>
       <section className="map-workspace">
-        <header className="topbar">
-          <div>
+        <header className="workspace-header">
+          <button className="brand-home" type="button" onClick={() => { setOpenTopbarMenu(null); returnToHome(); }} aria-label={t.nav.home}>
             <p className="kicker">ChronoAtlas</p>
             <h1>{pageHeadingTitle}</h1>
-          </div>
-          <div className="topbar-actions">
-            <button
-              className={`topbar-action ${page === "home" ? "active" : ""}`}
-              type="button"
-              aria-pressed={page === "home"}
-              onClick={returnToHome}
-            >
-              <Compass size={17} aria-hidden="true" />
-              <span>{t.nav.home}</span>
-            </button>
-            <button
-              className={`topbar-action ${page === "learning" ? "active" : ""}`}
-              type="button"
-              aria-pressed={page === "learning"}
-              onClick={openLearningGuide}
-            >
-              <BookOpen size={17} aria-hidden="true" />
-              <span>{t.nav.learning}</span>
-            </button>
-            <button
-              className={`topbar-action ${page === "people" ? "active" : ""}`}
-              type="button"
-              aria-pressed={page === "people"}
-              onClick={openPeopleIndex}
-            >
-              <UsersRound size={17} aria-hidden="true" />
-              <span>{t.nav.people}</span>
-            </button>
-            <button
-              className={`topbar-action ${page === "age" ? "active" : ""}`}
-              type="button"
-              aria-pressed={page === "age"}
-              onClick={openAgeComparison}
-            >
-              <CalendarDays size={17} aria-hidden="true" />
-              <span>{t.nav.age}</span>
-            </button>
-            <button
-              className={`topbar-action ${page === "evidence" ? "active" : ""}`}
-              type="button"
-              aria-pressed={page === "evidence"}
-              onClick={openEvidencePanel}
-            >
-              <BookOpen size={17} aria-hidden="true" />
-              <span>{t.nav.evidence}</span>
-            </button>
-            <button
-              className={`topbar-action ${page === "evidence-graph" ? "active" : ""}`}
-              type="button"
-              aria-pressed={page === "evidence-graph"}
-              onClick={() => openEvidenceGraph(selectedEvent)}
-            >
-              <Network size={17} aria-hidden="true" />
-              <span>{t.nav.evidenceGraph}</span>
-            </button>
-            <button
-              className={`topbar-action ${page === "compare" ? "active" : ""}`}
-              type="button"
-              aria-pressed={page === "compare"}
-              onClick={openEventComparison}
-            >
-              <CircleDot size={17} aria-hidden="true" />
-              <span>{t.nav.compare}</span>
-            </button>
-            <button
-              className={`topbar-action ${page === "coverage" ? "active" : ""}`}
-              type="button"
-              aria-pressed={page === "coverage"}
-              onClick={openCoveragePanel}
-            >
-              <Grid3x3 size={17} aria-hidden="true" />
-              <span>{t.nav.coverage}</span>
-            </button>
-            <button
-              className={`topbar-action ${page === "map-debug" ? "active" : ""}`}
-              type="button"
-              aria-pressed={page === "map-debug"}
-              onClick={openMapDebugPanel}
-            >
-              <Network size={17} aria-hidden="true" />
-              <span>{t.nav.mapDebug}</span>
-            </button>
-            <button
-              className={`topbar-action ${page === "rag-eval" ? "active" : ""}`}
-              type="button"
-              aria-pressed={page === "rag-eval"}
-              onClick={openRagEvalPanel}
-            >
-              <Grid3x3 size={17} aria-hidden="true" />
-              <span>{t.nav.ragEval}</span>
-            </button>
-            <button
-              className={`topbar-action ${page === "ai-debug" ? "active" : ""}`}
-              type="button"
-              aria-pressed={page === "ai-debug"}
-              onClick={openAiDebugPanel}
-            >
-              <Network size={20} aria-hidden="true" />
-              <span>{t.nav.aiDebug ?? (locale === "zh" ? "AI 问答" : "AI Q&A")}</span>
-            </button>
-            <button
-              className={`topbar-action ${page === "ai-history" ? "active" : ""}`}
-              type="button"
-              aria-pressed={page === "ai-history"}
-              onClick={openAiHistoryPanel}
-            >
-              <BookOpen size={17} aria-hidden="true" />
-              <span>{t.nav.aiHistory ?? (locale === "zh" ? "AI 记录" : "AI History")}</span>
-            </button>
-            <button
-              className="topbar-action locale-toggle"
-              type="button"
-              aria-label={locale === "zh" ? "Switch to English" : "切换到中文"}
-              onClick={() => setLocale((current) => current === "zh" ? "en" : "zh")}
-            >
-              <span>{locale === "zh" ? "English" : "中文"}</span>
-            </button>
+          </button>
+          <div className="topbar-secondary">
+            <div className="topbar-actions">
+            <details className={`topbar-menu ${page === "people" || page === "age" ? "active" : ""}`} open={openTopbarMenu === "people"}>
+              <summary onClick={(event) => {
+                event.preventDefault();
+                setOpenTopbarMenu((current) => current === "people" ? null : "people");
+              }}>
+                <UsersRound size={17} aria-hidden="true" />
+                <span>{locale === "zh" ? "人物" : "People"}</span>
+              </summary>
+              <div className="topbar-menu-panel">
+                <button type="button" onClick={() => { setOpenTopbarMenu(null); openPeopleIndex(); }}>{t.nav.people}</button>
+                <button type="button" onClick={() => { setOpenTopbarMenu(null); openAgeComparison(); }}>{t.nav.age}</button>
+              </div>
+            </details>
+            <details className={`topbar-menu ${page === "evidence" || page === "evidence-graph" ? "active" : ""}`} open={openTopbarMenu === "sources"}>
+              <summary onClick={(event) => {
+                event.preventDefault();
+                setOpenTopbarMenu((current) => current === "sources" ? null : "sources");
+              }}>
+                <BookOpen size={17} aria-hidden="true" />
+                <span>{locale === "zh" ? "史料" : "Sources"}</span>
+              </summary>
+              <div className="topbar-menu-panel">
+                <button type="button" onClick={() => { setOpenTopbarMenu(null); openEvidencePanel(); }}>{t.nav.evidence}</button>
+                <button type="button" onClick={() => { setOpenTopbarMenu(null); openEvidenceGraph(selectedEvent); }}>{t.nav.evidenceGraph}</button>
+              </div>
+            </details>
+            <details className={`topbar-menu ${page === "compare" || page === "coverage" ? "active" : ""}`} open={openTopbarMenu === "events"}>
+              <summary onClick={(event) => {
+                event.preventDefault();
+                setOpenTopbarMenu((current) => current === "events" ? null : "events");
+              }}>
+                <CircleDot size={17} aria-hidden="true" />
+                <span>{locale === "zh" ? "事件" : "Events"}</span>
+              </summary>
+              <div className="topbar-menu-panel">
+                <button type="button" onClick={() => { setOpenTopbarMenu(null); openEventComparison(); }}>{t.nav.compare}</button>
+                <button type="button" onClick={() => { setOpenTopbarMenu(null); openCoveragePanel(); }}>{t.nav.coverage}</button>
+              </div>
+            </details>
+            <details className={`topbar-menu ${page === "ai-debug" || page === "ai-history" ? "active" : ""}`} open={openTopbarMenu === "ai"}>
+              <summary onClick={(event) => {
+                event.preventDefault();
+                setOpenTopbarMenu((current) => current === "ai" ? null : "ai");
+              }}>
+                <Network size={17} aria-hidden="true" />
+                <span>AI</span>
+              </summary>
+              <div className="topbar-menu-panel">
+                <button type="button" onClick={() => { setOpenTopbarMenu(null); openAiDebugPanel(); }}>{t.nav.aiDebug ?? (locale === "zh" ? "AI 问答" : "AI Q&A")}</button>
+                <button type="button" onClick={() => { setOpenTopbarMenu(null); openAiHistoryPanel(); }}>{t.nav.aiHistory ?? (locale === "zh" ? "AI 记录" : "AI History")}</button>
+              </div>
+            </details>
+            <details className={`topbar-menu ${page === "learning" || page === "map-debug" || page === "rag-eval" ? "active" : ""}`} open={openTopbarMenu === "tools"}>
+              <summary onClick={(event) => {
+                event.preventDefault();
+                setOpenTopbarMenu((current) => current === "tools" ? null : "tools");
+              }}>
+                <Grid3x3 size={17} aria-hidden="true" />
+                <span>{locale === "zh" ? "工具" : "Tools"}</span>
+              </summary>
+              <div className="topbar-menu-panel">
+                <button type="button" onClick={() => { setOpenTopbarMenu(null); openLearningGuide(); }}>{t.nav.learning}</button>
+                <button type="button" onClick={() => { setOpenTopbarMenu(null); openMapDebugPanel(); }}>{t.nav.mapDebug}</button>
+                <button type="button" onClick={() => { setOpenTopbarMenu(null); openRagEvalPanel(); }}>{t.nav.ragEval}</button>
+              </div>
+            </details>
             {page !== "home" && page !== "learning" && page !== "coverage" && page !== "map-debug" && page !== "rag-eval" && page !== "ai-debug" && page !== "ai-history" && (
               <label className="search-box">
                 <Search size={18} aria-hidden="true" />
@@ -5665,8 +6642,18 @@ function App() {
                 />
               </label>
             )}
+            </div>
           </div>
         </header>
+
+        {previousPage && previousPage !== page && page !== "home" && (
+          <div className="page-return-row">
+            <button className="back-button" type="button" onClick={returnToPreviousPage}>
+              <ArrowLeft size={18} />
+              返回上一页：{previousPageLabel}
+            </button>
+          </div>
+        )}
 
         {page === "china" && (
           <div className="region-toolbar">
@@ -5689,7 +6676,7 @@ function App() {
                 </button>
               ))}
             </div>
-            <span>{chinaMapMode === "political" ? "州郡区块模型" : chinaMapMode === "commandery" ? "157郡拼图" : (chinaMapLayer?.title ?? chinaRegionEra.title)}</span>
+            <span>{chinaMapMode === "political" ? "157郡界地图" : chinaMapMode === "commandery" ? "157郡界地图" : (chinaMapLayer?.title ?? chinaRegionEra.title)}</span>
           </div>
         )}
 
@@ -5754,7 +6741,7 @@ function App() {
               <Layers size={18} />
               中型事件 {showMediumEvents ? "开" : "关"}
             </button>
-            <span>{year} 年 · {eventComparisonCount} 条对比事件</span>
+            <span>{compareStartYear}-{compareEndYear} 年 · {compareCandidateEvents.length} 条候选事件</span>
           </div>
         )}
 
@@ -5784,60 +6771,44 @@ function App() {
                   <span>{activeOverviewPeriod.title}</span>
                 </div>
                 <button
-                  className={`back-button ${activeOverviewPeriod.status === "complete" ? "active" : ""}`}
+                  className={`back-button ${activeOverviewTimelineEra?.status === "complete" ? "active" : ""}`}
                   type="button"
-                  onClick={() => enterOverviewPeriod(activeOverviewPeriod, overviewYear)}
+                  onClick={() => enterOverviewEra(activeOverviewTimeline, activeOverviewTimelineEra, overviewYear)}
                 >
                   <MapPinned size={18} />
-                  {activeOverviewPeriod.status === "complete" ? t.common.openPeriod : t.common.viewPlan}
+                  {t.common.openPeriod}
                 </button>
               </div>
 
               <div className="overview-world-canvas" aria-label={t.common.roughWorldMap}>
                 <OverviewWorldMap />
-                {activeOverviewCoreRegions.map((region) => (
+                {activeOverviewMapRegions.map((region) => (
                   <span
                     className="overview-region-zone"
-                    key={`${activeOverviewPeriod.id}-${region.id}-zone`}
+                    key={`${region.timelineId}-${region.label}-zone`}
                     style={getOverviewRegionZoneStyle(activeOverviewPeriod, region)}
                     aria-hidden="true"
                   />
                 ))}
-                {activeOverviewCoreRegions.map((region, index) => (
+                {activeOverviewMapRegions.map((region, index) => (
                   <button
-                    className="overview-map-pin"
-                    key={`${activeOverviewPeriod.id}-${region.id}`}
+                    className={`overview-map-pin ${region.tier !== "core" ? "secondary" : ""}`}
+                    key={`${region.timelineId}-${region.label}`}
                     style={
                       {
-                        "--period-color": activeOverviewPeriod.color,
+                        "--period-color": region.color,
                         ...getOverviewRegionPosition(activeOverviewPeriod, region),
                       } as React.CSSProperties
                     }
                     type="button"
                     title={region.summary}
-                    onClick={() => setOverviewYear(activeOverviewSnapshotYear)}
-                    onDoubleClick={() => enterOverviewPeriod(activeOverviewPeriod, overviewYear)}
+                    onClick={() => setOverviewTimelineId(region.timelineId)}
+                    onDoubleClick={() => {
+                      const timeline = getOverviewRegionTimeline(region.timelineId);
+                      enterOverviewEra(timeline, getOverviewTimelineEra(timeline, overviewYear), overviewYear);
+                    }}
                   >
                     <span>{index + 1}</span>
-                    <strong aria-hidden="true">{region.label}</strong>
-                  </button>
-                ))}
-                {activeOverviewSupportRegions.map((region, index) => (
-                  <button
-                    className="overview-map-pin secondary"
-                    key={`${activeOverviewPeriod.id}-${region.id}`}
-                    style={
-                      {
-                        "--period-color": activeOverviewPeriod.color,
-                        ...getOverviewRegionPosition(activeOverviewPeriod, region),
-                      } as React.CSSProperties
-                    }
-                    type="button"
-                    title={region.summary}
-                    onClick={() => setOverviewYear(activeOverviewSnapshotYear)}
-                    onDoubleClick={() => enterOverviewPeriod(activeOverviewPeriod, overviewYear)}
-                  >
-                    <span>{index + activeOverviewCoreRegions.length + 1}</span>
                     <strong aria-hidden="true">{region.label}</strong>
                   </button>
                 ))}
@@ -5847,30 +6818,67 @@ function App() {
                 <div className="overview-year-readout">
                   <CalendarDays size={19} aria-hidden="true" />
                   <strong>{formatHistoricalYearWithEra(overviewYear)}</strong>
-                  <span>{t.common.nearestSnapshot}: {formatHistoricalYearWithEra(activeOverviewSnapshotYear)}</span>
+                  <label className="overview-timeline-select">
+                    <span>时间条</span>
+                    <select
+                      aria-label="选择区域时间条"
+                      value={overviewTimelineId}
+                      onChange={(event) => setOverviewTimelineId(event.target.value)}
+                    >
+                      {overviewRegionTimelines.map((timeline) => (
+                        <option key={timeline.id} value={timeline.id}>
+                          {timeline.label}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
                 </div>
-                <div className="overview-period-track" aria-hidden="true">
-                  {overviewPeriods
-                    .filter((period) => period.endYear >= overviewYearMin && period.startYear <= overviewYearMax)
-                    .map((period) => {
-                      const start = Math.max(period.startYear, overviewYearMin);
-                      const end = Math.min(period.endYear, overviewYearMax);
+                <div className="overview-period-track">
+                  {activeOverviewTimeline?.eras
+                    .filter((era) => era.endYear >= overviewYearMin && era.startYear <= overviewYearMax)
+                    .map((era) => {
+                      const start = Math.max(era.startYear, overviewYearMin);
+                      const end = Math.min(era.endYear, overviewYearMax);
                       const left = getOverviewYearPercent(start);
                       const width = Math.max(0.4, getOverviewYearPercent(end) - left);
+                      const isActive = activeOverviewTimelineEra?.id === era.id;
+                      const formalRange = era.formalStartYear !== undefined || era.formalEndYear !== undefined
+                        ? `严格政权范围：${era.formalStartYear !== undefined ? formatHistoricalYear(era.formalStartYear) : "不适用"}-${era.formalEndYear !== undefined ? formatHistoricalYear(era.formalEndYear) : "不适用"}`
+                        : "严格政权范围：不适用";
+                      const tooltip = [
+                        `${era.title}`,
+                        `叙事阶段范围：${formatHistoricalYear(era.startYear)}-${formatHistoricalYear(era.endYear)}`,
+                        formalRange,
+                        era.sourceStartYear !== undefined ? `叙事/史书起点：${formatHistoricalYear(era.sourceStartYear)}` : "",
+                        era.keyCause ? `关键起因：${era.keyCause}` : "",
+                        era.keyClimax ? `高潮：${era.keyClimax}` : "",
+                        era.keyResult ? `结果：${era.keyResult}` : "",
+                        era.sources?.length ? `主要史书或资料：${era.sources.join("、")}` : "",
+                        era.summary ?? "",
+                      ].filter(Boolean).join("\n");
                       return (
                         <button
-                          className={`overview-period-band ${period.id === activeOverviewPeriod.id ? "selected" : ""} ${period.status}`}
-                          key={period.id}
-                          style={{ left: `${left}%`, width: `${width}%`, "--period-color": period.color } as React.CSSProperties}
+                          className={`overview-period-band ${isActive ? "selected" : ""} ${era.status ?? "planned"}`}
+                          key={era.id}
+                          style={{ left: `${left}%`, width: `${width}%`, "--period-color": era.color } as React.CSSProperties}
                           type="button"
-                  title={`${period.title} · ${formatHistoricalYear(start)}-${formatHistoricalYear(end)}`}
-                          onClick={() => setOverviewYear(getPeriodMidpoint(period))}
-                          onDoubleClick={() => enterOverviewPeriod(period, getPeriodMidpoint(period))}
+                          title={tooltip}
+                          onClick={() => focusOverviewTimelineEra(era)}
                         >
-                          <span>{period.id === activeOverviewPeriod.id ? getOverviewPeriodShortLabel(period) : ""}</span>
+                          <span>{isActive ? era.title : ""}</span>
                         </button>
                       );
                     })}
+                  {overviewGlobalAnchors
+                    .filter((anchor) => anchor.year >= overviewYearMin && anchor.year <= overviewYearMax)
+                    .map((anchor) => (
+                      <span
+                        className={`overview-global-anchor ${anchor.importance ?? "major"}`}
+                        key={anchor.id}
+                        style={{ left: `${getOverviewYearPercent(anchor.year)}%` } as React.CSSProperties}
+                        title={`${anchor.title} · ${formatHistoricalYear(anchor.year)}`}
+                      />
+                    ))}
                   <span className="overview-current-year" style={{ left: `${getOverviewYearPercent(overviewYear)}%` }} />
                 </div>
                 <input
@@ -5885,20 +6893,23 @@ function App() {
                   onChange={(event) => setOverviewYear(Number(event.target.value))}
                 />
                 <div className="overview-range-labels">
-                  <span>前 550</span>
-                  <span>?221</span>
-                  <span>190</span>
-                  <span>750</span>
-                  <span>1206</span>
-                  <span>1644</span>
+                  <span>前 900</span>
+                  <span>前 221</span>
+                  <span>184</span>
+                  <span>755</span>
+                  <span>1279</span>
+                  <span>1912</span>
                 </div>
               </div>
             </div>
 
-            <aside className="overview-side-panel">
-              <div className="overview-period-card" style={{ "--period-color": activeOverviewPeriod.color } as React.CSSProperties}>
-                <span>{getPeriodStatusLabel(activeOverviewPeriod.status)}</span>
-                <h3>{activeOverviewPeriod.title}</h3>
+            <aside className="detail-panel overview-detail-panel" aria-label={locale === "zh" ? "总览相关信息" : "Overview related information"}>
+              <div className="region-detail overview-period-card" style={{ "--period-color": activeOverviewPeriod.color } as React.CSSProperties}>
+                <div className="detail-eyebrow" style={{ color: activeOverviewPeriod.color }}>
+                  <Info size={18} aria-hidden="true" />
+                  <span>{getPeriodStatusLabel(activeOverviewPeriod.status)}</span>
+                </div>
+                <h2>{activeOverviewPeriod.title}</h2>
                 <p>{activeOverviewPeriod.summary}</p>
                 <div className="overview-period-meta">
                   <strong>{formatHistoricalYear(activeOverviewPeriod.startYear)}-{formatHistoricalYear(activeOverviewPeriod.endYear)}</strong>
@@ -5906,8 +6917,28 @@ function App() {
                 </div>
               </div>
 
-              <div className="overview-snapshot-list">
-                <span>{t.common.snapshotYears}</span>
+              {activeOverviewTimelineEra && (
+                <section className="detail-section overview-context-list">
+                  <h3>{activeOverviewTimeline?.label ?? "区域时间条"}</h3>
+                  <p>
+                    <strong>{activeOverviewTimelineEra.title}</strong>
+                    {" · "}
+                    {formatHistoricalYear(activeOverviewTimelineEra.startYear)}-{formatHistoricalYear(activeOverviewTimelineEra.endYear)}
+                  </p>
+                  <p>{activeOverviewTimelineEra.summary}</p>
+                  {(activeOverviewTimelineEra.formalStartYear !== undefined || activeOverviewTimelineEra.formalEndYear !== undefined) && (
+                    <p>
+                      严格政权范围：
+                      {activeOverviewTimelineEra.formalStartYear !== undefined ? formatHistoricalYear(activeOverviewTimelineEra.formalStartYear) : "不适用"}
+                      -
+                      {activeOverviewTimelineEra.formalEndYear !== undefined ? formatHistoricalYear(activeOverviewTimelineEra.formalEndYear) : "不适用"}
+                    </p>
+                  )}
+                </section>
+              )}
+
+              <section className="detail-section overview-snapshot-list">
+                <h3>{t.common.snapshotYears}</h3>
                 <div>
                   {activeOverviewPeriod.snapshotYears
                     .filter((snapshotYear) => snapshotYear >= overviewYearMin && snapshotYear <= overviewYearMax)
@@ -5917,20 +6948,20 @@ function App() {
                         key={`${activeOverviewPeriod.id}-${snapshotYear}`}
                         type="button"
                         onClick={() => setOverviewYear(snapshotYear)}
-                        onDoubleClick={() => enterOverviewPeriod(activeOverviewPeriod, snapshotYear)}
+                        onDoubleClick={() => enterOverviewEra(activeOverviewTimeline, activeOverviewTimelineEra, snapshotYear)}
                       >
                         {formatHistoricalYear(snapshotYear)}
                       </button>
                     ))}
                 </div>
-              </div>
+              </section>
 
-              <div className="overview-context-list">
-                <span>{t.common.contextNotes}</span>
+              <section className="detail-section overview-context-list">
+                <h3>{t.common.contextNotes}</h3>
                 {activeOverviewPeriod.context.map((contextItem, index) => (
                   <p key={`${activeOverviewPeriod.id}-context-${index}`}>{contextItem}</p>
                 ))}
-              </div>
+              </section>
             </aside>
           </section>
         ) : page === "learning" ? (
@@ -7122,11 +8153,10 @@ function App() {
                       </div>
                       <p>{result.snippet}</p>
                       <div className="evidence-card-standard">
-                        <EvidenceField label="source_id" value={result.sourceId ?? "未绑定"} />
                         <EvidenceField label={t.evidencePage.source} value={[result.sourceTitle, result.locator].filter(Boolean).join(" · ")} />
                         <EvidenceField label={t.evidencePage.year} value={result.timeStart ?? (locale === "zh" ? "未定年" : "undated")} />
                         <EvidenceField label={t.evidencePage.people} value={<CompactEvidenceList values={[...new Set(relatedPeople)]} />} />
-                        <EvidenceField label={t.evidencePage.event} value={result.eventLabel ?? result.macroEvent ?? result.subjectId} />
+                        {(result.eventLabel || result.macroEvent) && <EvidenceField label={t.evidencePage.event} value={result.eventLabel ?? result.macroEvent} />}
                         <EvidenceField label={t.evidencePage.places} value={<CompactEvidenceList values={result.places} />} />
                         <EvidenceField label={t.evidencePage.confidence} value={result.confidence ? getConfidenceLabel(result.confidence) : (locale === "zh" ? "未标注" : "unmarked")} />
                         <EvidenceField label={t.evidencePage.dispute} value={result.disputeNote ?? (locale === "zh" ? "未标注" : "unmarked")} />
@@ -7138,10 +8168,7 @@ function App() {
                           {result.translation && <p>{result.translation}</p>}
                         </details>
                       )}
-                      <div className="evidence-card-meta">
-                        <span>{result.searchDocumentId}</span>
-                        <span>{result.tokenEstimate} tokens</span>
-                        <span>{result.reviewStatus}</span>
+                      <div className="evidence-card-actions">
                         {result.subjectTable === "events" && events.some((event) => event.id === result.subjectId) && (
                           <button
                             className="evidence-meta-action"
@@ -7170,84 +8197,169 @@ function App() {
             <div className="event-compare-summary">
               <div>
                 <p className="kicker">事件对比</p>
-                <h2>{year} 年三方对照</h2>
-                <p>只放中国、罗马与萨珊的同年锚点和邻近大事。打开中型事件时会补充更多细节，但不会把页面塞成完整年表。</p>
+                <h2>{year} 年同类事件对比</h2>
+                <p>先选事件类型，再选择 2-3 个具体事件。不同类型不混比，概览性阶段条目不进入默认候选。</p>
               </div>
               <div className="age-index-metrics">
                 <div>
-                  <span>同年事件</span>
-                  <strong>{eventComparisonCount}</strong>
+                  <span>候选事件</span>
+                  <strong>{compareCandidateEvents.length}</strong>
                 </div>
                 <div>
-                  <span>当前年份</span>
-                  <strong>{year}</strong>
+                  <span>已选对比</span>
+                  <strong>{displayedCompareEvents.length}</strong>
                 </div>
                 <div>
-                  <span>显示范围</span>
-                  <strong>{showMediumEvents ? "中型" : "大型"}</strong>
+                  <span>对比口径</span>
+                  <strong>{eventCompareTypes.find((type) => type.id === eventCompareType)?.label}</strong>
                 </div>
               </div>
             </div>
 
-            <div className="event-compare-grid">
-              {eventComparisonItems.map((item) => (
-                <article
-                  className="event-compare-column"
-                  key={item.region.id}
-                  style={{ "--accent": item.region.accent } as React.CSSProperties}
+            <div className="event-compare-type-bar" role="group" aria-label="事件类型">
+              {eventCompareTypes.map((type) => (
+                <button
+                  className={eventCompareType === type.id ? "selected" : ""}
+                  key={type.id}
+                  type="button"
+                  aria-pressed={eventCompareType === type.id}
+                  onClick={() => selectEventCompareType(type.id)}
                 >
-                  <header>
-                    <span>{item.region.label}</span>
-                    <strong>{item.era.title}</strong>
-                  </header>
-                  <p className="event-compare-era">{item.era.summary}</p>
+                  <strong>{type.label}</strong>
+                  <span>{type.hint}</span>
+                  <small>{compareCandidateCounts[type.id]}</small>
+                </button>
+              ))}
+            </div>
 
-                  <div className="event-compare-list">
-                    {item.exactEvents.length ? (
-                      item.exactEvents.slice(0, 5).map((event) => (
-                        <article className="event-compare-item" key={event.id}>
-                          <button className="event-compare-main" type="button" onClick={() => selectHistoricalEvent(event)}>
-                            <strong>{event.title}</strong>
-                            <span>{formatYearRange(event)} · {eventImportanceLabels[getEventImportance(event)]} · {categoryLabels[event.category]}</span>
-                            <small>{event.summary}</small>
+            <div className="event-compare-filter-bar" aria-label="事件对比筛选">
+              <label className="event-compare-search">
+                <Search size={16} aria-hidden="true" />
+                <input
+                  type="search"
+                  value={eventCompareQuery}
+                  placeholder="搜索事件、地点、人物、政权"
+                  onChange={(event) => setEventCompareQuery(event.target.value)}
+                />
+              </label>
+              <label>
+                <span>起始</span>
+                <input
+                  type="number"
+                  min={yearMin}
+                  max={yearMax}
+                  value={eventCompareStartYear}
+                  onChange={(event) => setEventCompareStartYear(Number(event.target.value))}
+                />
+              </label>
+              <label>
+                <span>结束</span>
+                <input
+                  type="number"
+                  min={yearMin}
+                  max={yearMax}
+                  value={eventCompareEndYear}
+                  onChange={(event) => setEventCompareEndYear(Number(event.target.value))}
+                />
+              </label>
+              <button
+                type="button"
+                onClick={() => {
+                  setEventCompareStartYear(Math.max(yearMin, year - 5));
+                  setEventCompareEndYear(Math.min(yearMax, year + 5));
+                }}
+              >
+                当前年前后 5 年
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setEventCompareStartYear(yearMin);
+                  setEventCompareEndYear(yearMax);
+                }}
+              >
+                190-310 全段
+              </button>
+            </div>
+
+            <div className="event-compare-workbench">
+              <aside className="event-compare-picker">
+                <header>
+                  <span>{compareStartYear}-{compareEndYear} 年候选</span>
+                  <strong>{eventCompareTypes.find((type) => type.id === eventCompareType)?.label}</strong>
+                </header>
+                <div className="event-compare-list">
+                  {compareCandidateEvents.length ? (
+                    compareCandidateEvents.slice(0, 18).map((event) => {
+                      const region = regions.find((item) => item.id === event.region);
+                      const isSelected = selectedCompareEventIds.includes(event.id);
+                      return (
+                        <article className={`event-compare-picker-item ${isSelected ? "selected" : ""}`} key={event.id}>
+                          <button type="button" onClick={() => addCompareEvent(event)}>
+                            <span>{event.startYear} · {region?.label ?? event.region}</span>
+                            <strong>{getEventDisplayTitle(event, locale).primary}</strong>
+                            <small>{isSelected ? "再次点击取消选择" : "点击加入对比"} · {getComparableEventKind(event)} · {event.locationName ?? event.places?.[0] ?? "地点未标注"}</small>
                           </button>
+                          <button className="event-card-link" type="button" onClick={() => selectHistoricalEvent(event)}>
+                            详情
+                          </button>
+                        </article>
+                      );
+                    })
+                  ) : (
+                    <div className="event-compare-empty">
+                      <strong>暂无同类候选</strong>
+                      <span>调整年份或打开“含小事件”再试。</span>
+                    </div>
+                  )}
+                </div>
+              </aside>
+
+              <div className="event-compare-board">
+                {displayedCompareEvents.length ? (
+                  displayedCompareEvents.map((event) => {
+                    const region = regions.find((item) => item.id === event.region);
+                    const fields = getEventCompareFields(event, eventCompareType);
+                    const isManual = selectedCompareEventIds.includes(event.id);
+                    return (
+                      <article className="event-compare-detail-card" key={event.id} style={{ "--accent": region?.accent ?? "#b94f32" } as React.CSSProperties}>
+                        <header>
+                          <div>
+                            <span>{region?.label ?? event.region} · {formatYearRange(event)}</span>
+                            <h3>{getEventDisplayTitle(event, locale).primary}</h3>
+                          </div>
+                          {isManual && (
+                            <button type="button" onClick={() => removeCompareEvent(event.id)} aria-label={`移除对比：${getEventDisplayTitle(event, locale).primary}`}>
+                              <X size={16} aria-hidden="true" />
+                            </button>
+                          )}
+                        </header>
+                        <div className="event-compare-field-grid">
+                          {fields.map((field) => (
+                            <div className={field.label === "结果" || field.label === "影响" || field.label === "后果" || field.label === "政策/行动" || field.label === "交涉内容" ? "wide" : ""} key={`${event.id}-${field.label}`}>
+                              <span>{field.label}</span>
+                              <p>{field.value}</p>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="event-compare-actions">
                           <button className="event-card-link" type="button" onClick={() => openEventEvidence(event)}>
                             史料
                           </button>
-                        </article>
-                      ))
-                    ) : item.hiddenMediumEvents.length ? (
-                      <div className="event-compare-empty">
-                        <strong>有中型事件</strong>
-                        <span>打开“中型事件”查看 {item.hiddenMediumEvents.length} 条。</span>
-                      </div>
-                    ) : item.focusLifeEvents.length ? (
-                      item.focusLifeEvents.map(({ inferred, lifeEvent, person }) => (
-                        <div className="event-compare-empty" key={lifeEvent.id}>
-                          <strong>{person.name}：{lifeEvent.title}</strong>
-                          <span>{inferred ? "延续上一阶段：" : ""}{lifeEvent.summary}</span>
+                          <button className="event-card-link" type="button" onClick={() => selectHistoricalEvent(event)}>
+                            打开事件
+                          </button>
                         </div>
-                      ))
-                    ) : (
-                      <div className="event-compare-empty">
-                        <strong>无同年锚点</strong>
-                        <span>可参考邻近年份事件。</span>
-                      </div>
-                    )}
+                      </article>
+                    );
+                  })
+                ) : (
+                  <div className="event-compare-empty">
+                    <strong>选择左侧事件开始对比</strong>
+                    <span>同类事件最多保留 3 个，便于横向看地点、人物、结果和影响。</span>
                   </div>
-
-                  {item.nearbyEvents.length > 0 && (
-                    <footer>
-                      <span>邻近年份</span>
-                      {item.nearbyEvents.map((event) => (
-                        <button key={event.id} type="button" onClick={() => selectHistoricalEvent(event)}>
-                          {event.startYear} · {event.title}
-                        </button>
-                      ))}
-                    </footer>
-                  )}
-                </article>
-              ))}
+                )}
+              </div>
             </div>
           </section>
         ) : page === "age" ? (
@@ -7261,11 +8373,11 @@ function App() {
               <div className="age-index-metrics">
                 <div>
                   <span>{t.agePage.currentResults}</span>
-                  <strong>{ageComparisonItems.length}</strong>
+                  <strong>{livingAgeComparisonItems.length}</strong>
                 </div>
                 <div>
-                  <span>{t.agePage.alive}</span>
-                  <strong>{ageComparisonItems.filter((item) => item.state.category === "alive").length}</strong>
+                  <span>{t.agePage.selectedPeople}</span>
+                  <strong>{selectedAgeComparisonItems.length}</strong>
                 </div>
                 <div>
                   <span>{t.agePage.currentYearEvents}</span>
@@ -7273,6 +8385,8 @@ function App() {
                 </div>
               </div>
             </div>
+
+            {timelineDock}
 
             <div className="person-filter-bar" role="group" aria-label={t.agePage.scopeAria}>
               {ageRegionFilters.map((filter) => (
@@ -7291,51 +8405,121 @@ function App() {
 
             <div className="age-event-strip" aria-label={`${year} ${t.agePage.eventAriaSuffix}`}>
               {currentYearEvents.length ? (
-                currentYearEvents.slice(0, 8).map((event) => (
-                  <button
-                    className="age-event-chip"
-                    key={event.id}
-                    type="button"
-                    onClick={() => {
-                      setYear(event.startYear);
-                      setSelectedId(event.id);
-                    }}
-                  >
-                    <strong>{event.title}</strong>
-                    <span>{event.startYear} {t.common.yearSuffix} · {regions.find((region) => region.id === event.region)?.label ?? event.region}</span>
-                  </button>
-                ))
+                currentYearEvents.slice(0, 8).map((event) => {
+                  const eventAgePersonIds = getAgeEventPersonIds(event);
+                  const eventLinkedPersonCount = getEventLinkedPersonIds(event).length;
+                  return (
+                    <button
+                      className="age-event-chip"
+                      key={event.id}
+                      type="button"
+                      onClick={() => addAgeEventPeople(event)}
+                    >
+                      <strong>{event.title}</strong>
+                      <span>{event.startYear} {t.common.yearSuffix} · {regions.find((region) => region.id === event.region)?.label ?? event.region}</span>
+                      <small>
+                        {locale === "zh"
+                          ? `关联 ${eventLinkedPersonCount} 人 · 可算 ${eventAgePersonIds.length} 人`
+                          : `${eventLinkedPersonCount} linked · ${eventAgePersonIds.length} age-ready`}
+                      </small>
+                    </button>
+                  );
+                })
               ) : (
                 <span className="age-event-empty">{t.agePage.noEvents}</span>
               )}
             </div>
 
-            <div className="age-card-grid">
-              {ageComparisonItems.length ? (
-                ageComparisonItems.map(({ person, state }) => (
-                  <article className={`age-card age-card-${state.category}`} key={person.id}>
-                    <div className="age-card-heading">
-                      <div>
-                        <strong>{person.name}</strong>
-                        <span>{getAgeRegionLabel(person.region)} · {person.polity}</span>
-                      </div>
-                      <em>{state.label}</em>
-                    </div>
-                    <div className="age-card-years">
-                      <span>{t.agePage.birthYear} {person.birthYear}</span>
-                      <span>{person.deathYear ? `${t.agePage.deathYear} ${person.deathYear}` : t.agePage.unknownDeath}</span>
-                    </div>
-                    <p>{person.summary}</p>
-                    <div className="age-card-tags">
-                      {person.roles.slice(0, 3).map((role) => (
-                        <span key={`${person.id}-${role}`}>{role}</span>
-                      ))}
-                    </div>
-                  </article>
-                ))
-              ) : (
-                <div className="empty-state">{t.agePage.empty}</div>
-              )}
+            <div className="age-workbench">
+              <section className="age-selected-panel" aria-label={t.agePage.selectedPeople}>
+                <header>
+                  <div>
+                    <span>{t.agePage.selectedPeople}</span>
+                    <strong>{selectedAgeComparisonItems.length}</strong>
+                  </div>
+                  <p>{t.agePage.compareHint}</p>
+                </header>
+                {selectedAgeComparisonItems.length ? (
+                  <div className="age-selected-list">
+                    {selectedAgeComparisonItems.map(({ person, state }) => {
+                      const lifeContext = ageLifeContextByPersonId.get(person.id);
+                      return (
+                        <article className={`age-card age-card-compact age-card-${state.category} ${state.precision === "estimated" ? "age-card-estimated" : ""}`} key={`selected-${person.id}`}>
+                          <div className="age-card-heading">
+                            <div>
+                              <strong>{person.name}</strong>
+                              <span>{getAgeRegionLabel(person.region)} · {person.polity}</span>
+                            </div>
+                            <em>{state.label}</em>
+                          </div>
+                          <div className="age-card-years">
+                            <span>
+                              {person.birthYearRange
+                                ? `推断生年 ${person.birthYearRange.min}-${person.birthYearRange.max}`
+                                : `${t.agePage.birthYear} ${person.birthYear}`}
+                            </span>
+                            <span>{person.deathYear ? `${t.agePage.deathYear} ${person.deathYear}` : t.agePage.unknownDeath}</span>
+                          </div>
+                          {person.agePrecision === "estimated" && <p className="age-estimate-note">{person.ageNote ?? "推断年龄，非精确生卒年"}</p>}
+                          <div className="age-life-context">
+                            <span>{lifeContext?.label ?? t.agePage.recentLife}</span>
+                            <strong>{lifeContext ? `${lifeContext.year ?? "?"} ${t.common.yearSuffix} · ${lifeContext.title}` : t.agePage.noLifeContext}</strong>
+                            {lifeContext && <p>{lifeContext.summary}</p>}
+                          </div>
+                          <div className="age-card-actions">
+                            <button type="button" onClick={() => openAgePersonProfile(person)} title={t.agePage.openProfile} aria-label={`${t.agePage.openProfile}: ${person.name}`}>
+                              <UserRound size={15} aria-hidden="true" />
+                              <span>{t.agePage.openProfile}</span>
+                            </button>
+                            <button type="button" onClick={() => openEvidenceSearch(person.name, person.region === "all" ? "all" : person.region)} title={t.agePage.openEvidence} aria-label={`${t.agePage.openEvidence}: ${person.name}`}>
+                              <BookOpen size={15} aria-hidden="true" />
+                              <span>{t.agePage.openEvidence}</span>
+                            </button>
+                            <button type="button" onClick={() => openPersonEvidenceGraph(person.id)} title={t.agePage.openGraph} aria-label={`${t.agePage.openGraph}: ${person.name}`}>
+                              <Network size={15} aria-hidden="true" />
+                              <span>{t.agePage.openGraph}</span>
+                            </button>
+                            <button type="button" className="danger" onClick={() => removeAgePerson(person.id)} title={t.agePage.removePerson} aria-label={`${t.agePage.removePerson}: ${person.name}`}>
+                              <X size={15} aria-hidden="true" />
+                              <span>{t.agePage.removePerson}</span>
+                            </button>
+                          </div>
+                        </article>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="empty-state">{t.agePage.compareHint}</div>
+                )}
+              </section>
+
+              <aside className="age-pool-panel" aria-label={t.agePage.livingPool}>
+                <header>
+                  <div>
+                    <span>{t.agePage.livingPool}</span>
+                    <strong>{candidateAgeComparisonItems.length}</strong>
+                  </div>
+                  <p>{t.agePage.poolHint}</p>
+                </header>
+                <div className="age-pool-list">
+                  {candidateAgeComparisonItems.length ? (
+                    candidateAgeComparisonItems.map(({ person, state }) => (
+                      <article className={`age-pool-item ${state.precision === "estimated" ? "estimated" : ""}`} key={person.id}>
+                        <div>
+                          <strong>{person.name}</strong>
+                          <span>{state.label} · {getAgeRegionLabel(person.region)} · {person.polity}</span>
+                        </div>
+                        <button type="button" onClick={() => addAgePerson(person.id)} title={t.agePage.addPerson} aria-label={`${t.agePage.addPerson}: ${person.name}`}>
+                          <Plus size={15} aria-hidden="true" />
+                          <span>{t.agePage.addPerson}</span>
+                        </button>
+                      </article>
+                    ))
+                  ) : (
+                    <div className="empty-state">{t.agePage.empty}</div>
+                  )}
+                </div>
+              </aside>
             </div>
           </section>
         ) : page === "people" ? (
@@ -7444,7 +8628,7 @@ function App() {
                 controllerColorMap={chinaControllerColorMap}
                 controlTimeline={chinaControlTimeline}
                 hoveredBlockId={hoveredChinaBlockId}
-                mapMode={chinaMapMode}
+                mapMode={chinaMapMode === "political" ? "commandery" : chinaMapMode}
                 onSelectBlock={setSelectedChinaBlockId}
                 onHoverBlock={setHoveredChinaBlockId}
                 onClearSummary={() => {
@@ -7544,10 +8728,13 @@ function App() {
             <div className="world-comparison-heading">
               <div>
                 <p className="kicker">同年对照</p>
-                <h2>{year} 年的三方局势</h2>
+                <h2>{year} 年的{detailPeriodContext.title}</h2>
+                <p>
+                  {detailPeriodContext.regionLabel}时间条 · {formatHistoricalYear(yearMin)}-{formatHistoricalYear(yearMax)}
+                </p>
               </div>
               <div className="comparison-controls">
-                <span>时间条只标大型事件；空档优先显示主角动向。</span>
+                <span>时间线显示当前详情期内各区域大型事件；空档优先显示主角动向。</span>
                 <button
                   className={`medium-toggle ${showMediumEvents ? "active" : ""}`}
                   type="button"
@@ -7652,88 +8839,7 @@ function App() {
           </section>
         )}
 
-        {showTimelineDock && (
-          <section className="timeline-dock" aria-label="时间轴">
-          <button
-            className="icon-button"
-            type="button"
-            aria-label="上一年"
-            title="上一年"
-            onClick={() => setYear((current) => Math.max(yearMin, current - 1))}
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <div className="year-control">
-            <div className="year-readout">
-              <CalendarDays size={19} aria-hidden="true" />
-              <span>{year}</span>
-              <small>CE</small>
-            </div>
-            <div className="timeline-track">
-              {page === "world" && (
-                <div className="timeline-marker-layer" aria-hidden="true">
-                  {timelineMarkers.map((marker, index) => {
-                    const regionIndex = Math.max(0, worldComparisonRegionOrder.indexOf(marker.region.id));
-                    const offset = ((marker.year - yearMin) / (yearMax - yearMin)) * 100;
-
-                    return (
-                      <span
-                        className="timeline-marker"
-                        key={`${marker.region.id}-${marker.year}-${index}`}
-                        style={
-                          {
-                            "--marker-color": marker.region.accent,
-                            "--marker-row": regionIndex,
-                            left: `${offset}%`,
-                          } as React.CSSProperties
-                        }
-                        title={`${marker.year} 年 · ${marker.region.label} · ${marker.titles.slice(0, 2).join("、")}${
-                          marker.eventCount > 2 ? `?${marker.eventCount} 件` : ""
-                        }`}
-                      />
-                    );
-                  })}
-                </div>
-              )}
-              <input
-                aria-label="选择年份"
-                type="range"
-                min={yearMin}
-                max={yearMax}
-                step={1}
-                value={year}
-                onInput={(event) => setYear(Number(event.currentTarget.value))}
-                onChange={(event) => setYear(Number(event.target.value))}
-              />
-            </div>
-            <div className="range-labels">
-              <span>190</span>
-              <span>220</span>
-              <span>260</span>
-              <span>310</span>
-            </div>
-            {page === "world" && (
-              <div className="timeline-region-legend" aria-label="区域颜色">
-                {worldComparisonItems.map((item) => (
-                  <span key={item.region.id} style={{ "--accent": item.region.accent } as React.CSSProperties}>
-                    <i aria-hidden="true" />
-                    {item.region.label}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-          <button
-            className="icon-button"
-            type="button"
-            aria-label="下一年"
-            title="下一年"
-            onClick={() => setYear((current) => Math.min(yearMax, current + 1))}
-          >
-            <ChevronRight size={20} />
-          </button>
-          </section>
-        )}
+        {showTimelineDock && page !== "age" && timelineDock}
       </section>
 
       {showDetailPanel && (
@@ -7750,7 +8856,7 @@ function App() {
             {page === "people"
               ? (selectedPerson?.name ?? "人物索引")
               : page === "china" && chinaMapMode === "political"
-              ? "控制区块 / 势力范围近似"
+              ? "三国郡界地图"
               : page === "china"
                 ? (chinaMapLayer?.title ?? chinaRegionEra.title)
                 : selectedRegionEra.title}
@@ -7759,7 +8865,7 @@ function App() {
             {page === "people"
               ? (selectedPerson?.summary ?? "暂无选中人物")
               : page === "china" && chinaMapMode === "political"
-              ? `${year} 年按州与重点郡级区块显示控制者。区块颜色表示当前控制权，争夺区使用斜线样式；该层是势力范围近似，不是精确国界。`
+              ? "以 190-280 年三国时期郡级区块为主地图，优先显示郡界与区块关系；控制权仅作为辅助颜色和右侧列表信息。"
               : page === "china"
                 ? (chinaMapLayer?.summary ?? chinaRegionEra.summary)
                 : selectedRegionEra.summary}
@@ -7953,7 +9059,7 @@ function App() {
 
         {showRegionalEventSections && page === "china" && (chinaMapMode === "political" || chinaMapMode === "commandery") && (
           <section className="event-list">
-            <h3>控制区块</h3>
+            <h3>郡界区块</h3>
             <div className="chips block-chip-list">
               {chinaBlockSnapshots.map(({ block, control }) => (
                 <button
