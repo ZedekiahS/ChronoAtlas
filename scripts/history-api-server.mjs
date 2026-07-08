@@ -427,6 +427,9 @@ function extractEvidenceBodySection(body, label) {
 function searchDocuments(db, url) {
   const query = url.searchParams.get("q")?.trim();
   const region = url.searchParams.get("region")?.trim();
+  const sourceWork = url.searchParams.get("sourceWork")?.trim();
+  const startYear = parseInteger(url.searchParams.get("startYear"));
+  const endYear = parseInteger(url.searchParams.get("endYear"));
   const entityIdParam = url.searchParams.get("entityId")?.trim();
   const entityId = entityIdParam
     ? entityIdParam.startsWith("person:") || entityIdParam.includes(":")
@@ -436,22 +439,113 @@ function searchDocuments(db, url) {
   const limit = parseLimit(url.searchParams.get("limit"), 25, 100);
   const offset = parseOffset(url.searchParams.get("offset"));
 
-  if (!query) {
+  if (!query && !sourceWork && startYear === null && endYear === null && !entityId) {
     return { results: [], limit, offset };
   }
 
-  const where = ["(c.title LIKE $likeQuery OR c.body LIKE $likeQuery OR c.rowid IN (SELECT rowid FROM document_chunks_fts WHERE document_chunks_fts MATCH $ftsQuery))"];
+  const where = [];
   const joins = [];
   const params = {
-    $likeQuery: `%${query}%`,
-    $ftsQuery: buildFtsQuery(query) || query,
     $limit: limit,
     $offset: offset
   };
+  const hasQuery = Boolean(query);
+  const hasYearRange = startYear !== null || endYear !== null;
+  const rankBucketSql = hasQuery
+    ? `CASE
+          WHEN c.rowid IN (SELECT rowid FROM document_chunks_fts WHERE document_chunks_fts MATCH $ftsQuery) THEN 0
+          ELSE 1
+        END`
+    : "1";
+  const chunkYearOrderSql = hasYearRange
+    ? `CASE
+          WHEN c.time_start = $focusYear OR c.time_end = $focusYear THEN 0
+          WHEN c.time_start <= $focusYear AND COALESCE(c.time_end, c.time_start) >= $focusYear THEN 1
+          ELSE 2
+        END,
+        ABS(COALESCE(c.time_start, c.time_end, 9999) - $focusYear),
+        ABS(COALESCE(c.time_end, c.time_start, $focusYear) - COALESCE(c.time_start, c.time_end, $focusYear)),`
+    : "";
+  const documentYearOrderSql = hasYearRange
+    ? `CASE
+          WHEN sd.time_start = $focusYear OR sd.time_end = $focusYear THEN 0
+          WHEN sd.time_start <= $focusYear AND COALESCE(sd.time_end, sd.time_start) >= $focusYear THEN 1
+          ELSE 2
+        END,
+        ABS(COALESCE(sd.time_start, sd.time_end, 9999) - $focusYear),
+        ABS(COALESCE(sd.time_end, sd.time_start, $focusYear) - COALESCE(sd.time_start, sd.time_end, $focusYear)),`
+    : "";
+
+  if (hasQuery) {
+    where.push("(c.title LIKE $likeQuery OR c.body LIKE $likeQuery OR c.rowid IN (SELECT rowid FROM document_chunks_fts WHERE document_chunks_fts MATCH $ftsQuery))");
+    params.$likeQuery = `%${query}%`;
+    params.$ftsQuery = buildFtsQuery(query) || query;
+  }
 
   if (region) {
     where.push("c.region_id = $region");
     params.$region = region;
+  }
+
+  if (startYear !== null || endYear !== null) {
+    const rangeStart = startYear ?? endYear;
+    const rangeEnd = endYear ?? startYear;
+    where.push("COALESCE(c.time_end, c.time_start) >= $rangeStart");
+    where.push("COALESCE(c.time_start, c.time_end) <= $rangeEnd");
+    params.$rangeStart = Math.min(rangeStart, rangeEnd);
+    params.$rangeEnd = Math.max(rangeStart, rangeEnd);
+    params.$focusYear = Math.round((params.$rangeStart + params.$rangeEnd) / 2);
+  }
+
+  const sourceWorkFilters = {
+    sanguozhi: "(s.id LIKE 'sanguozhi-%' OR s.title LIKE '三国志%' OR s.citation_short LIKE '三国志%' OR s.original_title LIKE '三国志%')",
+    hanshu: "s.id LIKE 'hanshu-guoxue123-%'",
+    houhanshu: "(s.id LIKE 'houhanshu-%' OR s.title LIKE '后汉书%' OR s.citation_short LIKE '后汉书%' OR s.original_title LIKE '后汉书%')",
+    jinshu: "(s.id LIKE 'jinshu-%' OR s.title LIKE '晋书%' OR s.citation_short LIKE '晋书%' OR s.original_title LIKE '晋书%')",
+    zztj: "(s.id LIKE 'zizhi-tongjian-%' OR s.title LIKE '资治通鉴%' OR s.citation_short LIKE '资治通鉴%' OR s.original_title LIKE '资治通鉴%')"
+  };
+  const sourceWorkLabels = {
+    sanguozhi: "三国志",
+    hanshu: "汉书",
+    houhanshu: "后汉书",
+    jinshu: "晋书",
+    zztj: "资治通鉴"
+  };
+
+  Object.assign(sourceWorkFilters, {
+    herodian: "s.id = 'rome-source-history-of-the-empire-after-marcus-herodian'",
+    "cassius-dio": "s.id = 'rome-source-roman-history-cassius-dio'",
+    "historia-augusta": "s.id = 'rome-source-historia-augusta-scriptores-historiae-augustae'",
+    zosimus: "s.id = 'rome-source-historia-nova-zosimus'",
+    eutropius: "s.id = 'rome-source-breviarium-ab-urbe-condita-eutropius'",
+    skz: "s.id = 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri'",
+    kartir: "s.id IN ('deepseek-sasanian-source-kartirs-inscriptions-collective-evidence-kartir-kirder-kkz-knrb-ksm-knrm', 'deepseek-sasanian-source-kartirs-inscription-at-kaba-ye-zardosht-kkz-s-kz-kartir-kirder-kkz-karti')",
+    paikuli: "s.id = 'deepseek-sasanian-source-paikuli-inscription-npi-narseh-paikuli-tower-inscription-narseh-middle-p'",
+  });
+  Object.assign(sourceWorkLabels, {
+    herodian: "Herodian",
+    "cassius-dio": "Cassius Dio",
+    "historia-augusta": "Historia Augusta",
+    zosimus: "Zosimus",
+    eutropius: "Eutropius",
+    skz: "SKZ",
+    kartir: "Kartir",
+    paikuli: "Paikuli",
+  });
+
+  if (sourceWork && sourceWorkFilters[sourceWork]) {
+    params.$sourceWorkLike = `%${sourceWorkLabels[sourceWork]}%`;
+    where.push(`
+      c.search_document_id IN (
+        SELECT sd.id
+        FROM search_documents sd
+        LEFT JOIN source_passages sp ON sd.subject_table = 'source_passages' AND sp.id = sd.subject_id
+        LEFT JOIN evidence_links el ON (el.subject_table = 'search_documents' AND el.subject_id = sd.id) OR (el.subject_table = sd.subject_table AND el.subject_id = sd.subject_id)
+        LEFT JOIN sources s ON s.id = COALESCE(sp.source_id, el.source_id)
+        WHERE sd.subject_table IN ('source_passages', 'import_evidence_cards')
+          AND (${sourceWorkFilters[sourceWork]} OR sd.title LIKE $sourceWorkLike OR sd.body LIKE $sourceWorkLike OR sd.raw_json LIKE $sourceWorkLike)
+      )
+    `);
   }
 
   if (entityId) {
@@ -481,36 +575,62 @@ function searchDocuments(db, url) {
         c.review_status,
         (SELECT sd.raw_json FROM search_documents sd WHERE sd.id = c.search_document_id) AS document_raw_json,
         (SELECT sd.body FROM search_documents sd WHERE sd.id = c.search_document_id) AS document_body,
+        (SELECT sp.source_id FROM source_passages sp WHERE c.subject_table = 'source_passages' AND sp.id = c.subject_id) AS passage_source_id,
+        (SELECT s.title FROM source_passages sp JOIN sources s ON s.id = sp.source_id WHERE c.subject_table = 'source_passages' AND sp.id = c.subject_id) AS passage_source_title,
         (SELECT el.source_id FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_source_id,
         (SELECT el.locator FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_locator,
         (SELECT el.quote FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_quote,
         (SELECT el.confidence FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_confidence,
         (SELECT ic.translation FROM import_evidence_cards ic WHERE ic.id = c.subject_id) AS card_translation,
         (SELECT ic.questions_json FROM import_evidence_cards ic WHERE ic.id = c.subject_id) AS card_questions_json,
-        CASE
-          WHEN c.rowid IN (SELECT rowid FROM document_chunks_fts WHERE document_chunks_fts MATCH $ftsQuery) THEN 0
-          ELSE 1
-        END AS rank_bucket
+        ${rankBucketSql} AS rank_bucket
       FROM document_chunks c
       ${joins.join("\n")}
-      WHERE ${where.join(" AND ")}
+      WHERE ${where.length ? where.join(" AND ") : "1 = 1"}
       ORDER BY
         rank_bucket,
-        CASE WHEN c.title LIKE $likeQuery THEN 0 ELSE 1 END,
+        ${hasQuery ? "CASE WHEN c.title LIKE $likeQuery THEN 0 ELSE 1 END," : ""}
+        ${chunkYearOrderSql}
         COALESCE(c.time_start, 9999),
         c.id
       LIMIT $limit OFFSET $offset
     `).all(params);
   } catch {
-    const fallbackWhere = ["(c.title LIKE $likeQuery OR c.body LIKE $likeQuery)"];
+    const fallbackWhere = [];
     const fallbackParams = {
-      $likeQuery: params.$likeQuery,
       $limit: limit,
       $offset: offset
     };
+    if (hasQuery) {
+      fallbackWhere.push("(c.title LIKE $likeQuery OR c.body LIKE $likeQuery)");
+      fallbackParams.$likeQuery = params.$likeQuery;
+    }
     if (region) {
       fallbackWhere.push("c.region_id = $region");
       fallbackParams.$region = region;
+    }
+    if (startYear !== null || endYear !== null) {
+      const rangeStart = startYear ?? endYear;
+      const rangeEnd = endYear ?? startYear;
+      fallbackWhere.push("COALESCE(c.time_end, c.time_start) >= $rangeStart");
+      fallbackWhere.push("COALESCE(c.time_start, c.time_end) <= $rangeEnd");
+      fallbackParams.$rangeStart = Math.min(rangeStart, rangeEnd);
+      fallbackParams.$rangeEnd = Math.max(rangeStart, rangeEnd);
+      fallbackParams.$focusYear = Math.round((fallbackParams.$rangeStart + fallbackParams.$rangeEnd) / 2);
+    }
+    if (sourceWork && sourceWorkFilters[sourceWork]) {
+      fallbackParams.$sourceWorkLike = `%${sourceWorkLabels[sourceWork]}%`;
+      fallbackWhere.push(`
+        c.search_document_id IN (
+          SELECT sd.id
+          FROM search_documents sd
+          LEFT JOIN source_passages sp ON sd.subject_table = 'source_passages' AND sp.id = sd.subject_id
+          LEFT JOIN evidence_links el ON (el.subject_table = 'search_documents' AND el.subject_id = sd.id) OR (el.subject_table = sd.subject_table AND el.subject_id = sd.subject_id)
+          LEFT JOIN sources s ON s.id = COALESCE(sp.source_id, el.source_id)
+          WHERE sd.subject_table IN ('source_passages', 'import_evidence_cards')
+            AND (${sourceWorkFilters[sourceWork]} OR sd.title LIKE $sourceWorkLike OR sd.body LIKE $sourceWorkLike OR sd.raw_json LIKE $sourceWorkLike)
+        )
+      `);
     }
     if (entityId) {
       fallbackWhere.push("dce.entity_id = $entityId");
@@ -535,6 +655,8 @@ function searchDocuments(db, url) {
         c.review_status,
         (SELECT sd.raw_json FROM search_documents sd WHERE sd.id = c.search_document_id) AS document_raw_json,
         (SELECT sd.body FROM search_documents sd WHERE sd.id = c.search_document_id) AS document_body,
+        (SELECT sp.source_id FROM source_passages sp WHERE c.subject_table = 'source_passages' AND sp.id = c.subject_id) AS passage_source_id,
+        (SELECT s.title FROM source_passages sp JOIN sources s ON s.id = sp.source_id WHERE c.subject_table = 'source_passages' AND sp.id = c.subject_id) AS passage_source_title,
         (SELECT el.source_id FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_source_id,
         (SELECT el.locator FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_locator,
         (SELECT el.quote FROM evidence_links el WHERE (el.subject_table = 'search_documents' AND el.subject_id = c.search_document_id) OR (el.subject_table = c.subject_table AND el.subject_id = c.subject_id) ORDER BY CASE WHEN el.subject_table = 'search_documents' THEN 0 ELSE 1 END, el.id LIMIT 1) AS evidence_quote,
@@ -544,13 +666,93 @@ function searchDocuments(db, url) {
         1 AS rank_bucket
       FROM document_chunks c
       ${joins.join("\n")}
-      WHERE ${fallbackWhere.join(" AND ")}
+      WHERE ${fallbackWhere.length ? fallbackWhere.join(" AND ") : "1 = 1"}
       ORDER BY
-        CASE WHEN c.title LIKE $likeQuery THEN 0 ELSE 1 END,
+        ${hasQuery ? "CASE WHEN c.title LIKE $likeQuery THEN 0 ELSE 1 END," : ""}
+        ${chunkYearOrderSql}
         COALESCE(c.time_start, 9999),
         c.id
       LIMIT $limit OFFSET $offset
     `).all(fallbackParams);
+  }
+
+  if (sourceWork && sourceWorkFilters[sourceWork] && !hasQuery) {
+    results = [];
+  }
+
+  if (sourceWork && sourceWorkFilters[sourceWork] && (!hasQuery || results.length < limit)) {
+    const directWhere = [sourceWorkFilters[sourceWork]];
+    const directParams = {
+      $limit: hasQuery ? limit - results.length : limit,
+      $offset: results.length ? 0 : offset
+    };
+
+    if (hasQuery) {
+      directWhere.push("(sd.title LIKE $likeQuery OR sd.body LIKE $likeQuery)");
+      directParams.$likeQuery = params.$likeQuery;
+    }
+    if (startYear !== null || endYear !== null) {
+      const rangeStart = startYear ?? endYear;
+      const rangeEnd = endYear ?? startYear;
+      directWhere.push("COALESCE(sd.time_end, sd.time_start) >= $rangeStart");
+      directWhere.push("COALESCE(sd.time_start, sd.time_end) <= $rangeEnd");
+      directParams.$rangeStart = Math.min(rangeStart, rangeEnd);
+      directParams.$rangeEnd = Math.max(rangeStart, rangeEnd);
+      directParams.$focusYear = Math.round((directParams.$rangeStart + directParams.$rangeEnd) / 2);
+    }
+    directParams.$sourceWorkLike = `%${sourceWorkLabels[sourceWork]}%`;
+    directWhere.push(hasQuery ? "(sd.subject_table IN ('source_passages', 'import_evidence_cards'))" : "sd.subject_table = 'source_passages'");
+    directWhere.push(`(${sourceWorkFilters[sourceWork]} OR sd.title LIKE $sourceWorkLike OR sd.body LIKE $sourceWorkLike OR sd.raw_json LIKE $sourceWorkLike)`);
+    if (region) {
+      directWhere.push("sd.region_id = $region");
+      directParams.$region = region;
+    }
+
+    const existingSearchDocumentIds = new Set(results.map((result) => result.search_document_id));
+    const directResults = db.prepare(`
+      SELECT
+        'search-document:' || sd.id AS id,
+        sd.id AS search_document_id,
+        0 AS chunk_index,
+        sd.subject_table,
+        sd.subject_id,
+        sd.title,
+        substr(sd.body, 1, 600) AS snippet,
+        sd.language,
+        sd.region_id,
+        sd.period_id,
+        sd.topic_id,
+        sd.time_start,
+        sd.time_end,
+        NULL AS token_estimate,
+        sd.review_status,
+        sd.raw_json AS document_raw_json,
+        sd.body AS document_body,
+        s.id AS evidence_source_id,
+        sp.locator AS evidence_locator,
+        NULL AS evidence_quote,
+        sp.confidence AS evidence_confidence,
+        NULL AS card_translation,
+        NULL AS card_questions_json,
+        s.title AS source_title,
+        1 AS rank_bucket
+      FROM search_documents sd
+      LEFT JOIN source_passages sp ON sd.subject_table = 'source_passages' AND sp.id = sd.subject_id
+      LEFT JOIN evidence_links el ON (el.subject_table = 'search_documents' AND el.subject_id = sd.id) OR (el.subject_table = sd.subject_table AND el.subject_id = sd.subject_id)
+      LEFT JOIN sources s ON s.id = COALESCE(sp.source_id, el.source_id)
+      WHERE ${directWhere.join(" AND ")}
+      ORDER BY
+        ${hasQuery ? "CASE WHEN sd.title LIKE $likeQuery THEN 0 ELSE 1 END," : ""}
+        ${documentYearOrderSql}
+        COALESCE(sd.time_start, 9999),
+        sd.id
+      LIMIT $limit OFFSET $offset
+    `).all(directParams)
+      .filter((result) => !existingSearchDocumentIds.has(result.search_document_id));
+
+    results = hasQuery
+      ? [...results, ...directResults].slice(0, limit)
+      : [...directResults, ...results].slice(0, limit);
   }
 
   const entitiesByChunk = new Map();
@@ -611,8 +813,8 @@ function searchDocuments(db, url) {
         tokenEstimate: result.token_estimate,
         reviewStatus: result.review_status,
         rankBucket: result.rank_bucket,
-        sourceId: raw.sourceId ?? result.evidence_source_id ?? null,
-        sourceTitle: raw.sourceTitle ?? null,
+        sourceId: raw.sourceId ?? result.evidence_source_id ?? result.passage_source_id ?? null,
+        sourceTitle: raw.sourceTitle ?? result.source_title ?? result.passage_source_title ?? null,
         locator: raw.locator ?? result.evidence_locator ?? null,
         quote: result.evidence_quote ?? null,
         translation: raw.translation ?? result.card_translation ?? bodyTranslation ?? null,
@@ -2328,6 +2530,154 @@ function frontendSources(db, locale = "zh") {
   };
 }
 
+function frontendSourceSummary(db, locale = "zh") {
+  return {
+    schemaVersion: 1,
+    generatedFrom: "sqlite:source-tables",
+    purpose: "frontend-source-summary",
+    sources: db.prepare(`
+      SELECT
+        s.id,
+        COALESCE(si.title, sizh.title, s.title) AS title,
+        COALESCE(si.author, sizh.author, s.author) AS author,
+        s.type,
+        COALESCE(si.citation_short, sizh.citation_short, s.citation_short) AS citation_short,
+        s.url,
+        COALESCE(si.note, sizh.note, s.note) AS note
+      FROM sources s
+      LEFT JOIN source_i18n si ON si.source_id = s.id AND si.locale = ?
+      LEFT JOIN source_i18n sizh ON sizh.source_id = s.id AND sizh.locale = 'zh'
+      ORDER BY s.id
+    `).all(locale).map((source) => ({
+      id: source.id,
+      title: source.title,
+      author: source.author ?? "",
+      type: source.type,
+      citationShort: source.citation_short ?? source.id,
+      note: source.note ?? "",
+      url: source.url ?? undefined
+    }))
+  };
+}
+
+function sourceMentionRows(db, rows) {
+  return rows.map((row) => {
+    const raw = parseRawJson(row.raw_json);
+    return {
+      id: row.id,
+      sourceId: row.source_id,
+      workTitle: row.work_title,
+      bookTitle: row.book_title,
+      chapterTitle: row.chapter_title,
+      locator: row.locator,
+      year: row.year,
+      text: row.text,
+      translation: row.translation,
+      mentionedPersonIds: db.prepare(`
+        SELECT person_id
+        FROM source_mention_people
+        WHERE mention_id = ?
+        ORDER BY sort_order
+      `).all(row.id).map((person) => person.person_id),
+      mentionedEventIds: db.prepare(`
+        SELECT event_id
+        FROM source_mention_events
+        WHERE mention_id = ?
+        ORDER BY sort_order
+      `).all(row.id).map((event) => event.event_id),
+      mentionedPlaceIds: db.prepare(`
+        SELECT place_id
+        FROM source_mention_places
+        WHERE mention_id = ?
+        ORDER BY sort_order
+      `).all(row.id).map((place) => place.place_id),
+      tags: db.prepare(`
+        SELECT tag
+        FROM source_mention_tags
+        WHERE mention_id = ?
+        ORDER BY sort_order
+      `).all(row.id).map((tag) => tag.tag),
+      confidence: row.confidence ?? raw.confidence ?? "medium",
+      reviewStatus: row.review_status ?? raw.reviewStatus ?? "draft",
+      disputeNote: row.dispute_note ?? raw.disputeNote ?? raw.uncertainty ?? null
+    };
+  });
+}
+
+function frontendSourceMentionsForPerson(db, personId, url) {
+  const locale = localeFromUrl(url);
+  const limit = Math.min(120, Math.max(1, Number(url.searchParams.get("limit") ?? 40)));
+  const rows = db.prepare(`
+    SELECT
+      sm.id,
+      sm.source_id,
+      COALESCE(smi.work_title, smizh.work_title, sm.work_title) AS work_title,
+      COALESCE(smi.book_title, smizh.book_title, sm.book_title) AS book_title,
+      COALESCE(smi.chapter_title, smizh.chapter_title, sm.chapter_title) AS chapter_title,
+      sm.locator,
+      sm.year,
+      sm.text,
+      COALESCE(smi.translation, smizh.translation, sm.translation) AS translation,
+      sm.confidence,
+      sm.review_status,
+      sm.raw_json,
+      COALESCE(smi.dispute_note, smizh.dispute_note) AS dispute_note
+    FROM source_mentions sm
+    JOIN source_mention_people smp ON smp.mention_id = sm.id
+    LEFT JOIN source_mention_i18n smi ON smi.mention_id = sm.id AND smi.locale = ?
+    LEFT JOIN source_mention_i18n smizh ON smizh.mention_id = sm.id AND smizh.locale = 'zh'
+    WHERE smp.person_id = ?
+    ORDER BY COALESCE(sm.year, 9999), sm.id
+    LIMIT ?
+  `).all(locale, personId, limit);
+
+  return {
+    schemaVersion: 1,
+    generatedFrom: "sqlite:source-mentions-by-person",
+    purpose: "frontend-source-mentions",
+    subjectType: "person",
+    subjectId: personId,
+    sourceMentions: sourceMentionRows(db, rows)
+  };
+}
+
+function frontendSourceMentionsForEvent(db, eventId, url) {
+  const locale = localeFromUrl(url);
+  const limit = Math.min(120, Math.max(1, Number(url.searchParams.get("limit") ?? 40)));
+  const rows = db.prepare(`
+    SELECT
+      sm.id,
+      sm.source_id,
+      COALESCE(smi.work_title, smizh.work_title, sm.work_title) AS work_title,
+      COALESCE(smi.book_title, smizh.book_title, sm.book_title) AS book_title,
+      COALESCE(smi.chapter_title, smizh.chapter_title, sm.chapter_title) AS chapter_title,
+      sm.locator,
+      sm.year,
+      sm.text,
+      COALESCE(smi.translation, smizh.translation, sm.translation) AS translation,
+      sm.confidence,
+      sm.review_status,
+      sm.raw_json,
+      COALESCE(smi.dispute_note, smizh.dispute_note) AS dispute_note
+    FROM source_mentions sm
+    JOIN source_mention_events sme ON sme.mention_id = sm.id
+    LEFT JOIN source_mention_i18n smi ON smi.mention_id = sm.id AND smi.locale = ?
+    LEFT JOIN source_mention_i18n smizh ON smizh.mention_id = sm.id AND smizh.locale = 'zh'
+    WHERE sme.event_id = ?
+    ORDER BY COALESCE(sm.year, 9999), sm.id
+    LIMIT ?
+  `).all(locale, eventId, limit);
+
+  return {
+    schemaVersion: 1,
+    generatedFrom: "sqlite:source-mentions-by-event",
+    purpose: "frontend-source-mentions",
+    subjectType: "event",
+    subjectId: eventId,
+    sourceMentions: sourceMentionRows(db, rows)
+  };
+}
+
 function frontendPersonDetail(db, entityIdOrLegacyId, locale = "zh") {
   const legacyPersonId = entityIdOrLegacyId.startsWith("person:")
     ? entityIdOrLegacyId.slice("person:".length)
@@ -2504,7 +2854,7 @@ function appRuntimeDataset(db, id, fallback) {
 function frontendEventImportance(db) {
   return appRuntimeDataset(db, "event-importance-180-280", {
     model: "event-importance",
-    defaultImportance: "medium",
+    defaultImportance: "minor",
     records: []
   });
 }
@@ -3550,17 +3900,39 @@ function frontendCoverage310589(db) {
   };
 }
 
-function frontendChinaControl(db) {
+function chinaControlDatasetSelection(url) {
+  const selectedYear = parseInteger(url?.searchParams?.get("year"));
+  if (selectedYear !== null && selectedYear >= 280 && selectedYear <= 317) {
+    return {
+      geometryDatasetId: "china-admin-block-map-280-317",
+      controlDatasetId: "china-block-control-timeline-280-317",
+      defaultRange: [280, 317],
+      defaultGeometryLabel: "China Western Jin commandery-style geometry 280-317",
+      defaultControlLabel: "China Western Jin control timeline 280-317"
+    };
+  }
+
+  return {
+    geometryDatasetId: "china-admin-block-map-190-280",
+    controlDatasetId: "china-block-control-timeline-190-280",
+    defaultRange: [190, 280],
+    defaultGeometryLabel: "China commandery geometry 190-280",
+    defaultControlLabel: "China commandery control timeline 190-280"
+  };
+}
+
+function frontendChinaControl(db, url) {
+  const selection = chinaControlDatasetSelection(url);
   const adminDataset = db.prepare(`
     SELECT *
     FROM map_geometry_datasets
-    WHERE id = 'china-admin-block-map-190-280'
-  `).get();
+    WHERE id = ?
+  `).get(selection.geometryDatasetId);
   const timelineDataset = db.prepare(`
     SELECT *
     FROM map_control_datasets
-    WHERE id = 'china-block-control-timeline-190-280'
-  `).get();
+    WHERE id = ?
+  `).get(selection.controlDatasetId);
   const featureSources = db.prepare(`
     SELECT note
     FROM map_feature_sources
@@ -3578,7 +3950,9 @@ function frontendChinaControl(db) {
     adminBlocks: {
       schemaVersion: adminDataset?.schema_version ?? 1,
       model: adminDataset?.model ?? "china-admin-block-map",
-      range: [adminDataset?.time_start ?? 190, adminDataset?.time_end ?? 280],
+      datasetId: selection.geometryDatasetId,
+      label: adminDataset?.label ?? selection.defaultGeometryLabel,
+      range: [adminDataset?.time_start ?? selection.defaultRange[0], adminDataset?.time_end ?? selection.defaultRange[1]],
       notes: adminDataset?.source_note ?? "",
       blocks: db.prepare(`
         SELECT
@@ -3587,9 +3961,9 @@ function frontendChinaControl(db) {
           g.coordinates_json
         FROM map_features f
         JOIN map_feature_geometries g ON g.feature_id = f.id AND g.simplification_level = 'full'
-        WHERE f.dataset_id = 'china-admin-block-map-190-280'
+        WHERE f.dataset_id = ?
         ORDER BY CASE f.feature_type WHEN 'admin_block' THEN 0 ELSE 1 END, f.id
-      `).all().map((block) => {
+      `).all(selection.geometryDatasetId).map((block) => {
         const rawBlock = parseRawJson(block.raw_json);
 
         return {
@@ -3612,14 +3986,16 @@ function frontendChinaControl(db) {
     controlTimeline: {
       schemaVersion: timelineDataset?.schema_version ?? 1,
       model: timelineDataset?.model ?? "china-block-control-timeline",
-      range: [timelineDataset?.time_start ?? 190, timelineDataset?.time_end ?? 280],
+      datasetId: selection.controlDatasetId,
+      label: timelineDataset?.label ?? selection.defaultControlLabel,
+      range: [timelineDataset?.time_start ?? selection.defaultRange[0], timelineDataset?.time_end ?? selection.defaultRange[1]],
       keyYears: parseRawJson(timelineDataset?.key_years_json),
       controllers: db.prepare(`
         SELECT label AS id, color
         FROM map_controllers
-        WHERE control_dataset_id = 'china-block-control-timeline-190-280'
+        WHERE control_dataset_id = ?
         ORDER BY sort_order, label
-      `).all(),
+      `).all(selection.controlDatasetId),
       records: db.prepare(`
         SELECT
           r.id,
@@ -3631,9 +4007,9 @@ function frontendChinaControl(db) {
           r.confidence
         FROM map_control_records r
         JOIN map_controllers c ON c.id = r.controller_id
-        WHERE r.control_dataset_id = 'china-block-control-timeline-190-280'
+        WHERE r.control_dataset_id = ?
         ORDER BY r.feature_id, r.start_year, r.end_year
-      `).all().map((record) => ({
+      `).all(selection.controlDatasetId).map((record) => ({
         blockId: record.feature_id,
         startYear: record.start_year,
         endYear: record.end_year,
@@ -3933,7 +4309,7 @@ function frontendAppData(db) {
     generatedFrom: "sqlite:app-runtime-datasets",
     eventImportance: byId.get("event-importance-180-280") ?? {
       model: "event-importance",
-      defaultImportance: "detail",
+      defaultImportance: "minor",
       records: []
     },
     regions: byId.get("regions-180-280") ?? []
@@ -4156,6 +4532,185 @@ function updateImportEvidenceCardStatus(db, cardId, reviewStatus) {
   }
 
   return importEvidenceCardDetail(db, cardId);
+}
+
+const sourceLibraryWorkFilters = {
+  sanguozhi: "s.id LIKE 'sanguozhi-guoxue123-%'",
+  hanshu: "s.id LIKE 'hanshu-guoxue123-%'",
+  houhanshu: "s.id LIKE 'houhanshu-guoxue123-%'",
+  jinshu: "s.id LIKE 'jinshu-guoxue123-%'",
+  zztj: "s.id LIKE 'zizhi-tongjian-guoxue123-%'",
+  herodian: "s.id = 'rome-source-history-of-the-empire-after-marcus-herodian'",
+  "cassius-dio": "s.id = 'rome-source-roman-history-cassius-dio'",
+  "historia-augusta": "s.id = 'rome-source-historia-augusta-scriptores-historiae-augustae'",
+  zosimus: "s.id = 'rome-source-historia-nova-zosimus'",
+  eutropius: "s.id = 'rome-source-breviarium-ab-urbe-condita-eutropius'",
+  skz: "s.id = 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri'",
+  kartir: "s.id IN ('deepseek-sasanian-source-kartirs-inscriptions-collective-evidence-kartir-kirder-kkz-knrb-ksm-knrm', 'deepseek-sasanian-source-kartirs-inscription-at-kaba-ye-zardosht-kkz-s-kz-kartir-kirder-kkz-karti')",
+  paikuli: "s.id = 'deepseek-sasanian-source-paikuli-inscription-npi-narseh-paikuli-tower-inscription-narseh-middle-p'"
+};
+
+function sourceLibraryWhere(work) {
+  if (work && sourceLibraryWorkFilters[work]) {
+    return sourceLibraryWorkFilters[work];
+  }
+
+  return `(
+    s.id LIKE 'sanguozhi-guoxue123-%'
+    OR s.id LIKE 'hanshu-guoxue123-%'
+    OR s.id LIKE 'houhanshu-guoxue123-%'
+    OR s.id LIKE 'jinshu-guoxue123-%'
+    OR s.id LIKE 'zizhi-tongjian-guoxue123-%'
+    OR s.id = 'rome-source-history-of-the-empire-after-marcus-herodian'
+    OR s.id = 'rome-source-roman-history-cassius-dio'
+    OR s.id = 'rome-source-historia-augusta-scriptores-historiae-augustae'
+    OR s.id = 'rome-source-historia-nova-zosimus'
+    OR s.id = 'rome-source-breviarium-ab-urbe-condita-eutropius'
+    OR s.id = 'deepseek-sasanian-source-s-kz-res-gestae-divi-saporis-shapur-i-kaba-ye-zardosht-trilingual-inscri'
+    OR s.id = 'deepseek-sasanian-source-kartirs-inscriptions-collective-evidence-kartir-kirder-kkz-knrb-ksm-knrm'
+    OR s.id = 'deepseek-sasanian-source-kartirs-inscription-at-kaba-ye-zardosht-kkz-s-kz-kartir-kirder-kkz-karti'
+    OR s.id = 'deepseek-sasanian-source-paikuli-inscription-npi-narseh-paikuli-tower-inscription-narseh-middle-p'
+  )`;
+}
+
+function listSourceLibrarySources(db, url) {
+  const work = url.searchParams.get("work")?.trim();
+  const query = url.searchParams.get("q")?.trim();
+  const limit = parseLimit(url.searchParams.get("limit"), 120, 300);
+  const offset = parseOffset(url.searchParams.get("offset"));
+  const where = [sourceLibraryWhere(work)];
+  const params = { $limit: limit, $offset: offset };
+
+  if (query) {
+    where.push(`(
+      s.title LIKE $query
+      OR s.citation_short LIKE $query
+      OR s.original_title LIKE $query
+      OR s.id LIKE $query
+      OR EXISTS (
+        SELECT 1 FROM source_passages spq
+        WHERE spq.source_id = s.id
+          AND (spq.text LIKE $query OR spq.locator LIKE $query)
+      )
+    )`);
+    params.$query = `%${query}%`;
+  }
+
+  const sources = db.prepare(`
+    SELECT
+      s.id,
+      s.title,
+      s.author,
+      s.type,
+      s.citation_short,
+      s.url,
+      s.language,
+      s.note,
+      s.raw_json,
+      COUNT(sp.id) AS passage_count,
+      MIN(sp.year_start) AS year_start,
+      MAX(sp.year_end) AS year_end,
+      SUM(length(sp.text)) AS text_length,
+      SUM(CASE WHEN sp.text LIKE '%\u81e3\u677e\u4e4b%' OR sp.text LIKE '%\u677e\u4e4b\u6848%' THEN 1 ELSE 0 END) AS peizhu_passage_count
+    FROM sources s
+    JOIN source_passages sp ON sp.source_id = s.id
+    WHERE ${where.join(" AND ")}
+    GROUP BY s.id
+    ORDER BY
+      CASE
+        WHEN s.id LIKE 'sanguozhi-guoxue123-%' THEN 1
+        WHEN s.id LIKE 'houhanshu-guoxue123-%' THEN 2
+        WHEN s.id LIKE 'jinshu-guoxue123-%' THEN 3
+        WHEN s.id LIKE 'zizhi-tongjian-guoxue123-%' THEN 4
+        ELSE 9
+      END,
+      s.id
+    LIMIT $limit OFFSET $offset
+  `).all(params);
+
+  return {
+    sources: sources.map((source) => {
+      const raw = parseRawJson(source.raw_json);
+      return {
+        id: source.id,
+        title: source.title,
+        author: source.author,
+        type: source.type,
+        citationShort: source.citation_short,
+        url: source.url,
+        language: source.language,
+        note: source.note,
+        passageCount: source.passage_count,
+        yearStart: source.year_start,
+        yearEnd: source.year_end,
+        textLength: source.text_length,
+        peizhuPassageCount: source.peizhu_passage_count,
+        chronology: raw.chronology ?? null
+      };
+    }),
+    limit,
+    offset
+  };
+}
+
+function sourceLibrarySourceDetail(db, sourceId, url) {
+  const query = url.searchParams.get("q")?.trim();
+  const source = db.prepare(`
+    SELECT id, title, author, type, citation_short, url, language, note, raw_json
+    FROM sources
+    WHERE id = ?
+  `).get(sourceId);
+
+  if (!source) {
+    return null;
+  }
+
+  const passageWhere = ["source_id = $sourceId"];
+  const params = { $sourceId: sourceId };
+  if (query) {
+    passageWhere.push("(text LIKE $query OR locator LIKE $query)");
+    params.$query = `%${query}%`;
+  }
+
+  const passages = db.prepare(`
+    SELECT id, locator, sequence, year_start, year_end, text, translation, notes, confidence, review_status, raw_json
+    FROM source_passages
+    WHERE ${passageWhere.join(" AND ")}
+    ORDER BY sequence, id
+  `).all(params);
+
+  const raw = parseRawJson(source.raw_json);
+  return {
+    source: {
+      id: source.id,
+      title: source.title,
+      author: source.author,
+      type: source.type,
+      citationShort: source.citation_short,
+      url: source.url,
+      language: source.language,
+      note: source.note,
+      chronology: raw.chronology ?? null
+    },
+    passages: passages.map((passage) => {
+      const passageRaw = parseRawJson(passage.raw_json);
+      return {
+        id: passage.id,
+        locator: passage.locator,
+        sequence: passage.sequence,
+        yearStart: passage.year_start,
+        yearEnd: passage.year_end,
+        text: passage.text,
+        translation: passage.translation,
+        notes: passage.notes,
+        confidence: passage.confidence,
+        reviewStatus: passage.review_status,
+        chronology: passageRaw.chronology ?? null,
+        hasPeiAnnotation: passage.text.includes("\u81e3\u677e\u4e4b") || passage.text.includes("\u677e\u4e4b\u6848")
+      };
+    }),
+    query: query ?? "",
+  };
 }
 
 async function route(request, response) {
@@ -4390,7 +4945,54 @@ async function route(request, response) {
     }
 
     if (pathname === "/api/frontend-sources") {
-      sendJson(response, 200, frontendSources(db, localeFromUrl(url)));
+      sendJson(
+        response,
+        200,
+        url.searchParams.get("includeMentions") === "1"
+          ? frontendSources(db, localeFromUrl(url))
+          : frontendSourceSummary(db, localeFromUrl(url))
+      );
+      return;
+    }
+
+    if (pathname === "/api/frontend-source-summary") {
+      sendJson(response, 200, frontendSourceSummary(db, localeFromUrl(url)));
+      return;
+    }
+
+    if (pathname.startsWith("/api/source-mentions/person/")) {
+      const personId = decodeURIComponent(pathname.slice("/api/source-mentions/person/".length));
+      if (!personId) {
+        badRequest(response, "Missing person id");
+        return;
+      }
+      sendJson(response, 200, frontendSourceMentionsForPerson(db, personId, url));
+      return;
+    }
+
+    if (pathname.startsWith("/api/source-mentions/event/")) {
+      const eventId = decodeURIComponent(pathname.slice("/api/source-mentions/event/".length));
+      if (!eventId) {
+        badRequest(response, "Missing event id");
+        return;
+      }
+      sendJson(response, 200, frontendSourceMentionsForEvent(db, eventId, url));
+      return;
+    }
+
+    if (pathname === "/api/source-library/sources") {
+      sendJson(response, 200, listSourceLibrarySources(db, url));
+      return;
+    }
+
+    if (pathname.startsWith("/api/source-library/sources/")) {
+      const sourceId = decodeURIComponent(pathname.slice("/api/source-library/sources/".length));
+      if (!sourceId) {
+        badRequest(response, "Missing source id");
+        return;
+      }
+      const detail = sourceLibrarySourceDetail(db, sourceId, url);
+      detail ? sendJson(response, 200, detail) : notFound(response);
       return;
     }
 
@@ -4428,7 +5030,7 @@ async function route(request, response) {
     }
 
     if (pathname === "/api/frontend-china-control") {
-      sendJson(response, 200, frontendChinaControl(db));
+      sendJson(response, 200, frontendChinaControl(db, url));
       return;
     }
 

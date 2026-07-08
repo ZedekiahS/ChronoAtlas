@@ -8,6 +8,53 @@ const batchId = "guoxue123-official-history-fulltext";
 
 const works = [
   {
+    id: "sanguozhi",
+    workTitle: "\u4e09\u56fd\u5fd7",
+    author: "\u9648\u5bff\u64b0\uff0c\u88f4\u677e\u4e4b\u6ce8",
+    baseUrl: "http://www.guoxue123.com/shibu/0101/00sgz/",
+    indexUrl: "http://www.guoxue123.com/shibu/0101/00sgz/index.htm",
+    sourcePrefix: "sanguozhi-guoxue123",
+    sourceIndexStart: 0,
+    passagePrefix: "guoxue123:sgz",
+    corpusId: "china-three-kingdoms",
+    note: "Complete Sanguozhi full text imported from Guoxue123 / Guoxue Daohang; Chinese source text and Pei Songzhi annotations are retained.",
+    dateLabel: "\u897f\u664b",
+    dateStart: 280,
+    dateEnd: 297,
+    defaultYearStart: 184,
+    defaultYearEnd: 280,
+    searchPeriodId: null,
+    oldPassagePatterns: ["ctext:sgz:%"],
+  },
+  {
+    id: "hanshu",
+    workTitle: "汉书",
+    author: "班固撰，颜师古注",
+    baseUrl: "http://www.guoxue123.com/shibu/0101/01hsyz/",
+    indexUrl: "http://www.guoxue123.com/shibu/0101/01hsyz/index.htm",
+    sourcePrefix: "hanshu-guoxue123",
+    passagePrefix: "guoxue123:hanshu",
+    corpusId: "china-western-han",
+    note: "Complete Han Shu full text with Yan Shigu annotations imported from Guoxue123 / Guoxue Daohang; Chinese source text is retained.",
+    dateLabel: "东汉",
+    dateStart: 82,
+    dateEnd: 111,
+    defaultYearStart: -206,
+    defaultYearEnd: 23,
+    searchPeriodId: null,
+    oldPassagePatterns: [],
+    corpus: {
+      id: "china-western-han",
+      name: "中国西汉资料库",
+      region: "china",
+      description: "ChronoAtlas 西汉与新莽时期正史原文、人物和事件资料。",
+      civilizationId: null,
+      defaultLanguage: "zh-Hans",
+      timeStart: -206,
+      timeEnd: 23,
+    },
+  },
+  {
     id: "houhanshu",
     workTitle: "后汉书",
     author: "范晔撰，李贤等注",
@@ -22,7 +69,7 @@ const works = [
     dateEnd: 445,
     defaultYearStart: 25,
     defaultYearEnd: 220,
-    searchPeriodId: "china-three-kingdoms-180-280",
+    searchPeriodId: null,
     oldPassagePatterns: ["ctext:hhs:%"],
   },
   {
@@ -40,7 +87,7 @@ const works = [
     dateEnd: 648,
     defaultYearStart: 265,
     defaultYearEnd: 420,
-    searchPeriodId: "china-wei-jin-northern-southern-310-589",
+    searchPeriodId: null,
     oldPassagePatterns: ["ctext:jinshu:%"],
   },
   {
@@ -58,7 +105,7 @@ const works = [
     dateEnd: 1084,
     defaultYearStart: -403,
     defaultYearEnd: 959,
-    searchPeriodId: "china-three-kingdoms-180-280",
+    searchPeriodId: null,
     oldPassagePatterns: ["ctext:zztj:%"],
   },
 ];
@@ -132,6 +179,22 @@ function cleanGuoxueText(html) {
     .replace(/\n[ \t]+/g, "\n")
     .replace(/[ \t]+\n/g, "\n")
     .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+function stripGuoxueNavigationChrome(text, workTitle, title) {
+  const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const workTitlePattern = workTitle ? escapeRegExp(workTitle) : "";
+  const titlePattern = title ? escapeRegExp(title) : "";
+
+  return text
+    .replace(/^\uFF0D[^\n]{1,40}\n+/u, "")
+    .replace(/^\s*\u9996\u9875[\s\u3000]+\u7ecf\u90e8[\s\u3000]+\u53f2\u90e8[\s\u3000]+\u5b50\u90e8[\s\u3000]+\u96c6\u90e8[\s\u3000]+\u4e13\u9898[\s\u3000]+\u4eca\u4eba\u65b0\u8457\s*/u, "")
+    .replace(/^\s*\u4e0a\u4e00\u9875[\s\u3000]+\u76ee\u5f55\u9875[\s\u3000]+\u4e0b\u4e00\u9875\s*/u, "")
+    .replace(/^\s*\u76ee\u5f55\u9875[\s\u3000]+\u4e0b\u4e00\u9875\s*/u, "")
+    .replace(/^\s*\u4e0a\u4e00\u9875[\s\u3000]+\u76ee\u5f55\u9875\s*/u, "")
+    .replace(workTitlePattern ? new RegExp(`^${workTitlePattern}\\s*`, "u") : /^/u, "")
+    .replace(titlePattern ? new RegExp(`^${titlePattern}\\s*`, "u") : /^/u, "")
     .trim();
 }
 
@@ -209,15 +272,11 @@ function parsePage(html, fallbackTitle, workTitle) {
   const contentStart = titleMarker ? titleMarker.index + titleMarker[0].length : h1Marker ? h1Marker.index + h1Marker[0].length : 0;
   const footerOffset = html.slice(contentStart).search(/上一页\s*目录页\s*下一页[\s\S]*?(Copyright|版权所有)|Copyright|版权所有|Powered by|国学导航/iu);
   const bodyHtml = footerOffset >= 0 ? html.slice(contentStart, contentStart + footerOffset) : html.slice(contentStart);
-  const text = cleanGuoxueText(bodyHtml)
-    .replace(/^上一页\s+目录页\s+下一页\s*/u, "")
-    .replace(/^目录页\s+下一页\s*/u, "")
-    .replace(/^上一页\s+目录页\s*/u, "")
-    .replace(new RegExp(`^${workTitle}\\s*`, "u"), "")
-    .replace(new RegExp(`^${title}\\s*`, "u"), "")
-    .trim();
+  const text = stripGuoxueNavigationChrome(cleanGuoxueText(bodyHtml), workTitle, title);
+  const firstHeading = text.split(/\n+/u).map((line) => line.trim()).find(Boolean);
+  const cleanTitle = /国学导航|guoxue/iu.test(title) && firstHeading ? firstHeading : title;
 
-  return { title, chunks: chunkChineseText(text) };
+  return { title: cleanTitle, chunks: chunkChineseText(text) };
 }
 
 const upsertSource = db.prepare(`
@@ -239,6 +298,23 @@ const upsertSource = db.prepare(`
     source_type = excluded.source_type,
     reliability_level = 'high',
     review_status = 'reviewed'
+`);
+
+const upsertCorpus = db.prepare(`
+  INSERT INTO corpora
+    (id, name, region, description, civilization_id, default_language, time_start, time_end, review_status, raw_json)
+  VALUES
+    (@id, @name, @region, @description, @civilizationId, @defaultLanguage, @timeStart, @timeEnd, 'reviewed', @rawJson)
+  ON CONFLICT(id) DO UPDATE SET
+    name = excluded.name,
+    region = excluded.region,
+    description = excluded.description,
+    civilization_id = excluded.civilization_id,
+    default_language = excluded.default_language,
+    time_start = excluded.time_start,
+    time_end = excluded.time_end,
+    review_status = 'reviewed',
+    raw_json = excluded.raw_json
 `);
 
 const upsertPassage = db.prepare(`
@@ -277,6 +353,13 @@ async function importWork(work) {
 
   db.exec("BEGIN");
   try {
+    if (work.corpus) {
+      upsertCorpus.run({
+        ...work.corpus,
+        rawJson: json({ generatedFrom: batchId, workTitle: work.workTitle }),
+      });
+    }
+
     deletePassages.run(`${work.passagePrefix}:%`);
     deletePassageI18n.run(`${work.passagePrefix}:%`);
     deleteSearchDocuments.run(`source-passage:${work.passagePrefix}:%`);
@@ -303,7 +386,8 @@ async function importWork(work) {
       continue;
     }
 
-    const sourceId = `${work.sourcePrefix}-${String(entryIndex + 1).padStart(3, "0")}`;
+    const sourceIndex = (work.sourceIndexStart ?? 1) + entryIndex;
+    const sourceId = `${work.sourcePrefix}-${String(sourceIndex).padStart(3, "0")}`;
     const sourceTitle = `${work.workTitle}·${title}`;
     const rawSourceJson = json({
       generatedFrom: batchId,
@@ -388,8 +472,16 @@ async function importWork(work) {
 }
 
 try {
+  const requestedWorkIds = new Set(process.argv.slice(2).filter((value) => value && value !== "--"));
+  const selectedWorks = requestedWorkIds.size ? works.filter((work) => requestedWorkIds.has(work.id)) : works;
+
+  if (requestedWorkIds.size && selectedWorks.length !== requestedWorkIds.size) {
+    const available = works.map((work) => work.id).join(", ");
+    throw new Error(`Unknown work id. Requested: ${[...requestedWorkIds].join(", ")}. Available: ${available}`);
+  }
+
   const summaries = [];
-  for (const work of works) {
+  for (const work of selectedWorks) {
     summaries.push(await importWork(work));
   }
   console.log(JSON.stringify(summaries, null, 2));

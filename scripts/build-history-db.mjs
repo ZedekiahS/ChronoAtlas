@@ -13,6 +13,17 @@ const dbPath = checkMode
 const seedSqlPath = path.join(rootDir, "db", "seeds", "core-data.sql");
 const runtimeSeedSqlPath = path.join(rootDir, "db", "seeds", "runtime-data.sql");
 
+async function readSeedSqlBundle(seedPath) {
+  const seedDir = path.dirname(seedPath);
+  const baseName = path.basename(seedPath, ".sql");
+  const entries = await readdir(seedDir, { withFileTypes: true });
+  const partPaths = entries
+    .filter((entry) => entry.isFile() && entry.name.startsWith(`${baseName}.part-`) && entry.name.endsWith(".sql"))
+    .map((entry) => path.join(seedDir, entry.name))
+    .sort((left, right) => left.localeCompare(right));
+  return [seedPath, ...partPaths];
+}
+
 async function applyMigrations(db) {
   const migrationsDir = path.join(rootDir, "db", "migrations");
   if (!existsSync(migrationsDir)) {
@@ -101,16 +112,20 @@ async function main() {
 
   const db = new DatabaseSync(dbPath);
   const schemaSql = await readFile(path.join(rootDir, "db", "schema.sql"), "utf8");
-  const seedSql = await readFile(seedSqlPath, "utf8");
-  const runtimeSeedSql = await readFile(runtimeSeedSqlPath, "utf8");
+  const seedSqlPaths = await readSeedSqlBundle(seedSqlPath);
+  const runtimeSeedSqlPaths = await readSeedSqlBundle(runtimeSeedSqlPath);
   let seededCounts = null;
 
   try {
     db.exec("PRAGMA foreign_keys = ON;");
     db.exec(schemaSql);
-    db.exec(seedSql);
+    for (const seedSqlPath of seedSqlPaths) {
+      db.exec(await readFile(seedSqlPath, "utf8"));
+    }
     await applyMigrations(db);
-    db.exec(runtimeSeedSql);
+    for (const runtimeSeedSqlPath of runtimeSeedSqlPaths) {
+      db.exec(await readFile(runtimeSeedSqlPath, "utf8"));
+    }
     await refreshDocumentChunkIndex(db);
     verifyDatabase(db);
     seededCounts = {

@@ -1,5 +1,5 @@
 import { DatabaseSync } from "node:sqlite";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -8,6 +8,7 @@ const dbPath = path.join(rootDir, "db", "chronoatlas.sqlite");
 const seedsDir = path.join(rootDir, "db", "seeds");
 const coreOutputPath = path.join(seedsDir, "core-data.sql");
 const runtimeOutputPath = path.join(seedsDir, "runtime-data.sql");
+const maxSeedPartBytes = 45 * 1024 * 1024;
 
 const preferredTableOrder = [
   "corpora",
@@ -43,6 +44,11 @@ const preferredTableOrder = [
   "coverage_status_sources",
   "coverage_status_missing",
   "import_runs",
+  "import_batches",
+  "import_draft_files",
+  "import_evidence_cards",
+  "import_event_clusters",
+  "import_event_cluster_members",
   "china_admin_block_datasets",
   "china_admin_blocks",
   "china_control_timeline_datasets",
@@ -123,6 +129,11 @@ const coreTables = new Set([
 ]);
 
 const runtimeTables = new Set([
+  "import_batches",
+  "import_draft_files",
+  "import_evidence_cards",
+  "import_event_clusters",
+  "import_event_cluster_members",
   "china_admin_block_datasets",
   "china_admin_blocks",
   "china_control_timeline_datasets",
@@ -221,6 +232,60 @@ function sqlLiteral(value) {
   return `'${String(value).replaceAll("'", "''")}'`;
 }
 
+async function removeSeedParts(outputPath) {
+  const baseName = path.basename(outputPath, ".sql");
+  const entries = await readdir(path.dirname(outputPath), { withFileTypes: true }).catch(() => []);
+  await Promise.all(
+    entries
+      .filter((entry) => entry.isFile() && entry.name.startsWith(`${baseName}.part-`) && entry.name.endsWith(".sql"))
+      .map((entry) => rm(path.join(path.dirname(outputPath), entry.name), { force: true }))
+  );
+}
+
+async function writeSeedStatements(outputPath, statements) {
+  await removeSeedParts(outputPath);
+  const byteLength = statements.reduce((total, statement) => total + Buffer.byteLength(`${statement}\n`, "utf8"), 0);
+  if (byteLength <= maxSeedPartBytes) {
+    await writeFile(outputPath, `${statements.join("\n")}\n`, "utf8");
+    return [outputPath];
+  }
+
+  const baseName = path.basename(outputPath, ".sql");
+  const parts = [];
+  let currentStatements = [];
+  let currentBytes = 0;
+
+  for (const statement of statements) {
+    const statementWithBreak = `${statement}\n`;
+    const statementBytes = Buffer.byteLength(statementWithBreak, "utf8");
+    if (currentStatements.length > 0 && currentBytes + statementBytes > maxSeedPartBytes) {
+      const partPath = path.join(path.dirname(outputPath), `${baseName}.part-${String(parts.length + 1).padStart(3, "0")}.sql`);
+      await writeFile(partPath, currentStatements.join(""), "utf8");
+      parts.push(partPath);
+      currentStatements = [];
+      currentBytes = 0;
+    }
+    currentStatements.push(statementWithBreak);
+    currentBytes += statementBytes;
+  }
+
+  if (currentStatements.length > 0) {
+    const partPath = path.join(path.dirname(outputPath), `${baseName}.part-${String(parts.length + 1).padStart(3, "0")}.sql`);
+    await writeFile(partPath, currentStatements.join(""), "utf8");
+    parts.push(partPath);
+  }
+
+  const manifest = [
+    "-- Generated from db/chronoatlas.sqlite. Do not edit by hand.",
+    "-- Rebuild with: npm run db:seed:export",
+    `-- Split seed manifest for ${baseName}.`,
+    ...parts.map((partPath) => `-- part: ${path.basename(partPath)}`),
+    "",
+  ].join("\n");
+  await writeFile(outputPath, manifest, "utf8");
+  return [outputPath, ...parts];
+}
+
 const db = new DatabaseSync(dbPath, { readOnly: true });
 try {
   const tableRows = db.prepare(`
@@ -236,7 +301,7 @@ try {
     ...tableNames.filter((tableName) => !preferredTableOrder.includes(tableName)),
   ];
 
-  function buildSeedSql(tables, label, options = {}) {
+  function buildSeedStatements(tables, label, options = {}) {
     const insertVerb = options.insertOrReplace ? "INSERT OR REPLACE" : "INSERT";
     const output = [
       "-- Generated from db/chronoatlas.sqlite. Do not edit by hand.",
@@ -266,19 +331,20 @@ try {
     }
 
     output.push("COMMIT;", "PRAGMA foreign_keys = ON;");
-    return `${output.join("\n")}\n`;
+    return output;
   }
 
-  const coreSql = buildSeedSql(coreTables, "Core base tables loaded before migrations");
-  const runtimeSql = buildSeedSql(runtimeTables, "Runtime/map and AI/RAG tables loaded after migrations", {
+  const coreStatements = buildSeedStatements(coreTables, "Core base tables loaded before migrations");
+  const runtimeStatements = buildSeedStatements(runtimeTables, "Runtime/map and AI/RAG tables loaded after migrations", {
     insertOrReplace: true,
   });
 
   await mkdir(seedsDir, { recursive: true });
-  await writeFile(coreOutputPath, coreSql, "utf8");
-  await writeFile(runtimeOutputPath, runtimeSql, "utf8");
-  console.log(`Exported ${path.relative(rootDir, coreOutputPath)}`);
-  console.log(`Exported ${path.relative(rootDir, runtimeOutputPath)}`);
+  const corePaths = await writeSeedStatements(coreOutputPath, coreStatements);
+  const runtimePaths = await writeSeedStatements(runtimeOutputPath, runtimeStatements);
+  for (const outputPath of [...corePaths, ...runtimePaths]) {
+    console.log(`Exported ${path.relative(rootDir, outputPath)}`);
+  }
 } finally {
   db.close();
 }

@@ -14,3 +14,6 @@ db/.chronoatlas-check.sqlite
 data/import-drafts/
 demos/
 data/backups/
+.codex-backups/
+public/
+scripts/export-static-api-snapshot.mjs
