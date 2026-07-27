@@ -13,6 +13,18 @@ const dbPath = checkMode
 const seedSqlPath = path.join(rootDir, "db", "seeds", "core-data.sql");
 const runtimeSeedSqlPath = path.join(rootDir, "db", "seeds", "runtime-data.sql");
 
+function logStep(message) {
+  console.log(`[db:build] ${message}`);
+}
+
+async function timed(label, task) {
+  const startedAt = Date.now();
+  logStep(`${label}...`);
+  const result = await task();
+  logStep(`${label} done (${((Date.now() - startedAt) / 1000).toFixed(1)}s)`);
+  return result;
+}
+
 async function readSeedSqlBundle(seedPath) {
   const seedDir = path.dirname(seedPath);
   const baseName = path.basename(seedPath, ".sql");
@@ -34,6 +46,7 @@ async function applyMigrations(db) {
     .filter((fileName) => fileName.endsWith(".sql") || fileName.endsWith(".mjs"))
     .sort((left, right) => left.localeCompare(right));
 
+  const postSeedMigrations = [];
   for (const fileName of migrationFiles) {
     const migrationPath = path.join(migrationsDir, fileName);
     if (fileName.endsWith(".sql")) {
@@ -46,10 +59,30 @@ async function applyMigrations(db) {
     if (typeof migration.default !== "function") {
       throw new Error(`Migration must default-export a function: ${fileName}`);
     }
-    await migration.default(db);
+    await migration.default(db, {
+      checkMode,
+      rebuildDocumentChunks: false,
+      rebuildFts: !checkMode,
+      log: (message) => logStep(`${fileName}: ${message}`),
+    });
+    if (migration.runAfterRuntimeSeeds === true) {
+      postSeedMigrations.push({ fileName, migrate: migration.default });
+    }
   }
 
-  return migrationFiles;
+  return postSeedMigrations;
+}
+
+async function applyPostSeedMigrations(db, migrations) {
+  for (const { fileName, migrate } of migrations) {
+    await migrate(db, {
+      checkMode,
+      rebuildDocumentChunks: false,
+      rebuildFts: false,
+      postRuntimeSeeds: true,
+      log: (message) => logStep(`${fileName} (post-seed): ${message}`),
+    });
+  }
 }
 
 async function refreshDocumentChunkIndex(db) {
@@ -62,7 +95,12 @@ async function refreshDocumentChunkIndex(db) {
   if (typeof migration.default !== "function") {
     throw new Error("Document chunk migration must default-export a function");
   }
-  await migration.default(db);
+  await migration.default(db, {
+    checkMode,
+    rebuildDocumentChunks: true,
+    rebuildFts: !checkMode,
+    log: (message) => logStep(`document chunks: ${message}`),
+  });
 }
 
 function scalarCount(db, tableName) {
@@ -118,16 +156,28 @@ async function main() {
 
   try {
     db.exec("PRAGMA foreign_keys = ON;");
-    db.exec(schemaSql);
-    for (const seedSqlPath of seedSqlPaths) {
-      db.exec(await readFile(seedSqlPath, "utf8"));
+    if (checkMode) {
+      db.exec("PRAGMA journal_mode = MEMORY;");
+      db.exec("PRAGMA synchronous = OFF;");
+      db.exec("PRAGMA temp_store = MEMORY;");
     }
-    await applyMigrations(db);
-    for (const runtimeSeedSqlPath of runtimeSeedSqlPaths) {
-      db.exec(await readFile(runtimeSeedSqlPath, "utf8"));
-    }
-    await refreshDocumentChunkIndex(db);
-    verifyDatabase(db);
+    await timed("apply base schema", async () => db.exec(schemaSql));
+    await timed(`apply core seeds (${seedSqlPaths.length} files)`, async () => {
+      for (const seedSqlPath of seedSqlPaths) {
+        db.exec(await readFile(seedSqlPath, "utf8"));
+      }
+    });
+    const postSeedMigrations = await timed("apply migrations", async () => applyMigrations(db));
+    await timed(`apply runtime seeds (${runtimeSeedSqlPaths.length} files)`, async () => {
+      for (const runtimeSeedSqlPath of runtimeSeedSqlPaths) {
+        db.exec(await readFile(runtimeSeedSqlPath, "utf8"));
+      }
+    });
+    await timed("reapply post-seed migrations", async () => applyPostSeedMigrations(db, postSeedMigrations));
+    await timed(checkMode ? "refresh document chunks (FTS skipped in check mode)" : "refresh document chunks and FTS", async () =>
+      refreshDocumentChunkIndex(db),
+    );
+    await timed("verify database", async () => verifyDatabase(db));
     seededCounts = {
       persons: scalarCount(db, "persons"),
       lifeEvents: scalarCount(db, "person_life_events"),

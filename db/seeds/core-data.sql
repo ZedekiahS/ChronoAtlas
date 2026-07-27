@@ -3,3 +3,4 @@
 -- Split seed manifest for core-data.
 -- part: core-data.part-001.sql
 -- part: core-data.part-002.sql
+-- part: core-data.part-003.sql

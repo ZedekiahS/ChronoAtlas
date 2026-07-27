@@ -3,5 +3,3 @@
 -- Split seed manifest for runtime-data.
 -- part: runtime-data.part-001.sql
 -- part: runtime-data.part-002.sql
--- part: runtime-data.part-003.sql
--- part: runtime-data.part-004.sql

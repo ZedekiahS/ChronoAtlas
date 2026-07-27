@@ -1,0 +1,5241 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": "event-place-role-contract:v1",
+  "generatedAt": "2026-07-27T09:18:45.761Z",
+  "dryRun": false,
+  "metrics": {
+    "placeEntities": 325,
+    "currentLinks": 476,
+    "desiredLinks": 479,
+    "eventsWithPlaces": 343,
+    "deletes": 50,
+    "inserts": 53,
+    "eventUpdates": 16,
+    "normalizedLegacyRoles": 0,
+    "sourceContextLinks": 22,
+    "candidates": 0,
+    "rawNameIssues": 372,
+    "explicitIdIssues": 0,
+    "multiplePrimaryLocations": 0,
+    "roleSuggestions": 126,
+    "unknownRoles": 0,
+    "orphanLinks": 0,
+    "reviewItems": 498
+  },
+  "reviewSummary": {
+    "byType": {
+      "unresolved-raw-place": 330,
+      "out-of-range-raw-place": 38,
+      "ambiguous-raw-place": 4,
+      "specific-place-role-suggestion": 126
+    },
+    "byRegion": {
+      "china": 217,
+      "rome": 271,
+      "india": 1,
+      "sasanian-persia": 9
+    }
+  },
+  "items": [
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-209-qin-uprisings",
+      "year": -209,
+      "title": "陈胜、吴广起义",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "大泽乡",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-206-liu-bang-king-of-han",
+      "year": -206,
+      "title": "刘邦受封汉王",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "汉中",
+      "targets": [
+        "place:hanzhong"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-202-han-founded",
+      "year": -202,
+      "title": "刘邦称帝，西汉建立",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "汜水",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-201-western-han-enfeoffments",
+      "year": -201,
+      "title": "汉初分封异姓诸侯王",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "关东诸国",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-200-baideng-siege",
+      "year": -200,
+      "title": "白登之围",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "白登",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-154-rebellion-seven-states",
+      "year": -154,
+      "title": "七国之乱",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "吴楚",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-154-rebellion-seven-states",
+      "year": -154,
+      "title": "七国之乱",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "关东",
+      "targets": [
+        "place:guandong"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-124-wei-qing-longxi-campaign",
+      "year": -124,
+      "title": "卫青再击匈奴，汉军夺取主动",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "漠南",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-121-hexi-campaign",
+      "year": -121,
+      "title": "霍去病河西之战",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "河西走廊",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-119-mobei-campaign",
+      "year": -119,
+      "title": "漠北之战",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "漠北",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:0c3c7f4833e3acb44ed7",
+      "year": -116,
+      "title": "刘彭离被废徙上庸",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "上庸",
+      "targets": [
+        "place:shangyong"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:0c3c7f4833e3acb44ed7",
+      "year": -116,
+      "title": "刘彭离被废徙上庸",
+      "regionId": "china",
+      "field": "places",
+      "label": "上庸",
+      "targets": [
+        "place:shangyong"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-111-nanyue-annexed",
+      "year": -111,
+      "title": "南越并入汉郡县",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "岭南",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-108-gojoseon-annexed",
+      "year": -108,
+      "title": "汉灭卫氏朝鲜，设四郡",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "朝鲜半岛北部",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:88a6bad6a1796d786fa7",
+      "year": -108,
+      "title": "武都氐人反叛并徙酒泉",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "武都",
+      "targets": [
+        "place:wudu"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:88a6bad6a1796d786fa7",
+      "year": -108,
+      "title": "武都氐人反叛并徙酒泉",
+      "regionId": "china",
+      "field": "places",
+      "label": "武都",
+      "targets": [
+        "place:wudu"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-99-li-ling-surrenders",
+      "year": -99,
+      "title": "李陵兵败降匈奴",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "漠北",
+      "targets": []
+    },
+    {
+      "type": "ambiguous-raw-place",
+      "eventId": "official-history-event:49a241850e48130b32c6",
+      "year": -77,
+      "title": "汉昭帝刘弗陵在高庙加元服",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "高庙",
+      "targets": [
+        "place:gao-temple-han",
+        "place:gaomiao"
+      ]
+    },
+    {
+      "type": "ambiguous-raw-place",
+      "eventId": "official-history-event:49a241850e48130b32c6",
+      "year": -77,
+      "title": "汉昭帝刘弗陵在高庙加元服",
+      "regionId": "china",
+      "field": "places",
+      "label": "高庙",
+      "targets": [
+        "place:gao-temple-han",
+        "place:gaomiao"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:6b3681d74ab5870e99b9",
+      "year": -1,
+      "title": "匈奴乌珠留若鞮单于与乌孙大昆弥来朝",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "乌孙",
+      "targets": [
+        "place:wusun"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:6b3681d74ab5870e99b9",
+      "year": -1,
+      "title": "匈奴乌珠留若鞮单于与乌孙大昆弥来朝",
+      "regionId": "china",
+      "field": "places",
+      "label": "乌孙",
+      "targets": [
+        "place:wusun"
+      ]
+    },
+    {
+      "type": "ambiguous-raw-place",
+      "eventId": "official-history-event:949dedcb4fdaf388fcfb",
+      "year": 2,
+      "title": "汉廷撤销呼池苑并设置安民县",
+      "regionId": "china",
+      "field": "places",
+      "label": "安定",
+      "targets": [
+        "place:anding",
+        "place:anding-commandery"
+      ]
+    },
+    {
+      "type": "ambiguous-raw-place",
+      "eventId": "official-history-event:949dedcb4fdaf388fcfb",
+      "year": 2,
+      "title": "汉廷撤销呼池苑并设置安民县",
+      "regionId": "china",
+      "field": "places",
+      "label": "安定",
+      "targets": [
+        "place:anding",
+        "place:anding-commandery"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-18-red-eyebrows-green-woods-rise",
+      "year": 18,
+      "title": "赤眉、绿林起义兴起",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "山东",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:7717b598f46643cf57d4",
+      "year": 37,
+      "title": "匈奴寇河东",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "河东",
+      "targets": [
+        "place:hedong"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:7717b598f46643cf57d4",
+      "year": 37,
+      "title": "匈奴寇河东",
+      "regionId": "china",
+      "field": "places",
+      "label": "河东",
+      "targets": [
+        "place:hedong"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:40f08f8ec1c76303400b",
+      "year": 42,
+      "title": "昆明诸种叛杀长吏",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "昆明",
+      "targets": [
+        "place:kunming-tribes"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:40f08f8ec1c76303400b",
+      "year": 42,
+      "title": "昆明诸种叛杀长吏",
+      "regionId": "china",
+      "field": "places",
+      "label": "昆明",
+      "targets": [
+        "place:kunming-tribes"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:541ff1253096a4f00b6e",
+      "year": 93,
+      "title": "刘万岁去世后广宗国废除",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "广宗",
+      "targets": [
+        "place:guangzong"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:541ff1253096a4f00b6e",
+      "year": 93,
+      "title": "刘万岁去世后广宗国废除",
+      "regionId": "china",
+      "field": "places",
+      "label": "广宗",
+      "targets": [
+        "place:guangzong"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:bd2cb2135bbca8f22cbf",
+      "year": 130,
+      "title": "疏勒大宛莎车遣使贡献",
+      "regionId": "china",
+      "field": "places",
+      "label": "大宛",
+      "targets": [
+        "place:dayuan"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-145-origins-of-septimius-severus-african-provincial-aristocrat",
+      "year": 145,
+      "title": "Origins of Septimius Severus: African provincial aristocrat",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Leptis Magna",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-145-origins-of-septimius-severus-african-provincial-aristocrat",
+      "year": 145,
+      "title": "Origins of Septimius Severus: African provincial aristocrat",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Africa",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-145-origins-of-septimius-severus-african-provincial-aristocrat",
+      "year": 145,
+      "title": "Origins of Septimius Severus: African provincial aristocrat",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-145-origins-of-septimius-severus-african-provincial-aristocrat",
+      "year": 145,
+      "title": "Origins of Septimius Severus: African provincial aristocrat",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Athens",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-145-origins-of-septimius-severus-african-provincial-aristocrat",
+      "year": 145,
+      "title": "Origins of Septimius Severus: African provincial aristocrat",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Emesa",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:fc88f18303b9a63d2945",
+      "year": 160,
+      "title": "劳丙与叔孙无忌攻掠琅邪",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "琅邪",
+      "targets": [
+        "place:langya",
+        "place:langye"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:fc88f18303b9a63d2945",
+      "year": 160,
+      "title": "劳丙与叔孙无忌攻掠琅邪",
+      "regionId": "china",
+      "field": "places",
+      "label": "琅邪",
+      "targets": [
+        "place:langya",
+        "place:langye"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:bcbd19d2fd8b21015de3",
+      "year": 174,
+      "title": "刘畅无嗣后中山国废除",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "中山",
+      "targets": [
+        "place:zhongshan"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "official-history-event:bcbd19d2fd8b21015de3",
+      "year": 174,
+      "title": "刘畅无嗣后中山国废除",
+      "regionId": "china",
+      "field": "places",
+      "label": "中山",
+      "targets": [
+        "place:zhongshan"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-180-herodian-as-a-source-for-the-severan-and-early-crisis-period",
+      "year": 180,
+      "title": "Herodian as a source for the Severan and early crisis period",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-180-herodian-as-a-source-for-the-severan-and-early-crisis-period",
+      "year": 180,
+      "title": "Herodian as a source for the Severan and early crisis period",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Syria",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-190-coalition-against-dong-zhuo",
+      "year": 190,
+      "title": "关东诸军起兵讨董",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "关东",
+      "targets": [
+        "place:guandong"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-190-coalition-against-dong-zhuo",
+      "year": 190,
+      "title": "关东诸军起兵讨董",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "洛阳周边",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-190-yuan-shao-coalition-leader",
+      "year": 190,
+      "title": "关东诸军推袁绍为盟主",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "关东",
+      "targets": [
+        "place:guandong"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-190-yuan-shao-coalition-leader",
+      "year": 190,
+      "title": "关东诸军推袁绍为盟主",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "酸枣一带",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-193-assassination-of-commodus-and-pertinax-auction-of-the-empire",
+      "year": 193,
+      "title": "Assassination of Commodus and Pertinax; auction of the empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-193-didius-julianus-buys-the-throne-severus-proclaimed-in-pannonia",
+      "year": 193,
+      "title": "Didius Julianus buys the throne; Severus proclaimed in Pannonia",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-193-didius-julianus-buys-the-throne-severus-proclaimed-in-pannonia",
+      "year": 193,
+      "title": "Didius Julianus buys the throne; Severus proclaimed in Pannonia",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Pannonia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-193-didius-julianus-buys-the-throne-severus-proclaimed-in-pannonia",
+      "year": 193,
+      "title": "Didius Julianus buys the throne; Severus proclaimed in Pannonia",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Carnuntum",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-193-severan-military-reforms",
+      "year": 193,
+      "title": "Severan military reforms",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-193-severan-military-reforms",
+      "year": 193,
+      "title": "Severan military reforms",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Danube",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-193-severan-military-reforms",
+      "year": 193,
+      "title": "Severan military reforms",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Euphrates",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-193-severus-enters-rome-and-addresses-the-senate",
+      "year": 193,
+      "title": "Severus enters Rome and addresses the Senate",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-193-severus-establishes-military-monarchy",
+      "year": 193,
+      "title": "Severus establishes military monarchy",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-193-severus-establishes-military-monarchy",
+      "year": 193,
+      "title": "Severus establishes military monarchy",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Danube",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-193-severus-marches-on-rome-and-disbands-the-praetorian-guard",
+      "year": 193,
+      "title": "Severus marches on Rome and disbands the Praetorian Guard",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-193-severus-marches-on-rome-and-disbands-the-praetorian-guard",
+      "year": 193,
+      "title": "Severus marches on Rome and disbands the Praetorian Guard",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Pannonia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-194-lu-bu-seizes-yan",
+      "year": 194,
+      "title": "吕布袭取兖州，曹操根据地受挫",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "兖州",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-194-severus-defeats-pescennius-niger-at-issus",
+      "year": 194,
+      "title": "Severus defeats Pescennius Niger at Issus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Issus",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-194-severus-defeats-pescennius-niger-at-issus",
+      "year": 194,
+      "title": "Severus defeats Pescennius Niger at Issus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Antioch",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-194-severus-defeats-pescennius-niger-at-issus",
+      "year": 194,
+      "title": "Severus defeats Pescennius Niger at Issus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Byzantium",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-194-severus-defeats-pescennius-niger-at-issus",
+      "year": 194,
+      "title": "Severus defeats Pescennius Niger at Issus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Syria",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-196-cao-cao-escorts-emperor",
+      "year": 196,
+      "title": "曹操迎汉献帝至许",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "许",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-196-lu-bu-seizes-xuzhou",
+      "year": 196,
+      "title": "吕布袭下邳，刘备失徐州",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "下邳",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-197-battle-of-lugdunum-severus-defeats-clodius-albinus",
+      "year": 197,
+      "title": "Battle of Lugdunum: Severus defeats Clodius Albinus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Lugdunum",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-197-battle-of-lugdunum-severus-defeats-clodius-albinus",
+      "year": 197,
+      "title": "Battle of Lugdunum: Severus defeats Clodius Albinus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Lyon",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-197-battle-of-lugdunum-severus-defeats-clodius-albinus",
+      "year": 197,
+      "title": "Battle of Lugdunum: Severus defeats Clodius Albinus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Gaul",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-198-severus-sacks-ctesiphon-and-creates-province-of-mesopotamia",
+      "year": 198,
+      "title": "Severus sacks Ctesiphon and creates province of Mesopotamia",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mesopotamia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-198-severus-sacks-ctesiphon-and-creates-province-of-mesopotamia",
+      "year": 198,
+      "title": "Severus sacks Ctesiphon and creates province of Mesopotamia",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Ctesiphon",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-198-severus-sacks-ctesiphon-and-creates-province-of-mesopotamia",
+      "year": 198,
+      "title": "Severus sacks Ctesiphon and creates province of Mesopotamia",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Euphrates",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-198-severus-sacks-ctesiphon-and-creates-province-of-mesopotamia",
+      "year": 198,
+      "title": "Severus sacks Ctesiphon and creates province of Mesopotamia",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Seleucia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-199-gongsun-zan-defeated",
+      "year": 199,
+      "title": "易京陷落，公孙瓒败亡",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "易京",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-199-lu-bu-defeated",
+      "year": 199,
+      "title": "下邳陷落，吕布败亡",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "下邳",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-199-yuan-shu-collapse",
+      "year": 199,
+      "title": "袁术败亡，淮南集团瓦解",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "淮南",
+      "targets": [
+        "place:huainan"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-199-yuan-shu-collapse",
+      "year": 199,
+      "title": "袁术败亡，淮南集团瓦解",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "江亭一带",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-200-guan-yu-slays-yan-liang",
+      "year": 200,
+      "title": "关羽白马斩颜良",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "白马",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-200-palmyra-the-desert-metropolis-and-its-trade-empire",
+      "year": 200,
+      "title": "Palmyra: the desert metropolis and its trade empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Palmyra",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-200-palmyra-the-desert-metropolis-and-its-trade-empire",
+      "year": 200,
+      "title": "Palmyra: the desert metropolis and its trade empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Tadmor",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-200-palmyra-the-desert-metropolis-and-its-trade-empire",
+      "year": 200,
+      "title": "Palmyra: the desert metropolis and its trade empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Syria",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-200-palmyra-the-desert-metropolis-and-its-trade-empire",
+      "year": 200,
+      "title": "Palmyra: the desert metropolis and its trade empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Euphrates",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-207-longzhong-plan",
+      "year": 207,
+      "title": "刘备得诸葛亮，隆中对成形",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "隆中",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-208-red-cliffs",
+      "year": 208,
+      "title": "赤壁之战",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "长江中游",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-208-sun-liu-alliance-formed",
+      "year": 208,
+      "title": "孙刘联盟形成",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "江东",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-208-sun-liu-alliance-formed",
+      "year": 208,
+      "title": "孙刘联盟形成",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "长江中游",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-208-zhuge-liang-envoy-to-sun-quan",
+      "year": 208,
+      "title": "诸葛亮使吴自结孙权",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "江东",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-208-zhuge-liang-envoy-to-sun-quan",
+      "year": 208,
+      "title": "诸葛亮使吴自结孙权",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "柴桑一带",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-208-severus-british-campaign",
+      "year": 208,
+      "title": "Severus' British campaign",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Britannia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-208-severus-british-campaign",
+      "year": 208,
+      "title": "Severus' British campaign",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Caledonia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-208-severus-british-campaign",
+      "year": 208,
+      "title": "Severus' British campaign",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Hadrian's Wall",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-208-severus-british-campaign",
+      "year": 208,
+      "title": "Severus' British campaign",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Eboracum",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-211-caracalla-and-geta-joint-rule-and-mutual-hostility",
+      "year": 211,
+      "title": "Caracalla and Geta: joint rule and mutual hostility",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-211-caracalla-murders-geta",
+      "year": 211,
+      "title": "Caracalla murders Geta",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-211-caracallas-building-program-and-coinage-reform",
+      "year": 211,
+      "title": "Caracalla's building program and coinage reform",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-211-death-of-geta-and-damnatio-memoriae",
+      "year": 211,
+      "title": "Death of Geta and damnatio memoriae",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-211-death-of-septimius-severus-at-eboracum",
+      "year": 211,
+      "title": "Death of Septimius Severus at Eboracum",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Eboracum",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-211-death-of-septimius-severus-at-eboracum",
+      "year": 211,
+      "title": "Death of Septimius Severus at Eboracum",
+      "regionId": "rome",
+      "field": "places",
+      "label": "York",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-211-death-of-septimius-severus-at-eboracum",
+      "year": 211,
+      "title": "Death of Septimius Severus at Eboracum",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Britannia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-211-the-severan-women-a-dynasty-of-empresses",
+      "year": 211,
+      "title": "The Severan women: a dynasty of empresses",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-211-the-severan-women-a-dynasty-of-empresses",
+      "year": 211,
+      "title": "The Severan women: a dynasty of empresses",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Emesa",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-211-the-severan-women-a-dynasty-of-empresses",
+      "year": 211,
+      "title": "The Severan women: a dynasty of empresses",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Syria",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-212-constitutio-antoniniana-the-papyrus-evidence",
+      "year": 212,
+      "title": "Constitutio Antoniniana: the papyrus evidence",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-212-constitutio-antoniniana-the-papyrus-evidence",
+      "year": 212,
+      "title": "Constitutio Antoniniana: the papyrus evidence",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Egypt",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-212-constitutio-antoniniana-the-papyrus-evidence",
+      "year": 212,
+      "title": "Constitutio Antoniniana: the papyrus evidence",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Empire-wide",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-212-constitutio-antoniniana-universal-citizenship",
+      "year": 212,
+      "title": "Constitutio Antoniniana: universal citizenship",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-212-constitutio-antoniniana-universal-citizenship",
+      "year": 212,
+      "title": "Constitutio Antoniniana: universal citizenship",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Empire-wide",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-213-caracallas-german-campaign",
+      "year": 213,
+      "title": "Caracalla's German campaign",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rhine",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-213-caracallas-german-campaign",
+      "year": 213,
+      "title": "Caracalla's German campaign",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Germania",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-213-caracallas-german-campaign",
+      "year": 213,
+      "title": "Caracalla's German campaign",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Raetia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-216-caracallas-parthian-war",
+      "year": 216,
+      "title": "Caracalla's Parthian war",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mesopotamia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-216-caracallas-parthian-war",
+      "year": 216,
+      "title": "Caracalla's Parthian war",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Arbela",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-216-caracallas-parthian-war",
+      "year": 216,
+      "title": "Caracalla's Parthian war",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Adiabene",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-216-caracallas-parthian-war",
+      "year": 216,
+      "title": "Caracalla's Parthian war",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Parthia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-217-assassination-of-caracalla-macrinus-proclaimed-emperor",
+      "year": 217,
+      "title": "Assassination of Caracalla; Macrinus proclaimed emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Carrhae",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-217-assassination-of-caracalla-macrinus-proclaimed-emperor",
+      "year": 217,
+      "title": "Assassination of Caracalla; Macrinus proclaimed emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Edessa",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-217-assassination-of-caracalla-macrinus-proclaimed-emperor",
+      "year": 217,
+      "title": "Assassination of Caracalla; Macrinus proclaimed emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mesopotamia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-217-cassius-dio-as-eyewitness-the-senator-under-tyranny",
+      "year": 217,
+      "title": "Cassius Dio as eyewitness: the senator under tyranny",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-217-cassius-dio-as-eyewitness-the-senator-under-tyranny",
+      "year": 217,
+      "title": "Cassius Dio as eyewitness: the senator under tyranny",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Bithynia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-217-macrinus-defeated-elagabalus-proclaimed-emperor",
+      "year": 217,
+      "title": "Macrinus defeated; Elagabalus proclaimed emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Antioch",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-217-macrinus-defeated-elagabalus-proclaimed-emperor",
+      "year": 217,
+      "title": "Macrinus defeated; Elagabalus proclaimed emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Emesa",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-217-macrinus-defeated-elagabalus-proclaimed-emperor",
+      "year": 217,
+      "title": "Macrinus defeated; Elagabalus proclaimed emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Syria",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-217-reign-of-macrinus",
+      "year": 217,
+      "title": "Reign of Macrinus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-217-reign-of-macrinus",
+      "year": 217,
+      "title": "Reign of Macrinus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Syria",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-218-julia-maesa-orchestrates-the-restoration-of-the-severan-dynasty",
+      "year": 218,
+      "title": "Julia Maesa orchestrates the restoration of the Severan dynasty",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Emesa",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-218-julia-maesa-orchestrates-the-restoration-of-the-severan-dynasty",
+      "year": 218,
+      "title": "Julia Maesa orchestrates the restoration of the Severan dynasty",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Raphanea",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-218-julia-maesa-orchestrates-the-restoration-of-the-severan-dynasty",
+      "year": 218,
+      "title": "Julia Maesa orchestrates the restoration of the Severan dynasty",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Syria",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-219-liu-bei-king-of-hanzhong",
+      "year": 219,
+      "title": "刘备称汉中王",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "沔阳",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-219-elagabalus-introduces-the-cult-of-elagabal-to-rome",
+      "year": 219,
+      "title": "Elagabalus introduces the cult of Elagabal to Rome",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-219-elagabalus-introduces-the-cult-of-elagabal-to-rome",
+      "year": 219,
+      "title": "Elagabalus introduces the cult of Elagabal to Rome",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Emesa",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-220-cao-pi-accepts-abdication",
+      "year": 220,
+      "title": "曹丕受禅即皇帝位",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "繁阳",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-222-assassination-of-elagabalus-alexander-severus-becomes-emperor",
+      "year": 222,
+      "title": "Assassination of Elagabalus; Alexander Severus becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-222-regency-of-julia-mamaea-and-the-role-of-ulpian",
+      "year": 222,
+      "title": "Regency of Julia Mamaea and the role of Ulpian",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-222-reign-of-alexander-severus-stability-under-maternal-regency",
+      "year": 222,
+      "title": "Reign of Alexander Severus: stability under maternal regency",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-222-reign-of-alexander-severus-stability-under-maternal-regency",
+      "year": 222,
+      "title": "Reign of Alexander Severus: stability under maternal regency",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Persia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-222-reign-of-alexander-severus-stability-under-maternal-regency",
+      "year": 222,
+      "title": "Reign of Alexander Severus: stability under maternal regency",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Germania",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-222-reign-of-alexander-severus-stability-under-maternal-regency",
+      "year": 222,
+      "title": "Reign of Alexander Severus: stability under maternal regency",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Moguntiacum",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-224-ardashir-i-overthrows-the-parthians-and-founds-the-sassanid-empire",
+      "year": 224,
+      "title": "Ardashir I overthrows the Parthians and founds the Sassanid Empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Persia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-224-ardashir-i-overthrows-the-parthians-and-founds-the-sassanid-empire",
+      "year": 224,
+      "title": "Ardashir I overthrows the Parthians and founds the Sassanid Empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mesopotamia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-224-ardashir-i-overthrows-the-parthians-and-founds-the-sassanid-empire",
+      "year": 224,
+      "title": "Ardashir I overthrows the Parthians and founds the Sassanid Empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Ctesiphon",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-224-ardashir-i-overthrows-the-parthians-and-founds-the-sassanid-empire",
+      "year": 224,
+      "title": "Ardashir I overthrows the Parthians and founds the Sassanid Empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Hormizdagan",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-226-jiaozhou-incorporated-by-wu",
+      "year": 226,
+      "title": "士燮卒，交州士氏独立地位削弱",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "交州",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-226-jiaozhou-incorporated-by-wu",
+      "year": 226,
+      "title": "士燮卒，交州士氏独立地位削弱",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "交趾",
+      "targets": [
+        "place:jiaozhi"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "india-230-kushan-decline",
+      "year": 230,
+      "title": "贵霜帝国影响力持续衰退",
+      "regionId": "india",
+      "field": "locationName",
+      "label": "印度西北部与中亚南缘",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-230-the-collapse-of-roman-coinage-and-hyperinflation",
+      "year": 230,
+      "title": "The collapse of Roman coinage and hyperinflation",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-230-the-collapse-of-roman-coinage-and-hyperinflation",
+      "year": 230,
+      "title": "The collapse of Roman coinage and hyperinflation",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Empire-wide",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "sasanian-230-ardashir-roman-frontier",
+      "year": 230,
+      "title": "阿尔达希尔威胁罗马东方边境",
+      "regionId": "sasanian-persia",
+      "field": "locationName",
+      "label": "Mesopotamia and Syria frontier",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "sasanian-232-alexander-severus-expedition",
+      "year": 231,
+      "title": "亚历山大·塞维鲁远征波斯",
+      "regionId": "sasanian-persia",
+      "field": "locationName",
+      "label": "Roman-Persian frontier",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-assassination-of-alexander-severus-beginning-of-the-third-century-crisis",
+      "year": 235,
+      "title": "Assassination of Alexander Severus; beginning of the Third Century Crisis",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Moguntiacum",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-assassination-of-alexander-severus-beginning-of-the-third-century-crisis",
+      "year": 235,
+      "title": "Assassination of Alexander Severus; beginning of the Third Century Crisis",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mainz",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-assassination-of-alexander-severus-beginning-of-the-third-century-crisis",
+      "year": 235,
+      "title": "Assassination of Alexander Severus; beginning of the Third Century Crisis",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Germania Superior",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-maximinus-thraxs-rhine-and-danube-campaigns",
+      "year": 235,
+      "title": "Maximinus Thrax's Rhine and Danube campaigns",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Germania",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-maximinus-thraxs-rhine-and-danube-campaigns",
+      "year": 235,
+      "title": "Maximinus Thrax's Rhine and Danube campaigns",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rhine",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-maximinus-thraxs-rhine-and-danube-campaigns",
+      "year": 235,
+      "title": "Maximinus Thrax's Rhine and Danube campaigns",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Danube",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-maximinus-thraxs-rhine-and-danube-campaigns",
+      "year": 235,
+      "title": "Maximinus Thrax's Rhine and Danube campaigns",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Dacia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-maximinus-thraxs-rhine-and-danube-campaigns",
+      "year": 235,
+      "title": "Maximinus Thrax's Rhine and Danube campaigns",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Pannonia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-reign-of-maximinus-thrax-first-soldier-emperor-from-the-ranks",
+      "year": 235,
+      "title": "Reign of Maximinus Thrax: first soldier-emperor from the ranks",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Germania",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-reign-of-maximinus-thrax-first-soldier-emperor-from-the-ranks",
+      "year": 235,
+      "title": "Reign of Maximinus Thrax: first soldier-emperor from the ranks",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Pannonia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-reign-of-maximinus-thrax-first-soldier-emperor-from-the-ranks",
+      "year": 235,
+      "title": "Reign of Maximinus Thrax: first soldier-emperor from the ranks",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Danube",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-the-third-century-crisis-overview",
+      "year": 235,
+      "title": "The Third Century Crisis: overview",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-the-third-century-crisis-overview",
+      "year": 235,
+      "title": "The Third Century Crisis: overview",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rhine",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-the-third-century-crisis-overview",
+      "year": 235,
+      "title": "The Third Century Crisis: overview",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Danube",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-the-third-century-crisis-overview",
+      "year": 235,
+      "title": "The Third Century Crisis: overview",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Euphrates",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-the-third-century-crisis-overview",
+      "year": 235,
+      "title": "The Third Century Crisis: overview",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Gaul",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-235-the-third-century-crisis-overview",
+      "year": 235,
+      "title": "The Third Century Crisis: overview",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Palmyra",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-238-fall-of-maximinus-thrax-at-aquileia",
+      "year": 238,
+      "title": "Fall of Maximinus Thrax at Aquileia",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Aquileia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-238-fall-of-maximinus-thrax-at-aquileia",
+      "year": 238,
+      "title": "Fall of Maximinus Thrax at Aquileia",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-238-year-of-the-six-emperors",
+      "year": 238,
+      "title": "Year of the Six Emperors",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Carthage",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-238-year-of-the-six-emperors",
+      "year": 238,
+      "title": "Year of the Six Emperors",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-238-year-of-the-six-emperors",
+      "year": 238,
+      "title": "Year of the Six Emperors",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Aquileia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-244-death-of-gordian-iii-philip-the-arab-becomes-emperor",
+      "year": 244,
+      "title": "Death of Gordian III; Philip the Arab becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mesopotamia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-244-death-of-gordian-iii-philip-the-arab-becomes-emperor",
+      "year": 244,
+      "title": "Death of Gordian III; Philip the Arab becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Zaitha",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-244-death-of-gordian-iii-philip-the-arab-becomes-emperor",
+      "year": 244,
+      "title": "Death of Gordian III; Philip the Arab becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-244-death-of-gordian-iii-philip-the-arab-becomes-emperor",
+      "year": 244,
+      "title": "Death of Gordian III; Philip the Arab becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Euphrates",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-244-death-of-gordian-iii-philip-the-arab-becomes-emperor",
+      "year": 244,
+      "title": "Death of Gordian III; Philip the Arab becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mishik",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-244-shapur-is-account-of-gordian-iiis-death-battle-or-murder",
+      "year": 244,
+      "title": "Shapur I's account of Gordian III's death: battle or murder?",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Misiche",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-244-shapur-is-account-of-gordian-iiis-death-battle-or-murder",
+      "year": 244,
+      "title": "Shapur I's account of Gordian III's death: battle or murder?",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mishik",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-244-shapur-is-account-of-gordian-iiis-death-battle-or-murder",
+      "year": 244,
+      "title": "Shapur I's account of Gordian III's death: battle or murder?",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mesopotamia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-244-shapur-is-account-of-gordian-iiis-death-battle-or-murder",
+      "year": 244,
+      "title": "Shapur I's account of Gordian III's death: battle or murder?",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Peroz-Shapur",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "sasanian-244-battle-of-misiche",
+      "year": 244,
+      "title": "米西凯会战与戈尔迪安三世之死",
+      "regionId": "sasanian-persia",
+      "field": "locationName",
+      "label": "Misiche",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "sasanian-244-battle-of-misiche",
+      "year": 244,
+      "title": "米西凯会战与戈尔迪安三世之死",
+      "regionId": "sasanian-persia",
+      "field": "locationName",
+      "label": "Mesopotamia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-248-fall-of-philip-the-arab-decius-becomes-emperor",
+      "year": 248,
+      "title": "Fall of Philip the Arab; Decius becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Verona",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-248-fall-of-philip-the-arab-decius-becomes-emperor",
+      "year": 248,
+      "title": "Fall of Philip the Arab; Decius becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Pannonia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-248-fall-of-philip-the-arab-decius-becomes-emperor",
+      "year": 248,
+      "title": "Fall of Philip the Arab; Decius becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Danube",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-248-fall-of-philip-the-arab-decius-becomes-emperor",
+      "year": 248,
+      "title": "Fall of Philip the Arab; Decius becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-249-decian-persecution-of-christians",
+      "year": 249,
+      "title": "Decian persecution of Christians",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-249-decian-persecution-of-christians",
+      "year": 249,
+      "title": "Decian persecution of Christians",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Empire-wide",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-251-battle-of-abrittus-decius-killed-by-goths",
+      "year": 251,
+      "title": "Battle of Abrittus: Decius killed by Goths",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Abrittus",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-251-battle-of-abrittus-decius-killed-by-goths",
+      "year": 251,
+      "title": "Battle of Abrittus: Decius killed by Goths",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Moesia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-251-battle-of-abrittus-decius-killed-by-goths",
+      "year": 251,
+      "title": "Battle of Abrittus: Decius killed by Goths",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Danube",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-252-shapur-is-three-invasions-of-the-roman-east-252-260",
+      "year": 252,
+      "title": "Shapur I's three invasions of the Roman East (252-260)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mesopotamia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-252-shapur-is-three-invasions-of-the-roman-east-252-260",
+      "year": 252,
+      "title": "Shapur I's three invasions of the Roman East (252-260)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Antioch",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-252-shapur-is-three-invasions-of-the-roman-east-252-260",
+      "year": 252,
+      "title": "Shapur I's three invasions of the Roman East (252-260)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Edessa",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-252-shapur-is-three-invasions-of-the-roman-east-252-260",
+      "year": 252,
+      "title": "Shapur I's three invasions of the Roman East (252-260)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Carrhae",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-252-shapur-is-three-invasions-of-the-roman-east-252-260",
+      "year": 252,
+      "title": "Shapur I's three invasions of the Roman East (252-260)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Cappadocia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-252-shapur-is-three-invasions-of-the-roman-east-252-260",
+      "year": 252,
+      "title": "Shapur I's three invasions of the Roman East (252-260)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Syria",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-252-the-plague-of-cyprian-249-262",
+      "year": 252,
+      "title": "The Plague of Cyprian (249-262)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Carthage",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-252-the-plague-of-cyprian-249-262",
+      "year": 252,
+      "title": "The Plague of Cyprian (249-262)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Alexandria",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-252-the-plague-of-cyprian-249-262",
+      "year": 252,
+      "title": "The Plague of Cyprian (249-262)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Empire-wide",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-253-valerian-and-gallienus-the-first-systematic-division-of-the-empire",
+      "year": 253,
+      "title": "Valerian and Gallienus: the first systematic division of the empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-253-valerian-and-gallienus-the-first-systematic-division-of-the-empire",
+      "year": 253,
+      "title": "Valerian and Gallienus: the first systematic division of the empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Antioch",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-253-valerian-and-gallienus-the-first-systematic-division-of-the-empire",
+      "year": 253,
+      "title": "Valerian and Gallienus: the first systematic division of the empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Samosata",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "sasanian-256-dura-europos",
+      "year": 256,
+      "title": "杜拉欧罗普斯陷落",
+      "regionId": "sasanian-persia",
+      "field": "locationName",
+      "label": "Dura-Europos",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-capture-of-valerian-by-shapur-i",
+      "year": 260,
+      "title": "Capture of Valerian by Shapur I",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Edessa",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-capture-of-valerian-by-shapur-i",
+      "year": 260,
+      "title": "Capture of Valerian by Shapur I",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mesopotamia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-capture-of-valerian-by-shapur-i",
+      "year": 260,
+      "title": "Capture of Valerian by Shapur I",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Naqsh-e Rostam",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-gallienus-creation-of-a-mobile-cavalry-army",
+      "year": 260,
+      "title": "Gallienus' creation of a mobile cavalry army",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Milan",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-gallienus-creation-of-a-mobile-cavalry-army",
+      "year": 260,
+      "title": "Gallienus' creation of a mobile cavalry army",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mediolanum",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-gallienus-creation-of-a-mobile-cavalry-army",
+      "year": 260,
+      "title": "Gallienus' creation of a mobile cavalry army",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Dalmatia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-gallienus-creation-of-a-mobile-cavalry-army",
+      "year": 260,
+      "title": "Gallienus' creation of a mobile cavalry army",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Danube",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-gallienus-faces-the-empires-darkest-hour",
+      "year": 260,
+      "title": "Gallienus faces the empire's darkest hour",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-gallienus-faces-the-empires-darkest-hour",
+      "year": 260,
+      "title": "Gallienus faces the empire's darkest hour",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mediolanum",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-gallienus-faces-the-empires-darkest-hour",
+      "year": 260,
+      "title": "Gallienus faces the empire's darkest hour",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Milan",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-gallienus-sole-reign-gallic-empire-secedes",
+      "year": 260,
+      "title": "Gallienus sole reign; Gallic Empire secedes",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Gaul",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-gallienus-sole-reign-gallic-empire-secedes",
+      "year": 260,
+      "title": "Gallienus sole reign; Gallic Empire secedes",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-gallienus-sole-reign-gallic-empire-secedes",
+      "year": 260,
+      "title": "Gallienus sole reign; Gallic Empire secedes",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Milan",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-postumus-founds-the-gallic-empire",
+      "year": 260,
+      "title": "Postumus founds the Gallic Empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Colonia Agrippina",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-postumus-founds-the-gallic-empire",
+      "year": 260,
+      "title": "Postumus founds the Gallic Empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Cologne",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-postumus-founds-the-gallic-empire",
+      "year": 260,
+      "title": "Postumus founds the Gallic Empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Gaul",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-postumus-founds-the-gallic-empire",
+      "year": 260,
+      "title": "Postumus founds the Gallic Empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rhine",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-the-gallic-empire-260-274",
+      "year": 260,
+      "title": "The Gallic Empire (260-274)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Gaul",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-the-gallic-empire-260-274",
+      "year": 260,
+      "title": "The Gallic Empire (260-274)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Britannia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-the-gallic-empire-260-274",
+      "year": 260,
+      "title": "The Gallic Empire (260-274)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Hispania",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-the-gallic-empire-260-274",
+      "year": 260,
+      "title": "The Gallic Empire (260-274)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Colonia Agrippina",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-260-the-gallic-empire-260-274",
+      "year": 260,
+      "title": "The Gallic Empire (260-274)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Trier",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "sasanian-262-odaenathus-counteroffensive",
+      "year": 262,
+      "title": "奥登纳图斯反击萨珊",
+      "regionId": "sasanian-persia",
+      "field": "locationName",
+      "label": "Mesopotamia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-267-odaenathus-romes-eastern-defender-and-the-origin-of-palmyrene-power",
+      "year": 267,
+      "title": "Odaenathus: Rome's eastern defender and the origin of Palmyrene power",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Palmyra",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-267-odaenathus-romes-eastern-defender-and-the-origin-of-palmyrene-power",
+      "year": 267,
+      "title": "Odaenathus: Rome's eastern defender and the origin of Palmyrene power",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Euphrates",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-267-odaenathus-romes-eastern-defender-and-the-origin-of-palmyrene-power",
+      "year": 267,
+      "title": "Odaenathus: Rome's eastern defender and the origin of Palmyrene power",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mesopotamia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-267-odaenathus-romes-eastern-defender-and-the-origin-of-palmyrene-power",
+      "year": 267,
+      "title": "Odaenathus: Rome's eastern defender and the origin of Palmyrene power",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Ctesiphon",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-267-odaenathus-romes-eastern-defender-and-the-origin-of-palmyrene-power",
+      "year": 267,
+      "title": "Odaenathus: Rome's eastern defender and the origin of Palmyrene power",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Syria",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-268-claudius-gothicus-and-the-constantinian-connection",
+      "year": 268,
+      "title": "Claudius Gothicus and the Constantinian connection",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Naissus",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-268-claudius-gothicus-and-the-constantinian-connection",
+      "year": 268,
+      "title": "Claudius Gothicus and the Constantinian connection",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Sirmium",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-268-reign-of-claudius-gothicus-victory-at-naissus",
+      "year": 268,
+      "title": "Reign of Claudius Gothicus: victory at Naissus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Naissus",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-268-reign-of-claudius-gothicus-victory-at-naissus",
+      "year": 268,
+      "title": "Reign of Claudius Gothicus: victory at Naissus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Nish",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-268-reign-of-claudius-gothicus-victory-at-naissus",
+      "year": 268,
+      "title": "Reign of Claudius Gothicus: victory at Naissus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Sirmium",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-268-reign-of-claudius-gothicus-victory-at-naissus",
+      "year": 268,
+      "title": "Reign of Claudius Gothicus: victory at Naissus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Moesia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-269-eutropius-on-zenobias-regency",
+      "year": 269,
+      "title": "Eutropius on Zenobia's regency",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Palmyra",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-269-eutropius-on-zenobias-regency",
+      "year": 269,
+      "title": "Eutropius on Zenobia's regency",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Syria",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-269-eutropius-on-zenobias-regency",
+      "year": 269,
+      "title": "Eutropius on Zenobia's regency",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Egypt",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-270-aurelian-becomes-emperor",
+      "year": 270,
+      "title": "Aurelian becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Sirmium",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-270-aurelian-becomes-emperor",
+      "year": 270,
+      "title": "Aurelian becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Pannonia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-270-aurelian-becomes-emperor",
+      "year": 270,
+      "title": "Aurelian becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-270-aurelian-becomes-emperor",
+      "year": 270,
+      "title": "Aurelian becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Aquileia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-270-zenobia-and-the-palmyrene-empire-267-272",
+      "year": 270,
+      "title": "Zenobia and the Palmyrene Empire (267-272)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Palmyra",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-270-zenobia-and-the-palmyrene-empire-267-272",
+      "year": 270,
+      "title": "Zenobia and the Palmyrene Empire (267-272)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Syria",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-270-zenobia-and-the-palmyrene-empire-267-272",
+      "year": 270,
+      "title": "Zenobia and the Palmyrene Empire (267-272)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Egypt",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-270-zenobia-and-the-palmyrene-empire-267-272",
+      "year": 270,
+      "title": "Zenobia and the Palmyrene Empire (267-272)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Antioch",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-270-zenobia-and-the-palmyrene-empire-267-272",
+      "year": 270,
+      "title": "Zenobia and the Palmyrene Empire (267-272)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Emesa",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-271-aurelians-reforms-walls-coinage-and-sol-invictus",
+      "year": 271,
+      "title": "Aurelian's reforms: walls, coinage, and Sol Invictus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-271-construction-of-the-aurelian-walls-rome-is-no-longer-safe",
+      "year": 271,
+      "title": "Construction of the Aurelian Walls: Rome is no longer safe",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-271-construction-of-the-aurelian-walls-rome-is-no-longer-safe",
+      "year": 271,
+      "title": "Construction of the Aurelian Walls: Rome is no longer safe",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Aurelian Walls",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-271-construction-of-the-aurelian-walls-rome-is-no-longer-safe",
+      "year": 271,
+      "title": "Construction of the Aurelian Walls: Rome is no longer safe",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Placentia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-271-construction-of-the-aurelian-walls-rome-is-no-longer-safe",
+      "year": 271,
+      "title": "Construction of the Aurelian Walls: Rome is no longer safe",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Fanum Fortunae",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-272-aurelian-defeats-zenobia-and-recovers-the-east",
+      "year": 272,
+      "title": "Aurelian defeats Zenobia and recovers the East",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Palmyra",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-272-aurelian-defeats-zenobia-and-recovers-the-east",
+      "year": 272,
+      "title": "Aurelian defeats Zenobia and recovers the East",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Immae",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-272-aurelian-defeats-zenobia-and-recovers-the-east",
+      "year": 272,
+      "title": "Aurelian defeats Zenobia and recovers the East",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Emesa",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-272-aurelian-defeats-zenobia-and-recovers-the-east",
+      "year": 272,
+      "title": "Aurelian defeats Zenobia and recovers the East",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Antioch",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-272-aurelian-defeats-zenobia-and-recovers-the-east",
+      "year": 272,
+      "title": "Aurelian defeats Zenobia and recovers the East",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Syria",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-274-aurelian-defeats-tetricus-and-reunifies-the-roman-empire",
+      "year": 274,
+      "title": "Aurelian defeats Tetricus and reunifies the Roman Empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Châlons",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-274-aurelian-defeats-tetricus-and-reunifies-the-roman-empire",
+      "year": 274,
+      "title": "Aurelian defeats Tetricus and reunifies the Roman Empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Catalaunian Fields",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-274-aurelian-defeats-tetricus-and-reunifies-the-roman-empire",
+      "year": 274,
+      "title": "Aurelian defeats Tetricus and reunifies the Roman Empire",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Gaul",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-275-assassination-of-aurelian",
+      "year": 275,
+      "title": "Assassination of Aurelian",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Caenophrurium",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-275-assassination-of-aurelian",
+      "year": 275,
+      "title": "Assassination of Aurelian",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Thrace",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-275-assassination-of-aurelian",
+      "year": 275,
+      "title": "Assassination of Aurelian",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Byzantium",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-275-reign-and-death-of-tacitus",
+      "year": 275,
+      "title": "Reign and death of Tacitus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-275-reign-and-death-of-tacitus",
+      "year": 275,
+      "title": "Reign and death of Tacitus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Asia Minor",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-276-military-campaigns-and-public-works-of-probus",
+      "year": 276,
+      "title": "Military campaigns and public works of Probus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Gaul",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-276-military-campaigns-and-public-works-of-probus",
+      "year": 276,
+      "title": "Military campaigns and public works of Probus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rhine",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-276-military-campaigns-and-public-works-of-probus",
+      "year": 276,
+      "title": "Military campaigns and public works of Probus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Danube",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-276-military-campaigns-and-public-works-of-probus",
+      "year": 276,
+      "title": "Military campaigns and public works of Probus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Egypt",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-276-military-campaigns-and-public-works-of-probus",
+      "year": 276,
+      "title": "Military campaigns and public works of Probus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Pannonia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-277-reign-of-probus-military-recovery",
+      "year": 277,
+      "title": "Reign of Probus: military recovery",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Gaul",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-277-reign-of-probus-military-recovery",
+      "year": 277,
+      "title": "Reign of Probus: military recovery",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rhine",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-277-reign-of-probus-military-recovery",
+      "year": 277,
+      "title": "Reign of Probus: military recovery",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Danube",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-277-reign-of-probus-military-recovery",
+      "year": 277,
+      "title": "Reign of Probus: military recovery",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Illyricum",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-277-reign-of-probus-military-recovery",
+      "year": 277,
+      "title": "Reign of Probus: military recovery",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Egypt",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-280-wang-jun-advances-to-jianye",
+      "year": 280,
+      "title": "王濬楼船进逼建业",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "长江下游",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-280-the-transition-from-soldier-emperors-to-diocletians-system",
+      "year": 280,
+      "title": "The transition from soldier-emperors to Diocletian's system",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-280-the-transition-from-soldier-emperors-to-diocletians-system",
+      "year": 280,
+      "title": "The transition from soldier-emperors to Diocletian's system",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Sirmium",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-280-the-transition-from-soldier-emperors-to-diocletians-system",
+      "year": 280,
+      "title": "The transition from soldier-emperors to Diocletian's system",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Nicomedia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "sasanian-280-kartir-priestly-power",
+      "year": 280,
+      "title": "卡尔提尔祭司权力上升",
+      "regionId": "sasanian-persia",
+      "field": "locationName",
+      "label": "Sasanian heartland",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-281-jiangnan-integration-after-wu",
+      "year": 281,
+      "title": "西晋接收江南州郡与吴旧臣",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "扬州",
+      "targets": [
+        "place:yang-zhou"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-282-sima-you-forced-to-qi",
+      "year": 282,
+      "title": "齐王司马攸被迫出镇",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "齐国",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-282-reign-of-carus-persian-victory-and-mysterious-death",
+      "year": 282,
+      "title": "Reign of Carus: Persian victory and mysterious death",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mesopotamia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-282-reign-of-carus-persian-victory-and-mysterious-death",
+      "year": 282,
+      "title": "Reign of Carus: Persian victory and mysterious death",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Ctesiphon",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-282-reign-of-carus-persian-victory-and-mysterious-death",
+      "year": 282,
+      "title": "Reign of Carus: Persian victory and mysterious death",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Sirmium",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-282-reign-of-carus-persian-victory-and-mysterious-death",
+      "year": 282,
+      "title": "Reign of Carus: Persian victory and mysterious death",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Nicomedia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-283-sima-you-dies",
+      "year": 283,
+      "title": "齐王司马攸忧愤而卒",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "齐国",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-284-284-ce-as-the-end-of-the-third-century-crisis-and-the-beginning-of-late-",
+      "year": 284,
+      "title": "284 CE as the end of the Third Century Crisis and the beginning of Late Antiquity",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Nicomedia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-284-284-ce-as-the-end-of-the-third-century-crisis-and-the-beginning-of-late-",
+      "year": 284,
+      "title": "284 CE as the end of the Third Century Crisis and the beginning of Late Antiquity",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-284-battle-of-the-margus-diocletian-defeats-carinus",
+      "year": 284,
+      "title": "Battle of the Margus: Diocletian defeats Carinus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Margus River",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-284-battle-of-the-margus-diocletian-defeats-carinus",
+      "year": 284,
+      "title": "Battle of the Margus: Diocletian defeats Carinus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Moesia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-284-battle-of-the-margus-diocletian-defeats-carinus",
+      "year": 284,
+      "title": "Battle of the Margus: Diocletian defeats Carinus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Dalmatia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-284-diocletian-becomes-emperor",
+      "year": 284,
+      "title": "Diocletian becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Nicomedia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-284-diocletian-becomes-emperor",
+      "year": 284,
+      "title": "Diocletian becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Bithynia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-284-diocletian-becomes-emperor",
+      "year": 284,
+      "title": "Diocletian becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Persia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-284-diocletian-becomes-emperor",
+      "year": 284,
+      "title": "Diocletian becomes emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Mesopotamia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-284-diocletians-elevation-from-freedmans-son-to-dominus",
+      "year": 284,
+      "title": "Diocletian's elevation: from freedman's son to dominus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Nicomedia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-284-diocletians-elevation-from-freedmans-son-to-dominus",
+      "year": 284,
+      "title": "Diocletian's elevation: from freedman's son to dominus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Dalmatia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-284-diocletians-elevation-from-freedmans-son-to-dominus",
+      "year": 284,
+      "title": "Diocletian's elevation: from freedman's son to dominus",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-285-aurelius-victor-on-diocletians-reign",
+      "year": 285,
+      "title": "Aurelius Victor on Diocletian's reign",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Nicomedia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-285-aurelius-victor-on-diocletians-reign",
+      "year": 285,
+      "title": "Aurelius Victor on Diocletian's reign",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-285-aurelius-victor-on-diocletians-reign",
+      "year": 285,
+      "title": "Aurelius Victor on Diocletian's reign",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Dalmatia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-285-career-of-maximian-the-loyal-colleague",
+      "year": 285,
+      "title": "Career of Maximian: the loyal colleague",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Milan",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-285-career-of-maximian-the-loyal-colleague",
+      "year": 285,
+      "title": "Career of Maximian: the loyal colleague",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Sirmium",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-285-career-of-maximian-the-loyal-colleague",
+      "year": 285,
+      "title": "Career of Maximian: the loyal colleague",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Gaul",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-285-career-of-maximian-the-loyal-colleague",
+      "year": 285,
+      "title": "Career of Maximian: the loyal colleague",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rhine",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-286-carausius-and-the-secessionist-british-empire-286-296",
+      "year": 286,
+      "title": "Carausius and the secessionist British Empire (286-296)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Britannia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-286-carausius-and-the-secessionist-british-empire-286-296",
+      "year": 286,
+      "title": "Carausius and the secessionist British Empire (286-296)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Gaul",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-286-carausius-and-the-secessionist-british-empire-286-296",
+      "year": 286,
+      "title": "Carausius and the secessionist British Empire (286-296)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Boulogne",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-286-carausius-and-the-secessionist-british-empire-286-296",
+      "year": 286,
+      "title": "Carausius and the secessionist British Empire (286-296)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "English Channel",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-289-princes-command-regional-forces",
+      "year": 289,
+      "title": "诸王出镇，宗王掌握方镇兵权",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "关中",
+      "targets": [
+        "place:guanzhong"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-289-princes-command-regional-forces",
+      "year": 289,
+      "title": "诸王出镇，宗王掌握方镇兵权",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "洛阳周边",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-291-eight-princes-war",
+      "year": 291,
+      "title": "八王之乱展开",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "洛阳及西晋核心州郡",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-293-career-of-constantius-chlorus-the-quiet-caesar",
+      "year": 293,
+      "title": "Career of Constantius Chlorus: the quiet Caesar",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Trier",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-293-career-of-constantius-chlorus-the-quiet-caesar",
+      "year": 293,
+      "title": "Career of Constantius Chlorus: the quiet Caesar",
+      "regionId": "rome",
+      "field": "places",
+      "label": "York",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-293-career-of-constantius-chlorus-the-quiet-caesar",
+      "year": 293,
+      "title": "Career of Constantius Chlorus: the quiet Caesar",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Gaul",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-293-career-of-constantius-chlorus-the-quiet-caesar",
+      "year": 293,
+      "title": "Career of Constantius Chlorus: the quiet Caesar",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Britannia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-293-establishment-of-the-tetrarchy",
+      "year": 293,
+      "title": "Establishment of the Tetrarchy",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Nicomedia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-293-establishment-of-the-tetrarchy",
+      "year": 293,
+      "title": "Establishment of the Tetrarchy",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Milan",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-293-establishment-of-the-tetrarchy",
+      "year": 293,
+      "title": "Establishment of the Tetrarchy",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Trier",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-293-establishment-of-the-tetrarchy",
+      "year": 293,
+      "title": "Establishment of the Tetrarchy",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Sirmium",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "sasanian-293-narseh-paikuli",
+      "year": 293,
+      "title": "纳尔塞通过 Paikuli 政治联盟即位",
+      "regionId": "sasanian-persia",
+      "field": "locationName",
+      "label": "Paikuli",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-296-di-qiang-rebellion-begins",
+      "year": 296,
+      "title": "关中氐羌叛乱兴起",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "关中",
+      "targets": [
+        "place:guanzhong"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-296-di-qiang-rebellion-begins",
+      "year": 296,
+      "title": "关中氐羌叛乱兴起",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "秦雍",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-296-guanzhong-refugees-enter-shu",
+      "year": 296,
+      "title": "关中流民入蜀",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "关中",
+      "targets": [
+        "place:guanzhong"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-296-guanzhong-refugees-enter-shu",
+      "year": 296,
+      "title": "关中流民入蜀",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "益州",
+      "targets": [
+        "place:yi-zhou",
+        "place:yizhou-commandery"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-297-zhou-chu-dies",
+      "year": 297,
+      "title": "周处战死于齐万年之乱",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "关中",
+      "targets": [
+        "place:guanzhong"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "sasanian-298-treaty-of-nisibis",
+      "year": 298,
+      "title": "尼西比斯和约",
+      "regionId": "sasanian-persia",
+      "field": "locationName",
+      "label": "Nisibis",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-299-meng-guan-defeats-qi-wannian",
+      "year": 299,
+      "title": "孟观平定齐万年之乱",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "关中",
+      "targets": [
+        "place:guanzhong"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-301-li-te-refugee-uprising",
+      "year": 301,
+      "title": "李特流民集团在益州起兵",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "益州",
+      "targets": [
+        "place:yi-zhou",
+        "place:yizhou-commandery"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-301-li-te-refugee-uprising",
+      "year": 301,
+      "title": "李特流民集团在益州起兵",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "绵竹",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-301-three-princes-rise-against-lun",
+      "year": 301,
+      "title": "齐王冏、成都王颖、河间王颙起兵讨伦",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "关中",
+      "targets": [
+        "place:guanzhong"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-301-diocletians-administrative-and-economic-reforms",
+      "year": 301,
+      "title": "Diocletian's administrative and economic reforms",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Empire-wide",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-301-diocletians-edict-on-maximum-prices-301-ce",
+      "year": 301,
+      "title": "Diocletian's Edict on Maximum Prices (301 CE)",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Empire-wide",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-302-sima-yong-calls-against-jiong",
+      "year": 302,
+      "title": "河间王颙檄长沙王乂讨齐王冏",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "关中",
+      "targets": [
+        "place:guanzhong"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-303-li-te-dies-li-liu-continues",
+      "year": 303,
+      "title": "李特败死，李流续领流民军",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "成都周边",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-303-the-great-persecution-begins",
+      "year": 303,
+      "title": "The Great Persecution begins",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Nicomedia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-303-the-great-persecution-begins",
+      "year": 303,
+      "title": "The Great Persecution begins",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Empire-wide",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-303-the-great-persecution-regional-variation-and-political-context",
+      "year": 303,
+      "title": "The Great Persecution: regional variation and political context",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Nicomedia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-303-the-great-persecution-regional-variation-and-political-context",
+      "year": 303,
+      "title": "The Great Persecution: regional variation and political context",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Palestine",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-303-the-great-persecution-regional-variation-and-political-context",
+      "year": 303,
+      "title": "The Great Persecution: regional variation and political context",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Egypt",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-303-the-great-persecution-regional-variation-and-political-context",
+      "year": 303,
+      "title": "The Great Persecution: regional variation and political context",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Gaul",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-304-five-barbarians-begin",
+      "year": 304,
+      "title": "五胡乱华开端",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "并州",
+      "targets": [
+        "place:bing-zhou",
+        "place:bingzhou"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-304-five-barbarians-begin",
+      "year": 304,
+      "title": "五胡乱华开端",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "巴蜀及西晋边缘州郡",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-304-wang-jun-sima-teng-rise",
+      "year": 304,
+      "title": "王浚、司马腾等起兵讨成都王颖",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "幽州",
+      "targets": [
+        "place:you-zhou"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-304-wang-jun-sima-teng-rise",
+      "year": 304,
+      "title": "王浚、司马腾等起兵讨成都王颖",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "并州",
+      "targets": [
+        "place:bing-zhou",
+        "place:bingzhou"
+      ]
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-305-sima-yue-campaign",
+      "year": 305,
+      "title": "东海王越举兵迎惠帝",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "关东",
+      "targets": [
+        "place:guandong"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-305-abdication-of-diocletian-and-maximian",
+      "year": 305,
+      "title": "Abdication of Diocletian and Maximian",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Nicomedia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-305-abdication-of-diocletian-and-maximian",
+      "year": 305,
+      "title": "Abdication of Diocletian and Maximian",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Milan",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-305-abdication-of-diocletian-and-maximian",
+      "year": 305,
+      "title": "Abdication of Diocletian and Maximian",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Spalatum",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-305-abdication-of-diocletian-and-maximian",
+      "year": 305,
+      "title": "Abdication of Diocletian and Maximian",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Split",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-306-sima-ying-killed",
+      "year": 306,
+      "title": "成都王颖被杀",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "新野一带",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-306-death-of-constantius-chlorus-constantine-proclaimed-emperor",
+      "year": 306,
+      "title": "Death of Constantius Chlorus; Constantine proclaimed emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Eboracum",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-306-death-of-constantius-chlorus-constantine-proclaimed-emperor",
+      "year": 306,
+      "title": "Death of Constantius Chlorus; Constantine proclaimed emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "York",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-306-death-of-constantius-chlorus-constantine-proclaimed-emperor",
+      "year": 306,
+      "title": "Death of Constantius Chlorus; Constantine proclaimed emperor",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Britannia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-307-wang-dao-recruits-jiangdong-gentry",
+      "year": 307,
+      "title": "王导联结江东士族",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "江东",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-308-council-of-carnuntum-diocletians-last-attempt-to-save-the-tetrarchy",
+      "year": 308,
+      "title": "Council of Carnuntum: Diocletian's last attempt to save the Tetrarchy",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Carnuntum",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-308-council-of-carnuntum-diocletians-last-attempt-to-save-the-tetrarchy",
+      "year": 308,
+      "title": "Council of Carnuntum: Diocletian's last attempt to save the Tetrarchy",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Pannonia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-308-council-of-carnuntum-diocletians-last-attempt-to-save-the-tetrarchy",
+      "year": 308,
+      "title": "Council of Carnuntum: Diocletian's last attempt to save the Tetrarchy",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Danube",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-308-council-of-carnuntum-diocletians-last-attempt-to-save-the-tetrarchy",
+      "year": 308,
+      "title": "Council of Carnuntum: Diocletian's last attempt to save the Tetrarchy",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Rome",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-309-han-zhao-attacks-luoyang",
+      "year": 309,
+      "title": "汉赵军进逼洛阳",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "洛阳周边",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-310-sima-yue-leaves-luoyang",
+      "year": 310,
+      "title": "东海王越出镇项城，洛阳中枢空虚",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "项城",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-311-sima-yue-dies",
+      "year": 311,
+      "title": "东海王越病死",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "项城一带",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-311-death-of-galerius-and-the-edict-of-toleration",
+      "year": 311,
+      "title": "Death of Galerius and the Edict of Toleration",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Nicomedia",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "rome-311-death-of-galerius-and-the-edict-of-toleration",
+      "year": 311,
+      "title": "Death of Galerius and the Edict of Toleration",
+      "regionId": "rome",
+      "field": "places",
+      "label": "Serdica",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-313-zu-ti-northern-expedition-begins",
+      "year": 313,
+      "title": "祖逖渡江北伐",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "淮北",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-313-zu-ti-northern-expedition-begins",
+      "year": 313,
+      "title": "祖逖渡江北伐",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "豫州",
+      "targets": []
+    },
+    {
+      "type": "out-of-range-raw-place",
+      "eventId": "china-314-han-zhao-presses-changan",
+      "year": 314,
+      "title": "汉赵持续压迫长安",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "关中",
+      "targets": [
+        "place:guanzhong"
+      ]
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-315-zu-ti-recovers-henan-forts",
+      "year": 315,
+      "title": "祖逖经营豫州坞堡",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "豫州",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-315-zu-ti-recovers-henan-forts",
+      "year": 315,
+      "title": "祖逖经营豫州坞堡",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "谯城",
+      "targets": []
+    },
+    {
+      "type": "unresolved-raw-place",
+      "eventId": "china-317-sima-rui-king-of-jin",
+      "year": 317,
+      "title": "司马睿称晋王，江东承接晋室法统",
+      "regionId": "china",
+      "field": "locationName",
+      "label": "建康",
+      "targets": []
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "china-189-dong-zhuo-enters-luoyang",
+      "year": 189,
+      "title": "董卓入洛阳控制朝廷",
+      "regionId": "china",
+      "entityId": "place:luoyang",
+      "entityLabel": "洛阳",
+      "currentRole": "primary-location",
+      "suggestedRole": "destination"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "china-196-lu-bu-seizes-xuzhou",
+      "year": 196,
+      "title": "吕布袭下邳，刘备失徐州",
+      "regionId": "china",
+      "entityId": "place:xu-zhou",
+      "entityLabel": "徐州",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "china-200-cao-cao-raids-wuchao",
+      "year": 200,
+      "title": "曹操夜袭乌巢",
+      "regionId": "china",
+      "entityId": "place:wuchao",
+      "entityLabel": "乌巢",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "china-219-guan-yu-defeated-by-sun-quan",
+      "year": 219,
+      "title": "孙权袭荆州，关羽败亡",
+      "regionId": "china",
+      "entityId": "place:jing-zhou",
+      "entityLabel": "荆州",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "china-303-yong-ying-attack-luoyang",
+      "year": 303,
+      "title": "河间王颙、成都王颖合兵攻洛阳",
+      "regionId": "china",
+      "entityId": "place:luoyang",
+      "entityLabel": "洛阳",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "china-304-emperor-hui-moved-to-changan",
+      "year": 304,
+      "title": "张方挟惠帝西迁长安",
+      "regionId": "china",
+      "entityId": "place:chang-an",
+      "entityLabel": "长安",
+      "currentRole": "related-location",
+      "suggestedRole": "destination"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "china-306-emperor-hui-returns-luoyang",
+      "year": 306,
+      "title": "惠帝还洛阳，八王之乱收束",
+      "regionId": "china",
+      "entityId": "place:luoyang",
+      "entityLabel": "洛阳",
+      "currentRole": "primary-location",
+      "suggestedRole": "destination"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "china-311-emperor-huai-captured",
+      "year": 311,
+      "title": "晋怀帝被俘至平阳",
+      "regionId": "china",
+      "entityId": "place:pingyang",
+      "entityLabel": "平阳",
+      "currentRole": "related-location",
+      "suggestedRole": "destination"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "china-316-liu-yao-besieges-changan",
+      "year": 316,
+      "title": "刘曜围攻长安",
+      "regionId": "china",
+      "entityId": "place:chang-an",
+      "entityLabel": "长安",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:05c61914caf70746d4e5",
+      "year": 45,
+      "title": "祭肜击破入寇辽东的鲜卑与匈奴",
+      "regionId": "china",
+      "entityId": "place:liaodong",
+      "entityLabel": "辽东",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:073d6cb0bf0bea915cdd",
+      "year": -86,
+      "title": "吕破胡平益州郡叛乱",
+      "regionId": "china",
+      "entityId": "place:yizhou-commandery",
+      "entityLabel": "益州郡",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:0979210d425ef5194f48",
+      "year": 145,
+      "title": "鲜卑寇代郡",
+      "regionId": "china",
+      "entityId": "place:dai-commandery",
+      "entityLabel": "代郡",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:0a36bebf56eee509ffc8",
+      "year": 57,
+      "title": "烧当羌寇陇西并败郡兵于允街",
+      "regionId": "china",
+      "entityId": "place:longxi",
+      "entityLabel": "陇西",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:0c2f527d6c1e2229fbde",
+      "year": -107,
+      "title": "匈奴寇边并令郭昌屯朔方",
+      "regionId": "china",
+      "entityId": "place:shuofang",
+      "entityLabel": "朔方",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:0c3bee75c69ff96f08cc",
+      "year": 161,
+      "title": "零吾等羌寇关中",
+      "regionId": "china",
+      "entityId": "place:guanzhong",
+      "entityLabel": "关中",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:0c3c7f4833e3acb44ed7",
+      "year": -116,
+      "title": "刘彭离被废徙上庸",
+      "regionId": "china",
+      "entityId": "place:shangyong",
+      "entityLabel": "上庸",
+      "currentRole": "primary-location",
+      "suggestedRole": "destination"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:0df15844db6159f23f3f",
+      "year": -103,
+      "title": "赵破奴出朔方击匈奴未还",
+      "regionId": "china",
+      "entityId": "place:shuofang",
+      "entityLabel": "朔方",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:0e6732caef90bc8c8bce",
+      "year": -109,
+      "title": "汉发兵攻卫氏朝鲜",
+      "regionId": "china",
+      "entityId": "place:chaoxian",
+      "entityLabel": "朝鲜",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:13fc7ca9ebc88ee0a934",
+      "year": 171,
+      "title": "鲜卑寇并州",
+      "regionId": "china",
+      "entityId": "place:bing-zhou",
+      "entityLabel": "并州",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:17bddbd83db92d19898f",
+      "year": 141,
+      "title": "马贤兵败射姑山",
+      "regionId": "china",
+      "entityId": "place:shegu-mountain",
+      "entityLabel": "射姑山",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:1bf3b9100510d5ae05db",
+      "year": 118,
+      "title": "鲜卑寇上谷",
+      "regionId": "china",
+      "entityId": "place:shanggu",
+      "entityLabel": "上谷",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:1d532d3825e4867f57fc",
+      "year": 156,
+      "title": "鲜卑寇云中",
+      "regionId": "china",
+      "entityId": "place:yunzhong",
+      "entityLabel": "云中",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:1db5afa66bd940e4c87a",
+      "year": 45,
+      "title": "刘尚破益州夷",
+      "regionId": "china",
+      "entityId": "place:yi-zhou",
+      "entityLabel": "益州",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:1ffff9eddd3824da2d20",
+      "year": 155,
+      "title": "冯绲大破武陵叛蛮",
+      "regionId": "china",
+      "entityId": "place:wuling",
+      "entityLabel": "武陵",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:208e679e199cf7ca9b13",
+      "year": 141,
+      "title": "诸种羌寇武威",
+      "regionId": "china",
+      "entityId": "place:wuwei",
+      "entityLabel": "武威",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:232789524b10bc2174eb",
+      "year": 134,
+      "title": "钟羌寇陇西",
+      "regionId": "china",
+      "entityId": "place:longxi",
+      "entityLabel": "陇西",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:23c3ccbf653728c7f055",
+      "year": 62,
+      "title": "北匈奴进攻五原",
+      "regionId": "china",
+      "entityId": "place:wuyuan",
+      "entityLabel": "五原",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:23d2280c1d1c3fee2cb7",
+      "year": -50,
+      "title": "广川王刘海阳被废迁房陵",
+      "regionId": "china",
+      "entityId": "place:fangling",
+      "entityLabel": "房陵",
+      "currentRole": "primary-location",
+      "suggestedRole": "destination"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:260426834c2e448f23fe",
+      "year": 90,
+      "title": "南匈奴大破北匈奴于河云",
+      "regionId": "china",
+      "entityId": "place:heyun",
+      "entityLabel": "河云",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:284947030d9de05fee61",
+      "year": 177,
+      "title": "鲜卑寇辽西",
+      "regionId": "china",
+      "entityId": "place:liaoxi",
+      "entityLabel": "辽西",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:2a17901219de075cd298",
+      "year": -38,
+      "title": "河间王刘元被废迁房陵",
+      "regionId": "china",
+      "entityId": "place:fangling",
+      "entityLabel": "房陵",
+      "currentRole": "primary-location",
+      "suggestedRole": "destination"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:2d0ac2be42ba2ec01525",
+      "year": 167,
+      "title": "公孙域击破夫台于玄菟",
+      "regionId": "china",
+      "entityId": "place:xuantu",
+      "entityLabel": "玄菟",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:2e381bae8ca2f7518542",
+      "year": 134,
+      "title": "加特奴击破北匈奴于阊吾陆谷",
+      "regionId": "china",
+      "entityId": "place:changwu-lugu",
+      "entityLabel": "阊吾陆谷",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:323c789b0bff4dd89415",
+      "year": 169,
+      "title": "段颎大破先零羌于射虎塞外谷",
+      "regionId": "china",
+      "entityId": "place:shehu-pass-valley",
+      "entityLabel": "射虎塞外谷",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:3364798934d90fd74145",
+      "year": 145,
+      "title": "滕抚击破广陵贼张婴",
+      "regionId": "china",
+      "entityId": "place:guangling",
+      "entityLabel": "广陵",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:38a5df2a2bbbf6e4f141",
+      "year": 159,
+      "title": "蜀郡三襄夷寇蚕陵",
+      "regionId": "china",
+      "entityId": "place:canling",
+      "entityLabel": "蚕陵",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:3a63f87966a5ed7bbae3",
+      "year": 135,
+      "title": "乌桓寇云中",
+      "regionId": "china",
+      "entityId": "place:yunzhong",
+      "entityLabel": "云中",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:3cb95ade8cf63484924a",
+      "year": 138,
+      "title": "蔡伯流转寇九江与广陵",
+      "regionId": "china",
+      "entityId": "place:jiujiang",
+      "entityLabel": "九江",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:3cb95ade8cf63484924a",
+      "year": 138,
+      "title": "蔡伯流转寇九江与广陵",
+      "regionId": "china",
+      "entityId": "place:guangling",
+      "entityLabel": "广陵",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:4115f23d577d9ef45917",
+      "year": 127,
+      "title": "班勇击降焉耆",
+      "regionId": "china",
+      "entityId": "place:yanqi",
+      "entityLabel": "焉耆",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:477fa340ab62dd54ad40",
+      "year": 118,
+      "title": "高句骊与秽貊寇玄菟",
+      "regionId": "china",
+      "entityId": "place:xuantu",
+      "entityLabel": "玄菟",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:496523e3860a5879a60f",
+      "year": 138,
+      "title": "马贤击破烧当羌于金城",
+      "regionId": "china",
+      "entityId": "place:jincheng",
+      "entityLabel": "金城",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:5509e3684ab372dc7ddf",
+      "year": 143,
+      "title": "赵冲击烧当羌于阿阳",
+      "regionId": "china",
+      "entityId": "place:ayang",
+      "entityLabel": "阿阳",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:5af12d5d100584243dce",
+      "year": 117,
+      "title": "越巂夷寇遂久并杀县令",
+      "regionId": "china",
+      "entityId": "place:suijiu",
+      "entityLabel": "遂久",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:5b6b6c2337222fa6b859",
+      "year": 127,
+      "title": "鲜卑寇辽东与玄菟",
+      "regionId": "china",
+      "entityId": "place:liaodong",
+      "entityLabel": "辽东",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:5b6b6c2337222fa6b859",
+      "year": 127,
+      "title": "鲜卑寇辽东与玄菟",
+      "regionId": "china",
+      "entityId": "place:xuantu",
+      "entityLabel": "玄菟",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:5cb388d1a8e9e5a48272",
+      "year": 157,
+      "title": "沈氐羌寇张掖酒泉",
+      "regionId": "china",
+      "entityId": "place:zhangye",
+      "entityLabel": "张掖",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:5cb388d1a8e9e5a48272",
+      "year": 157,
+      "title": "沈氐羌寇张掖酒泉",
+      "regionId": "china",
+      "entityId": "place:jiuquan",
+      "entityLabel": "酒泉",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:5cf8160f7e1a3b0de047",
+      "year": -78,
+      "title": "范明友出击辽东乌桓",
+      "regionId": "china",
+      "entityId": "place:liaodong",
+      "entityLabel": "辽东",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:5e6974dcee931333b3af",
+      "year": 106,
+      "title": "张显追击侵扰渔阳的鲜卑",
+      "regionId": "china",
+      "entityId": "place:yuyang-commandery",
+      "entityLabel": "渔阳",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:5f95dfcf012c0bc8a5eb",
+      "year": 114,
+      "title": "先零羌寇雍城",
+      "regionId": "china",
+      "entityId": "place:yong-city",
+      "entityLabel": "雍城",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:5fb33ae08485763d6abe",
+      "year": 177,
+      "title": "鲜卑寇三边",
+      "regionId": "china",
+      "entityId": "place:three-frontiers-eastern-han",
+      "entityLabel": "三边",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:6261fbc6725eb94e7f2c",
+      "year": 74,
+      "title": "刘张等击降车师",
+      "regionId": "china",
+      "entityId": "place:cheshi",
+      "entityLabel": "车师",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:6658d0d8f3e64f81175a",
+      "year": 109,
+      "title": "乌桓寇代郡上谷及涿郡",
+      "regionId": "china",
+      "entityId": "place:dai-commandery",
+      "entityLabel": "代郡",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:6658d0d8f3e64f81175a",
+      "year": 109,
+      "title": "乌桓寇代郡上谷及涿郡",
+      "regionId": "china",
+      "entityId": "place:shanggu",
+      "entityLabel": "上谷",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:6658d0d8f3e64f81175a",
+      "year": 109,
+      "title": "乌桓寇代郡上谷及涿郡",
+      "regionId": "china",
+      "entityId": "place:zhuo-commandery",
+      "entityLabel": "涿郡",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:66b5d793725f244937a7",
+      "year": 105,
+      "title": "北匈奴再遣使至敦煌贡献",
+      "regionId": "china",
+      "entityId": "place:dunhuang",
+      "entityLabel": "敦煌",
+      "currentRole": "primary-location",
+      "suggestedRole": "destination"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:6b0f6b7a62c825d368a8",
+      "year": 155,
+      "title": "鲜卑寇辽东属国",
+      "regionId": "china",
+      "entityId": "place:liaodong",
+      "entityLabel": "辽东",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:6c835009c24c9ccfe9e7",
+      "year": 141,
+      "title": "巩唐羌寇陇西及三辅",
+      "regionId": "china",
+      "entityId": "place:longxi",
+      "entityLabel": "陇西",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:6c835009c24c9ccfe9e7",
+      "year": 141,
+      "title": "巩唐羌寇陇西及三辅",
+      "regionId": "china",
+      "entityId": "place:sanfu",
+      "entityLabel": "三辅",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:6c89c4d4e10fa950a1e2",
+      "year": 172,
+      "title": "许昭立父许生为越王并寇会稽",
+      "regionId": "china",
+      "entityId": "place:kuaiji",
+      "entityLabel": "会稽",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:6d1cb54e4d7b63eded76",
+      "year": 58,
+      "title": "马武等击滇吾于西邯",
+      "regionId": "china",
+      "entityId": "place:xihan",
+      "entityLabel": "西邯",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:6ef76d39ae549641ef96",
+      "year": 174,
+      "title": "鲜卑寇并州",
+      "regionId": "china",
+      "entityId": "place:bing-zhou",
+      "entityLabel": "并州",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:7082e23f8fac745d9e84",
+      "year": 97,
+      "title": "鲜卑攻掠肥如",
+      "regionId": "china",
+      "entityId": "place:feiru",
+      "entityLabel": "肥如",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:70f8e0cb7a6c9446e8a7",
+      "year": 115,
+      "title": "辽东鲜卑围攻无虑县",
+      "regionId": "china",
+      "entityId": "place:wulv",
+      "entityLabel": "无虑",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:7717b598f46643cf57d4",
+      "year": 37,
+      "title": "匈奴寇河东",
+      "regionId": "china",
+      "entityId": "place:hedong",
+      "entityLabel": "河东",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:78bb122e23e4118f965c",
+      "year": 143,
+      "title": "赵冲与张贡击烧何羌于参龻",
+      "regionId": "china",
+      "entityId": "place:canluan",
+      "entityLabel": "参龻",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:78e12545f196b16333aa",
+      "year": 169,
+      "title": "鲜卑寇并州",
+      "regionId": "china",
+      "entityId": "place:bing-zhou",
+      "entityLabel": "并州",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:7acab4b5d84a8e923bcc",
+      "year": -52,
+      "title": "汉军出击珠崖",
+      "regionId": "china",
+      "entityId": "place:zhuya",
+      "entityLabel": "珠崖",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:7b68e9304525ab87d955",
+      "year": 176,
+      "title": "鲜卑寇幽州",
+      "regionId": "china",
+      "entityId": "place:you-zhou",
+      "entityLabel": "幽州",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:7b706e72bbff48db2fd3",
+      "year": 132,
+      "title": "章河等寇掠扬州六郡",
+      "regionId": "china",
+      "entityId": "place:yang-zhou",
+      "entityLabel": "扬州",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:7fbf999132b4834958be",
+      "year": 76,
+      "title": "汉军于柳中攻车师交河城",
+      "regionId": "china",
+      "entityId": "place:cheshi",
+      "entityLabel": "车师",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:7fdda3f25663b99807f8",
+      "year": 144,
+      "title": "日南蛮夷复攻县邑并扇动九真",
+      "regionId": "china",
+      "entityId": "place:jiuzhen",
+      "entityLabel": "九真",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:7fdf4d66244c2172d561",
+      "year": 128,
+      "title": "鲜卑寇渔阳",
+      "regionId": "china",
+      "entityId": "place:yuyang-commandery",
+      "entityLabel": "渔阳",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:808799090907985dc24a",
+      "year": 170,
+      "title": "济南贼起兵攻东平陵",
+      "regionId": "china",
+      "entityId": "place:dongpingling",
+      "entityLabel": "东平陵",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:83cb4d1aceb045dfceab",
+      "year": 175,
+      "title": "鲜卑寇幽州",
+      "regionId": "china",
+      "entityId": "place:you-zhou",
+      "entityLabel": "幽州",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:86d9028655898a269dd5",
+      "year": 90,
+      "title": "阎磐击北匈奴并夺取伊吾卢",
+      "regionId": "china",
+      "entityId": "place:yiwulu",
+      "entityLabel": "伊吾卢",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:87b78c3ac2b203add71a",
+      "year": 116,
+      "title": "邓遵率南匈奴击先零羌于灵州",
+      "regionId": "china",
+      "entityId": "place:lingzhou",
+      "entityLabel": "灵州",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:88a6bad6a1796d786fa7",
+      "year": -108,
+      "title": "武都氐人反叛并徙酒泉",
+      "regionId": "china",
+      "entityId": "place:jiuquan",
+      "entityLabel": "酒泉",
+      "currentRole": "related-location",
+      "suggestedRole": "destination"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:8b0cae66287c4c5d6b51",
+      "year": 126,
+      "title": "马贤击破陇西钟羌于临洮",
+      "regionId": "china",
+      "entityId": "place:longxi",
+      "entityLabel": "陇西",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:8b0cae66287c4c5d6b51",
+      "year": 126,
+      "title": "马贤击破陇西钟羌于临洮",
+      "regionId": "china",
+      "entityId": "place:lintao",
+      "entityLabel": "临洮",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:8c98b0fb06789f416fcf",
+      "year": -101,
+      "title": "李广利攻破大宛获汗血马",
+      "regionId": "china",
+      "entityId": "place:dayuan",
+      "entityLabel": "大宛",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:8c99e4f4cef0d4d8149e",
+      "year": 91,
+      "title": "耿夔大破北匈奴于金微山",
+      "regionId": "china",
+      "entityId": "place:jinwei-mountain",
+      "entityLabel": "金微山",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:900955c17e7b41ea7a1c",
+      "year": 175,
+      "title": "安国攻破拘弥后汉军扶立定兴为王",
+      "regionId": "china",
+      "entityId": "place:jumi",
+      "entityLabel": "拘弥",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:90cc0cef0618b8e71ce6",
+      "year": 121,
+      "title": "马贤讨烧当羌于金城",
+      "regionId": "china",
+      "entityId": "place:jincheng",
+      "entityLabel": "金城",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:9829ba4afd242e82020f",
+      "year": 26,
+      "title": "延岑再叛攻汉中并围南郑",
+      "regionId": "china",
+      "entityId": "place:nanzheng",
+      "entityLabel": "南郑",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:9829ba4afd242e82020f",
+      "year": 26,
+      "title": "延岑再叛攻汉中并围南郑",
+      "regionId": "china",
+      "entityId": "place:hanzhong",
+      "entityLabel": "汉中",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:9948143fb7b3e309c866",
+      "year": 155,
+      "title": "沈氐羌寇武威张掖",
+      "regionId": "china",
+      "entityId": "place:wuwei",
+      "entityLabel": "武威",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:9948143fb7b3e309c866",
+      "year": 155,
+      "title": "沈氐羌寇武威张掖",
+      "regionId": "china",
+      "entityId": "place:zhangye",
+      "entityLabel": "张掖",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:9f35d8334444d662d9f2",
+      "year": -135,
+      "title": "闽越王郢攻南越",
+      "regionId": "china",
+      "entityId": "place:nanyue",
+      "entityLabel": "南越",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:a54d9761abab20f48e3e",
+      "year": 169,
+      "title": "耿临讨伐高句骊并迫使伯固降服",
+      "regionId": "china",
+      "entityId": "place:gaogouli",
+      "entityLabel": "高句骊",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:a650d0fd36dc431b746e",
+      "year": 121,
+      "title": "高句骊马韩与秽貊围攻玄菟城",
+      "regionId": "china",
+      "entityId": "place:xuantu",
+      "entityLabel": "玄菟",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:a6873e0e95a98990ac14",
+      "year": 125,
+      "title": "班勇击破车师后王军就",
+      "regionId": "china",
+      "entityId": "place:cheshi",
+      "entityLabel": "车师",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:a6dc090d3c91b0d300ae",
+      "year": 114,
+      "title": "蜀郡夷攻蚕陵并杀县令",
+      "regionId": "china",
+      "entityId": "place:canling",
+      "entityLabel": "蚕陵",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:a9249bd679c0f4f2d539",
+      "year": -83,
+      "title": "田广明出击益州郡",
+      "regionId": "china",
+      "entityId": "place:yizhou-commandery",
+      "entityLabel": "益州郡",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:ac8e6e43a1809f640502",
+      "year": 148,
+      "title": "白马羌寇广汉属国",
+      "regionId": "china",
+      "entityId": "place:guanghan-dependent-state",
+      "entityLabel": "广汉属国",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:ae1989257d5f84fd35e6",
+      "year": 137,
+      "title": "武陵蛮围充县并寇夷道",
+      "regionId": "china",
+      "entityId": "place:chong-county",
+      "entityLabel": "充县",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:ae1989257d5f84fd35e6",
+      "year": 137,
+      "title": "武陵蛮围充县并寇夷道",
+      "regionId": "china",
+      "entityId": "place:yidao",
+      "entityLabel": "夷道",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:b20729964d917773b214",
+      "year": 121,
+      "title": "冯焕讨高句骊",
+      "regionId": "china",
+      "entityId": "place:gaogouli",
+      "entityLabel": "高句骊",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:b4a2b0c347366d06e49b",
+      "year": 142,
+      "title": "张婴等寇掠广陵郡县",
+      "regionId": "china",
+      "entityId": "place:guangling",
+      "entityLabel": "广陵",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:b5bbd7078e8b692c1305",
+      "year": 44,
+      "title": "匈奴寇天水",
+      "regionId": "china",
+      "entityId": "place:tianshui-commandery",
+      "entityLabel": "天水",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:b9ab73b849c8644cc2ad",
+      "year": 123,
+      "title": "旄牛夷攻打零关",
+      "regionId": "china",
+      "entityId": "place:lingguan",
+      "entityLabel": "零关",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:bce315892c4bf7e4c840",
+      "year": 109,
+      "title": "南单于叛乱并围耿种于美稷",
+      "regionId": "china",
+      "entityId": "place:meiji",
+      "entityLabel": "美稷",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:c0c7c61d3e9570f6d886",
+      "year": 56,
+      "title": "刘盱遣辛都李苞击破武都参狼羌",
+      "regionId": "china",
+      "entityId": "place:wudu",
+      "entityLabel": "武都",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:cc01c6f951a4c3a87071",
+      "year": 94,
+      "title": "班超攻破焉耆尉黎诸国",
+      "regionId": "china",
+      "entityId": "place:yanqi",
+      "entityLabel": "焉耆",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:cc01c6f951a4c3a87071",
+      "year": 94,
+      "title": "班超攻破焉耆尉黎诸国",
+      "regionId": "china",
+      "entityId": "place:weili-western-regions",
+      "entityLabel": "尉黎",
+      "currentRole": "related-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:d44e0fdc9c05b150c935",
+      "year": -70,
+      "title": "广川王刘吉被废迁上庸",
+      "regionId": "china",
+      "entityId": "place:shangyong",
+      "entityLabel": "上庸",
+      "currentRole": "primary-location",
+      "suggestedRole": "destination"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:d679f78e6a325ae5ce3f",
+      "year": 78,
+      "title": "班超击姑墨",
+      "regionId": "china",
+      "entityId": "place:gumo",
+      "entityLabel": "姑墨",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:d947ba43977e07f9c452",
+      "year": -105,
+      "title": "郭昌出击昆明叛军",
+      "regionId": "china",
+      "entityId": "place:kunming-tribes",
+      "entityLabel": "昆明",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:de9de5318d7cbf2eadaa",
+      "year": 120,
+      "title": "沈氐羌寇张掖",
+      "regionId": "china",
+      "entityId": "place:zhangye",
+      "entityLabel": "张掖",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:df6528e0236276f76c36",
+      "year": -112,
+      "title": "西羌反汉并围枹罕",
+      "regionId": "china",
+      "entityId": "place:baohan",
+      "entityLabel": "枹罕",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:e0302bf68ea68c69a7c1",
+      "year": 132,
+      "title": "曾旌等寇会稽",
+      "regionId": "china",
+      "entityId": "place:kuaiji",
+      "entityLabel": "会稽",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:e33afa29d3a25bc08772",
+      "year": 169,
+      "title": "陈夤击破围攻丹阳的山越",
+      "regionId": "china",
+      "entityId": "place:danyang-commandery",
+      "entityLabel": "丹阳",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:e442f82eb15e9388785a",
+      "year": 172,
+      "title": "鲜卑寇并州",
+      "regionId": "china",
+      "entityId": "place:bing-zhou",
+      "entityLabel": "并州",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:e6a54b35a952fefe0c89",
+      "year": 26,
+      "title": "岑彭击荆州下犨叶等城",
+      "regionId": "china",
+      "entityId": "place:jing-zhou",
+      "entityLabel": "荆州",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:e7eac127533411293c11",
+      "year": 157,
+      "title": "朱达等攻九真并击杀儿式",
+      "regionId": "china",
+      "entityId": "place:jiuzhen",
+      "entityLabel": "九真",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:e9651d287b7e4e080d07",
+      "year": 141,
+      "title": "马贤击西羌救援安定失利",
+      "regionId": "china",
+      "entityId": "place:anding",
+      "entityLabel": "安定",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:e9f92b379e0c936dcf7d",
+      "year": 137,
+      "title": "区怜等蛮夷攻象林县",
+      "regionId": "china",
+      "entityId": "place:xianglin",
+      "entityLabel": "象林",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:eb16235fa655ba75b21f",
+      "year": 111,
+      "title": "夫余军寇乐浪",
+      "regionId": "china",
+      "entityId": "place:lelang",
+      "entityLabel": "乐浪",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:edbe39de969b5244a948",
+      "year": 117,
+      "title": "鲜卑寇辽西",
+      "regionId": "china",
+      "entityId": "place:liaoxi",
+      "entityLabel": "辽西",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:f070c4b44015f18d0d5e",
+      "year": -66,
+      "title": "清河王刘年被废迁房陵",
+      "regionId": "china",
+      "entityId": "place:fangling",
+      "entityLabel": "房陵",
+      "currentRole": "primary-location",
+      "suggestedRole": "destination"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:f21c0644651874ec9fef",
+      "year": 30,
+      "title": "公孙述将任满寇南郡",
+      "regionId": "china",
+      "entityId": "place:nanjun",
+      "entityLabel": "南郡",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:f5580bd891fda3337385",
+      "year": 167,
+      "title": "先零羌寇三辅",
+      "regionId": "china",
+      "entityId": "place:sanfu",
+      "entityLabel": "三辅",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:f88012e68beb3abd932f",
+      "year": 135,
+      "title": "耿晔追击云中乌桓失利",
+      "regionId": "china",
+      "entityId": "place:yunzhong",
+      "entityLabel": "云中",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:fc88f18303b9a63d2945",
+      "year": 160,
+      "title": "劳丙与叔孙无忌攻掠琅邪",
+      "regionId": "china",
+      "entityId": "place:langya",
+      "entityLabel": "琅邪",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    },
+    {
+      "type": "specific-place-role-suggestion",
+      "eventId": "official-history-event:fd2a01b4bcd72e81da9d",
+      "year": 25,
+      "title": "吴汉等击檀乡",
+      "regionId": "china",
+      "entityId": "place:tanxiang",
+      "entityLabel": "檀乡",
+      "currentRole": "primary-location",
+      "suggestedRole": "battlefield"
+    }
+  ]
+}

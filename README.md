@@ -57,11 +57,15 @@ npm run audit:period-190-310
 
 导入原文后产生的候选事件不会直接全部升格为正式事件。当前流程是：
 
-1. 从史料原文中抽取人物和事件候选。
-2. 归档到 `import_event_clusters`。
-3. 对相似事件做聚类、ID 规范化和去重。
-4. 高置信匹配到正式事件时建立 evidence link。
-5. 宽泛、低置信或需要人工判断的候选保留为 staged / needs-review。
+1. 从史料原文中抽取独立事实候选，并由批次的 `promotionProfile` 选择晋级策略。
+2. 每张事实卡默认形成单事实聚类；只有“同年、同主体、同动作、同标题”的卡才能自动合并。
+3. 纪年解析器把年号、绝对年份或其他历法表达解析为带精度和来源的时间断言。整卷、整部史书的范围不能充当事件年代。
+4. 抽取层先匹配已有姓名与别名，再识别“官职 + 完整姓名”等强结构。未收录的次级人物只保留为候选，只有其事件通过晋级后才生成低置信、待审核人物卡。
+5. 地点先解析到稳定地点实体，再按事件年份映射到地图要素。只有标题中明确出现的地点会成为正式事件地点，原句中的任官地、出发地和背景地继续留在证据层。
+6. 晋级时以事实卡为基本单位，建立 `event_import_cards`、evidence link、人物/地点关系和搜索文档；聚类与事件通过多对多表关联。
+7. 已人工审核的事件不会被机器重跑覆盖。无法定年、主体不明、注文、校勘语和语义残句继续保留为 staged / needs-review。
+
+核心晋级逻辑不包含 184-280 或任何其他固定时期。184-280 是第一个验收模板，其中国年号锚点和地点实体是首批可替换数据包；后续时期和其他文明应增加纪年、地点、来源配置与模板审计，而不是复制晋级脚本。
 
 常用命令：
 
@@ -69,6 +73,10 @@ npm run audit:period-190-310
 npm run extract:hanshu-candidates
 npm run archive:hanshu-candidates
 npm run canonicalize:events
+npm run review:event-clusters
+npm run promote:official-history-cards
+npm run audit:official-history-events
+npm run test:event-promotion
 ```
 
 ### 地图数据
@@ -163,6 +171,7 @@ Primary texts can be imported into SQLite, split into searchable passages, and u
 npm run extract:hanshu-candidates
 npm run archive:hanshu-candidates
 npm run canonicalize:events
+npm run review:event-clusters
 ```
 
 SQLite changes must be exported and validated:

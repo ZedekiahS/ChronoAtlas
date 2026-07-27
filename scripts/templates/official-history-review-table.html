@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>__PAGE_TITLE__</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+        background: #f5f6f7;
+        color: #1f262d;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-width: 320px; background: #f5f6f7; }
+      button, input, select, textarea { font: inherit; letter-spacing: 0; }
+      button, select, input, textarea { border-radius: 4px; }
+      button { cursor: pointer; }
+      .page-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid #cdd3d8;
+        background: rgba(255, 255, 255, 0.97);
+      }
+      .header-inner { max-width: 1680px; margin: 0 auto; padding: 14px 18px 10px; }
+      .title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+      h1 { margin: 0; font-size: 20px; line-height: 1.35; font-weight: 700; }
+      .meta { margin-top: 4px; color: #66717c; font-size: 12px; }
+      .actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
+      .command {
+        min-height: 34px;
+        padding: 6px 11px;
+        border: 1px solid #aeb7bf;
+        background: #fff;
+        color: #29343d;
+      }
+      .command:hover { border-color: #64717b; background: #f7f9fa; }
+      .command.primary { border-color: #236844; background: #236844; color: #fff; }
+      .command.primary:hover { background: #195236; }
+      .summary-strip { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 11px; color: #4a5660; font-size: 13px; }
+      .summary-strip strong { color: #182129; }
+      .tabs {
+        display: flex;
+        gap: 2px;
+        margin-top: 11px;
+        border-bottom: 1px solid #d6dce1;
+      }
+      .tab {
+        min-height: 35px;
+        padding: 7px 13px;
+        border: 0;
+        border-bottom: 3px solid transparent;
+        border-radius: 0;
+        background: transparent;
+        color: #5d6872;
+      }
+      .tab[aria-selected="true"] { border-bottom-color: #1e6a49; color: #173b2c; font-weight: 700; }
+      main { max-width: 1680px; margin: 0 auto; padding: 14px 18px 30px; }
+      .toolbar {
+        display: grid;
+        grid-template-columns: minmax(220px, 1fr) 180px auto;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .toolbar input, .toolbar select {
+        width: 100%;
+        height: 36px;
+        padding: 6px 9px;
+        border: 1px solid #b8c0c7;
+        background: #fff;
+        color: #202830;
+      }
+      .progress { justify-self: end; color: #4c5963; font-size: 13px; white-space: nowrap; }
+      .table-shell { max-height: calc(100vh - 210px); overflow: auto; border: 1px solid #cbd2d8; background: #fff; }
+      table { width: 100%; min-width: 1180px; border-collapse: collapse; table-layout: fixed; }
+      th {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        padding: 8px 9px;
+        border-bottom: 1px solid #bfc7cd;
+        border-right: 1px solid #dde2e6;
+        background: #edf0f2;
+        color: #3c4750;
+        font-size: 12px;
+        text-align: left;
+        vertical-align: bottom;
+      }
+      td {
+        padding: 9px;
+        border-bottom: 1px solid #dfe4e8;
+        border-right: 1px solid #edf0f2;
+        vertical-align: top;
+        font-size: 13px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+      }
+      tr:last-child td { border-bottom: 0; }
+      tr.is-complete { background: #f5faf7; }
+      tr.is-rejected { background: #fff8f7; }
+      .index { color: #7b858d; text-align: right; }
+      .year { font-variant-numeric: tabular-nums; font-weight: 700; }
+      .main-label { font-weight: 700; color: #172129; }
+      .subline { margin-top: 3px; color: #64707a; font-size: 12px; }
+      .compact-list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+      .tag { padding: 1px 5px; border: 1px solid #c5cdd3; border-radius: 3px; background: #f7f8f9; font-size: 11px; color: #4e5962; }
+      .tag.person { border-color: #93b2a2; background: #f1f8f4; color: #25543c; }
+      .tag.place { border-color: #c3aa75; background: #fbf7ed; color: #654d1e; }
+      .tag.warn { border-color: #d1a15f; background: #fff7e9; color: #6c4712; }
+      .tag.danger { border-color: #d3a09a; background: #fff2f1; color: #7a2f27; }
+      details { margin-top: 6px; }
+      summary { color: #3d596f; cursor: pointer; font-size: 12px; }
+      .evidence-block { margin-top: 6px; padding: 7px 8px; border-left: 3px solid #9daab4; background: #f7f8f9; }
+      .evidence-source { color: #4e5b65; font-size: 12px; }
+      .quote { margin-top: 3px; color: #242c33; }
+      .merge-reference { margin-top: 8px; }
+      .merge-candidate { padding: 7px 0; border-top: 1px solid #dfe4e8; }
+      .merge-candidate:first-of-type { margin-top: 5px; }
+      .merge-candidate-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+      .merge-candidate-title { font-weight: 700; color: #243039; }
+      .merge-candidate-id { margin-top: 2px; color: #69747d; font-family: Consolas, monospace; font-size: 11px; }
+      .choose-merge {
+        flex: 0 0 auto;
+        min-height: 28px;
+        padding: 4px 7px;
+        border: 1px solid #8f9ba4;
+        background: #fff;
+        color: #33414b;
+      }
+      .choose-merge:hover { border-color: #466270; background: #f3f7f8; }
+      a { color: #1e5d87; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .decision, .edit-field, .notes-field {
+        width: 100%;
+        border: 1px solid #b9c1c8;
+        background: #fff;
+        color: #202930;
+      }
+      .decision { height: 34px; padding: 5px 7px; }
+      .edit-field { height: 32px; margin-top: 6px; padding: 5px 7px; }
+      .notes-field { min-height: 68px; padding: 6px 7px; resize: vertical; }
+      .empty { padding: 40px 20px; color: #6c7780; text-align: center; }
+      .save-status { min-width: 74px; color: #58646e; font-size: 12px; text-align: right; }
+      .save-status.error { color: #9a3025; }
+      #import-file { display: none; }
+      @media (max-width: 760px) {
+        .header-inner, main { padding-left: 10px; padding-right: 10px; }
+        .title-row { display: block; }
+        .actions { justify-content: flex-start; margin-top: 10px; }
+        .toolbar { grid-template-columns: 1fr 150px; }
+        .progress { grid-column: 1 / -1; justify-self: start; }
+        .tabs { overflow-x: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="header-inner">
+        <div class="title-row">
+          <div>
+            <h1 id="page-title">__PAGE_TITLE__</h1>
+            <div class="meta" id="page-meta"></div>
+          </div>
+          <div class="actions">
+            <button class="command" id="export-csv" type="button">导出当前表 CSV</button>
+            <button class="command" id="import-json" type="button">导入审核结果</button>
+            <button class="command primary" id="export-json" type="button">导出审核结果 JSON</button>
+            <span class="save-status" id="save-status">已本地保存</span>
+            <input id="import-file" type="file" accept="application/json,.json" />
+          </div>
+        </div>
+        <div class="summary-strip" id="summary-strip"></div>
+        <nav class="tabs" id="tabs" aria-label="审核对象"></nav>
+      </div>
+    </header>
+    <main>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="搜索标题、人物、地点、原文或 ID" aria-label="搜索当前审核表" />
+        <select id="decision-filter" aria-label="按审核决定筛选"></select>
+        <div class="progress" id="progress"></div>
+      </div>
+      <div class="table-shell" id="table-shell"></div>
+    </main>
+    <script type="application/json" id="review-data">__REVIEW_DATA_JSON__</script>
+    <script>
+      const sourceData = JSON.parse(document.getElementById("review-data").textContent);
+      const storageKey = "chronoatlas-review:" + sourceData.profile.id + ":v1";
+      const kindLabels = { events: "事件", people: "人物", places: "地点", materials: "材料" };
+      const decisionOptions = {
+        events: [
+          ["pending", "待定"], ["approve", "通过"], ["rename", "改名后通过"],
+          ["merge", "合并到已有事件"], ["reject", "拒绝"]
+        ],
+        people: [
+          ["pending", "待定"], ["approve", "保留为独立人物"], ["rename", "改名后保留"],
+          ["merge", "合并到已有人物"], ["reject", "拒绝"]
+        ],
+        places: [
+          ["pending", "待定"], ["confirm", "确认地点实体"], ["bind", "确认并绑定位置"],
+          ["rename", "修正名称"], ["keep-unlocated", "保持未定位"], ["reject", "拒绝"]
+        ],
+        materials: [
+          ["pending", "未提供"], ["partial", "部分提供"], ["provided", "已提供定位"], ["defer", "暂缓"]
+        ]
+      };
+      const editableFields = {
+        events: ["decision", "revisedTitle", "mergeTargetId", "notes"],
+        people: ["decision", "canonicalName", "mergeTargetId", "confirmedAliases", "notes"],
+        places: ["decision", "revisedLabel", "administrativeTarget", "mapTarget", "citation", "notes"],
+        materials: ["decision", "citation", "notes"]
+      };
+      let activeKind = "events";
+      let state = loadState();
+
+      function escapeHtml(value) {
+        return String(value == null ? "" : value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function itemId(kind, item) { return kind === "materials" ? item.id : item.id; }
+
+      function blankRecord(kind) {
+        return Object.fromEntries(editableFields[kind].map((field) => [field, field === "decision" ? "pending" : ""]));
+      }
+
+      function blankState() {
+        return {
+          schema: sourceData.schema,
+          profileId: sourceData.profile.id,
+          updatedAt: new Date().toISOString(),
+          events: {}, people: {}, places: {}, materials: {}
+        };
+      }
+
+      function normalizeState(candidate) {
+        const normalized = blankState();
+        for (const kind of Object.keys(kindLabels)) {
+          for (const item of sourceData[kind]) {
+            const id = itemId(kind, item);
+            normalized[kind][id] = { ...blankRecord(kind), ...(candidate && candidate[kind] && candidate[kind][id] || {}) };
+          }
+        }
+        normalized.updatedAt = candidate && candidate.updatedAt || normalized.updatedAt;
+        return normalized;
+      }
+
+      function loadState() {
+        try {
+          const saved = localStorage.getItem(storageKey);
+          return normalizeState(saved ? JSON.parse(saved) : null);
+        } catch {
+          return normalizeState(null);
+        }
+      }
+
+      function saveState() {
+        state.updatedAt = new Date().toISOString();
+        const status = document.getElementById("save-status");
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(state));
+          status.textContent = "已本地保存";
+          status.className = "save-status";
+        } catch {
+          status.textContent = "本地保存失败";
+          status.className = "save-status error";
+        }
+      }
+
+      function decisionLabel(kind, code) {
+        return (decisionOptions[kind].find((item) => item[0] === code) || [code, code])[1];
+      }
+
+      function selectHtml(kind, id, value) {
+        const options = decisionOptions[kind].map(([code, label]) =>
+          '<option value="' + escapeHtml(code) + '"' + (code === value ? " selected" : "") + '>' + escapeHtml(label) + '</option>'
+        ).join("");
+        return '<select class="decision" data-kind="' + kind + '" data-id="' + escapeHtml(id) + '" data-field="decision" aria-label="审核决定">' + options + '</select>';
+      }
+
+      function fieldHtml(kind, id, field, placeholder, value, listId) {
+        return '<input class="edit-field" data-kind="' + kind + '" data-id="' + escapeHtml(id) + '" data-field="' + field + '" value="' + escapeHtml(value) + '" placeholder="' + escapeHtml(placeholder) + '"' + (listId ? ' list="' + listId + '"' : "") + ' />';
+      }
+
+      function notesHtml(kind, id, value) {
+        return '<textarea class="notes-field" data-kind="' + kind + '" data-id="' + escapeHtml(id) + '" data-field="notes" placeholder="审核备注或依据">' + escapeHtml(value) + '</textarea>';
+      }
+
+      function tagsHtml(items, className) {
+        if (!items || !items.length) return '<span class="subline">无</span>';
+        return '<div class="compact-list">' + items.map((item) => '<span class="tag ' + className + '">' + escapeHtml(item.label || item.name || item) + '</span>').join("") + '</div>';
+      }
+
+      function sourceLink(item) {
+        const title = escapeHtml(item.sourceTitle || "未命名来源");
+        return item.sourceUrl ? '<a href="' + escapeHtml(item.sourceUrl) + '" target="_blank" rel="noreferrer">' + title + '</a>' : title;
+      }
+
+      function evidenceHtml(evidence) {
+        if (!evidence || !evidence.length) return '<div class="subline">暂无证据定位</div>';
+        return evidence.map((item) =>
+          '<div class="evidence-block"><div class="evidence-source">' + sourceLink(item) +
+          (item.sourceSection ? ' · ' + escapeHtml(item.sourceSection) : "") +
+          (item.locator ? ' · ' + escapeHtml(item.locator) : "") +
+          '</div><div class="quote">' + escapeHtml(item.quote || "无摘录") + '</div></div>'
+        ).join("");
+      }
+
+      function mergeCandidatesHtml(kind, id, candidates) {
+        if (!candidates || !candidates.length) return '<div class="subline">无同年已有事件</div>';
+        return '<details class="merge-reference"><summary>查看 ' + candidates.length + ' 个同年已有事件（不等于重复）</summary>' +
+          candidates.map((candidate) => {
+            const people = candidate.people && candidate.people.length ? '人物：' + candidate.people.join('、') : '';
+            const places = candidate.places && candidate.places.length ? '地点：' + candidate.places.join('、') : '';
+            return '<div class="merge-candidate"><div class="merge-candidate-head"><div><div class="merge-candidate-title">' + escapeHtml(candidate.title) + '</div>' +
+              '<div class="subline">' + escapeHtml([candidate.event_type, candidate.review_status, people, places].filter(Boolean).join(' · ')) + '</div>' +
+              '<div class="merge-candidate-id">' + escapeHtml(candidate.id) + '</div></div>' +
+              '<button class="choose-merge" type="button" data-kind="' + kind + '" data-id="' + escapeHtml(id) + '" data-merge-value="' + escapeHtml(candidate.id) + '">选择合并</button></div>' +
+              (candidate.summary ? '<div class="subline">' + escapeHtml(candidate.summary) + '</div>' : '') + '</div>';
+          }).join('') + '</details>';
+      }
+
+      function eventRow(item, index) {
+        const review = state.events[item.id];
+        const candidateListId = "event-targets-" + index;
+        const candidates = item.mergeCandidates.map((candidate) =>
+          '<option value="' + escapeHtml(candidate.id) + '">' + escapeHtml(candidate.year + " · " + candidate.title + " · " + candidate.review_status) + '</option>'
+        ).join("");
+        return '<tr class="' + rowClass(review.decision) + '" data-search="' + escapeHtml(searchText(item)) + '">' +
+          '<td class="index">' + (index + 1) + '</td>' +
+          '<td class="year">' + escapeHtml(item.year) + '</td>' +
+          '<td><div class="main-label">' + escapeHtml(item.title) + '</div><div class="subline">' + escapeHtml(item.eventType) + ' · ' + escapeHtml(item.confidence) + ' · ' + escapeHtml(item.id) + '</div><div class="subline">' + escapeHtml(item.summary) + '</div></td>' +
+          '<td><div class="subline">人物</div>' + tagsHtml(item.people, "person") + '<div class="subline">地点</div>' + tagsHtml(item.places, "place") + '</td>' +
+          '<td><div>' + item.evidenceCount + ' 条证据 · ' + item.sourceCount + ' 个来源</div><details><summary>原文与定位</summary>' + evidenceHtml(item.evidence) + '</details></td>' +
+          '<td>' + selectHtml("events", item.id, review.decision) + '</td>' +
+          '<td>' + fieldHtml("events", item.id, "revisedTitle", "新事件标题", review.revisedTitle) + fieldHtml("events", item.id, "mergeTargetId", "合并目标事件 ID", review.mergeTargetId, candidateListId) + '<datalist id="' + candidateListId + '">' + candidates + '</datalist>' + mergeCandidatesHtml("events", item.id, item.mergeCandidates) + '</td>' +
+          '<td>' + notesHtml("events", item.id, review.notes) + '</td></tr>';
+      }
+
+      function personRow(item, index) {
+        const review = state.people[item.id];
+        const candidateListId = "person-targets-" + index;
+        const matches = item.nameMatches.map((match) =>
+          '<option value="' + escapeHtml(match.id) + '">' + escapeHtml(match.name + " · " + match.reviewStatus + (match.machineCandidate ? " · 机器候选" : "")) + '</option>'
+        ).join("");
+        const matchTags = item.nameMatches.length
+          ? '<div class="compact-list">' + item.nameMatches.map((match) => '<span class="tag warn">' + escapeHtml(match.name + " · " + match.id) + '</span>').join("") + '</div>'
+          : '<span class="subline">无精确同名候选</span>';
+        const linkedEvents = item.linkedEvents.map((event) => ({ label: event.year + " · " + event.title }));
+        const refs = item.sourceRefs.map((ref) => ({ ...ref, sourceSection: "" }));
+        return '<tr class="' + rowClass(review.decision) + '" data-search="' + escapeHtml(searchText(item)) + '">' +
+          '<td class="index">' + (index + 1) + '</td>' +
+          '<td><div class="main-label">' + escapeHtml(item.name) + '</div><div class="subline">' + escapeHtml(item.id) + '</div>' + tagsHtml(item.aliases, "") + '</td>' +
+          '<td><span class="tag">' + escapeHtml(item.discoveryEvidence) + '</span><div class="subline">置信度 ' + escapeHtml(item.discoveryConfidence) + '</div></td>' +
+          '<td>' + tagsHtml(linkedEvents, "") + '</td>' +
+          '<td>' + matchTags + '<details><summary>原文与定位</summary>' + evidenceHtml(refs) + '</details></td>' +
+          '<td>' + selectHtml("people", item.id, review.decision) + '</td>' +
+          '<td>' + fieldHtml("people", item.id, "canonicalName", "核定姓名", review.canonicalName) + fieldHtml("people", item.id, "mergeTargetId", "合并目标人物 ID", review.mergeTargetId, candidateListId) + fieldHtml("people", item.id, "confirmedAliases", "确认别名，用顿号分隔", review.confirmedAliases) + '<datalist id="' + candidateListId + '">' + matches + '</datalist></td>' +
+          '<td>' + notesHtml("people", item.id, review.notes) + '</td></tr>';
+      }
+
+      function placeRow(item, index) {
+        const review = state.places[item.id];
+        const linkedEvents = item.linkedEvents.map((event) => ({ label: event.year + " · " + event.title }));
+        return '<tr class="' + rowClass(review.decision) + '" data-search="' + escapeHtml(searchText(item)) + '">' +
+          '<td class="index">' + (index + 1) + '</td>' +
+          '<td><div class="main-label">' + escapeHtml(item.label) + '</div><div class="subline">' + escapeHtml(item.id) + '</div>' + tagsHtml(item.aliases, "") + '</td>' +
+          '<td>' + (item.mapFeatureNames.length ? tagsHtml(item.mapFeatureNames, "place") : '<span class="tag warn">未绑定地图几何</span>') + '</td>' +
+          '<td>' + tagsHtml(linkedEvents, "") + '<details><summary>原文与定位</summary>' + evidenceHtml(item.evidence) + '</details></td>' +
+          '<td>' + selectHtml("places", item.id, review.decision) + '</td>' +
+          '<td>' + fieldHtml("places", item.id, "revisedLabel", "修订名称", review.revisedLabel) + fieldHtml("places", item.id, "administrativeTarget", "同期行政隶属", review.administrativeTarget) + fieldHtml("places", item.id, "mapTarget", "地图目标或经纬度", review.mapTarget) + fieldHtml("places", item.id, "citation", "考证出处", review.citation) + '</td>' +
+          '<td>' + notesHtml("places", item.id, review.notes) + '</td></tr>';
+      }
+
+      function materialRow(item, index) {
+        const review = state.materials[item.id];
+        return '<tr class="' + rowClass(review.decision) + '" data-search="' + escapeHtml(searchText(item)) + '">' +
+          '<td class="index">' + (index + 1) + '</td>' +
+          '<td><span class="tag ' + (item.priority === "高" ? "danger" : "warn") + '">' + escapeHtml(item.priority) + '</span></td>' +
+          '<td><div class="main-label">' + escapeHtml(item.item) + '</div><div class="subline">' + escapeHtml(item.id) + '</div></td>' +
+          '<td>' + escapeHtml(item.requested) + '</td>' +
+          '<td>' + escapeHtml(item.acceptedFormat) + '</td>' +
+          '<td>' + selectHtml("materials", item.id, review.decision) + '</td>' +
+          '<td>' + fieldHtml("materials", item.id, "citation", "已提供材料或定位", review.citation) + '</td>' +
+          '<td>' + notesHtml("materials", item.id, review.notes) + '</td></tr>';
+      }
+
+      function rowClass(decision) {
+        if (decision === "reject") return "is-rejected";
+        return decision && decision !== "pending" ? "is-complete" : "";
+      }
+
+      function searchText(item) {
+        return JSON.stringify(item).toLowerCase();
+      }
+
+      const tableDefinitions = {
+        events: {
+          colgroup: ["44px", "58px", "310px", "210px", "270px", "150px", "250px", "230px"],
+          headers: ["#", "年", "当前事件", "人物 / 地点", "史料", "审核决定", "改名 / 合并", "备注"],
+          row: eventRow
+        },
+        people: {
+          colgroup: ["44px", "210px", "145px", "220px", "300px", "170px", "270px", "230px"],
+          headers: ["#", "当前人物", "识别依据", "关联事件", "同名与史料", "审核决定", "核定 / 合并 / 别名", "备注"],
+          row: personRow
+        },
+        places: {
+          colgroup: ["44px", "210px", "180px", "320px", "170px", "330px", "250px"],
+          headers: ["#", "地点实体", "当前地图绑定", "关联事件与史料", "审核决定", "名称 / 隶属 / 位置 / 出处", "备注"],
+          row: placeRow
+        },
+        materials: {
+          colgroup: ["44px", "70px", "230px", "330px", "330px", "160px", "270px", "230px"],
+          headers: ["#", "优先级", "材料", "需要内容", "可接受格式", "状态", "已提供定位", "备注"],
+          row: materialRow
+        }
+      };
+
+      function renderHeader() {
+        document.getElementById("page-meta").textContent = sourceData.profile.timeStart + "-" + sourceData.profile.timeEnd + " · " + sourceData.profile.id + " · 生成于 " + new Date(sourceData.generatedAt).toLocaleString("zh-CN");
+        document.getElementById("summary-strip").innerHTML =
+          '<span>事件 <strong>' + sourceData.counts.events + '</strong></span>' +
+          '<span>次级人物 <strong>' + sourceData.counts.people + '</strong></span>' +
+          '<span>待考地点 <strong>' + sourceData.counts.places + '</strong></span>' +
+          '<span>事件证据 <strong>' + sourceData.counts.evidence + '</strong></span>';
+        document.getElementById("tabs").innerHTML = Object.keys(kindLabels).map((kind) =>
+          '<button class="tab" type="button" data-tab="' + kind + '" aria-selected="' + (kind === activeKind) + '">' + kindLabels[kind] + ' ' + sourceData[kind].length + '</button>'
+        ).join("");
+      }
+
+      function renderFilterOptions() {
+        document.getElementById("decision-filter").innerHTML =
+          '<option value="all">全部决定</option>' +
+          decisionOptions[activeKind].map(([code, label]) => '<option value="' + code + '">' + escapeHtml(label) + '</option>').join("");
+      }
+
+      function filteredItems() {
+        const query = document.getElementById("search").value.trim().toLowerCase();
+        const decision = document.getElementById("decision-filter").value;
+        return sourceData[activeKind].filter((item) => {
+          const id = itemId(activeKind, item);
+          const matchesQuery = !query || searchText(item).includes(query);
+          const matchesDecision = decision === "all" || state[activeKind][id].decision === decision;
+          return matchesQuery && matchesDecision;
+        });
+      }
+
+      function renderTable() {
+        const definition = tableDefinitions[activeKind];
+        const items = filteredItems();
+        const colgroup = '<colgroup>' + definition.colgroup.map((width) => '<col style="width:' + width + '" />').join("") + '</colgroup>';
+        const head = '<thead><tr>' + definition.headers.map((header) => '<th>' + escapeHtml(header) + '</th>').join("") + '</tr></thead>';
+        const body = items.length
+          ? '<tbody>' + items.map((item) => definition.row(item, sourceData[activeKind].indexOf(item))).join("") + '</tbody>'
+          : '<tbody><tr><td class="empty" colspan="' + definition.headers.length + '">没有符合筛选条件的记录</td></tr></tbody>';
+        document.getElementById("table-shell").innerHTML = '<table>' + colgroup + head + body + '</table>';
+        renderProgress();
+      }
+
+      function renderProgress() {
+        const records = Object.values(state[activeKind]);
+        const completed = records.filter((record) => record.decision && record.decision !== "pending").length;
+        document.getElementById("progress").textContent = kindLabels[activeKind] + "已处理 " + completed + " / " + records.length;
+      }
+
+      function downloadableReview() {
+        const decisions = {};
+        for (const kind of Object.keys(kindLabels)) {
+          decisions[kind] = sourceData[kind].map((item) => {
+            const id = itemId(kind, item);
+            const snapshot = kind === "events"
+              ? { originalTitle: item.title, year: item.year }
+              : kind === "people"
+                ? { originalName: item.name }
+                : kind === "places"
+                  ? { originalLabel: item.label }
+                  : { item: item.item };
+            return { id, ...snapshot, ...state[kind][id] };
+          });
+        }
+        return {
+          schema: sourceData.schema,
+          profileId: sourceData.profile.id,
+          generatorId: sourceData.profile.generatorId,
+          sourceGeneratedAt: sourceData.generatedAt,
+          reviewExportedAt: new Date().toISOString(),
+          decisions
+        };
+      }
+
+      function download(name, text, type) {
+        const blob = new Blob([text], { type });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = name;
+        link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 500);
+      }
+
+      function csvCell(value) {
+        const text = String(value == null ? "" : value);
+        return '"' + text.replaceAll('"', '""') + '"';
+      }
+
+      function exportCurrentCsv() {
+        const rows = sourceData[activeKind].map((item) => {
+          const id = itemId(activeKind, item);
+          const review = state[activeKind][id];
+          const context = activeKind === "events"
+            ? [item.year, item.title, item.summary, item.people.map((x) => x.label).join("、"), item.places.map((x) => x.label).join("、"), item.evidence.map((x) => [x.sourceTitle, x.locator, x.quote].filter(Boolean).join(" · ")).join(" | ")]
+            : activeKind === "people"
+              ? [item.name, item.discoveryEvidence, item.linkedEvents.map((x) => x.year + "·" + x.title).join(" | "), item.sourceRefs.map((x) => [x.sourceTitle, x.locator, x.quote].filter(Boolean).join(" · ")).join(" | ")]
+              : activeKind === "places"
+                ? [item.label, item.linkedEvents.map((x) => x.year + "·" + x.title).join(" | "), item.evidence.map((x) => [x.sourceTitle, x.locator, x.quote].filter(Boolean).join(" · ")).join(" | ")]
+                : [item.priority, item.item, item.requested, item.acceptedFormat];
+          return [id, ...context, decisionLabel(activeKind, review.decision), ...editableFields[activeKind].filter((field) => field !== "decision").map((field) => review[field])];
+        });
+        const contextHeaders = activeKind === "events"
+          ? ["年份", "当前标题", "摘要", "人物", "地点", "史料"]
+          : activeKind === "people"
+            ? ["当前姓名", "识别依据", "关联事件", "史料"]
+            : activeKind === "places"
+              ? ["当前地点", "关联事件", "史料"]
+              : ["优先级", "材料", "需要内容", "可接受格式"];
+        const headers = ["稳定ID", ...contextHeaders, "审核决定", ...editableFields[activeKind].filter((field) => field !== "decision")];
+        const csv = "\ufeff" + [headers, ...rows].map((row) => row.map(csvCell).join(",")).join("\r\n");
+        download(sourceData.profile.id + "-" + activeKind + "-review.csv", csv, "text/csv;charset=utf-8");
+      }
+
+      document.getElementById("tabs").addEventListener("click", (event) => {
+        const button = event.target.closest("[data-tab]");
+        if (!button) return;
+        activeKind = button.dataset.tab;
+        document.getElementById("search").value = "";
+        renderHeader();
+        renderFilterOptions();
+        renderTable();
+      });
+
+      document.getElementById("table-shell").addEventListener("change", (event) => {
+        const target = event.target.closest("[data-kind][data-id][data-field]");
+        if (!target) return;
+        state[target.dataset.kind][target.dataset.id][target.dataset.field] = target.value;
+        saveState();
+        if (target.dataset.field === "decision") renderTable();
+      });
+
+      document.getElementById("table-shell").addEventListener("click", (event) => {
+        const target = event.target.closest("[data-kind][data-id][data-merge-value]");
+        if (!target) return;
+        const record = state[target.dataset.kind][target.dataset.id];
+        record.decision = "merge";
+        record.mergeTargetId = target.dataset.mergeValue;
+        saveState();
+        renderTable();
+      });
+
+      document.getElementById("table-shell").addEventListener("input", (event) => {
+        const target = event.target.closest("[data-kind][data-id][data-field]");
+        if (!target || target.dataset.field === "decision") return;
+        state[target.dataset.kind][target.dataset.id][target.dataset.field] = target.value;
+        saveState();
+      });
+
+      document.getElementById("search").addEventListener("input", renderTable);
+      document.getElementById("decision-filter").addEventListener("change", renderTable);
+      document.getElementById("export-json").addEventListener("click", () => {
+        download(sourceData.profile.id + "-review-decisions.json", JSON.stringify(downloadableReview(), null, 2), "application/json;charset=utf-8");
+      });
+      document.getElementById("export-csv").addEventListener("click", exportCurrentCsv);
+      document.getElementById("import-json").addEventListener("click", () => document.getElementById("import-file").click());
+      document.getElementById("import-file").addEventListener("change", async (event) => {
+        const file = event.target.files && event.target.files[0];
+        if (!file) return;
+        try {
+          const imported = JSON.parse(await file.text());
+          if (imported.profileId !== sourceData.profile.id || !imported.decisions) throw new Error("profile-mismatch");
+          const candidate = blankState();
+          for (const kind of Object.keys(kindLabels)) {
+            for (const record of imported.decisions[kind] || []) {
+              if (candidate[kind][record.id] || sourceData[kind].some((item) => itemId(kind, item) === record.id)) {
+                candidate[kind][record.id] = { ...blankRecord(kind), ...record };
+              }
+            }
+          }
+          state = normalizeState(candidate);
+          saveState();
+          renderTable();
+        } catch {
+          const status = document.getElementById("save-status");
+          status.textContent = "导入文件不匹配";
+          status.className = "save-status error";
+        } finally {
+          event.target.value = "";
+        }
+      });
+
+      renderHeader();
+      renderFilterOptions();
+      renderTable();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>西晋正史晋级人工审核</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+        background: #f5f6f7;
+        color: #1f262d;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-width: 320px; background: #f5f6f7; }
+      button, input, select, textarea { font: inherit; letter-spacing: 0; }
+      button, select, input, textarea { border-radius: 4px; }
+      button { cursor: pointer; }
+      .page-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid #cdd3d8;
+        background: rgba(255, 255, 255, 0.97);
+      }
+      .header-inner { max-width: 1680px; margin: 0 auto; padding: 14px 18px 10px; }
+      .title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+      h1 { margin: 0; font-size: 20px; line-height: 1.35; font-weight: 700; }
+      .meta { margin-top: 4px; color: #66717c; font-size: 12px; }
+      .actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
+      .command {
+        min-height: 34px;
+        padding: 6px 11px;
+        border: 1px solid #aeb7bf;
+        background: #fff;
+        color: #29343d;
+      }
+      .command:hover { border-color: #64717b; background: #f7f9fa; }
+      .command.primary { border-color: #236844; background: #236844; color: #fff; }
+      .command.primary:hover { background: #195236; }
+      .summary-strip { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 11px; color: #4a5660; font-size: 13px; }
+      .summary-strip strong { color: #182129; }
+      .tabs {
+        display: flex;
+        gap: 2px;
+        margin-top: 11px;
+        border-bottom: 1px solid #d6dce1;
+      }
+      .tab {
+        min-height: 35px;
+        padding: 7px 13px;
+        border: 0;
+        border-bottom: 3px solid transparent;
+        border-radius: 0;
+        background: transparent;
+        color: #5d6872;
+      }
+      .tab[aria-selected="true"] { border-bottom-color: #1e6a49; color: #173b2c; font-weight: 700; }
+      main { max-width: 1680px; margin: 0 auto; padding: 14px 18px 30px; }
+      .toolbar {
+        display: grid;
+        grid-template-columns: minmax(220px, 1fr) 180px auto;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .toolbar input, .toolbar select {
+        width: 100%;
+        height: 36px;
+        padding: 6px 9px;
+        border: 1px solid #b8c0c7;
+        background: #fff;
+        color: #202830;
+      }
+      .progress { justify-self: end; color: #4c5963; font-size: 13px; white-space: nowrap; }
+      .table-shell { max-height: calc(100vh - 210px); overflow: auto; border: 1px solid #cbd2d8; background: #fff; }
+      table { width: 100%; min-width: 1180px; border-collapse: collapse; table-layout: fixed; }
+      th {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        padding: 8px 9px;
+        border-bottom: 1px solid #bfc7cd;
+        border-right: 1px solid #dde2e6;
+        background: #edf0f2;
+        color: #3c4750;
+        font-size: 12px;
+        text-align: left;
+        vertical-align: bottom;
+      }
+      td {
+        padding: 9px;
+        border-bottom: 1px solid #dfe4e8;
+        border-right: 1px solid #edf0f2;
+        vertical-align: top;
+        font-size: 13px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+      }
+      tr:last-child td { border-bottom: 0; }
+      tr.is-complete { background: #f5faf7; }
+      tr.is-rejected { background: #fff8f7; }
+      .index { color: #7b858d; text-align: right; }
+      .year { font-variant-numeric: tabular-nums; font-weight: 700; }
+      .main-label { font-weight: 700; color: #172129; }
+      .subline { margin-top: 3px; color: #64707a; font-size: 12px; }
+      .compact-list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+      .tag { padding: 1px 5px; border: 1px solid #c5cdd3; border-radius: 3px; background: #f7f8f9; font-size: 11px; color: #4e5962; }
+      .tag.person { border-color: #93b2a2; background: #f1f8f4; color: #25543c; }
+      .tag.place { border-color: #c3aa75; background: #fbf7ed; color: #654d1e; }
+      .tag.warn { border-color: #d1a15f; background: #fff7e9; color: #6c4712; }
+      .tag.danger { border-color: #d3a09a; background: #fff2f1; color: #7a2f27; }
+      details { margin-top: 6px; }
+      summary { color: #3d596f; cursor: pointer; font-size: 12px; }
+      .evidence-block { margin-top: 6px; padding: 7px 8px; border-left: 3px solid #9daab4; background: #f7f8f9; }
+      .evidence-source { color: #4e5b65; font-size: 12px; }
+      .quote { margin-top: 3px; color: #242c33; }
+      .merge-reference { margin-top: 8px; }
+      .merge-candidate { padding: 7px 0; border-top: 1px solid #dfe4e8; }
+      .merge-candidate:first-of-type { margin-top: 5px; }
+      .merge-candidate-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+      .merge-candidate-title { font-weight: 700; color: #243039; }
+      .merge-candidate-id { margin-top: 2px; color: #69747d; font-family: Consolas, monospace; font-size: 11px; }
+      .choose-merge {
+        flex: 0 0 auto;
+        min-height: 28px;
+        padding: 4px 7px;
+        border: 1px solid #8f9ba4;
+        background: #fff;
+        color: #33414b;
+      }
+      .choose-merge:hover { border-color: #466270; background: #f3f7f8; }
+      a { color: #1e5d87; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .decision, .edit-field, .notes-field {
+        width: 100%;
+        border: 1px solid #b9c1c8;
+        background: #fff;
+        color: #202930;
+      }
+      .decision { height: 34px; padding: 5px 7px; }
+      .edit-field { height: 32px; margin-top: 6px; padding: 5px 7px; }
+      .notes-field { min-height: 68px; padding: 6px 7px; resize: vertical; }
+      .empty { padding: 40px 20px; color: #6c7780; text-align: center; }
+      .save-status { min-width: 74px; color: #58646e; font-size: 12px; text-align: right; }
+      .save-status.error { color: #9a3025; }
+      #import-file { display: none; }
+      @media (max-width: 760px) {
+        .header-inner, main { padding-left: 10px; padding-right: 10px; }
+        .title-row { display: block; }
+        .actions { justify-content: flex-start; margin-top: 10px; }
+        .toolbar { grid-template-columns: 1fr 150px; }
+        .progress { grid-column: 1 / -1; justify-self: start; }
+        .tabs { overflow-x: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="header-inner">
+        <div class="title-row">
+          <div>
+            <h1 id="page-title">西晋正史晋级人工审核</h1>
+            <div class="meta" id="page-meta"></div>
+          </div>
+          <div class="actions">
+            <button class="command" id="export-csv" type="button">导出当前表 CSV</button>
+            <button class="command" id="import-json" type="button">导入审核结果</button>
+            <button class="command primary" id="export-json" type="button">导出审核结果 JSON</button>
+            <span class="save-status" id="save-status">已本地保存</span>
+            <input id="import-file" type="file" accept="application/json,.json" />
+          </div>
+        </div>
+        <div class="summary-strip" id="summary-strip"></div>
+        <nav class="tabs" id="tabs" aria-label="审核对象"></nav>
+      </div>
+    </header>
+    <main>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="搜索标题、人物、地点、原文或 ID" aria-label="搜索当前审核表" />
+        <select id="decision-filter" aria-label="按审核决定筛选"></select>
+        <div class="progress" id="progress"></div>
+      </div>
+      <div class="table-shell" id="table-shell"></div>
+    </main>
+    <script type="application/json" id="review-data">{"schema":"chronoatlas.official-history-review.v1","generatedAt":"2026-07-10T09:54:37.698Z","database":"db/chronoatlas.sqlite","profile":{"id":"china-western-jin-281-316-v1","label":"西晋正史事件晋级模板 281-316","regionId":"china","timeStart":281,"timeEnd":316,"generatorId":"promote-source-event-cards:china-western-jin-281-316-v1"},"pageTitle":"西晋正史晋级人工审核","events":[],"people":[],"places":[{"id":"place:wenshijin","stablePlaceId":"wenshijin","label":"汶石津","summary":"汶石津的稳定地点实体；具体行政隶属与地图几何按时期解析。","confidence":"high","reviewStatus":"reviewed","missing":false,"aliases":[],"mapFeatureNames":[],"linkedEvents":[{"id":"official-history-event:320f2a3e5a85aa67b2b3","title":"王申始破石勒于汶石津","year":310,"role":"primary-location"}],"evidence":[]},{"id":"place:shangbai","stablePlaceId":"shangbai","label":"上白","summary":"上白的稳定地点实体；具体行政隶属与地图几何按时期解析。","confidence":"high","reviewStatus":"reviewed","missing":false,"aliases":[],"mapFeatureNames":[],"linkedEvents":[{"id":"official-history-event:b6977baf97c78cb8e062","title":"石勒攻杀李惲于上白","year":313,"role":"primary-location"}],"evidence":[]},{"id":"place:shicheng","stablePlaceId":"shicheng","label":"石城","summary":"石城的稳定地点实体；具体行政隶属与地图几何按时期解析。","confidence":"high","reviewStatus":"reviewed","missing":false,"aliases":[],"mapFeatureNames":[],"linkedEvents":[{"id":"official-history-event:5846cd4f5bb21fff6c96","title":"杜曾败陶侃于石城","year":313,"role":"primary-location"}],"evidence":[]}],"materials":[{"id":"jinshu-edition-locators","priority":"高","item":"《晋书》正式版本定位","requested":"版本名、整理者或出版社、出版年、卷次和页码；可附必要的短摘录。","acceptedFormat":"书目信息、页码表或结构化摘录；无需把 PDF、扫描件放入仓库。"},{"id":"zizhi-tongjian-312-316","priority":"高","item":"312-316 年《资治通鉴·晋纪》定位","requested":"相关卷次、纪年、原文短摘录和可核验的版本页码或 URL。","acceptedFormat":"逐事件定位表；优先覆盖洛阳、长安陷落及西晋末年政权变化。"},{"id":"western-jin-person-authority","priority":"中","item":"西晋人物别名与同名消歧","requested":"正式姓名、字、别名、爵位称呼、同名人物区分和依据出处。","acceptedFormat":"可直接在人物表选择保留、改名、合并或拒绝，并补充依据。"},{"id":"western-jin-place-authority","priority":"中","item":"西晋历史地名考证","requested":"汶石津、上白、石城的古今位置、同期行政隶属及考证出处。","acceptedFormat":"地点表中的行政区或地图目标、出处与备注；不确定时选择保持未定位。"}],"mergeTargets":[{"id":"china-281-jiangnan-integration-after-wu","title":"西晋接收江南州郡与吴旧臣","event_type":"administration","time_start":281,"summary":"吴亡后，西晋安置孙吴宗室与旧臣，接收江南州郡行政体系。江南进入统一帝国框架，但地方豪族与旧吴网络仍保留影响。","review_status":"reviewed","people":[],"places":[]},{"id":"china-282-sima-you-forced-to-qi","title":"齐王司马攸被迫出镇","event_type":"succession","time_start":282,"summary":"齐王司马攸声望高，被认为可能威胁太子司马衷地位，最终被迫离开洛阳就国。此事提前暴露西晋继承安排的脆弱性。","review_status":"reviewed","people":[],"places":[]},{"id":"china-283-sima-you-dies","title":"齐王司马攸忧愤而卒","event_type":"succession","time_start":283,"summary":"司马攸出镇后不久去世，围绕继承与宗室声望的争议暂时结束，却使太子司马衷继位后的政治风险更难被平衡。","review_status":"reviewed","people":[],"places":[]},{"id":"life:sun-hao-284-death","title":"孙皓去世","event_type":"death","time_start":284,"summary":"孙吴灭亡后，孙皓迁居洛阳，284 年去世。","review_status":"draft","people":["孙皓"],"places":[]},{"id":"life:du-yu-285-death","title":"杜预去世","event_type":"death","time_start":285,"summary":"杜预灭吴后继续任职并著述，285 年去世。","review_status":"draft","people":["杜预"],"places":[]},{"id":"life:wang-jun-286-death","title":"王濬去世","event_type":"death","time_start":286,"summary":"灭吴后，王濬以功名显于西晋，286 年去世。","review_status":"draft","people":["王濬"],"places":[]},{"id":"china-289-princes-command-regional-forces","title":"诸王出镇，宗王掌握方镇兵权","event_type":"military","time_start":289,"summary":"武帝晚年重用宗王镇守要地，本意在于屏藩王室，却让诸王获得州镇资源与军事动员能力，成为八王之乱的结构性前提。","review_status":"reviewed","people":[],"places":[]},{"id":"life:sima-yan-290-death","title":"晋武帝去世","event_type":"death","time_start":290,"summary":"司马炎去世后，西晋继承与宗室政治问题逐渐扩大。","review_status":"draft","people":["司马炎"],"places":[]},{"id":"china-290-emperor-wu-dies","title":"晋武帝去世，惠帝即位","event_type":"succession","time_start":290,"summary":"晋武帝去世后，惠帝即位，杨骏以外戚身份辅政。皇帝个人能力不足、外戚专权与宗王兵权同时进入中枢。","review_status":"reviewed","people":[],"places":[]},{"id":"china-290-yang-jun-regency","title":"杨骏专辅朝政","event_type":"politics","time_start":290,"summary":"杨骏受遗诏辅政，却排斥宗室与朝臣，形成外戚独揽中枢的局面，为 291 年贾后联合楚王玮诛杨骏埋下导火线。","review_status":"reviewed","people":[],"places":[]},{"id":"china-291-eight-princes-war","title":"八王之乱展开","event_type":"politics","time_start":291,"summary":"西晋宗室诸王和外戚、朝臣围绕中央权力反复争斗，通常称为八王之乱。其主要阶段一般定为 291-306 年，是西晋由统一转入失序的关键节点。","review_status":"draft","people":[],"places":[]},{"id":"china-291-sima-wei-executed","title":"楚王司马玮被贾后诛杀","event_type":"politics","time_start":291,"summary":"司马玮诛杨骏后旋即被贾后以矫诏罪名处死，说明宫廷政变并未形成稳定权力安排。","review_status":"reviewed","people":[],"places":[]},{"id":"china-291-sima-wei-kills-liang-guan","title":"楚王玮奉诏诛汝南王亮、卫瓘","event_type":"politics","time_start":291,"summary":"贾后借楚王司马玮之手清除汝南王亮、卫瓘，辅政格局被打碎，宗王开始成为宫廷斗争的直接武力工具。","review_status":"reviewed","people":[],"places":[]},{"id":"china-291-sima-liang-wei-guan-regency","title":"汝南王亮、卫瓘入辅","event_type":"politics","time_start":291,"summary":"杨骏被诛后，汝南王司马亮与卫瓘入朝辅政，试图重建中枢秩序，但很快卷入贾后与宗王之间的新一轮权力冲突。","review_status":"reviewed","people":[],"places":[]},{"id":"china-291-jia-nanfeng-coup","title":"贾南风联合楚王玮诛杨骏","event_type":"politics","time_start":291,"summary":"皇后贾南风联合楚王司马玮等诛杀外戚杨骏，开启西晋宗室、外戚与后党反复争权的八王之乱序幕。","review_status":"reviewed","people":[],"places":[]},{"id":"china-292-jia-hou-controls-court","title":"贾后专断朝政","event_type":"politics","time_start":292,"summary":"楚王玮被杀后，贾后长期控制朝政，张华、裴頠等维持政务运转，但继承人问题与外戚政治继续积累危机。","review_status":"reviewed","people":[],"places":[]},{"id":"china-296-di-qiang-rebellion-begins","title":"关中氐羌叛乱兴起","event_type":"war","time_start":296,"summary":"关中与秦雍一带氐羌叛乱扩大，齐万年被推为首领。西晋统一后边郡民族、徙民和地方治理问题集中爆发。","review_status":"reviewed","people":[],"places":[]},{"id":"china-296-guanzhong-refugees-enter-shu","title":"关中流民入蜀","event_type":"migration","time_start":296,"summary":"关中饥乱与战事推动大批流民进入益州，李特、李流等巴氐豪帅逐渐成为流民集团核心，日后成汉政权由此孕育。","review_status":"reviewed","people":[],"places":[]},{"id":"china-297-zhou-chu-dies","title":"周处战死于齐万年之乱","event_type":"war","time_start":297,"summary":"周处率军讨齐万年，因支援不力战死。此事反映西晋州郡军事体系和朝廷派系倾轧在边郡战争中相互牵制。","review_status":"reviewed","people":[],"places":[]},{"id":"china-299-crown-prince-yu-deposed","title":"太子司马遹被废","event_type":"succession","time_start":299,"summary":"贾后围绕太子司马遹制造继承危机，太子被废为庶人。西晋中枢从外戚专政转向围绕储位的公开撕裂。","review_status":"reviewed","people":[],"places":[]},{"id":"china-299-meng-guan-defeats-qi-wannian","title":"孟观平定齐万年之乱","event_type":"war","time_start":299,"summary":"孟观等击败齐万年，关中叛乱暂时平息。但边郡秩序并未恢复，后续流民、胡部与州镇军权问题继续恶化。","review_status":"reviewed","people":[],"places":[]},{"id":"china-300-zhang-hua-pei-wei-killed","title":"张华、裴頠等被赵王伦诛杀","event_type":"politics","time_start":300,"summary":"赵王伦倒贾后之后清洗张华、裴頠等重臣，朝廷中尚能维持政务平衡的人物被排除，中枢制度性约束进一步瓦解。","review_status":"reviewed","people":[],"places":[]},{"id":"china-300-crown-prince-yu-killed","title":"愍怀太子司马遹遇害","event_type":"succession","time_start":300,"summary":"被废太子司马遹遇害，赵王伦随后以讨贾后、复太子冤案为名发动政变，八王之乱进入更公开的宗王夺权阶段。","review_status":"reviewed","people":["司马遹","贾南风"],"places":["许昌"]},{"id":"china-300-jia-hou-deposed","title":"赵王伦废杀贾后","event_type":"politics","time_start":300,"summary":"赵王司马伦以讨贾后为名入洛，废杀贾后，八王之乱从后党执政转入宗王公开争夺中枢。","review_status":"reviewed","people":["司马伦","贾谧","贾南风","司马肜"],"places":["金墉城"]},{"id":"china-301-li-te-refugee-uprising","title":"李特流民集团在益州起兵","event_type":"war","time_start":301,"summary":"益州刺史更替和驱逐流民政策激化矛盾，李特集团起兵。西晋西南边区开始脱离洛阳有效控制。","review_status":"reviewed","people":[],"places":[]},{"id":"china-301-sima-lun-defeated-killed","title":"赵王伦兵败被赐死","event_type":"politics","time_start":301,"summary":"讨伦联军获胜后，司马伦退位并被赐死，惠帝复位；但胜利者各拥兵镇，中央并未真正恢复稳定。","review_status":"reviewed","people":[],"places":[]},{"id":"china-301-sima-lun-usurps","title":"赵王司马伦篡位","event_type":"succession","time_start":301,"summary":"司马伦废惠帝自立，宗王争权升级为公开篡位，激起齐王冏、成都王颖、河间王颙等举兵讨伦。","review_status":"reviewed","people":["司马伦"],"places":[]},{"id":"china-301-three-princes-rise-against-lun","title":"齐王冏、成都王颖、河间王颙起兵讨伦","event_type":"war","time_start":301,"summary":"赵王伦篡位后，齐王冏、成都王颖、河间王颙以恢复惠帝为号召起兵，宗王之间从宫廷政变转为跨区域军事对抗。","review_status":"reviewed","people":[],"places":[]},{"id":"china-301-sima-jiong-enters-luoyang","title":"齐王冏入洛辅政","event_type":"politics","time_start":301,"summary":"齐王司马冏等击败赵王伦，惠帝复位，但齐王冏专权又引发下一轮宗王冲突。","review_status":"reviewed","people":[],"places":[]},{"id":"china-302-sima-yong-calls-against-jiong","title":"河间王颙檄长沙王乂讨齐王冏","event_type":"politics","time_start":302,"summary":"河间王颙借齐王冏专政为由发檄，推动长沙王乂在洛阳内起兵，八王之乱进入以洛阳城内外夹击为特征的新阶段。","review_status":"reviewed","people":[],"places":[]},{"id":"china-302-sima-ai-kills-jiong","title":"长沙王乂攻杀齐王冏","event_type":"war","time_start":302,"summary":"长沙王司马乂在洛阳攻杀齐王冏，八王之乱的主导权再次转移，洛阳成为宗王军事冲突中心。","review_status":"reviewed","people":[],"places":[]},{"id":"china-302-sima-jiong-dominates-court","title":"齐王冏专政洛阳","event_type":"politics","time_start":302,"summary":"赵王伦失败后，齐王冏以功臣宗王身份掌控洛阳朝政。其专权引起长沙王乂、成都王颖、河间王颙等新的反弹。","review_status":"reviewed","people":[],"places":[]},{"id":"china-303-li-te-dies-li-liu-continues","title":"李特败死，李流续领流民军","event_type":"war","time_start":303,"summary":"李特在与益州官军作战中败死，李流继续统合流民军。起义没有因首领死亡而瓦解，反而转入李雄崛起阶段。","review_status":"reviewed","people":[],"places":[]},{"id":"china-303-yong-ying-attack-luoyang","title":"河间王颙、成都王颖合兵攻洛阳","event_type":"war","time_start":303,"summary":"河间王颙与成都王颖联合进攻洛阳，长沙王乂据城抵抗。京畿成为诸王军队反复争夺的战场，朝廷行政能力持续坍塌。","review_status":"reviewed","people":["司马乂","司马颖","司马颙"],"places":["洛阳"]},{"id":"china-304-sima-ai-handed-to-zhang-fang","title":"东海王越执长沙王乂交张方","event_type":"politics","time_start":304,"summary":"长沙王乂守洛阳疲敝之际，东海王越发动宫廷内变，将司马乂交给河间王颙部将张方，洛阳守局随之瓦解。","review_status":"reviewed","people":[],"places":[]},{"id":"china-304-five-barbarians-begin","title":"五胡乱华开端","event_type":"war","time_start":304,"summary":"304 年，刘渊在并州建立汉赵政权，李雄在成都称王，通常被视为十六国局面和五胡乱华开端的关键节点。","review_status":"draft","people":[],"places":[]},{"id":"china-304-liu-yuan-han-zhao","title":"刘渊起兵称汉王","event_type":"state-formation","time_start":304,"summary":"刘渊以汉赵政权名义聚合匈奴与北方反晋力量，西晋北方控制开始出现制度性裂缝。","review_status":"reviewed","people":["刘渊"],"places":["离石","平阳"]},{"id":"china-304-emperor-hui-moved-to-changan","title":"张方挟惠帝西迁长安","event_type":"politics","time_start":304,"summary":"河间王颙部将张方挟持晋惠帝西迁长安，皇帝成为宗王军事集团争夺的政治符号。","review_status":"reviewed","people":[],"places":[]},{"id":"china-304-sima-ying-crown-prince","title":"成都王颖为皇太弟","event_type":"succession","time_start":304,"summary":"长沙王乂败后，成都王颖取得继承人名义，被立为皇太弟。继承秩序被军事胜负直接改写，朝廷法统进一步工具化。","review_status":"reviewed","people":[],"places":[]},{"id":"china-304-sima-ying-controls-ye","title":"成都王颖据邺遥控朝局","event_type":"politics","time_start":304,"summary":"成都王司马颖在邺城掌握强大军事资源，试图以外镇控制朝政，西晋中枢进一步从洛阳外移。","review_status":"reviewed","people":[],"places":[]},{"id":"china-304-ye-regime-collapses","title":"成都王颖败走，邺中政局瓦解","event_type":"war","time_start":304,"summary":"幽并军压迫邺城，成都王颖失去对北方军政的控制。惠帝随即被张方挟往长安，西晋中枢在洛阳、邺、长安之间流离。","review_status":"reviewed","people":["王浚","司马颖"],"places":["邺城"]},{"id":"china-304-li-xiong-chengdu-king","title":"李雄称成都王","event_type":"state-formation","time_start":304,"summary":"李雄在成都称王，巴蜀脱离西晋控制并形成成汉政权，是西晋崩溃从中枢内乱扩展到地方政权分裂的关键节点。","review_status":"reviewed","people":["李雄"],"places":[]},{"id":"china-304-wang-jun-sima-teng-rise","title":"王浚、司马腾等起兵讨成都王颖","event_type":"war","time_start":304,"summary":"成都王颖掌控惠帝后，幽州王浚、并州司马腾等起兵反击，北方州镇力量正式卷入中枢争夺。","review_status":"reviewed","people":[],"places":[]},{"id":"china-304-dangyin-defeat","title":"荡阴之败，惠帝被成都王颖所制","event_type":"war","time_start":304,"summary":"晋惠帝亲征成都王颖，军队在荡阴败溃，惠帝被司马颖控制，洛阳朝廷的皇帝权威进一步沦为诸王争夺的筹码。","review_status":"reviewed","people":[],"places":[]},{"id":"china-304-sima-ai-burned","title":"长沙王乂被张方烧杀","event_type":"politics","time_start":304,"summary":"张方处死长沙王乂，洛阳防线崩解。此事标志八王之乱由宗王互相制衡转向更残酷的军阀化清算。","review_status":"reviewed","people":[],"places":[]},{"id":"china-305-sima-yue-campaign","title":"东海王越举兵迎惠帝","event_type":"war","time_start":305,"summary":"东海王司马越起兵讨河间王颙，目标是夺回被挟至长安的惠帝，八王之乱进入最后一轮东西对抗。","review_status":"reviewed","people":[],"places":[]},{"id":"china-305-zhang-fang-killed","title":"张方被河间王颙诛杀","event_type":"politics","time_start":305,"summary":"东海王越东征压力下，河间王颙杀张方以求缓和局势。张方之死削弱关中军力，也显示颙集团内部已难维持一致。","review_status":"reviewed","people":[],"places":[]},{"id":"china-306-emperor-hui-returns-luoyang","title":"惠帝还洛阳，八王之乱收束","event_type":"politics","time_start":306,"summary":"惠帝回到洛阳，东海王越掌握中枢，八王之乱的主要宗王战争告一段落，但西晋已经失去恢复秩序的能力。","review_status":"reviewed","people":[],"places":[]},{"id":"china-306-sima-ying-killed","title":"成都王颖被杀","event_type":"politics","time_start":306,"summary":"成都王颖在失势后流离奔走，最终被杀。作为八王之乱中一度掌控北方和皇太弟名义的宗王，其败亡标志旧一轮宗王核心人物退场。","review_status":"reviewed","people":[],"places":[]},{"id":"china-306-li-xiong-emperor-cheng","title":"李雄称帝，成汉政权成形","event_type":"state-formation","time_start":306,"summary":"李雄在成都称帝，改国号成，益州正式出现与西晋分庭抗礼的地方政权，西南脱离洛阳控制成为事实。","review_status":"reviewed","people":[],"places":[]},{"id":"china-307-wang-dao-recruits-jiangdong-gentry","title":"王导联结江东士族","event_type":"politics","time_start":307,"summary":"王导协助司马睿争取江东士族支持，使外来的晋室宗王逐渐获得地方承认。南方政权的士族合作结构开始形成。","review_status":"reviewed","people":[],"places":[]},{"id":"china-307-sima-rui-stations-jiankang","title":"琅邪王司马睿镇建业","event_type":"politics","time_start":307,"summary":"东海王越安排琅邪王司马睿出镇建业，王导辅佐经营江东。此举为永嘉后晋室南渡和东晋建国奠定政治基地。","review_status":"reviewed","people":[],"places":[]},{"id":"china-308-liu-yuan-proclaims-emperor","title":"刘渊称帝，汉赵正式升级","event_type":"state-formation","time_start":308,"summary":"刘渊由汉王进称皇帝，政权中心移向平阳。汉赵从反晋军事集团升级为挑战晋室正统的北方政权。","review_status":"reviewed","people":["刘渊"],"places":[]},{"id":"china-309-han-zhao-attacks-luoyang","title":"汉赵军进逼洛阳","event_type":"war","time_start":309,"summary":"汉赵诸军频繁进攻洛阳周边，王弥、石勒等部在河南活动。西晋中枢虽仍在洛阳，却已被外部军事压力持续包围。","review_status":"reviewed","people":["刘聪"],"places":["洛阳"]},{"id":"china-310-sima-yue-leaves-luoyang","title":"东海王越出镇项城，洛阳中枢空虚","event_type":"politics","time_start":310,"summary":"东海王越率军离开洛阳，朝廷权力与军队进一步分离。洛阳在汉赵压力下失去最后一层有效军事屏障。","review_status":"reviewed","people":[],"places":[]},{"id":"china-310-liu-yuan-dies-liu-cong-succeeds","title":"刘渊卒，刘聪继立","event_type":"succession","time_start":310,"summary":"刘渊去世后，刘聪继承汉赵政权。汉赵没有因创始人死亡而瓦解，反而继续对洛阳发动更强攻势。","review_status":"reviewed","people":[],"places":[]},{"id":"china-311-sima-yue-dies","title":"东海王越病死","event_type":"politics","time_start":311,"summary":"东海王越病死，随行官僚和军队失去核心。西晋中枢最后的宗王军事支柱瓦解，洛阳陷落已难避免。","review_status":"reviewed","people":[],"places":[]},{"id":"china-311-ningping-disaster","title":"宁平城之败，西晋公卿遭石勒屠灭","event_type":"war","time_start":311,"summary":"司马越死后，送葬队伍和大批公卿被石勒截击于宁平城，王衍等遇害。西晋北方士族与朝廷官僚遭受毁灭性打击。","review_status":"reviewed","people":[],"places":[]},{"id":"life:china-310-589-life2:liu-cong-han-zhao:311:war","title":"攻陷洛阳","event_type":"war","time_start":311,"summary":"汉赵军攻陷洛阳，俘晋怀帝。","review_status":"draft","people":["刘聪"],"places":[]},{"id":"china-311-emperor-huai-captured","title":"晋怀帝被俘至平阳","event_type":"war","time_start":311,"summary":"洛阳陷落后，晋怀帝被俘送往平阳。西晋中央政权失去皇帝和都城，北方政治秩序进入崩解阶段。","review_status":"reviewed","people":[],"places":[]},{"id":"china-311-yongjia-luoyang","title":"永嘉之乱：洛阳陷落","event_type":"war","time_start":311,"summary":"汉赵军攻陷洛阳，晋怀帝被俘，西晋中枢崩溃，北方进入长期割据与迁徙阶段。","review_status":"reviewed","people":["晋怀帝","刘渊","司马炽","刘聪"],"places":[]},{"id":"life:china-310-589-life2:sima-chi-jin-huaidi:311:capture","title":"洛阳陷落被俘","event_type":"capture","time_start":311,"summary":"洛阳陷落后被汉赵军俘获，西晋中枢秩序崩溃。","review_status":"draft","people":["司马炽"],"places":[]},{"id":"china-312-shi-le-occupies-xiangguo","title":"石勒据襄国，后赵根基形成","event_type":"state-formation","time_start":312,"summary":"石勒逐步据有襄国并经营河北，张宾等辅佐其建立军政体系。后赵的地方根基开始从流动作战转向固定统治。","review_status":"reviewed","people":[],"places":[]},{"id":"china-313-emperor-huai-killed","title":"晋怀帝遇害","event_type":"succession","time_start":313,"summary":"被俘的晋怀帝在平阳遇害，晋室北方正统再遭重创。长安方面拥立愍帝，成为西晋最后的法统中心。","review_status":"reviewed","people":[],"places":[]},{"id":"china-313-emperor-min-enthroned-changan","title":"晋愍帝即位长安","event_type":"succession","time_start":313,"summary":"洛阳陷落和怀帝被害后，晋愍帝在长安即位，西晋法统转入关中。但关中兵粮匮乏，难以恢复统一政权能力。","review_status":"reviewed","people":[],"places":[]},{"id":"china-313-zu-ti-northern-expedition-begins","title":"祖逖渡江北伐","event_type":"war","time_start":313,"summary":"祖逖率部渡江北上，联络淮北、豫州坞堡与流民武装，尝试在北方恢复晋室影响，是东晋前期北伐的开端。","review_status":"reviewed","people":[],"places":[]},{"id":"china-314-han-zhao-presses-changan","title":"汉赵持续压迫长安","event_type":"war","time_start":314,"summary":"汉赵军持续进攻关中，长安朝廷依靠残余州镇维持。西晋已经从全国政权退化为被围困的关中小朝廷。","review_status":"reviewed","people":[],"places":[]},{"id":"china-315-zu-ti-recovers-henan-forts","title":"祖逖经营豫州坞堡","event_type":"war","time_start":315,"summary":"祖逖在豫州一带招抚坞堡、恢复郡县名义，与石勒势力周旋。江东政权开始拥有有限的北方前沿。","review_status":"reviewed","people":[],"places":[]},{"id":"china-316-liu-yao-besieges-changan","title":"刘曜围攻长安","event_type":"war","time_start":316,"summary":"刘曜率汉赵军围攻长安，城中粮尽援绝。西晋最后的关中朝廷进入覆灭倒计时。","review_status":"reviewed","people":[],"places":[]},{"id":"life:china-310-589-life:liu-yao:316:war","title":"攻陷长安","event_type":"war","time_start":316,"summary":"刘曜围攻长安，西晋愍帝出降。","review_status":"draft","people":["刘曜"],"places":[]},{"id":"life:china-310-589-life2:liu-cong-han-zhao:316:war","title":"灭亡西晋","event_type":"war","time_start":316,"summary":"汉赵军迫降长安，西晋灭亡。","review_status":"draft","people":["刘聪"],"places":[]},{"id":"life:china-310-589-life2:sima-ye-jin-mindi:316:deposition","title":"长安失守出降","event_type":"deposition","time_start":316,"summary":"长安为汉赵所逼，愍帝出降，西晋灭亡。","review_status":"draft","people":["司马邺"],"places":[]},{"id":"china-316-changan-falls-western-jin","title":"长安失守，西晋灭亡","event_type":"collapse","time_start":316,"summary":"晋愍帝在长安出降汉赵，西晋政权结束，晋室重心转向江南。","review_status":"reviewed","people":["晋愍帝","刘曜","司马邺","刘聪"],"places":[]}],"counts":{"events":0,"people":0,"places":3,"materials":4,"evidence":0}}</script>
+    <script>
+      const sourceData = JSON.parse(document.getElementById("review-data").textContent);
+      const storageKey = "chronoatlas-review:" + sourceData.profile.id + ":v1";
+      const kindLabels = { events: "事件", people: "人物", places: "地点", materials: "材料" };
+      const decisionOptions = {
+        events: [
+          ["pending", "待定"], ["approve", "通过"], ["rename", "改名后通过"],
+          ["merge", "合并到已有事件"], ["reject", "拒绝"]
+        ],
+        people: [
+          ["pending", "待定"], ["approve", "保留为独立人物"], ["rename", "改名后保留"],
+          ["merge", "合并到已有人物"], ["reject", "拒绝"]
+        ],
+        places: [
+          ["pending", "待定"], ["confirm", "确认地点实体"], ["bind", "确认并绑定位置"],
+          ["rename", "修正名称"], ["keep-unlocated", "保持未定位"], ["reject", "拒绝"]
+        ],
+        materials: [
+          ["pending", "未提供"], ["partial", "部分提供"], ["provided", "已提供定位"], ["defer", "暂缓"]
+        ]
+      };
+      const editableFields = {
+        events: ["decision", "revisedTitle", "mergeTargetId", "notes"],
+        people: ["decision", "canonicalName", "mergeTargetId", "confirmedAliases", "notes"],
+        places: ["decision", "revisedLabel", "administrativeTarget", "mapTarget", "citation", "notes"],
+        materials: ["decision", "citation", "notes"]
+      };
+      let activeKind = "events";
+      let state = loadState();
+
+      function escapeHtml(value) {
+        return String(value == null ? "" : value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function itemId(kind, item) { return kind === "materials" ? item.id : item.id; }
+
+      function blankRecord(kind) {
+        return Object.fromEntries(editableFields[kind].map((field) => [field, field === "decision" ? "pending" : ""]));
+      }
+
+      function blankState() {
+        return {
+          schema: sourceData.schema,
+          profileId: sourceData.profile.id,
+          updatedAt: new Date().toISOString(),
+          events: {}, people: {}, places: {}, materials: {}
+        };
+      }
+
+      function normalizeState(candidate) {
+        const normalized = blankState();
+        for (const kind of Object.keys(kindLabels)) {
+          for (const item of sourceData[kind]) {
+            const id = itemId(kind, item);
+            normalized[kind][id] = { ...blankRecord(kind), ...(candidate && candidate[kind] && candidate[kind][id] || {}) };
+          }
+        }
+        normalized.updatedAt = candidate && candidate.updatedAt || normalized.updatedAt;
+        return normalized;
+      }
+
+      function loadState() {
+        try {
+          const saved = localStorage.getItem(storageKey);
+          return normalizeState(saved ? JSON.parse(saved) : null);
+        } catch {
+          return normalizeState(null);
+        }
+      }
+
+      function saveState() {
+        state.updatedAt = new Date().toISOString();
+        const status = document.getElementById("save-status");
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(state));
+          status.textContent = "已本地保存";
+          status.className = "save-status";
+        } catch {
+          status.textContent = "本地保存失败";
+          status.className = "save-status error";
+        }
+      }
+
+      function decisionLabel(kind, code) {
+        return (decisionOptions[kind].find((item) => item[0] === code) || [code, code])[1];
+      }
+
+      function selectHtml(kind, id, value) {
+        const options = decisionOptions[kind].map(([code, label]) =>
+          '<option value="' + escapeHtml(code) + '"' + (code === value ? " selected" : "") + '>' + escapeHtml(label) + '</option>'
+        ).join("");
+        return '<select class="decision" data-kind="' + kind + '" data-id="' + escapeHtml(id) + '" data-field="decision" aria-label="审核决定">' + options + '</select>';
+      }
+
+      function fieldHtml(kind, id, field, placeholder, value, listId) {
+        return '<input class="edit-field" data-kind="' + kind + '" data-id="' + escapeHtml(id) + '" data-field="' + field + '" value="' + escapeHtml(value) + '" placeholder="' + escapeHtml(placeholder) + '"' + (listId ? ' list="' + listId + '"' : "") + ' />';
+      }
+
+      function notesHtml(kind, id, value) {
+        return '<textarea class="notes-field" data-kind="' + kind + '" data-id="' + escapeHtml(id) + '" data-field="notes" placeholder="审核备注或依据">' + escapeHtml(value) + '</textarea>';
+      }
+
+      function tagsHtml(items, className) {
+        if (!items || !items.length) return '<span class="subline">无</span>';
+        return '<div class="compact-list">' + items.map((item) => '<span class="tag ' + className + '">' + escapeHtml(item.label || item.name || item) + '</span>').join("") + '</div>';
+      }
+
+      function sourceLink(item) {
+        const title = escapeHtml(item.sourceTitle || "未命名来源");
+        return item.sourceUrl ? '<a href="' + escapeHtml(item.sourceUrl) + '" target="_blank" rel="noreferrer">' + title + '</a>' : title;
+      }
+
+      function evidenceHtml(evidence) {
+        if (!evidence || !evidence.length) return '<div class="subline">暂无证据定位</div>';
+        return evidence.map((item) =>
+          '<div class="evidence-block"><div class="evidence-source">' + sourceLink(item) +
+          (item.sourceSection ? ' · ' + escapeHtml(item.sourceSection) : "") +
+          (item.locator ? ' · ' + escapeHtml(item.locator) : "") +
+          '</div><div class="quote">' + escapeHtml(item.quote || "无摘录") + '</div></div>'
+        ).join("");
+      }
+
+      function mergeCandidatesHtml(kind, id, candidates) {
+        if (!candidates || !candidates.length) return '<div class="subline">无同年已有事件</div>';
+        return '<details class="merge-reference"><summary>查看 ' + candidates.length + ' 个同年已有事件（不等于重复）</summary>' +
+          candidates.map((candidate) => {
+            const people = candidate.people && candidate.people.length ? '人物：' + candidate.people.join('、') : '';
+            const places = candidate.places && candidate.places.length ? '地点：' + candidate.places.join('、') : '';
+            return '<div class="merge-candidate"><div class="merge-candidate-head"><div><div class="merge-candidate-title">' + escapeHtml(candidate.title) + '</div>' +
+              '<div class="subline">' + escapeHtml([candidate.event_type, candidate.review_status, people, places].filter(Boolean).join(' · ')) + '</div>' +
+              '<div class="merge-candidate-id">' + escapeHtml(candidate.id) + '</div></div>' +
+              '<button class="choose-merge" type="button" data-kind="' + kind + '" data-id="' + escapeHtml(id) + '" data-merge-value="' + escapeHtml(candidate.id) + '">选择合并</button></div>' +
+              (candidate.summary ? '<div class="subline">' + escapeHtml(candidate.summary) + '</div>' : '') + '</div>';
+          }).join('') + '</details>';
+      }
+
+      function eventRow(item, index) {
+        const review = state.events[item.id];
+        const candidateListId = "event-targets-" + index;
+        const candidates = item.mergeCandidates.map((candidate) =>
+          '<option value="' + escapeHtml(candidate.id) + '">' + escapeHtml(candidate.year + " · " + candidate.title + " · " + candidate.review_status) + '</option>'
+        ).join("");
+        return '<tr class="' + rowClass(review.decision) + '" data-search="' + escapeHtml(searchText(item)) + '">' +
+          '<td class="index">' + (index + 1) + '</td>' +
+          '<td class="year">' + escapeHtml(item.year) + '</td>' +
+          '<td><div class="main-label">' + escapeHtml(item.title) + '</div><div class="subline">' + escapeHtml(item.eventType) + ' · ' + escapeHtml(item.confidence) + ' · ' + escapeHtml(item.id) + '</div><div class="subline">' + escapeHtml(item.summary) + '</div></td>' +
+          '<td><div class="subline">人物</div>' + tagsHtml(item.people, "person") + '<div class="subline">地点</div>' + tagsHtml(item.places, "place") + '</td>' +
+          '<td><div>' + item.evidenceCount + ' 条证据 · ' + item.sourceCount + ' 个来源</div><details><summary>原文与定位</summary>' + evidenceHtml(item.evidence) + '</details></td>' +
+          '<td>' + selectHtml("events", item.id, review.decision) + '</td>' +
+          '<td>' + fieldHtml("events", item.id, "revisedTitle", "新事件标题", review.revisedTitle) + fieldHtml("events", item.id, "mergeTargetId", "合并目标事件 ID", review.mergeTargetId, candidateListId) + '<datalist id="' + candidateListId + '">' + candidates + '</datalist>' + mergeCandidatesHtml("events", item.id, item.mergeCandidates) + '</td>' +
+          '<td>' + notesHtml("events", item.id, review.notes) + '</td></tr>';
+      }
+
+      function personRow(item, index) {
+        const review = state.people[item.id];
+        const candidateListId = "person-targets-" + index;
+        const matches = item.nameMatches.map((match) =>
+          '<option value="' + escapeHtml(match.id) + '">' + escapeHtml(match.name + " · " + match.reviewStatus + (match.machineCandidate ? " · 机器候选" : "")) + '</option>'
+        ).join("");
+        const matchTags = item.nameMatches.length
+          ? '<div class="compact-list">' + item.nameMatches.map((match) => '<span class="tag warn">' + escapeHtml(match.name + " · " + match.id) + '</span>').join("") + '</div>'
+          : '<span class="subline">无精确同名候选</span>';
+        const linkedEvents = item.linkedEvents.map((event) => ({ label: event.year + " · " + event.title }));
+        const refs = item.sourceRefs.map((ref) => ({ ...ref, sourceSection: "" }));
+        return '<tr class="' + rowClass(review.decision) + '" data-search="' + escapeHtml(searchText(item)) + '">' +
+          '<td class="index">' + (index + 1) + '</td>' +
+          '<td><div class="main-label">' + escapeHtml(item.name) + '</div><div class="subline">' + escapeHtml(item.id) + '</div>' + tagsHtml(item.aliases, "") + '</td>' +
+          '<td><span class="tag">' + escapeHtml(item.discoveryEvidence) + '</span><div class="subline">置信度 ' + escapeHtml(item.discoveryConfidence) + '</div></td>' +
+          '<td>' + tagsHtml(linkedEvents, "") + '</td>' +
+          '<td>' + matchTags + '<details><summary>原文与定位</summary>' + evidenceHtml(refs) + '</details></td>' +
+          '<td>' + selectHtml("people", item.id, review.decision) + '</td>' +
+          '<td>' + fieldHtml("people", item.id, "canonicalName", "核定姓名", review.canonicalName) + fieldHtml("people", item.id, "mergeTargetId", "合并目标人物 ID", review.mergeTargetId, candidateListId) + fieldHtml("people", item.id, "confirmedAliases", "确认别名，用顿号分隔", review.confirmedAliases) + '<datalist id="' + candidateListId + '">' + matches + '</datalist></td>' +
+          '<td>' + notesHtml("people", item.id, review.notes) + '</td></tr>';
+      }
+
+      function placeRow(item, index) {
+        const review = state.places[item.id];
+        const linkedEvents = item.linkedEvents.map((event) => ({ label: event.year + " · " + event.title }));
+        return '<tr class="' + rowClass(review.decision) + '" data-search="' + escapeHtml(searchText(item)) + '">' +
+          '<td class="index">' + (index + 1) + '</td>' +
+          '<td><div class="main-label">' + escapeHtml(item.label) + '</div><div class="subline">' + escapeHtml(item.id) + '</div>' + tagsHtml(item.aliases, "") + '</td>' +
+          '<td>' + (item.mapFeatureNames.length ? tagsHtml(item.mapFeatureNames, "place") : '<span class="tag warn">未绑定地图几何</span>') + '</td>' +
+          '<td>' + tagsHtml(linkedEvents, "") + '<details><summary>原文与定位</summary>' + evidenceHtml(item.evidence) + '</details></td>' +
+          '<td>' + selectHtml("places", item.id, review.decision) + '</td>' +
+          '<td>' + fieldHtml("places", item.id, "revisedLabel", "修订名称", review.revisedLabel) + fieldHtml("places", item.id, "administrativeTarget", "同期行政隶属", review.administrativeTarget) + fieldHtml("places", item.id, "mapTarget", "地图目标或经纬度", review.mapTarget) + fieldHtml("places", item.id, "citation", "考证出处", review.citation) + '</td>' +
+          '<td>' + notesHtml("places", item.id, review.notes) + '</td></tr>';
+      }
+
+      function materialRow(item, index) {
+        const review = state.materials[item.id];
+        return '<tr class="' + rowClass(review.decision) + '" data-search="' + escapeHtml(searchText(item)) + '">' +
+          '<td class="index">' + (index + 1) + '</td>' +
+          '<td><span class="tag ' + (item.priority === "高" ? "danger" : "warn") + '">' + escapeHtml(item.priority) + '</span></td>' +
+          '<td><div class="main-label">' + escapeHtml(item.item) + '</div><div class="subline">' + escapeHtml(item.id) + '</div></td>' +
+          '<td>' + escapeHtml(item.requested) + '</td>' +
+          '<td>' + escapeHtml(item.acceptedFormat) + '</td>' +
+          '<td>' + selectHtml("materials", item.id, review.decision) + '</td>' +
+          '<td>' + fieldHtml("materials", item.id, "citation", "已提供材料或定位", review.citation) + '</td>' +
+          '<td>' + notesHtml("materials", item.id, review.notes) + '</td></tr>';
+      }
+
+      function rowClass(decision) {
+        if (decision === "reject") return "is-rejected";
+        return decision && decision !== "pending" ? "is-complete" : "";
+      }
+
+      function searchText(item) {
+        return JSON.stringify(item).toLowerCase();
+      }
+
+      const tableDefinitions = {
+        events: {
+          colgroup: ["44px", "58px", "310px", "210px", "270px", "150px", "250px", "230px"],
+          headers: ["#", "年", "当前事件", "人物 / 地点", "史料", "审核决定", "改名 / 合并", "备注"],
+          row: eventRow
+        },
+        people: {
+          colgroup: ["44px", "210px", "145px", "220px", "300px", "170px", "270px", "230px"],
+          headers: ["#", "当前人物", "识别依据", "关联事件", "同名与史料", "审核决定", "核定 / 合并 / 别名", "备注"],
+          row: personRow
+        },
+        places: {
+          colgroup: ["44px", "210px", "180px", "320px", "170px", "330px", "250px"],
+          headers: ["#", "地点实体", "当前地图绑定", "关联事件与史料", "审核决定", "名称 / 隶属 / 位置 / 出处", "备注"],
+          row: placeRow
+        },
+        materials: {
+          colgroup: ["44px", "70px", "230px", "330px", "330px", "160px", "270px", "230px"],
+          headers: ["#", "优先级", "材料", "需要内容", "可接受格式", "状态", "已提供定位", "备注"],
+          row: materialRow
+        }
+      };
+
+      function renderHeader() {
+        document.getElementById("page-meta").textContent = sourceData.profile.timeStart + "-" + sourceData.profile.timeEnd + " · " + sourceData.profile.id + " · 生成于 " + new Date(sourceData.generatedAt).toLocaleString("zh-CN");
+        document.getElementById("summary-strip").innerHTML =
+          '<span>事件 <strong>' + sourceData.counts.events + '</strong></span>' +
+          '<span>次级人物 <strong>' + sourceData.counts.people + '</strong></span>' +
+          '<span>待考地点 <strong>' + sourceData.counts.places + '</strong></span>' +
+          '<span>事件证据 <strong>' + sourceData.counts.evidence + '</strong></span>';
+        document.getElementById("tabs").innerHTML = Object.keys(kindLabels).map((kind) =>
+          '<button class="tab" type="button" data-tab="' + kind + '" aria-selected="' + (kind === activeKind) + '">' + kindLabels[kind] + ' ' + sourceData[kind].length + '</button>'
+        ).join("");
+      }
+
+      function renderFilterOptions() {
+        document.getElementById("decision-filter").innerHTML =
+          '<option value="all">全部决定</option>' +
+          decisionOptions[activeKind].map(([code, label]) => '<option value="' + code + '">' + escapeHtml(label) + '</option>').join("");
+      }
+
+      function filteredItems() {
+        const query = document.getElementById("search").value.trim().toLowerCase();
+        const decision = document.getElementById("decision-filter").value;
+        return sourceData[activeKind].filter((item) => {
+          const id = itemId(activeKind, item);
+          const matchesQuery = !query || searchText(item).includes(query);
+          const matchesDecision = decision === "all" || state[activeKind][id].decision === decision;
+          return matchesQuery && matchesDecision;
+        });
+      }
+
+      function renderTable() {
+        const definition = tableDefinitions[activeKind];
+        const items = filteredItems();
+        const colgroup = '<colgroup>' + definition.colgroup.map((width) => '<col style="width:' + width + '" />').join("") + '</colgroup>';
+        const head = '<thead><tr>' + definition.headers.map((header) => '<th>' + escapeHtml(header) + '</th>').join("") + '</tr></thead>';
+        const body = items.length
+          ? '<tbody>' + items.map((item) => definition.row(item, sourceData[activeKind].indexOf(item))).join("") + '</tbody>'
+          : '<tbody><tr><td class="empty" colspan="' + definition.headers.length + '">没有符合筛选条件的记录</td></tr></tbody>';
+        document.getElementById("table-shell").innerHTML = '<table>' + colgroup + head + body + '</table>';
+        renderProgress();
+      }
+
+      function renderProgress() {
+        const records = Object.values(state[activeKind]);
+        const completed = records.filter((record) => record.decision && record.decision !== "pending").length;
+        document.getElementById("progress").textContent = kindLabels[activeKind] + "已处理 " + completed + " / " + records.length;
+      }
+
+      function downloadableReview() {
+        const decisions = {};
+        for (const kind of Object.keys(kindLabels)) {
+          decisions[kind] = sourceData[kind].map((item) => {
+            const id = itemId(kind, item);
+            const snapshot = kind === "events"
+              ? { originalTitle: item.title, year: item.year }
+              : kind === "people"
+                ? { originalName: item.name }
+                : kind === "places"
+                  ? { originalLabel: item.label }
+                  : { item: item.item };
+            return { id, ...snapshot, ...state[kind][id] };
+          });
+        }
+        return {
+          schema: sourceData.schema,
+          profileId: sourceData.profile.id,
+          generatorId: sourceData.profile.generatorId,
+          sourceGeneratedAt: sourceData.generatedAt,
+          reviewExportedAt: new Date().toISOString(),
+          decisions
+        };
+      }
+
+      function download(name, text, type) {
+        const blob = new Blob([text], { type });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = name;
+        link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 500);
+      }
+
+      function csvCell(value) {
+        const text = String(value == null ? "" : value);
+        return '"' + text.replaceAll('"', '""') + '"';
+      }
+
+      function exportCurrentCsv() {
+        const rows = sourceData[activeKind].map((item) => {
+          const id = itemId(activeKind, item);
+          const review = state[activeKind][id];
+          const context = activeKind === "events"
+            ? [item.year, item.title, item.summary, item.people.map((x) => x.label).join("、"), item.places.map((x) => x.label).join("、"), item.evidence.map((x) => [x.sourceTitle, x.locator, x.quote].filter(Boolean).join(" · ")).join(" | ")]
+            : activeKind === "people"
+              ? [item.name, item.discoveryEvidence, item.linkedEvents.map((x) => x.year + "·" + x.title).join(" | "), item.sourceRefs.map((x) => [x.sourceTitle, x.locator, x.quote].filter(Boolean).join(" · ")).join(" | ")]
+              : activeKind === "places"
+                ? [item.label, item.linkedEvents.map((x) => x.year + "·" + x.title).join(" | "), item.evidence.map((x) => [x.sourceTitle, x.locator, x.quote].filter(Boolean).join(" · ")).join(" | ")]
+                : [item.priority, item.item, item.requested, item.acceptedFormat];
+          return [id, ...context, decisionLabel(activeKind, review.decision), ...editableFields[activeKind].filter((field) => field !== "decision").map((field) => review[field])];
+        });
+        const contextHeaders = activeKind === "events"
+          ? ["年份", "当前标题", "摘要", "人物", "地点", "史料"]
+          : activeKind === "people"
+            ? ["当前姓名", "识别依据", "关联事件", "史料"]
+            : activeKind === "places"
+              ? ["当前地点", "关联事件", "史料"]
+              : ["优先级", "材料", "需要内容", "可接受格式"];
+        const headers = ["稳定ID", ...contextHeaders, "审核决定", ...editableFields[activeKind].filter((field) => field !== "decision")];
+        const csv = "\ufeff" + [headers, ...rows].map((row) => row.map(csvCell).join(",")).join("\r\n");
+        download(sourceData.profile.id + "-" + activeKind + "-review.csv", csv, "text/csv;charset=utf-8");
+      }
+
+      document.getElementById("tabs").addEventListener("click", (event) => {
+        const button = event.target.closest("[data-tab]");
+        if (!button) return;
+        activeKind = button.dataset.tab;
+        document.getElementById("search").value = "";
+        renderHeader();
+        renderFilterOptions();
+        renderTable();
+      });
+
+      document.getElementById("table-shell").addEventListener("change", (event) => {
+        const target = event.target.closest("[data-kind][data-id][data-field]");
+        if (!target) return;
+        state[target.dataset.kind][target.dataset.id][target.dataset.field] = target.value;
+        saveState();
+        if (target.dataset.field === "decision") renderTable();
+      });
+
+      document.getElementById("table-shell").addEventListener("click", (event) => {
+        const target = event.target.closest("[data-kind][data-id][data-merge-value]");
+        if (!target) return;
+        const record = state[target.dataset.kind][target.dataset.id];
+        record.decision = "merge";
+        record.mergeTargetId = target.dataset.mergeValue;
+        saveState();
+        renderTable();
+      });
+
+      document.getElementById("table-shell").addEventListener("input", (event) => {
+        const target = event.target.closest("[data-kind][data-id][data-field]");
+        if (!target || target.dataset.field === "decision") return;
+        state[target.dataset.kind][target.dataset.id][target.dataset.field] = target.value;
+        saveState();
+      });
+
+      document.getElementById("search").addEventListener("input", renderTable);
+      document.getElementById("decision-filter").addEventListener("change", renderTable);
+      document.getElementById("export-json").addEventListener("click", () => {
+        download(sourceData.profile.id + "-review-decisions.json", JSON.stringify(downloadableReview(), null, 2), "application/json;charset=utf-8");
+      });
+      document.getElementById("export-csv").addEventListener("click", exportCurrentCsv);
+      document.getElementById("import-json").addEventListener("click", () => document.getElementById("import-file").click());
+      document.getElementById("import-file").addEventListener("change", async (event) => {
+        const file = event.target.files && event.target.files[0];
+        if (!file) return;
+        try {
+          const imported = JSON.parse(await file.text());
+          if (imported.profileId !== sourceData.profile.id || !imported.decisions) throw new Error("profile-mismatch");
+          const candidate = blankState();
+          for (const kind of Object.keys(kindLabels)) {
+            for (const record of imported.decisions[kind] || []) {
+              if (candidate[kind][record.id] || sourceData[kind].some((item) => itemId(kind, item) === record.id)) {
+                candidate[kind][record.id] = { ...blankRecord(kind), ...record };
+              }
+            }
+          }
+          state = normalizeState(candidate);
+          saveState();
+          renderTable();
+        } catch {
+          const status = document.getElementById("save-status");
+          status.textContent = "导入文件不匹配";
+          status.className = "save-status error";
+        } finally {
+          event.target.value = "";
+        }
+      });
+
+      renderHeader();
+      renderFilterOptions();
+      renderTable();
+    </script>
+  </body>
+</html>

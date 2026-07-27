@@ -122,15 +122,37 @@ function houhanshuRange(sourceId) {
   const index = sourceNumber(sourceId);
   if (index === null) return [25, 220, "work-default"];
   if (index <= 2) return [25, 57, "annals-guangwu"];
-  if (index === 3) return [58, 75, "annals-ming"];
-  if (index === 4) return [76, 88, "annals-zhang"];
-  if (index === 5) return [89, 105, "annals-he"];
-  if (index === 6) return [106, 125, "annals-shang-an"];
-  if (index === 7) return [126, 146, "annals-shun-chong-zhi"];
-  if (index === 8) return [147, 167, "annals-huan"];
-  if (index === 9) return [168, 189, "annals-ling"];
+  // Each annal opens with the preceding emperor's death-year accession.
+  if (index === 3) return [57, 75, "annals-ming"];
+  if (index === 4) return [75, 88, "annals-zhang"];
+  if (index === 5) return [88, 105, "annals-he"];
+  if (index === 6) return [105, 125, "annals-shang-an"];
+  if (index === 7) return [125, 146, "annals-shun-chong-zhi"];
+  if (index === 8) return [146, 167, "annals-huan"];
+  if (index === 9) return [167, 189, "annals-ling"];
   if (index === 10) return [189, 220, "annals-xian"];
   return [25, 220, index >= 100 ? "treatise-work-range" : "biography-work-range"];
+}
+
+function hanshuRange(sourceId) {
+  const index = sourceNumber(sourceId);
+  if (index === null) return [-206, 23, "work-default"];
+  if (index <= 2) return [-206, -195, "annals-gaodi"];
+  if (index === 3) return [-195, -188, "annals-huidi"];
+  if (index === 4) return [-187, -180, "annals-gaohou"];
+  if (index === 5) return [-179, -157, "annals-wendi"];
+  if (index === 6) return [-156, -141, "annals-jingdi"];
+  if (index === 7) return [-140, -87, "annals-wudi"];
+  if (index === 8) return [-86, -74, "annals-zhaodi"];
+  if (index === 9) return [-73, -49, "annals-xuandi"];
+  if (index === 10) return [-48, -33, "annals-yuandi"];
+  if (index === 11) return [-32, -7, "annals-chengdi"];
+  if (index === 12) return [-6, -1, "annals-aidi"];
+  if (index === 13) return [1, 5, "annals-pingdi"];
+  if (index <= 23) return [-206, 23, "table-work-range"];
+  if (index <= 41) return [-206, 23, "treatise-work-range"];
+  if (index >= 116 && index <= 118) return [1, 23, "biography-wang-mang"];
+  return [-206, 23, "biography-work-range"];
 }
 
 function jinshuRange(sourceId) {
@@ -170,6 +192,7 @@ const sourceRows = db.prepare(`
      OR s.id LIKE 'jinshu-guoxue123-%'
      OR s.id LIKE 'zizhi-tongjian-guoxue123-%'
      OR s.id LIKE 'sanguozhi-guoxue123-%'
+     OR s.id LIKE 'hanshu-guoxue123-%'
   GROUP BY s.id
   ORDER BY s.id
 `).all();
@@ -211,6 +234,8 @@ try {
     let range;
     if (source.id.startsWith("houhanshu-guoxue123-")) {
       range = houhanshuRange(source.id);
+    } else if (source.id.startsWith("hanshu-guoxue123-")) {
+      range = hanshuRange(source.id);
     } else if (source.id.startsWith("jinshu-guoxue123-")) {
       range = jinshuRange(source.id);
     } else if (source.id.startsWith("zizhi-tongjian-guoxue123-")) {

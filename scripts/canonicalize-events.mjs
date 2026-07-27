@@ -4,6 +4,8 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { fileURLToPath } from "node:url";
 
+import { canonicalizeRelatedEventReferences } from "./lib/event-reference-canonicalization.mjs";
+
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dbPath = path.join(rootDir, "db", "chronoatlas.sqlite");
 const now = new Date().toISOString();
@@ -55,6 +57,18 @@ function inferMentionId(cardId) {
   if (cardId.startsWith("card:hanshu-auto:")) {
     return `hanshu-auto-candidate:${cardId.slice("card:hanshu-auto:".length)}`;
   }
+  if (cardId.startsWith("card:houhanshu-auto:")) {
+    return `houhanshu-auto-candidate:${cardId.slice("card:houhanshu-auto:".length)}`;
+  }
+  if (cardId.startsWith("card:houhanshu-eastern-han-auto:")) {
+    return `houhanshu-eastern-han-auto-candidate:${cardId.slice("card:houhanshu-eastern-han-auto:".length)}`;
+  }
+  if (cardId.startsWith("card:sanguozhi-auto:")) {
+    return `sanguozhi-auto-candidate:${cardId.slice("card:sanguozhi-auto:".length)}`;
+  }
+  if (cardId.startsWith("card:jinshu-auto:")) {
+    return `jinshu-auto-candidate:${cardId.slice("card:jinshu-auto:".length)}`;
+  }
   return null;
 }
 
@@ -90,6 +104,32 @@ function mergeRawAlias(rawJson, duplicateId, duplicateTitle, reason) {
     aliases.push({ id: duplicateId, title: duplicateTitle, reason, mergedAt: now });
   }
   return toJson({ ...raw, mergedEventAliases: aliases });
+}
+
+function mergedEventAliasReplacements(db) {
+  const replacements = new Map();
+  for (const event of db.prepare("SELECT id, raw_json FROM events").all()) {
+    const aliases = parseJson(event.raw_json).mergedEventAliases;
+    if (!Array.isArray(aliases)) continue;
+    for (const alias of aliases) {
+      if (alias?.id && alias.id !== event.id) replacements.set(alias.id, event.id);
+    }
+  }
+  return replacements;
+}
+
+function repairRelatedEventReferences(db) {
+  const replacements = mergedEventAliasReplacements(db);
+  if (!replacements.size) return 0;
+  const updateEvent = db.prepare("UPDATE events SET raw_json = ? WHERE id = ?");
+  let changed = 0;
+  for (const event of db.prepare("SELECT id, raw_json FROM events").all()) {
+    const result = canonicalizeRelatedEventReferences(parseJson(event.raw_json), event.id, replacements);
+    if (!result.changed) continue;
+    updateEvent.run(toJson(result.raw), event.id);
+    changed += 1;
+  }
+  return changed;
 }
 
 function mergeHistoricalEvent(db, canonicalId, duplicateId) {
@@ -451,6 +491,10 @@ function promoteClusterToEvent(db, cluster, members) {
 }
 
 function shouldPromoteUnmatchedCluster(cluster) {
+  const raw = parseJson(cluster.raw_json);
+  if (raw.mergeStrategy !== "exact-event-key" || cluster.review_status !== "approved") {
+    return false;
+  }
   if (cluster.time_start === null || cluster.time_end === null || cluster.time_start !== cluster.time_end) {
     return false;
   }
@@ -591,6 +635,7 @@ async function rebuildDocumentChunks(db) {
 
 async function main() {
   const db = new DatabaseSync(dbPath);
+  const repairRelatedEventRefsOnly = process.argv.includes("--repair-related-event-refs-only");
   const stats = {
     exactDuplicateEventsMerged: 0,
     clustersProcessed: 0,
@@ -602,13 +647,26 @@ async function main() {
     linkedPeople: 0,
     evidenceLinks: 0,
     personEntitiesCreated: 0,
+    relatedEventReferencesRewritten: 0,
   };
 
   try {
     db.exec("PRAGMA foreign_keys = ON;");
+    db.exec("PRAGMA busy_timeout = 15000;");
     db.exec("BEGIN;");
+    if (repairRelatedEventRefsOnly) {
+      stats.relatedEventReferencesRewritten = repairRelatedEventReferences(db);
+      db.exec("COMMIT;");
+      console.log(JSON.stringify({
+        generatedAt: now,
+        repairRelatedEventRefsOnly,
+        stats,
+      }, null, 2));
+      return;
+    }
     stats.personEntitiesCreated = ensurePersonEntities(db);
     stats.exactDuplicateEventsMerged = mergeEvents(db);
+    stats.relatedEventReferencesRewritten = repairRelatedEventReferences(db);
 
     const events = db.prepare(`
       SELECT id, title, event_type, time_start, COALESCE(time_end, time_start) AS time_end, region_id, summary, confidence, review_status, raw_json
@@ -620,6 +678,7 @@ async function main() {
     const clusters = db.prepare(`
       SELECT *
       FROM import_event_clusters
+      WHERE review_status <> 'rejected'
       ORDER BY batch_id, time_start, id
     `).all();
     const clusterUpdate = db.prepare(`
@@ -644,6 +703,14 @@ async function main() {
         CASE
           WHEN c.id LIKE 'card:hanshu-auto:%'
             THEN 'hanshu-auto-candidate:' || substr(c.id, length('card:hanshu-auto:') + 1)
+          WHEN c.id LIKE 'card:houhanshu-auto:%'
+            THEN 'houhanshu-auto-candidate:' || substr(c.id, length('card:houhanshu-auto:') + 1)
+          WHEN c.id LIKE 'card:houhanshu-eastern-han-auto:%'
+            THEN 'houhanshu-eastern-han-auto-candidate:' || substr(c.id, length('card:houhanshu-eastern-han-auto:') + 1)
+          WHEN c.id LIKE 'card:sanguozhi-auto:%'
+            THEN 'sanguozhi-auto-candidate:' || substr(c.id, length('card:sanguozhi-auto:') + 1)
+          WHEN c.id LIKE 'card:jinshu-auto:%'
+            THEN 'jinshu-auto-candidate:' || substr(c.id, length('card:jinshu-auto:') + 1)
           ELSE NULL
         END AS mention_id
       FROM import_event_cluster_members m
@@ -651,6 +718,14 @@ async function main() {
       LEFT JOIN source_mentions sm ON sm.id = CASE
         WHEN c.id LIKE 'card:hanshu-auto:%'
           THEN 'hanshu-auto-candidate:' || substr(c.id, length('card:hanshu-auto:') + 1)
+        WHEN c.id LIKE 'card:houhanshu-auto:%'
+          THEN 'houhanshu-auto-candidate:' || substr(c.id, length('card:houhanshu-auto:') + 1)
+        WHEN c.id LIKE 'card:houhanshu-eastern-han-auto:%'
+          THEN 'houhanshu-eastern-han-auto-candidate:' || substr(c.id, length('card:houhanshu-eastern-han-auto:') + 1)
+        WHEN c.id LIKE 'card:sanguozhi-auto:%'
+          THEN 'sanguozhi-auto-candidate:' || substr(c.id, length('card:sanguozhi-auto:') + 1)
+        WHEN c.id LIKE 'card:jinshu-auto:%'
+          THEN 'jinshu-auto-candidate:' || substr(c.id, length('card:jinshu-auto:') + 1)
         ELSE NULL
       END
       WHERE m.cluster_id = ?
@@ -690,7 +765,7 @@ async function main() {
       clusterUpdate.run(
         canonicalEvent?.id ?? null,
         matchStatus === "promoted" ? "promoted" : matchStatus,
-        canonicalEvent ? "promoted" : matchStatus === "possible" ? "needs-review" : "staged",
+        canonicalEvent ? "promoted" : matchStatus === "possible" ? "needs-review" : cluster.review_status,
         toJson({
           ...raw,
           canonicalizedAt: now,

@@ -137,7 +137,7 @@ function listPeople(db, url) {
       e.confidence,
       e.review_status,
       (
-        SELECT COUNT(*)
+        SELECT COUNT(DISTINCT ee.event_id)
         FROM event_entities ee
         WHERE ee.entity_id = e.id
       ) AS event_count,
@@ -199,6 +199,19 @@ function personDetail(db, entityIdOrLegacyId) {
   `).all(entityId, entityId);
 
   const events = db.prepare(`
+    WITH linked_events AS (
+      SELECT
+        event_id,
+        CASE
+          WHEN MAX(role = 'subject') = 1 THEN 'subject'
+          WHEN MAX(role = 'participant-candidate') = 1 THEN 'participant-candidate'
+          WHEN MAX(role = 'mentioned-source') = 1 THEN 'mentioned-source'
+          ELSE MIN(role)
+        END AS role
+      FROM event_entities
+      WHERE entity_id = ?
+      GROUP BY event_id
+    )
     SELECT
       ev.id,
       ev.title,
@@ -210,9 +223,8 @@ function personDetail(db, entityIdOrLegacyId) {
       ev.summary,
       ev.confidence,
       ee.role
-    FROM event_entities ee
+    FROM linked_events ee
     JOIN events ev ON ev.id = ee.event_id
-    WHERE ee.entity_id = ?
     ORDER BY COALESCE(ev.time_start, 9999), ev.id
     LIMIT 100
   `).all(entityId);
@@ -234,6 +246,8 @@ function personDetail(db, entityIdOrLegacyId) {
       sp.raw_json AS passage_raw_json
     FROM evidence_links el
     LEFT JOIN sources s ON s.id = el.source_id
+    LEFT JOIN source_mentions sm ON sm.id = el.mention_id
+    LEFT JOIN source_passages sp ON sp.id = el.passage_id
     WHERE el.subject_id IN (
       SELECT event_id FROM event_entities WHERE entity_id = ?
       UNION
@@ -323,6 +337,30 @@ function eventDetail(db, eventId) {
   }
 
   const entities = db.prepare(`
+    WITH linked_entities AS (
+      SELECT
+        entity_id,
+        MIN(sort_order) AS sort_order,
+        CASE
+          WHEN MAX(role = 'subject') = 1 THEN 'subject'
+          WHEN MAX(role = 'participant-candidate') = 1 THEN 'participant-candidate'
+          WHEN MAX(role = 'primary-location') = 1 THEN 'primary-location'
+          WHEN MAX(role = 'battlefield') = 1 THEN 'battlefield'
+          WHEN MAX(role = 'administrative-seat') = 1 THEN 'administrative-seat'
+          WHEN MAX(role = 'destination') = 1 THEN 'destination'
+          WHEN MAX(role = 'origin') = 1 THEN 'origin'
+          WHEN MAX(role = 'affected-area') = 1 THEN 'affected-area'
+          WHEN MAX(role = 'route-location') = 1 THEN 'route-location'
+          WHEN MAX(role = 'related-location') = 1 THEN 'related-location'
+          WHEN MAX(role = 'location-candidate') = 1 THEN 'location-candidate'
+          WHEN MAX(role = 'source-context') = 1 THEN 'source-context'
+          WHEN MAX(role = 'mentioned-source') = 1 THEN 'mentioned-source'
+          ELSE MIN(role)
+        END AS role
+      FROM event_entities
+      WHERE event_id = ?
+      GROUP BY entity_id
+    )
     SELECT
       ee.role,
       ee.sort_order,
@@ -330,9 +368,8 @@ function eventDetail(db, eventId) {
       e.entity_type,
       e.primary_label,
       e.region_id
-    FROM event_entities ee
+    FROM linked_entities ee
     JOIN entities e ON e.id = ee.entity_id
-    WHERE ee.event_id = ?
     ORDER BY ee.sort_order, e.primary_label
   `).all(eventId);
 
@@ -351,6 +388,8 @@ function eventDetail(db, eventId) {
       sp.raw_json AS passage_raw_json
     FROM evidence_links el
     LEFT JOIN sources s ON s.id = el.source_id
+    LEFT JOIN source_mentions sm ON sm.id = el.mention_id
+    LEFT JOIN source_passages sp ON sp.id = el.passage_id
     WHERE el.subject_table = 'events' AND el.subject_id = ?
     ORDER BY el.locator, el.id
   `).all(eventId);
@@ -443,7 +482,7 @@ function searchDocuments(db, url) {
     return { results: [], limit, offset };
   }
 
-  const where = [];
+  const where = ["c.review_status <> 'rejected'"];
   const joins = [];
   const params = {
     $limit: limit,
@@ -475,10 +514,24 @@ function searchDocuments(db, url) {
         ABS(COALESCE(sd.time_start, sd.time_end, 9999) - $focusYear),
         ABS(COALESCE(sd.time_end, sd.time_start, $focusYear) - COALESCE(sd.time_start, sd.time_end, $focusYear)),`
     : "";
+  const subjectPrioritySql = hasQuery
+    ? `CASE c.subject_table
+         WHEN 'entities' THEN 0
+         WHEN 'persons' THEN 0
+         WHEN 'events' THEN 1
+         WHEN 'sources' THEN 2
+         WHEN 'source_passages' THEN 3
+         WHEN 'source_mentions' THEN 4
+         WHEN 'import_evidence_cards' THEN 5
+         WHEN 'import_event_clusters' THEN 6
+         ELSE 5
+       END`
+    : "5";
 
   if (hasQuery) {
     where.push("(c.title LIKE $likeQuery OR c.body LIKE $likeQuery OR c.rowid IN (SELECT rowid FROM document_chunks_fts WHERE document_chunks_fts MATCH $ftsQuery))");
     params.$likeQuery = `%${query}%`;
+    params.$exactQuery = query;
     params.$ftsQuery = buildFtsQuery(query) || query;
   }
 
@@ -543,6 +596,7 @@ function searchDocuments(db, url) {
         LEFT JOIN evidence_links el ON (el.subject_table = 'search_documents' AND el.subject_id = sd.id) OR (el.subject_table = sd.subject_table AND el.subject_id = sd.subject_id)
         LEFT JOIN sources s ON s.id = COALESCE(sp.source_id, el.source_id)
         WHERE sd.subject_table IN ('source_passages', 'import_evidence_cards')
+          AND sd.review_status <> 'rejected'
           AND (${sourceWorkFilters[sourceWork]} OR sd.title LIKE $sourceWorkLike OR sd.body LIKE $sourceWorkLike OR sd.raw_json LIKE $sourceWorkLike)
       )
     `);
@@ -589,14 +643,15 @@ function searchDocuments(db, url) {
       WHERE ${where.length ? where.join(" AND ") : "1 = 1"}
       ORDER BY
         rank_bucket,
-        ${hasQuery ? "CASE WHEN c.title LIKE $likeQuery THEN 0 ELSE 1 END," : ""}
+        ${hasQuery ? "CASE WHEN c.title = $exactQuery THEN 0 WHEN c.title LIKE $likeQuery THEN 1 ELSE 2 END," : ""}
+        ${subjectPrioritySql},
         ${chunkYearOrderSql}
         COALESCE(c.time_start, 9999),
         c.id
       LIMIT $limit OFFSET $offset
     `).all(params);
   } catch {
-    const fallbackWhere = [];
+    const fallbackWhere = ["c.review_status <> 'rejected'"];
     const fallbackParams = {
       $limit: limit,
       $offset: offset
@@ -604,6 +659,7 @@ function searchDocuments(db, url) {
     if (hasQuery) {
       fallbackWhere.push("(c.title LIKE $likeQuery OR c.body LIKE $likeQuery)");
       fallbackParams.$likeQuery = params.$likeQuery;
+      fallbackParams.$exactQuery = params.$exactQuery;
     }
     if (region) {
       fallbackWhere.push("c.region_id = $region");
@@ -628,6 +684,7 @@ function searchDocuments(db, url) {
           LEFT JOIN evidence_links el ON (el.subject_table = 'search_documents' AND el.subject_id = sd.id) OR (el.subject_table = sd.subject_table AND el.subject_id = sd.subject_id)
           LEFT JOIN sources s ON s.id = COALESCE(sp.source_id, el.source_id)
           WHERE sd.subject_table IN ('source_passages', 'import_evidence_cards')
+            AND sd.review_status <> 'rejected'
             AND (${sourceWorkFilters[sourceWork]} OR sd.title LIKE $sourceWorkLike OR sd.body LIKE $sourceWorkLike OR sd.raw_json LIKE $sourceWorkLike)
         )
       `);
@@ -668,7 +725,8 @@ function searchDocuments(db, url) {
       ${joins.join("\n")}
       WHERE ${fallbackWhere.length ? fallbackWhere.join(" AND ") : "1 = 1"}
       ORDER BY
-        ${hasQuery ? "CASE WHEN c.title LIKE $likeQuery THEN 0 ELSE 1 END," : ""}
+        ${hasQuery ? "CASE WHEN c.title = $exactQuery THEN 0 WHEN c.title LIKE $likeQuery THEN 1 ELSE 2 END," : ""}
+        ${subjectPrioritySql},
         ${chunkYearOrderSql}
         COALESCE(c.time_start, 9999),
         c.id
@@ -681,7 +739,7 @@ function searchDocuments(db, url) {
   }
 
   if (sourceWork && sourceWorkFilters[sourceWork] && (!hasQuery || results.length < limit)) {
-    const directWhere = [sourceWorkFilters[sourceWork]];
+    const directWhere = [sourceWorkFilters[sourceWork], "sd.review_status <> 'rejected'"];
     const directParams = {
       $limit: hasQuery ? limit - results.length : limit,
       $offset: results.length ? 0 : offset
@@ -754,6 +812,14 @@ function searchDocuments(db, url) {
       ? [...results, ...directResults].slice(0, limit)
       : [...directResults, ...results].slice(0, limit);
   }
+
+  const seenSubjects = new Set();
+  results = results.filter((result) => {
+    const key = `${result.subject_table}:${result.subject_id}`;
+    if (seenSubjects.has(key)) return false;
+    seenSubjects.add(key);
+    return true;
+  });
 
   const entitiesByChunk = new Map();
   if (results.length > 0) {
@@ -844,7 +910,7 @@ function searchDocumentsLegacy(db, url) {
     return { results: [], limit, offset };
   }
 
-  const where = ["(title LIKE $query OR body LIKE $query)"];
+  const where = ["review_status <> 'rejected'", "(title LIKE $query OR body LIKE $query)"];
   const params = { $query: `%${query}%`, $limit: limit, $offset: offset };
 
   if (region) {
@@ -2761,22 +2827,96 @@ function frontendPersonDetail(db, entityIdOrLegacyId, locale = "zh") {
     };
   });
 
-  const personEvents = db.prepare(`
+  const personEventPeople = db.prepare(`
     SELECT
-      ev.raw_json,
-      COALESCE(evi.title, evizh.title, ev.title) AS title,
-      COALESCE(evi.summary, evizh.summary, ev.summary) AS summary
+      substr(ee.entity_id, 8) AS person_id,
+      en.primary_label,
+      ee.role
+    FROM event_entities ee
+    JOIN entities en ON en.id = ee.entity_id AND en.entity_type = 'person'
+    WHERE ee.event_id = ?
+    ORDER BY ee.sort_order, en.primary_label, ee.role
+  `);
+  const personEventPlaces = db.prepare(`
+    SELECT
+      ee.entity_id,
+      en.primary_label,
+      ee.role
+    FROM event_entities ee
+    JOIN entities en ON en.id = ee.entity_id AND en.entity_type = 'place'
+    WHERE ee.event_id = ?
+    ORDER BY ee.sort_order, en.primary_label, ee.role
+  `);
+  const personEventFeatures = db.prepare(`
+    SELECT feature_id
+    FROM map_feature_events
+    WHERE event_id = ?
+    ORDER BY feature_id
+  `);
+  const personEvents = db.prepare(`
+    SELECT DISTINCT
+      ev.*,
+      COALESCE(evi.title, evizh.title, ev.title) AS localized_title,
+      COALESCE(evi.display_time, evizh.display_time, ev.display_time) AS localized_display_time,
+      COALESCE(evi.summary, evizh.summary, ev.summary) AS localized_summary
     FROM event_entities ee
     JOIN events ev ON ev.id = ee.event_id
     LEFT JOIN event_i18n evi ON evi.event_id = ev.id AND evi.locale = ?
     LEFT JOIN event_i18n evizh ON evizh.event_id = ev.id AND evizh.locale = 'zh'
     WHERE ee.entity_id = ? AND ev.id NOT LIKE 'life:%'
     ORDER BY COALESCE(ev.time_start, 9999), ev.id
-  `).all(locale, entityId).map((row) => ({
-    ...parseRawJson(row.raw_json),
-    title: row.title,
-    summary: row.summary
-  }));
+  `).all(locale, entityId).map((row) => {
+    const raw = parseRawJson(row.raw_json);
+    const placeRows = personEventPlaces.all(row.id);
+    const personRoles = {};
+    const linkedPersonIds = [];
+    const linkedPeople = [];
+    for (const personRow of personEventPeople.all(row.id)) {
+      if (!linkedPersonIds.includes(personRow.person_id)) linkedPersonIds.push(personRow.person_id);
+      if (!linkedPeople.includes(personRow.primary_label)) linkedPeople.push(personRow.primary_label);
+      personRoles[personRow.person_id] ??= [];
+      if (!personRoles[personRow.person_id].includes(personRow.role)) {
+        personRoles[personRow.person_id].push(personRow.role);
+      }
+    }
+
+    return {
+      ...raw,
+      id: row.id,
+      title: row.localized_title ?? row.title,
+      startYear: raw.startYear ?? row.time_start,
+      endYear: raw.endYear ?? row.time_end ?? row.time_start,
+      region: raw.region ?? row.region_id,
+      category: raw.category ?? row.event_type ?? "politics",
+      summary: row.localized_summary ?? raw.summary ?? row.summary ?? "",
+      confidence: raw.confidence ?? row.confidence ?? "medium",
+      people: [...new Set([...(raw.people ?? []), ...linkedPeople])],
+      personIds: [...new Set([...(raw.personIds ?? []), ...linkedPersonIds])],
+      personRoles,
+      locationName: raw.locationName
+        ?? placeRows.find((place) => place.role === "primary-location")?.primary_label
+        ?? null,
+      places: [...new Set([
+        ...(raw.places ?? []),
+        ...placeRows
+          .filter((place) => place.role !== "source-context")
+          .map((place) => place.primary_label),
+      ])],
+      placeLinks: placeRows.map((place) => ({
+        id: place.entity_id,
+        label: place.primary_label,
+        role: place.role,
+      })),
+      polities: raw.polities ?? [],
+      relatedEvents: raw.relatedEvents ?? [],
+      tags: raw.tags ?? [],
+      sources: raw.sources ?? [],
+      sourceRefs: raw.sourceRefs ?? [],
+      titleZh: raw.titleZh ?? row.localized_title ?? null,
+      titleEn: raw.titleEn ?? raw.eventLabel ?? row.localized_title ?? row.title,
+      mapFeatureIds: personEventFeatures.all(row.id).map((item) => item.feature_id)
+    };
+  });
 
   return {
     schemaVersion: 2,
@@ -2797,6 +2937,26 @@ function frontendEvents(db, locale = "zh") {
     WHERE event_id = ?
     ORDER BY feature_id
   `);
+  const eventPeople = db.prepare(`
+    SELECT
+      substr(ee.entity_id, 8) AS person_id,
+      en.primary_label,
+      ee.role
+    FROM event_entities ee
+    JOIN entities en ON en.id = ee.entity_id AND en.entity_type = 'person'
+    WHERE ee.event_id = ?
+    ORDER BY ee.sort_order, en.primary_label, ee.role
+  `);
+  const eventPlaces = db.prepare(`
+    SELECT
+      ee.entity_id,
+      en.primary_label,
+      ee.role
+    FROM event_entities ee
+    JOIN entities en ON en.id = ee.entity_id AND en.entity_type = 'place'
+    WHERE ee.event_id = ?
+    ORDER BY ee.sort_order, en.primary_label, ee.role
+  `);
 
   return {
     schemaVersion: 2,
@@ -2815,6 +2975,19 @@ function frontendEvents(db, locale = "zh") {
       ORDER BY COALESCE(ev.time_start, 9999), ev.id
     `).all(locale).map((row) => {
       const raw = parseRawJson(row.raw_json);
+      const personRows = eventPeople.all(row.id);
+      const placeRows = eventPlaces.all(row.id);
+      const personRoles = {};
+      const linkedPersonIds = [];
+      const linkedPeople = [];
+      for (const personRow of personRows) {
+        if (!linkedPersonIds.includes(personRow.person_id)) linkedPersonIds.push(personRow.person_id);
+        if (!linkedPeople.includes(personRow.primary_label)) linkedPeople.push(personRow.primary_label);
+        personRoles[personRow.person_id] ??= [];
+        if (!personRoles[personRow.person_id].includes(personRow.role)) {
+          personRoles[personRow.person_id].push(personRow.role);
+        }
+      }
 
       return {
         ...raw,
@@ -2826,8 +2999,23 @@ function frontendEvents(db, locale = "zh") {
         category: raw.category ?? row.event_type ?? "politics",
         summary: row.localized_summary ?? raw.summary ?? row.summary ?? "",
         confidence: raw.confidence ?? row.confidence ?? "medium",
-        people: raw.people ?? [],
-        personIds: raw.personIds ?? [],
+        people: [...new Set([...(raw.people ?? []), ...linkedPeople])],
+        personIds: [...new Set([...(raw.personIds ?? []), ...linkedPersonIds])],
+        personRoles,
+        locationName: raw.locationName
+          ?? placeRows.find((place) => place.role === "primary-location")?.primary_label
+          ?? null,
+        places: [...new Set([
+          ...(raw.places ?? []),
+          ...placeRows
+            .filter((place) => place.role !== "source-context")
+            .map((place) => place.primary_label),
+        ])],
+        placeLinks: placeRows.map((place) => ({
+          id: place.entity_id,
+          label: place.primary_label,
+          role: place.role,
+        })),
         polities: raw.polities ?? [],
         relatedEvents: raw.relatedEvents ?? [],
         tags: raw.tags ?? [],

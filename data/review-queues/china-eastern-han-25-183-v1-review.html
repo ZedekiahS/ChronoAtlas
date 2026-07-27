@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>东汉正史事件晋级模板 25-183人工审核</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+        background: #f5f6f7;
+        color: #1f262d;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-width: 320px; background: #f5f6f7; }
+      button, input, select, textarea { font: inherit; letter-spacing: 0; }
+      button, select, input, textarea { border-radius: 4px; }
+      button { cursor: pointer; }
+      .page-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid #cdd3d8;
+        background: rgba(255, 255, 255, 0.97);
+      }
+      .header-inner { max-width: 1680px; margin: 0 auto; padding: 14px 18px 10px; }
+      .title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+      h1 { margin: 0; font-size: 20px; line-height: 1.35; font-weight: 700; }
+      .meta { margin-top: 4px; color: #66717c; font-size: 12px; }
+      .actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
+      .command {
+        min-height: 34px;
+        padding: 6px 11px;
+        border: 1px solid #aeb7bf;
+        background: #fff;
+        color: #29343d;
+      }
+      .command:hover { border-color: #64717b; background: #f7f9fa; }
+      .command.primary { border-color: #236844; background: #236844; color: #fff; }
+      .command.primary:hover { background: #195236; }
+      .summary-strip { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 11px; color: #4a5660; font-size: 13px; }
+      .summary-strip strong { color: #182129; }
+      .tabs {
+        display: flex;
+        gap: 2px;
+        margin-top: 11px;
+        border-bottom: 1px solid #d6dce1;
+      }
+      .tab {
+        min-height: 35px;
+        padding: 7px 13px;
+        border: 0;
+        border-bottom: 3px solid transparent;
+        border-radius: 0;
+        background: transparent;
+        color: #5d6872;
+      }
+      .tab[aria-selected="true"] { border-bottom-color: #1e6a49; color: #173b2c; font-weight: 700; }
+      main { max-width: 1680px; margin: 0 auto; padding: 14px 18px 30px; }
+      .toolbar {
+        display: grid;
+        grid-template-columns: minmax(220px, 1fr) 180px auto;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .toolbar input, .toolbar select {
+        width: 100%;
+        height: 36px;
+        padding: 6px 9px;
+        border: 1px solid #b8c0c7;
+        background: #fff;
+        color: #202830;
+      }
+      .progress { justify-self: end; color: #4c5963; font-size: 13px; white-space: nowrap; }
+      .table-shell { max-height: calc(100vh - 210px); overflow: auto; border: 1px solid #cbd2d8; background: #fff; }
+      table { width: 100%; min-width: 1180px; border-collapse: collapse; table-layout: fixed; }
+      th {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        padding: 8px 9px;
+        border-bottom: 1px solid #bfc7cd;
+        border-right: 1px solid #dde2e6;
+        background: #edf0f2;
+        color: #3c4750;
+        font-size: 12px;
+        text-align: left;
+        vertical-align: bottom;
+      }
+      td {
+        padding: 9px;
+        border-bottom: 1px solid #dfe4e8;
+        border-right: 1px solid #edf0f2;
+        vertical-align: top;
+        font-size: 13px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+      }
+      tr:last-child td { border-bottom: 0; }
+      tr.is-complete { background: #f5faf7; }
+      tr.is-rejected { background: #fff8f7; }
+      .index { color: #7b858d; text-align: right; }
+      .year { font-variant-numeric: tabular-nums; font-weight: 700; }
+      .main-label { font-weight: 700; color: #172129; }
+      .subline { margin-top: 3px; color: #64707a; font-size: 12px; }
+      .compact-list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+      .tag { padding: 1px 5px; border: 1px solid #c5cdd3; border-radius: 3px; background: #f7f8f9; font-size: 11px; color: #4e5962; }
+      .tag.person { border-color: #93b2a2; background: #f1f8f4; color: #25543c; }
+      .tag.place { border-color: #c3aa75; background: #fbf7ed; color: #654d1e; }
+      .tag.warn { border-color: #d1a15f; background: #fff7e9; color: #6c4712; }
+      .tag.danger { border-color: #d3a09a; background: #fff2f1; color: #7a2f27; }
+      details { margin-top: 6px; }
+      summary { color: #3d596f; cursor: pointer; font-size: 12px; }
+      .evidence-block { margin-top: 6px; padding: 7px 8px; border-left: 3px solid #9daab4; background: #f7f8f9; }
+      .evidence-source { color: #4e5b65; font-size: 12px; }
+      .quote { margin-top: 3px; color: #242c33; }
+      .merge-reference { margin-top: 8px; }
+      .merge-candidate { padding: 7px 0; border-top: 1px solid #dfe4e8; }
+      .merge-candidate:first-of-type { margin-top: 5px; }
+      .merge-candidate-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+      .merge-candidate-title { font-weight: 700; color: #243039; }
+      .merge-candidate-id { margin-top: 2px; color: #69747d; font-family: Consolas, monospace; font-size: 11px; }
+      .choose-merge {
+        flex: 0 0 auto;
+        min-height: 28px;
+        padding: 4px 7px;
+        border: 1px solid #8f9ba4;
+        background: #fff;
+        color: #33414b;
+      }
+      .choose-merge:hover { border-color: #466270; background: #f3f7f8; }
+      a { color: #1e5d87; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .decision, .edit-field, .notes-field {
+        width: 100%;
+        border: 1px solid #b9c1c8;
+        background: #fff;
+        color: #202930;
+      }
+      .decision { height: 34px; padding: 5px 7px; }
+      .edit-field { height: 32px; margin-top: 6px; padding: 5px 7px; }
+      .notes-field { min-height: 68px; padding: 6px 7px; resize: vertical; }
+      .empty { padding: 40px 20px; color: #6c7780; text-align: center; }
+      .save-status { min-width: 74px; color: #58646e; font-size: 12px; text-align: right; }
+      .save-status.error { color: #9a3025; }
+      #import-file { display: none; }
+      @media (max-width: 760px) {
+        .header-inner, main { padding-left: 10px; padding-right: 10px; }
+        .title-row { display: block; }
+        .actions { justify-content: flex-start; margin-top: 10px; }
+        .toolbar { grid-template-columns: 1fr 150px; }
+        .progress { grid-column: 1 / -1; justify-self: start; }
+        .tabs { overflow-x: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="header-inner">
+        <div class="title-row">
+          <div>
+            <h1 id="page-title">东汉正史事件晋级模板 25-183人工审核</h1>
+            <div class="meta" id="page-meta"></div>
+          </div>
+          <div class="actions">
+            <button class="command" id="export-csv" type="button">导出当前表 CSV</button>
+            <button class="command" id="import-json" type="button">导入审核结果</button>
+            <button class="command primary" id="export-json" type="button">导出审核结果 JSON</button>
+            <span class="save-status" id="save-status">已本地保存</span>
+            <input id="import-file" type="file" accept="application/json,.json" />
+          </div>
+        </div>
+        <div class="summary-strip" id="summary-strip"></div>
+        <nav class="tabs" id="tabs" aria-label="审核对象"></nav>
+      </div>
+    </header>
+    <main>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="搜索标题、人物、地点、原文或 ID" aria-label="搜索当前审核表" />
+        <select id="decision-filter" aria-label="按审核决定筛选"></select>
+        <div class="progress" id="progress"></div>
+      </div>
+      <div class="table-shell" id="table-shell"></div>
+    </main>
+    <script type="application/json" id="review-data">{"schema":"chronoatlas.official-history-review.v1","generatedAt":"2026-07-11T03:20:25.544Z","database":"db/chronoatlas.sqlite","profile":{"id":"china-eastern-han-25-183-v1","label":"东汉正史事件晋级模板 25-183","regionId":"china","timeStart":25,"timeEnd":183,"generatorId":"promote-source-event-cards:china-eastern-han-25-183-v1"},"pageTitle":"东汉正史事件晋级模板 25-183人工审核","events":[{"id":"official-history-event:814e28ce10ecab943bf7","year":25,"title":"吴汉等击檀乡","eventType":"war","summary":"建武元年，世祖入洛阳，遣大司马吴汉等击檀乡，明年春，大破降之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-139c7486d5327aa6","label":"吴汉","role":"participant-candidate"}],"places":[{"id":"place:tanxiang","label":"檀乡","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-023","sourceTitle":"后汉书","sourceSection":"后汉书 卷二十一 任李万邳刘耿列传第十一 · 列传","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/022.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-023:0001","mentionId":"houhanshu-eastern-han-auto-candidate:0086e4fda7a7e157eb138c80","locator":"后汉书·国学导航 · 段 1","quote":"建武元年，世祖入洛阳，遣大司马吴汉等击檀乡，明年春，大破降之。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:0086e4fda7a7e157eb138c80"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:0086e4fda7a7e157eb138c80","clusterIds":[],"mergeCandidates":[{"id":"eh-025-liu-xiu-found-eastern-han","title":"刘秀称帝，东汉建立","event_type":"state-formation","time_start":25,"summary":"刘秀在河北称帝，东汉政权建立，随后继续平定各地割据势力。","review_status":"reviewed","people":["刘秀"],"places":[]},{"id":"life:eh-liu-xiu-25-accession","title":"称帝建立东汉","event_type":"accession","time_start":25,"summary":"刘秀在河北称帝，东汉政权正式成立。","review_status":"draft","people":["刘秀"],"places":[]}]},{"id":"official-history-event:9741d84eb3b6fc323869","year":26,"title":"邓禹西击赤眉","eventType":"war","summary":"建武二年，大司徒邓禹西击赤眉，屯云阳。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-34078e2ccec9e3ed","label":"邓禹","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-015","sourceTitle":"后汉书","sourceSection":"后汉书 卷十三 隗嚣公孙述列传第三 · 列传","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/014.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-015:0003","mentionId":"houhanshu-eastern-han-auto-candidate:8b7ba170a31f507aac03c5c4","locator":"后汉书·国学导航 · 段 3","quote":"建武二年，大司徒邓禹西击赤眉，屯云阳。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:8b7ba170a31f507aac03c5c4"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:8b7ba170a31f507aac03c5c4","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:2a0a79d3722196055aed","year":41,"title":"郭皇后被废","eventType":"politics","summary":"及郭皇后废，建武十七年废。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-33872bdc5bdbea83","label":"郭圣通","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-032","sourceTitle":"后汉书","sourceSection":"后汉书 卷二十九 申屠刚鲍永郅恽列传第十九 · 列传","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/031.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-032:0006","mentionId":"houhanshu-eastern-han-auto-candidate:bd6f276da9c034c73e484c23","locator":"后汉书·国学导航 · 段 6","quote":"及郭皇后废，建武十七年废。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:bd6f276da9c034c73e484c23"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:bd6f276da9c034c73e484c23","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:81a3292ae845603930f8","year":45,"title":"刘尚破益州夷","eventType":"war","summary":"二十一年春正月，武威将军刘尚破益州夷，平之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-200601b411dc3e2a","label":"刘尚","role":"participant-candidate"}],"places":[{"id":"place:yi-zhou","label":"益州","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-002","sourceTitle":"后汉书","sourceSection":"后汉书 卷一下 光武帝纪第一下 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/001.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-002:0006","mentionId":"houhanshu-eastern-han-auto-candidate:f398e7cf04f77cf1fa7e8a19","locator":"后汉书·国学导航 · 段 6","quote":"二十一年春正月，武威将军刘尚破益州夷，平之。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:f398e7cf04f77cf1fa7e8a19"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:f398e7cf04f77cf1fa7e8a19","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:eebe10d47589a76a445f","year":45,"title":"马援出塞击乌桓","eventType":"war","summary":"冬十月，遣伏波将军马援出塞击乌桓，不克。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-10633313875767f4","label":"马援","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-002","sourceTitle":"后汉书","sourceSection":"后汉书 卷一下 光武帝纪第一下 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/001.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-002:0006","mentionId":"houhanshu-eastern-han-auto-candidate:577f3fca0e7c25f3e0882d30","locator":"后汉书·国学导航 · 段 6","quote":"冬十月，遣伏波将军马援出塞击乌桓，不克。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:577f3fca0e7c25f3e0882d30"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:577f3fca0e7c25f3e0882d30","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:2aface1384f5c5aaf5a0","year":47,"title":"南郡蛮叛","eventType":"war","summary":"二十三年春正月，南郡蛮叛，遣武威将军刘尚讨破之，徙其种人于江夏。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-200601b411dc3e2a","label":"刘尚","role":"mentioned-source"}],"places":[{"id":"place:nanjun","label":"南郡","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-002","sourceTitle":"后汉书","sourceSection":"后汉书 卷一下 光武帝纪第一下 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/001.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-002:0006","mentionId":"houhanshu-eastern-han-auto-candidate:d3d9696851cfa1c050a8d4a1","locator":"后汉书·国学导航 · 段 6","quote":"二十三年春正月，南郡蛮叛，遣武威将军刘尚讨破之，徙其种人于江夏。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:d3d9696851cfa1c050a8d4a1"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:d3d9696851cfa1c050a8d4a1","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:9ed4881fec386685082b","year":58,"title":"马武等击滇吾于西邯","eventType":"war","summary":"永平元年，复遣中郎将窦固、捕虏将军马武等击滇吾于西邯，大破之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-c0dd0dd036aafcde","label":"窦固","role":"mentioned-source"},{"id":"person:official-history-person-d660fb6648fbe3fd","label":"马武","role":"participant-candidate"}],"places":[{"id":"place:xihan","label":"西邯","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-096","sourceTitle":"后汉书","sourceSection":"后汉书 卷八十七 西羌传第七十七 · 列传","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/095.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-096:0003","mentionId":"houhanshu-eastern-han-auto-candidate:6ae32c0fb2fa317c25662926","locator":"后汉书·国学导航 · 段 3","quote":"” 永平元年，复遣中郎将窦固、捕虏将军马武等击滇吾于西邯，大破之。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:6ae32c0fb2fa317c25662926"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:6ae32c0fb2fa317c25662926","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:f2b3e053a8cd54de8488","year":74,"title":"刘张出击车师","eventType":"war","summary":"永平十七年冬，骑都尉刘张出击车师，请恭为司马，与奉车都尉窦固及从弟驸马都尉秉破降之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-02037a4fe736af8e","label":"刘张","role":"participant-candidate"}],"places":[{"id":"place:cheshi","label":"车师","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-021","sourceTitle":"后汉书","sourceSection":"后汉书 卷十九 耿弇列传第九 · 列传","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/020.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-021:0005","mentionId":"houhanshu-eastern-han-auto-candidate:173a433801d774b958d80f2f","locator":"后汉书·国学导航 · 段 5","quote":"永平十七年冬，骑都尉刘张出击车师，请恭为司马，与奉车都尉窦固及从弟驸马都尉秉破降之。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:173a433801d774b958d80f2f"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:173a433801d774b958d80f2f","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:7606c342af5b621b6226","year":77,"title":"烧当羌叛","eventType":"war","summary":"六月，烧当羌叛，金城太守郝崇讨之，败绩，羌遂寇汉阳。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-039e348ec88a0f67","label":"郝崇","role":"mentioned-source"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-004","sourceTitle":"后汉书","sourceSection":"后汉书 卷三 肃宗孝章帝纪第三 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/003.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-004:0002","mentionId":"houhanshu-eastern-han-auto-candidate:2f97f0f1b8604a2ca59d9142","locator":"后汉书·国学导航 · 段 2","quote":"六月，烧当羌叛，金城太守郝崇讨之，败绩，羌遂寇汉阳。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:2f97f0f1b8604a2ca59d9142"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:2f97f0f1b8604a2ca59d9142","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:d77547fb1d38889fdba0","year":78,"title":"班超击姑墨","eventType":"war","summary":"闰月，西域假司马班超击姑墨，大破之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:eh-ban-chao","label":"班超","role":"participant-candidate"}],"places":[{"id":"place:gumo","label":"姑墨","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-004","sourceTitle":"后汉书","sourceSection":"后汉书 卷三 肃宗孝章帝纪第三 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/003.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-004:0002","mentionId":"houhanshu-eastern-han-auto-candidate:d6f4f1af78658b820d38c77d","locator":"后汉书·国学导航 · 段 2","quote":"闰月，西域假司马班超击姑墨，大破之。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:d6f4f1af78658b820d38c77d"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:d6f4f1af78658b820d38c77d","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:89d008e4fb1c5d98275b","year":87,"title":"傅育追击叛羌","eventType":"war","summary":"章和元年春三月，护羌校尉傅育追击叛羌，战殁。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-673ce4d5f744da1a","label":"傅育","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-004","sourceTitle":"后汉书","sourceSection":"后汉书 卷三 肃宗孝章帝纪第三 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/003.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-004:0008","mentionId":"houhanshu-eastern-han-auto-candidate:07ae07e191e6d2dbd1db581a","locator":"后汉书·国学导航 · 段 8","quote":"章和元年春三月，护羌校尉傅育追击叛羌，战殁。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:07ae07e191e6d2dbd1db581a"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:07ae07e191e6d2dbd1db581a","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:dfee1a6c26823075d56b","year":88,"title":"张纡诱诛烧当种羌迷吾等","eventType":"war","summary":"章和二年，护羌校尉张纡诱诛烧当种羌迷吾等，由是诸羌大怒，谋欲报怨，朝廷忧之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-160cf8ad3ae760c5","label":"张纡","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-018","sourceTitle":"后汉书","sourceSection":"后汉书 卷十六 邓寇列传第六 · 列传","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/017.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-018:0003","mentionId":"houhanshu-eastern-han-auto-candidate:b1d154236cf9fcf0c0215b2e","locator":"后汉书·国学导航 · 段 3","quote":"章和二年，护羌校尉张纡诱诛烧当种羌迷吾等，由是诸羌大怒，谋欲报怨，朝廷忧之。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:b1d154236cf9fcf0c0215b2e"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:b1d154236cf9fcf0c0215b2e","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:2090d9596008d03d139b","year":88,"title":"窦宪击北匈奴","eventType":"war","summary":"章和二年，复拜征西将军，副车骑将军窦宪击北匈奴，大破之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:eh-dou-xian","label":"窦宪","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-021","sourceTitle":"后汉书","sourceSection":"后汉书 卷十九 耿弇列传第九 · 列传","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/020.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-021:0004","mentionId":"houhanshu-eastern-han-auto-candidate:16d379de70d370122c2052a9","locator":"后汉书·国学导航 · 段 4","quote":"章和二年，复拜征西将军，副车骑将军窦宪击北匈奴，大破之。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:16d379de70d370122c2052a9"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:16d379de70d370122c2052a9","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:3422e146f91fdecc8e8e","year":89,"title":"窦宪大破匈奴","eventType":"war","summary":"和帝永元元年，大将军窦宪大破匈奴。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:eh-dou-xian","label":"窦宪","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-097","sourceTitle":"后汉书","sourceSection":"后汉书 卷八十八 西域传第七十八 · 列传","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/096.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-097:0001","mentionId":"houhanshu-eastern-han-auto-candidate:df4e180d0c32b778736ae305","locator":"后汉书·国学导航 · 段 1","quote":"和帝永元元年，大将军窦宪大破匈奴。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:df4e180d0c32b778736ae305"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:df4e180d0c32b778736ae305","clusterIds":[],"mergeCandidates":[{"id":"life:eh-dou-xian-89-campaign","title":"燕然勒石","event_type":"campaign","time_start":89,"summary":"窦宪率军大破北匈奴，刻石燕然。","review_status":"draft","people":["窦宪"],"places":[]},{"id":"eh-089-dou-xian-defeats-northern-xiongnu","title":"窦宪大破北匈奴，燕然勒石","event_type":"war","time_start":89,"summary":"窦宪率汉军北伐，大破北匈奴并刻石燕然，是东汉北方边疆叙事的关键事件。","review_status":"reviewed","people":["窦宪"],"places":[]}]},{"id":"official-history-event:47aa01971254ceb0e24a","year":90,"title":"窦宪破北匈奴","eventType":"war","summary":"和帝永元二年，大将军窦宪破北匈奴，车师震慑，前后王各遣子奉贡入侍，并赐印绶金帛。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:eh-dou-xian","label":"窦宪","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-097","sourceTitle":"后汉书","sourceSection":"后汉书 卷八十八 西域传第七十八 · 列传","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/096.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-097:0006","mentionId":"houhanshu-eastern-han-auto-candidate:b99958640747e8e04c61ac99","locator":"后汉书·国学导航 · 段 6","quote":"和帝永元二年，大将军窦宪破北匈奴，车师震慑，前后王各遣子奉贡入侍，并赐印绶金帛。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:b99958640747e8e04c61ac99"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:b99958640747e8e04c61ac99","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:a8843bd22b1239b3ed65","year":94,"title":"班超发诸国兵讨焉耆","eventType":"war","summary":"至永元六年，都护班超发诸国兵讨焉耆、危须、尉黎、山国，遂斩焉耆、尉黎二王首，传送京师，县蛮夷邸。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:eh-ban-chao","label":"班超","role":"participant-candidate"}],"places":[{"id":"place:yanqi","label":"焉耆","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-097","sourceTitle":"后汉书","sourceSection":"后汉书 卷八十八 西域传第七十八 · 列传","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/096.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-097:0005","mentionId":"houhanshu-eastern-han-auto-candidate:c121b71532fa6c596297410c","locator":"后汉书·国学导航 · 段 5","quote":"至永元六年，都护班超发诸国兵讨焉耆、危须、尉黎、山国，遂斩焉耆、尉黎二王首，传送京师，县蛮夷邸。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:c121b71532fa6c596297410c"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:c121b71532fa6c596297410c","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:d3c8fe8461e54dd2a706","year":105,"title":"耿夔击貊人","eventType":"war","summary":"秋九月，辽东太守耿夔击貊人，破之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-8ccf31fbb7cfb5f6","label":"耿夔","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-005","sourceTitle":"后汉书","sourceSection":"后汉书 卷四 孝和孝殇帝纪第四 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/004.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-005:0007","mentionId":"houhanshu-eastern-han-auto-candidate:de3a5ae035f62cae0bd4e63f","locator":"后汉书·国学导航 · 段 7","quote":"秋九月，辽东太守耿夔击貊人，破之。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:de3a5ae035f62cae0bd4e63f"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:de3a5ae035f62cae0bd4e63f","clusterIds":[],"mergeCandidates":[{"id":"life:eh-cai-lun-105-culture","title":"奏上造纸法","event_type":"culture","time_start":105,"summary":"蔡伦以树肤、麻头、敝布、鱼网等造纸并奏上。","review_status":"draft","people":["蔡伦"],"places":[]},{"id":"eh-105-cai-lun-paper","title":"蔡伦奏上造纸法","event_type":"culture","time_start":105,"summary":"蔡伦奏上改良造纸法，成为东汉技术与文书制度史上的重要节点。","review_status":"reviewed","people":["蔡伦"],"places":[]}]},{"id":"official-history-event:888139a39fee7c3acf77","year":110,"title":"邓太后诏赦阴氏诸徙者悉归故郡","eventType":"politics","summary":"永初四年，邓太后诏赦阴氏诸徙者悉归故郡，还其资财五百余万。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:eh-deng-sui","label":"邓绥","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-011","sourceTitle":"后汉书","sourceSection":"后汉书 卷十上 皇后纪第十上 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/010.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-011:0006","mentionId":"houhanshu-eastern-han-auto-candidate:97708e164604d82e28e0356d","locator":"后汉书·国学导航 · 段 6","quote":"永初四年，邓太后诏赦阴氏诸徙者悉归故郡，还其资财五百余万。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:97708e164604d82e28e0356d"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:97708e164604d82e28e0356d","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:3473793c1344c974510a","year":111,"title":"赵博遣客刺杀杜琦","eventType":"war","summary":"十二月，汉阳太守赵博遣客刺杀杜琦。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-23de76a7cb299ba1","label":"赵博","role":"participant-candidate"},{"id":"person:official-history-person-cdc98f3b4f2436dd","label":"杜琦","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书","sourceSection":"后汉书 卷五 孝安帝纪第五 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-006:0004","mentionId":"houhanshu-eastern-han-auto-candidate:21fc3c2a61176b2ce11298bd","locator":"后汉书·国学导航 · 段 4","quote":"十二月，汉阳太守赵博遣客刺杀杜琦。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:21fc3c2a61176b2ce11298bd"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:21fc3c2a61176b2ce11298bd","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:6cd9ce02a8dfa8ff28fc","year":116,"title":"任尚遣兵击破先零羌于丁奚城","eventType":"war","summary":"六月，中郎将任尚遣兵击破先零羌于丁奚城。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-1acec78a2cbc2701","label":"任尚","role":"participant-candidate"}],"places":[{"id":"place:dingxi-city","label":"丁奚城","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书","sourceSection":"后汉书 卷五 孝安帝纪第五 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-006:0005","mentionId":"houhanshu-eastern-han-auto-candidate:43af23a77fad072ded381f66","locator":"后汉书·国学导航 · 段 5","quote":"六月，中郎将任尚遣兵击破先零羌于丁奚城。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:43af23a77fad072ded381f66"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:43af23a77fad072ded381f66","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:b5c8b1748ee224659518","year":116,"title":"任尚遣兵击破先零羌于北地","eventType":"war","summary":"十二月丁巳，任尚遣兵击破先零羌于北地。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-1acec78a2cbc2701","label":"任尚","role":"participant-candidate"}],"places":[{"id":"place:beidi","label":"北地","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书","sourceSection":"后汉书 卷五 孝安帝纪第五 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-006:0005","mentionId":"houhanshu-eastern-han-auto-candidate:1405aee7392d7dcdf62678de","locator":"后汉书·国学导航 · 段 5","quote":"十二月丁巳，任尚遣兵击破先零羌于北地。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:1405aee7392d7dcdf62678de"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:1405aee7392d7dcdf62678de","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:1223cf11ba845504c00a","year":116,"title":"邓遵率南匈奴击先零羌于灵州","eventType":"war","summary":"癸酉，度辽将军邓遵率南匈奴击先零羌于灵州，破之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-2179061f027c61b0","label":"邓遵","role":"participant-candidate"}],"places":[{"id":"place:lingzhou","label":"灵州","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书","sourceSection":"后汉书 卷五 孝安帝纪第五 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-006:0005","mentionId":"houhanshu-eastern-han-auto-candidate:26558504105766e930175ce4","locator":"后汉书·国学导航 · 段 5","quote":"癸酉，度辽将军邓遵率南匈奴击先零羌于灵州，破之。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:26558504105766e930175ce4"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:26558504105766e930175ce4","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:23808b5e7f22b618e732","year":120,"title":"马贤讨沈氐羌","eventType":"war","summary":"六月，沈氐种羌叛，寇张掖，护羌校尉马贤讨沈氐羌，破之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-78fe98fe3305c05d","label":"马贤","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书","sourceSection":"后汉书 卷五 孝安帝纪第五 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-006:0006","mentionId":"houhanshu-eastern-han-auto-candidate:4c2ac84935d459468bc5db57","locator":"后汉书·国学导航 · 段 6","quote":"六月，沈氐种羌叛，寇张掖，护羌校尉马贤讨沈氐羌，破之。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:4c2ac84935d459468bc5db57"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:4c2ac84935d459468bc5db57","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:5e97692edabcc897b685","year":121,"title":"冯焕讨高句骊","eventType":"war","summary":"建光元年春正月，幽州刺史冯焕率二郡太守讨高句骊、秽貊，不克。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-de1ca23e40a3bf8f","label":"冯焕","role":"participant-candidate"}],"places":[{"id":"place:gaogouli","label":"高句骊","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书","sourceSection":"后汉书 卷五 孝安帝纪第五 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-006:0006","mentionId":"houhanshu-eastern-han-auto-candidate:48fd2aaba44826403db30855","locator":"后汉书·国学导航 · 段 6","quote":"建光元年春正月，幽州刺史冯焕率二郡太守讨高句骊、秽貊，不克。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:48fd2aaba44826403db30855"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:48fd2aaba44826403db30855","clusterIds":[],"mergeCandidates":[{"id":"life:eh-deng-sui-121-death","title":"邓太后去世","event_type":"death","time_start":121,"summary":"邓太后去世后，安帝亲政，外戚与宦官格局继续变化。","review_status":"draft","people":["邓绥"],"places":[]},{"id":"eh-121-deng-sui-death","title":"邓太后去世，安帝亲政","event_type":"politics","time_start":121,"summary":"邓太后去世后，安帝亲政，外戚与宦官政治格局继续重组。","review_status":"reviewed","people":["邓绥"],"places":[]}]},{"id":"official-history-event:3bc9761cd42b341207ea","year":121,"title":"马贤讨烧当羌于金城","eventType":"war","summary":"八月，护羌校尉马贤讨烧当羌于金城，不利。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-78fe98fe3305c05d","label":"马贤","role":"participant-candidate"}],"places":[{"id":"place:jincheng","label":"金城","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书","sourceSection":"后汉书 卷五 孝安帝纪第五 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-006:0006","mentionId":"houhanshu-eastern-han-auto-candidate:b5fed45f6f7dd36237bf397f","locator":"后汉书·国学导航 · 段 6","quote":"八月，护羌校尉马贤讨烧当羌于金城，不利。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:b5fed45f6f7dd36237bf397f"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:b5fed45f6f7dd36237bf397f","clusterIds":[],"mergeCandidates":[{"id":"life:eh-deng-sui-121-death","title":"邓太后去世","event_type":"death","time_start":121,"summary":"邓太后去世后，安帝亲政，外戚与宦官格局继续变化。","review_status":"draft","people":["邓绥"],"places":[]},{"id":"eh-121-deng-sui-death","title":"邓太后去世，安帝亲政","event_type":"politics","time_start":121,"summary":"邓太后去世后，安帝亲政，外戚与宦官政治格局继续重组。","review_status":"reviewed","people":["邓绥"],"places":[]}]},{"id":"official-history-event:30253af5c27e6d92e145","year":124,"title":"南匈奴左日逐王叛","eventType":"war","summary":"五月，南匈奴左日逐王叛，使匈奴中郎将马翼讨破之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-bf63f1cba76944e7","label":"马翼","role":"mentioned-source"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书","sourceSection":"后汉书 卷五 孝安帝纪第五 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-006:0007","mentionId":"houhanshu-eastern-han-auto-candidate:ab7d94996af78d2eade0ca71","locator":"后汉书·国学导航 · 段 7","quote":"五月，南匈奴左日逐王叛，使匈奴中郎将马翼讨破之。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:ab7d94996af78d2eade0ca71"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:ab7d94996af78d2eade0ca71","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:a6efaf02f8573080f118","year":133,"title":"王稠率左骨都侯等击鲜卑","eventType":"war","summary":"三月，使匈奴中郎将王稠率左骨都侯等击鲜卑，破之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-11c9c7df8019f5d9","label":"王稠","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书","sourceSection":"后汉书 卷六 孝顺孝冲孝质帝纪第六 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-007:0003","mentionId":"houhanshu-eastern-han-auto-candidate:db1efe18f7ae1f8f496b0943","locator":"后汉书·国学导航 · 段 3","quote":"三月，使匈奴中郎将王稠率左骨都侯等击鲜卑，破之。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:db1efe18f7ae1f8f496b0943"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:db1efe18f7ae1f8f496b0943","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:6071f052d69481e6e7fd","year":138,"title":"蔡伯流等率众诣徐州刺史应志降","eventType":"war","summary":"闰月，蔡伯流等率众诣徐州刺史应志降。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-a56a4c6d872a8c43","label":"应志","role":"participant-candidate"},{"id":"person:official-history-person-6c0d1e3b46a6cf4a","label":"蔡伯流","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书","sourceSection":"后汉书 卷六 孝顺孝冲孝质帝纪第六 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-007:0004","mentionId":"houhanshu-eastern-han-auto-candidate:f3f569d966d8d2234f745784","locator":"后汉书·国学导航 · 段 4","quote":"闰月，蔡伯流等率众诣徐州刺史应志降。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:f3f569d966d8d2234f745784"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:f3f569d966d8d2234f745784","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:9729c40552d929556c4c","year":139,"title":"马贤讨烧当羌","eventType":"war","summary":"夏四月癸卯，护羌校尉马贤讨烧当羌，大破之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-78fe98fe3305c05d","label":"马贤","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书","sourceSection":"后汉书 卷六 孝顺孝冲孝质帝纪第六 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-007:0004","mentionId":"houhanshu-eastern-han-auto-candidate:13807c1cc821d62fe1d2f0da","locator":"后汉书·国学导航 · 段 4","quote":"夏四月癸卯，护羌校尉马贤讨烧当羌，大破之。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:13807c1cc821d62fe1d2f0da"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:13807c1cc821d62fe1d2f0da","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:e90b96ead02e73149682","year":140,"title":"马续讨吾斯","eventType":"war","summary":"五月，度辽将军马续讨吾斯、车纽，破之，使匈奴中郎将陈龟迫杀南单于。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-b8fe39f5ca606a8c","label":"马续","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书","sourceSection":"后汉书 卷六 孝顺孝冲孝质帝纪第六 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-007:0005","mentionId":"houhanshu-eastern-han-auto-candidate:6f4be1d99f5285aca2d987be","locator":"后汉书·国学导航 · 段 5","quote":"五月，度辽将军马续讨吾斯、车纽，破之，使匈奴中郎将陈龟迫杀南单于。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:6f4be1d99f5285aca2d987be"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:6f4be1d99f5285aca2d987be","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:4c0c24803def38571896","year":141,"title":"赵冲讨巩唐羌","eventType":"war","summary":"三月，武威太守赵冲讨巩唐羌，破之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-dd6db36df6eafb6a","label":"赵冲","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书","sourceSection":"后汉书 卷六 孝顺孝冲孝质帝纪第六 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-007:0005","mentionId":"houhanshu-eastern-han-auto-candidate:033c8d923cda8253f704dbfc","locator":"后汉书·国学导航 · 段 5","quote":"三月，武威太守赵冲讨巩唐羌，破之。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:033c8d923cda8253f704dbfc"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:033c8d923cda8253f704dbfc","clusterIds":[],"mergeCandidates":[{"id":"life:cheng-yu-141-born","title":"程昱出生","event_type":"birth","time_start":141,"summary":"程昱为东郡东阿人，字仲德，后成为曹操早期重要谋臣。","review_status":"draft","people":["程昱"],"places":[]},{"id":"eh-140s-qiang-frontier-pressure","title":"羌乱与西北边疆压力持续","event_type":"frontier","time_start":141,"summary":"安顺以后，西羌问题长期牵动凉州、三辅和朝廷财政军事，是东汉中后期边疆压力的重要背景。","review_status":"reviewed","people":[],"places":[]}]},{"id":"official-history-event:95a3a1f932b689738d87","year":143,"title":"赵冲与张贡击烧何羌于参龻","eventType":"war","summary":"夏四月庚戌，护羌校尉赵冲与汉阳太守张贡击烧何羌于参龻，破之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-dd6db36df6eafb6a","label":"赵冲","role":"participant-candidate"},{"id":"person:official-history-person-bc529a93bb87074c","label":"张贡","role":"participant-candidate"}],"places":[{"id":"place:canluan","label":"参龻","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书","sourceSection":"后汉书 卷六 孝顺孝冲孝质帝纪第六 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-007:0005","mentionId":"houhanshu-eastern-han-auto-candidate:9eb327a17f3b5ab648ce8d7c","locator":"后汉书·国学导航 · 段 5","quote":"夏四月庚戌，护羌校尉赵冲与汉阳太守张贡击烧何羌于参龻，破之。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:9eb327a17f3b5ab648ce8d7c"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:9eb327a17f3b5ab648ce8d7c","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:c3d76f7ade1de81ea34a","year":143,"title":"赵冲击烧当羌于阿阳","eventType":"war","summary":"闰月，赵冲击烧当羌于阿阳，破之。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-dd6db36df6eafb6a","label":"赵冲","role":"participant-candidate"}],"places":[{"id":"place:ayang","label":"阿阳","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书","sourceSection":"后汉书 卷六 孝顺孝冲孝质帝纪第六 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-007:0005","mentionId":"houhanshu-eastern-han-auto-candidate:b2e640b6b4b700d97e071842","locator":"后汉书·国学导航 · 段 5","quote":"闰月，赵冲击烧当羌于阿阳，破之。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:b2e640b6b4b700d97e071842"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:b2e640b6b4b700d97e071842","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:3c8bec2662f7fd580134","year":143,"title":"马寔遣人刺杀句龙吾斯","eventType":"war","summary":"十一月，使匈奴中郎将马寔遣人刺杀句龙吾斯。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-300e9b2ba4155018","label":"马寔","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书","sourceSection":"后汉书 卷六 孝顺孝冲孝质帝纪第六 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-007:0005","mentionId":"houhanshu-eastern-han-auto-candidate:551339d28c7346998cbc6a12","locator":"后汉书·国学导航 · 段 5","quote":"十一月，使匈奴中郎将马寔遣人刺杀句龙吾斯。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:551339d28c7346998cbc6a12"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:551339d28c7346998cbc6a12","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:eb697145aa42a9cdd504","year":144,"title":"刘康因杀无辜下狱死","eventType":"war","summary":"己卯，零陵太守刘康坐杀无辜，下狱死。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-e0ae3495f7696537","label":"刘康","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书","sourceSection":"后汉书 卷六 孝顺孝冲孝质帝纪第六 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-007:0006","mentionId":"houhanshu-eastern-han-auto-candidate:d7da645c20cec114127e0e80","locator":"后汉书·国学导航 · 段 6","quote":"己卯，零陵太守刘康坐杀无辜，下狱死。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:d7da645c20cec114127e0e80"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:d7da645c20cec114127e0e80","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:6510cbaed4e72e30b141","year":144,"title":"马寔击南匈奴左部","eventType":"war","summary":"夏四月，使匈奴中郎将马寔击南匈奴左部，破之，于是胡羌、乌桓悉诣寔降。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-300e9b2ba4155018","label":"马寔","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书","sourceSection":"后汉书 卷六 孝顺孝冲孝质帝纪第六 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-007:0005","mentionId":"houhanshu-eastern-han-auto-candidate:ab9c6196e9b566cf9e8efd15","locator":"后汉书·国学导航 · 段 5","quote":"夏四月，使匈奴中郎将马寔击南匈奴左部，破之，于是胡羌、乌桓悉诣寔降。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:ab9c6196e9b566cf9e8efd15"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:ab9c6196e9b566cf9e8efd15","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:3ccce2ae1cc2d1cb2d7d","year":159,"title":"张彪将兵围冀第","eventType":"war","summary":"八月丁丑，帝御前殿，诏司隶校尉张彪将兵围冀第，收大将军印绶，冀与妻皆自杀。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-5d5c5f255a84e03f","label":"张彪","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-008","sourceTitle":"后汉书","sourceSection":"后汉书 卷七 孝桓帝纪第七 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/007.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-008:0004","mentionId":"houhanshu-eastern-han-auto-candidate:317f0d1a6a48517533c3c908","locator":"后汉书·国学导航 · 段 4","quote":"八月丁丑，帝御前殿，诏司隶校尉张彪将兵围冀第，收大将军印绶，冀与妻皆自杀。","confidence":"medium","cardId":"card:houhanshu-eastern-han-auto:317f0d1a6a48517533c3c908"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:317f0d1a6a48517533c3c908","clusterIds":[],"mergeCandidates":[{"id":"life:eh-liang-ji-159-death","title":"梁冀被诛","event_type":"death","time_start":159,"summary":"桓帝联合宦官诛灭梁冀，外戚政治受挫，宦官势力上升。","review_status":"draft","people":["梁冀"],"places":[]},{"id":"eh-159-liang-ji-purged","title":"梁冀被诛，宦官势力上升","event_type":"politics","time_start":159,"summary":"桓帝联合宦官诛灭梁冀集团，外戚专权结束，但宦官政治由此显著上升。","review_status":"reviewed","people":["梁冀","刘志"],"places":[]}]},{"id":"official-history-event:884945513b261ab6b5a1","year":162,"title":"冯绲大破叛蛮于武陵","eventType":"war","summary":"十一月，冯绲大破叛蛮于武陵。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-003cb5f27d55d84b","label":"冯绲","role":"participant-candidate"}],"places":[{"id":"place:wuling","label":"武陵","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-008","sourceTitle":"后汉书","sourceSection":"后汉书 卷七 孝桓帝纪第七 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/007.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-008:0005","mentionId":"houhanshu-eastern-han-auto-candidate:11e20ce01f491b425faca08a","locator":"后汉书·国学导航 · 段 5","quote":"十一月，冯绲大破叛蛮于武陵。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:11e20ce01f491b425faca08a"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:11e20ce01f491b425faca08a","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:9469b9990f3251eb703b","year":162,"title":"武陵蛮叛","eventType":"war","summary":"冬十月，武陵蛮叛，寇江陵，南郡太守李肃坐奔北弃市。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-51252a37bc98204e","label":"李肃","role":"mentioned-source"}],"places":[{"id":"place:wuling","label":"武陵","role":"primary-location"}],"evidence":[{"sourceId":"houhanshu-guoxue123-008","sourceTitle":"后汉书","sourceSection":"后汉书 卷七 孝桓帝纪第七 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/007.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-008:0005","mentionId":"houhanshu-eastern-han-auto-candidate:16fd8cae4b96a566a455a5fd","locator":"后汉书·国学导航 · 段 5","quote":"冬十月，武陵蛮叛，寇江陵，南郡太守李肃坐奔北弃市；","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:16fd8cae4b96a566a455a5fd"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:16fd8cae4b96a566a455a5fd","clusterIds":[],"mergeCandidates":[]},{"id":"official-history-event:04d8ad1528c141f9b268","year":179,"title":"刘纳谋诛宦者","eventType":"war","summary":"冬十月甲申，司徒刘郃、永乐少府陈球、卫尉阳球、步兵校尉刘纳谋诛宦者，事泄，皆下狱死。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-5da22842f781ae28","label":"刘郃","role":"mentioned-source"},{"id":"person:official-history-person-5946d3498907a7e3","label":"陈球","role":"mentioned-source"},{"id":"person:official-history-person-6c3faa85d66b5df1","label":"阳球","role":"mentioned-source"},{"id":"person:official-history-person-4c9595348c56546d","label":"刘纳","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-009","sourceTitle":"后汉书","sourceSection":"后汉书 卷八 孝灵帝纪第八 · 纪","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/008.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-009:0003","mentionId":"houhanshu-eastern-han-auto-candidate:d8fdc41e3fbed5660b0e7a17","locator":"后汉书·国学导航 · 段 3","quote":"冬十月甲申，司徒刘郃、永乐少府陈球、卫尉阳球、步兵校尉刘纳谋诛宦者，事泄，皆下狱死。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:d8fdc41e3fbed5660b0e7a17"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:d8fdc41e3fbed5660b0e7a17","clusterIds":[],"mergeCandidates":[{"id":"life:sima-yi-179-born","title":"司马懿出生","event_type":"birth","time_start":179,"summary":"司马懿为河内温县人，后进入曹魏中枢并成为司马氏掌权基础人物。","review_status":"draft","people":["司马懿"],"places":[]},{"id":"life:pang-tong-179-born","title":"庞统出生","event_type":"birth","time_start":179,"summary":"庞统为襄阳人，荆州名士，后入刘备幕府。","review_status":"draft","people":["庞统"],"places":[]}]},{"id":"official-history-event:3f21392a15dd1751fbb0","year":179,"title":"阳球奏诛王甫等","eventType":"war","summary":"光和二年，司隶校尉阳球奏诛王甫及子长乐少府萌、沛相吉，皆死狱中。","confidence":"low","reviewStatus":"needs-review","people":[{"id":"person:official-history-person-6c3faa85d66b5df1","label":"阳球","role":"participant-candidate"},{"id":"person:official-history-person-5099c4b9311e14af","label":"王甫","role":"participant-candidate"}],"places":[],"evidence":[{"sourceId":"houhanshu-guoxue123-085","sourceTitle":"后汉书","sourceSection":"后汉书 卷七十八 宦者列传第六十八 · 列传","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/084.htm","passageId":"guoxue123:hhs:houhanshu-guoxue123-085:0005","mentionId":"houhanshu-eastern-han-auto-candidate:deb883640f30e3cef3b4928e","locator":"后汉书·国学导航 · 段 5","quote":"光和二年，司隶校尉阳球奏诛王甫及子长乐少府萌、沛相吉，皆死狱中。","confidence":"low","cardId":"card:houhanshu-eastern-han-auto:deb883640f30e3cef3b4928e"}],"sourceCount":1,"evidenceCount":1,"anchorCardId":"card:houhanshu-eastern-han-auto:deb883640f30e3cef3b4928e","clusterIds":[],"mergeCandidates":[{"id":"life:sima-yi-179-born","title":"司马懿出生","event_type":"birth","time_start":179,"summary":"司马懿为河内温县人，后进入曹魏中枢并成为司马氏掌权基础人物。","review_status":"draft","people":["司马懿"],"places":[]},{"id":"life:pang-tong-179-born","title":"庞统出生","event_type":"birth","time_start":179,"summary":"庞统为襄阳人，荆州名士，后入刘备幕府。","review_status":"draft","people":["庞统"],"places":[]}]}],"people":[{"id":"official-history-person-1acec78a2cbc2701","entityId":"person:official-history-person-1acec78a2cbc2701","name":"任尚","aliases":[],"summary":"任尚由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书 卷五 孝安帝纪第五","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:43af23a77fad072ded381f66","cardId":"card:houhanshu-eastern-han-auto:43af23a77fad072ded381f66","quote":"六月，中郎将任尚遣兵击破先零羌于丁奚城。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm"},{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书 卷五 孝安帝纪第五","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:1405aee7392d7dcdf62678de","cardId":"card:houhanshu-eastern-han-auto:1405aee7392d7dcdf62678de","quote":"十二月丁巳，任尚遣兵击破先零羌于北地。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm"}],"linkedEvents":[{"person_id":"official-history-person-1acec78a2cbc2701","event_id":"official-history-event:6cd9ce02a8dfa8ff28fc","title":"任尚遣兵击破先零羌于丁奚城","year":116,"role":"participant-candidate"},{"person_id":"official-history-person-1acec78a2cbc2701","event_id":"official-history-event:b5c8b1748ee224659518","title":"任尚遣兵击破先零羌于北地","year":116,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-673ce4d5f744da1a","entityId":"person:official-history-person-673ce4d5f744da1a","name":"傅育","aliases":[],"summary":"傅育由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-004","sourceTitle":"后汉书 卷三 肃宗孝章帝纪第三","locator":"后汉书·国学导航 · 段 8","mentionId":"houhanshu-eastern-han-auto-candidate:07ae07e191e6d2dbd1db581a","cardId":"card:houhanshu-eastern-han-auto:07ae07e191e6d2dbd1db581a","quote":"章和元年春三月，护羌校尉傅育追击叛羌，战殁。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/003.htm"}],"linkedEvents":[{"person_id":"official-history-person-673ce4d5f744da1a","event_id":"official-history-event:89d008e4fb1c5d98275b","title":"傅育追击叛羌","year":87,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-de1ca23e40a3bf8f","entityId":"person:official-history-person-de1ca23e40a3bf8f","name":"冯焕","aliases":[],"summary":"冯焕由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书 卷五 孝安帝纪第五","locator":"后汉书·国学导航 · 段 6","mentionId":"houhanshu-eastern-han-auto-candidate:48fd2aaba44826403db30855","cardId":"card:houhanshu-eastern-han-auto:48fd2aaba44826403db30855","quote":"建光元年春正月，幽州刺史冯焕率二郡太守讨高句骊、秽貊，不克。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm"}],"linkedEvents":[{"person_id":"official-history-person-de1ca23e40a3bf8f","event_id":"official-history-event:5e97692edabcc897b685","title":"冯焕讨高句骊","year":121,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-003cb5f27d55d84b","entityId":"person:official-history-person-003cb5f27d55d84b","name":"冯绲","aliases":[],"summary":"冯绲由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"action-actor","sourceRefs":[{"sourceId":"houhanshu-guoxue123-008","sourceTitle":"后汉书 卷七 孝桓帝纪第七","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:11e20ce01f491b425faca08a","cardId":"card:houhanshu-eastern-han-auto:11e20ce01f491b425faca08a","quote":"十一月，冯绲大破叛蛮于武陵。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/007.htm"}],"linkedEvents":[{"person_id":"official-history-person-003cb5f27d55d84b","event_id":"official-history-event:884945513b261ab6b5a1","title":"冯绲大破叛蛮于武陵","year":162,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-200601b411dc3e2a","entityId":"person:official-history-person-200601b411dc3e2a","name":"刘尚","aliases":[],"summary":"刘尚由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-002","sourceTitle":"后汉书 卷一下 光武帝纪第一下","locator":"后汉书·国学导航 · 段 6","mentionId":"houhanshu-eastern-han-auto-candidate:f398e7cf04f77cf1fa7e8a19","cardId":"card:houhanshu-eastern-han-auto:f398e7cf04f77cf1fa7e8a19","quote":"二十一年春正月，武威将军刘尚破益州夷，平之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/001.htm"},{"sourceId":"houhanshu-guoxue123-002","sourceTitle":"后汉书 卷一下 光武帝纪第一下","locator":"后汉书·国学导航 · 段 6","mentionId":"houhanshu-eastern-han-auto-candidate:d3d9696851cfa1c050a8d4a1","cardId":"card:houhanshu-eastern-han-auto:d3d9696851cfa1c050a8d4a1","quote":"二十三年春正月，南郡蛮叛，遣武威将军刘尚讨破之，徙其种人于江夏。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/001.htm"}],"linkedEvents":[{"person_id":"official-history-person-200601b411dc3e2a","event_id":"official-history-event:81a3292ae845603930f8","title":"刘尚破益州夷","year":45,"role":"participant-candidate"},{"person_id":"official-history-person-200601b411dc3e2a","event_id":"official-history-event:2aface1384f5c5aaf5a0","title":"南郡蛮叛","year":47,"role":"mentioned-source"}],"nameMatches":[]},{"id":"official-history-person-e0ae3495f7696537","entityId":"person:official-history-person-e0ae3495f7696537","name":"刘康","aliases":[],"summary":"刘康由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书 卷六 孝顺孝冲孝质帝纪第六","locator":"后汉书·国学导航 · 段 6","mentionId":"houhanshu-eastern-han-auto-candidate:d7da645c20cec114127e0e80","cardId":"card:houhanshu-eastern-han-auto:d7da645c20cec114127e0e80","quote":"己卯，零陵太守刘康坐杀无辜，下狱死。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm"}],"linkedEvents":[{"person_id":"official-history-person-e0ae3495f7696537","event_id":"official-history-event:eb697145aa42a9cdd504","title":"刘康因杀无辜下狱死","year":144,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-02037a4fe736af8e","entityId":"person:official-history-person-02037a4fe736af8e","name":"刘张","aliases":[],"summary":"刘张由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-021","sourceTitle":"后汉书 卷十九 耿弇列传第九","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:173a433801d774b958d80f2f","cardId":"card:houhanshu-eastern-han-auto:173a433801d774b958d80f2f","quote":"永平十七年冬，骑都尉刘张出击车师，请恭为司马，与奉车都尉窦固及从弟驸马都尉秉破降之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/020.htm"}],"linkedEvents":[{"person_id":"official-history-person-02037a4fe736af8e","event_id":"official-history-event:f2b3e053a8cd54de8488","title":"刘张出击车师","year":74,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-4c9595348c56546d","entityId":"person:official-history-person-4c9595348c56546d","name":"刘纳","aliases":[],"summary":"刘纳由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-009","sourceTitle":"后汉书 卷八 孝灵帝纪第八","locator":"后汉书·国学导航 · 段 3","mentionId":"houhanshu-eastern-han-auto-candidate:d8fdc41e3fbed5660b0e7a17","cardId":"card:houhanshu-eastern-han-auto:d8fdc41e3fbed5660b0e7a17","quote":"冬十月甲申，司徒刘郃、永乐少府陈球、卫尉阳球、步兵校尉刘纳谋诛宦者，事泄，皆下狱死。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/008.htm"}],"linkedEvents":[{"person_id":"official-history-person-4c9595348c56546d","event_id":"official-history-event:04d8ad1528c141f9b268","title":"刘纳谋诛宦者","year":179,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-5da22842f781ae28","entityId":"person:official-history-person-5da22842f781ae28","name":"刘郃","aliases":[],"summary":"刘郃由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-009","sourceTitle":"后汉书 卷八 孝灵帝纪第八","locator":"后汉书·国学导航 · 段 3","mentionId":"houhanshu-eastern-han-auto-candidate:d8fdc41e3fbed5660b0e7a17","cardId":"card:houhanshu-eastern-han-auto:d8fdc41e3fbed5660b0e7a17","quote":"冬十月甲申，司徒刘郃、永乐少府陈球、卫尉阳球、步兵校尉刘纳谋诛宦者，事泄，皆下狱死。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/008.htm"}],"linkedEvents":[{"person_id":"official-history-person-5da22842f781ae28","event_id":"official-history-event:04d8ad1528c141f9b268","title":"刘纳谋诛宦者","year":179,"role":"mentioned-source"}],"nameMatches":[]},{"id":"official-history-person-139c7486d5327aa6","entityId":"person:official-history-person-139c7486d5327aa6","name":"吴汉","aliases":[],"summary":"吴汉由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-023","sourceTitle":"后汉书 卷二十一 任李万邳刘耿列传第十一","locator":"后汉书·国学导航 · 段 1","mentionId":"houhanshu-eastern-han-auto-candidate:0086e4fda7a7e157eb138c80","cardId":"card:houhanshu-eastern-han-auto:0086e4fda7a7e157eb138c80","quote":"建武元年，世祖入洛阳，遣大司马吴汉等击檀乡，明年春，大破降之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/022.htm"}],"linkedEvents":[{"person_id":"official-history-person-139c7486d5327aa6","event_id":"official-history-event:814e28ce10ecab943bf7","title":"吴汉等击檀乡","year":25,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-a56a4c6d872a8c43","entityId":"person:official-history-person-a56a4c6d872a8c43","name":"应志","aliases":[],"summary":"应志由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书 卷六 孝顺孝冲孝质帝纪第六","locator":"后汉书·国学导航 · 段 4","mentionId":"houhanshu-eastern-han-auto-candidate:f3f569d966d8d2234f745784","cardId":"card:houhanshu-eastern-han-auto:f3f569d966d8d2234f745784","quote":"闰月，蔡伯流等率众诣徐州刺史应志降。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm"}],"linkedEvents":[{"person_id":"official-history-person-a56a4c6d872a8c43","event_id":"official-history-event:6071f052d69481e6e7fd","title":"蔡伯流等率众诣徐州刺史应志降","year":138,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-5d5c5f255a84e03f","entityId":"person:official-history-person-5d5c5f255a84e03f","name":"张彪","aliases":[],"summary":"张彪由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-008","sourceTitle":"后汉书 卷七 孝桓帝纪第七","locator":"后汉书·国学导航 · 段 4","mentionId":"houhanshu-eastern-han-auto-candidate:317f0d1a6a48517533c3c908","cardId":"card:houhanshu-eastern-han-auto:317f0d1a6a48517533c3c908","quote":"八月丁丑，帝御前殿，诏司隶校尉张彪将兵围冀第，收大将军印绶，冀与妻皆自杀。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/007.htm"}],"linkedEvents":[{"person_id":"official-history-person-5d5c5f255a84e03f","event_id":"official-history-event:3ccce2ae1cc2d1cb2d7d","title":"张彪将兵围冀第","year":159,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-160cf8ad3ae760c5","entityId":"person:official-history-person-160cf8ad3ae760c5","name":"张纡","aliases":[],"summary":"张纡由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-018","sourceTitle":"后汉书 卷十六 邓寇列传第六","locator":"后汉书·国学导航 · 段 3","mentionId":"houhanshu-eastern-han-auto-candidate:b1d154236cf9fcf0c0215b2e","cardId":"card:houhanshu-eastern-han-auto:b1d154236cf9fcf0c0215b2e","quote":"章和二年，护羌校尉张纡诱诛烧当种羌迷吾等，由是诸羌大怒，谋欲报怨，朝廷忧之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/017.htm"}],"linkedEvents":[{"person_id":"official-history-person-160cf8ad3ae760c5","event_id":"official-history-event:dfee1a6c26823075d56b","title":"张纡诱诛烧当种羌迷吾等","year":88,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-bc529a93bb87074c","entityId":"person:official-history-person-bc529a93bb87074c","name":"张贡","aliases":[],"summary":"张贡由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书 卷六 孝顺孝冲孝质帝纪第六","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:9eb327a17f3b5ab648ce8d7c","cardId":"card:houhanshu-eastern-han-auto:9eb327a17f3b5ab648ce8d7c","quote":"夏四月庚戌，护羌校尉赵冲与汉阳太守张贡击烧何羌于参龻，破之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm"}],"linkedEvents":[{"person_id":"official-history-person-bc529a93bb87074c","event_id":"official-history-event:95a3a1f932b689738d87","title":"赵冲与张贡击烧何羌于参龻","year":143,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-51252a37bc98204e","entityId":"person:official-history-person-51252a37bc98204e","name":"李肃","aliases":[],"summary":"李肃由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-008","sourceTitle":"后汉书 卷七 孝桓帝纪第七","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:16fd8cae4b96a566a455a5fd","cardId":"card:houhanshu-eastern-han-auto:16fd8cae4b96a566a455a5fd","quote":"冬十月，武陵蛮叛，寇江陵，南郡太守李肃坐奔北弃市；","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/007.htm"}],"linkedEvents":[{"person_id":"official-history-person-51252a37bc98204e","event_id":"official-history-event:9469b9990f3251eb703b","title":"武陵蛮叛","year":162,"role":"mentioned-source"}],"nameMatches":[]},{"id":"official-history-person-cdc98f3b4f2436dd","entityId":"person:official-history-person-cdc98f3b4f2436dd","name":"杜琦","aliases":[],"summary":"杜琦由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"action-object","sourceRefs":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书 卷五 孝安帝纪第五","locator":"后汉书·国学导航 · 段 4","mentionId":"houhanshu-eastern-han-auto-candidate:21fc3c2a61176b2ce11298bd","cardId":"card:houhanshu-eastern-han-auto:21fc3c2a61176b2ce11298bd","quote":"十二月，汉阳太守赵博遣客刺杀杜琦。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm"}],"linkedEvents":[{"person_id":"official-history-person-cdc98f3b4f2436dd","event_id":"official-history-event:3473793c1344c974510a","title":"赵博遣客刺杀杜琦","year":111,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-5099c4b9311e14af","entityId":"person:official-history-person-5099c4b9311e14af","name":"王甫","aliases":[],"summary":"王甫由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"action-object","sourceRefs":[{"sourceId":"houhanshu-guoxue123-085","sourceTitle":"后汉书 卷七十八 宦者列传第六十八","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:deb883640f30e3cef3b4928e","cardId":"card:houhanshu-eastern-han-auto:deb883640f30e3cef3b4928e","quote":"光和二年，司隶校尉阳球奏诛王甫及子长乐少府萌、沛相吉，皆死狱中。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/084.htm"}],"linkedEvents":[{"person_id":"official-history-person-5099c4b9311e14af","event_id":"official-history-event:3f21392a15dd1751fbb0","title":"阳球奏诛王甫等","year":179,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-11c9c7df8019f5d9","entityId":"person:official-history-person-11c9c7df8019f5d9","name":"王稠","aliases":[],"summary":"王稠由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书 卷六 孝顺孝冲孝质帝纪第六","locator":"后汉书·国学导航 · 段 3","mentionId":"houhanshu-eastern-han-auto-candidate:db1efe18f7ae1f8f496b0943","cardId":"card:houhanshu-eastern-han-auto:db1efe18f7ae1f8f496b0943","quote":"三月，使匈奴中郎将王稠率左骨都侯等击鲜卑，破之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm"}],"linkedEvents":[{"person_id":"official-history-person-11c9c7df8019f5d9","event_id":"official-history-event:a6efaf02f8573080f118","title":"王稠率左骨都侯等击鲜卑","year":133,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-c0dd0dd036aafcde","entityId":"person:official-history-person-c0dd0dd036aafcde","name":"窦固","aliases":[],"summary":"窦固由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-096","sourceTitle":"后汉书 卷八十七 西羌传第七十七","locator":"后汉书·国学导航 · 段 3","mentionId":"houhanshu-eastern-han-auto-candidate:6ae32c0fb2fa317c25662926","cardId":"card:houhanshu-eastern-han-auto:6ae32c0fb2fa317c25662926","quote":"” 永平元年，复遣中郎将窦固、捕虏将军马武等击滇吾于西邯，大破之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/095.htm"}],"linkedEvents":[{"person_id":"official-history-person-c0dd0dd036aafcde","event_id":"official-history-event:9ed4881fec386685082b","title":"马武等击滇吾于西邯","year":58,"role":"mentioned-source"}],"nameMatches":[]},{"id":"official-history-person-8ccf31fbb7cfb5f6","entityId":"person:official-history-person-8ccf31fbb7cfb5f6","name":"耿夔","aliases":[],"summary":"耿夔由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-005","sourceTitle":"后汉书 卷四 孝和孝殇帝纪第四","locator":"后汉书·国学导航 · 段 7","mentionId":"houhanshu-eastern-han-auto-candidate:de3a5ae035f62cae0bd4e63f","cardId":"card:houhanshu-eastern-han-auto:de3a5ae035f62cae0bd4e63f","quote":"秋九月，辽东太守耿夔击貊人，破之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/004.htm"}],"linkedEvents":[{"person_id":"official-history-person-8ccf31fbb7cfb5f6","event_id":"official-history-event:d3c8fe8461e54dd2a706","title":"耿夔击貊人","year":105,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-6c0d1e3b46a6cf4a","entityId":"person:official-history-person-6c0d1e3b46a6cf4a","name":"蔡伯流","aliases":[],"summary":"蔡伯流由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"surrender-actor","sourceRefs":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书 卷六 孝顺孝冲孝质帝纪第六","locator":"后汉书·国学导航 · 段 4","mentionId":"houhanshu-eastern-han-auto-candidate:f3f569d966d8d2234f745784","cardId":"card:houhanshu-eastern-han-auto:f3f569d966d8d2234f745784","quote":"闰月，蔡伯流等率众诣徐州刺史应志降。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm"}],"linkedEvents":[{"person_id":"official-history-person-6c0d1e3b46a6cf4a","event_id":"official-history-event:6071f052d69481e6e7fd","title":"蔡伯流等率众诣徐州刺史应志降","year":138,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-dd6db36df6eafb6a","entityId":"person:official-history-person-dd6db36df6eafb6a","name":"赵冲","aliases":[],"summary":"赵冲由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书 卷六 孝顺孝冲孝质帝纪第六","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:033c8d923cda8253f704dbfc","cardId":"card:houhanshu-eastern-han-auto:033c8d923cda8253f704dbfc","quote":"三月，武威太守赵冲讨巩唐羌，破之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm"},{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书 卷六 孝顺孝冲孝质帝纪第六","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:9eb327a17f3b5ab648ce8d7c","cardId":"card:houhanshu-eastern-han-auto:9eb327a17f3b5ab648ce8d7c","quote":"夏四月庚戌，护羌校尉赵冲与汉阳太守张贡击烧何羌于参龻，破之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm"},{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书 卷六 孝顺孝冲孝质帝纪第六","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:b2e640b6b4b700d97e071842","cardId":"card:houhanshu-eastern-han-auto:b2e640b6b4b700d97e071842","quote":"闰月，赵冲击烧当羌于阿阳，破之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm"}],"linkedEvents":[{"person_id":"official-history-person-dd6db36df6eafb6a","event_id":"official-history-event:4c0c24803def38571896","title":"赵冲讨巩唐羌","year":141,"role":"participant-candidate"},{"person_id":"official-history-person-dd6db36df6eafb6a","event_id":"official-history-event:95a3a1f932b689738d87","title":"赵冲与张贡击烧何羌于参龻","year":143,"role":"participant-candidate"},{"person_id":"official-history-person-dd6db36df6eafb6a","event_id":"official-history-event:c3d76f7ade1de81ea34a","title":"赵冲击烧当羌于阿阳","year":143,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-23de76a7cb299ba1","entityId":"person:official-history-person-23de76a7cb299ba1","name":"赵博","aliases":[],"summary":"赵博由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书 卷五 孝安帝纪第五","locator":"后汉书·国学导航 · 段 4","mentionId":"houhanshu-eastern-han-auto-candidate:21fc3c2a61176b2ce11298bd","cardId":"card:houhanshu-eastern-han-auto:21fc3c2a61176b2ce11298bd","quote":"十二月，汉阳太守赵博遣客刺杀杜琦。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm"}],"linkedEvents":[{"person_id":"official-history-person-23de76a7cb299ba1","event_id":"official-history-event:3473793c1344c974510a","title":"赵博遣客刺杀杜琦","year":111,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-34078e2ccec9e3ed","entityId":"person:official-history-person-34078e2ccec9e3ed","name":"邓禹","aliases":[],"summary":"邓禹由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-015","sourceTitle":"后汉书 卷十三 隗嚣公孙述列传第三","locator":"后汉书·国学导航 · 段 3","mentionId":"houhanshu-eastern-han-auto-candidate:8b7ba170a31f507aac03c5c4","cardId":"card:houhanshu-eastern-han-auto:8b7ba170a31f507aac03c5c4","quote":"建武二年，大司徒邓禹西击赤眉，屯云阳。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/014.htm"}],"linkedEvents":[{"person_id":"official-history-person-34078e2ccec9e3ed","event_id":"official-history-event:9741d84eb3b6fc323869","title":"邓禹西击赤眉","year":26,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-2179061f027c61b0","entityId":"person:official-history-person-2179061f027c61b0","name":"邓遵","aliases":[],"summary":"邓遵由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"polity-general","sourceRefs":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书 卷五 孝安帝纪第五","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:26558504105766e930175ce4","cardId":"card:houhanshu-eastern-han-auto:26558504105766e930175ce4","quote":"癸酉，度辽将军邓遵率南匈奴击先零羌于灵州，破之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm"}],"linkedEvents":[{"person_id":"official-history-person-2179061f027c61b0","event_id":"official-history-event:1223cf11ba845504c00a","title":"邓遵率南匈奴击先零羌于灵州","year":116,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-039e348ec88a0f67","entityId":"person:official-history-person-039e348ec88a0f67","name":"郝崇","aliases":[],"summary":"郝崇由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-004","sourceTitle":"后汉书 卷三 肃宗孝章帝纪第三","locator":"后汉书·国学导航 · 段 2","mentionId":"houhanshu-eastern-han-auto-candidate:2f97f0f1b8604a2ca59d9142","cardId":"card:houhanshu-eastern-han-auto:2f97f0f1b8604a2ca59d9142","quote":"六月，烧当羌叛，金城太守郝崇讨之，败绩，羌遂寇汉阳。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/003.htm"}],"linkedEvents":[{"person_id":"official-history-person-039e348ec88a0f67","event_id":"official-history-event:7606c342af5b621b6226","title":"烧当羌叛","year":77,"role":"mentioned-source"}],"nameMatches":[]},{"id":"official-history-person-33872bdc5bdbea83","entityId":"person:official-history-person-33872bdc5bdbea83","name":"郭圣通","aliases":["郭皇后"],"summary":"郭圣通由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"han-imperial-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-032","sourceTitle":"后汉书 卷二十九 申屠刚鲍永郅恽列传第十九","locator":"后汉书·国学导航 · 段 6","mentionId":"houhanshu-eastern-han-auto-candidate:bd6f276da9c034c73e484c23","cardId":"card:houhanshu-eastern-han-auto:bd6f276da9c034c73e484c23","quote":"及郭皇后废，建武十七年废。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/031.htm"}],"linkedEvents":[{"person_id":"official-history-person-33872bdc5bdbea83","event_id":"official-history-event:2a0a79d3722196055aed","title":"郭皇后被废","year":41,"role":"participant-candidate"}],"nameMatches":[{"id":"empress-guo-mingyuan","name":"郭皇后","coverageStatus":"stub","reviewStatus":"draft","machineCandidate":false},{"id":"empress-guo-wende","name":"郭皇后","coverageStatus":"stub","reviewStatus":"draft","machineCandidate":false}]},{"id":"official-history-person-6c3faa85d66b5df1","entityId":"person:official-history-person-6c3faa85d66b5df1","name":"阳球","aliases":[],"summary":"阳球由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-009","sourceTitle":"后汉书 卷八 孝灵帝纪第八","locator":"后汉书·国学导航 · 段 3","mentionId":"houhanshu-eastern-han-auto-candidate:d8fdc41e3fbed5660b0e7a17","cardId":"card:houhanshu-eastern-han-auto:d8fdc41e3fbed5660b0e7a17","quote":"冬十月甲申，司徒刘郃、永乐少府陈球、卫尉阳球、步兵校尉刘纳谋诛宦者，事泄，皆下狱死。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/008.htm"},{"sourceId":"houhanshu-guoxue123-085","sourceTitle":"后汉书 卷七十八 宦者列传第六十八","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:deb883640f30e3cef3b4928e","cardId":"card:houhanshu-eastern-han-auto:deb883640f30e3cef3b4928e","quote":"光和二年，司隶校尉阳球奏诛王甫及子长乐少府萌、沛相吉，皆死狱中。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/084.htm"}],"linkedEvents":[{"person_id":"official-history-person-6c3faa85d66b5df1","event_id":"official-history-event:04d8ad1528c141f9b268","title":"刘纳谋诛宦者","year":179,"role":"mentioned-source"},{"person_id":"official-history-person-6c3faa85d66b5df1","event_id":"official-history-event:3f21392a15dd1751fbb0","title":"阳球奏诛王甫等","year":179,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-5946d3498907a7e3","entityId":"person:official-history-person-5946d3498907a7e3","name":"陈球","aliases":[],"summary":"陈球由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-009","sourceTitle":"后汉书 卷八 孝灵帝纪第八","locator":"后汉书·国学导航 · 段 3","mentionId":"houhanshu-eastern-han-auto-candidate:d8fdc41e3fbed5660b0e7a17","cardId":"card:houhanshu-eastern-han-auto:d8fdc41e3fbed5660b0e7a17","quote":"冬十月甲申，司徒刘郃、永乐少府陈球、卫尉阳球、步兵校尉刘纳谋诛宦者，事泄，皆下狱死。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/008.htm"}],"linkedEvents":[{"person_id":"official-history-person-5946d3498907a7e3","event_id":"official-history-event:04d8ad1528c141f9b268","title":"刘纳谋诛宦者","year":179,"role":"mentioned-source"}],"nameMatches":[]},{"id":"official-history-person-300e9b2ba4155018","entityId":"person:official-history-person-300e9b2ba4155018","name":"马寔","aliases":[],"summary":"马寔由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书 卷六 孝顺孝冲孝质帝纪第六","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:551339d28c7346998cbc6a12","cardId":"card:houhanshu-eastern-han-auto:551339d28c7346998cbc6a12","quote":"十一月，使匈奴中郎将马寔遣人刺杀句龙吾斯。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm"},{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书 卷六 孝顺孝冲孝质帝纪第六","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:ab9c6196e9b566cf9e8efd15","cardId":"card:houhanshu-eastern-han-auto:ab9c6196e9b566cf9e8efd15","quote":"夏四月，使匈奴中郎将马寔击南匈奴左部，破之，于是胡羌、乌桓悉诣寔降。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm"}],"linkedEvents":[{"person_id":"official-history-person-300e9b2ba4155018","event_id":"official-history-event:3c8bec2662f7fd580134","title":"马寔遣人刺杀句龙吾斯","year":143,"role":"participant-candidate"},{"person_id":"official-history-person-300e9b2ba4155018","event_id":"official-history-event:6510cbaed4e72e30b141","title":"马寔击南匈奴左部","year":144,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-10633313875767f4","entityId":"person:official-history-person-10633313875767f4","name":"马援","aliases":[],"summary":"马援由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-002","sourceTitle":"后汉书 卷一下 光武帝纪第一下","locator":"后汉书·国学导航 · 段 6","mentionId":"houhanshu-eastern-han-auto-candidate:577f3fca0e7c25f3e0882d30","cardId":"card:houhanshu-eastern-han-auto:577f3fca0e7c25f3e0882d30","quote":"冬十月，遣伏波将军马援出塞击乌桓，不克。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/001.htm"}],"linkedEvents":[{"person_id":"official-history-person-10633313875767f4","event_id":"official-history-event:eebe10d47589a76a445f","title":"马援出塞击乌桓","year":45,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-d660fb6648fbe3fd","entityId":"person:official-history-person-d660fb6648fbe3fd","name":"马武","aliases":[],"summary":"马武由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-096","sourceTitle":"后汉书 卷八十七 西羌传第七十七","locator":"后汉书·国学导航 · 段 3","mentionId":"houhanshu-eastern-han-auto-candidate:6ae32c0fb2fa317c25662926","cardId":"card:houhanshu-eastern-han-auto:6ae32c0fb2fa317c25662926","quote":"” 永平元年，复遣中郎将窦固、捕虏将军马武等击滇吾于西邯，大破之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/095.htm"}],"linkedEvents":[{"person_id":"official-history-person-d660fb6648fbe3fd","event_id":"official-history-event:9ed4881fec386685082b","title":"马武等击滇吾于西邯","year":58,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-b8fe39f5ca606a8c","entityId":"person:official-history-person-b8fe39f5ca606a8c","name":"马续","aliases":[],"summary":"马续由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"polity-general","sourceRefs":[{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书 卷六 孝顺孝冲孝质帝纪第六","locator":"后汉书·国学导航 · 段 5","mentionId":"houhanshu-eastern-han-auto-candidate:6f4be1d99f5285aca2d987be","cardId":"card:houhanshu-eastern-han-auto:6f4be1d99f5285aca2d987be","quote":"五月，度辽将军马续讨吾斯、车纽，破之，使匈奴中郎将陈龟迫杀南单于。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm"}],"linkedEvents":[{"person_id":"official-history-person-b8fe39f5ca606a8c","event_id":"official-history-event:e90b96ead02e73149682","title":"马续讨吾斯","year":140,"role":"participant-candidate"}],"nameMatches":[]},{"id":"official-history-person-bf63f1cba76944e7","entityId":"person:official-history-person-bf63f1cba76944e7","name":"马翼","aliases":[],"summary":"马翼由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书 卷五 孝安帝纪第五","locator":"后汉书·国学导航 · 段 7","mentionId":"houhanshu-eastern-han-auto-candidate:ab7d94996af78d2eade0ca71","cardId":"card:houhanshu-eastern-han-auto:ab7d94996af78d2eade0ca71","quote":"五月，南匈奴左日逐王叛，使匈奴中郎将马翼讨破之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm"}],"linkedEvents":[{"person_id":"official-history-person-bf63f1cba76944e7","event_id":"official-history-event:30253af5c27e6d92e145","title":"南匈奴左日逐王叛","year":124,"role":"mentioned-source"}],"nameMatches":[]},{"id":"official-history-person-78fe98fe3305c05d","entityId":"person:official-history-person-78fe98fe3305c05d","name":"马贤","aliases":[],"summary":"马贤由正史事件句中的明确官职或阵营姓名结构识别；生卒、字与完整仕历待人工核定。","coverageStatus":"candidate","reviewStatus":"needs-review","discoveryConfidence":"high","discoveryEvidence":"office-title","sourceRefs":[{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书 卷五 孝安帝纪第五","locator":"后汉书·国学导航 · 段 6","mentionId":"houhanshu-eastern-han-auto-candidate:4c2ac84935d459468bc5db57","cardId":"card:houhanshu-eastern-han-auto:4c2ac84935d459468bc5db57","quote":"六月，沈氐种羌叛，寇张掖，护羌校尉马贤讨沈氐羌，破之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm"},{"sourceId":"houhanshu-guoxue123-006","sourceTitle":"后汉书 卷五 孝安帝纪第五","locator":"后汉书·国学导航 · 段 6","mentionId":"houhanshu-eastern-han-auto-candidate:b5fed45f6f7dd36237bf397f","cardId":"card:houhanshu-eastern-han-auto:b5fed45f6f7dd36237bf397f","quote":"八月，护羌校尉马贤讨烧当羌于金城，不利。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/005.htm"},{"sourceId":"houhanshu-guoxue123-007","sourceTitle":"后汉书 卷六 孝顺孝冲孝质帝纪第六","locator":"后汉书·国学导航 · 段 4","mentionId":"houhanshu-eastern-han-auto-candidate:13807c1cc821d62fe1d2f0da","cardId":"card:houhanshu-eastern-han-auto:13807c1cc821d62fe1d2f0da","quote":"夏四月癸卯，护羌校尉马贤讨烧当羌，大破之。","sourceUrl":"http://www.guoxue123.com/shibu/0101/00hhsz/006.htm"}],"linkedEvents":[{"person_id":"official-history-person-78fe98fe3305c05d","event_id":"official-history-event:23808b5e7f22b618e732","title":"马贤讨沈氐羌","year":120,"role":"participant-candidate"},{"person_id":"official-history-person-78fe98fe3305c05d","event_id":"official-history-event:3bc9761cd42b341207ea","title":"马贤讨烧当羌于金城","year":121,"role":"participant-candidate"},{"person_id":"official-history-person-78fe98fe3305c05d","event_id":"official-history-event:9729c40552d929556c4c","title":"马贤讨烧当羌","year":139,"role":"participant-candidate"}],"nameMatches":[]}],"places":[],"materials":[],"mergeTargets":[{"id":"eh-025-liu-xiu-found-eastern-han","title":"刘秀称帝，东汉建立","event_type":"state-formation","time_start":25,"summary":"刘秀在河北称帝，东汉政权建立，随后继续平定各地割据势力。","review_status":"reviewed","people":["刘秀"],"places":[]},{"id":"life:eh-liu-xiu-25-accession","title":"称帝建立东汉","event_type":"accession","time_start":25,"summary":"刘秀在河北称帝，东汉政权正式成立。","review_status":"draft","people":["刘秀"],"places":[]},{"id":"eh-036-eastern-han-unification","title":"公孙述败亡，东汉基本统一","event_type":"unification","time_start":36,"summary":"公孙述势力被平定后，东汉完成对主要割据区域的统一。","review_status":"reviewed","people":["刘秀"],"places":[]},{"id":"life:eh-liu-xiu-36-unification","title":"基本完成统一","event_type":"unification","time_start":36,"summary":"公孙述败亡后，东汉完成对主要割据势力的整合。","review_status":"draft","people":["刘秀"],"places":[]},{"id":"life:eh-liu-xiu-57-death","title":"光武帝去世","event_type":"death","time_start":57,"summary":"光武帝去世后，明帝继位，东汉进入稳定继承阶段。","review_status":"draft","people":["刘秀"],"places":[]},{"id":"eh-057-mingdi-accession","title":"光武帝去世，明帝即位","event_type":"succession","time_start":57,"summary":"光武帝去世后，刘庄继位，东汉完成第一次稳定皇位交接。","review_status":"reviewed","people":["刘秀","刘庄"],"places":[]},{"id":"life:eh-liu-zhuang-57-accession","title":"明帝即位","event_type":"accession","time_start":57,"summary":"光武帝去世后，太子刘庄继位。","review_status":"draft","people":["刘庄"],"places":[]},{"id":"life:eh-ban-chao-73-diplomacy","title":"出使西域","event_type":"diplomacy","time_start":73,"summary":"班超随窦固北征后进入西域，展开长期经营。","review_status":"draft","people":["班超"],"places":[]},{"id":"eh-073-ban-chao-western-regions","title":"班超出使西域，东汉重开西域经营","event_type":"diplomacy","time_start":73,"summary":"窦固北征后，班超进入西域，东汉重新恢复对西域诸国的政治影响。","review_status":"reviewed","people":["班超"],"places":[]},{"id":"life:eh-liu-da-75-accession","title":"章帝即位","event_type":"accession","time_start":75,"summary":"明帝去世后，太子刘炟继位。","review_status":"draft","people":["刘炟"],"places":[]},{"id":"life:eh-dou-xian-89-campaign","title":"燕然勒石","event_type":"campaign","time_start":89,"summary":"窦宪率军大破北匈奴，刻石燕然。","review_status":"draft","people":["窦宪"],"places":[]},{"id":"eh-089-dou-xian-defeats-northern-xiongnu","title":"窦宪大破北匈奴，燕然勒石","event_type":"war","time_start":89,"summary":"窦宪率汉军北伐，大破北匈奴并刻石燕然，是东汉北方边疆叙事的关键事件。","review_status":"reviewed","people":["窦宪"],"places":[]},{"id":"eh-092-emperor-he-removes-dou-xian","title":"和帝夺权，窦宪伏诛","event_type":"politics","time_start":92,"summary":"和帝联合宦官力量清除窦宪集团，外戚专权受到打击。","review_status":"reviewed","people":["窦宪"],"places":[]},{"id":"life:eh-dou-xian-92-death","title":"窦宪伏诛","event_type":"death","time_start":92,"summary":"和帝联合宦官夺回权力，窦宪被迫自杀。","review_status":"draft","people":["窦宪"],"places":[]},{"id":"life:eh-ban-chao-102-death","title":"班超去世","event_type":"death","time_start":102,"summary":"班超归朝后不久去世，西域经营进入新阶段。","review_status":"draft","people":["班超"],"places":[]},{"id":"life:eh-cai-lun-105-culture","title":"奏上造纸法","event_type":"culture","time_start":105,"summary":"蔡伦以树肤、麻头、敝布、鱼网等造纸并奏上。","review_status":"draft","people":["蔡伦"],"places":[]},{"id":"eh-105-cai-lun-paper","title":"蔡伦奏上造纸法","event_type":"culture","time_start":105,"summary":"蔡伦奏上改良造纸法，成为东汉技术与文书制度史上的重要节点。","review_status":"reviewed","people":["蔡伦"],"places":[]},{"id":"eh-106-deng-sui-regency","title":"邓太后临朝","event_type":"politics","time_start":106,"summary":"和帝之后幼主频立，邓太后临朝处理政务，东汉进入外戚、宦官与士人互动更复杂的阶段。","review_status":"reviewed","people":["邓绥"],"places":[]},{"id":"life:eh-deng-sui-106-regency","title":"邓太后临朝","event_type":"regency","time_start":106,"summary":"殇帝、安帝时期，邓太后长期掌握中枢决策。","review_status":"draft","people":["邓绥"],"places":[]},{"id":"life:eh-deng-sui-121-death","title":"邓太后去世","event_type":"death","time_start":121,"summary":"邓太后去世后，安帝亲政，外戚与宦官格局继续变化。","review_status":"draft","people":["邓绥"],"places":[]},{"id":"eh-121-deng-sui-death","title":"邓太后去世，安帝亲政","event_type":"politics","time_start":121,"summary":"邓太后去世后，安帝亲政，外戚与宦官政治格局继续重组。","review_status":"reviewed","people":["邓绥"],"places":[]},{"id":"life:tao-qian-132-born","title":"陶谦出生","event_type":"birth","time_start":132,"summary":"陶谦为丹阳人，后任徐州牧，成为汉末徐州的主要军政首领。","review_status":"draft","people":["陶谦"],"places":[]},{"id":"life:shi-xie-137-born","title":"士燮出生","event_type":"birth","time_start":137,"summary":"士燮为苍梧广信人，出生年份据黄武五年卒、年九十逆推，精确性保留为近似。","review_status":"draft","people":["士燮"],"places":[]},{"id":"life:cheng-yu-141-born","title":"程昱出生","event_type":"birth","time_start":141,"summary":"程昱为东郡东阿人，字仲德，后成为曹操早期重要谋臣。","review_status":"draft","people":["程昱"],"places":[]},{"id":"eh-140s-qiang-frontier-pressure","title":"羌乱与西北边疆压力持续","event_type":"frontier","time_start":141,"summary":"安顺以后，西羌问题长期牵动凉州、三辅和朝廷财政军事，是东汉中后期边疆压力的重要背景。","review_status":"reviewed","people":[],"places":[]},{"id":"life:liu-biao-142-born","title":"刘表出生","event_type":"birth","time_start":142,"summary":"刘表为汉室宗亲，后任荆州牧，长期维持长江中游割据秩序。","review_status":"draft","people":["刘表"],"places":[]},{"id":"life:eh-liu-zhi-146-accession","title":"桓帝即位","event_type":"accession","time_start":146,"summary":"质帝去世后，刘志入继帝位。","review_status":"draft","people":["刘志"],"places":[]},{"id":"life:jia-xu-147-born","title":"贾诩出生","event_type":"birth","time_start":147,"summary":"贾诩为武威姑臧人，出身凉州士人网络。","review_status":"draft","people":["贾诩"],"places":[]},{"id":"life:zhong-yao-151-born","title":"钟繇出生","event_type":"birth","time_start":151,"summary":"钟繇出身颍川长社，后成为东汉末至曹魏初年的重要重臣。","review_status":"draft","people":["钟繇"],"places":[]},{"id":"life:sun-jian-155-born","title":"孙坚出生","event_type":"birth","time_start":155,"summary":"孙坚为吴郡富春人，字文台，后成为江东孙氏政治军事基业的奠基者。","review_status":"draft","people":["孙坚"],"places":[]},{"id":"life:cao-cao-155-born","title":"曹操出生","event_type":"birth","time_start":155,"summary":"曹操生于沛国谯县，后以宦官养子曹嵩之子身份进入东汉政治网络。","review_status":"draft","people":["曹操"],"places":[]},{"id":"life:dong-zhao-156-born","title":"董昭出生","event_type":"birth","time_start":156,"summary":"董昭为济阴定陶人，本传载其卒时年八十一，故可推其约生于 156 年。","review_status":"draft","people":["董昭"],"places":[]},{"id":"life:xun-you-157-born","title":"荀攸出生","event_type":"birth","time_start":157,"summary":"荀攸为颍川荀氏成员，后成为曹操军中谋主。","review_status":"draft","people":["荀攸"],"places":[]},{"id":"life:eh-liang-ji-159-death","title":"梁冀被诛","event_type":"death","time_start":159,"summary":"桓帝联合宦官诛灭梁冀，外戚政治受挫，宦官势力上升。","review_status":"draft","people":["梁冀"],"places":[]},{"id":"eh-159-liang-ji-purged","title":"梁冀被诛，宦官势力上升","event_type":"politics","time_start":159,"summary":"桓帝联合宦官诛灭梁冀集团，外戚专权结束，但宦官政治由此显著上升。","review_status":"reviewed","people":["梁冀","刘志"],"places":[]},{"id":"life:liu-bei-161-born","title":"刘备出生","event_type":"birth","time_start":161,"summary":"刘备为涿郡人，自称中山靖王之后，汉末以宗室身份起兵。","review_status":"draft","people":["刘备"],"places":[]},{"id":"life:xun-yu-163-born","title":"荀彧出生","event_type":"birth","time_start":163,"summary":"荀彧出自颍川荀氏，少年时已有名望，后成为曹操中枢谋臣。","review_status":"draft","people":["荀彧"],"places":[]},{"id":"eh-166-first-party-prohibition","title":"第一次党锢之祸","event_type":"politics","time_start":166,"summary":"士人与宦官冲突激化，党人被禁锢，东汉中后期政治裂痕公开化。","review_status":"reviewed","people":[],"places":[]},{"id":"life:wei-ji-168-born","title":"卫觊出生","event_type":"birth","time_start":168,"summary":"卫觊为河东安邑人，出身河东士人网络。","review_status":"draft","people":["卫觊"],"places":[]},{"id":"life:cao-ren-168-born","title":"曹仁出生","event_type":"birth","time_start":168,"summary":"曹仁为曹操从弟，后成为曹魏宗亲方面统帅。","review_status":"draft","people":["曹仁"],"places":[]},{"id":"life:eh-liu-zhi-168-death","title":"桓帝去世","event_type":"death","time_start":168,"summary":"桓帝去世后，灵帝继位，党锢与宦官政治继续升级。","review_status":"draft","people":["刘志"],"places":[]},{"id":"life:eh-liu-hong-168-accession","title":"灵帝即位","event_type":"accession","time_start":168,"summary":"桓帝去世后，刘宏入继帝位。","review_status":"draft","people":["刘宏"],"places":[]},{"id":"eh-168-lingdi-accession-and-party-prohibition","title":"灵帝即位，党锢扩大","event_type":"politics","time_start":168,"summary":"桓帝去世后灵帝即位，士人、外戚、宦官冲突继续扩大，党锢影响延续。","review_status":"reviewed","people":["刘宏"],"places":[]},{"id":"life:zhang-liao-169-born","title":"张辽出生","event_type":"birth","time_start":169,"summary":"据张辽随吕布东奔徐州时“时年二十八”推算，张辽约生于 169 年。","review_status":"draft","people":["张辽"],"places":[]},{"id":"life:guo-jia-170-born","title":"郭嘉出生","event_type":"birth","time_start":170,"summary":"郭嘉为颍川人，后由荀彧推荐进入曹操集团。","review_status":"draft","people":["郭嘉"],"places":[]},{"id":"life:sima-lang-171-born","title":"司马朗出生","event_type":"birth","time_start":171,"summary":"司马朗为河内温县司马氏成员，司马懿之兄。","review_status":"draft","people":["司马朗"],"places":[]},{"id":"life:lu-su-172-born","title":"鲁肃出生","event_type":"birth","time_start":172,"summary":"鲁肃为临淮东城人，后成为孙权集团重要战略与外交人物。","review_status":"draft","people":["鲁肃"],"places":[]},{"id":"life:cao-cao-174-xiaolian","title":"举孝廉，任洛阳北部尉","event_type":"office","time_start":174,"summary":"曹操二十岁左右举孝廉入仕，历任郎、洛阳北部尉、顿丘令，进入东汉官僚体系。","review_status":"draft","people":["曹操"],"places":[]},{"id":"life:jia-kui-174-born","title":"贾逵出生","event_type":"birth","time_start":174,"summary":"贾逵为河东襄陵人，少有将率之志。","review_status":"draft","people":["贾逵"],"places":[]},{"id":"life:zhou-yu-175-born","title":"周瑜出生","event_type":"birth","time_start":175,"summary":"周瑜为庐江舒人，早与孙策交好，后成为江东核心统帅。","review_status":"draft","people":["周瑜"],"places":[]},{"id":"life:sun-ce-175-born","title":"孙策出生","event_type":"birth","time_start":175,"summary":"孙策为孙坚长子，字伯符，后承继父部曲开拓江东。","review_status":"draft","people":["孙策"],"places":[]},{"id":"life:fa-zheng-176-born","title":"法正出生","event_type":"birth","time_start":176,"summary":"法正为扶风郿人，后入益州刘璋幕府。","review_status":"draft","people":["法正"],"places":[]},{"id":"life:ma-chao-176-born","title":"马超出生","event_type":"birth","time_start":176,"summary":"马超为马腾之子，出身凉州、关中军事集团。","review_status":"draft","people":["马超"],"places":[]},{"id":"life:wang-can-177-born","title":"王粲出生","event_type":"birth","time_start":177,"summary":"王粲为山阳高平人，出身名族，少有文才。","review_status":"draft","people":["王粲"],"places":[]},{"id":"life:lu-meng-178-born","title":"吕蒙出生","event_type":"birth","time_start":178,"summary":"吕蒙为汝南富陂人，少年从军，后成为孙权集团重要将领。","review_status":"draft","people":["吕蒙"],"places":[]},{"id":"life:sima-yi-179-born","title":"司马懿出生","event_type":"birth","time_start":179,"summary":"司马懿为河内温县人，后进入曹魏中枢并成为司马氏掌权基础人物。","review_status":"draft","people":["司马懿"],"places":[]},{"id":"life:pang-tong-179-born","title":"庞统出生","event_type":"birth","time_start":179,"summary":"庞统为襄阳人，荆州名士，后入刘备幕府。","review_status":"draft","people":["庞统"],"places":[]},{"id":"life:liu-yi-180-born","title":"刘廙出生","event_type":"birth","time_start":180,"summary":"刘廙为南阳安众人，约生于建安以前的荆州士人网络中。","review_status":"draft","people":["刘廙"],"places":[]},{"id":"life:han-xiandi-181-born","title":"刘协出生","event_type":"birth","time_start":181,"summary":"刘协为汉灵帝子，董卓入洛阳后被立为皇帝。","review_status":"draft","people":["汉献帝"],"places":[]},{"id":"life:zhuge-liang-181-born","title":"诸葛亮出生","event_type":"birth","time_start":181,"summary":"诸葛亮为琅邪阳都人，后隐居隆中，被刘备三顾请出。","review_status":"draft","people":["诸葛亮"],"places":[]},{"id":"life:sun-quan-182-born","title":"孙权出生","event_type":"birth","time_start":182,"summary":"孙权为孙坚之子、孙策之弟，后继承江东基业。","review_status":"draft","people":["孙权"],"places":[]},{"id":"life:lu-xun-183-born","title":"陆逊出生","event_type":"birth","time_start":183,"summary":"陆逊为吴郡吴县人，后成为孙吴军事与政治核心人物。","review_status":"draft","people":["陆逊"],"places":[]}],"counts":{"events":41,"people":35,"places":0,"materials":0,"evidence":41}}</script>
+    <script>
+      const sourceData = JSON.parse(document.getElementById("review-data").textContent);
+      const storageKey = "chronoatlas-review:" + sourceData.profile.id + ":v1";
+      const kindLabels = { events: "事件", people: "人物", places: "地点", materials: "材料" };
+      const decisionOptions = {
+        events: [
+          ["pending", "待定"], ["approve", "通过"], ["rename", "改名后通过"],
+          ["merge", "合并到已有事件"], ["reject", "拒绝"]
+        ],
+        people: [
+          ["pending", "待定"], ["approve", "保留为独立人物"], ["rename", "改名后保留"],
+          ["merge", "合并到已有人物"], ["reject", "拒绝"]
+        ],
+        places: [
+          ["pending", "待定"], ["confirm", "确认地点实体"], ["bind", "确认并绑定位置"],
+          ["rename", "修正名称"], ["keep-unlocated", "保持未定位"], ["reject", "拒绝"]
+        ],
+        materials: [
+          ["pending", "未提供"], ["partial", "部分提供"], ["provided", "已提供定位"], ["defer", "暂缓"]
+        ]
+      };
+      const editableFields = {
+        events: ["decision", "revisedTitle", "mergeTargetId", "notes"],
+        people: ["decision", "canonicalName", "mergeTargetId", "confirmedAliases", "notes"],
+        places: ["decision", "revisedLabel", "administrativeTarget", "mapTarget", "citation", "notes"],
+        materials: ["decision", "citation", "notes"]
+      };
+      let activeKind = "events";
+      let state = loadState();
+
+      function escapeHtml(value) {
+        return String(value == null ? "" : value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function itemId(kind, item) { return kind === "materials" ? item.id : item.id; }
+
+      function blankRecord(kind) {
+        return Object.fromEntries(editableFields[kind].map((field) => [field, field === "decision" ? "pending" : ""]));
+      }
+
+      function blankState() {
+        return {
+          schema: sourceData.schema,
+          profileId: sourceData.profile.id,
+          updatedAt: new Date().toISOString(),
+          events: {}, people: {}, places: {}, materials: {}
+        };
+      }
+
+      function normalizeState(candidate) {
+        const normalized = blankState();
+        for (const kind of Object.keys(kindLabels)) {
+          for (const item of sourceData[kind]) {
+            const id = itemId(kind, item);
+            normalized[kind][id] = { ...blankRecord(kind), ...(candidate && candidate[kind] && candidate[kind][id] || {}) };
+          }
+        }
+        normalized.updatedAt = candidate && candidate.updatedAt || normalized.updatedAt;
+        return normalized;
+      }
+
+      function loadState() {
+        try {
+          const saved = localStorage.getItem(storageKey);
+          return normalizeState(saved ? JSON.parse(saved) : null);
+        } catch {
+          return normalizeState(null);
+        }
+      }
+
+      function saveState() {
+        state.updatedAt = new Date().toISOString();
+        const status = document.getElementById("save-status");
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(state));
+          status.textContent = "已本地保存";
+          status.className = "save-status";
+        } catch {
+          status.textContent = "本地保存失败";
+          status.className = "save-status error";
+        }
+      }
+
+      function decisionLabel(kind, code) {
+        return (decisionOptions[kind].find((item) => item[0] === code) || [code, code])[1];
+      }
+
+      function selectHtml(kind, id, value) {
+        const options = decisionOptions[kind].map(([code, label]) =>
+          '<option value="' + escapeHtml(code) + '"' + (code === value ? " selected" : "") + '>' + escapeHtml(label) + '</option>'
+        ).join("");
+        return '<select class="decision" data-kind="' + kind + '" data-id="' + escapeHtml(id) + '" data-field="decision" aria-label="审核决定">' + options + '</select>';
+      }
+
+      function fieldHtml(kind, id, field, placeholder, value, listId) {
+        return '<input class="edit-field" data-kind="' + kind + '" data-id="' + escapeHtml(id) + '" data-field="' + field + '" value="' + escapeHtml(value) + '" placeholder="' + escapeHtml(placeholder) + '"' + (listId ? ' list="' + listId + '"' : "") + ' />';
+      }
+
+      function notesHtml(kind, id, value) {
+        return '<textarea class="notes-field" data-kind="' + kind + '" data-id="' + escapeHtml(id) + '" data-field="notes" placeholder="审核备注或依据">' + escapeHtml(value) + '</textarea>';
+      }
+
+      function tagsHtml(items, className) {
+        if (!items || !items.length) return '<span class="subline">无</span>';
+        return '<div class="compact-list">' + items.map((item) => '<span class="tag ' + className + '">' + escapeHtml(item.label || item.name || item) + '</span>').join("") + '</div>';
+      }
+
+      function sourceLink(item) {
+        const title = escapeHtml(item.sourceTitle || "未命名来源");
+        return item.sourceUrl ? '<a href="' + escapeHtml(item.sourceUrl) + '" target="_blank" rel="noreferrer">' + title + '</a>' : title;
+      }
+
+      function evidenceHtml(evidence) {
+        if (!evidence || !evidence.length) return '<div class="subline">暂无证据定位</div>';
+        return evidence.map((item) =>
+          '<div class="evidence-block"><div class="evidence-source">' + sourceLink(item) +
+          (item.sourceSection ? ' · ' + escapeHtml(item.sourceSection) : "") +
+          (item.locator ? ' · ' + escapeHtml(item.locator) : "") +
+          '</div><div class="quote">' + escapeHtml(item.quote || "无摘录") + '</div></div>'
+        ).join("");
+      }
+
+      function mergeCandidatesHtml(kind, id, candidates) {
+        if (!candidates || !candidates.length) return '<div class="subline">无同年已有事件</div>';
+        return '<details class="merge-reference"><summary>查看 ' + candidates.length + ' 个同年已有事件（不等于重复）</summary>' +
+          candidates.map((candidate) => {
+            const people = candidate.people && candidate.people.length ? '人物：' + candidate.people.join('、') : '';
+            const places = candidate.places && candidate.places.length ? '地点：' + candidate.places.join('、') : '';
+            return '<div class="merge-candidate"><div class="merge-candidate-head"><div><div class="merge-candidate-title">' + escapeHtml(candidate.title) + '</div>' +
+              '<div class="subline">' + escapeHtml([candidate.event_type, candidate.review_status, people, places].filter(Boolean).join(' · ')) + '</div>' +
+              '<div class="merge-candidate-id">' + escapeHtml(candidate.id) + '</div></div>' +
+              '<button class="choose-merge" type="button" data-kind="' + kind + '" data-id="' + escapeHtml(id) + '" data-merge-value="' + escapeHtml(candidate.id) + '">选择合并</button></div>' +
+              (candidate.summary ? '<div class="subline">' + escapeHtml(candidate.summary) + '</div>' : '') + '</div>';
+          }).join('') + '</details>';
+      }
+
+      function eventRow(item, index) {
+        const review = state.events[item.id];
+        const candidateListId = "event-targets-" + index;
+        const candidates = item.mergeCandidates.map((candidate) =>
+          '<option value="' + escapeHtml(candidate.id) + '">' + escapeHtml(candidate.year + " · " + candidate.title + " · " + candidate.review_status) + '</option>'
+        ).join("");
+        return '<tr class="' + rowClass(review.decision) + '" data-search="' + escapeHtml(searchText(item)) + '">' +
+          '<td class="index">' + (index + 1) + '</td>' +
+          '<td class="year">' + escapeHtml(item.year) + '</td>' +
+          '<td><div class="main-label">' + escapeHtml(item.title) + '</div><div class="subline">' + escapeHtml(item.eventType) + ' · ' + escapeHtml(item.confidence) + ' · ' + escapeHtml(item.id) + '</div><div class="subline">' + escapeHtml(item.summary) + '</div></td>' +
+          '<td><div class="subline">人物</div>' + tagsHtml(item.people, "person") + '<div class="subline">地点</div>' + tagsHtml(item.places, "place") + '</td>' +
+          '<td><div>' + item.evidenceCount + ' 条证据 · ' + item.sourceCount + ' 个来源</div><details><summary>原文与定位</summary>' + evidenceHtml(item.evidence) + '</details></td>' +
+          '<td>' + selectHtml("events", item.id, review.decision) + '</td>' +
+          '<td>' + fieldHtml("events", item.id, "revisedTitle", "新事件标题", review.revisedTitle) + fieldHtml("events", item.id, "mergeTargetId", "合并目标事件 ID", review.mergeTargetId, candidateListId) + '<datalist id="' + candidateListId + '">' + candidates + '</datalist>' + mergeCandidatesHtml("events", item.id, item.mergeCandidates) + '</td>' +
+          '<td>' + notesHtml("events", item.id, review.notes) + '</td></tr>';
+      }
+
+      function personRow(item, index) {
+        const review = state.people[item.id];
+        const candidateListId = "person-targets-" + index;
+        const matches = item.nameMatches.map((match) =>
+          '<option value="' + escapeHtml(match.id) + '">' + escapeHtml(match.name + " · " + match.reviewStatus + (match.machineCandidate ? " · 机器候选" : "")) + '</option>'
+        ).join("");
+        const matchTags = item.nameMatches.length
+          ? '<div class="compact-list">' + item.nameMatches.map((match) => '<span class="tag warn">' + escapeHtml(match.name + " · " + match.id) + '</span>').join("") + '</div>'
+          : '<span class="subline">无精确同名候选</span>';
+        const linkedEvents = item.linkedEvents.map((event) => ({ label: event.year + " · " + event.title }));
+        const refs = item.sourceRefs.map((ref) => ({ ...ref, sourceSection: "" }));
+        return '<tr class="' + rowClass(review.decision) + '" data-search="' + escapeHtml(searchText(item)) + '">' +
+          '<td class="index">' + (index + 1) + '</td>' +
+          '<td><div class="main-label">' + escapeHtml(item.name) + '</div><div class="subline">' + escapeHtml(item.id) + '</div>' + tagsHtml(item.aliases, "") + '</td>' +
+          '<td><span class="tag">' + escapeHtml(item.discoveryEvidence) + '</span><div class="subline">置信度 ' + escapeHtml(item.discoveryConfidence) + '</div></td>' +
+          '<td>' + tagsHtml(linkedEvents, "") + '</td>' +
+          '<td>' + matchTags + '<details><summary>原文与定位</summary>' + evidenceHtml(refs) + '</details></td>' +
+          '<td>' + selectHtml("people", item.id, review.decision) + '</td>' +
+          '<td>' + fieldHtml("people", item.id, "canonicalName", "核定姓名", review.canonicalName) + fieldHtml("people", item.id, "mergeTargetId", "合并目标人物 ID", review.mergeTargetId, candidateListId) + fieldHtml("people", item.id, "confirmedAliases", "确认别名，用顿号分隔", review.confirmedAliases) + '<datalist id="' + candidateListId + '">' + matches + '</datalist></td>' +
+          '<td>' + notesHtml("people", item.id, review.notes) + '</td></tr>';
+      }
+
+      function placeRow(item, index) {
+        const review = state.places[item.id];
+        const linkedEvents = item.linkedEvents.map((event) => ({ label: event.year + " · " + event.title }));
+        return '<tr class="' + rowClass(review.decision) + '" data-search="' + escapeHtml(searchText(item)) + '">' +
+          '<td class="index">' + (index + 1) + '</td>' +
+          '<td><div class="main-label">' + escapeHtml(item.label) + '</div><div class="subline">' + escapeHtml(item.id) + '</div>' + tagsHtml(item.aliases, "") + '</td>' +
+          '<td>' + (item.mapFeatureNames.length ? tagsHtml(item.mapFeatureNames, "place") : '<span class="tag warn">未绑定地图几何</span>') + '</td>' +
+          '<td>' + tagsHtml(linkedEvents, "") + '<details><summary>原文与定位</summary>' + evidenceHtml(item.evidence) + '</details></td>' +
+          '<td>' + selectHtml("places", item.id, review.decision) + '</td>' +
+          '<td>' + fieldHtml("places", item.id, "revisedLabel", "修订名称", review.revisedLabel) + fieldHtml("places", item.id, "administrativeTarget", "同期行政隶属", review.administrativeTarget) + fieldHtml("places", item.id, "mapTarget", "地图目标或经纬度", review.mapTarget) + fieldHtml("places", item.id, "citation", "考证出处", review.citation) + '</td>' +
+          '<td>' + notesHtml("places", item.id, review.notes) + '</td></tr>';
+      }
+
+      function materialRow(item, index) {
+        const review = state.materials[item.id];
+        return '<tr class="' + rowClass(review.decision) + '" data-search="' + escapeHtml(searchText(item)) + '">' +
+          '<td class="index">' + (index + 1) + '</td>' +
+          '<td><span class="tag ' + (item.priority === "高" ? "danger" : "warn") + '">' + escapeHtml(item.priority) + '</span></td>' +
+          '<td><div class="main-label">' + escapeHtml(item.item) + '</div><div class="subline">' + escapeHtml(item.id) + '</div></td>' +
+          '<td>' + escapeHtml(item.requested) + '</td>' +
+          '<td>' + escapeHtml(item.acceptedFormat) + '</td>' +
+          '<td>' + selectHtml("materials", item.id, review.decision) + '</td>' +
+          '<td>' + fieldHtml("materials", item.id, "citation", "已提供材料或定位", review.citation) + '</td>' +
+          '<td>' + notesHtml("materials", item.id, review.notes) + '</td></tr>';
+      }
+
+      function rowClass(decision) {
+        if (decision === "reject") return "is-rejected";
+        return decision && decision !== "pending" ? "is-complete" : "";
+      }
+
+      function searchText(item) {
+        return JSON.stringify(item).toLowerCase();
+      }
+
+      const tableDefinitions = {
+        events: {
+          colgroup: ["44px", "58px", "310px", "210px", "270px", "150px", "250px", "230px"],
+          headers: ["#", "年", "当前事件", "人物 / 地点", "史料", "审核决定", "改名 / 合并", "备注"],
+          row: eventRow
+        },
+        people: {
+          colgroup: ["44px", "210px", "145px", "220px", "300px", "170px", "270px", "230px"],
+          headers: ["#", "当前人物", "识别依据", "关联事件", "同名与史料", "审核决定", "核定 / 合并 / 别名", "备注"],
+          row: personRow
+        },
+        places: {
+          colgroup: ["44px", "210px", "180px", "320px", "170px", "330px", "250px"],
+          headers: ["#", "地点实体", "当前地图绑定", "关联事件与史料", "审核决定", "名称 / 隶属 / 位置 / 出处", "备注"],
+          row: placeRow
+        },
+        materials: {
+          colgroup: ["44px", "70px", "230px", "330px", "330px", "160px", "270px", "230px"],
+          headers: ["#", "优先级", "材料", "需要内容", "可接受格式", "状态", "已提供定位", "备注"],
+          row: materialRow
+        }
+      };
+
+      function renderHeader() {
+        document.getElementById("page-meta").textContent = sourceData.profile.timeStart + "-" + sourceData.profile.timeEnd + " · " + sourceData.profile.id + " · 生成于 " + new Date(sourceData.generatedAt).toLocaleString("zh-CN");
+        document.getElementById("summary-strip").innerHTML =
+          '<span>事件 <strong>' + sourceData.counts.events + '</strong></span>' +
+          '<span>次级人物 <strong>' + sourceData.counts.people + '</strong></span>' +
+          '<span>待考地点 <strong>' + sourceData.counts.places + '</strong></span>' +
+          '<span>事件证据 <strong>' + sourceData.counts.evidence + '</strong></span>';
+        document.getElementById("tabs").innerHTML = Object.keys(kindLabels).map((kind) =>
+          '<button class="tab" type="button" data-tab="' + kind + '" aria-selected="' + (kind === activeKind) + '">' + kindLabels[kind] + ' ' + sourceData[kind].length + '</button>'
+        ).join("");
+      }
+
+      function renderFilterOptions() {
+        document.getElementById("decision-filter").innerHTML =
+          '<option value="all">全部决定</option>' +
+          decisionOptions[activeKind].map(([code, label]) => '<option value="' + code + '">' + escapeHtml(label) + '</option>').join("");
+      }
+
+      function filteredItems() {
+        const query = document.getElementById("search").value.trim().toLowerCase();
+        const decision = document.getElementById("decision-filter").value;
+        return sourceData[activeKind].filter((item) => {
+          const id = itemId(activeKind, item);
+          const matchesQuery = !query || searchText(item).includes(query);
+          const matchesDecision = decision === "all" || state[activeKind][id].decision === decision;
+          return matchesQuery && matchesDecision;
+        });
+      }
+
+      function renderTable() {
+        const definition = tableDefinitions[activeKind];
+        const items = filteredItems();
+        const colgroup = '<colgroup>' + definition.colgroup.map((width) => '<col style="width:' + width + '" />').join("") + '</colgroup>';
+        const head = '<thead><tr>' + definition.headers.map((header) => '<th>' + escapeHtml(header) + '</th>').join("") + '</tr></thead>';
+        const body = items.length
+          ? '<tbody>' + items.map((item) => definition.row(item, sourceData[activeKind].indexOf(item))).join("") + '</tbody>'
+          : '<tbody><tr><td class="empty" colspan="' + definition.headers.length + '">没有符合筛选条件的记录</td></tr></tbody>';
+        document.getElementById("table-shell").innerHTML = '<table>' + colgroup + head + body + '</table>';
+        renderProgress();
+      }
+
+      function renderProgress() {
+        const records = Object.values(state[activeKind]);
+        const completed = records.filter((record) => record.decision && record.decision !== "pending").length;
+        document.getElementById("progress").textContent = kindLabels[activeKind] + "已处理 " + completed + " / " + records.length;
+      }
+
+      function downloadableReview() {
+        const decisions = {};
+        for (const kind of Object.keys(kindLabels)) {
+          decisions[kind] = sourceData[kind].map((item) => {
+            const id = itemId(kind, item);
+            const snapshot = kind === "events"
+              ? { originalTitle: item.title, year: item.year }
+              : kind === "people"
+                ? { originalName: item.name }
+                : kind === "places"
+                  ? { originalLabel: item.label }
+                  : { item: item.item };
+            return { id, ...snapshot, ...state[kind][id] };
+          });
+        }
+        return {
+          schema: sourceData.schema,
+          profileId: sourceData.profile.id,
+          generatorId: sourceData.profile.generatorId,
+          sourceGeneratedAt: sourceData.generatedAt,
+          reviewExportedAt: new Date().toISOString(),
+          decisions
+        };
+      }
+
+      function download(name, text, type) {
+        const blob = new Blob([text], { type });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = name;
+        link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 500);
+      }
+
+      function csvCell(value) {
+        const text = String(value == null ? "" : value);
+        return '"' + text.replaceAll('"', '""') + '"';
+      }
+
+      function exportCurrentCsv() {
+        const rows = sourceData[activeKind].map((item) => {
+          const id = itemId(activeKind, item);
+          const review = state[activeKind][id];
+          const context = activeKind === "events"
+            ? [item.year, item.title, item.summary, item.people.map((x) => x.label).join("、"), item.places.map((x) => x.label).join("、"), item.evidence.map((x) => [x.sourceTitle, x.locator, x.quote].filter(Boolean).join(" · ")).join(" | ")]
+            : activeKind === "people"
+              ? [item.name, item.discoveryEvidence, item.linkedEvents.map((x) => x.year + "·" + x.title).join(" | "), item.sourceRefs.map((x) => [x.sourceTitle, x.locator, x.quote].filter(Boolean).join(" · ")).join(" | ")]
+              : activeKind === "places"
+                ? [item.label, item.linkedEvents.map((x) => x.year + "·" + x.title).join(" | "), item.evidence.map((x) => [x.sourceTitle, x.locator, x.quote].filter(Boolean).join(" · ")).join(" | ")]
+                : [item.priority, item.item, item.requested, item.acceptedFormat];
+          return [id, ...context, decisionLabel(activeKind, review.decision), ...editableFields[activeKind].filter((field) => field !== "decision").map((field) => review[field])];
+        });
+        const contextHeaders = activeKind === "events"
+          ? ["年份", "当前标题", "摘要", "人物", "地点", "史料"]
+          : activeKind === "people"
+            ? ["当前姓名", "识别依据", "关联事件", "史料"]
+            : activeKind === "places"
+              ? ["当前地点", "关联事件", "史料"]
+              : ["优先级", "材料", "需要内容", "可接受格式"];
+        const headers = ["稳定ID", ...contextHeaders, "审核决定", ...editableFields[activeKind].filter((field) => field !== "decision")];
+        const csv = "\ufeff" + [headers, ...rows].map((row) => row.map(csvCell).join(",")).join("\r\n");
+        download(sourceData.profile.id + "-" + activeKind + "-review.csv", csv, "text/csv;charset=utf-8");
+      }
+
+      document.getElementById("tabs").addEventListener("click", (event) => {
+        const button = event.target.closest("[data-tab]");
+        if (!button) return;
+        activeKind = button.dataset.tab;
+        document.getElementById("search").value = "";
+        renderHeader();
+        renderFilterOptions();
+        renderTable();
+      });
+
+      document.getElementById("table-shell").addEventListener("change", (event) => {
+        const target = event.target.closest("[data-kind][data-id][data-field]");
+        if (!target) return;
+        state[target.dataset.kind][target.dataset.id][target.dataset.field] = target.value;
+        saveState();
+        if (target.dataset.field === "decision") renderTable();
+      });
+
+      document.getElementById("table-shell").addEventListener("click", (event) => {
+        const target = event.target.closest("[data-kind][data-id][data-merge-value]");
+        if (!target) return;
+        const record = state[target.dataset.kind][target.dataset.id];
+        record.decision = "merge";
+        record.mergeTargetId = target.dataset.mergeValue;
+        saveState();
+        renderTable();
+      });
+
+      document.getElementById("table-shell").addEventListener("input", (event) => {
+        const target = event.target.closest("[data-kind][data-id][data-field]");
+        if (!target || target.dataset.field === "decision") return;
+        state[target.dataset.kind][target.dataset.id][target.dataset.field] = target.value;
+        saveState();
+      });
+
+      document.getElementById("search").addEventListener("input", renderTable);
+      document.getElementById("decision-filter").addEventListener("change", renderTable);
+      document.getElementById("export-json").addEventListener("click", () => {
+        download(sourceData.profile.id + "-review-decisions.json", JSON.stringify(downloadableReview(), null, 2), "application/json;charset=utf-8");
+      });
+      document.getElementById("export-csv").addEventListener("click", exportCurrentCsv);
+      document.getElementById("import-json").addEventListener("click", () => document.getElementById("import-file").click());
+      document.getElementById("import-file").addEventListener("change", async (event) => {
+        const file = event.target.files && event.target.files[0];
+        if (!file) return;
+        try {
+          const imported = JSON.parse(await file.text());
+          if (imported.profileId !== sourceData.profile.id || !imported.decisions) throw new Error("profile-mismatch");
+          const candidate = blankState();
+          for (const kind of Object.keys(kindLabels)) {
+            for (const record of imported.decisions[kind] || []) {
+              if (candidate[kind][record.id] || sourceData[kind].some((item) => itemId(kind, item) === record.id)) {
+                candidate[kind][record.id] = { ...blankRecord(kind), ...record };
+              }
+            }
+          }
+          state = normalizeState(candidate);
+          saveState();
+          renderTable();
+        } catch {
+          const status = document.getElementById("save-status");
+          status.textContent = "导入文件不匹配";
+          status.className = "save-status error";
+        } finally {
+          event.target.value = "";
+        }
+      });
+
+      renderHeader();
+      renderFilterOptions();
+      renderTable();
+    </script>
+  </body>
+</html>

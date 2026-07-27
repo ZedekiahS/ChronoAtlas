@@ -81,13 +81,15 @@ function insertChunkEntities(db, chunkId, document) {
   }
 }
 
-function rebuildDocumentChunks(db) {
-  db.exec(`
-    DELETE FROM document_chunk_entities;
-    DELETE FROM document_chunks;
-  `);
+export function rebuildDocumentChunks(db, options = {}) {
+  db.exec("BEGIN;");
+  try {
+    db.exec(`
+      DELETE FROM document_chunk_entities;
+      DELETE FROM document_chunks;
+    `);
 
-  const insertChunk = db.prepare(`
+    const insertChunk = db.prepare(`
     INSERT INTO document_chunks (
       id, search_document_id, chunk_index, subject_table, subject_id, title, body,
       language, region_id, period_id, topic_id, time_start, time_end,
@@ -95,13 +97,14 @@ function rebuildDocumentChunks(db) {
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
 
-  const documents = db.prepare(`
-    SELECT *
-    FROM search_documents
-    ORDER BY id
-  `).all();
+    const documents = db.prepare(`
+      SELECT *
+      FROM search_documents
+      ORDER BY id
+    `).all();
 
-  for (const document of documents) {
+    let chunkCount = 0;
+    for (const document of documents) {
     const chunkBodies = splitIntoChunks(document.body);
     chunkBodies.forEach((body, index) => {
       const chunkId = `${document.id}:chunk:${String(index).padStart(3, "0")}`;
@@ -125,11 +128,20 @@ function rebuildDocumentChunks(db) {
         compactText([document.raw_json]) || "{}",
       );
       insertChunkEntities(db, chunkId, document);
+      chunkCount += 1;
     });
   }
 
-  if (hasDocumentChunksFts(db)) {
+    db.exec("COMMIT;");
+    options.log?.(`rebuilt ${chunkCount} document chunks from ${documents.length} search documents`);
+  } catch (error) {
+    db.exec("ROLLBACK;");
+    throw error;
+  }
+
+  if (options.rebuildFts !== false && hasDocumentChunksFts(db)) {
     db.exec("INSERT INTO document_chunks_fts(document_chunks_fts) VALUES('rebuild');");
+    options.log?.("rebuilt document_chunks_fts");
   }
 }
 
@@ -181,7 +193,7 @@ function createOptionalFts(db) {
   }
 }
 
-export default function migrate(db) {
+export default function migrate(db, options = {}) {
   db.exec(`
     CREATE TABLE IF NOT EXISTS document_chunks (
       id TEXT PRIMARY KEY,
@@ -228,5 +240,7 @@ export default function migrate(db) {
   `);
 
   createOptionalFts(db);
-  rebuildDocumentChunks(db);
+  if (options.rebuildDocumentChunks !== false) {
+    rebuildDocumentChunks(db, options);
+  }
 }

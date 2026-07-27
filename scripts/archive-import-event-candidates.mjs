@@ -86,11 +86,32 @@ function inferMentionId(cardId) {
   if (cardId.startsWith("card:hanshu-auto:")) {
     return `hanshu-auto-candidate:${cardId.slice("card:hanshu-auto:".length)}`;
   }
+  if (cardId.startsWith("card:houhanshu-auto:")) {
+    return `houhanshu-auto-candidate:${cardId.slice("card:houhanshu-auto:".length)}`;
+  }
+  if (cardId.startsWith("card:houhanshu-eastern-han-auto:")) {
+    return `houhanshu-eastern-han-auto-candidate:${cardId.slice("card:houhanshu-eastern-han-auto:".length)}`;
+  }
+  if (cardId.startsWith("card:sanguozhi-auto:")) {
+    return `sanguozhi-auto-candidate:${cardId.slice("card:sanguozhi-auto:".length)}`;
+  }
+  if (cardId.startsWith("card:jinshu-auto:")) {
+    return `jinshu-auto-candidate:${cardId.slice("card:jinshu-auto:".length)}`;
+  }
+  if (cardId.startsWith("card:jinshu-western-jin-auto:")) {
+    return `jinshu-western-jin-auto-candidate:${cardId.slice("card:jinshu-western-jin-auto:".length)}`;
+  }
   return null;
 }
 
 function scoreExistingEvent(cluster, event) {
   if (event.region_id !== cluster.regionId) {
+    return 0;
+  }
+  if (!Number.isInteger(cluster.timeStart) || !Number.isInteger(cluster.timeEnd)) {
+    return 0;
+  }
+  if (Math.abs(cluster.timeEnd - cluster.timeStart) > 5) {
     return 0;
   }
   const start = cluster.timeStart ?? Number.NEGATIVE_INFINITY;
@@ -108,6 +129,21 @@ function scoreExistingEvent(cluster, event) {
     return 0.95;
   }
 
+  const clusterPeople = new Set(cluster.people.map(normalizeText));
+  const sharedPeople = event.people.filter((person) => clusterPeople.has(normalizeText(person)));
+  const actionTokens = ["大破", "出征", "起兵", "反叛", "叛乱", "讨", "伐", "攻", "击", "破", "斩", "杀", "诛", "降", "封", "即位", "废"];
+  const sharedAction = actionTokens.some((token) => text.includes(token) && eventTitle.includes(token));
+  const targetTokens = ["北匈奴", "南匈奴", "匈奴", "鲜卑", "乌桓", "羌", "焉耆", "车师", "貊人"];
+  const sharedTarget = targetTokens.some((token) => text.includes(token) && eventTitle.includes(token));
+  if (
+    cluster.timeStart === cluster.timeEnd
+    && event.time_start === cluster.timeStart
+    && event.profileId
+    && event.profileId === cluster.promotionProfile
+    && sharedPeople.length
+    && (sharedAction || sharedTarget)
+  ) return 0.9;
+
   const chars = new Set([...text]);
   const titleChars = [...new Set([...eventTitle])];
   if (titleChars.length === 0) {
@@ -121,10 +157,12 @@ const db = new DatabaseSync(dbPath);
 try {
   db.exec("PRAGMA foreign_keys = ON;");
 
-  const batch = db.prepare("SELECT id FROM import_batches WHERE id = ?").get(batchId);
+  const batch = db.prepare("SELECT * FROM import_batches WHERE id = ?").get(batchId);
   if (!batch) {
     throw new Error(`Missing import batch: ${batchId}`);
   }
+  const batchRaw = parseJson(batch.raw_json, {});
+  const batchRegionId = batchRaw.regionId ?? "china";
 
   const cards = db.prepare(`
     SELECT
@@ -158,13 +196,21 @@ try {
 
   const enriched = cards.map((card) => {
     const raw = parseJson(card.raw_json, {});
-    const people = parseJson(card.people_core_json, []);
+    const people = [
+      ...parseJson(card.people_core_json, []),
+      ...parseJson(card.people_mentioned_json, []),
+    ];
     const sourceId = raw.sourceId ?? card.passage_source_id ?? "unknown-source";
     const passageId = raw.passageId ?? "unknown-passage";
     const sentenceIndex = Number.isInteger(raw.sentenceIndex) ? raw.sentenceIndex : 0;
     const eventScale = raw.eventScale ?? "minor";
     const label = cleanLabel(card.event_label, card.original_text ?? card.fact_brief);
     const exactKey = normalizeText(label);
+    const hasExactYear = Number.isInteger(card.year);
+    const passageSpan = Number.isInteger(card.passage_year_start) && Number.isInteger(card.passage_year_end)
+      ? Math.abs(card.passage_year_end - card.passage_year_start)
+      : null;
+    const hasNarrowPassageRange = !hasExactYear && passageSpan !== null && passageSpan <= 5;
     return {
       ...card,
       raw,
@@ -175,34 +221,29 @@ try {
       eventScale,
       label,
       exactKey,
-      windowBaseKey: ["window", sourceId, passageId, card.fact_type ?? "unknown", eventScale].join(":"),
-      windowKey: null,
-      regionId: "china",
-      timeStart: Number.isInteger(card.year) ? card.year : card.passage_year_start,
-      timeEnd: Number.isInteger(card.year) ? card.year : card.passage_year_end,
+      regionId: raw.regionId ?? batchRegionId,
+      timeStart: hasExactYear ? card.year : hasNarrowPassageRange ? card.passage_year_start : null,
+      timeEnd: hasExactYear ? card.year : hasNarrowPassageRange ? card.passage_year_end : null,
+      timePrecision: hasExactYear ? "year" : hasNarrowPassageRange ? "range" : "unknown",
+      sourceTimeRange: [card.passage_year_start ?? null, card.passage_year_end ?? card.passage_year_start ?? null],
     };
   });
 
-  const localOrdinalCounters = new Map();
-  for (const card of enriched) {
-    const ordinal = localOrdinalCounters.get(card.windowBaseKey) ?? 0;
-    localOrdinalCounters.set(card.windowBaseKey, ordinal + 1);
-    card.localCandidateOrdinal = ordinal;
-    card.windowKey = `${card.windowBaseKey}:${Math.floor(ordinal / 3)}`;
-  }
-
   const exactCounts = new Map();
   for (const card of enriched) {
-    if (card.exactKey.length >= 8) {
-      exactCounts.set(card.exactKey, (exactCounts.get(card.exactKey) ?? 0) + 1);
+    if (card.exactKey.length >= 8 && card.timePrecision === "year") {
+      const peopleKey = [...card.people].sort().join("|");
+      const key = [card.regionId, card.timeStart, card.fact_type ?? "unknown", peopleKey, card.exactKey].join(":");
+      card.exactEventKey = key;
+      exactCounts.set(key, (exactCounts.get(key) ?? 0) + 1);
     }
   }
 
   const clustersByKey = new Map();
   for (const card of enriched) {
-    const useExact = card.exactKey.length >= 8 && (exactCounts.get(card.exactKey) ?? 0) > 1;
-    const normalizedKey = useExact ? `exact:${card.sourceId}:${card.fact_type ?? "unknown"}:${card.exactKey}` : card.windowKey;
-    const mergeStrategy = useExact ? "exact-label" : "local-window";
+    const useExact = card.exactEventKey && (exactCounts.get(card.exactEventKey) ?? 0) > 1;
+    const normalizedKey = useExact ? `exact-event:${card.exactEventKey}` : `single-card:${card.id}`;
+    const mergeStrategy = useExact ? "exact-event-key" : "single-card";
     const cluster = clustersByKey.get(normalizedKey) ?? {
       id: `import-cluster:${stableId(`${batchId}:${normalizedKey}`)}`,
       batchId,
@@ -216,10 +257,17 @@ try {
   }
 
   const existingEvents = db.prepare(`
-    SELECT id, title, region_id, time_start, COALESCE(time_end, time_start) AS time_end, event_type
+    SELECT id, title, region_id, time_start, COALESCE(time_end, time_start) AS time_end, event_type, raw_json
     FROM events
-    WHERE region_id = 'china'
-  `).all();
+    WHERE region_id = ?
+  `).all(batchRegionId).map((event) => {
+    const raw = parseJson(event.raw_json, {});
+    return {
+      ...event,
+      profileId: raw.profileId ?? null,
+      people: Array.isArray(raw.people) ? raw.people : [],
+    };
+  });
 
   const clusters = [...clustersByKey.values()].map((cluster) => {
     const sortedCards = cluster.cards.sort((left, right) => left.sentenceIndex - right.sentenceIndex || left.id.localeCompare(right.id));
@@ -246,6 +294,7 @@ try {
       sourceIds,
       summary,
       normalizedText: normalizeText(text),
+      promotionProfile: batchRaw.promotionProfile ?? null,
     };
 
     let bestMatch = null;
@@ -257,6 +306,8 @@ try {
     }
     enrichedCluster.bestMatch = bestMatch;
     enrichedCluster.matchStatus = bestMatch?.score >= 0.86 ? "matched" : bestMatch?.score >= 0.72 ? "possible" : "unmatched";
+    enrichedCluster.matchedEvent = enrichedCluster.matchStatus === "unmatched" ? null : bestMatch?.event ?? null;
+    enrichedCluster.matchedScore = enrichedCluster.matchStatus === "unmatched" ? 0 : bestMatch?.score ?? 0;
     return enrichedCluster;
   });
 
@@ -330,18 +381,24 @@ try {
         cluster.candidateCount,
         cluster.sourceCount,
         cluster.personCount,
-        cluster.bestMatch?.event.id ?? null,
+        cluster.matchedEvent?.id ?? null,
         cluster.matchStatus,
         cluster.confidence,
-        "staged",
+        cluster.matchStatus === "unmatched" ? "staged" : "needs-review",
         cluster.summary,
         toJson({
           generatedFrom: "archive-import-event-candidates",
           mergeStrategy: cluster.mergeStrategy,
+          timePrecision: cluster.cards.every((card) => card.timePrecision === "year")
+            ? "year"
+            : cluster.cards.some((card) => card.timePrecision === "range")
+              ? "range"
+              : "unknown",
+          sourceTimeRanges: cluster.cards.map((card) => card.sourceTimeRange),
           sourceIds: cluster.sourceIds,
           people: cluster.people,
-          matchedEventTitle: cluster.bestMatch?.event.title ?? null,
-          matchScore: cluster.bestMatch?.score ?? 0,
+          matchedEventTitle: cluster.matchedEvent?.title ?? null,
+          matchScore: cluster.matchedScore,
         }),
         now,
       );
@@ -355,7 +412,7 @@ try {
           eventClusterLabel: cluster.canonicalLabel,
           eventClusterKey: cluster.normalizedKey,
           eventClusterMergeStrategy: cluster.mergeStrategy,
-          matchedEventId: cluster.bestMatch?.event.id ?? null,
+          matchedEventId: cluster.matchedEvent?.id ?? null,
           archiveStatus: cluster.matchStatus,
         };
         updateCard.run(
@@ -370,7 +427,7 @@ try {
           cluster.id,
           card.id,
           index,
-          cluster.mergeStrategy === "exact-label" ? 1 : 0.82,
+          1,
           index === 0 ? "representative" : "supporting",
           toJson({
             sentenceIndex: card.sentenceIndex,
@@ -389,7 +446,7 @@ try {
                 ...parseJson(mention.raw_json, {}),
                 eventClusterId: cluster.id,
                 eventClusterLabel: cluster.canonicalLabel,
-                matchedEventId: cluster.bestMatch?.event.id ?? null,
+                matchedEventId: cluster.matchedEvent?.id ?? null,
                 archiveStatus: cluster.matchStatus,
               }),
               mentionId,
@@ -404,7 +461,7 @@ try {
                 ...parseJson(document.raw_json, {}),
                 eventClusterId: cluster.id,
                 eventClusterLabel: cluster.canonicalLabel,
-                matchedEventId: cluster.bestMatch?.event.id ?? null,
+                matchedEventId: cluster.matchedEvent?.id ?? null,
                 archiveStatus: cluster.matchStatus,
               }),
               mentionId,
@@ -423,8 +480,8 @@ try {
       clusters: clusters.length,
       singletonClusters: clusters.filter((cluster) => cluster.candidateCount === 1).length,
       multiCardClusters: clusters.filter((cluster) => cluster.candidateCount > 1).length,
-      exactMergeClusters: clusters.filter((cluster) => cluster.mergeStrategy === "exact-label").length,
-      localWindowClusters: clusters.filter((cluster) => cluster.mergeStrategy === "local-window").length,
+       exactMergeClusters: clusters.filter((cluster) => cluster.mergeStrategy === "exact-event-key").length,
+       singleCardClusters: clusters.filter((cluster) => cluster.mergeStrategy === "single-card").length,
       matchedClusters: clusters.filter((cluster) => cluster.matchStatus === "matched").length,
       possibleMatchClusters: clusters.filter((cluster) => cluster.matchStatus === "possible").length,
       orphanImportCardSearchDocumentsDeleted: orphanSearchDocumentIds.length,
@@ -439,7 +496,7 @@ try {
           timeStart: cluster.timeStart,
           timeEnd: cluster.timeEnd,
           matchStatus: cluster.matchStatus,
-          matchedEventId: cluster.bestMatch?.event.id ?? null,
+          matchedEventId: cluster.matchedEvent?.id ?? null,
         })),
     };
     console.log(JSON.stringify(report, null, 2));

@@ -303,7 +303,10 @@ function insertPersonEntities(db) {
       death_year,
       summary,
       life_confidence,
-      coverage_status,
+      CASE
+        WHEN coverage_status = 'candidate' THEN 'needs-review'
+        ELSE 'draft'
+      END,
       raw_json
     FROM persons
     WHERE true
@@ -316,7 +319,10 @@ function insertPersonEntities(db) {
       time_end = excluded.time_end,
       summary = excluded.summary,
       confidence = excluded.confidence,
-      review_status = excluded.review_status,
+      review_status = CASE
+        WHEN entities.review_status IN ('reviewed', 'approved', 'rejected') THEN entities.review_status
+        ELSE excluded.review_status
+      END,
       raw_json = excluded.raw_json;
   `);
 
@@ -673,8 +679,11 @@ function insertSearchDocuments(db) {
       review_status = excluded.review_status,
       raw_json = excluded.raw_json
   `);
-
-  for (const person of db.prepare("SELECT * FROM persons").all()) {
+  for (const person of db.prepare(`
+    SELECT p.*, e.review_status AS entity_review_status
+    FROM persons p
+    LEFT JOIN entities e ON e.id = 'person:' || p.id
+  `).all()) {
     insert.run(
       `entity:person:${person.id}`,
       "entities",
@@ -687,7 +696,7 @@ function insertSearchDocuments(db) {
       null,
       person.birth_year,
       person.death_year,
-      person.coverage_status,
+      person.entity_review_status ?? "draft",
       person.raw_json
     );
   }
