@@ -1,4 +1,4 @@
-﻿import { StrictMode, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { StrictMode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { createRoot } from "react-dom/client";
 import { geoGraticule10, geoNaturalEarth1, geoPath } from "d3-geo";
@@ -237,7 +237,7 @@ type PersonAnnualTimelineItem = {
   startYear: number;
 };
 
-type Page = "home" | "learning" | "world" | "china" | "rome" | "people" | "person-detail" | "places" | "place-detail" | "age" | "evidence" | "source-library" | "event-detail" | "evidence-graph" | "compare" | "coverage" | "map-debug" | "rag-eval" | "ai-debug" | "ai-history";
+type Page = "home" | "learning" | "world" | "china" | "rome" | "people" | "person-detail" | "places" | "place-detail" | "age" | "evidence" | "source-library" | "events" | "event-detail" | "evidence-graph" | "compare" | "coverage" | "map-debug" | "rag-eval" | "ai-debug" | "ai-history";
 type TopbarMenu = "people" | "sources" | "events" | "geo" | "ai" | "tools";
 type ChinaMapMode = "political" | "terrain" | "three-d" | "commandery";
 type ThreeKingdomsFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "war" | "politics";
@@ -1581,6 +1581,7 @@ const uiText: Record<Locale, {
       age: "年龄对比：同年人物年龄",
       evidence: "史料证据：原文、译文与出处",
       "source-library": "史料原文库",
+      events: "事件索引：逐年事件与人物",
       "event-detail": "事件详情",
       "evidence-graph": "证据图谱：事件、断言与出处",
       compare: "事件对比：中国、罗马与萨珊",
@@ -1736,6 +1737,7 @@ const uiText: Record<Locale, {
       age: "Age Comparison: People in the Same Year",
       evidence: "Historical Evidence: Texts, Translations, Sources",
       "source-library": "Original Text Library",
+      events: "Event Index: Events and People by Year",
       "event-detail": "Event Detail",
       "evidence-graph": "Evidence Graph: Events, Claims, Sources",
       compare: "Event Comparison: China, Rome, and Sasanian Persia",
@@ -5781,6 +5783,33 @@ function App() {
       )
       .slice(0, 12);
   }, [detailPeriodContext.regionId, eventImportanceVersion, events, year, yearMax, yearMin]);
+  const eventIndexEvents = useMemo(() => (
+    events
+      .filter((event) => {
+        const eventEndYear = event.endYear ?? event.startYear;
+        return event.region === detailPeriodContext.regionId &&
+          event.startYear <= yearMax &&
+          eventEndYear >= yearMin &&
+          eventMatchesQuery(event, normalizedQuery);
+      })
+      .sort((left, right) =>
+        left.startYear - right.startYear ||
+        (left.endYear ?? left.startYear) - (right.endYear ?? right.startYear) ||
+        left.title.localeCompare(right.title, "zh-Hans-CN"),
+      )
+  ), [detailPeriodContext.regionId, events, normalizedQuery, yearMax, yearMin]);
+  const eventIndexYearGroups = useMemo(() => {
+    const groupedEvents = new Map<number, HistoricalEvent[]>();
+    eventIndexEvents.forEach((event) => {
+      const yearEvents = groupedEvents.get(event.startYear) ?? [];
+      yearEvents.push(event);
+      groupedEvents.set(event.startYear, yearEvents);
+    });
+    return [...groupedEvents.entries()]
+      .sort(([leftYear], [rightYear]) => leftYear - rightYear)
+      .map(([groupYear, yearEvents]) => ({ year: groupYear, events: yearEvents }));
+  }, [eventIndexEvents]);
+  const eventIndexPeopleCount = new Set(eventIndexEvents.flatMap((event) => event.people)).size;
   const personLifeEventCounts = useMemo(() => {
     const counts = new Map<string, number>();
     chinaPersonLifeEvents.forEach((lifeEvent) => counts.set(lifeEvent.personId, (counts.get(lifeEvent.personId) ?? 0) + 1));
@@ -7815,26 +7844,15 @@ function App() {
     setSelectedRomanProvinceId(null);
   }
 
-  function openEventDetailPanel() {
-    const targetEvent =
-      currentPeriodRecommendedEvents.find((event) => isPinnedToYear(event, year)) ??
-      currentPeriodRecommendedEvents[0] ??
-      selectedEvent;
-
-    if (targetEvent.id !== selectedEvent.id) {
-      setSelectedId(targetEvent.id);
-      setSelectedRegion(targetEvent.region);
-    }
-    setPage("event-detail");
+  function openEventIndex() {
+    setQuery("");
+    setPage("events");
     setSummaryRegion(null);
     setHoveredRegion(null);
     setSelectedChinaBlockId(null);
     setHoveredChinaBlockId(null);
-    if (targetEvent.region !== "rome") {
-      setSelectedRomanProvinceId(null);
-    }
+    setSelectedRomanProvinceId(null);
   }
-
   function getRecommendedPlaceDetailBlockId() {
     if (!isChinaPlaceLayerAvailableForPeriod) {
       return null;
@@ -8810,7 +8828,7 @@ function App() {
   const showTopbarSearch = !(["home", "learning", "people", "person-detail", "places", "place-detail", "evidence", "source-library", "event-detail", "coverage", "map-debug", "rag-eval", "ai-debug", "ai-history"] as Page[]).includes(page);
 
   return (
-    <main className={`app-shell ${page === "home" || page === "learning" || page === "age" || page === "evidence" || page === "source-library" || page === "event-detail" || page === "person-detail" || page === "places" || page === "place-detail" || page === "evidence-graph" || page === "compare" || page === "coverage" || page === "map-debug" || page === "rag-eval" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""}`}>
+    <main className={`app-shell ${page === "home" || page === "learning" || page === "age" || page === "evidence" || page === "source-library" || page === "events" || page === "event-detail" || page === "person-detail" || page === "places" || page === "place-detail" || page === "evidence-graph" || page === "compare" || page === "coverage" || page === "map-debug" || page === "rag-eval" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""}`}>
       <header className="global-topbar" aria-label={locale === "zh" ? "站点工具栏" : "Site toolbar"}>
         <button
           className="utility-menu-button"
@@ -8870,7 +8888,7 @@ function App() {
                 <button type="button" onClick={() => { setOpenTopbarMenu(null); openEvidenceGraph(selectedEvent); }}>{t.nav.evidenceGraph}</button>
               </div>
             </details>
-            <details className={`topbar-menu ${page === "event-detail" || page === "compare" || page === "coverage" ? "active" : ""}`} open={openTopbarMenu === "events"}>
+            <details className={`topbar-menu ${page === "events" || page === "event-detail" || page === "compare" || page === "coverage" ? "active" : ""}`} open={openTopbarMenu === "events"}>
               <summary onClick={(event) => {
                 event.preventDefault();
                 setOpenTopbarMenu((current) => current === "events" ? null : "events");
@@ -8879,7 +8897,7 @@ function App() {
                 <span>{locale === "zh" ? "事件" : "Events"}</span>
               </summary>
               <div className="topbar-menu-panel">
-                <button type="button" onClick={() => { setOpenTopbarMenu(null); openEventDetailPanel(); }}>{locale === "zh" ? "事件详情" : "Event Detail"}</button>
+                <button type="button" onClick={() => { setOpenTopbarMenu(null); openEventIndex(); }}>{locale === "zh" ? "事件索引" : "Event Index"}</button>
                 <button type="button" onClick={() => { setOpenTopbarMenu(null); openEventComparison(); }}>{t.nav.compare}</button>
                 <button type="button" onClick={() => { setOpenTopbarMenu(null); openCoveragePanel(); }}>{t.nav.coverage}</button>
               </div>
@@ -11311,6 +11329,96 @@ function App() {
             )}
             </div>
           </section>
+        ) : page === "events" ? (
+          <section className="event-index-stage" aria-label={locale === "zh" ? "事件索引" : "Event index"}>
+            <div className="event-index-summary">
+              <div>
+                <p className="kicker">{locale === "zh" ? "事件索引" : "Event Index"}</p>
+                <h2>{locale === "zh" ? "按年份查看独立事件" : "Independent events grouped by year"}</h2>
+                <p>
+                  {locale === "zh"
+                    ? `${detailPeriodContext.title} · ${formatHistoricalYear(yearMin)} 至 ${formatHistoricalYear(yearMax)}。同一年保留不同人物、地点和行动下的独立事件；选择具体事件后再进入详情。`
+                    : `${detailPeriodContext.title} · ${formatHistoricalYear(yearMin)} to ${formatHistoricalYear(yearMax)}. Distinct events remain separate within each year; select one to open its detail.`}
+                </p>
+              </div>
+              <div className="event-index-metrics">
+                <div>
+                  <span>{locale === "zh" ? "事件" : "Events"}</span>
+                  <strong>{eventIndexEvents.length}</strong>
+                </div>
+                <div>
+                  <span>{locale === "zh" ? "有事件年份" : "Years"}</span>
+                  <strong>{eventIndexYearGroups.length}</strong>
+                </div>
+                <div>
+                  <span>{locale === "zh" ? "涉及人物" : "People"}</span>
+                  <strong>{eventIndexPeopleCount}</strong>
+                </div>
+              </div>
+            </div>
+
+            {normalizedQuery && (
+              <div className="event-index-query-note">
+                <Search size={16} aria-hidden="true" />
+                <span>{locale === "zh" ? `正在筛选“${query.trim()}”` : `Filtering “${query.trim()}”`}</span>
+                <button type="button" onClick={() => setQuery("")}>{locale === "zh" ? "清除" : "Clear"}</button>
+              </div>
+            )}
+
+            {eventIndexYearGroups.length ? (
+              <div className="event-index-timeline">
+                {eventIndexYearGroups.map((group) => (
+                  <section
+                    className={`event-index-year-group ${group.year === year ? "current" : ""}`}
+                    data-event-year={group.year}
+                    key={group.year}
+                  >
+                    <header className="event-index-year-heading">
+                      <strong>{formatHistoricalYear(group.year)}</strong>
+                      <span>{group.events.length} {locale === "zh" ? "事件" : "events"}</span>
+                    </header>
+                    <div className="event-index-year-events">
+                      {group.events.map((event) => {
+                        const eventTitle = getEventDisplayTitle(event, locale);
+                        const peopleLabel = event.people.slice(0, 4).join("、");
+                        return (
+                          <button
+                            className="event-index-card"
+                            data-event-id={event.id}
+                            key={event.id}
+                            type="button"
+                            onClick={() => selectHistoricalEvent(event)}
+                          >
+                            <span className="event-index-card-type">{categoryLabels[event.category]}</span>
+                            <strong>{eventTitle.primary}</strong>
+                            {eventTitle.secondary && <small>{eventTitle.secondary}</small>}
+                            <p>{event.summary}</p>
+                            <span className="event-index-card-meta">
+                              <UsersRound size={14} aria-hidden="true" />
+                              {peopleLabel || (locale === "zh" ? "集体主体或人物待绑定" : "Collective or unbound people")}
+                              {event.people.length > 4 ? ` +${event.people.length - 4}` : ""}
+                            </span>
+                            <span className="event-index-card-meta">
+                              <MapPinned size={14} aria-hidden="true" />
+                              {event.locationName || event.places?.[0] || (locale === "zh" ? "地点待补" : "Location pending")}
+                            </span>
+                            <span className="event-index-card-footer">
+                              <span>{formatYearRange(event)}</span>
+                              <span>{event.relatedEvents.length} {locale === "zh" ? "相关事件" : "related"}</span>
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                ))}
+              </div>
+            ) : (
+              <div className="empty-state">
+                {locale === "zh" ? "当前时期没有匹配事件。可清除搜索词或返回时期总览。" : "No matching events in this period. Clear the search or return to the period overview."}
+              </div>
+            )}
+          </section>
         ) : page === "event-detail" ? (
           <section className="event-detail-stage" aria-label={locale === "zh" ? "事件详情" : "Event detail"}>
             <div className="event-detail-hero">
@@ -11321,6 +11429,10 @@ function App() {
                 <p>{selectedEventDetail?.overview ?? selectedEvent.summary}</p>
               </div>
               <div className="event-detail-actions">
+                <button type="button" onClick={openEventIndex}>
+                  <CalendarDays size={16} aria-hidden="true" />
+                  {locale === "zh" ? "事件索引" : "Event Index"}
+                </button>
                 <button type="button" onClick={() => openEventEvidence(selectedEvent)}>
                   <BookOpen size={16} aria-hidden="true" />
                   {locale === "zh" ? "史料证据" : "Evidence"}
