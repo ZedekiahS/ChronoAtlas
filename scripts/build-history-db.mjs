@@ -107,6 +107,45 @@ function scalarCount(db, tableName) {
   return db.prepare(`SELECT COUNT(*) AS count FROM ${tableName}`).get().count;
 }
 
+function verifyRequiredChinaMapData(db) {
+  const requiredDatasets = [
+    {
+      geometryId: "china-admin-block-map-190-280",
+      controlId: "china-block-control-timeline-190-280",
+    },
+    {
+      geometryId: "china-admin-block-map-280-317",
+      controlId: "china-block-control-timeline-280-317",
+    },
+  ];
+  const geometryDatasetExists = db.prepare("SELECT 1 FROM map_geometry_datasets WHERE id = ?");
+  const geometryFeatureCount = db.prepare("SELECT COUNT(*) AS count FROM map_features WHERE dataset_id = ?");
+  const geometryRecordCount = db.prepare(`
+    SELECT COUNT(*) AS count
+    FROM map_feature_geometries g
+    JOIN map_features f ON f.id = g.feature_id
+    WHERE f.dataset_id = ?
+  `);
+  const controlDatasetExists = db.prepare("SELECT 1 FROM map_control_datasets WHERE id = ?");
+  const controllerCount = db.prepare("SELECT COUNT(*) AS count FROM map_controllers WHERE control_dataset_id = ?");
+  const controlRecordCount = db.prepare("SELECT COUNT(*) AS count FROM map_control_records WHERE control_dataset_id = ?");
+
+  for (const { geometryId, controlId } of requiredDatasets) {
+    if (!geometryDatasetExists.get(geometryId)) {
+      throw new Error(`Missing required map geometry dataset: ${geometryId}`);
+    }
+    if (geometryFeatureCount.get(geometryId).count < 1 || geometryRecordCount.get(geometryId).count < 1) {
+      throw new Error(`Required map geometry dataset is empty: ${geometryId}`);
+    }
+    if (!controlDatasetExists.get(controlId)) {
+      throw new Error(`Missing required map control dataset: ${controlId}`);
+    }
+    if (controllerCount.get(controlId).count < 1 || controlRecordCount.get(controlId).count < 1) {
+      throw new Error(`Required map control dataset is empty: ${controlId}`);
+    }
+  }
+}
+
 function verifyDatabase(db) {
   const minimumCounts = [
     ["persons", 1],
@@ -128,6 +167,8 @@ function verifyDatabase(db) {
       throw new Error(`Expected ${tableName} to contain at least ${expected} rows, got ${actual}`);
     }
   }
+
+  verifyRequiredChinaMapData(db);
 
   const foreignKeyFailures = db.prepare("PRAGMA foreign_key_check").all();
   if (foreignKeyFailures.length > 0) {
