@@ -26,15 +26,24 @@ button {
   cursor: pointer;
 }
 
+:where(button, input, select, textarea, summary, a):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--theme-accent, #168069) 40%, transparent);
+  outline-offset: 2px;
+}
+
 .app-shell {
+  --theme-accent: #a94736;
+  --theme-deep: #6f281e;
+  --theme-paper: #eef2ee;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 420px;
   grid-template-rows: auto 1fr;
   min-height: 100vh;
   background:
-    linear-gradient(180deg, rgba(80, 118, 138, 0.16), transparent 38%),
-    linear-gradient(90deg, rgba(185, 79, 50, 0.1), transparent 24%),
-    #eef2ee;
+    linear-gradient(180deg, color-mix(in srgb, var(--theme-accent) 13%, transparent), transparent 38%),
+    linear-gradient(90deg, color-mix(in srgb, var(--theme-deep) 8%, transparent), transparent 24%),
+    var(--theme-paper);
+  transition: background 220ms ease;
 }
 
 .app-shell.review-shell {
@@ -61,8 +70,8 @@ button {
   justify-content: space-between;
   min-height: 38px;
   padding: 0 28px;
-  border-bottom: 1px solid rgba(30, 34, 38, 0.1);
-  background: rgba(255, 255, 255, 0.68);
+  border-bottom: 1px solid color-mix(in srgb, var(--theme-accent) 18%, rgba(30, 34, 38, 0.08));
+  background: color-mix(in srgb, var(--theme-paper) 76%, rgba(255, 255, 255, 0.72));
   backdrop-filter: blur(14px);
   position: sticky;
   top: 0;
@@ -104,7 +113,7 @@ button {
 
 .kicker {
   margin: 0 0 6px;
-  color: #8b3f2d;
+  color: var(--theme-deep);
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0;
@@ -138,7 +147,30 @@ h1 {
 }
 
 .brand-home:hover h1 {
-  color: #8b3f2d;
+  color: var(--theme-deep);
+}
+
+.brand-kicker-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.brand-kicker-row .kicker {
+  margin: 0;
+}
+
+.history-theme-badge {
+  padding: 3px 7px;
+  border: 1px solid color-mix(in srgb, var(--theme-accent) 28%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--theme-accent) 9%, #ffffff);
+  color: var(--theme-deep);
+  font-size: 11px;
+  font-weight: 820;
+  line-height: 1.2;
 }
 
 .search-box {
@@ -160,6 +192,13 @@ h1 {
   outline: 0;
   background: transparent;
   color: #1e2226;
+}
+
+.search-box input::placeholder,
+.person-detail-search input::placeholder {
+  color: #687077;
+  font-weight: 650;
+  opacity: 1;
 }
 
 .topbar-actions {
@@ -188,9 +227,9 @@ h1 {
 
 .topbar-action:hover,
 .topbar-action.active {
-  border-color: rgba(185, 79, 50, 0.4);
+  border-color: color-mix(in srgb, var(--theme-accent) 44%, rgba(30, 34, 38, 0.12));
   background: #ffffff;
-  color: #8b3f2d;
+  color: var(--theme-deep);
 }
 
 .topbar-language {
@@ -239,9 +278,9 @@ h1 {
 .topbar-menu:hover summary,
 .topbar-menu[open] summary,
 .topbar-menu.active summary {
-  border-color: rgba(185, 79, 50, 0.4);
+  border-color: color-mix(in srgb, var(--theme-accent) 44%, rgba(30, 34, 38, 0.12));
   background: #ffffff;
-  color: #8b3f2d;
+  color: var(--theme-deep);
 }
 
 .topbar-menu-panel {
@@ -5835,7 +5874,7 @@ input[type="range"] {
   align-items: end;
   padding: 20px 24px;
   border: 1px solid rgba(30, 34, 38, 0.1);
-  border-top: 4px solid #b94f32;
+  border-top: 4px solid var(--theme-accent);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.88);
 }
@@ -5927,7 +5966,7 @@ input[type="range"] {
 }
 
 .event-index-year-group.current .event-index-year-heading {
-  border-left-color: #b94f32;
+  border-left-color: var(--theme-accent);
 }
 
 .event-index-year-heading strong {
@@ -5954,7 +5993,7 @@ input[type="range"] {
   min-width: 0;
   padding: 14px;
   border: 1px solid rgba(30, 34, 38, 0.1);
-  border-left: 4px solid rgba(185, 79, 50, 0.54);
+  border-left: 4px solid color-mix(in srgb, var(--theme-accent) 58%, transparent);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.9);
   color: #1e2226;
@@ -5963,13 +6002,13 @@ input[type="range"] {
 }
 
 .event-index-card:hover {
-  border-color: rgba(185, 79, 50, 0.36);
+  border-color: color-mix(in srgb, var(--theme-accent) 38%, rgba(30, 34, 38, 0.1));
   background: #ffffff;
   transform: translateY(-1px);
 }
 
 .event-index-card:focus-visible {
-  outline: 3px solid rgba(185, 79, 50, 0.24);
+  outline: 3px solid color-mix(in srgb, var(--theme-accent) 28%, transparent);
   outline-offset: 2px;
 }
 
@@ -5977,8 +6016,8 @@ input[type="range"] {
   width: fit-content;
   padding: 3px 7px;
   border-radius: 999px;
-  background: rgba(185, 79, 50, 0.08);
-  color: #8b3f2d;
+  background: color-mix(in srgb, var(--theme-accent) 9%, #ffffff);
+  color: var(--theme-deep);
   font-size: 11px;
   font-weight: 900;
 }
@@ -6021,7 +6060,7 @@ input[type="range"] {
 
 .event-index-card-meta svg {
   flex: 0 0 auto;
-  color: #8b3f2d;
+  color: var(--theme-deep);
 }
 
 .event-index-card-footer {
@@ -6030,7 +6069,7 @@ input[type="range"] {
   gap: 8px;
   padding-top: 8px;
   border-top: 1px solid rgba(30, 34, 38, 0.08);
-  color: #6f3a2c;
+  color: var(--theme-deep);
   font-size: 11px;
   font-weight: 850;
 }
@@ -6046,7 +6085,7 @@ input[type="range"] {
   align-items: end;
   padding: 22px 24px;
   border: 1px solid rgba(30, 34, 38, 0.1);
-  border-top: 4px solid #b94f32;
+  border-top: 4px solid var(--theme-accent);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.88);
 }
@@ -6079,10 +6118,10 @@ input[type="range"] {
   gap: 7px;
   min-height: 36px;
   padding: 0 12px;
-  border: 1px solid rgba(185, 79, 50, 0.22);
+  border: 1px solid color-mix(in srgb, var(--theme-accent) 26%, rgba(30, 34, 38, 0.1));
   border-radius: 999px;
   background: #ffffff;
-  color: #8b3f2d;
+  color: var(--theme-deep);
   font-size: 13px;
   font-weight: 880;
 }
@@ -6586,7 +6625,7 @@ input[type="range"] {
   align-items: end;
   padding: 22px 24px;
   border: 1px solid rgba(30, 34, 38, 0.1);
-  border-top: 4px solid #168069;
+  border-top: 4px solid var(--theme-accent);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.88);
 }
@@ -6619,17 +6658,17 @@ input[type="range"] {
   gap: 7px;
   min-height: 36px;
   padding: 0 12px;
-  border: 1px solid rgba(22, 128, 105, 0.22);
+  border: 1px solid color-mix(in srgb, var(--theme-accent) 26%, rgba(30, 34, 38, 0.1));
   border-radius: 999px;
   background: #ffffff;
-  color: #168069;
+  color: var(--theme-deep);
   font-size: 13px;
   font-weight: 880;
 }
 
 .person-detail-actions button:hover {
-  border-color: rgba(22, 128, 105, 0.4);
-  background: rgba(22, 128, 105, 0.07);
+  border-color: color-mix(in srgb, var(--theme-accent) 44%, rgba(30, 34, 38, 0.1));
+  background: color-mix(in srgb, var(--theme-accent) 7%, #ffffff);
 }
 
 .person-detail-layout {
@@ -6695,9 +6734,9 @@ input[type="range"] {
 }
 
 .scope-toggle.active {
-  border-color: rgba(22, 128, 105, 0.32);
-  background: rgba(22, 128, 105, 0.08);
-  color: #166d5a;
+  border-color: color-mix(in srgb, var(--theme-accent) 36%, rgba(30, 34, 38, 0.1));
+  background: color-mix(in srgb, var(--theme-accent) 9%, #ffffff);
+  color: var(--theme-deep);
 }
 
 .person-filter-bar.compact {
@@ -6715,12 +6754,76 @@ input[type="range"] {
   height: 20px;
 }
 
+.person-filter-disclosure {
+  border: 1px solid rgba(30, 34, 38, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.person-filter-disclosure summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 10px;
+  color: #343b41;
+  font-size: 13px;
+  font-weight: 850;
+  list-style: none;
+  cursor: pointer;
+}
+
+.person-filter-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+
+.person-filter-disclosure summary::after {
+  content: "";
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  opacity: 0.58;
+  transition: transform 160ms ease;
+}
+
+.person-filter-disclosure[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.person-filter-disclosure summary small {
+  display: grid;
+  min-width: 24px;
+  height: 22px;
+  margin-left: auto;
+  place-items: center;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--theme-accent) 11%, #ffffff);
+  color: var(--theme-deep);
+  font-size: 11px;
+}
+
+.person-filter-content {
+  display: grid;
+  gap: 8px;
+  padding: 0 10px 10px;
+  border-top: 1px solid rgba(30, 34, 38, 0.08);
+}
+
+.person-filter-caption {
+  padding-top: 9px;
+  color: #5d656b;
+  font-size: 11px;
+  font-weight: 850;
+}
+
 .person-detail-result-list {
   display: grid;
   gap: 8px;
-  max-height: 520px;
-  overflow: auto;
-  padding-right: 4px;
+  max-height: none;
+  overflow: visible;
 }
 
 .person-detail-card {
@@ -8073,20 +8176,36 @@ a.source-title-link:hover {
   }
 
   .topbar-actions {
-    align-items: stretch;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
     min-width: 0;
   }
 
-  .topbar-action,
+  .topbar-action:not(.topbar-language),
   .topbar-menu summary,
   .db-status-pill,
   .search-box {
     width: 100%;
   }
 
+  .topbar-language {
+    width: auto;
+  }
+
   .topbar-menu {
     width: 100%;
+    min-width: 0;
+  }
+
+  .topbar-menu summary {
+    justify-content: center;
+    padding-inline: 8px;
+  }
+
+  .topbar-menu[open],
+  .search-box {
+    grid-column: 1 / -1;
   }
 
   .topbar-menu-panel {
@@ -8253,6 +8372,27 @@ a.source-title-link:hover {
   .map-workspace,
   .detail-panel {
     padding: 14px;
+  }
+
+  .global-topbar {
+    padding: 0 14px;
+  }
+
+  .topbar-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .topbar-menu summary {
+    min-height: 40px;
+  }
+
+  .person-detail-hero {
+    padding: 16px;
+  }
+
+  .person-detail-hero h2 {
+    font-size: 28px;
   }
 
   .map-stage {
@@ -8436,5 +8576,2639 @@ a.source-title-link:hover {
 
   .event-index-card > p {
     min-height: 0;
+  }
+}
+
+/* ===== Presentation density control ===== */
+
+.global-topbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.theme-scope-label {
+  max-width: min(34vw, 360px);
+  overflow: hidden;
+  color: #5f676d;
+  font-size: 12px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.presentation-mode-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid rgba(30, 34, 38, 0.12);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.presentation-mode-control button {
+  min-height: 26px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #697178;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.presentation-mode-control button:hover {
+  color: var(--theme-deep);
+}
+
+.presentation-mode-control button.active {
+  background: #ffffff;
+  color: var(--theme-deep);
+  box-shadow: 0 1px 5px rgba(30, 34, 38, 0.12);
+}
+
+.china-region-heading,
+.china-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.china-region-copy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.region-toolbar .china-region-copy > span {
+  color: var(--theme-accent);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.china-region-copy strong {
+  color: #202529;
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-size: 22px;
+  line-height: 1.14;
+}
+
+.china-region-copy small {
+  color: #697178;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.block-index-disclosure {
+  display: grid;
+  gap: 10px;
+}
+
+.block-index-disclosure > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid rgba(30, 34, 38, 0.12);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.62);
+  color: #343b41;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.block-index-disclosure > summary small {
+  display: grid;
+  min-width: 24px;
+  height: 22px;
+  place-items: center;
+  padding-inline: 5px;
+  border-radius: 999px;
+  background: rgba(30, 34, 38, 0.08);
+  color: #5f676d;
+  font-size: 11px;
+}
+
+/* ===== China / Late Han: first national theme template ===== */
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] {
+  --han-ink: #11100e;
+  --han-ink-soft: #171512;
+  --han-panel: #1d1a16;
+  --han-panel-raised: #24201a;
+  --han-line: #4e4333;
+  --han-gold: #cbb37a;
+  --han-gold-muted: #927f5c;
+  --han-cinnabar: #9e3e2d;
+  --han-paper: #e7dfcc;
+  grid-template-columns: minmax(0, 1fr) 370px;
+  color: var(--han-paper);
+  background: var(--han-ink);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .global-topbar {
+  min-height: 42px;
+  padding-inline: 24px;
+  border-bottom-color: var(--han-line);
+  background: #0d0c0b;
+  backdrop-filter: none;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .utility-menu-button {
+  color: var(--han-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .utility-menu-button:hover {
+  border-color: var(--han-line);
+  background: var(--han-panel);
+  color: #ead9ae;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .theme-scope-label {
+  color: var(--han-gold-muted);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  letter-spacing: 0.05em;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .presentation-mode-control {
+  border-color: var(--han-line);
+  background: #151310;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .presentation-mode-control button {
+  color: #8f826a;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .presentation-mode-control button:hover {
+  color: var(--han-paper);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .presentation-mode-control button.active {
+  background: var(--han-gold);
+  color: #17130d;
+  box-shadow: none;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .topbar-language {
+  min-height: 28px;
+  border-color: var(--han-line);
+  background: transparent;
+  color: var(--han-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .map-workspace {
+  gap: 14px;
+  min-height: calc(100vh - 42px);
+  padding: 20px 22px 18px;
+  background: var(--han-ink-soft);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .workspace-header {
+  align-items: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--han-line);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .workspace-header .brand-home {
+  flex: 0 0 auto;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .workspace-header .topbar-secondary {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .workspace-header .topbar-actions {
+  gap: 7px;
+  width: auto;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .brand-kicker-row {
+  margin-bottom: 4px;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .brand-kicker-row .kicker {
+  color: var(--han-gold);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .history-theme-badge {
+  border-color: var(--han-line);
+  background: var(--han-panel);
+  color: var(--han-gold-muted);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .brand-home h1 {
+  color: var(--han-paper);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .brand-home:hover h1 {
+  color: #f1e7d0;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .topbar-action,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .topbar-menu summary,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .db-status-pill,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .search-box {
+  min-height: 38px;
+  border-color: var(--han-line);
+  background: var(--han-panel);
+  color: #c8bda5;
+  box-shadow: none;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .topbar-action,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .topbar-menu summary {
+  padding-inline: 9px;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .search-box {
+  width: min(290px, 100%);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .topbar-action:hover,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .topbar-action.active,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .topbar-menu summary:hover {
+  border-color: var(--han-gold-muted);
+  background: var(--han-panel-raised);
+  color: var(--han-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .search-box input {
+  color: var(--han-paper);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .search-box input::placeholder {
+  color: #817968;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .topbar-menu-panel {
+  border-color: var(--han-line);
+  background: var(--han-panel);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.38);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .topbar-menu-panel button {
+  color: #c8bda5;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .topbar-menu-panel button:hover {
+  background: var(--han-panel-raised);
+  color: var(--han-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .region-toolbar {
+  min-height: 58px;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .page-return-row .back-button {
+  min-height: 34px;
+  padding-inline: 10px;
+  border-color: var(--han-line);
+  border-radius: 4px;
+  background: var(--han-panel);
+  color: #b9ad97;
+  font-size: 13px;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .page-return-row .back-button:hover {
+  border-color: var(--han-gold-muted);
+  background: var(--han-panel-raised);
+  color: var(--han-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .china-world-return {
+  min-height: 34px;
+  padding-inline: 9px;
+  border-color: var(--han-line);
+  background: transparent;
+  color: var(--han-gold-muted);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .china-world-return:hover {
+  border-color: var(--han-gold-muted);
+  background: var(--han-panel);
+  color: var(--han-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .region-toolbar .china-region-copy > span {
+  color: var(--han-cinnabar);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .china-region-copy strong {
+  color: var(--han-paper);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .china-region-copy small {
+  color: var(--han-gold-muted);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .map-mode-control {
+  border-color: var(--han-line);
+  background: #13110f;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .map-mode-button {
+  color: #928774;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .map-mode-button:hover {
+  background: var(--han-panel);
+  color: var(--han-paper);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .map-mode-button.active {
+  background: var(--han-gold);
+  color: #17130d;
+  box-shadow: none;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .map-record-count {
+  color: var(--han-gold-muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .map-stage {
+  flex: 0 0 auto;
+  height: clamp(520px, calc(100vh - 500px), 680px);
+  min-height: 520px;
+  border-color: var(--han-line);
+  border-radius: 2px;
+  background: #14181a;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .map-frame.map-mode-political,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .map-frame.map-mode-commandery,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .commandery-map-background {
+  background: #101517;
+  fill: #101517;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .timeline-dock {
+  gap: 12px;
+  padding: 13px 16px;
+  border-color: var(--han-line);
+  border-radius: 2px;
+  background: #11100e;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .timeline-dock .icon-button {
+  border-color: var(--han-line);
+  border-radius: 4px;
+  background: var(--han-panel);
+  color: var(--han-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .timeline-dock .icon-button:hover {
+  border-color: var(--han-gold-muted);
+  background: var(--han-panel-raised);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .timeline-dock input[type="range"] {
+  accent-color: var(--han-cinnabar);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .year-readout {
+  color: var(--han-paper);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .year-readout span {
+  color: var(--han-gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 46px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .year-readout small,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .range-labels,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .timeline-region-legend {
+  color: var(--han-gold-muted);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .detail-panel {
+  top: 42px;
+  gap: 18px;
+  height: calc(100vh - 42px);
+  padding: 26px 24px;
+  border-left-color: var(--han-line);
+  background: #12110f;
+  color: var(--han-paper);
+  scrollbar-color: var(--han-line) transparent;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .detail-panel h2,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .detail-panel h3,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .detail-panel h4,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .detail-panel strong {
+  color: var(--han-paper);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .detail-panel h2 {
+  color: var(--han-gold);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .detail-summary,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .detail-subtitle,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-list-heading span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-card span:last-child,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .selected-place-card p {
+  color: #a79d89;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .summary-meta,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-list {
+  border-color: var(--han-line);
+  color: #a79d89;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-list {
+  padding-block: 15px;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-filter-button,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-card,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .selected-place-card,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-index-disclosure > summary,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-chip {
+  border-color: var(--han-line);
+  border-radius: 4px;
+  background: var(--han-panel);
+  color: #c8bda5;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-filter-button:hover,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-filter-button.selected {
+  border-color: var(--han-gold-muted);
+  background: var(--han-panel-raised);
+  color: var(--han-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-filter-button small,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-index-disclosure > summary small {
+  background: #302a22;
+  color: var(--han-gold-muted);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-filter-button.selected small {
+  background: var(--han-cinnabar);
+  color: #f7ead5;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .selected-place-card {
+  border-left: 3px solid var(--han-cinnabar);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .selected-place-card span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-year {
+  color: var(--han-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .selected-place-card button {
+  border-color: var(--han-line);
+  border-radius: 4px;
+  background: #151310;
+  color: var(--han-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .selected-place-card button:hover {
+  border-color: var(--han-gold-muted);
+  background: var(--han-panel-raised);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-chip small {
+  color: #8f8676;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-chip:hover,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-chip.selected {
+  border-color: var(--han-gold-muted);
+  background: var(--han-panel-raised);
+  color: var(--han-paper);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .controller-swatch {
+  border-color: rgba(231, 223, 204, 0.34);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="simple"] .detail-panel {
+  gap: 14px;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="simple"] .region-detail,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="simple"] .event-detail {
+  gap: 12px;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="simple"] .detail-summary {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="simple"] .event-card {
+  min-height: 0;
+  padding: 11px;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] {
+  background-color: #0f0d0a;
+  background-image: url("./assets/han-lacquer-texture.png");
+  background-position: center top;
+  background-size: 1280px auto;
+  background-attachment: fixed;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .map-workspace,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .detail-panel {
+  background-color: rgba(18, 15, 12, 0.93);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .workspace-header,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .region-toolbar,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .timeline-dock,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .detail-panel {
+  border-color: #6b5635;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .brand-home h1,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .china-region-copy strong,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .detail-panel h2 {
+  letter-spacing: 0.08em;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .map-stage,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .timeline-dock,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .selected-place-card,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-card,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .block-index-disclosure > summary {
+  border-color: #6b5635;
+}
+
+@media (max-width: 1180px) {
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] .detail-panel {
+    position: static;
+    height: auto;
+    border-top-color: var(--han-line);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .theme-scope-label {
+    display: none;
+  }
+
+  .global-topbar-controls {
+    gap: 7px;
+  }
+
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] .map-workspace,
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] .detail-panel {
+    padding: 16px;
+  }
+
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] .global-topbar {
+    padding-inline: 16px;
+  }
+
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] .workspace-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] .workspace-header .topbar-actions {
+    width: 100%;
+  }
+
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] .search-box {
+    width: 100%;
+  }
+
+  .china-region-heading,
+  .china-toolbar-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .china-toolbar-actions .map-mode-control {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .presentation-mode-control button {
+    padding-inline: 7px;
+  }
+
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] .topbar-language span {
+    display: none;
+  }
+
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] .brand-home h1 {
+    font-size: 24px;
+  }
+
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] .china-region-copy strong {
+    font-size: 21px;
+  }
+
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] .map-stage {
+    height: auto;
+    min-height: 500px;
+  }
+
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] .year-readout span {
+    font-size: 34px;
+  }
+
+  .app-shell[data-page="china"][data-history-theme="han-cinnabar"] .selected-place-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ===== Dense map index and event-list governance ===== */
+
+.block-index-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.block-index-search {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 10px;
+  border: 1px solid rgba(30, 34, 38, 0.12);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #697178;
+}
+
+.block-index-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #202529;
+  font-size: 12px;
+}
+
+.block-index-select {
+  display: grid;
+  gap: 4px;
+  color: #697178;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.block-index-select select,
+.event-display-control select {
+  width: 100%;
+  min-width: 0;
+  min-height: 34px;
+  padding: 0 28px 0 9px;
+  border: 1px solid rgba(30, 34, 38, 0.12);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.72);
+  color: #343b41;
+  font: inherit;
+}
+
+.block-index-result-meta,
+.event-list-overflow-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #697178;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.block-index-result-meta button,
+.event-list-overflow-note button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  border: 1px solid rgba(30, 34, 38, 0.12);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.block-index-governance-note {
+  margin: -2px 0 0;
+  color: #7b8287;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.block-index-groups {
+  display: grid;
+  gap: 7px;
+}
+
+.block-index-group {
+  border: 1px solid rgba(30, 34, 38, 0.1);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.block-index-group-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 38px;
+  padding: 0 10px;
+  color: #343b41;
+  cursor: pointer;
+}
+
+.block-index-group-heading strong {
+  font-size: 12px;
+}
+
+.block-index-group-heading small {
+  display: grid;
+  min-width: 24px;
+  height: 22px;
+  place-items: center;
+  padding-inline: 5px;
+  border-radius: 999px;
+  background: rgba(30, 34, 38, 0.08);
+  color: #697178;
+  font-size: 11px;
+}
+
+.block-index-group .block-chip-list {
+  padding: 2px 8px 9px;
+}
+
+.block-index-empty {
+  min-height: 74px;
+}
+
+.event-list-heading-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.event-display-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #697178;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.event-display-control select {
+  width: auto;
+  min-width: 72px;
+  min-height: 30px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.event-list-overflow-note {
+  padding: 9px 10px;
+  border: 1px solid rgba(30, 34, 38, 0.1);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-index-search,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-index-select select,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-display-control select,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-index-group,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-list-overflow-note {
+  border-color: var(--han-line);
+  background-color: #171512;
+  color: #c8bda5;
+  color-scheme: dark;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-index-search input {
+  color: var(--han-paper);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-index-search input::placeholder,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-index-governance-note,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-index-result-meta,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-display-control,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-list-overflow-note {
+  color: #8f8676;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-index-group-heading {
+  color: #c8bda5;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-index-group-heading small {
+  background: #302a22;
+  color: var(--han-gold-muted);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-index-result-meta button,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-list-overflow-note button {
+  border-color: var(--han-line);
+  color: var(--han-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .block-index-result-meta button:hover,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"] .event-list-overflow-note button:hover {
+  border-color: var(--han-gold-muted);
+  background: var(--han-panel-raised);
+}
+
+@media (max-width: 620px) {
+  .block-index-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .block-index-search {
+    grid-column: auto;
+  }
+
+  .event-list-heading {
+    align-items: flex-start;
+  }
+
+  .event-list-heading-meta {
+    align-items: flex-end;
+    flex-direction: column;
+  }
+}
+
+/* ===== Han collector event dossier ===== */
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail {
+  --han-dossier-surface: #17140f;
+  --han-dossier-surface-raised: #1d1913;
+  --han-dossier-surface-deep: #11100d;
+  --han-dossier-line: #5a4930;
+  --han-dossier-gold: #d0b677;
+  --han-dossier-text: #c4b79e;
+  --han-dossier-muted: #918673;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .facts div,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .ai-event-answer-panel,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-deep-detail,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-detail-section {
+  border-color: var(--han-dossier-line);
+  border-radius: 4px;
+  background: var(--han-dossier-surface);
+  color: var(--han-dossier-text);
+  box-shadow: inset 0 0 0 1px rgba(208, 182, 119, 0.025);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .facts div {
+  min-height: 72px;
+  border-top-color: #745a33;
+  background: var(--han-dossier-surface-raised);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .facts span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-stats span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-chip small,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .related-list span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .related-list p,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .related-list small,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-item span {
+  color: var(--han-dossier-muted);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .facts strong {
+  color: var(--han-dossier-gold);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .detail-section h3 {
+  color: var(--han-dossier-gold);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-heading {
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--han-dossier-line);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-heading span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-overview-card > span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-flow-card span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-grid span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-card-header span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .relation-heading span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-event-heading span {
+  color: var(--han-dossier-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .ai-event-answer-panel,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-deep-detail,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-detail-section {
+  padding: 14px;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-overview-card,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-flow-card,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-grid article,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .ai-citation-list article,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-stats div,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-annual-panel,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-life-event,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-mention-card,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-event-item,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .relationship-item,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-item,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .related-list button,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .detail-loading {
+  border-color: rgba(90, 73, 48, 0.88);
+  border-radius: 4px;
+  background: var(--han-dossier-surface-deep);
+  color: var(--han-dossier-text);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-overview-card p,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-flow-card p,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-flow-card ul,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-grid p,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-grid ul,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .ai-event-answer .ai-answer-text,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .ai-event-answer-empty,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .ai-citation-list p,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-card p,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .relationship-summary {
+  color: var(--han-dossier-text);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-result-strip {
+  border-top-color: var(--han-dossier-line);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-result-strip strong {
+  color: var(--han-dossier-text);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-tab,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .chip-button,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .chips > span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-meta span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-list.compact span,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-list.compact a {
+  border-color: var(--han-dossier-line);
+  border-radius: 4px;
+  background: var(--han-dossier-surface-deep);
+  color: #b9ad97;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-tab:hover,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .event-detail-tab.selected,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .chip-button:hover,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .chip-button.selected {
+  border-color: #8f6c3c;
+  background: #241a14;
+  color: var(--han-dossier-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .text-action,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .ai-citation-details summary,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-excerpt summary {
+  color: #c8785e;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-card-header h4,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-card-header strong,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-stats strong,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .life-event-copy strong,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-event-item strong,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .relationship-item strong,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-item strong,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-item .source-title-link {
+  color: var(--han-paper);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .relationship-graph {
+  border: 1px solid var(--han-dossier-line);
+  border-radius: 4px;
+  background: var(--han-dossier-surface-deep);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .graph-node.center,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .graph-node.relation {
+  background: var(--han-dossier-surface-raised);
+  color: var(--han-paper);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-life-event.clickable:hover,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-life-event.selected,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-event-item:hover,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-event-item.selected,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .relationship-item:hover {
+  border-color: #8f6c3c;
+  background: var(--han-dossier-surface-raised);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-event-item::before {
+  border-color: var(--han-dossier-surface-deep);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-excerpt {
+  border-top-color: var(--han-dossier-line);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-excerpt blockquote,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-mention-translation {
+  background: #1d1612;
+  color: var(--han-dossier-text);
+}
+
+.person-source-mention-disclosure {
+  overflow: hidden;
+  border: 1px solid rgba(30, 34, 38, 0.1);
+  border-radius: 8px;
+  background: #fbfaf6;
+}
+
+.person-source-mention-disclosure > summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 5px 14px;
+  align-items: center;
+  padding: 11px 12px;
+  cursor: pointer;
+  list-style-position: inside;
+}
+
+.person-source-mention-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  color: #8b3f2d;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.person-source-mention-title strong {
+  display: grid;
+  min-width: 22px;
+  height: 22px;
+  place-items: center;
+  padding-inline: 5px;
+  border-radius: 999px;
+  background: rgba(185, 79, 50, 0.1);
+  color: #8b3f2d;
+  font-size: 11px;
+}
+
+.person-source-mention-disclosure > summary small {
+  color: #687077;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.person-source-mention-disclosure[open] > summary {
+  border-bottom: 1px solid rgba(30, 34, 38, 0.1);
+}
+
+.person-source-mention-disclosure > .source-mention-list {
+  max-height: 360px;
+  padding: 10px;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-source-mention-disclosure {
+  border-color: var(--han-dossier-line);
+  border-radius: 4px;
+  background: var(--han-dossier-surface-deep);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-source-mention-disclosure > summary {
+  color: var(--han-dossier-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-source-mention-title {
+  color: var(--han-dossier-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-source-mention-title strong {
+  background: #2b2117;
+  color: var(--han-dossier-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-source-mention-disclosure > summary small {
+  color: var(--han-dossier-muted);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .person-source-mention-disclosure[open] > summary {
+  border-bottom-color: var(--han-dossier-line);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-mention-card .source-title-link {
+  color: var(--han-dossier-gold);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-mention-card .source-title-link:hover {
+  color: #e0c98e;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-mention-card .source-title-link::after {
+  background: #2b1813;
+  color: #c8785e;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-mention-card .evidence-field {
+  border-color: rgba(90, 73, 48, 0.76);
+  border-radius: 4px;
+  background: #1b1813;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-mention-card .evidence-field span {
+  color: var(--han-dossier-muted);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-mention-card .evidence-field strong {
+  color: var(--han-paper);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-mention-card .evidence-chip-list button,
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-mention-card .evidence-chip-list span {
+  border-color: rgba(90, 73, 48, 0.74);
+  background: var(--han-dossier-surface-deep);
+  color: #b9ad97;
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-mention-card blockquote {
+  border-left-color: #8f4b37;
+  color: var(--han-dossier-text);
+}
+
+.app-shell[data-page="china"][data-history-theme="han-cinnabar"][data-presentation-mode="collector"] .event-detail .source-mention-tags span {
+  background: #1d1913;
+  color: var(--han-dossier-muted);
+}
+
+/* ===== Entity-scoped collector dossiers ===== */
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) {
+  color: var(--collector-text);
+  background: var(--collector-canvas);
+  color-scheme: dark;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .global-topbar {
+  min-height: 44px;
+  padding-inline: 24px;
+  border-bottom: 1px solid var(--collector-line);
+  background: var(--collector-canvas);
+  backdrop-filter: none;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .utility-menu-button {
+  color: var(--collector-foil);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .utility-menu-button:hover {
+  border-color: var(--collector-line);
+  background: var(--collector-surface);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .theme-scope-label {
+  color: var(--collector-foil);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  letter-spacing: 0.06em;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .presentation-mode-control,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .topbar-language {
+  border-color: var(--collector-line);
+  background: var(--collector-surface-deep);
+  box-shadow: none;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .presentation-mode-control button,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .topbar-language {
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .presentation-mode-control button.active {
+  background: var(--collector-foil);
+  color: var(--collector-canvas);
+  box-shadow: none;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .topbar-language:hover {
+  border-color: var(--collector-foil);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .map-workspace {
+  gap: 14px;
+  min-height: calc(100vh - 44px);
+  padding: 18px 22px 24px;
+  background: var(--collector-canvas-soft);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .workspace-header {
+  align-items: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--collector-line);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .workspace-header .brand-home {
+  flex: 0 0 auto;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .workspace-header .topbar-secondary {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .workspace-header .topbar-actions {
+  gap: 7px;
+  width: auto;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .brand-kicker-row .kicker {
+  color: var(--collector-foil);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .brand-home h1 {
+  color: var(--collector-text);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .brand-home:hover h1 {
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .topbar-action,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .topbar-menu summary,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .db-status-pill,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .search-box {
+  min-height: 36px;
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  color: var(--collector-text);
+  box-shadow: none;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .topbar-action:hover,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .topbar-action.active,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .topbar-menu summary:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .topbar-menu-panel {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.42);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .topbar-menu-panel button {
+  color: var(--collector-text);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .topbar-menu-panel button:hover {
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .page-return-row .back-button {
+  min-height: 34px;
+  padding-inline: 10px;
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .page-return-row .back-button:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .timeline-dock {
+  gap: 12px;
+  padding: 11px 14px;
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .timeline-dock .icon-button {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  color: var(--collector-foil);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .timeline-dock .icon-button:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .timeline-dock input[type="range"] {
+  accent-color: var(--collector-mark);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .timeline-labels,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .timeline-labels span {
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-hero,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-hero {
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--collector-line);
+  border-top: 3px solid var(--collector-mark);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--collector-foil) 3%, transparent);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-hero .kicker,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-hero .kicker {
+  color: var(--collector-foil);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  letter-spacing: 0.12em;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-hero h2,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-hero h2 {
+  color: var(--collector-text);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-hero p,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-hero p {
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-actions button,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-actions button {
+  min-height: 34px;
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-foil);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-actions button:hover,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-actions button:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+/* Person detail */
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-browser {
+  padding: 12px;
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-main {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-search,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .scope-toggle,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-filter-disclosure {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-search input {
+  color: var(--collector-text);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-search input::placeholder {
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .scope-toggle.active {
+  border-color: var(--collector-mark);
+  background: color-mix(in srgb, var(--collector-mark) 14%, var(--collector-surface-deep));
+  color: var(--collector-foil);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-filter-disclosure summary,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-filter-caption {
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-filter-disclosure summary small,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-filter-button small {
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-filter-content {
+  border-top-color: var(--collector-line);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-filter-button,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-result {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-filter-button:hover,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-filter-button.selected,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-result:hover,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-result.selected {
+  border-color: var(--collector-mark);
+  background: color-mix(in srgb, var(--collector-mark) 13%, var(--collector-surface));
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-result.selected {
+  box-shadow: inset 3px 0 0 var(--collector-mark);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-result span {
+  color: var(--collector-text);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-result small {
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-card {
+  padding: 14px;
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  color: var(--collector-text);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--collector-foil) 2.5%, transparent);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-overview {
+  border-top: 2px solid var(--collector-mark);
+  background: var(--collector-surface-raised);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-card-header span,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .relation-heading span,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-event-heading span,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-current-year-item span,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .life-event-year,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .source-mention-head > span {
+  color: var(--collector-foil);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-card-header h4,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-card-header strong,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-current-year-item strong,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .life-event-copy strong,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-event-item strong,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .relationship-item strong,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .source-item strong,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .source-title-link {
+  color: var(--collector-text);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-card > p,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-current-year-item p,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .life-event-copy p,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-event-item p,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .relationship-summary,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .source-mention-card blockquote {
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-card-actions button,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-meta span,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .chips > span,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .chip-button {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-card-actions button:hover,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .chip-button:hover,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .chip-button.selected {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-stats div,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-current-year-item,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-life-event,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-event-item,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .relationship-item,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .source-item,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .source-mention-card,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-source-mention-disclosure {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-stats span,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-life-event small,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-event-item small,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .relationship-item small,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .source-item small,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-source-mention-disclosure > summary small {
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-stats strong {
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-life-event.clickable:hover,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-life-event.selected,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-event-item:hover,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .relationship-item:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .relationship-graph {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .graph-node.center,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .graph-node.relation {
+  border-color: var(--collector-line);
+  background: var(--collector-surface-raised);
+  color: var(--collector-text);
+  box-shadow: 0 9px 20px rgba(0, 0, 0, 0.28);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-source-mention-disclosure[open] > summary {
+  border-bottom-color: var(--collector-line);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-source-mention-title,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-source-mention-title strong {
+  color: var(--collector-foil);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-source-mention-title strong {
+  background: var(--collector-surface-raised);
+}
+
+/* Event detail */
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-main {
+  padding: 16px;
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-side section {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .evidence-field,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-person-list button,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-person-list > span,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-chip-list button,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-chip-list > span,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .related-list button {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .evidence-field span,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-person-list span,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-person-list small,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-chip-list small,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .related-list span,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .related-list small {
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-person-list button > span {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .evidence-field strong,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-person-list strong,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .related-list strong {
+  color: var(--collector-text);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-person-list button:hover,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-chip-list button:hover,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .related-list button:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-page-section {
+  border-top-color: var(--collector-line);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-page-section h3,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-side h3 {
+  color: var(--collector-foil-bright);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-page-section p,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-page-section ol,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-page-section ul,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-side p,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-side ul {
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-page-section strong,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-chip-list button:hover {
+  color: var(--collector-foil);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .source-item,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .source-excerpt blockquote {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-muted);
+}
+
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .source-title-link,
+.app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .source-excerpt summary {
+  color: var(--collector-foil);
+}
+
+@media (max-width: 980px) {
+  .app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .workspace-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-layout {
+    grid-template-columns: minmax(250px, 300px) minmax(0, 1fr);
+  }
+
+  .app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-page-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 300px);
+  }
+}
+
+@media (max-width: 760px) {
+  .app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-layout,
+  .app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .person-detail-browser,
+  .app-shell.entity-detail-shell[data-presentation-mode="collector"]:not(.family-atlas-shell) .event-detail-side {
+    position: static;
+  }
+}
+
+/* ===== World and Rome collector shells ===== */
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] {
+  color: var(--collector-text);
+  background: var(--collector-canvas);
+  color-scheme: dark;
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .global-topbar {
+  min-height: 44px;
+  padding-inline: 24px;
+  border-bottom-color: var(--collector-line);
+  background: var(--collector-canvas);
+  backdrop-filter: none;
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .utility-menu-button {
+  color: var(--collector-foil);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .utility-menu-button:hover {
+  border-color: var(--collector-line);
+  background: var(--collector-surface);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .theme-scope-label {
+  color: var(--collector-foil);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  letter-spacing: 0.06em;
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .presentation-mode-control,
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-language {
+  border-color: var(--collector-line);
+  background: var(--collector-surface-deep);
+  box-shadow: none;
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .presentation-mode-control button,
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-language {
+  color: var(--collector-muted);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .presentation-mode-control button.active {
+  background: var(--collector-foil);
+  color: var(--collector-canvas);
+  box-shadow: none;
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-language:hover {
+  border-color: var(--collector-foil);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .map-workspace {
+  gap: 14px;
+  min-height: calc(100vh - 44px);
+  padding: 18px 24px 26px;
+  background: var(--collector-canvas-soft);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .workspace-header {
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--collector-line);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .brand-kicker-row .kicker {
+  color: var(--collector-foil);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .brand-home h1 {
+  color: var(--collector-text);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .brand-home:hover h1 {
+  color: var(--collector-foil-bright);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-actions {
+  gap: 7px;
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-action,
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-menu summary,
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .db-status-pill,
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .search-box {
+  min-height: 36px;
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  color: var(--collector-text);
+  box-shadow: none;
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-action:hover,
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-action.active,
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-menu:hover summary,
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-menu[open] summary,
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-menu.active summary {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-menu-panel {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.42);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-menu-panel button {
+  color: var(--collector-text);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .topbar-menu-panel button:hover {
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .search-box input {
+  color: var(--collector-text);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .search-box input::placeholder {
+  color: var(--collector-muted);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .page-return-row .back-button,
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .region-toolbar .back-button {
+  min-height: 34px;
+  padding-inline: 10px;
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  color: var(--collector-muted);
+}
+
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .page-return-row .back-button:hover,
+.app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .region-toolbar .back-button:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+/* World overview: a neutral archive shell with civilization-specific local color. */
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .map-workspace {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--collector-canvas-soft);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .map-workspace::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 auto;
+  height: min(792px, calc(100vh - 44px));
+  background-image: url("./assets/world-unity-atlas-texture.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .map-workspace > * {
+  position: relative;
+  z-index: 1;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-panel {
+  gap: 12px;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-header,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-slider-card {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--collector-surface) 90%, transparent);
+  box-shadow: none;
+  backdrop-filter: blur(8px);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-header {
+  padding: 14px 16px;
+  border-top-color: var(--collector-foil);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-header .kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--collector-foil);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  letter-spacing: 0.12em;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-header h2 {
+  color: var(--collector-foil-bright);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-weight: 700;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-header span,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-period-meta small,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-context-list p {
+  color: var(--collector-muted);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-header .back-button {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-foil);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-header .back-button:hover,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-header .back-button.active {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-world-canvas {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--collector-surface-deep) 94%, transparent);
+  box-shadow: inset 0 0 0 1px rgba(234, 212, 154, 0.04);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-base-map .sphere {
+  fill: #1b2730;
+  stroke: #8f826a;
+  stroke-width: 1.1;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-base-map .graticule {
+  stroke: rgba(218, 197, 150, 0.26);
+  stroke-width: 0.65;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-base-map .country {
+  fill: #28343c;
+  stroke: #6e6a60;
+  stroke-width: 0.5;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-archive-seal,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-civilization-lineage {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid color-mix(in srgb, var(--collector-foil) 52%, var(--collector-line));
+  border-radius: 3px;
+  background: rgba(24, 29, 34, 0.9);
+  color: var(--collector-text);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-archive-seal {
+  top: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 150px;
+  padding: 8px 10px;
+  color: var(--collector-foil);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-archive-seal > span {
+  display: grid;
+  gap: 1px;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-archive-seal small,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide small {
+  color: var(--collector-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-archive-seal strong {
+  color: var(--collector-foil-bright);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-size: 13px;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide {
+  top: 14px;
+  right: 14px;
+  left: 180px;
+  display: grid;
+  grid-template-columns: minmax(140px, 1.35fr) minmax(118px, 1fr) minmax(80px, 0.72fr) minmax(112px, 1fr) minmax(150px, 1.2fr);
+  align-items: stretch;
+  min-height: 48px;
+  overflow: hidden;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide > span {
+  display: grid;
+  align-content: center;
+  gap: 2px;
+  min-width: 0;
+  padding: 7px 10px;
+  border-left: 1px solid rgba(200, 173, 114, 0.2);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide > span:first-child {
+  border-left: 0;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide-title {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  color: var(--collector-foil);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide-title > span {
+  display: grid;
+  min-width: 0;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide strong {
+  overflow: hidden;
+  color: var(--collector-text);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide-title strong {
+  color: var(--collector-foil-bright);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-size: 12px;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide-note {
+  color: var(--collector-muted);
+  font-size: 10px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-civilization-lineage {
+  right: 14px;
+  bottom: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  max-width: calc(100% - 28px);
+  padding: 6px 8px;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-lineage-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 7px 3px 3px;
+  border-right: 1px solid rgba(200, 173, 114, 0.24);
+  color: var(--collector-foil);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-lineage-item {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  gap: 1px 6px;
+  align-items: center;
+  min-width: 0;
+  padding: 3px 7px;
+  border-left: 1px solid color-mix(in srgb, var(--period-color) 50%, transparent);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-lineage-item i {
+  grid-row: 1 / span 2;
+  width: 6px;
+  height: 24px;
+  border-radius: 1px;
+  background: var(--period-color);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--period-color) 64%, #ffffff);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-lineage-item b {
+  overflow: hidden;
+  color: var(--collector-text);
+  font-size: 10px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-lineage-item small {
+  color: var(--collector-muted);
+  font-size: 9px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-region-zone {
+  border-color: color-mix(in srgb, var(--period-color) 72%, var(--collector-line));
+  background: color-mix(in srgb, var(--period-color) 19%, transparent);
+  opacity: 0.72;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-pin {
+  z-index: 3;
+  border-color: color-mix(in srgb, var(--period-color) 58%, var(--collector-line));
+  border-radius: 4px;
+  background: var(--collector-surface-raised);
+  color: var(--collector-text);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-pin span {
+  color: #f0eadc;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-pin.secondary span {
+  color: var(--collector-canvas);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-year-readout {
+  color: var(--collector-text);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-year-readout strong {
+  color: var(--collector-foil-bright);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-timeline-select,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-range-labels,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-year-readout span {
+  color: var(--collector-muted);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-timeline-select select {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-period-track {
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-period-band {
+  border-color: color-mix(in srgb, var(--period-color) 58%, var(--collector-line));
+  background: color-mix(in srgb, var(--period-color) 28%, var(--collector-surface-deep));
+  color: var(--collector-text);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-period-band.selected {
+  outline-color: color-mix(in srgb, var(--period-color) 72%, var(--collector-foil));
+  background: color-mix(in srgb, var(--period-color) 42%, var(--collector-surface-raised));
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-global-anchor {
+  background: var(--collector-foil);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-current-year {
+  background: var(--collector-foil-bright);
+  box-shadow: 0 0 0 3px var(--collector-surface);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-range {
+  accent-color: var(--collector-foil);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-detail-panel {
+  border-left-color: var(--collector-line);
+  background: var(--collector-canvas-soft);
+  color: var(--collector-text);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-period-card {
+  border-top-color: var(--collector-foil);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-period-card h2,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-period-meta strong,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-context-list h3,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-snapshot-list h3 {
+  color: var(--collector-foil-bright);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-period-card p {
+  color: var(--collector-muted);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-period-meta,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-snapshot-list,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-context-list {
+  border-color: var(--collector-line);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-snapshot-list button {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-muted);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-snapshot-list button:hover,
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-snapshot-list button.selected {
+  border-color: var(--collector-foil);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-context-list p {
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+}
+
+/* Rome: the page shell follows its current Roman era palette. */
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .region-toolbar {
+  min-height: 44px;
+  padding-block: 6px;
+  border-block: 1px solid var(--collector-line);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .region-toolbar > span {
+  color: var(--collector-foil);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  letter-spacing: 0.04em;
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .map-stage {
+  flex: 0 0 auto;
+  min-height: 220px;
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-archive-empty {
+  align-content: center;
+  justify-items: center;
+  gap: 8px;
+  min-height: 220px;
+  border: 0;
+  border-radius: 0;
+  background: var(--collector-surface-deep);
+  color: var(--collector-muted);
+  text-align: center;
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-archive-empty > span {
+  color: var(--collector-mark);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-archive-empty > strong {
+  color: var(--collector-foil-bright);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-archive-empty > small {
+  color: var(--collector-muted);
+  font-size: 12px;
+  font-weight: 720;
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-map-frame,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-map {
+  background: var(--collector-surface-deep);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-map-background {
+  fill: var(--collector-surface-deep);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-coastline {
+  stroke: var(--collector-foil);
+  opacity: 0.62;
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-river {
+  stroke: var(--collector-muted);
+  opacity: 0.36;
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-province {
+  stroke: var(--collector-canvas);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-province:hover,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-province.hovered,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-province.active {
+  stroke: var(--collector-foil-bright);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-province-label {
+  fill: var(--collector-text);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-frontier,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-frontier-label {
+  stroke: var(--collector-mark);
+  fill: var(--collector-mark);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-legend,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-era-chip {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  color: var(--collector-text);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-era-chip strong {
+  color: var(--collector-foil-bright);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .roman-era-chip span {
+  color: var(--collector-muted);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .timeline-dock {
+  gap: 12px;
+  padding: 11px 14px;
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .timeline-dock .icon-button {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-foil);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .timeline-dock .icon-button:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .timeline-dock input[type="range"] {
+  accent-color: var(--collector-mark);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .year-readout {
+  color: var(--collector-foil-bright);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .year-readout small,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .range-labels {
+  color: var(--collector-muted);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] > .detail-panel {
+  border-left-color: var(--collector-line);
+  background: var(--collector-canvas-soft);
+  color: var(--collector-text);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .detail-panel h2,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .detail-panel h3,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .detail-panel h4 {
+  color: var(--collector-foil-bright);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .detail-eyebrow,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-year,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-list-heading span {
+  color: var(--collector-foil);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .detail-summary,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-card span:last-child,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-card small,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .detail-section p,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .detail-section li {
+  color: var(--collector-muted);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-list,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .detail-section {
+  border-color: var(--collector-line);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-display-control select,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-filter-button,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-filter-note,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-card,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .facts div,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-detail-overview-card,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-detail-tabs button,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-detail-flow-card,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .person-detail-card,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .source-item,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .source-excerpt blockquote,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .chips > span,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .related-list button {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+  box-shadow: none;
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-card:hover,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-card.selected,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-filter-button:hover,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-filter-button.selected,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-detail-tabs button:hover,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-detail-tabs button.active,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .related-list button:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-card:hover,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .event-card.selected {
+  border-left-color: var(--collector-mark);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .facts span,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .source-item span,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .source-item small {
+  color: var(--collector-muted);
+}
+
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .facts strong,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .source-item strong,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .source-title-link,
+.app-shell[data-page="rome"][data-presentation-mode="collector"] .source-excerpt summary {
+  color: var(--collector-foil);
+}
+
+@media (max-width: 900px) {
+  .app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .map-workspace {
+    padding-inline: 18px;
+  }
+
+  .app-shell:is([data-page="home"], [data-page="rome"])[data-presentation-mode="collector"] .brand-home h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .app-shell[data-page="rome"][data-presentation-mode="collector"] .map-workspace {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .map-workspace::before {
+    background-size: auto 100%;
+    opacity: 0.16;
+  }
+
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide {
+    left: 170px;
+    grid-template-columns: minmax(130px, 1.2fr) minmax(110px, 1fr) minmax(80px, 0.7fr) minmax(110px, 1fr);
+  }
+
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide-note {
+    grid-column: 1 / -1;
+    min-height: 26px;
+    border-top: 1px solid rgba(200, 173, 114, 0.18);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .map-workspace::before {
+    height: 560px;
+    background-size: auto 560px;
+    opacity: 0.13;
+  }
+
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-archive-seal {
+    top: 10px;
+    left: 10px;
+    min-width: 144px;
+  }
+
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide {
+    top: 64px;
+    right: 10px;
+    left: 10px;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide > span {
+    min-height: 42px;
+    padding: 6px 8px;
+  }
+
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide-stat:nth-of-type(3),
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide-stat:nth-of-type(4) {
+    display: none;
+  }
+
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-atlas-guide-note {
+    grid-column: 1 / -1;
+  }
+
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-civilization-lineage {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    flex-wrap: wrap;
+    max-width: calc(100% - 20px);
+  }
+
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-pin,
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-pin.secondary {
+    width: 44px;
+    min-height: 44px;
+    padding: 9px;
+  }
+
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-pin span,
+  .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-pin.secondary span {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
   }
 }

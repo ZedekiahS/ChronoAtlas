@@ -17,3 +17,7 @@ data/backups/
 .codex-backups/
 public/
 scripts/export-static-api-snapshot.mjs
+
+# Local visual QA artifacts
+design-qa/
+design-qa.md

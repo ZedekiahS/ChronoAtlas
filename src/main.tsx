@@ -31,6 +31,7 @@ import {
   UsersRound,
   X,
 } from "lucide-react";
+import { CaoFamilyAtlas } from "./CaoFamilyAtlas";
 import "./styles.css";
 
 type Region = "china" | "rome" | "sasanian-persia" | "india";
@@ -50,6 +51,18 @@ type EventImportance = "major" | "medium" | "minor" | "detail";
 type EventDensity = "major" | "medium" | "detail";
 type EventCompareType = "military" | "domestic" | "diplomacy";
 type Locale = "zh" | "en";
+type PresentationMode = "simple" | "collector";
+type RegionalEventLimit = "6" | "12" | "24" | "all";
+type ChinaBlockBrowseRegion =
+  | "central"
+  | "north"
+  | "northwest"
+  | "southwest"
+  | "central-south"
+  | "southeast"
+  | "far-south"
+  | "northeast"
+  | "frontier";
 type LonLat = [number, number];
 
 type HistoricalEvent = {
@@ -757,6 +770,38 @@ type DetailPeriodContext = {
   regionId: Region;
   regionLabel: string;
   color: string;
+};
+
+type HistoricalTheme = {
+  id: string;
+  labelZh: string;
+  labelEn: string;
+  accent: string;
+  deep: string;
+  paper: string;
+};
+
+type CollectorPalette = {
+  canvas: string;
+  canvasSoft: string;
+  surface: string;
+  surfaceRaised: string;
+  surfaceDeep: string;
+  line: string;
+  foil: string;
+  foilBright: string;
+  mark: string;
+  text: string;
+  muted: string;
+};
+
+const worldUnityTheme: HistoricalTheme = {
+  id: "world-unity",
+  labelZh: "寰宇典藏 · 天下大同",
+  labelEn: "World Archive · One Realm",
+  accent: "#a68d60",
+  deep: "#675638",
+  paper: "#eee7d8",
 };
 
 type ChinaPolity = BoundaryGroup & {
@@ -1973,6 +2018,453 @@ function getOverviewTimelineIdFromDetailRegion(region: Region) {
   return "china";
 }
 
+function getHistoricalTheme(
+  era: Pick<OverviewRegionTimelineEra, "id" | "title"> | null,
+  timelineId: string,
+  fallbackColor: string,
+): HistoricalTheme {
+  const key = `${timelineId} ${era?.id ?? ""} ${era?.title ?? ""}`.toLowerCase();
+
+  if (key.includes("qin") || key.includes("秦与楚汉")) {
+    return {
+      id: "qin-water-black",
+      labelZh: "秦与楚汉",
+      labelEn: "Qin and Chu–Han",
+      accent: "#303438",
+      deep: "#111416",
+      paper: "#ebe9e2",
+    };
+  }
+
+  if (
+    key.includes("western-han") ||
+    key.includes("xin-eastern-han") ||
+    key.includes("eastern-han") ||
+    key.includes("late-han") ||
+    key.includes("西汉") ||
+    key.includes("东汉") ||
+    key.includes("汉末")
+  ) {
+    return {
+      id: "han-cinnabar",
+      labelZh: "汉代",
+      labelEn: "Han",
+      accent: "#a94736",
+      deep: "#6f281e",
+      paper: "#f3ebe6",
+    };
+  }
+
+  if (key.includes("western-jin") || key.includes("eastern-jin") || key.includes("northern-southern")) {
+    return {
+      id: "jin-jade",
+      labelZh: "魏晋南北朝",
+      labelEn: "Wei–Jin and Northern–Southern Dynasties",
+      accent: "#557f70",
+      deep: "#31594d",
+      paper: "#eaf1ed",
+    };
+  }
+
+  if (key.includes("sui-") || key.includes("tang-") || key.includes("post-anshi")) {
+    return {
+      id: "sui-tang-gold",
+      labelZh: "隋唐",
+      labelEn: "Sui–Tang",
+      accent: "#9a7735",
+      deep: "#6b4d1c",
+      paper: "#f4efe2",
+    };
+  }
+
+  if (key.includes("song-liao-jin-xia")) {
+    return {
+      id: "song-celadon",
+      labelZh: "宋辽金夏",
+      labelEn: "Song, Liao, Jin and Xia",
+      accent: "#4f817c",
+      deep: "#2f5e5a",
+      paper: "#e8f0ed",
+    };
+  }
+
+  if (key.includes("china-yuan")) {
+    return {
+      id: "yuan-blue",
+      labelZh: "元",
+      labelEn: "Yuan",
+      accent: "#426f8a",
+      deep: "#284e63",
+      paper: "#e7eef2",
+    };
+  }
+
+  if (key.includes("china-ming")) {
+    return {
+      id: "ming-vermilion",
+      labelZh: "明",
+      labelEn: "Ming",
+      accent: "#a43d35",
+      deep: "#71231f",
+      paper: "#f4ebe7",
+    };
+  }
+
+  if (key.includes("china-qing")) {
+    return {
+      id: "qing-imperial-purple",
+      labelZh: "清",
+      labelEn: "Qing",
+      accent: "#76547f",
+      deep: "#503357",
+      paper: "#f0eaf1",
+    };
+  }
+
+  if (
+    key.includes("frank") ||
+    key.includes("caroling") ||
+    key.includes("charlemagne") ||
+    key.includes("francia") ||
+    key.includes("france") ||
+    key.includes("法兰克") ||
+    key.includes("法兰西") ||
+    key.includes("法国") ||
+    key.includes("查理曼")
+  ) {
+    return {
+      id: "frankish-blue",
+      labelZh: "法兰克 / 法兰西",
+      labelEn: "Frankish / French",
+      accent: "#496b96",
+      deep: "#233b5d",
+      paper: "#e9e6dc",
+    };
+  }
+
+  if (
+    timelineId === "rome" &&
+    (
+      key.includes("constantine") ||
+      key.includes("君士坦丁") ||
+      key.includes("east-west") ||
+      key.includes("byzant") ||
+      key.includes("heraclius") ||
+      key.includes("iconoclasm") ||
+      key.includes("macedonian") ||
+      key.includes("komnenian") ||
+      key.includes("crusade") ||
+      key.includes("palaiologan")
+    )
+  ) {
+    return {
+      id: "eastern-rome-purple",
+      labelZh: "东罗马",
+      labelEn: "Eastern Rome",
+      accent: "#704b8c",
+      deep: "#4a2d62",
+      paper: "#efe9f2",
+    };
+  }
+
+  if (timelineId === "rome") {
+    return {
+      id: "rome-imperial-red",
+      labelZh: "罗马",
+      labelEn: "Rome",
+      accent: "#a13f38",
+      deep: "#6e2824",
+      paper: "#f3eae7",
+    };
+  }
+
+  if (timelineId === "central-asia" || key.includes("sasanian")) {
+    return {
+      id: "persia-gold",
+      labelZh: "波斯与中亚",
+      labelEn: "Persia and Central Asia",
+      accent: "#8b7435",
+      deep: "#5f4b1d",
+      paper: "#f2efe4",
+    };
+  }
+
+  if (timelineId === "india" || key.includes("india") || key.includes("印度")) {
+    return {
+      id: "india-saffron",
+      labelZh: "印度诸国",
+      labelEn: "Indian Polities",
+      accent: "#a76735",
+      deep: "#674325",
+      paper: "#f1eadf",
+    };
+  }
+
+  return {
+    id: "historical-neutral",
+    labelZh: era?.title ?? "当前时期",
+    labelEn: era?.title ?? "Current Period",
+    accent: fallbackColor,
+    deep: fallbackColor,
+    paper: "#eef2ee",
+  };
+}
+
+function getEntityHistoricalTheme({
+  fallback,
+  region,
+  text,
+  year,
+}: {
+  fallback: HistoricalTheme;
+  region: Region | AgeRegionFilter;
+  text: string;
+  year: number;
+}) {
+  const key = text.toLowerCase();
+  const containsAny = (terms: string[]) => terms.some((term) => key.includes(term.toLowerCase()));
+
+  if (
+    containsAny([
+      "frank",
+      "caroling",
+      "charlemagne",
+      "francia",
+      "france",
+      "法兰克",
+      "法兰西",
+      "法国",
+      "查理曼",
+    ])
+  ) {
+    return getHistoricalTheme(
+      { id: "frankish-carolingian", title: "法兰克 / 法兰西" },
+      "western-europe",
+      "#496b96",
+    );
+  }
+
+  if (region === "china") {
+    if (containsAny(["曹魏", "曹操集团", "蜀汉", "孙吴", "东汉末", "汉末", "三国"])) {
+      const theme = getHistoricalTheme(
+        { id: "china-late-han-three-kingdoms", title: "汉末三国" },
+        "china",
+        fallback.accent,
+      );
+      const polityLabel = containsAny(["曹魏", "曹操集团"])
+        ? "曹魏"
+        : containsAny(["蜀汉"])
+          ? "蜀汉"
+          : containsAny(["孙吴"])
+            ? "孙吴"
+            : "汉末三国";
+      return {
+        ...theme,
+        labelZh: `汉末三国 · ${polityLabel}`,
+        labelEn: `Late Han · ${polityLabel}`,
+      };
+    }
+
+    const timeline = getOverviewRegionTimeline("china");
+    const era = getOverviewTimelineEra(timeline, year);
+    return getHistoricalTheme(era, "china", fallback.accent);
+  }
+
+  if (
+    region === "rome" &&
+    (
+      year >= 284 ||
+      containsAny([
+        "constantine",
+        "君士坦丁",
+        "eastern roman",
+        "east roman",
+        "byzant",
+        "东罗马",
+        "拜占庭",
+      ])
+    )
+  ) {
+    const theme = getHistoricalTheme(
+      { id: "rome-diocletian-constantine-reorganization", title: "戴克里先—君士坦丁重组" },
+      "rome",
+      fallback.accent,
+    );
+    return {
+      ...theme,
+      labelZh: containsAny(["东罗马", "拜占庭", "byzant", "eastern roman", "east roman"])
+        ? "东罗马 · 紫金"
+        : "晚期罗马 · 紫金",
+      labelEn: containsAny(["byzant", "eastern roman", "east roman"])
+        ? "Eastern Rome · Purple"
+        : "Late Rome · Purple",
+    };
+  }
+
+  if (region === "rome") {
+    const timeline = getOverviewRegionTimeline("rome");
+    const era = getOverviewTimelineEra(timeline, year);
+    return getHistoricalTheme(era, "rome", fallback.accent);
+  }
+
+  if (
+    region === "sasanian-persia" ||
+    containsAny(["sasanian", "sassanid", "萨珊", "波斯", "persia"])
+  ) {
+    return getHistoricalTheme(
+      { id: "ca-sasanian-kushan", title: "萨珊与贵霜余波" },
+      "central-asia",
+      fallback.accent,
+    );
+  }
+
+  if (region === "india" || containsAny(["india", "gupta", "maurya", "印度", "笈多", "孔雀王朝"])) {
+    return getHistoricalTheme(
+      { id: "india-polities", title: "印度诸国" },
+      "india",
+      fallback.accent,
+    );
+  }
+
+  return fallback;
+}
+
+function getCollectorPalette(theme: HistoricalTheme): CollectorPalette {
+  switch (theme.id) {
+    case "world-unity":
+      return {
+        canvas: "#111419",
+        canvasSoft: "#171b20",
+        surface: "#20252b",
+        surfaceRaised: "#292f35",
+        surfaceDeep: "#12171c",
+        line: "#6b604c",
+        foil: "#c8ad72",
+        foilBright: "#ead49a",
+        mark: "#9d7954",
+        text: "#e5ded1",
+        muted: "#aaa196",
+      };
+    case "han-cinnabar":
+      return {
+        canvas: "#0e0d0b",
+        canvasSoft: "#15130f",
+        surface: "#1a1712",
+        surfaceRaised: "#221d16",
+        surfaceDeep: "#11100d",
+        line: "#55462f",
+        foil: "#c7aa6a",
+        foilBright: "#e2ca8b",
+        mark: "#9f3f2f",
+        text: "#d8ceb7",
+        muted: "#958a75",
+      };
+    case "eastern-rome-purple":
+    case "qing-imperial-purple":
+      return {
+        canvas: "#100c15",
+        canvasSoft: "#17101e",
+        surface: "#1e1527",
+        surfaceRaised: "#281b34",
+        surfaceDeep: "#120d18",
+        line: "#604873",
+        foil: "#c5aa6f",
+        foilBright: "#e1ca91",
+        mark: "#8560a0",
+        text: "#ddd2e1",
+        muted: "#a08fa8",
+      };
+    case "frankish-blue":
+    case "yuan-blue":
+      return {
+        canvas: "#09111a",
+        canvasSoft: "#0f1925",
+        surface: "#152130",
+        surfaceRaised: "#1c2c40",
+        surfaceDeep: "#0c141f",
+        line: "#405873",
+        foil: "#c8ad6e",
+        foilBright: "#e5cf93",
+        mark: "#557ba8",
+        text: "#d8dce2",
+        muted: "#8e9baa",
+      };
+    case "persia-gold":
+    case "sui-tang-gold":
+      return {
+        canvas: "#0e110d",
+        canvasSoft: "#151a14",
+        surface: "#1b2119",
+        surfaceRaised: "#242c20",
+        surfaceDeep: "#10140f",
+        line: "#596041",
+        foil: "#c5a85f",
+        foilBright: "#e0c987",
+        mark: "#7f8b55",
+        text: "#d8d5c1",
+        muted: "#999883",
+      };
+    case "india-saffron":
+      return {
+        canvas: "#120e0b",
+        canvasSoft: "#1a1410",
+        surface: "#211912",
+        surfaceRaised: "#2c2117",
+        surfaceDeep: "#140f0c",
+        line: "#684c31",
+        foil: "#d0a15f",
+        foilBright: "#e9c789",
+        mark: "#a76735",
+        text: "#e0d3bd",
+        muted: "#a08e78",
+      };
+    case "jin-jade":
+    case "song-celadon":
+      return {
+        canvas: "#0b1210",
+        canvasSoft: "#111a17",
+        surface: "#17221e",
+        surfaceRaised: "#1e2c27",
+        surfaceDeep: "#0d1512",
+        line: "#405f55",
+        foil: "#bba86f",
+        foilBright: "#d9ca93",
+        mark: "#5f8e7f",
+        text: "#d3ddd7",
+        muted: "#8ea098",
+      };
+    case "rome-imperial-red":
+    case "ming-vermilion":
+      return {
+        canvas: "#120c0b",
+        canvasSoft: "#1a1110",
+        surface: "#211715",
+        surfaceRaised: "#2a1d1a",
+        surfaceDeep: "#140e0d",
+        line: "#67433b",
+        foil: "#c7a26b",
+        foilBright: "#e3c68f",
+        mark: "#a34d42",
+        text: "#dfd1c5",
+        muted: "#a08d82",
+      };
+    default:
+      return {
+        canvas: "#0e1111",
+        canvasSoft: "#151919",
+        surface: "#1b2020",
+        surfaceRaised: "#242b2b",
+        surfaceDeep: "#101414",
+        line: "#4a5655",
+        foil: "#bea978",
+        foilBright: "#ded0a4",
+        mark: theme.accent,
+        text: "#d7d9d3",
+        muted: "#959d98",
+      };
+  }
+}
+
 function getOverviewYearPercent(year: number) {
   return ((year - overviewYearMin) / (overviewYearMax - overviewYearMin)) * 100;
 }
@@ -2988,7 +3480,39 @@ function SourceMentionCard({ compact = false, mention }: { compact?: boolean; me
   );
 }
 
-function PersonSourceMentionPanel({ mentions }: { mentions: SourceMention[] }) {
+function PersonSourceMentionPanel({
+  collapsible = false,
+  mentions,
+}: {
+  collapsible?: boolean;
+  mentions: SourceMention[];
+}) {
+  const mentionList = (
+    <div className="source-mention-list">
+      {mentions.length ? (
+        mentions.map((mention) => <SourceMentionCard key={mention.id} mention={mention} />)
+      ) : (
+        <p>待补充史料提及</p>
+      )}
+    </div>
+  );
+
+  if (collapsible) {
+    return (
+      <details className="person-source-mention-disclosure">
+        <summary>
+          <span className="person-source-mention-title">
+            <BookOpen size={16} aria-hidden="true" />
+            <span>人物史料提及</span>
+            <strong>{mentions.length}</strong>
+          </span>
+          <small>人物档案补充资料；当前事件证据见下方“出处”</small>
+        </summary>
+        {mentionList}
+      </details>
+    );
+  }
+
   return (
     <>
       <div className="person-event-heading">
@@ -2996,13 +3520,7 @@ function PersonSourceMentionPanel({ mentions }: { mentions: SourceMention[] }) {
         <span>史料提及</span>
         <strong>{mentions.length}</strong>
       </div>
-      <div className="source-mention-list">
-        {mentions.length ? (
-          mentions.map((mention) => <SourceMentionCard key={mention.id} mention={mention} />)
-        ) : (
-          <p>待补充史料提及</p>
-        )}
-      </div>
+      {mentionList}
     </>
   );
 }
@@ -4143,6 +4661,81 @@ function getConfidenceLabel(confidence: "high" | "medium" | "low" | undefined) {
   }
 }
 
+function getConfidenceLevelLabel(
+  confidence: "high" | "medium" | "low" | undefined,
+  locale: Locale,
+) {
+  const labels = {
+    high: { zh: "高", en: "High" },
+    medium: { zh: "中", en: "Medium" },
+    low: { zh: "低", en: "Low" },
+  } as const;
+
+  return confidence
+    ? labels[confidence][locale]
+    : locale === "zh"
+      ? "待补"
+      : "Unmarked";
+}
+
+const chinaBlockBrowseRegionOrder: ChinaBlockBrowseRegion[] = [
+  "central",
+  "north",
+  "northwest",
+  "southwest",
+  "central-south",
+  "southeast",
+  "far-south",
+  "northeast",
+  "frontier",
+];
+
+function getChinaBlockBrowseRegion(block: ChinaBlock): ChinaBlockBrowseRegion {
+  const [longitude, latitude] = block.center;
+
+  if (longitude < 98 || latitude >= 43) {
+    return "frontier";
+  }
+  if (longitude >= 121 || (longitude >= 118.5 && latitude >= 38)) {
+    return "northeast";
+  }
+  if (latitude < 24) {
+    return "far-south";
+  }
+  if (longitude < 108.5 && latitude < 33.2) {
+    return "southwest";
+  }
+  if (longitude < 110 && latitude >= 33.2) {
+    return "northwest";
+  }
+  if (longitude >= 114.5 && latitude < 32.5) {
+    return "southeast";
+  }
+  if (longitude < 114.5 && latitude < 32.5) {
+    return "central-south";
+  }
+  if (latitude >= 36.5) {
+    return "north";
+  }
+  return "central";
+}
+
+function getChinaBlockBrowseRegionLabel(region: ChinaBlockBrowseRegion, locale: Locale) {
+  const labels: Record<ChinaBlockBrowseRegion, { zh: string; en: string }> = {
+    central: { zh: "中原", en: "Central Plain" },
+    north: { zh: "河北与并州", en: "Hebei and Bingzhou" },
+    northwest: { zh: "关中与西北", en: "Guanzhong and Northwest" },
+    southwest: { zh: "巴蜀", en: "Bashu" },
+    "central-south": { zh: "荆楚", en: "Jing-Chu" },
+    southeast: { zh: "江东", en: "Jiangdong" },
+    "far-south": { zh: "岭南与交州", en: "Lingnan and Jiaozhou" },
+    northeast: { zh: "辽东与东北", en: "Liaodong and Northeast" },
+    frontier: { zh: "西域与塞外", en: "Western Regions and Frontier" },
+  };
+
+  return labels[region][locale];
+}
+
 function getRelatedEventRelationLabel(relationType: RelatedEventRef["relationType"], locale: Locale) {
   const labels: Record<RelatedEventRef["relationType"], { zh: string; en: string }> = {
     editorial: { zh: "人工关联", en: "Editorial link" },
@@ -5130,10 +5723,27 @@ function RomanRegionMap({
 }
 
 function App() {
-  const [page, setPage] = useState<Page>("home");
+  const initialUrlParams = new URLSearchParams(window.location.search);
+  const initialPersonDetailId =
+    initialUrlParams.get("page") === "person-detail"
+      ? initialUrlParams.get("person")
+      : null;
+  const [page, setPage] = useState<Page>(initialPersonDetailId ? "person-detail" : "home");
   const [previousPage, setPreviousPage] = useState<Page | null>(null);
   const lastPageRef = useRef<Page>("home");
   const [locale, setLocale] = useState<Locale>("zh");
+  const [presentationMode, setPresentationMode] = useState<PresentationMode>(() => {
+    const savedMode = window.localStorage.getItem("chronoatlas-presentation-mode");
+    return savedMode === "collector" ? "collector" : "simple";
+  });
+  const [isBlockIndexOpen, setIsBlockIndexOpen] = useState(
+    () => presentationMode === "collector",
+  );
+  const [blockIndexQuery, setBlockIndexQuery] = useState("");
+  const [blockIndexRegion, setBlockIndexRegion] = useState<ChinaBlockBrowseRegion | "all">("all");
+  const [blockIndexController, setBlockIndexController] = useState("all");
+  const [openBlockIndexRegions, setOpenBlockIndexRegions] = useState<ChinaBlockBrowseRegion[]>([]);
+  const [regionalEventLimit, setRegionalEventLimit] = useState<RegionalEventLimit>("6");
   const [openTopbarMenu, setOpenTopbarMenu] = useState<TopbarMenu | null>(null);
   const [year, setYear] = useState(220);
   const [detailPeriodContext, setDetailPeriodContext] = useState<DetailPeriodContext>({
@@ -5160,7 +5770,9 @@ function App() {
   const [eventDetailTab, setEventDetailTab] = useState<EventDetailTab>("overview");
   const [selectedChinaBlockId, setSelectedChinaBlockId] = useState<string | null>(null);
   const [hoveredChinaBlockId, setHoveredChinaBlockId] = useState<string | null>(null);
-  const [selectedPersonId, setSelectedPersonId] = useState<string | null>(null);
+  const [selectedPersonId, setSelectedPersonId] = useState<string | null>(
+    initialPersonDetailId,
+  );
   const [personIndexFilter, setPersonIndexFilter] = useState<PersonIndexFilter>("all");
   const [personRoleFilter, setPersonRoleFilter] = useState<PersonRoleFilter>("all");
   const [personPeriodScopeLocked, setPersonPeriodScopeLocked] = useState(true);
@@ -5455,6 +6067,46 @@ function App() {
     },
     [chinaBlocks, chinaControlTimeline, isChinaPlaceLayerAvailableForPeriod, isChinaPlaceLayerAvailableForYear, year],
   );
+  const chinaBlockIndexControllers = useMemo(
+    () =>
+      [...new Set(
+        chinaBlockSnapshots
+          .map(({ control }) => control?.controller)
+          .filter((controller): controller is string => Boolean(controller)),
+      )].sort((left, right) => left.localeCompare(right, "zh-Hans-CN")),
+    [chinaBlockSnapshots],
+  );
+  const filteredChinaBlockSnapshots = useMemo(() => {
+    const normalizedBlockQuery = normalizeChinaPlaceText(blockIndexQuery).toLowerCase();
+
+    return chinaBlockSnapshots.filter(({ block, control }) => {
+      const matchesQuery =
+        !normalizedBlockQuery ||
+        normalizeChinaPlaceText([block.name, control?.controller].filter(Boolean).join(" "))
+          .toLowerCase()
+          .includes(normalizedBlockQuery);
+      const matchesRegion =
+        blockIndexRegion === "all" || getChinaBlockBrowseRegion(block) === blockIndexRegion;
+      const matchesController =
+        blockIndexController === "all" || control?.controller === blockIndexController;
+
+      return matchesQuery && matchesRegion && matchesController;
+    });
+  }, [blockIndexController, blockIndexQuery, blockIndexRegion, chinaBlockSnapshots]);
+  const groupedChinaBlockSnapshots = useMemo(
+    () =>
+      chinaBlockBrowseRegionOrder
+        .map((region) => ({
+          region,
+          items: filteredChinaBlockSnapshots.filter(
+            ({ block }) => getChinaBlockBrowseRegion(block) === region,
+          ),
+        }))
+        .filter(({ items }) => items.length > 0),
+    [filteredChinaBlockSnapshots],
+  );
+  const hasChinaBlockIndexFilters =
+    Boolean(blockIndexQuery) || blockIndexRegion !== "all" || blockIndexController !== "all";
   const selectedChinaBlock = selectedChinaBlockId ? (chinaBlockById.get(selectedChinaBlockId) ?? null) : null;
   const hoveredChinaBlock = hoveredChinaBlockId ? (chinaBlockById.get(hoveredChinaBlockId) ?? null) : null;
   const inspectedChinaBlock = (hoveredChinaBlock ?? selectedChinaBlock)!;
@@ -5506,6 +6158,12 @@ function App() {
     detailRegionId === "china"
       ? selectedRegionEvents.filter((event) => matchesThreeKingdomsFilter(event, eventFilter))
       : selectedRegionEvents;
+  const visibleFilteredRegionEvents =
+    regionalEventLimit === "all"
+      ? filteredRegionEvents
+      : filteredRegionEvents.slice(0, Number(regionalEventLimit));
+  const hiddenFilteredRegionEventCount =
+    Math.max(0, filteredRegionEvents.length - visibleFilteredRegionEvents.length);
   const shouldUseChinaFallbackLifeEvents = detailRegionId === "china" && selectedRegionEvents.length === 0;
   const selectedRegionFallbackLifeEvents =
     shouldUseChinaFallbackLifeEvents && filteredRegionEvents.length === 0 ? getChinaLifeEventsForYear(year, eventFilter) : [];
@@ -5523,6 +6181,10 @@ function App() {
   const selectedRegionTotalDisplayCount = selectedRegionEvents.length + selectedRegionTotalFallbackLifeEvents.length;
   const selectedRegionDisplayCountLabel =
     selectedRegionTotalDisplayCount > 0 ? `${selectedRegionFilteredDisplayCount}/${selectedRegionTotalDisplayCount}` : "0";
+  const visibleRegionDisplayCountLabel =
+    hiddenFilteredRegionEventCount > 0
+      ? `${visibleFilteredRegionEvents.length}/${filteredRegionEvents.length}`
+      : selectedRegionDisplayCountLabel;
   const detailRegionEventCountLabel =
     detailRegionId === "china"
       ? selectedRegionDisplayCountLabel
@@ -7527,10 +8189,20 @@ function App() {
   }, [evidenceGraphTarget, locale, page]);
 
   useEffect(() => {
+    if (page === "person-detail" && selectedPersonIndexItem) {
+      syncPersonDetailContext(selectedPersonIndexItem);
+    }
+  }, [page, peopleDataVersion, selectedPersonIndexItem?.id]);
+
+  useEffect(() => {
+    if (page === "person-detail") {
+      return;
+    }
+
     setSelectedPersonId((current) =>
       current && selectedEventPersonIds.includes(current) ? current : (selectedEventPersonIds[0] ?? null),
     );
-  }, [selectedEvent.id, selectedEventPersonIds.join("|")]);
+  }, [page, selectedEvent.id, selectedEventPersonIds.join("|")]);
 
   useEffect(() => {
     if (page !== "people") {
@@ -7552,14 +8224,35 @@ function App() {
   }, [selectedEvent.id]);
 
   useEffect(() => {
-    if (page !== "china" || chinaMapMode !== "political" || !selectedChinaBlockId) {
+    window.localStorage.setItem("chronoatlas-presentation-mode", presentationMode);
+    setIsBlockIndexOpen(presentationMode === "collector");
+  }, [presentationMode]);
+
+  useEffect(() => {
+    if (page !== "person-detail" || !selectedPersonId) {
       return;
     }
 
-    if (!chinaBlockById.has(selectedChinaBlockId)) {
-      setSelectedChinaBlockId(null);
+    const nextUrl = new URL(window.location.href);
+    nextUrl.searchParams.set("page", "person-detail");
+    nextUrl.searchParams.set("person", selectedPersonId);
+    window.history.replaceState(null, "", nextUrl);
+  }, [page, selectedPersonId]);
+
+  useEffect(() => {
+    if (page !== "china" || (chinaMapMode !== "political" && chinaMapMode !== "commandery")) {
+      return;
     }
-  }, [chinaBlockById, chinaMapMode, page, selectedChinaBlockId]);
+
+    if (!chinaBlocks.length) {
+      setSelectedChinaBlockId(null);
+      return;
+    }
+
+    if (!selectedChinaBlockId || !chinaBlockById.has(selectedChinaBlockId)) {
+      setSelectedChinaBlockId(chinaBlocks[0].id);
+    }
+  }, [chinaBlockById, chinaBlocks, chinaMapMode, page, selectedChinaBlockId]);
 
   function syncDetailPeriodToRegion(region: Region, entryYear = year) {
     const timelineId = getOverviewTimelineIdFromDetailRegion(region);
@@ -7806,12 +8499,60 @@ function App() {
     setSelectedPersonId((current) => current ?? "cao-cao");
   }
 
+  function getPersonDetailEntryYear(person: PersonIndexItem) {
+    const firstSubstantiveLifeYear = chinaPersonLifeEvents
+      .filter(
+        (lifeEvent) =>
+          lifeEvent.personId === person.id &&
+          Number.isInteger(lifeEvent.year) &&
+          !["birth", "death", "later-tradition"].includes(lifeEvent.type),
+      )
+      .sort((left, right) => (left.year ?? Number.MAX_SAFE_INTEGER) - (right.year ?? Number.MAX_SAFE_INTEGER))[0]?.year;
+    const relevantStartYear = person.activityStartYear ?? firstSubstantiveLifeYear ?? person.birthYear;
+    const relevantEndYear = person.activityEndYear ?? person.deathYear ?? relevantStartYear;
+
+    if (
+      typeof relevantStartYear === "number" &&
+      typeof relevantEndYear === "number" &&
+      year >= relevantStartYear &&
+      year <= relevantEndYear
+    ) {
+      return year;
+    }
+
+    return relevantStartYear ?? person.deathYear ?? year;
+  }
+
+  function syncPersonDetailContext(person: PersonIndexItem) {
+    if (person.region === "all" || person.region === "india") {
+      setPersonPeriodScopeLocked(false);
+      return;
+    }
+
+    const entryYear = getPersonDetailEntryYear(person);
+    const detailRegion = getPrimaryDetailRegion(person.region);
+    const personMatchesCurrentPeriod =
+      detailPeriodContext.regionId === detailRegion &&
+      personOverlapsRange(person, yearMin, yearMax);
+
+    if (personMatchesCurrentPeriod) {
+      setYear(Math.min(yearMax, Math.max(yearMin, entryYear)));
+    } else if (!syncDetailPeriodToRegion(person.region, entryYear)) {
+      setPersonPeriodScopeLocked(false);
+      return;
+    }
+
+    setSelectedRegion(detailRegion);
+    setPersonPeriodScopeLocked(true);
+  }
+
   function getRecommendedPersonDetailId() {
     if (selectedPersonId && personIndexItems.some((person) => person.id === selectedPersonId)) {
       return selectedPersonId;
     }
 
     return (
+      personIndexItems.find((person) => person.id === "cao-cao")?.id ??
       selectedEventPersonIds.find((personId) => personIndexItems.some((person) => person.id === personId)) ??
       recommendedPersonDetailPeople[0]?.id ??
       visiblePersonIndex[0]?.id ??
@@ -7834,8 +8575,10 @@ function App() {
 
     if (indexPerson) {
       setSelectedPersonId(indexPerson.id);
+      syncPersonDetailContext(indexPerson);
+    } else {
+      setPersonPeriodScopeLocked(true);
     }
-    setPersonPeriodScopeLocked(true);
     setPage("person-detail");
     setSummaryRegion(null);
     setHoveredRegion(null);
@@ -8356,7 +9099,7 @@ function App() {
       return;
     }
 
-    setPersonPeriodScopeLocked(false);
+    syncPersonDetailContext(indexPerson);
     setPage("person-detail");
   }
 
@@ -8449,6 +9192,10 @@ function App() {
       setAgeRegionFilter(person.region);
       setPage("age");
       return;
+    }
+    const indexPerson = personIndexItems.find((item) => item.id === person.id);
+    if (indexPerson) {
+      syncPersonDetailContext(indexPerson);
     }
     setPage("person-detail");
   }
@@ -8657,6 +9404,52 @@ function App() {
   const currentDetailEraIndex = detailTimelineEras.findIndex(
     (era) => era.startYear === detailPeriodContext.startYear && era.endYear === detailPeriodContext.endYear,
   );
+  const currentDetailEra = currentDetailEraIndex >= 0 ? detailTimelineEras[currentDetailEraIndex] : null;
+  const detailThemeEra = currentDetailEra ?? {
+    id: detailPeriodContext.title,
+    title: detailPeriodContext.title,
+  };
+  const historicalTheme = page === "home"
+    ? getHistoricalTheme(activeOverviewTimelineEra, activeOverviewTimeline?.id ?? overviewTimelineId, activeOverviewTimelineEra?.color ?? activeOverviewPeriod.color)
+    : getHistoricalTheme(detailThemeEra, detailPeriodContext.timelineId, currentDetailEra?.color ?? detailPeriodContext.color);
+  const entityHistoricalTheme =
+    page === "person-detail" && selectedPersonIndexItem
+      ? getEntityHistoricalTheme({
+          fallback: historicalTheme,
+          region: selectedPersonIndexItem.region,
+          text: [
+            selectedPersonIndexItem.id,
+            selectedPersonIndexItem.name,
+            ...(selectedPersonIndexItem.aliases ?? []),
+            selectedPersonIndexItem.primaryPolity,
+            ...selectedPersonIndexItem.roles,
+            selectedPersonIndexItem.summary,
+          ].join(" "),
+          year: getPersonDetailEntryYear(selectedPersonIndexItem),
+        })
+      : page === "event-detail"
+        ? getEntityHistoricalTheme({
+            fallback: historicalTheme,
+            region: selectedEvent.region,
+            text: [
+              selectedEvent.id,
+              selectedEvent.title,
+              selectedEvent.titleZh,
+              selectedEvent.titleEn,
+              selectedEvent.eventLabel,
+              selectedEvent.summary,
+              ...selectedEvent.polities,
+              ...selectedEvent.tags,
+              ...selectedEvent.people,
+            ].filter(Boolean).join(" "),
+            year: selectedEvent.startYear,
+          })
+        : historicalTheme;
+  const shellHistoricalTheme =
+    page === "home" && presentationMode === "collector"
+      ? worldUnityTheme
+      : entityHistoricalTheme;
+  const collectorPalette = getCollectorPalette(shellHistoricalTheme);
   const previousDetailEra = currentDetailEraIndex > 0 ? detailTimelineEras[currentDetailEraIndex - 1] : null;
   const nextDetailEra =
     currentDetailEraIndex >= 0 && currentDetailEraIndex < detailTimelineEras.length - 1
@@ -8828,7 +9621,29 @@ function App() {
   const showTopbarSearch = !(["home", "learning", "people", "person-detail", "places", "place-detail", "evidence", "source-library", "event-detail", "coverage", "map-debug", "rag-eval", "ai-debug", "ai-history"] as Page[]).includes(page);
 
   return (
-    <main className={`app-shell ${page === "home" || page === "learning" || page === "age" || page === "evidence" || page === "source-library" || page === "events" || page === "event-detail" || page === "person-detail" || page === "places" || page === "place-detail" || page === "evidence-graph" || page === "compare" || page === "coverage" || page === "map-debug" || page === "rag-eval" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""}`}>
+    <main
+      className={`app-shell ${page === "home" || page === "learning" || page === "age" || page === "evidence" || page === "source-library" || page === "events" || page === "event-detail" || page === "person-detail" || page === "places" || page === "place-detail" || page === "evidence-graph" || page === "compare" || page === "coverage" || page === "map-debug" || page === "rag-eval" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""} ${page === "event-detail" || page === "person-detail" ? "entity-detail-shell" : ""} ${page === "person-detail" && selectedPerson?.id === "cao-cao" ? "family-atlas-shell" : ""}`}
+      data-history-theme={shellHistoricalTheme.id}
+      data-collector-theme={shellHistoricalTheme.id}
+      data-page={page}
+      data-presentation-mode={presentationMode}
+      style={{
+        "--theme-accent": shellHistoricalTheme.accent,
+        "--theme-deep": shellHistoricalTheme.deep,
+        "--theme-paper": shellHistoricalTheme.paper,
+        "--collector-canvas": collectorPalette.canvas,
+        "--collector-canvas-soft": collectorPalette.canvasSoft,
+        "--collector-surface": collectorPalette.surface,
+        "--collector-surface-raised": collectorPalette.surfaceRaised,
+        "--collector-surface-deep": collectorPalette.surfaceDeep,
+        "--collector-line": collectorPalette.line,
+        "--collector-foil": collectorPalette.foil,
+        "--collector-foil-bright": collectorPalette.foilBright,
+        "--collector-mark": collectorPalette.mark,
+        "--collector-text": collectorPalette.text,
+        "--collector-muted": collectorPalette.muted,
+      } as React.CSSProperties}
+    >
       <header className="global-topbar" aria-label={locale === "zh" ? "站点工具栏" : "Site toolbar"}>
         <button
           className="utility-menu-button"
@@ -8839,23 +9654,52 @@ function App() {
         >
           <Menu size={20} aria-hidden="true" />
         </button>
-        <button
-          className="topbar-action locale-toggle topbar-language"
-          type="button"
-          aria-label={locale === "zh" ? "Switch to English" : "切换到中文"}
-          onClick={() => {
-            setOpenTopbarMenu(null);
-            setLocale((current) => current === "zh" ? "en" : "zh");
-          }}
-        >
-          <Globe2 size={17} aria-hidden="true" />
-          <span>{locale === "zh" ? "EN" : "中文"}</span>
-        </button>
+        <div className="global-topbar-controls">
+          <span className="theme-scope-label">
+            {locale === "zh" ? shellHistoricalTheme.labelZh : shellHistoricalTheme.labelEn}
+          </span>
+          <div
+            className="presentation-mode-control"
+            role="group"
+            aria-label={locale === "zh" ? "界面风格" : "Presentation style"}
+          >
+            <button
+              className={presentationMode === "simple" ? "active" : ""}
+              type="button"
+              aria-pressed={presentationMode === "simple"}
+              onClick={() => setPresentationMode("simple")}
+            >
+              {locale === "zh" ? "简约" : "Simple"}
+            </button>
+            <button
+              className={presentationMode === "collector" ? "active" : ""}
+              type="button"
+              aria-pressed={presentationMode === "collector"}
+              onClick={() => setPresentationMode("collector")}
+            >
+              {locale === "zh" ? "典藏" : "Collector"}
+            </button>
+          </div>
+          <button
+            className="topbar-action locale-toggle topbar-language"
+            type="button"
+            aria-label={locale === "zh" ? "Switch to English" : "切换到中文"}
+            onClick={() => {
+              setOpenTopbarMenu(null);
+              setLocale((current) => current === "zh" ? "en" : "zh");
+            }}
+          >
+            <Globe2 size={17} aria-hidden="true" />
+            <span>{locale === "zh" ? "EN" : "中文"}</span>
+          </button>
+        </div>
       </header>
       <section className="map-workspace">
         <header className="workspace-header">
           <button className="brand-home" type="button" onClick={() => { setOpenTopbarMenu(null); returnToHome(); }} aria-label={t.nav.home}>
-            <p className="kicker">ChronoAtlas</p>
+            <span className="brand-kicker-row">
+              <span className="kicker">ChronoAtlas</span>
+            </span>
             <h1>{pageHeadingTitle}</h1>
           </button>
           <div className="topbar-secondary">
@@ -8946,8 +9790,16 @@ function App() {
               <label className="search-box">
                 <Search size={18} aria-hidden="true" />
                 <input
+                  type="search"
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
+                  aria-label={
+                    page === "people" || page === "age"
+                      ? t.search.people
+                      : page === "evidence"
+                        ? t.search.evidence
+                        : t.search.default
+                  }
                   placeholder={
                     page === "people" || page === "age"
                       ? t.search.people
@@ -8973,26 +9825,39 @@ function App() {
 
         {page === "china" && (
           <div className="region-toolbar">
-            <button className="back-button" type="button" onClick={returnToWorld}>
-              <ArrowLeft size={18} />
-              {t.common.worldOverview}
-            </button>
-            <div className="map-mode-control" role="group" aria-label="地图模式">
-              {chinaMapModes.map(({ id, label, Icon }) => (
-                <button
-                  className={`map-mode-button ${chinaMapMode === id ? "active" : ""}`}
-                  key={id}
-                  type="button"
-                  aria-pressed={chinaMapMode === id}
-                  title={`${label}地图`}
-                  onClick={() => changeChinaMapMode(id)}
-                >
-                  <Icon size={16} />
-                  <span>{label}</span>
-                </button>
-              ))}
+            <div className="china-region-heading">
+              <button className="back-button china-world-return" type="button" onClick={returnToWorld}>
+                <ArrowLeft size={18} />
+                <span>{t.common.worldOverview}</span>
+              </button>
+              <div className="china-region-copy">
+                <span>{locale === "zh" ? "中国 · 汉末三国" : "China · Late Han"}</span>
+                <strong>{locale === "zh" ? "三国郡界地图" : "Three Kingdoms Commandery Map"}</strong>
+                <small>{locale === "zh" ? "157 郡界 · 184–280" : "157 commanderies · 184–280"}</small>
+              </div>
             </div>
-            <span>{chinaMapMode === "political" ? "157郡界地图" : chinaMapMode === "commandery" ? "157郡界地图" : (chinaMapLayer?.title ?? chinaRegionEra.title)}</span>
+            <div className="china-toolbar-actions">
+              <div className="map-mode-control" role="group" aria-label="地图模式">
+                {chinaMapModes.map(({ id, label, Icon }) => (
+                  <button
+                    className={`map-mode-button ${chinaMapMode === id ? "active" : ""}`}
+                    key={id}
+                    type="button"
+                    aria-pressed={chinaMapMode === id}
+                    title={`${label}地图`}
+                    onClick={() => changeChinaMapMode(id)}
+                  >
+                    <Icon size={16} />
+                    <span>{label}</span>
+                  </button>
+                ))}
+              </div>
+              <span className="map-record-count">
+                {chinaMapMode === "political" || chinaMapMode === "commandery"
+                  ? "157郡界地图"
+                  : (chinaMapLayer?.title ?? chinaRegionEra.title)}
+              </span>
+            </div>
           </div>
         )}
 
@@ -9116,10 +9981,16 @@ function App() {
             </button>
             <span>
               {runtimeRomanControlDb.provinces.length
-                ? `${runtimeRomanControlDb.provinces.length} province fragments`
+                ? locale === "zh"
+                  ? `${runtimeRomanControlDb.provinces.length} 处行省片段`
+                  : `${runtimeRomanControlDb.provinces.length} province fragments`
                 : romanControlDbStatus === "loading"
-                  ? "Loading Roman province map"
-                  : "Roman API offline"}
+                  ? locale === "zh"
+                    ? "正在载入罗马行省图"
+                    : "Loading Roman province map"
+                  : locale === "zh"
+                    ? "罗马行省资料暂不可用"
+                    : "Roman archive offline"}
             </span>
           </div>
         )}
@@ -9129,7 +10000,10 @@ function App() {
             <div className="overview-map-panel">
               <div className="overview-map-header">
                 <div>
-                  <p className="kicker">{locale === "zh" ? "世界时间轴" : "Global Timeline"}</p>
+                  <p className="kicker">
+                    <Globe2 size={14} aria-hidden="true" />
+                    {locale === "zh" ? "寰宇导览 · 世界时间轴" : "World Guide · Global Timeline"}
+                  </p>
                   <h2>{formatHistoricalYearWithEra(overviewYear)}</h2>
                   <span>{activeOverviewPeriod.title}</span>
                 </div>
@@ -9145,6 +10019,89 @@ function App() {
 
               <div className="overview-world-canvas" aria-label={t.common.roughWorldMap}>
                 <OverviewWorldMap />
+                {presentationMode === "collector" && (
+                  <>
+                    <div
+                      className="overview-map-archive-seal"
+                      aria-label={locale === "zh" ? "世界地图档案" : "World map archive"}
+                    >
+                      <BookOpen size={15} aria-hidden="true" />
+                      <span>
+                        <small>{locale === "zh" ? "寰宇坐标" : "World Coordinates"}</small>
+                        <strong>{formatHistoricalYear(activeOverviewSnapshotYear)}</strong>
+                      </span>
+                    </div>
+                    <div
+                      className="overview-atlas-guide"
+                      aria-label={locale === "zh" ? "多文明同年导览" : "Same-year civilization guide"}
+                    >
+                      <span className="overview-atlas-guide-title">
+                        <Compass size={17} aria-hidden="true" />
+                        <span>
+                          <small>{locale === "zh" ? "寰宇导览" : "World Guide"}</small>
+                          <strong>{locale === "zh" ? "多文明同年共览" : "Civilizations in Parallel"}</strong>
+                        </span>
+                      </span>
+                      <span className="overview-atlas-guide-stat">
+                        <small>{locale === "zh" ? "叙事区间" : "Narrative Range"}</small>
+                        <strong>
+                          {formatHistoricalYear(activeOverviewPeriod.startYear)}
+                          {" – "}
+                          {formatHistoricalYear(activeOverviewPeriod.endYear)}
+                        </strong>
+                      </span>
+                      <span className="overview-atlas-guide-stat">
+                        <small>{locale === "zh" ? "文明坐标" : "Civilization Anchors"}</small>
+                        <strong>
+                          {activeOverviewMapRegions.length}
+                          {locale === "zh" ? " 处" : ""}
+                        </strong>
+                      </span>
+                      <span className="overview-atlas-guide-stat">
+                        <small>{locale === "zh" ? "当前谱系" : "Current Thread"}</small>
+                        <strong>{activeOverviewTimeline?.label ?? (locale === "zh" ? "待考" : "Pending")}</strong>
+                      </span>
+                      <span className="overview-atlas-guide-note">
+                        {locale === "zh"
+                          ? "单击切换文明 · 双击进入详细时期"
+                          : "Click to switch · Double-click for detail"}
+                      </span>
+                    </div>
+                    <div
+                      className="overview-civilization-lineage"
+                      aria-label={locale === "zh" ? "当前文明谱系" : "Current civilization threads"}
+                    >
+                      <span className="overview-lineage-title">
+                        <Network size={14} aria-hidden="true" />
+                        {locale === "zh" ? "文明谱系" : "Civilization Threads"}
+                      </span>
+                      {activeOverviewMapRegions.map((region) => (
+                        <span
+                          className={`overview-lineage-item ${region.tier}`}
+                          key={`${region.timelineId}-lineage`}
+                          style={{ "--period-color": region.color } as React.CSSProperties}
+                          title={region.summary}
+                        >
+                          <i aria-hidden="true" />
+                          <b>{region.label}</b>
+                          <small>
+                            {secondaryTimelineParents[region.timelineId]
+                              ? locale === "zh"
+                                ? "关联谱系"
+                                : "Related"
+                              : region.tier === "core"
+                                ? locale === "zh"
+                                  ? "文明主脉"
+                                  : "Primary"
+                                : locale === "zh"
+                                  ? "背景谱系"
+                                  : "Context"}
+                          </small>
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                )}
                 {activeOverviewMapRegions.map((region) => (
                   <span
                     className="overview-region-zone"
@@ -9165,6 +10122,11 @@ function App() {
                     }
                     type="button"
                     title={region.summary}
+                    aria-label={
+                      locale === "zh"
+                        ? `${index + 1}，${region.label}。单击切换文明，双击进入详细时期`
+                        : `${index + 1}, ${region.label}. Click to switch civilization, double-click for details`
+                    }
                     onClick={() => setOverviewTimelineId(getPrimaryTimelineId(region.timelineId))}
                     onDoubleClick={() => {
                       const timeline = getOverviewRegionTimeline(getPrimaryTimelineId(region.timelineId));
@@ -9267,8 +10229,8 @@ function App() {
             </div>
 
             <aside className="detail-panel overview-detail-panel" aria-label={locale === "zh" ? "总览相关信息" : "Overview related information"}>
-              <div className="region-detail overview-period-card" style={{ "--period-color": activeOverviewPeriod.color } as React.CSSProperties}>
-                <div className="detail-eyebrow" style={{ color: activeOverviewPeriod.color }}>
+              <div className="region-detail overview-period-card" style={{ "--period-color": shellHistoricalTheme.accent } as React.CSSProperties}>
+                <div className="detail-eyebrow" style={{ color: shellHistoricalTheme.deep }}>
                   <Info size={18} aria-hidden="true" />
                   <span>{getPeriodStatusLabel(activeOverviewPeriod.status)}</span>
                 </div>
@@ -11657,7 +12619,16 @@ function App() {
             </div>
           </section>
         ) : page === "person-detail" ? (
-          <section className="person-detail-stage" aria-label={locale === "zh" ? "人物详情" : "Person detail"}>
+          selectedPerson?.id === "cao-cao" ? (
+            <CaoFamilyAtlas
+              year={year}
+              onOpenPerson={openPersonDetailPanel}
+              onOpenPeopleIndex={openPeopleIndex}
+              onOpenEvidence={() => openEvidenceSearch(selectedPerson.name, "china")}
+              onOpenGraph={() => openPersonEvidenceGraph(selectedPerson.id)}
+            />
+          ) : (
+            <section className="person-detail-stage" aria-label={locale === "zh" ? "人物详情" : "Person detail"}>
             <div className="person-detail-hero">
               <div>
                 <p className="kicker">{locale === "zh" ? "人物详情" : "Person Detail"}</p>
@@ -11714,8 +12685,10 @@ function App() {
                 <label className="person-detail-search">
                   <Search size={17} aria-hidden="true" />
                   <input
+                    type="search"
                     value={query}
                     onChange={(event) => setQuery(event.target.value)}
+                    aria-label={locale === "zh" ? "搜索人物、字、势力或角色" : "Search people, names, polities, or roles"}
                     placeholder={locale === "zh" ? "搜索人物、字、势力、角色" : "Search people, names, polities, roles"}
                   />
                 </label>
@@ -11728,34 +12701,45 @@ function App() {
                     ? (locale === "zh" ? `当前时期：${activeScopeLabel}` : `Current period: ${activeScopeLabel}`)
                     : (locale === "zh" ? "全部人物" : "All people")}
                 </button>
-                <div className="person-filter-bar compact" role="group" aria-label={t.peoplePage.filterAria}>
-                  {personIndexFilters.map((filter) => (
-                    <button
-                      className={`person-filter-button ${personIndexFilter === filter.id ? "selected" : ""}`}
-                      data-person-filter={filter.id}
-                      key={filter.id}
-                      type="button"
-                      onClick={() => setPersonIndexFilter(filter.id)}
-                    >
-                      <span>{filter.label}</span>
-                      <small>{personIndexCounts[filter.id]}</small>
-                    </button>
-                  ))}
-                </div>
-                <div className="person-filter-bar compact person-role-filter-bar" role="group" aria-label={locale === "zh" ? "人物性质筛选" : "Person role filter"}>
-                  {personRoleFilters.map((filter) => (
-                    <button
-                      className={`person-filter-button ${personRoleFilter === filter.id ? "selected" : ""}`}
-                      data-person-role-filter={filter.id}
-                      key={filter.id}
-                      type="button"
-                      onClick={() => setPersonRoleFilter(filter.id)}
-                    >
-                      <span>{filter.label}</span>
-                      <small>{personRoleCounts[filter.id]}</small>
-                    </button>
-                  ))}
-                </div>
+                <details className="person-filter-disclosure">
+                  <summary>
+                    <Grid3x3 size={16} aria-hidden="true" />
+                    <span>{locale === "zh" ? "筛选人物" : "Filter people"}</span>
+                    <small>{visiblePersonIndex.length}</small>
+                  </summary>
+                  <div className="person-filter-content">
+                    <span className="person-filter-caption">{locale === "zh" ? "人物分组" : "Person groups"}</span>
+                    <div className="person-filter-bar compact" role="group" aria-label={t.peoplePage.filterAria}>
+                      {personIndexFilters.map((filter) => (
+                        <button
+                          className={`person-filter-button ${personIndexFilter === filter.id ? "selected" : ""}`}
+                          data-person-filter={filter.id}
+                          key={filter.id}
+                          type="button"
+                          onClick={() => setPersonIndexFilter(filter.id)}
+                        >
+                          <span>{filter.label}</span>
+                          <small>{personIndexCounts[filter.id]}</small>
+                        </button>
+                      ))}
+                    </div>
+                    <span className="person-filter-caption">{locale === "zh" ? "人物性质" : "Person roles"}</span>
+                    <div className="person-filter-bar compact person-role-filter-bar" role="group" aria-label={locale === "zh" ? "人物性质筛选" : "Person role filter"}>
+                      {personRoleFilters.map((filter) => (
+                        <button
+                          className={`person-filter-button ${personRoleFilter === filter.id ? "selected" : ""}`}
+                          data-person-role-filter={filter.id}
+                          key={filter.id}
+                          type="button"
+                          onClick={() => setPersonRoleFilter(filter.id)}
+                        >
+                          <span>{filter.label}</span>
+                          <small>{personRoleCounts[filter.id]}</small>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </details>
                 <div className="person-detail-result-list">
                   <div className="person-event-heading">
                     <UsersRound size={16} aria-hidden="true" />
@@ -12039,7 +13023,8 @@ function App() {
                 )}
               </article>
             </div>
-          </section>
+            </section>
+          )
         ) : page === "evidence" ? (
           <section className="evidence-stage" aria-label={t.evidencePage.aria}>
             <div className="evidence-summary">
@@ -12869,8 +13854,22 @@ function App() {
                 year={year}
               />
             ) : (
-              <div className="empty-state">
-                {romanControlDbStatus === "loading" ? "Loading Roman province map" : "Roman control API is not available"}
+              <div className="empty-state roman-archive-empty" role="status">
+                <span>{locale === "zh" ? "罗马行省档案" : "Roman Provincial Archive"}</span>
+                <strong>
+                  {romanControlDbStatus === "loading"
+                    ? locale === "zh"
+                      ? "正在整理行省资料"
+                      : "Preparing provincial records"
+                    : locale === "zh"
+                      ? "行省资料暂不可用"
+                      : "Provincial records are temporarily unavailable"}
+                </strong>
+                <small>
+                  {locale === "zh"
+                    ? "年代、事件与人物档案仍可继续浏览"
+                    : "The timeline, events, and people records remain available"}
+                </small>
               </div>
             )
           ) : (
@@ -13367,24 +14366,133 @@ function App() {
                 </button>
               </article>
             )}
-            <div className="chips block-chip-list">
-              {chinaBlockSnapshots.map(({ block, control }) => (
-                <button
-                  className={`chip-button block-chip ${selectedChinaBlockId === block.id ? "selected" : ""}`}
-                  key={block.id}
-                  type="button"
-                  style={{ "--controller-color": getChinaControllerColor(chinaControllerColorMap, control?.controller) } as React.CSSProperties}
-                  onMouseEnter={() => setHoveredChinaBlockId(block.id)}
-                  onMouseLeave={() => setHoveredChinaBlockId(null)}
-                  onClick={() => setSelectedChinaBlockId(block.id)}
-                  onDoubleClick={() => openChinaPlaceDetail(block.id)}
-                >
-                  <span className="controller-swatch" aria-hidden="true" />
-                  <span>{block.name}</span>
-                  <small>{control?.controller ?? "待补"}</small>
-                </button>
-              ))}
-            </div>
+            <details
+              className="block-index-disclosure"
+              open={isBlockIndexOpen}
+              onToggle={(event) => setIsBlockIndexOpen(event.currentTarget.open)}
+            >
+              <summary>
+                <span>{locale === "zh" ? "郡界浏览" : "Browse commanderies"}</span>
+                <small>{chinaBlockSnapshots.length}</small>
+              </summary>
+              <div className="block-index-controls">
+                <label className="block-index-search">
+                  <Search size={15} aria-hidden="true" />
+                  <input
+                    type="search"
+                    value={blockIndexQuery}
+                    aria-label={locale === "zh" ? "筛选郡界名称" : "Filter commandery names"}
+                    placeholder={locale === "zh" ? "搜索郡国或控制方" : "Search name or controller"}
+                    onChange={(event) => setBlockIndexQuery(event.target.value)}
+                  />
+                </label>
+                <label className="block-index-select">
+                  <span>{locale === "zh" ? "区域" : "Region"}</span>
+                  <select
+                    value={blockIndexRegion}
+                    aria-label={locale === "zh" ? "按浏览区域筛选郡界" : "Filter commanderies by browse region"}
+                    onChange={(event) => setBlockIndexRegion(event.target.value as ChinaBlockBrowseRegion | "all")}
+                  >
+                    <option value="all">{locale === "zh" ? "全部区域" : "All regions"}</option>
+                    {chinaBlockBrowseRegionOrder.map((region) => (
+                      <option key={region} value={region}>
+                        {getChinaBlockBrowseRegionLabel(region, locale)}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label className="block-index-select">
+                  <span>{locale === "zh" ? "控制方" : "Controller"}</span>
+                  <select
+                    value={blockIndexController}
+                    aria-label={locale === "zh" ? "按控制方筛选郡界" : "Filter commanderies by controller"}
+                    onChange={(event) => setBlockIndexController(event.target.value)}
+                  >
+                    <option value="all">{locale === "zh" ? "全部控制方" : "All controllers"}</option>
+                    {chinaBlockIndexControllers.map((controller) => (
+                      <option key={controller} value={controller}>
+                        {controller}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+              <div className="block-index-result-meta">
+                <span>
+                  {locale === "zh"
+                    ? `显示 ${filteredChinaBlockSnapshots.length} / ${chinaBlockSnapshots.length}`
+                    : `Showing ${filteredChinaBlockSnapshots.length} / ${chinaBlockSnapshots.length}`}
+                </span>
+                {hasChinaBlockIndexFilters && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setBlockIndexQuery("");
+                      setBlockIndexRegion("all");
+                      setBlockIndexController("all");
+                    }}
+                  >
+                    <X size={14} aria-hidden="true" />
+                    {locale === "zh" ? "清除筛选" : "Clear"}
+                  </button>
+                )}
+              </div>
+              <p className="block-index-governance-note">
+                {locale === "zh"
+                  ? "区域分组仅用于快速浏览，不替代正式历史州属数据。"
+                  : "Browse regions aid navigation and do not replace historical province data."}
+              </p>
+              <div className="block-index-groups">
+                {groupedChinaBlockSnapshots.length ? (
+                  groupedChinaBlockSnapshots.map(({ region, items }) => (
+                    <details
+                      className="block-index-group"
+                      key={region}
+                      open={hasChinaBlockIndexFilters || openBlockIndexRegions.includes(region)}
+                      onToggle={(event) => {
+                        if (hasChinaBlockIndexFilters) {
+                          return;
+                        }
+
+                        const isOpen = event.currentTarget.open;
+                        setOpenBlockIndexRegions((current) =>
+                          isOpen
+                            ? [...new Set([...current, region])]
+                            : current.filter((item) => item !== region),
+                        );
+                      }}
+                    >
+                      <summary className="block-index-group-heading">
+                        <strong>{getChinaBlockBrowseRegionLabel(region, locale)}</strong>
+                        <small>{items.length}</small>
+                      </summary>
+                      <div className="chips block-chip-list">
+                        {items.map(({ block, control }) => (
+                          <button
+                            className={`chip-button block-chip ${selectedChinaBlockId === block.id ? "selected" : ""}`}
+                            key={block.id}
+                            type="button"
+                            style={{ "--controller-color": getChinaControllerColor(chinaControllerColorMap, control?.controller) } as React.CSSProperties}
+                            onMouseEnter={() => setHoveredChinaBlockId(block.id)}
+                            onMouseLeave={() => setHoveredChinaBlockId(null)}
+                            onClick={() => setSelectedChinaBlockId(block.id)}
+                            onDoubleClick={() => openChinaPlaceDetail(block.id)}
+                          >
+                            <span className="controller-swatch" aria-hidden="true" />
+                            <span>{block.name}</span>
+                            <small>{control?.controller ?? "待补"}</small>
+                          </button>
+                        ))}
+                      </div>
+                    </details>
+                  ))
+                ) : (
+                  <div className="empty-state block-index-empty">
+                    {locale === "zh" ? "没有匹配的郡界" : "No matching commanderies"}
+                  </div>
+                )}
+              </div>
+            </details>
           </section>
         )}
 
@@ -13392,13 +14500,26 @@ function App() {
           <section className="event-list">
           <div className="event-list-heading">
             <h3>区域事件</h3>
-            {detailRegionId === "china" ? (
+            <div className="event-list-heading-meta">
               <span>
-                {selectedRegionDisplayCountLabel}
+                {detailRegionId === "china"
+                  ? visibleRegionDisplayCountLabel
+                  : detailRegionEventCountLabel}
               </span>
-            ) : (
-              <span>{detailRegionEventCountLabel}</span>
-            )}
+              <label className="event-display-control">
+                <span>{locale === "zh" ? "每次显示" : "Show"}</span>
+                <select
+                  value={regionalEventLimit}
+                  aria-label={locale === "zh" ? "区域事件显示数量" : "Regional event display count"}
+                  onChange={(event) => setRegionalEventLimit(event.target.value as RegionalEventLimit)}
+                >
+                  <option value="6">{locale === "zh" ? "6 条" : "6"}</option>
+                  <option value="12">{locale === "zh" ? "12 条" : "12"}</option>
+                  <option value="24">{locale === "zh" ? "24 条" : "24"}</option>
+                  <option value="all">{locale === "zh" ? "全部" : "All"}</option>
+                </select>
+              </label>
+            </div>
           </div>
           {detailRegionId === "china" && (
             <div className="event-filter-bar" role="group" aria-label="三国事件筛选">
@@ -13428,7 +14549,7 @@ function App() {
           )}
           <div className="event-stack">
             {filteredRegionEvents.length ? (
-              filteredRegionEvents.map((event) => {
+              visibleFilteredRegionEvents.map((event) => {
                 const eventTitle = getEventDisplayTitle(event, locale);
 
                 return (
@@ -13469,6 +14590,18 @@ function App() {
               </div>
             )}
           </div>
+          {hiddenFilteredRegionEventCount > 0 && (
+            <div className="event-list-overflow-note">
+              <span>
+                {locale === "zh"
+                  ? `已收起 ${hiddenFilteredRegionEventCount} 条事件`
+                  : `${hiddenFilteredRegionEventCount} events hidden`}
+              </span>
+              <button type="button" onClick={() => setRegionalEventLimit("all")}>
+                {locale === "zh" ? "显示全部" : "Show all"}
+              </button>
+            </div>
+          )}
           </section>
         )}
 
@@ -13520,7 +14653,7 @@ function App() {
             </div>
             <div>
               <span>可信度</span>
-              <strong>{selectedEvent.confidence}</strong>
+              <strong>{getConfidenceLevelLabel(selectedEvent.confidence, locale)}</strong>
             </div>
           </div>
 
@@ -13804,7 +14937,7 @@ function App() {
                   </div>
                 </div>
 
-                <PersonSourceMentionPanel mentions={selectedPersonSourceMentions} />
+                <PersonSourceMentionPanel collapsible mentions={selectedPersonSourceMentions} />
 
                 <div className="person-event-heading">
                   <CalendarDays size={16} aria-hidden="true" />
@@ -13960,7 +15093,7 @@ function App() {
           <section className="detail-section">
             <h3>
               <Compass size={17} aria-hidden="true" />
-              政权与标?
+              政权与标签
             </h3>
             <div className="chips">
               {[...selectedEvent.polities, ...selectedEvent.tags].map((tag, index) => (
