@@ -81,7 +81,7 @@ npm run test:event-promotion
 
 ### 地图数据
 
-三国地图继续以郡界地图为主入口。280-317 西晋阶段已经开始复用相近风格的郡县/控制图层，但不会假设所有时期地块数量固定。每个时期都应通过独立审计确认 geometry、控制记录和缺失地块。
+三国地图继续以郡界地图为主入口。当前 280-317 西晋图层是基于 184-280 模板生成的研究占位与界面模拟，不是最终史实郡县地图。后续仍需依据《晋书·地理志》、历史地图集及魏晋南北朝真实郡县沿革重新校订 geometry、控制记录和缺失地块；在完成审校前保持 `derived-review-needed` 状态。
 
 相关命令：
 
@@ -93,11 +93,16 @@ npm run audit:china-map-geometry
 
 ### 本地开发
 
+建议使用 Node.js 22.12 或更高版本。全新克隆应使用锁文件安装依赖，并先从已跟踪的 schema、migration 和 seed 重建本地 SQLite：
+
 ```bash
-npm install
+npm ci
+npm run db:build
 npm run api
 npm run dev
 ```
+
+`npm run api` 与 `npm run dev` 需要分别在两个终端运行。
 
 默认前端地址：
 
@@ -152,6 +157,7 @@ ChronoAtlas is an interactive comparative history timeline. It aligns events, pe
 - Global anchor events remain visible across timeline selections.
 - The 190-310 period remains the acceptance template for later periods.
 - The 25-184, 184-280, and 280-317 China phases now include expanding people, event, map, and source-text data.
+- The current 280-317 Western Jin map is a research placeholder derived from the 184-280 template, not a final reconstruction of historical commandery boundaries. It remains `derived-review-needed` until it is re-audited against period geography and source evidence.
 
 ### Key Modules
 
@@ -186,3 +192,12 @@ Frontend changes should pass:
 ```bash
 npm run build
 ```
+
+For a reproducible fresh checkout, use Node.js 22.12 or newer:
+
+```bash
+npm ci
+npm run db:build
+```
+
+Then run `npm run api` and `npm run dev` in separate terminals.
