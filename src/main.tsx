@@ -32,6 +32,7 @@ import {
   X,
 } from "lucide-react";
 import { CaoFamilyAtlas } from "./CaoFamilyAtlas";
+import ContentGovernanceWorkbench from "./ContentGovernanceWorkbench";
 import "./styles.css";
 
 type Region = "china" | "rome" | "sasanian-persia" | "india";
@@ -250,7 +251,7 @@ type PersonAnnualTimelineItem = {
   startYear: number;
 };
 
-type Page = "home" | "learning" | "world" | "china" | "rome" | "people" | "person-detail" | "places" | "place-detail" | "age" | "evidence" | "source-library" | "events" | "event-detail" | "evidence-graph" | "compare" | "coverage" | "map-debug" | "rag-eval" | "ai-debug" | "ai-history";
+type Page = "home" | "learning" | "world" | "china" | "rome" | "people" | "person-detail" | "places" | "place-detail" | "age" | "evidence" | "source-library" | "events" | "event-detail" | "evidence-graph" | "compare" | "coverage" | "governance" | "map-debug" | "rag-eval" | "ai-debug" | "ai-history";
 type TopbarMenu = "people" | "sources" | "events" | "geo" | "ai" | "tools";
 type ChinaMapMode = "political" | "terrain" | "three-d" | "commandery";
 type ThreeKingdomsFilter = "all" | "cao-wei" | "shu-han" | "sun-wu" | "late-han" | "war" | "politics";
@@ -1477,7 +1478,7 @@ const coveragePeriods: Array<{ id: CoveragePeriodId; endpoint: string; label: Re
 ];
 
 const uiText: Record<Locale, {
-  nav: Partial<Record<"home" | "learning" | "people" | "age" | "evidence" | "sourceLibrary" | "evidenceGraph" | "compare" | "coverage" | "mapDebug" | "ragEval" | "aiDebug" | "aiHistory", string>>;
+  nav: Partial<Record<"home" | "learning" | "people" | "age" | "evidence" | "sourceLibrary" | "evidenceGraph" | "compare" | "coverage" | "governance" | "mapDebug" | "ragEval" | "aiDebug" | "aiHistory", string>>;
   pageTitle: Partial<Record<Page, string>>;
   search: {
     people: string;
@@ -1610,6 +1611,7 @@ const uiText: Record<Locale, {
       evidenceGraph: "证据图谱",
       compare: "事件对比",
       coverage: "覆盖度",
+      governance: "内容治理",
       mapDebug: "地图调试",
       ragEval: "RAG 评测",
     },
@@ -1631,6 +1633,7 @@ const uiText: Record<Locale, {
       "evidence-graph": "证据图谱：事件、断言与出处",
       compare: "事件对比：中国、罗马与萨珊",
       coverage: "覆盖度检查",
+      governance: "内容审核与覆盖工作台",
       "map-debug": "地图调试",
       "rag-eval": "RAG 评测",
     },
@@ -1765,6 +1768,7 @@ const uiText: Record<Locale, {
       evidenceGraph: "Evidence Graph",
       compare: "Compare",
       coverage: "Coverage",
+      governance: "Content Governance",
       mapDebug: "Map Debug",
       ragEval: "RAG Eval",
       aiHistory: "AI History",
@@ -1787,6 +1791,7 @@ const uiText: Record<Locale, {
       "evidence-graph": "Evidence Graph: Events, Claims, Sources",
       compare: "Event Comparison: China, Rome, and Sasanian Persia",
       coverage: "Coverage Audit",
+      governance: "Content Review & Coverage",
       "map-debug": "Map Debug",
       "rag-eval": "RAG Evaluation",
       "ai-history": "AI Answer History",
@@ -5724,11 +5729,14 @@ function RomanRegionMap({
 
 function App() {
   const initialUrlParams = new URLSearchParams(window.location.search);
+  const initialPageParam = initialUrlParams.get("page");
   const initialPersonDetailId =
-    initialUrlParams.get("page") === "person-detail"
+    initialPageParam === "person-detail"
       ? initialUrlParams.get("person")
       : null;
-  const [page, setPage] = useState<Page>(initialPersonDetailId ? "person-detail" : "home");
+  const [page, setPage] = useState<Page>(
+    initialPersonDetailId ? "person-detail" : initialPageParam === "governance" ? "governance" : "home",
+  );
   const [previousPage, setPreviousPage] = useState<Page | null>(null);
   const lastPageRef = useRef<Page>("home");
   const [locale, setLocale] = useState<Locale>("zh");
@@ -8229,14 +8237,22 @@ function App() {
   }, [presentationMode]);
 
   useEffect(() => {
-    if (page !== "person-detail" || !selectedPersonId) {
+    const nextUrl = new URL(window.location.href);
+    if (page === "person-detail" && selectedPersonId) {
+      nextUrl.searchParams.set("page", "person-detail");
+      nextUrl.searchParams.set("person", selectedPersonId);
+    } else if (page === "governance") {
+      nextUrl.searchParams.set("page", "governance");
+      nextUrl.searchParams.delete("person");
+    } else if (["person-detail", "governance"].includes(nextUrl.searchParams.get("page") ?? "")) {
+      nextUrl.searchParams.delete("page");
+      nextUrl.searchParams.delete("person");
+    } else {
       return;
     }
-
-    const nextUrl = new URL(window.location.href);
-    nextUrl.searchParams.set("page", "person-detail");
-    nextUrl.searchParams.set("person", selectedPersonId);
-    window.history.replaceState(null, "", nextUrl);
+    if (nextUrl.href !== window.location.href) {
+      window.history.replaceState(null, "", nextUrl);
+    }
   }, [page, selectedPersonId]);
 
   useEffect(() => {
@@ -8837,6 +8853,16 @@ function App() {
 
   function openCoveragePanel() {
     setPage("coverage");
+    setQuery("");
+    setSummaryRegion(null);
+    setHoveredRegion(null);
+    setSelectedChinaBlockId(null);
+    setHoveredChinaBlockId(null);
+    setSelectedRomanProvinceId(null);
+  }
+
+  function openGovernanceWorkbench() {
+    setPage("governance");
     setQuery("");
     setSummaryRegion(null);
     setHoveredRegion(null);
@@ -9446,7 +9472,7 @@ function App() {
           })
         : historicalTheme;
   const shellHistoricalTheme =
-    page === "home" && presentationMode === "collector"
+    (page === "home" || page === "governance") && presentationMode === "collector"
       ? worldUnityTheme
       : entityHistoricalTheme;
   const collectorPalette = getCollectorPalette(shellHistoricalTheme);
@@ -9618,11 +9644,11 @@ function App() {
       </button>
     </section>
   );
-  const showTopbarSearch = !(["home", "learning", "people", "person-detail", "places", "place-detail", "evidence", "source-library", "event-detail", "coverage", "map-debug", "rag-eval", "ai-debug", "ai-history"] as Page[]).includes(page);
+  const showTopbarSearch = !(["home", "learning", "people", "person-detail", "places", "place-detail", "evidence", "source-library", "event-detail", "coverage", "governance", "map-debug", "rag-eval", "ai-debug", "ai-history"] as Page[]).includes(page);
 
   return (
     <main
-      className={`app-shell ${page === "home" || page === "learning" || page === "age" || page === "evidence" || page === "source-library" || page === "events" || page === "event-detail" || page === "person-detail" || page === "places" || page === "place-detail" || page === "evidence-graph" || page === "compare" || page === "coverage" || page === "map-debug" || page === "rag-eval" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""} ${page === "event-detail" || page === "person-detail" ? "entity-detail-shell" : ""} ${page === "person-detail" && selectedPerson?.id === "cao-cao" ? "family-atlas-shell" : ""}`}
+      className={`app-shell ${page === "home" || page === "learning" || page === "age" || page === "evidence" || page === "source-library" || page === "events" || page === "event-detail" || page === "person-detail" || page === "places" || page === "place-detail" || page === "evidence-graph" || page === "compare" || page === "coverage" || page === "governance" || page === "map-debug" || page === "rag-eval" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""} ${page === "event-detail" || page === "person-detail" ? "entity-detail-shell" : ""} ${page === "person-detail" && selectedPerson?.id === "cao-cao" ? "family-atlas-shell" : ""}`}
       data-history-theme={shellHistoricalTheme.id}
       data-collector-theme={shellHistoricalTheme.id}
       data-page={page}
@@ -9772,7 +9798,7 @@ function App() {
                 <button type="button" onClick={() => { setOpenTopbarMenu(null); openAiHistoryPanel(); }}>{t.nav.aiHistory ?? (locale === "zh" ? "AI 记录" : "AI History")}</button>
               </div>
             </details>
-            <details className={`topbar-menu ${page === "learning" || page === "map-debug" || page === "rag-eval" ? "active" : ""}`} open={openTopbarMenu === "tools"}>
+            <details className={`topbar-menu ${page === "learning" || page === "governance" || page === "map-debug" || page === "rag-eval" ? "active" : ""}`} open={openTopbarMenu === "tools"}>
               <summary onClick={(event) => {
                 event.preventDefault();
                 setOpenTopbarMenu((current) => current === "tools" ? null : "tools");
@@ -9782,6 +9808,7 @@ function App() {
               </summary>
               <div className="topbar-menu-panel">
                 <button type="button" onClick={() => { setOpenTopbarMenu(null); openLearningGuide(); }}>{t.nav.learning}</button>
+                <button type="button" onClick={() => { setOpenTopbarMenu(null); openGovernanceWorkbench(); }}>{t.nav.governance}</button>
                 <button type="button" onClick={() => { setOpenTopbarMenu(null); openMapDebugPanel(); }}>{t.nav.mapDebug}</button>
                 <button type="button" onClick={() => { setOpenTopbarMenu(null); openRagEvalPanel(); }}>{t.nav.ragEval}</button>
               </div>
@@ -11067,6 +11094,14 @@ function App() {
               </>
             )}
           </section>
+        ) : page === "governance" ? (
+          <ContentGovernanceWorkbench
+            locale={locale}
+            onOpenCoverage={(period) => {
+              setCoveragePeriodId(period);
+              openCoveragePanel();
+            }}
+          />
         ) : page === "coverage" ? (
           <section className="coverage-stage" aria-label={t.coverage.aria}>
             <div className="coverage-summary">

@@ -3,6 +3,8 @@ import { mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { buildSeedStatements } from "./lib/sqlite-seed-export.mjs";
+
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dbPath = path.join(rootDir, "db", "chronoatlas.sqlite");
 const seedsDir = path.join(rootDir, "db", "seeds");
@@ -223,23 +225,6 @@ const baseSchemaColumns = new Map([
   ],
 ]);
 
-function quoteIdentifier(value) {
-  return `"${value.replaceAll('"', '""')}"`;
-}
-
-function sqlLiteral(value) {
-  if (value === null || value === undefined) {
-    return "NULL";
-  }
-  if (typeof value === "number") {
-    return Number.isFinite(value) ? String(value) : "NULL";
-  }
-  if (typeof value === "bigint") {
-    return String(value);
-  }
-  return `'${String(value).replaceAll("'", "''")}'`;
-}
-
 async function removeSeedParts(outputPath) {
   const baseName = path.basename(outputPath, ".sql");
   const entries = await readdir(path.dirname(outputPath), { withFileTypes: true }).catch(() => []);
@@ -309,42 +294,18 @@ try {
     ...tableNames.filter((tableName) => !preferredTableOrder.includes(tableName)),
   ];
 
-  function buildSeedStatements(tables, label, options = {}) {
-    const insertVerb = options.insertOrReplace ? "INSERT OR REPLACE" : "INSERT";
-    const output = [
-      "-- Generated from db/chronoatlas.sqlite. Do not edit by hand.",
-      "-- Rebuild with: npm run db:seed:export",
-      `-- ${label}`,
-      "PRAGMA foreign_keys = OFF;",
-      "BEGIN;",
-    ];
-
-    for (const tableName of orderedTables.filter((name) => tables.has(name))) {
-      const columns = db.prepare(`PRAGMA table_info(${quoteIdentifier(tableName)})`)
-        .all()
-        .map((column) => column.name);
-      const rows = db.prepare(`SELECT * FROM ${quoteIdentifier(tableName)}`).all();
-
-      if (rows.length === 0) {
-        continue;
-      }
-
-      output.push("", `-- ${tableName}`);
-      const seedColumns = baseSchemaColumns.get(tableName) ?? columns;
-      const columnSql = seedColumns.map(quoteIdentifier).join(", ");
-      for (const row of rows) {
-        const valuesSql = seedColumns.map((column) => sqlLiteral(row[column])).join(", ");
-        output.push(`${insertVerb} INTO ${quoteIdentifier(tableName)} (${columnSql}) VALUES (${valuesSql});`);
-      }
-    }
-
-    output.push("COMMIT;", "PRAGMA foreign_keys = ON;");
-    return output;
-  }
-
-  const coreStatements = buildSeedStatements(coreTables, "Core base tables loaded before migrations");
-  const runtimeStatements = buildSeedStatements(runtimeTables, "Runtime/map and AI/RAG tables loaded after migrations", {
+  const coreStatements = buildSeedStatements(db, {
+    orderedTables,
+    tables: coreTables,
+    label: "Core base tables loaded before migrations",
+    baseSchemaColumns,
+  });
+  const runtimeStatements = buildSeedStatements(db, {
+    orderedTables,
+    tables: runtimeTables,
+    label: "Runtime/map and AI/RAG tables loaded after migrations",
     insertOrReplace: true,
+    baseSchemaColumns,
   });
 
   await mkdir(seedsDir, { recursive: true });

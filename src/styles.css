@@ -97,6 +97,8 @@ button {
 }
 
 .workspace-header {
+  position: relative;
+  z-index: 60;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -10532,6 +10534,10 @@ a.source-title-link:hover {
 .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .map-workspace > * {
   position: relative;
   z-index: 1;
+}
+
+.app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .map-workspace > .workspace-header {
+  z-index: 60;
 }
 
 .app-shell[data-page="home"][data-history-theme="world-unity"][data-presentation-mode="collector"] .overview-map-panel {

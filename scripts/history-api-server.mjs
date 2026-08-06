@@ -9,6 +9,15 @@ const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const dbPath = path.join(rootDir, "db", "chronoatlas.sqlite");
 const port = Number(process.env.HISTORY_API_PORT ?? 5174);
 const host = process.env.HISTORY_API_HOST ?? "127.0.0.1";
+const trustedWriteOrigins = new Set(
+  String(
+    process.env.HISTORY_API_WRITE_ORIGINS
+      ?? "http://127.0.0.1:5173,http://localhost:5173,http://[::1]:5173",
+  )
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean),
+);
 
 function parseLimit(value, fallback = 50, max = 200) {
   const parsed = Number(value);
@@ -48,6 +57,15 @@ function notFound(response) {
 
 function badRequest(response, message) {
   sendJson(response, 400, { error: message });
+}
+
+function forbidden(response, message) {
+  sendJson(response, 403, { error: message });
+}
+
+function isTrustedWriteRequest(request) {
+  const origin = request.headers.origin;
+  return !origin || trustedWriteOrigins.has(origin);
 }
 
 function dbConnection({ readOnly = true } = {}) {
@@ -4505,6 +4523,7 @@ function frontendAppData(db) {
 }
 
 const importReviewStatuses = new Set(["staged", "needs-fix", "approved", "rejected", "promoted"]);
+const manuallyWritableImportReviewStatuses = new Set(["staged", "needs-fix", "approved", "rejected"]);
 
 function importBatchList(db) {
   const batches = db.prepare(`
@@ -4548,6 +4567,185 @@ function importBatchList(db) {
   return { batches };
 }
 
+function contentGovernanceSummary(db) {
+  const identityReady = Boolean(db.prepare(`
+    SELECT 1
+    FROM sqlite_master
+    WHERE type = 'view' AND name = 'identity_mapping_coverage'
+  `).get());
+
+  const identityCoverage = identityReady
+    ? db.prepare(`
+        SELECT object_type, total_count, mapped_count, unmapped_count, coverage_percent
+        FROM identity_mapping_coverage
+        ORDER BY object_type
+      `).all().map((row) => ({
+        objectType: row.object_type,
+        totalCount: row.total_count,
+        mappedCount: row.mapped_count,
+        unmappedCount: row.unmapped_count,
+        coveragePercent: row.coverage_percent,
+      }))
+    : [];
+
+  const identityIssues = identityReady
+    ? db.prepare(`
+        SELECT object_type, source_id, source_label, candidate_target_id, issue, usage_count
+        FROM identity_mapping_issues
+        ORDER BY usage_count DESC, object_type, source_id
+        LIMIT 80
+      `).all().map((row) => ({
+        objectType: row.object_type,
+        sourceId: row.source_id,
+        sourceLabel: row.source_label,
+        candidateTargetId: row.candidate_target_id,
+        issue: row.issue,
+        usageCount: row.usage_count,
+      }))
+    : [];
+
+  const totals = db.prepare(`
+    SELECT
+      (SELECT COUNT(*) FROM persons) AS persons,
+      (SELECT COUNT(*) FROM historical_events) AS historical_events,
+      (SELECT COUNT(*) FROM sources) AS sources,
+      (SELECT COUNT(*) FROM source_passages) AS source_passages,
+      (SELECT COUNT(*) FROM source_mentions) AS source_mentions,
+      (
+        SELECT COUNT(*)
+        FROM source_mention_i18n
+        WHERE dispute_note IS NOT NULL AND trim(dispute_note) <> ''
+      ) AS disputed_mentions
+  `).get();
+
+  const reviewCounts = {
+    entities: db.prepare(`
+      SELECT entity_type AS group_name, review_status, COUNT(*) AS count
+      FROM entities
+      GROUP BY entity_type, review_status
+      ORDER BY entity_type, review_status
+    `).all().map((row) => ({
+      group: row.group_name,
+      reviewStatus: row.review_status,
+      count: row.count,
+    })),
+    events: db.prepare(`
+      SELECT review_status, COUNT(*) AS count
+      FROM events
+      GROUP BY review_status
+      ORDER BY review_status
+    `).all().map((row) => ({ reviewStatus: row.review_status, count: row.count })),
+    sourceMentions: db.prepare(`
+      SELECT review_status, COUNT(*) AS count
+      FROM source_mentions
+      GROUP BY review_status
+      ORDER BY review_status
+    `).all().map((row) => ({ reviewStatus: row.review_status, count: row.count })),
+    sourcePassages: db.prepare(`
+      SELECT review_status, COUNT(*) AS count
+      FROM source_passages
+      GROUP BY review_status
+      ORDER BY review_status
+    `).all().map((row) => ({ reviewStatus: row.review_status, count: row.count })),
+  };
+
+  const pendingPeopleSql = identityReady
+    ? `
+        SELECT
+          p.id,
+          p.name,
+          p.summary,
+          p.coverage_status,
+          p.life_confidence,
+          e.id AS entity_id,
+          COALESCE(e.review_status, 'unmapped') AS review_status
+        FROM persons p
+        LEFT JOIN person_entity_links link ON link.person_id = p.id
+        LEFT JOIN entities e ON e.id = link.entity_id
+        WHERE
+          e.id IS NULL
+          OR e.review_status NOT IN ('reviewed', 'approved')
+          OR p.summary LIKE '%待人工核定%'
+        ORDER BY
+          CASE WHEN p.summary LIKE '%待人工核定%' THEN 0 ELSE 1 END,
+          CASE WHEN e.id IS NULL THEN 0 ELSE 1 END,
+          p.id
+        LIMIT 40
+      `
+    : `
+        SELECT
+          p.id,
+          p.name,
+          p.summary,
+          p.coverage_status,
+          p.life_confidence,
+          e.id AS entity_id,
+          COALESCE(e.review_status, 'unmapped') AS review_status
+        FROM persons p
+        LEFT JOIN entities e ON e.id = 'person:' || p.id
+        WHERE
+          e.id IS NULL
+          OR e.review_status NOT IN ('reviewed', 'approved')
+          OR p.summary LIKE '%待人工核定%'
+        ORDER BY
+          CASE WHEN p.summary LIKE '%待人工核定%' THEN 0 ELSE 1 END,
+          CASE WHEN e.id IS NULL THEN 0 ELSE 1 END,
+          p.id
+        LIMIT 40
+      `;
+
+  const pendingPeople = db.prepare(pendingPeopleSql).all().map((row) => ({
+    id: row.id,
+    name: row.name,
+    summary: row.summary,
+    coverageStatus: row.coverage_status,
+    lifeConfidence: row.life_confidence,
+    entityId: row.entity_id,
+    reviewStatus: row.review_status,
+    extractionNeedsReview: row.summary?.includes('待人工核定') ?? false,
+  }));
+
+  const disputeSamples = db.prepare(`
+    SELECT
+      sm.id,
+      sm.year,
+      sm.work_title,
+      sm.book_title,
+      sm.locator,
+      smi.dispute_note
+    FROM source_mention_i18n smi
+    JOIN source_mentions sm ON sm.id = smi.mention_id
+    WHERE smi.dispute_note IS NOT NULL AND trim(smi.dispute_note) <> ''
+    ORDER BY sm.year, sm.id
+    LIMIT 30
+  `).all().map((row) => ({
+    id: row.id,
+    year: row.year,
+    workTitle: row.work_title,
+    bookTitle: row.book_title,
+    locator: row.locator,
+    disputeNote: row.dispute_note,
+  }));
+
+  return {
+    generatedFrom: 'sqlite:content-governance',
+    identityReady,
+    identityCoverage,
+    identityIssues,
+    totals: {
+      persons: totals.persons,
+      historicalEvents: totals.historical_events,
+      sources: totals.sources,
+      sourcePassages: totals.source_passages,
+      sourceMentions: totals.source_mentions,
+      disputedMentions: totals.disputed_mentions,
+    },
+    reviewCounts,
+    pendingPeople,
+    disputeSamples,
+  };
+}
+
 function importEvidenceCards(db, url) {
   const status = url.searchParams.get("status")?.trim();
   const batchId = url.searchParams.get("batchId")?.trim();
@@ -4579,6 +4777,8 @@ function importEvidenceCards(db, url) {
       OR c.fact_brief LIKE $search
       OR c.fact_detailed LIKE $search
       OR c.people_core_json LIKE $search
+      OR c.people_mentioned_json LIKE $search
+      OR c.places_json LIKE $search
       OR c.event_label LIKE $search
       OR c.macro_event LIKE $search
     )`);
@@ -4705,8 +4905,23 @@ function importEvidenceCardRow(row, includeText = false) {
 }
 
 function updateImportEvidenceCardStatus(db, cardId, reviewStatus) {
-  if (!importReviewStatuses.has(reviewStatus)) {
-    throw new Error(`Unsupported review status: ${reviewStatus}`);
+  if (!manuallyWritableImportReviewStatuses.has(reviewStatus)) {
+    throw new Error(`Review status cannot be set manually: ${reviewStatus}`);
+  }
+
+  const current = db.prepare(`
+    SELECT review_status
+    FROM import_evidence_cards
+    WHERE id = ?
+  `).get(cardId);
+  if (!current) {
+    return null;
+  }
+  if (current.review_status === "promoted") {
+    throw new Error("Promoted evidence cards are script-controlled and cannot be changed manually");
+  }
+  if (current.review_status === reviewStatus) {
+    return importEvidenceCardDetail(db, cardId);
   }
 
   const result = db.prepare(`
@@ -4917,6 +5132,11 @@ async function route(request, response) {
 
   if (request.method === "PATCH") {
     if (pathname.startsWith("/api/import-evidence-cards/") && pathname.endsWith("/review-status")) {
+      if (!isTrustedWriteRequest(request)) {
+        forbidden(response, "Write origin is not allowed");
+        return;
+      }
+
       const cardId = pathname.slice("/api/import-evidence-cards/".length, -"/review-status".length);
       if (!cardId) {
         badRequest(response, "Missing evidence card id");
@@ -4938,8 +5158,12 @@ async function route(request, response) {
       }
 
       withDb(response, (db) => {
-        const card = updateImportEvidenceCardStatus(db, cardId, reviewStatus);
-        card ? sendJson(response, 200, { card }) : notFound(response);
+        try {
+          const card = updateImportEvidenceCardStatus(db, cardId, reviewStatus);
+          card ? sendJson(response, 200, { card }) : notFound(response);
+        } catch (error) {
+          badRequest(response, error.message);
+        }
       }, { readOnly: false });
       return;
     }
@@ -5028,6 +5252,11 @@ async function route(request, response) {
 
     if (pathname === "/api/import-batches") {
       sendJson(response, 200, importBatchList(db));
+      return;
+    }
+
+    if (pathname === "/api/content-governance/summary") {
+      sendJson(response, 200, contentGovernanceSummary(db));
       return;
     }
 
