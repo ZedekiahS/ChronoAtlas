@@ -1,0 +1,234 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "jiankang-shilu-chronicle-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true,
+      "documentScope": "volume-1-red-cliffs"
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af015",
+    "title": "建康實錄",
+    "workKind": "chronicle",
+    "language": "lzh",
+    "dateLabel": "唐肅宗至德以後",
+    "dateStart": 756,
+    "dateEnd": 800,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "relatedWorks": [
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+      "title": "江表傳",
+      "workKind": "historical_record",
+      "language": "lzh",
+      "dateLabel": "三國吳至西晉",
+      "dateStart": 220,
+      "dateEnd": 300,
+      "availabilityStatus": "lost_fragmentary",
+      "evidenceDomain": "historical_source"
+    }
+  ],
+  "workRelations": [
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af015",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "卷一周瑜附传的按语明确引《江表傳》，其中保存曹操致孙权书的赤壁疾疫与自焚说。"
+    }
+  ],
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af10e",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af015",
+    "witnessType": "received_chronicle_with_digital_reference",
+    "editionStatement": "維基文庫《建康實錄》卷一公开数字文本；建安十三至十四年及周瑜附传赤壁相关段落 Phase 2 人工转写小样本",
+    "publisher": null,
+    "publicationDate": null,
+    "shelfmark": null,
+    "catalogUri": "https://zh.wikisource.org/wiki/%E5%BB%BA%E5%BA%B7%E5%AF%A6%E9%8C%84/%E5%8D%B701",
+    "fidelityStatus": "pilot_pending_edition_collation",
+    "note": "后世吴方编年综合与显式辑佚引文分层保存；尚待与四库本及点校本逐段校勘。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://zh.wikisource.org/wiki/%E5%BB%BA%E5%BA%B7%E5%AF%A6%E9%8C%84/%E5%8D%B701",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "保存唐代《建康实录》对荆州崩解、孙刘联合、火攻、南郡后续和战后荆州安排的连续编排。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af20e",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；数字文本与转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "版本影像与数字转写许可复核前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "jksl-v1",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 1,
+      "label": "卷一",
+      "locatorPath": "卷1",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "jksl-v1-wu-taizu",
+      "parentKey": "jksl-v1",
+      "nodeType": "chronicle_section",
+      "ordinal": 1,
+      "label": "吳上·太祖孫權",
+      "locatorPath": "卷1/吳上/太祖孫權",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "jksl-v1-jingzhou-collapse",
+      "parentKey": "jksl-v1-wu-taizu",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "曹操取荆州、追破刘备并致书孙权",
+      "locatorPath": "卷1/吳上/建安十三年/荊州崩解",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "秋，曹操征劉表於荊州，時表已死，子琮舉荊州降。時劉備自袁紹南連劉表在荊州，操既平荊土，因追破備，備走當陽。操乃多修船舫，遺書於權曰：『今治水軍八十萬衆，方與將軍會獵於吳。』"
+        }
+      ]
+    },
+    {
+      "nodeKey": "jksl-v1-wu-decision",
+      "parentKey": "jksl-v1-wu-taizu",
+      "nodeType": "passage",
+      "ordinal": 2,
+      "label": "孙权集团议曹、周瑜鲁肃主战与鲁肃见刘备",
+      "locatorPath": "卷1/吳上/建安十三年/議曹聯絡",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "權得書，召示羣臣，張昭等議皆勸權迎之，魯肅竊諫不可。時命周瑜使鄱陽，行途未遠，請追瑜，任以軍事。權召瑜，瑜還，意與肅同。權廷論未能決，因起入，周瑜趨後，密說權曰：『今拒操，破之必矣。若破操，天下可鼎峙而立，荊州上流當吳有也。』權許之，乃密使魯肅上往觀舋。肅至，遇備已敗，遂便止，傳權意見備於當陽長坂，切陳成敗事勢，將合謀以拒操。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "jksl-v1-allied-deployment",
+      "parentKey": "jksl-v1-wu-taizu",
+      "nodeType": "passage",
+      "ordinal": 3,
+      "label": "诸葛亮出使与孙权分派三万兵力",
+      "locatorPath": "卷1/吳上/建安十三年/聯軍出兵",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "備乃使諸葛亮詣權，權乃使周瑜、程普將兵二萬隨亮與備南拒操，權自將中軍一萬繼之。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "jksl-v1-fire-attack",
+      "parentKey": "jksl-v1-wu-taizu",
+      "nodeType": "passage",
+      "ordinal": 4,
+      "label": "黄盖诈降、火攻与赤壁江口大破曹军",
+      "locatorPath": "卷1/吳上/建安十三年/赤壁火攻",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "瑜以黃蓋為先鋒，取艨衝鬬艦數十艘，實以薪草，灌以魚膏，裹以幃幙，上建旌旗龍幡。前遣書報曹操，紿其欲降。時東南風急，因取草艦最著前，繫走舸於後，中江舉帆俱前，操軍士皆延頸觀望。去北軍二里餘，同時火發，火烈風猛，船往如箭，悉燒北船，延及岸上營落，飛埃張天。瑜率輕銳雷鼓同進，大破曹操軍於赤壁江口。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "jksl-v1-nanjun-aftermath",
+      "parentKey": "jksl-v1-wu-taizu",
+      "nodeType": "passage",
+      "ordinal": 5,
+      "label": "曹操北归、曹仁守江陵与周瑜领南郡",
+      "locatorPath": "卷1/吳上/建安十三年/南郡後續",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "操走，僅獲免，北歸，留曹仁守江陵。瑜與程普等追破仁軍於南郡，瑜為流矢中其右脇，瘡甚，臥。仁乃勒兵逼，瑜乃自起輿行軍陣間，仁聞收軍，退走。權以瑜領南郡，鎮江陵。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "jksl-v1-jingzhou-loan",
+      "parentKey": "jksl-v1-wu-taizu",
+      "nodeType": "passage",
+      "ordinal": 6,
+      "label": "建安十四年刘备求荆州与治公安",
+      "locatorPath": "卷1/吳上/建安十四年/荊州公安",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "十四年，權居京口，劉備詣京口見權，求荊州。周瑜聞之，密上書諫留備處於吳，莫遣還。時彭城太守呂範進說權曰：『劉備雖窮迫見歸，得雨非池中物，請及今困留之。』權不納，遙表漢以備為荊州牧，使治公安。時曹操聞權以荊州資劉備，大懼，方作書，不覺筆墜於地也。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "jksl-v1-zhou-yu",
+      "parentKey": "jksl-v1",
+      "nodeType": "biographical_entry",
+      "ordinal": 2,
+      "label": "周瑜附传",
+      "locatorPath": "卷1/周瑜",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "jksl-v1-jiangbiao-cao-letter",
+      "parentKey": "jksl-v1-zhou-yu",
+      "nodeType": "quoted_fragment",
+      "ordinal": 1,
+      "label": "《江表传》所存曹操致孙权书",
+      "locatorPath": "卷1/周瑜/按引江表傳/曹操與權書",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "案，《江表傳》；曹操亦有書與權云",
+        "certainty": "high"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "赤壁值軍疾疫，燒船自退，橫使周瑜虛獲此名。"
+        }
+      ]
+    }
+  ]
+}

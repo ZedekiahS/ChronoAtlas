@@ -1,0 +1,181 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "zizhi-tongjian-kaoyi-textual-criticism-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true,
+      "documentScope": "volume-3-jianan-13-red-cliffs-chronology"
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af020",
+    "title": "資治通鑑考異",
+    "workKind": "historiographical_criticism",
+    "language": "lzh",
+    "dateLabel": "北宋",
+    "dateStart": 1065,
+    "dateEnd": 1084,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "relatedWorks": [
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+      "title": "三國志",
+      "workKind": "official_history",
+      "language": "lzh",
+      "dateLabel": "西晉",
+      "dateStart": 280,
+      "dateEnd": 297,
+      "availabilityStatus": "extant",
+      "evidenceDomain": "historical_source"
+    },
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af023",
+      "title": "異同評",
+      "workKind": "historiographical_criticism",
+      "language": "lzh",
+      "dateLabel": "東晉",
+      "dateStart": 340,
+      "dateEnd": 373,
+      "availabilityStatus": "lost_fragmentary",
+      "evidenceDomain": "historical_source"
+    }
+  ],
+  "workRelations": [
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af020",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "卷三建安十三年条明引《魏志·武帝纪》，用以核对孙权围合肥与赤壁交战的先后。"
+    },
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af020",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af023",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "卷三建安十三年条明引孙盛《异同评》对魏、吴两系记载先后的判断。"
+    }
+  ],
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af120",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af020",
+    "witnessType": "received_textual_criticism_with_digital_reference",
+    "editionStatement": "識典古籍《資治通鑑考異》卷三公开数字文本；建安十三年赤壁与合肥先后考异段落 Phase 2 人工转写小样本",
+    "publisher": null,
+    "publicationDate": null,
+    "shelfmark": null,
+    "catalogUri": "https://www.shidianguji.com/zh/book/SK0743/chapter/1l9zgbrl5o6k4",
+    "fidelityStatus": "pilot_pending_edition_collation",
+    "note": "只收可完整定位的赤壁时序考异；网页中被截断的相邻考异段不纳入，尚待指定刻本影像校勘。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://www.shidianguji.com/zh/book/SK0743/chapter/1l9zgbrl5o6k4",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "保存司马光所列《魏志·武帝纪》时序与孙盛《异同评》的异同比较，不把引文重复计作独立赤壁事件。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af220",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；数字文本与转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "版本影像与数字转写许可复核前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "zztj-kaoyi-v3",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 3,
+      "label": "卷三",
+      "locatorPath": "卷3",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "zztj-kaoyi-v3-jianan13",
+      "parentKey": "zztj-kaoyi-v3",
+      "nodeType": "chronicle_section",
+      "ordinal": 1,
+      "label": "漢紀下·建安十三年",
+      "locatorPath": "卷3/漢紀下/建安十三年",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "zztj-kaoyi-v3-hefei-heading",
+      "parentKey": "zztj-kaoyi-v3-jianan13",
+      "nodeType": "critical_entry",
+      "ordinal": 1,
+      "label": "孙权围合肥条目",
+      "locatorPath": "卷3/漢紀下/建安十三年/十二月孫權圍合肥",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "十二月，孫權圍合肥。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "zztj-kaoyi-v3-wei-wudi-quote",
+      "parentKey": "zztj-kaoyi-v3-hefei-heading",
+      "nodeType": "quoted_fragment",
+      "ordinal": 2,
+      "label": "《魏志·武帝纪》所载合肥与赤壁先后",
+      "locatorPath": "卷3/漢紀下/建安十三年/十二月孫權圍合肥/引魏志武帝紀",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+        "type": "explicit_citation",
+        "text": "魏志武紀",
+        "certainty": "high"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "十二月，權爲備攻合肥。公自江陵征備，至巴丘，遣張熹救合肥。權聞憙至，乃走。公至赤壁，與備戰，不利。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "zztj-kaoyi-v3-sunsheng-quote",
+      "parentKey": "zztj-kaoyi-v3-hefei-heading",
+      "nodeType": "quoted_fragment",
+      "ordinal": 3,
+      "label": "孙盛《异同评》判定吴志时序为是",
+      "locatorPath": "卷3/漢紀下/建安十三年/十二月孫權圍合肥/引孫盛異同評",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af023",
+        "type": "explicit_citation",
+        "text": "孫盛異同評曰",
+        "certainty": "high"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "按吳志，備先破公軍，然後權攻合肥，而此紀云先攻合肥，後有赤壁之事。二者不同，吳志爲是。"
+        }
+      ]
+    }
+  ]
+}

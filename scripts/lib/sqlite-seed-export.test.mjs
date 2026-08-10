@@ -85,3 +85,46 @@ test("logical rows export identically regardless of insertion order", () => {
     reverseDb.close();
   }
 });
+
+test("a hierarchical table can export every parent before its descendants", () => {
+  const db = new DatabaseSync(":memory:");
+  try {
+    db.exec(`
+      CREATE TABLE nodes (
+        id TEXT PRIMARY KEY,
+        witness_id TEXT NOT NULL,
+        parent_id TEXT,
+        ordinal INTEGER NOT NULL
+      );
+      INSERT INTO nodes VALUES ('z-parent', 'w1', NULL, 0);
+      INSERT INTO nodes VALUES ('a-child', 'w1', 'z-parent', 0);
+      INSERT INTO nodes VALUES ('b-grandchild', 'w1', 'a-child', 0);
+    `);
+    const tableSelectSql = new Map([
+      ["nodes", (_tableName, tableInfo) => {
+        const columns = tableInfo.map((column) => `"${column.name}"`).join(", ");
+        return `
+          WITH RECURSIVE hierarchy AS (
+            SELECT node.*, printf('%010d:%s', ordinal, id) AS seed_path
+            FROM nodes node WHERE parent_id IS NULL
+            UNION ALL
+            SELECT child.*, parent.seed_path || '/' || printf('%010d:%s', child.ordinal, child.id)
+            FROM nodes child JOIN hierarchy parent ON parent.id = child.parent_id
+          )
+          SELECT ${columns} FROM hierarchy ORDER BY witness_id, seed_path
+        `;
+      }],
+    ]);
+    const statements = buildSeedStatements(db, {
+      orderedTables: ["nodes"],
+      tables: new Set(["nodes"]),
+      label: "Hierarchy export fixture",
+      tableSelectSql,
+    }).filter((statement) => statement.startsWith("INSERT"));
+    assert.match(statements[0], /'z-parent'/u);
+    assert.match(statements[1], /'a-child'/u);
+    assert.match(statements[2], /'b-grandchild'/u);
+  } finally {
+    db.close();
+  }
+});

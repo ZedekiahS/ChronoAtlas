@@ -1,0 +1,145 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "huayang-guozhi-biography-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af004",
+    "title": "華陽國志",
+    "workKind": "regional_history",
+    "language": "lzh",
+    "dateLabel": "東晉",
+    "dateStart": 347,
+    "dateEnd": 355,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af104",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af004",
+    "witnessType": "printed_edition_with_digital_reference",
+    "editionStatement": "《欽定四庫全書》本《華陽國志》卷六；CADAL06061130 数字影像关联，Phase 2 人工转写小样本",
+    "publisher": "四庫全書館",
+    "publicationDate": "清乾隆时期",
+    "shelfmark": "CADAL06061130",
+    "catalogUri": "https://www.shidianguji.com/zh/book/CADAL06061130/chapter/1l20fm5y2tph2",
+    "fidelityStatus": "pilot_pending_image_collation",
+    "note": "文本已与《钦定四库全书》数字影像来源关联；当前只录卷六赤壁前后最小段落，待逐页校勘。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://www.shidianguji.com/zh/book/CADAL06061130/chapter/1l20fm5y2tph2",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "旧库原无《华阳国志》；本文件仅建立赤壁跨来源最小样本。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af204",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；数字影像与平台转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "来源许可和逐页影像复核完成前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "hygz-v6",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 6,
+      "label": "卷六",
+      "locatorPath": "卷6",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "hygz-v6-liu-xianzhu",
+      "parentKey": "hygz-v6",
+      "nodeType": "biographical_chronicle",
+      "ordinal": 1,
+      "label": "劉先主志",
+      "locatorPath": "卷6/劉先主志",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "hygz-v6-liu-biao-death",
+      "parentKey": "hygz-v6-liu-xianzhu",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "刘表去世、刘琮请降与刘备南撤",
+      "locatorPath": "卷6/劉先主志/建安十三年/段1",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "十三年，表卒，少子琮襲位。曹公南征，琮遣使請降。先主屯樊，不知曹公卒至。至宛，先主乃知，遂將其眾去。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "hygz-v6-changban-alliance",
+      "parentKey": "hygz-v6-liu-xianzhu",
+      "nodeType": "passage",
+      "ordinal": 2,
+      "label": "长坂败退、汉津会合与诸葛亮求援",
+      "locatorPath": "卷6/劉先主志/建安十三年/段2",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "比到當陽，眾十餘萬人，車數千兩，日行十餘里，別遣關侯乘船會江陵。公以江陵有軍實，恐先主據之，乃釋輜重，以輕騎五千追先主，一日一夜行三百里，及於當陽之長坂。先主棄妻子，與諸葛亮、張飛等數十騎走。先主斜趣漢津，適與侯船會。亮曰：事急矣，請奉命求救於孫將軍。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "hygz-v6-red-cliffs",
+      "parentKey": "hygz-v6-liu-xianzhu",
+      "nodeType": "passage",
+      "ordinal": 3,
+      "label": "孙权派军、赤壁大破曹军与曹操北归",
+      "locatorPath": "卷6/劉先主志/建安十三年/段3",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "孫將軍時權軍柴桑，既服先主大名，又悅亮奇雅，即遣周瑜、程普水軍三萬助先主拒曹公，大破公軍於赤壁，焚其舫舟。公引軍北歸。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "hygz-v6-jingzhou-aftermath",
+      "parentKey": "hygz-v6-liu-xianzhu",
+      "nodeType": "passage",
+      "ordinal": 4,
+      "label": "刘备南平四郡与治公安",
+      "locatorPath": "卷6/劉先主志/建安十三至十四年/段4",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "先主以劉表長子江夏太守琦為荊州刺史。先主南平四郡，武陵太守金旋、長沙太守韓玄、桂陽太守趙範、零陵太守劉度皆降。會琦病死，先主領荊州牧，治公安。"
+        }
+      ]
+    }
+  ]
+}

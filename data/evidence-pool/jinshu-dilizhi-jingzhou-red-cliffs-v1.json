@@ -1,0 +1,146 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "jinshu-geographical-treatise-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true,
+      "documentScope": "volume-15-jingzhou-red-cliffs-territorial-sequence"
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af022",
+    "title": "晉書",
+    "workKind": "official_history",
+    "language": "lzh",
+    "dateLabel": "唐貞觀年間",
+    "dateStart": 646,
+    "dateEnd": 648,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af122",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af022",
+    "witnessType": "received_official_history_with_digital_reference",
+    "editionStatement": "維基文庫《晉書》卷十五《地理志下》公开数字文本；荆州沿革、江夏、南郡、武昌郡段落 Phase 2 人工转写小样本",
+    "publisher": null,
+    "publicationDate": null,
+    "shelfmark": null,
+    "catalogUri": "https://zh.wikisource.org/zh/%E6%99%89%E6%9B%B8/%E5%8D%B7015",
+    "fidelityStatus": "pilot_pending_edition_collation",
+    "note": "沿革段直接提到赤壁后的荆州分属；郡县名录为晋代层，不能倒投为建安十三年即时疆界。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://zh.wikisource.org/zh/%E6%99%89%E6%9B%B8/%E5%8D%B7015",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "保存《晋书》对赤壁后荆州三方分属的概括，以及江夏、南郡、武昌郡的晋代行政名录。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af222",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；数字文本与转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "版本影像与数字转写许可复核前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "jinshu-v15",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 15,
+      "label": "卷十五·地理志下",
+      "locatorPath": "卷15/地理志下",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "jinshu-v15-jingzhou",
+      "parentKey": "jinshu-v15",
+      "nodeType": "province_section",
+      "ordinal": 1,
+      "label": "荊州",
+      "locatorPath": "卷15/地理志下/荊州",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "jinshu-v15-red-cliffs-partition",
+      "parentKey": "jinshu-v15-jingzhou",
+      "nodeType": "historical_geography_passage",
+      "ordinal": 1,
+      "label": "赤壁败后荆州分属",
+      "locatorPath": "卷15/地理志下/荊州/建安十三年至三方分屬",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "後漢獻帝建安十三年，魏武盡得荊州之地，分南郡以北立襄陽郡，又分南陽西界立南鄉郡，分枝江以西立臨江郡。及敗于赤壁，南郡以南屬吳，吳後遂與蜀分荊州。於是南郡、零陵、武陵以西為蜀，江夏、桂陽、長沙三郡為吳，南陽、襄陽、南鄉三郡為魏。而荊州之名，南北雙立。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "jinshu-v15-jiangxia",
+      "parentKey": "jinshu-v15-jingzhou",
+      "nodeType": "commandery_entry",
+      "ordinal": 2,
+      "label": "江夏郡",
+      "locatorPath": "卷15/地理志下/荊州/江夏郡",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "江夏郡，漢置。統縣七，戶二萬四千。安陸。雲杜，故云子國。曲陵。平春。鄳。竟陵，章山在東北，古之方山。南新市。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "jinshu-v15-nanjun",
+      "parentKey": "jinshu-v15-jingzhou",
+      "nodeType": "commandery_entry",
+      "ordinal": 3,
+      "label": "南郡",
+      "locatorPath": "卷15/地理志下/荊州/南郡",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "南郡，漢置。統縣十一，戶五萬五千。江陵，故楚都。編，有雲夢官。當陽。華容。鄀，故鄀子國。枝江，故羅國。旌陽。州陵，楚嬖人州侯所邑。監利。松滋。石首。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "jinshu-v15-wuchang",
+      "parentKey": "jinshu-v15-jingzhou",
+      "nodeType": "commandery_entry",
+      "ordinal": 4,
+      "label": "武昌郡",
+      "locatorPath": "卷15/地理志下/荊州/武昌郡",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "武昌郡，吳置。統縣七，戶一萬四千八百。武昌，故東鄂也，楚子熊渠封中子紅於此。柴桑，有湓口關。陽新。沙羨，有夏口，對沔口，有津。沙陽。鄂，有新興、馬頭鐵官。官陵。"
+        }
+      ]
+    }
+  ]
+}

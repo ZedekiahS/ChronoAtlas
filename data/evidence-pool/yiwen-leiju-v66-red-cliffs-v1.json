@@ -1,0 +1,126 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "yiwen-leiju-quoted-fragment-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true,
+      "documentScope": "volume-66-tianlie-jiangbiaozhuan-red-cliffs"
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af016",
+    "title": "藝文類聚",
+    "workKind": "leishu",
+    "language": "lzh",
+    "dateLabel": "唐武德七年",
+    "dateStart": 624,
+    "dateEnd": 624,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "relatedWorks": [
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+      "title": "江表傳",
+      "workKind": "historical_record",
+      "language": "lzh",
+      "dateLabel": "三國吳至西晉",
+      "dateStart": 220,
+      "dateEnd": 300,
+      "availabilityStatus": "lost_fragmentary",
+      "evidenceDomain": "historical_source"
+    }
+  ],
+  "workRelations": [
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af016",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "《藝文類聚》卷六十六田獵门明确以“江表傳曰”保存曹操致孙权会猎书，不将该宿主重复计作独立事件证据。"
+    }
+  ],
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af116",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af016",
+    "witnessType": "received_leishu_with_digital_reference",
+    "editionStatement": "維基文庫所载《藝文類聚》卷六十六·產業部下·田獵；《江表傳》曹操致孙权书引文 Phase 2 人工转写小样本",
+    "publisher": null,
+    "publicationDate": null,
+    "shelfmark": null,
+    "catalogUri": "https://zh.wikisource.org/wiki/%E8%97%9D%E6%96%87%E9%A1%9E%E8%81%9A/%E5%8D%B7066",
+    "fidelityStatus": "pilot_pending_edition_collation",
+    "note": "当前只登记《藝文類聚》作为《江表傳》佚文的另一保存载体；尚待指定刻本影像逐字校勘。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://zh.wikisource.org/wiki/%E8%97%9D%E6%96%87%E9%A1%9E%E8%81%9A/%E5%8D%B7066",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "卷六十六田獵门保存的《江表傳》会猎书文本见证；其来源身份仍是《江表傳》，不生成新的来源陈述或事件。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af216",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；数字文本与人工转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "版本影像与数字转写许可复核前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "ywl-066",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 66,
+      "label": "卷六十六·產業部下",
+      "locatorPath": "卷66",
+      "layerRole": "structure",
+      "sourceUri": "https://zh.wikisource.org/wiki/%E8%97%9D%E6%96%87%E9%A1%9E%E8%81%9A/%E5%8D%B7066"
+    },
+    {
+      "nodeKey": "ywl-066-tianlie",
+      "parentKey": "ywl-066",
+      "nodeType": "leishu_category",
+      "ordinal": 1,
+      "label": "田獵",
+      "locatorPath": "卷66/田獵",
+      "layerRole": "structure",
+      "sourceUri": "https://zh.wikisource.org/wiki/%E8%97%9D%E6%96%87%E9%A1%9E%E8%81%9A/%E5%8D%B7066#%E7%94%B0%E7%8D%B5"
+    },
+    {
+      "nodeKey": "ywl-066-tianlie-jiangbiaozhuan-letter",
+      "parentKey": "ywl-066-tianlie",
+      "nodeType": "quoted_fragment",
+      "ordinal": 1,
+      "label": "《江表传》曹操致孙权会猎书",
+      "locatorPath": "卷66/田獵/江表傳曰",
+      "layerRole": "quoted_fragment",
+      "sourceUri": "https://zh.wikisource.org/wiki/%E8%97%9D%E6%96%87%E9%A1%9E%E8%81%9A/%E5%8D%B7066#%E7%94%B0%E7%8D%B5",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "江表傳曰，曹公與孫權書云",
+        "certainty": "high"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "近者奉辭伐罪，旌麾南指，劉琮束手。今水軍八十萬眾，方與將軍會獵於吳。"
+        }
+      ]
+    }
+  ]
+}

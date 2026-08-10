@@ -1,0 +1,212 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "taiping-yulan-quoted-fragment-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true,
+      "documentScope": "volumes-770-771-jiangbiaozhuan-yingxiongji-red-cliffs"
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af017",
+    "title": "太平御覽",
+    "workKind": "leishu",
+    "language": "lzh",
+    "dateLabel": "北宋太平興國二年至八年",
+    "dateStart": 977,
+    "dateEnd": 983,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "relatedWorks": [
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+      "title": "江表傳",
+      "workKind": "historical_record",
+      "language": "lzh",
+      "dateLabel": "三國吳至西晉",
+      "dateStart": 220,
+      "dateEnd": 300,
+      "availabilityStatus": "lost_fragmentary",
+      "evidenceDomain": "historical_source"
+    },
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af018",
+      "title": "英雄記",
+      "workKind": "historical_record",
+      "language": "lzh",
+      "dateLabel": "東漢末（王粲）",
+      "dateStart": 190,
+      "dateEnd": 217,
+      "availabilityStatus": "lost_fragmentary",
+      "evidenceDomain": "historical_source"
+    }
+  ],
+  "workRelations": [
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af017",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "《太平御覽》卷七百七十舟部三以“江表傳曰”起引，连续保存曹操复书和刘备樊口会周瑜两段佚文。"
+    },
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af017",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af018",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "《太平御覽》卷七百七十一筏门明确以“英雄記曰”保存曹操作竹排、周瑜夜焚之片段。"
+    }
+  ],
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af117",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af017",
+    "witnessType": "received_leishu_with_digital_reference",
+    "editionStatement": "維基文庫所载《太平御覽》卷七百七十舟部三、卷七百七十一舟部四；《江表傳》《英雄記》赤壁引文 Phase 2 人工转写小样本",
+    "publisher": null,
+    "publicationDate": null,
+    "shelfmark": null,
+    "catalogUri": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BE%A1%E8%A6%BD",
+    "fidelityStatus": "pilot_pending_edition_collation",
+    "note": "当前将类书宿主与被引佚书分层登记；《江表傳》《英雄記》引文均待指定宋元刻本影像校勘。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BE%A1%E8%A6%BD",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "卷七百七十至七百七十一所存赤壁佚文见证；按归属作品聚合，不把《太平御覽》重复计作独立事件证据。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af217",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；数字文本与人工转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "版本影像与数字转写许可复核前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "tpy-770",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 770,
+      "label": "卷七百七十·舟部三",
+      "locatorPath": "卷770/舟部三",
+      "layerRole": "structure",
+      "sourceUri": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BE%A1%E8%A6%BD/0770"
+    },
+    {
+      "nodeKey": "tpy-770-zhou",
+      "parentKey": "tpy-770",
+      "nodeType": "leishu_category",
+      "ordinal": 1,
+      "label": "舟",
+      "locatorPath": "卷770/舟部三/舟",
+      "layerRole": "structure",
+      "sourceUri": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BE%A1%E8%A6%BD/0770"
+    },
+    {
+      "nodeKey": "tpy-770-jiangbiaozhuan-cao-letter",
+      "parentKey": "tpy-770-zhou",
+      "nodeType": "quoted_fragment",
+      "ordinal": 1,
+      "label": "《江表传》曹操赤壁后复书",
+      "locatorPath": "卷770/舟部三/江表傳又曰/段1",
+      "layerRole": "quoted_fragment",
+      "sourceUri": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BE%A1%E8%A6%BD/0770",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "《江表傳》曰（下文“又曰”续引）",
+        "certainty": "high"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "周瑜破魏軍，曹公復書與權曰：『赤壁之役，值有疾疫，孤燒船自退，橫使周瑜虛獲此名。』"
+        }
+      ]
+    },
+    {
+      "nodeKey": "tpy-770-jiangbiaozhuan-fankou",
+      "parentKey": "tpy-770-zhou",
+      "nodeType": "quoted_fragment",
+      "ordinal": 2,
+      "label": "《江表传》刘备樊口会周瑜",
+      "locatorPath": "卷770/舟部三/江表傳又曰/段2",
+      "layerRole": "quoted_fragment",
+      "sourceUri": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BE%A1%E8%A6%BD/0770",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "《江表傳》曰（下文“又曰”续引）",
+        "certainty": "high"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "劉備進駐鄂縣之樊口，諸葛詣吳未還，聞曹公軍下，恐懼，日遣邏吏於水次候權軍。吏望見周瑜船，馳還白備。備曰：『何以知非青徐軍耶？』吏對曰：『以船知之。』備遣人慰勞瑜，瑜曰：『有軍任，不得委署。儻能屈威，副其所望。』備謂張飛、關羽曰：『彼欲致我，今自托於東而不往，非同盟之意也。』乃乘單舸，往見瑜。問曰：『今距曹氏，深為得計！戰卒有幾？』瑜曰：『此自足用，豫州但觀瑜破之！』"
+        }
+      ]
+    },
+    {
+      "nodeKey": "tpy-771",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 771,
+      "label": "卷七百七十一·舟部四",
+      "locatorPath": "卷771/舟部四",
+      "layerRole": "structure",
+      "sourceUri": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BE%A1%E8%A6%BD/0771"
+    },
+    {
+      "nodeKey": "tpy-771-fa",
+      "parentKey": "tpy-771",
+      "nodeType": "leishu_category",
+      "ordinal": 1,
+      "label": "筏",
+      "locatorPath": "卷771/舟部四/筏",
+      "layerRole": "structure",
+      "sourceUri": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BE%A1%E8%A6%BD/0771#%E7%AD%8F"
+    },
+    {
+      "nodeKey": "tpy-771-yingxiongji-bamboo-rafts",
+      "parentKey": "tpy-771-fa",
+      "nodeType": "quoted_fragment",
+      "ordinal": 1,
+      "label": "《英雄记》曹军竹排与周瑜夜焚",
+      "locatorPath": "卷771/舟部四/筏/英雄記曰",
+      "layerRole": "quoted_fragment",
+      "sourceUri": "https://zh.wikisource.org/wiki/%E5%A4%AA%E5%B9%B3%E5%BE%A1%E8%A6%BD/0771#%E7%AD%8F",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af018",
+        "type": "explicit_citation",
+        "text": "《英雄記》曰",
+        "certainty": "high"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "曹操進軍至江上，欲從赤璧渡江。無船，作竹排，使部曲乘之。從漢水來下，出大江，注浦口，未即渡。周瑜又夜密使輕船走舸百艘燒排，操乃夜走。"
+        }
+      ]
+    }
+  ]
+}

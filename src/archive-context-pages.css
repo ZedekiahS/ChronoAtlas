@@ -1,0 +1,1679 @@
+/* Collector shells for cross-civilization and evidence-context pages. */
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] {
+  color: var(--collector-text);
+  background: var(--collector-canvas);
+  color-scheme: dark;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .global-topbar {
+  min-height: 44px;
+  padding-inline: 24px;
+  border-bottom-color: var(--collector-line);
+  background: var(--collector-canvas);
+  backdrop-filter: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .utility-menu-button,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .theme-scope-label {
+  color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .theme-scope-label,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .brand-home h1,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .evidence-summary h2,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .world-comparison-heading h2 {
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .presentation-mode-control,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .topbar-language {
+  border-color: var(--collector-line);
+  background: var(--collector-surface-deep);
+  box-shadow: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .presentation-mode-control button,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .topbar-language {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .presentation-mode-control button.active {
+  background: var(--collector-foil);
+  color: var(--collector-canvas);
+  box-shadow: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .map-workspace {
+  position: relative;
+  isolation: isolate;
+  gap: 14px;
+  min-height: calc(100vh - 44px);
+  padding: 18px 24px 26px;
+  background:
+    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--collector-foil) 7%, transparent), transparent 29%),
+    radial-gradient(circle at 86% 72%, color-mix(in srgb, var(--collector-mark) 8%, transparent), transparent 34%),
+    var(--collector-canvas-soft);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .map-workspace::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.25;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 27px, color-mix(in srgb, var(--collector-foil) 6%, transparent) 28px),
+    repeating-linear-gradient(90deg, transparent 0 47px, color-mix(in srgb, var(--collector-foil) 4%, transparent) 48px);
+  mask-image: linear-gradient(135deg, rgba(0, 0, 0, 0.62), transparent 72%);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .map-workspace > * {
+  position: relative;
+  z-index: 1;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .map-workspace > .workspace-header {
+  z-index: 60;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .workspace-header {
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--collector-line);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .brand-kicker-row .kicker {
+  color: var(--collector-foil);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .brand-home h1 {
+  color: var(--collector-text);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .brand-home:hover h1,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .utility-menu-button:hover,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .topbar-language:hover {
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .topbar-action,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .topbar-menu summary,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .db-status-pill,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .search-box,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .page-return-row .back-button {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  color: var(--collector-text);
+  box-shadow: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .topbar-action:hover,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .topbar-action.active,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .topbar-menu:hover summary,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .topbar-menu[open] summary,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .topbar-menu.active summary,
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .page-return-row .back-button:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .topbar-menu-panel {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.42);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .topbar-menu-panel button {
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .topbar-menu-panel button:hover {
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .search-box input {
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .search-box input::placeholder {
+  color: var(--collector-muted);
+}
+
+/* Same-year world comparison uses a neutral archive so local civilizations keep their own colors. */
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .map-workspace::before {
+  inset: 0;
+  opacity: 0.17;
+  background-image:
+    linear-gradient(180deg, transparent 58%, var(--collector-canvas-soft) 100%),
+    url("./assets/world-unity-atlas-texture.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  mask-image: none;
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .world-map-stage,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .timeline-dock,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .world-comparison-heading,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .detail-panel {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--collector-foil) 3%, transparent);
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .world-map-stage {
+  background:
+    radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--collector-foil) 7%, transparent), transparent 42%),
+    var(--collector-surface-deep);
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .world-map-stage .sphere {
+  fill: color-mix(in srgb, var(--collector-surface-raised) 78%, #162633);
+  stroke: color-mix(in srgb, var(--collector-foil) 32%, transparent);
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .world-map-stage .graticule {
+  stroke: color-mix(in srgb, var(--collector-foil) 14%, transparent);
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .world-map-stage .country {
+  fill: color-mix(in srgb, var(--collector-muted) 17%, var(--collector-surface-deep));
+  stroke: color-mix(in srgb, var(--collector-foil) 8%, transparent);
+  stroke-width: 0.45px;
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .hover-summary {
+  border: 1px solid var(--collector-line);
+  border-top: 4px solid var(--accent);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--collector-surface-raised) 94%, transparent);
+  color: var(--collector-text);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.42);
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .hover-summary p,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .summary-meta,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .range-labels,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .timeline-region-legend,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-controls > span,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-era p,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-event small {
+  color: var(--collector-muted);
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .summary-meta strong,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .year-readout,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .world-comparison-heading h2,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-card-header span,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-event strong {
+  color: var(--collector-text);
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .summary-close,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .icon-button,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .density-control,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-action {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-muted);
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .icon-button:hover,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .summary-close:hover,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-action:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .timeline-dock input[type="range"] {
+  accent-color: var(--collector-foil);
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-card {
+  border-color: var(--collector-line);
+  border-top-color: var(--accent);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  color: var(--collector-text);
+  box-shadow: none;
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-card:hover,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-card:focus-visible,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-card.selected {
+  border-color: color-mix(in srgb, var(--accent) 66%, var(--collector-line));
+  background: var(--collector-surface-raised);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-card-header strong,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-era small,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-event > span {
+  background: color-mix(in srgb, var(--accent) 13%, var(--collector-surface-deep));
+  color: color-mix(in srgb, var(--accent) 64%, var(--collector-foil-bright));
+}
+
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-event,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .comparison-associated-region,
+.app-shell[data-page="world"].archive-context-shell[data-presentation-mode="collector"] .event-stack-focus {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+}
+
+/* Evidence graphs inherit the civilization and era of their explicit graph target. */
+
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-summary,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-search-panel,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .coverage-card,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .coverage-metrics .evidence-field,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .empty-state {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface);
+  color: var(--collector-text);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--collector-foil) 3%, transparent);
+}
+
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-summary {
+  border-top: 3px solid var(--collector-mark);
+}
+
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-summary .kicker,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .coverage-card header span,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-field span {
+  color: var(--collector-foil);
+}
+
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-summary h2,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .coverage-card h3,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-field strong,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-claim strong,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-source strong {
+  color: var(--collector-text);
+}
+
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-summary p,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-panel > p,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-source p,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-source small {
+  color: var(--collector-muted);
+}
+
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-quick-searches button,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .person-filter-button,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-search-panel button,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-mini-events button,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-subjects > span {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-muted);
+}
+
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-quick-searches button:hover,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .person-filter-button:hover,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .person-filter-button.selected,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-mini-events button:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-search-panel input {
+  color: var(--collector-text);
+}
+
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-search-panel input::placeholder {
+  color: var(--collector-muted);
+}
+
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .person-filter-button small,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-claim span,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-source span {
+  background: color-mix(in srgb, var(--collector-mark) 14%, var(--collector-surface-deep));
+  color: var(--collector-foil);
+}
+
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-claim,
+.app-shell[data-page="evidence-graph"].archive-context-shell[data-presentation-mode="collector"] .evidence-graph-source {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+}
+
+@media (max-width: 760px) {
+  .app-shell.archive-context-shell[data-presentation-mode="collector"] .global-topbar,
+  .app-shell.archive-context-shell[data-presentation-mode="collector"] .map-workspace {
+    padding-inline: 14px;
+  }
+}
+
+/* Shared archive treatment for source, event, coverage, and geography workspaces. */
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="events"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) .map-workspace {
+  background: var(--collector-canvas-soft);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-history-theme="han-cinnabar"][data-archive-era="late-han"] .map-workspace::before {
+  opacity: 0.4;
+  background-image: url("./assets/archive-yellow-turban-v2.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  mask-image: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-history-theme="han-cinnabar"][data-archive-era="warlords"] .map-workspace::before {
+  opacity: 0.35;
+  background-image: url("./assets/archive-warlords-v1.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  mask-image: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-history-theme="han-cinnabar"][data-archive-era="three-kingdoms"] .map-workspace::before {
+  opacity: 0.38;
+  background-image: url("./assets/han-three-kingdoms-archive-bg-v1.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  mask-image: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-history-theme="han-cinnabar"][data-archive-era="jin-unification"] .map-workspace::before {
+  opacity: 0.42;
+  background-image: url("./assets/archive-jin-unification-v1.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  mask-image: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is([data-page="compare"], [data-page="coverage"]) .map-workspace::before {
+  opacity: 0.24;
+  background-image: url("./assets/world-unity-atlas-texture.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  mask-image: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="events"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) :is(
+  .evidence-summary,
+  .event-index-summary,
+  .event-compare-summary,
+  .coverage-summary,
+  .person-index-summary,
+  .event-detail-hero,
+  .evidence-search-panel,
+  .person-index-search-panel,
+  .context-scope-bar,
+  .event-compare-filter-bar,
+  .coverage-template-card,
+  .coverage-card,
+  .place-local-filter-panel,
+  .empty-state
+) {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--collector-surface) 94%, transparent);
+  color: var(--collector-text);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--collector-foil) 3%, transparent);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="events"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) :is(
+  .evidence-summary,
+  .event-index-summary,
+  .event-compare-summary,
+  .coverage-summary,
+  .person-index-summary,
+  .event-detail-hero
+) {
+  border-top: 3px solid var(--collector-mark);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="events"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) :is(
+  .evidence-summary h2,
+  .event-index-summary h2,
+  .event-compare-summary h2,
+  .coverage-summary h2,
+  .person-index-summary h2,
+  .event-detail-hero h2,
+  .source-library-reader-header h2,
+  .place-section-heading span,
+  .coverage-card h3,
+  .event-compare-detail-card h3
+) {
+  color: var(--collector-text);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="events"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) :is(
+  .kicker,
+  .place-section-heading span,
+  .coverage-card header span,
+  .coverage-check-panel > span,
+  .coverage-gap-list > span,
+  .coverage-examples span
+) {
+  color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="events"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) :is(
+  .evidence-summary p,
+  .event-index-summary p:not(.kicker),
+  .event-compare-summary p,
+  .coverage-summary p,
+  .person-index-summary p,
+  .event-detail-hero p,
+  .place-section-heading p,
+  .context-scope-bar,
+  .source-library-reader-header p
+) {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="events"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) :is(
+  .age-index-metrics,
+  .person-index-metrics,
+  .event-index-metrics,
+  .coverage-template-metrics,
+  .coverage-metrics,
+  .event-detail-facts-row
+) > div,
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="events"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) .evidence-field {
+  border-color: var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+  box-shadow: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="events"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) :is(.age-index-metrics, .person-index-metrics, .event-index-metrics) span,
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="events"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) .evidence-field span {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="events"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) :is(.age-index-metrics, .person-index-metrics, .event-index-metrics) strong,
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="events"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) .evidence-field strong {
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .context-scope-bar strong {
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="events"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) :is(
+  .evidence-search-panel,
+  .person-index-search-panel,
+  .person-detail-search,
+  .event-compare-filter-bar label,
+  .place-detail-period-select
+) {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-muted);
+  box-shadow: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) :is(
+  .evidence-search-panel input,
+  .person-index-search-panel input,
+  .person-detail-search input,
+  .event-compare-filter-bar input,
+  .place-detail-period-select select
+) {
+  color: var(--collector-text);
+  background: transparent;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="places"],
+  [data-page="place-detail"],
+  [data-page="compare"]
+) :is(
+  .evidence-search-panel input,
+  .person-index-search-panel input,
+  .person-detail-search input,
+  .event-compare-filter-bar input
+)::placeholder {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"]
+) :is(
+  .person-filter-button,
+  .event-filter-button,
+  .evidence-quick-searches button,
+  .evidence-search-panel button,
+  .person-index-search-panel button,
+  .context-scope-bar button,
+  .event-detail-actions button,
+  .place-index-card-actions button
+),
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] :is(
+  .event-compare-type-bar button,
+  .event-compare-filter-bar button,
+  .event-card-link,
+  .event-compare-detail-card header button
+) {
+  border-color: var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-muted);
+  box-shadow: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"]
+) :is(
+  .person-filter-button:hover,
+  .person-filter-button.selected,
+  .event-filter-button:hover,
+  .event-filter-button.selected,
+  .evidence-quick-searches button:hover,
+  .evidence-search-panel button:hover,
+  .person-index-search-panel button:hover,
+  .context-scope-bar button:hover,
+  .event-detail-actions button:hover,
+  .place-index-card-actions button:hover
+),
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] :is(
+  .event-compare-type-bar button:hover,
+  .event-compare-type-bar button.selected,
+  .event-compare-filter-bar button:hover,
+  .event-card-link:hover,
+  .event-compare-detail-card header button:hover
+) {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+  [data-page="evidence"],
+  [data-page="source-library"],
+  [data-page="coverage"],
+  [data-page="places"],
+  [data-page="place-detail"]
+) .person-filter-button small,
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] .event-filter-button small {
+  background: color-mix(in srgb, var(--collector-foil) 12%, var(--collector-surface-deep));
+  color: var(--collector-foil);
+}
+
+/* Evidence search and primary-source reader. */
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="evidence"] .evidence-results {
+  scrollbar-color: var(--collector-line) var(--collector-surface-deep);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="evidence"] .evidence-card {
+  border-color: var(--collector-line);
+  border-left-color: var(--collector-mark);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--collector-surface) 96%, transparent);
+  color: var(--collector-text);
+  box-shadow: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="evidence"] .evidence-card-collapsed {
+  background: color-mix(in srgb, var(--collector-surface-deep) 94%, transparent);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="evidence"] :is(
+  .evidence-card-heading h3,
+  .evidence-card p,
+  .evidence-card-collapsed p,
+  .evidence-chip-list button,
+  .evidence-chip-list span
+) {
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="evidence"] :is(
+  .evidence-card-heading span,
+  .evidence-card-meta span,
+  .evidence-source-detail p,
+  .evidence-source-detail blockquote
+) {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="evidence"] .evidence-card-heading strong {
+  border: 1px solid color-mix(in srgb, var(--collector-mark) 45%, var(--collector-line));
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--collector-mark) 14%, var(--collector-surface-deep));
+  color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="evidence"] :is(
+  .evidence-chip-list button,
+  .evidence-chip-list span,
+  .evidence-meta-action
+) {
+  border-color: var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="evidence"] :is(
+  .evidence-chip-list button:hover,
+  .evidence-meta-action:hover
+) {
+  border-color: var(--collector-foil);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="evidence"] :is(
+  .evidence-source-detail,
+  .evidence-card-meta
+) {
+  border-color: var(--collector-line);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="evidence"] .evidence-source-detail summary {
+  color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] :is(
+  .source-library-list,
+  .source-library-reader
+) {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--collector-surface) 96%, transparent);
+  color: var(--collector-text);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--collector-foil) 3%, transparent);
+  scrollbar-color: var(--collector-line) var(--collector-surface-deep);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .source-library-list-item {
+  border-color: var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] :is(
+  .source-library-list-item:hover,
+  .source-library-list-item.selected
+) {
+  border-color: var(--collector-foil);
+  background: color-mix(in srgb, var(--collector-mark) 12%, var(--collector-surface-raised));
+  box-shadow: inset 3px 0 0 var(--collector-mark);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .source-library-list-item :is(span, small),
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .source-library-pagination span {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .source-library-reader-header {
+  border-color: var(--collector-line);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .source-library-pagination {
+  border-color: var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] :is(
+  .source-library-pagination button,
+  .evidence-meta-action
+) {
+  border-color: var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface-raised);
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .source-library-pagination button:not(:disabled):hover,
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .evidence-meta-action:hover {
+  border-color: var(--collector-foil);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .source-library-passage {
+  border-color: var(--collector-line);
+  border-left-color: color-mix(in srgb, var(--collector-foil) 64%, var(--collector-line));
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .source-library-passage.has-pei-note {
+  border-left-color: var(--collector-foil);
+  background: color-mix(in srgb, var(--collector-foil) 7%, var(--collector-surface-deep));
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .source-library-passage header span {
+  color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .source-library-passage :is(header small, blockquote) {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .source-library-passage blockquote {
+  border-color: var(--collector-line);
+}
+
+/* Event index keeps the annual archive rhythm without turning every entry into a SaaS tile. */
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] .event-index-year-group {
+  border-color: var(--collector-line);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] .event-index-year-heading {
+  border-left-color: var(--collector-line);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] .event-index-year-group.current .event-index-year-heading {
+  border-left-color: var(--collector-mark);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] .event-index-year-heading strong {
+  color: var(--collector-foil-bright);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] .event-index-year-heading span {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] .event-index-card {
+  border-color: var(--collector-line);
+  border-left-color: color-mix(in srgb, var(--collector-mark) 72%, var(--collector-line));
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--collector-surface) 96%, transparent);
+  color: var(--collector-text);
+  box-shadow: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] .event-index-card:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  transform: translateY(-1px);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] .event-index-card-type {
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--collector-mark) 14%, var(--collector-surface-deep));
+  color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] .event-index-card > strong {
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] :is(
+  .event-index-card > small,
+  .event-index-card > p,
+  .event-index-card-meta
+) {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] :is(
+  .event-index-card-meta svg,
+  .event-index-card-footer
+) {
+  color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] .event-index-card-footer {
+  border-color: var(--collector-line);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] .event-index-query-note {
+  border-color: color-mix(in srgb, var(--collector-mark) 52%, var(--collector-line));
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--collector-mark) 11%, var(--collector-surface-deep));
+  color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] .event-index-query-note button {
+  color: var(--collector-foil-bright);
+}
+
+/* Coverage is a restrained catalog ledger, not a bright dashboard. */
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] .coverage-template-card {
+  border-left-color: var(--collector-mark);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] .coverage-template-card.ok {
+  border-left-color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] :is(
+  .coverage-template-card h3,
+  .coverage-progress-row strong,
+  .coverage-card h3
+) {
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] :is(
+  .coverage-template-card p,
+  .coverage-progress-row span,
+  .coverage-gap-list p,
+  .coverage-examples small
+) {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] .coverage-template-failures {
+  color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] .coverage-template-failures span {
+  border-color: var(--collector-line);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--collector-mark) 10%, var(--collector-surface-deep));
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] :is(
+  .coverage-progress-panel,
+  .coverage-check-panel,
+  .coverage-gap-list
+) {
+  border-color: var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] .coverage-progress-row i {
+  background: var(--collector-surface-raised);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] .coverage-progress-row b {
+  background: var(--collector-mark);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] .coverage-card header strong {
+  border: 1px solid var(--collector-line);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--collector-mark) 12%, var(--collector-surface-deep));
+  color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] .coverage-card header strong.coverage-status.ok {
+  background: color-mix(in srgb, var(--collector-foil) 10%, var(--collector-surface-deep));
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] .coverage-examples button {
+  border-color: var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] .coverage-examples button:hover {
+  border-color: var(--collector-foil);
+  color: var(--collector-foil-bright);
+}
+
+/* Geography index and place record pages retain the same archive shell. */
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"]:is([data-page="places"], [data-page="place-detail"]) :is(
+  .place-index-summary,
+  .place-detail-hero
+) {
+  border-top-color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="places"] .place-local-filter-panel {
+  background: color-mix(in srgb, var(--collector-surface) 88%, transparent);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="places"] .place-section-heading strong {
+  border: 1px solid var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="places"] .place-index-card {
+  border-color: var(--collector-line);
+  border-left-color: color-mix(in srgb, var(--collector-foil) 64%, var(--collector-line));
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--collector-surface) 96%, transparent);
+  color: var(--collector-text);
+  box-shadow: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="places"] :is(
+  .place-index-card:hover,
+  .place-index-card.selected
+) {
+  border-color: var(--collector-foil);
+  border-left-color: var(--collector-foil-bright);
+  background: var(--collector-surface-raised);
+  box-shadow: inset 3px 0 0 color-mix(in srgb, var(--collector-foil) 45%, transparent);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="places"] :is(
+  .place-index-card header span,
+  .place-section-heading span
+) {
+  color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="places"] .place-index-card h3 {
+  color: var(--collector-text);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="places"] .place-index-card p {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="places"] .place-index-card-stats span {
+  border: 1px solid var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] :is(
+  .place-detail-browser,
+  .event-detail-main,
+  .event-detail-side section
+) {
+  border: 1px solid var(--collector-line);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--collector-surface) 96%, transparent);
+  color: var(--collector-text);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--collector-foil) 3%, transparent);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .place-detail-browser {
+  padding: 12px;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] :is(
+  .place-current-status-card,
+  .place-current-year-grid div,
+  .place-data-status-grid div,
+  .place-control-item,
+  .place-related-card,
+  .place-life-event,
+  .event-detail-person-list button,
+  .event-detail-person-list span,
+  .source-item
+) {
+  border-color: var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+  box-shadow: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .place-current-status-card,
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .place-control-item.active {
+  border-left-color: var(--collector-foil);
+  background: color-mix(in srgb, var(--collector-foil) 8%, var(--collector-surface-deep));
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .event-detail-page-section {
+  border-color: var(--collector-line);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] :is(
+  .event-detail-page-section h3,
+  .event-detail-side h3,
+  .place-current-status-card strong,
+  .place-current-year-grid strong,
+  .place-data-status-grid strong,
+  .place-control-item strong,
+  .place-related-card strong,
+  .place-life-event strong,
+  .event-detail-person-list strong
+) {
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] :is(
+  .event-detail-page-section p,
+  .event-detail-page-section ol,
+  .event-detail-page-section ul,
+  .event-detail-side p,
+  .event-detail-side ul,
+  .place-current-status-card p,
+  .place-current-status-card small,
+  .place-current-year-grid small,
+  .place-data-status-grid small,
+  .place-control-item small,
+  .place-related-card small,
+  .place-related-card p,
+  .place-life-event small,
+  .event-detail-person-list small,
+  .source-item span
+) {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] :is(
+  .place-current-status-card span,
+  .place-current-year-grid span,
+  .place-data-status-grid span,
+  .place-control-item span,
+  .place-related-card span,
+  .place-life-event span,
+  .event-detail-page-section strong,
+  .place-detail-period-select span
+) {
+  color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .place-category-strip span,
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] :is(
+  .event-detail-chip-list button,
+  .event-detail-chip-list > span,
+  .place-year-event-strip button
+) {
+  border-color: var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] :is(
+  .event-detail-chip-list button:hover,
+  .place-year-event-strip button:hover,
+  .place-related-card:hover,
+  .place-life-event:hover,
+  .event-detail-person-list button:hover
+) {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+/* Cross-civilization event comparison: two selections face each other, three read as parallel states. */
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-stage {
+  isolation: isolate;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-summary {
+  border-top-color: var(--collector-foil);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-type-bar button {
+  min-height: 66px;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-type-bar :is(strong, small) {
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-type-bar span {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-type-bar small {
+  border-radius: 3px;
+  background: var(--collector-surface-raised);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] :is(
+  .event-compare-picker,
+  .event-compare-board,
+  .event-compare-arena
+) {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--collector-surface) 94%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--collector-foil) 3%, transparent);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-picker :is(header span, .event-compare-picker-item span, .event-compare-picker-item small) {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-picker :is(header strong, .event-compare-picker-item strong) {
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-picker-item {
+  border-color: var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-picker-item.selected {
+  border-color: var(--collector-foil);
+  background: color-mix(in srgb, var(--collector-mark) 12%, var(--collector-surface-raised));
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-detail-card,
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-column {
+  border-color: var(--collector-line);
+  border-top-color: var(--accent, var(--collector-mark));
+  border-radius: 3px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+  box-shadow: none;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-detail-card :is(h3, .event-compare-field-grid p),
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-column :is(header strong, .event-compare-item strong, .event-compare-empty strong) {
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-detail-card :is(header span, .event-compare-field-grid span),
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-column :is(.event-compare-era, .event-compare-item span, .event-compare-item small, .event-compare-empty span, footer span, footer button) {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] :is(
+  .event-compare-field-grid div,
+  .event-compare-item,
+  .event-compare-facts span,
+  .event-compare-empty
+) {
+  border-color: var(--collector-line);
+  border-radius: 3px;
+  background: var(--collector-surface);
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-item-topline span {
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--accent, var(--collector-mark)) 12%, var(--collector-surface-deep));
+  color: color-mix(in srgb, var(--accent, var(--collector-foil)) 62%, var(--collector-foil-bright));
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena {
+  position: relative;
+  display: grid;
+  align-self: start;
+  height: max-content;
+  gap: 1px;
+  min-width: 0;
+  padding: 1px;
+  overflow: hidden;
+  background: var(--collector-line);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena[data-count="1"] {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena:is([data-count="0"], [data-count="1"]) > .event-compare-axis {
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 34px;
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--collector-line);
+  writing-mode: horizontal-tb;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena[data-count="1"] > [data-slot="left"] {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena[data-count="2"] {
+  grid-template-columns: minmax(0, 1fr) 46px minmax(0, 1fr);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena[data-count="3"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-axis {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  padding: 12px 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-foil);
+  font-family: "STSong", "Songti SC", "Noto Serif CJK SC", serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena[data-count="2"] > .event-compare-axis {
+  grid-column: 2;
+  grid-row: 1;
+  writing-mode: vertical-rl;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena[data-count="3"] > .event-compare-axis {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  min-height: 34px;
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--collector-line);
+  writing-mode: horizontal-tb;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena[data-count="2"] > [data-slot="left"] {
+  grid-column: 1;
+  grid-row: 1;
+  box-shadow: inset 3px 0 0 color-mix(in srgb, var(--accent, var(--collector-mark)) 72%, transparent);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena[data-count="2"] > [data-slot="right"] {
+  grid-column: 3;
+  grid-row: 1;
+  box-shadow: inset -3px 0 0 color-mix(in srgb, var(--accent, var(--collector-foil)) 72%, transparent);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena[data-count="3"] > [data-slot="left"] {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena[data-count="3"] > [data-slot="right"] {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena[data-count="3"] > [data-slot="third"] {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena > [data-slot] {
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: color-mix(in srgb, var(--accent, var(--collector-mark)) 5%, var(--collector-surface-deep));
+}
+
+@media (max-width: 1040px) {
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] .coverage-card-body {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] .coverage-gap-list {
+    grid-column: 1 / -1;
+  }
+
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-workbench,
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .place-detail-workbench,
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .source-library-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-picker,
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="source-library"] .source-library-list,
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .place-detail-browser {
+    max-height: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+    [data-page="evidence"],
+    [data-page="source-library"],
+    [data-page="events"],
+    [data-page="coverage"],
+    [data-page="places"],
+    [data-page="place-detail"],
+    [data-page="compare"]
+  ) :is(
+    .evidence-summary,
+    .event-index-summary,
+    .event-compare-summary,
+    .coverage-summary,
+    .person-index-summary,
+    .event-detail-hero
+  ) {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .app-shell.archive-context-shell[data-presentation-mode="collector"]:is(
+    [data-page="evidence"],
+    [data-page="source-library"],
+    [data-page="events"],
+    [data-page="coverage"],
+    [data-page="places"],
+    [data-page="place-detail"],
+    [data-page="compare"]
+  ) :is(.age-index-metrics, .person-index-metrics, .event-index-metrics) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="events"] .event-index-year-group {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="coverage"] :is(
+    .coverage-card-body,
+    .coverage-examples
+  ),
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] :is(
+    .event-detail-page-layout,
+    .place-current-year-grid
+  ),
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] :is(
+    .event-compare-type-bar,
+    .event-compare-board
+  ) {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena:is([data-count="2"], [data-count="3"]) {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena:is([data-count="2"], [data-count="3"]) > .event-compare-axis {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 34px;
+    padding: 7px 12px;
+    border-bottom: 1px solid var(--collector-line);
+    writing-mode: horizontal-tb;
+  }
+
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena:is([data-count="2"], [data-count="3"]) > [data-slot="left"] {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena:is([data-count="2"], [data-count="3"]) > [data-slot="right"] {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="compare"] .event-compare-arena[data-count="3"] > [data-slot="third"] {
+    grid-column: 1;
+    grid-row: 4;
+  }
+}
+
+/* Era-bound Han archive plates. Kept at the end to replace the legacy static lacquer texture. */
+
+body .app-shell[data-presentation-mode="collector"][data-history-theme="han-cinnabar"][data-archive-era="late-han"] {
+  background-color: var(--collector-canvas);
+  background-image: url("./assets/archive-yellow-turban-v2.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body .app-shell[data-presentation-mode="collector"][data-history-theme="han-cinnabar"][data-archive-era="warlords"] {
+  background-color: var(--collector-canvas);
+  background-image: url("./assets/archive-warlords-v1.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body .app-shell[data-presentation-mode="collector"][data-history-theme="han-cinnabar"][data-archive-era="three-kingdoms"] {
+  background-color: var(--collector-canvas);
+  background-image: url("./assets/han-three-kingdoms-archive-bg-v1.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body .app-shell[data-presentation-mode="collector"][data-history-theme="han-cinnabar"][data-archive-era="jin-unification"] {
+  background-color: var(--collector-canvas);
+  background-image: url("./assets/archive-jin-unification-v1.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Keep generated era art crisp on long archive pages. The fixed root plate is
+   sized against the viewport; the workspace only supplies a translucent veil. */
+
+body .app-shell.archive-context-shell[data-presentation-mode="collector"][data-history-theme="han-cinnabar"] .map-workspace {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--collector-canvas-soft) 72%, transparent) 0,
+      color-mix(in srgb, var(--collector-canvas-soft) 86%, transparent) 820px,
+      color-mix(in srgb, var(--collector-canvas-soft) 92%, transparent) 1200px
+    );
+}
+
+body .app-shell.archive-context-shell[data-presentation-mode="collector"][data-history-theme="han-cinnabar"] .map-workspace::before {
+  content: none;
+}
+
+/* Place detail reuses person-browser components; restore the intended scroll
+   boundary and collector surfaces with page-level specificity. */
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .place-detail-result-list {
+  max-height: min(440px, 55vh);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: var(--collector-line) var(--collector-surface-deep);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .person-result {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .person-result:hover,
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .person-result.selected {
+  border-color: var(--collector-mark);
+  background: color-mix(in srgb, var(--collector-mark) 13%, var(--collector-surface));
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .person-result.selected {
+  box-shadow: inset 3px 0 0 var(--collector-mark);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .person-result span {
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .person-result small {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .map-back-row .back-button {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"] .map-back-row .back-button:hover {
+  border-color: var(--collector-foil);
+  background: var(--collector-surface-raised);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .timeline-dock {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--collector-surface) 94%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--collector-foil) 3%, transparent);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .timeline-dock .icon-button {
+  border-color: var(--collector-line);
+  border-radius: 4px;
+  background: var(--collector-surface-deep);
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .timeline-dock .icon-button:hover:not(:disabled) {
+  border-color: var(--collector-foil);
+  color: var(--collector-foil-bright);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .timeline-dock :is(.year-readout, .year-readout span) {
+  color: var(--collector-text);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .timeline-dock :is(.year-readout small, .range-labels) {
+  color: var(--collector-muted);
+}
+
+.app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] .timeline-dock input[type="range"] {
+  accent-color: var(--collector-foil);
+}
+
+@media (max-width: 1180px) {
+  .app-shell.archive-context-shell[data-presentation-mode="collector"][data-page="place-detail"] :is(
+    .place-detail-browser,
+    .place-detail-side
+  ) {
+    position: static;
+  }
+}

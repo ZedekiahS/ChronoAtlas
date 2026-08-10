@@ -1,0 +1,123 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "wenxuan-embedded-letter-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true,
+      "documentScope": "volume-42-ruanyu-red-cliffs"
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af010",
+    "title": "文選",
+    "workKind": "anthology",
+    "language": "lzh",
+    "dateLabel": "南朝梁",
+    "dateStart": 520,
+    "dateEnd": 531,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "relatedWorks": [
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af011",
+      "title": "阮瑀書",
+      "workKind": "letter",
+      "language": "lzh",
+      "dateLabel": "東漢建安年間",
+      "dateStart": 208,
+      "dateEnd": 220,
+      "availabilityStatus": "extant_via_anthology",
+      "evidenceDomain": "historical_source"
+    }
+  ],
+  "workRelations": [
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af010",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af011",
+      "relationType": "preserves",
+      "certainty": "high",
+      "note": "《文選》卷四十二在书类中题录并保存阮瑀《為曹公作書與孫權》。"
+    }
+  ],
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af109",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af010",
+    "witnessType": "received_anthology_with_digital_reference",
+    "editionStatement": "《文選》卷四十二所收阮瑀《為曹公作書與孫權》公开数字文本；赤壁与江陵追述段落 Phase 2 人工转写小样本",
+    "publisher": null,
+    "publicationDate": null,
+    "shelfmark": null,
+    "catalogUri": "https://zh.wikisource.org/wiki/%E6%96%87%E9%81%B8/%E5%8D%B742",
+    "fidelityStatus": "pilot_pending_edition_collation",
+    "note": "书信作品与宿主《文选》分层登记；当前文字尚待指定版本影像校勘。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://zh.wikisource.org/wiki/%E7%82%BA%E6%9B%B9%E5%85%AC%E4%BD%9C%E6%9B%B8%E8%88%87%E5%AD%AB%E6%AC%8A",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "保存曹操阵营对赤壁疾疫、自焚退军及江陵撤守的事后政治陈述。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af209",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；数字文本与转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "版本影像与数字转写许可复核前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "wx-v42",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 42,
+      "label": "卷四十二",
+      "locatorPath": "卷42",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "wx-v42-letters",
+      "parentKey": "wx-v42",
+      "nodeType": "anthology_section",
+      "ordinal": 1,
+      "label": "書中",
+      "locatorPath": "卷42/書中",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "wx-v42-ruanyu-red-cliffs",
+      "parentKey": "wx-v42-letters",
+      "nodeType": "embedded_letter",
+      "ordinal": 1,
+      "label": "阮瑀书所述赤壁疾疫、自焚退军与江陵撤守",
+      "locatorPath": "卷42/為曹公作書與孫權/赤壁江陵追述",
+      "layerRole": "embedded_work",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af011",
+        "type": "explicit_title_and_author",
+        "text": "阮瑀《為曹公作書與孫權》",
+        "certainty": "high"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "昔赤壁之役，遭離疫氣，燒舡自還，以避惡地，非周瑜水軍所能抑挫也。江陵之守，物盡穀殫，無所復據，徙民還師，又非瑜之所能敗也。荊土本非己分，我盡與君，冀取其餘，非相侵肌膚，有所割損也。"
+        }
+      ]
+    }
+  ]
+}

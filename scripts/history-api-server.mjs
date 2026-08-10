@@ -974,6 +974,70 @@ function parseRawJson(rawJson) {
   }
 }
 
+function personIdentityResolver(db) {
+  const hasIdentityLinks = Boolean(db.prepare(`
+    SELECT 1
+    FROM sqlite_master
+    WHERE type = 'table' AND name = 'person_entity_links'
+  `).get());
+  const linkRows = hasIdentityLinks
+    ? db.prepare(`
+        SELECT person_id, entity_id
+        FROM person_entity_links
+        ORDER BY entity_id, person_id
+      `).all()
+    : [];
+  const entityByPersonId = new Map(linkRows.map((row) => [row.person_id, row.entity_id]));
+  const personIdsByEntity = new Map();
+
+  for (const row of linkRows) {
+    const personIds = personIdsByEntity.get(row.entity_id) ?? [];
+    if (!personIds.includes(row.person_id)) personIds.push(row.person_id);
+    personIdsByEntity.set(row.entity_id, personIds);
+  }
+
+  const canonicalEntityIdForPersonId = (personId) => entityByPersonId.get(personId) ?? `person:${personId}`;
+  const canonicalPersonIdForEntityId = (entityId) => {
+    const personIds = personIdsByEntity.get(entityId) ?? [];
+    const entityPersonId = entityId.startsWith("person:") ? entityId.slice("person:".length) : null;
+    return (entityPersonId && personIds.includes(entityPersonId) ? entityPersonId : personIds[0])
+      ?? entityPersonId
+      ?? entityId;
+  };
+  const canonicalPersonId = (personId) => canonicalPersonIdForEntityId(canonicalEntityIdForPersonId(personId));
+  const memberPersonIds = (personId) => {
+    const entityId = canonicalEntityIdForPersonId(personId);
+    return [...(personIdsByEntity.get(entityId) ?? [personId])];
+  };
+  const memberEntityIds = (personId) => {
+    const canonicalEntityId = canonicalEntityIdForPersonId(personId);
+    return [...new Set([
+      canonicalEntityId,
+      ...memberPersonIds(personId).map((memberPersonId) => `person:${memberPersonId}`),
+    ])];
+  };
+
+  return {
+    canonicalEntityIdForPersonId,
+    canonicalPersonIdForEntityId,
+    canonicalPersonId,
+    memberPersonIds,
+    memberEntityIds,
+  };
+}
+
+function uniqueStructuredValues(values) {
+  const output = [];
+  const seen = new Set();
+  for (const value of values) {
+    const key = typeof value === "string" ? `string:${value}` : `json:${JSON.stringify(value)}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    output.push(value);
+  }
+  return output;
+}
+
 function evidenceSourceUrl(row) {
   const evidenceRaw = parseRawJson(row.evidence_raw_json);
   const mentionRaw = parseRawJson(row.mention_raw_json);
@@ -1302,7 +1366,9 @@ function evidenceRowsForSubject(db, subjectTable, subjectId, locale = "zh", limi
   }));
 }
 
-function evidenceRowsForPerson(db, entityId, locale = "zh") {
+function evidenceRowsForPerson(db, entityIds, locale = "zh") {
+  const normalizedEntityIds = Array.isArray(entityIds) ? entityIds : [entityIds];
+  const entityIdsJson = JSON.stringify(normalizedEntityIds);
   return db.prepare(`
     SELECT
       el.id,
@@ -1338,13 +1404,18 @@ function evidenceRowsForPerson(db, entityId, locale = "zh") {
     LEFT JOIN source_mention_i18n smi ON smi.mention_id = sm.id AND smi.locale = ?
     LEFT JOIN source_mention_i18n smizh ON smizh.mention_id = sm.id AND smizh.locale = 'zh'
     WHERE el.subject_id IN (
-      SELECT event_id FROM event_entities WHERE entity_id = ?
+      SELECT event_id
+      FROM event_entities
+      WHERE entity_id IN (SELECT value FROM json_each(?))
       UNION
-      SELECT id FROM entity_relations WHERE source_entity_id = ? OR target_entity_id = ?
+      SELECT id
+      FROM entity_relations
+      WHERE source_entity_id IN (SELECT value FROM json_each(?))
+         OR target_entity_id IN (SELECT value FROM json_each(?))
     )
     ORDER BY el.subject_table, el.subject_id, el.locator
     LIMIT 200
-  `).all(locale, locale, locale, entityId, entityId, entityId).map((row) => ({
+  `).all(locale, locale, locale, entityIdsJson, entityIdsJson, entityIdsJson).map((row) => ({
     id: row.id,
     subjectTable: row.subject_table,
     subjectId: row.subject_id,
@@ -2459,70 +2530,216 @@ function frontendDb(db) {
 }
 
 function frontendPeopleIndex(db, locale = "zh") {
+  const identities = personIdentityResolver(db);
+  const rolesByPersonId = new Map();
+  for (const row of db.prepare(`
+    SELECT person_id, role
+    FROM person_roles
+    ORDER BY person_id, sort_order, role
+  `).all()) {
+    const roles = rolesByPersonId.get(row.person_id) ?? [];
+    if (!roles.includes(row.role)) roles.push(row.role);
+    rolesByPersonId.set(row.person_id, roles);
+  }
+  const aliasesByPersonId = new Map();
+  for (const row of db.prepare(`
+    SELECT person_id, value
+    FROM person_aliases
+    ORDER BY person_id, value
+  `).all()) {
+    const aliases = aliasesByPersonId.get(row.person_id) ?? [];
+    if (!aliases.includes(row.value)) aliases.push(row.value);
+    aliasesByPersonId.set(row.person_id, aliases);
+  }
+  const sourceMentionIdsByPersonId = new Map();
+  for (const row of db.prepare(`
+    SELECT person_id, mention_id
+    FROM source_mention_people
+    ORDER BY person_id, mention_id
+  `).all()) {
+    const mentionIds = sourceMentionIdsByPersonId.get(row.person_id) ?? [];
+    if (!mentionIds.includes(row.mention_id)) mentionIds.push(row.mention_id);
+    sourceMentionIdsByPersonId.set(row.person_id, mentionIds);
+  }
+
+  const personRows = db.prepare(`
+    SELECT
+      p.raw_json,
+      p.id,
+      p.region,
+      p.birth_year,
+      p.death_year,
+      COALESCE(pi.name, pizh.name, p.name) AS name,
+      COALESCE(pi.courtesy_name, pizh.courtesy_name, p.courtesy_name) AS courtesy_name,
+      COALESCE(pi.life, pizh.life, p.life) AS life,
+      COALESCE(pi.primary_polity, pizh.primary_polity, p.primary_polity) AS primary_polity,
+      COALESCE(pi.summary, pizh.summary, p.summary) AS summary
+    FROM persons p
+    LEFT JOIN person_i18n pi ON pi.person_id = p.id AND pi.locale = ?
+    LEFT JOIN person_i18n pizh ON pizh.person_id = p.id AND pizh.locale = 'zh'
+    ORDER BY p.id
+  `).all(locale).map((row) => ({
+    ...row,
+    raw: parseRawJson(row.raw_json),
+    canonicalEntityId: identities.canonicalEntityIdForPersonId(row.id),
+  }));
+  const personGroups = new Map();
+  for (const row of personRows) {
+    const members = personGroups.get(row.canonicalEntityId) ?? [];
+    members.push(row);
+    personGroups.set(row.canonicalEntityId, members);
+  }
+  const persons = [...personGroups.entries()].map(([canonicalEntityId, members]) => {
+    const canonicalPersonId = identities.canonicalPersonIdForEntityId(canonicalEntityId);
+    const primary = members.find((member) => member.id === canonicalPersonId) ?? members[0];
+    const birthYear = primary.birth_year ?? members.find((member) => member.birth_year != null)?.birth_year ?? null;
+    const deathYear = primary.death_year ?? members.find((member) => member.death_year != null)?.death_year ?? null;
+    const life = primary.life
+      ?? members.find((member) => member.life)?.life
+      ?? (birthYear != null || deathYear != null ? `${birthYear ?? "?"}-${deathYear ?? "?"}` : null);
+    const roles = uniqueStructuredValues(members.flatMap((member) => [
+      ...(Array.isArray(member.raw.roles) ? member.raw.roles : []),
+      ...(rolesByPersonId.get(member.id) ?? []),
+    ]));
+    const aliases = uniqueStructuredValues(members.flatMap((member) => [
+      ...(Array.isArray(member.raw.aliases) ? member.raw.aliases : []),
+      ...(aliasesByPersonId.get(member.id) ?? []),
+      ...(member.name !== primary.name ? [member.name] : []),
+    ]));
+    const sourceRefs = uniqueStructuredValues(members.flatMap((member) => (
+      Array.isArray(member.raw.sourceRefs) ? member.raw.sourceRefs : []
+    )));
+    const sourceMentionCount = new Set(members.flatMap((member) => (
+      sourceMentionIdsByPersonId.get(member.id) ?? []
+    ))).size;
+
+    return {
+      ...primary.raw,
+      id: canonicalPersonId,
+      region: primary.region,
+      birthYear,
+      deathYear,
+      name: primary.name,
+      aliases,
+      courtesyName: primary.courtesy_name,
+      life,
+      primaryPolity: primary.primary_polity,
+      roles,
+      summary: primary.summary,
+      sourceRefs,
+      sourceMentionCount,
+    };
+  }).sort((left, right) => left.id.localeCompare(right.id));
+
+  const personLifeEventRows = db.prepare(`
+    SELECT
+      ple.id,
+      ple.person_id,
+      ple.year,
+      ple.end_year,
+      ple.type,
+      ple.confidence,
+      ple.approximate,
+      ple.raw_json,
+      COALESCE(plei.display_year, pleizh.display_year, ple.display_year) AS display_year,
+      COALESCE(plei.title, pleizh.title, ple.title) AS title,
+      COALESCE(plei.summary, pleizh.summary, ple.summary) AS summary,
+      (
+        SELECT json_group_array(event_id)
+        FROM person_life_event_historical_events linked
+        WHERE linked.life_event_id = ple.id
+      ) AS related_event_ids_json
+    FROM person_life_events ple
+    LEFT JOIN person_life_event_i18n plei ON plei.life_event_id = ple.id AND plei.locale = ?
+    LEFT JOIN person_life_event_i18n pleizh ON pleizh.life_event_id = ple.id AND pleizh.locale = 'zh'
+    ORDER BY COALESCE(ple.year, 9999), ple.id
+  `).all(locale).map((row) => {
+    const raw = parseRawJson(row.raw_json);
+    const canonicalPersonId = identities.canonicalPersonId(row.person_id);
+    return {
+      ...raw,
+      id: row.id,
+      personId: canonicalPersonId,
+      year: row.year,
+      endYear: row.end_year,
+      displayYear: row.display_year,
+      type: row.type,
+      title: row.title,
+      summary: row.summary,
+      confidence: row.confidence,
+      approximate: Boolean(row.approximate),
+      relatedEventIds: uniqueStructuredValues([
+        ...(Array.isArray(raw.relatedEventIds) ? raw.relatedEventIds : []),
+        ...JSON.parse(row.related_event_ids_json ?? "[]"),
+      ]),
+      sourceMentionIds: Array.isArray(raw.sourceMentionIds) ? raw.sourceMentionIds : [],
+      sourceRefs: Array.isArray(raw.sourceRefs) ? raw.sourceRefs : [],
+      identitySourcePersonId: row.person_id,
+    };
+  });
+
+  const mergedLifeEvents = [];
+  for (const lifeEvent of personLifeEventRows.sort((left, right) => (
+    Number(right.identitySourcePersonId === right.personId) - Number(left.identitySourcePersonId === left.personId)
+    || (left.year ?? 9999) - (right.year ?? 9999)
+    || left.id.localeCompare(right.id)
+  ))) {
+    const normalizedTitle = String(lifeEvent.title ?? "").replace(/[^\p{L}\p{N}]/gu, "");
+    const duplicate = mergedLifeEvents.find((candidate) => {
+      const candidateTitle = String(candidate.title ?? "").replace(/[^\p{L}\p{N}]/gu, "");
+      return candidate.personId === lifeEvent.personId
+        && candidate.year === lifeEvent.year
+        && candidate.endYear === lifeEvent.endYear
+        && normalizedTitle.length >= 4
+        && candidateTitle.length >= 4
+        && (normalizedTitle.includes(candidateTitle) || candidateTitle.includes(normalizedTitle));
+    });
+    if (!duplicate) {
+      mergedLifeEvents.push(lifeEvent);
+      continue;
+    }
+    duplicate.relatedEventIds = uniqueStructuredValues([...duplicate.relatedEventIds, ...lifeEvent.relatedEventIds]);
+    duplicate.sourceMentionIds = uniqueStructuredValues([...duplicate.sourceMentionIds, ...lifeEvent.sourceMentionIds]);
+    duplicate.sourceRefs = uniqueStructuredValues([...duplicate.sourceRefs, ...lifeEvent.sourceRefs]);
+  }
+
+  const personRelations = db.prepare(`
+    SELECT
+      pr.id,
+      pr.source_person_id,
+      pr.target_person_id,
+      pr.type,
+      pr.start_year,
+      pr.end_year,
+      pr.raw_json,
+      COALESCE(pri.summary, prizh.summary, pr.summary) AS summary
+    FROM person_relations pr
+    LEFT JOIN person_relation_i18n pri ON pri.relation_id = pr.id AND pri.locale = ?
+    LEFT JOIN person_relation_i18n prizh ON prizh.relation_id = pr.id AND prizh.locale = 'zh'
+    ORDER BY COALESCE(pr.start_year, 9999), pr.id
+  `).all(locale).map((row) => ({
+    ...parseRawJson(row.raw_json),
+    id: row.id,
+    sourcePersonId: identities.canonicalPersonId(row.source_person_id),
+    targetPersonId: identities.canonicalPersonId(row.target_person_id),
+    type: row.type,
+    startYear: row.start_year ?? undefined,
+    endYear: row.end_year ?? undefined,
+    summary: row.summary,
+  }));
+
   return {
     schemaVersion: 2,
     generatedFrom: "sqlite:core-person-tables",
     purpose: "frontend-people-index",
-    persons: db.prepare(`
-      SELECT
-        p.raw_json,
-        p.id,
-        p.region,
-        p.birth_year,
-        p.death_year,
-        COALESCE(pi.name, pizh.name, p.name) AS name,
-        COALESCE(pi.courtesy_name, pizh.courtesy_name, p.courtesy_name) AS courtesy_name,
-        COALESCE(pi.life, pizh.life, p.life) AS life,
-        COALESCE(pi.primary_polity, pizh.primary_polity, p.primary_polity) AS primary_polity,
-        COALESCE(pi.summary, pizh.summary, p.summary) AS summary
-      FROM persons p
-      LEFT JOIN person_i18n pi ON pi.person_id = p.id AND pi.locale = ?
-      LEFT JOIN person_i18n pizh ON pizh.person_id = p.id AND pizh.locale = 'zh'
-      ORDER BY p.id
-    `).all(locale).map((row) => ({
-      ...parseRawJson(row.raw_json),
-      id: row.id,
-      region: row.region,
-      birthYear: row.birth_year,
-      deathYear: row.death_year,
-      name: row.name,
-      courtesyName: row.courtesy_name,
-      life: row.life,
-      primaryPolity: row.primary_polity,
-      summary: row.summary
-    })),
-    personLifeEvents: db.prepare(`
-      SELECT
-        ple.raw_json,
-        COALESCE(plei.display_year, pleizh.display_year, ple.display_year) AS display_year,
-        COALESCE(plei.title, pleizh.title, ple.title) AS title,
-        COALESCE(plei.summary, pleizh.summary, ple.summary) AS summary
-      FROM person_life_events ple
-      LEFT JOIN person_life_event_i18n plei ON plei.life_event_id = ple.id AND plei.locale = ?
-      LEFT JOIN person_life_event_i18n pleizh ON pleizh.life_event_id = ple.id AND pleizh.locale = 'zh'
-      ORDER BY COALESCE(ple.year, 9999), ple.id
-    `).all(locale).map((row) => ({
-      ...parseRawJson(row.raw_json),
-      displayYear: row.display_year,
-      title: row.title,
-      summary: row.summary
-    })),
-    personRelations: db.prepare(`
-      SELECT
-        pr.raw_json,
-        COALESCE(pri.summary, prizh.summary, pr.summary) AS summary
-      FROM person_relations pr
-      LEFT JOIN person_relation_i18n pri ON pri.relation_id = pr.id AND pri.locale = ?
-      LEFT JOIN person_relation_i18n prizh ON prizh.relation_id = pr.id AND prizh.locale = 'zh'
-      ORDER BY COALESCE(pr.start_year, 9999), pr.id
-    `).all(locale).map((row) => ({
-      ...parseRawJson(row.raw_json),
-      summary: row.summary
-    }))
+    persons,
+    personLifeEvents: mergedLifeEvents.map(({ identitySourcePersonId: _identitySourcePersonId, ...lifeEvent }) => lifeEvent),
+    personRelations,
   };
 }
 
 function frontendSources(db, locale = "zh") {
+  const identities = personIdentityResolver(db);
   const mentions = db.prepare(`
     SELECT
       sm.id,
@@ -2554,12 +2771,12 @@ function frontendSources(db, locale = "zh") {
       year: row.year,
       text: row.text,
       translation: row.translation,
-      mentionedPersonIds: db.prepare(`
+      mentionedPersonIds: uniqueStructuredValues(db.prepare(`
         SELECT person_id
         FROM source_mention_people
         WHERE mention_id = ?
         ORDER BY sort_order
-      `).all(row.id).map((person) => person.person_id),
+      `).all(row.id).map((person) => identities.canonicalPersonId(person.person_id))),
       mentionedEventIds: db.prepare(`
         SELECT event_id
         FROM source_mention_events
@@ -2645,6 +2862,7 @@ function frontendSourceSummary(db, locale = "zh") {
 }
 
 function sourceMentionRows(db, rows) {
+  const identities = personIdentityResolver(db);
   return rows.map((row) => {
     const raw = parseRawJson(row.raw_json);
     return {
@@ -2657,12 +2875,12 @@ function sourceMentionRows(db, rows) {
       year: row.year,
       text: row.text,
       translation: row.translation,
-      mentionedPersonIds: db.prepare(`
+      mentionedPersonIds: uniqueStructuredValues(db.prepare(`
         SELECT person_id
         FROM source_mention_people
         WHERE mention_id = ?
         ORDER BY sort_order
-      `).all(row.id).map((person) => person.person_id),
+      `).all(row.id).map((person) => identities.canonicalPersonId(person.person_id))),
       mentionedEventIds: db.prepare(`
         SELECT event_id
         FROM source_mention_events
@@ -2691,8 +2909,11 @@ function sourceMentionRows(db, rows) {
 function frontendSourceMentionsForPerson(db, personId, url) {
   const locale = localeFromUrl(url);
   const limit = Math.min(120, Math.max(1, Number(url.searchParams.get("limit") ?? 40)));
+  const identities = personIdentityResolver(db);
+  const canonicalPersonId = identities.canonicalPersonId(personId);
+  const memberPersonIds = identities.memberPersonIds(personId);
   const rows = db.prepare(`
-    SELECT
+    SELECT DISTINCT
       sm.id,
       sm.source_id,
       COALESCE(smi.work_title, smizh.work_title, sm.work_title) AS work_title,
@@ -2710,17 +2931,17 @@ function frontendSourceMentionsForPerson(db, personId, url) {
     JOIN source_mention_people smp ON smp.mention_id = sm.id
     LEFT JOIN source_mention_i18n smi ON smi.mention_id = sm.id AND smi.locale = ?
     LEFT JOIN source_mention_i18n smizh ON smizh.mention_id = sm.id AND smizh.locale = 'zh'
-    WHERE smp.person_id = ?
+    WHERE smp.person_id IN (SELECT value FROM json_each(?))
     ORDER BY COALESCE(sm.year, 9999), sm.id
     LIMIT ?
-  `).all(locale, personId, limit);
+  `).all(locale, JSON.stringify(memberPersonIds), limit);
 
   return {
     schemaVersion: 1,
     generatedFrom: "sqlite:source-mentions-by-person",
     purpose: "frontend-source-mentions",
     subjectType: "person",
-    subjectId: personId,
+    subjectId: canonicalPersonId,
     sourceMentions: sourceMentionRows(db, rows)
   };
 }
@@ -2763,21 +2984,28 @@ function frontendSourceMentionsForEvent(db, eventId, url) {
 }
 
 function frontendPersonDetail(db, entityIdOrLegacyId, locale = "zh") {
-  const legacyPersonId = entityIdOrLegacyId.startsWith("person:")
+  const requestedPersonId = entityIdOrLegacyId.startsWith("person:")
     ? entityIdOrLegacyId.slice("person:".length)
     : entityIdOrLegacyId;
-  const entityId = `person:${legacyPersonId}`;
+  const identities = personIdentityResolver(db);
+  const legacyPersonId = identities.canonicalPersonId(requestedPersonId);
+  const entityId = identities.canonicalEntityIdForPersonId(requestedPersonId);
+  const memberEntityIds = identities.memberEntityIds(requestedPersonId);
+  const memberEntityIdsJson = JSON.stringify(memberEntityIds);
+  const canonicalizePersonReference = (personId) => identities.canonicalPersonId(
+    String(personId).startsWith("person:") ? String(personId).slice("person:".length) : String(personId),
+  );
 
   const exists = db.prepare("SELECT 1 FROM entities WHERE id = ? AND entity_type = 'person'").get(entityId);
   if (!exists) {
     return null;
   }
 
-  const personLifeEvents = db.prepare(`
+  const personLifeEventRows = db.prepare(`
     SELECT
       ev.id,
       substr(ev.id, 6) AS legacy_life_event_id,
-      substr(ee.entity_id, 8) AS person_id,
+      ee.entity_id AS source_entity_id,
       ev.time_start,
       ev.time_end,
       COALESCE(evi.display_time, evizh.display_time, ev.display_time) AS display_time,
@@ -2795,13 +3023,14 @@ function frontendPersonDetail(db, entityIdOrLegacyId, locale = "zh") {
     JOIN event_entities ee ON ee.event_id = ev.id AND ee.role = 'subject'
     LEFT JOIN event_i18n evi ON evi.event_id = ev.id AND evi.locale = ?
     LEFT JOIN event_i18n evizh ON evizh.event_id = ev.id AND evizh.locale = 'zh'
-    WHERE ev.id LIKE 'life:%' AND ee.entity_id = ?
+    WHERE ev.id LIKE 'life:%'
+      AND ee.entity_id IN (SELECT value FROM json_each(?))
     ORDER BY COALESCE(ev.time_start, 9999), ev.id
-  `).all(locale, entityId).map((row) => {
+  `).all(locale, memberEntityIdsJson).map((row) => {
     const raw = parseRawJson(row.raw_json);
     return {
       id: row.legacy_life_event_id,
-      personId: row.person_id,
+      personId: legacyPersonId,
       year: row.time_start,
       endYear: row.time_end,
       displayYear: row.display_time ?? raw.displayYear ?? "",
@@ -2812,9 +3041,35 @@ function frontendPersonDetail(db, entityIdOrLegacyId, locale = "zh") {
       sourceMentionIds: Array.isArray(raw.sourceMentionIds) ? raw.sourceMentionIds : [],
       sourceMentionCount: row.source_mention_count,
       confidence: row.confidence,
-      sourceRefs: Array.isArray(raw.sourceRefs) ? raw.sourceRefs : []
+      sourceRefs: Array.isArray(raw.sourceRefs) ? raw.sourceRefs : [],
+      identitySourceEntityId: row.source_entity_id,
     };
   });
+  const personLifeEvents = [];
+  for (const lifeEvent of personLifeEventRows.sort((left, right) => (
+    Number(right.identitySourceEntityId === entityId) - Number(left.identitySourceEntityId === entityId)
+    || (left.year ?? 9999) - (right.year ?? 9999)
+    || left.id.localeCompare(right.id)
+  ))) {
+    const normalizedTitle = String(lifeEvent.title ?? "").replace(/[^\p{L}\p{N}]/gu, "");
+    const duplicate = personLifeEvents.find((candidate) => {
+      const candidateTitle = String(candidate.title ?? "").replace(/[^\p{L}\p{N}]/gu, "");
+      return candidate.personId === lifeEvent.personId
+        && candidate.year === lifeEvent.year
+        && candidate.endYear === lifeEvent.endYear
+        && normalizedTitle.length >= 4
+        && candidateTitle.length >= 4
+        && (normalizedTitle.includes(candidateTitle) || candidateTitle.includes(normalizedTitle));
+    });
+    if (!duplicate) {
+      personLifeEvents.push(lifeEvent);
+      continue;
+    }
+    duplicate.relatedEventIds = uniqueStructuredValues([...duplicate.relatedEventIds, ...lifeEvent.relatedEventIds]);
+    duplicate.sourceMentionIds = uniqueStructuredValues([...duplicate.sourceMentionIds, ...lifeEvent.sourceMentionIds]);
+    duplicate.sourceRefs = uniqueStructuredValues([...duplicate.sourceRefs, ...lifeEvent.sourceRefs]);
+    duplicate.sourceMentionCount += lifeEvent.sourceMentionCount;
+  }
 
   const personRelations = db.prepare(`
     SELECT
@@ -2829,14 +3084,17 @@ function frontendPersonDetail(db, entityIdOrLegacyId, locale = "zh") {
     FROM entity_relations
     WHERE source_entity_id LIKE 'person:%'
       AND target_entity_id LIKE 'person:%'
-      AND (source_entity_id = ? OR target_entity_id = ?)
+      AND (
+        source_entity_id IN (SELECT value FROM json_each(?))
+        OR target_entity_id IN (SELECT value FROM json_each(?))
+      )
     ORDER BY COALESCE(time_start, 9999), id
-  `).all(entityId, entityId).map((row) => {
+  `).all(memberEntityIdsJson, memberEntityIdsJson).map((row) => {
     const raw = parseRawJson(row.raw_json);
     return {
       id: row.id,
-      sourcePersonId: row.source_person_id,
-      targetPersonId: row.target_person_id,
+      sourcePersonId: canonicalizePersonReference(row.source_person_id),
+      targetPersonId: canonicalizePersonReference(row.target_person_id),
       type: row.relation_type,
       startYear: row.time_start ?? undefined,
       endYear: row.time_end ?? undefined,
@@ -2847,7 +3105,7 @@ function frontendPersonDetail(db, entityIdOrLegacyId, locale = "zh") {
 
   const personEventPeople = db.prepare(`
     SELECT
-      substr(ee.entity_id, 8) AS person_id,
+      ee.entity_id AS person_entity_id,
       en.primary_label,
       ee.role
     FROM event_entities ee
@@ -2881,20 +3139,22 @@ function frontendPersonDetail(db, entityIdOrLegacyId, locale = "zh") {
     JOIN events ev ON ev.id = ee.event_id
     LEFT JOIN event_i18n evi ON evi.event_id = ev.id AND evi.locale = ?
     LEFT JOIN event_i18n evizh ON evizh.event_id = ev.id AND evizh.locale = 'zh'
-    WHERE ee.entity_id = ? AND ev.id NOT LIKE 'life:%'
+    WHERE ee.entity_id IN (SELECT value FROM json_each(?))
+      AND ev.id NOT LIKE 'life:%'
     ORDER BY COALESCE(ev.time_start, 9999), ev.id
-  `).all(locale, entityId).map((row) => {
+  `).all(locale, memberEntityIdsJson).map((row) => {
     const raw = parseRawJson(row.raw_json);
     const placeRows = personEventPlaces.all(row.id);
     const personRoles = {};
     const linkedPersonIds = [];
     const linkedPeople = [];
     for (const personRow of personEventPeople.all(row.id)) {
-      if (!linkedPersonIds.includes(personRow.person_id)) linkedPersonIds.push(personRow.person_id);
+      const canonicalLinkedPersonId = canonicalizePersonReference(personRow.person_entity_id);
+      if (!linkedPersonIds.includes(canonicalLinkedPersonId)) linkedPersonIds.push(canonicalLinkedPersonId);
       if (!linkedPeople.includes(personRow.primary_label)) linkedPeople.push(personRow.primary_label);
-      personRoles[personRow.person_id] ??= [];
-      if (!personRoles[personRow.person_id].includes(personRow.role)) {
-        personRoles[personRow.person_id].push(personRow.role);
+      personRoles[canonicalLinkedPersonId] ??= [];
+      if (!personRoles[canonicalLinkedPersonId].includes(personRow.role)) {
+        personRoles[canonicalLinkedPersonId].push(personRow.role);
       }
     }
 
@@ -2909,7 +3169,10 @@ function frontendPersonDetail(db, entityIdOrLegacyId, locale = "zh") {
       summary: row.localized_summary ?? raw.summary ?? row.summary ?? "",
       confidence: raw.confidence ?? row.confidence ?? "medium",
       people: [...new Set([...(raw.people ?? []), ...linkedPeople])],
-      personIds: [...new Set([...(raw.personIds ?? []), ...linkedPersonIds])],
+      personIds: [...new Set([
+        ...(raw.personIds ?? []).map(canonicalizePersonReference),
+        ...linkedPersonIds,
+      ])],
       personRoles,
       locationName: raw.locationName
         ?? placeRows.find((place) => place.role === "primary-location")?.primary_label
@@ -2941,14 +3204,18 @@ function frontendPersonDetail(db, entityIdOrLegacyId, locale = "zh") {
     generatedFrom: "sqlite:future-schema",
     purpose: "frontend-person-detail",
     personId: legacyPersonId,
-    personLifeEvents,
+    personLifeEvents: personLifeEvents.map(({ identitySourceEntityId: _identitySourceEntityId, ...lifeEvent }) => lifeEvent),
     personRelations,
     personEvents,
-    evidence: evidenceRowsForPerson(db, entityId, locale)
+    evidence: evidenceRowsForPerson(db, memberEntityIds, locale)
   };
 }
 
 function frontendEvents(db, locale = "zh") {
+  const identities = personIdentityResolver(db);
+  const canonicalizePersonReference = (personId) => identities.canonicalPersonId(
+    String(personId).startsWith("person:") ? String(personId).slice("person:".length) : String(personId),
+  );
   const featureEvents = db.prepare(`
     SELECT feature_id
     FROM map_feature_events
@@ -2957,7 +3224,7 @@ function frontendEvents(db, locale = "zh") {
   `);
   const eventPeople = db.prepare(`
     SELECT
-      substr(ee.entity_id, 8) AS person_id,
+      ee.entity_id AS person_entity_id,
       en.primary_label,
       ee.role
     FROM event_entities ee
@@ -2999,11 +3266,12 @@ function frontendEvents(db, locale = "zh") {
       const linkedPersonIds = [];
       const linkedPeople = [];
       for (const personRow of personRows) {
-        if (!linkedPersonIds.includes(personRow.person_id)) linkedPersonIds.push(personRow.person_id);
+        const canonicalPersonId = canonicalizePersonReference(personRow.person_entity_id);
+        if (!linkedPersonIds.includes(canonicalPersonId)) linkedPersonIds.push(canonicalPersonId);
         if (!linkedPeople.includes(personRow.primary_label)) linkedPeople.push(personRow.primary_label);
-        personRoles[personRow.person_id] ??= [];
-        if (!personRoles[personRow.person_id].includes(personRow.role)) {
-          personRoles[personRow.person_id].push(personRow.role);
+        personRoles[canonicalPersonId] ??= [];
+        if (!personRoles[canonicalPersonId].includes(personRow.role)) {
+          personRoles[canonicalPersonId].push(personRow.role);
         }
       }
 
@@ -3018,7 +3286,10 @@ function frontendEvents(db, locale = "zh") {
         summary: row.localized_summary ?? raw.summary ?? row.summary ?? "",
         confidence: raw.confidence ?? row.confidence ?? "medium",
         people: [...new Set([...(raw.people ?? []), ...linkedPeople])],
-        personIds: [...new Set([...(raw.personIds ?? []), ...linkedPersonIds])],
+        personIds: [...new Set([
+          ...(raw.personIds ?? []).map(canonicalizePersonReference),
+          ...linkedPersonIds,
+        ])],
         personRoles,
         locationName: raw.locationName
           ?? placeRows.find((place) => place.role === "primary-location")?.primary_label
@@ -3308,7 +3579,14 @@ function normalizeEntityId(id) {
 }
 
 function frontendEvidenceGraphPerson(db, rawEntityId, locale = "zh") {
-  const entityId = normalizeEntityId(rawEntityId);
+  const normalizedRequestedEntityId = normalizeEntityId(rawEntityId);
+  const requestedPersonId = normalizedRequestedEntityId.startsWith("person:")
+    ? normalizedRequestedEntityId.slice("person:".length)
+    : normalizedRequestedEntityId;
+  const identities = personIdentityResolver(db);
+  const entityId = identities.canonicalEntityIdForPersonId(requestedPersonId);
+  const memberEntityIds = identities.memberEntityIds(requestedPersonId);
+  const memberEntityIdsJson = JSON.stringify(memberEntityIds);
   const person = db.prepare(`
     SELECT
       e.id,
@@ -3330,7 +3608,7 @@ function frontendEvidenceGraphPerson(db, rawEntityId, locale = "zh") {
   }
 
   const claims = db.prepare(`
-    SELECT
+    SELECT DISTINCT
       c.id,
       c.claim_type,
       CASE WHEN ? = 'en' THEN COALESCE(NULLIF(c.statement_en, ''), c.statement_zh) ELSE c.statement_zh END AS statement,
@@ -3348,10 +3626,10 @@ function frontendEvidenceGraphPerson(db, rawEntityId, locale = "zh") {
     JOIN evidence_claim_subjects ecs
       ON ecs.claim_id = c.id
       AND ecs.subject_table = 'entities'
-      AND ecs.subject_id = ?
+      AND ecs.subject_id IN (SELECT value FROM json_each(?))
     ORDER BY COALESCE(c.time_start, 9999), c.id
     LIMIT 120
-  `).all(locale, entityId).map((claim) => ({
+  `).all(locale, memberEntityIdsJson).map((claim) => ({
     id: claim.id,
     claimType: claim.claim_type,
     statement: claim.statement,
@@ -3400,11 +3678,12 @@ function frontendEvidenceGraphPerson(db, rawEntityId, locale = "zh") {
     WHERE ecs.claim_id IN (
       SELECT claim_id
       FROM evidence_claim_subjects
-      WHERE subject_table = 'entities' AND subject_id = ?
+      WHERE subject_table = 'entities'
+        AND subject_id IN (SELECT value FROM json_each(?))
     )
     ORDER BY ecs.claim_id, ecs.source_role, ecs.locator
     LIMIT 240
-  `).all(locale, locale, locale, entityId).map((row) => ({
+  `).all(locale, locale, locale, memberEntityIdsJson).map((row) => ({
     claimId: row.claim_id,
     sourceId: row.source_id,
     sourceTitle: row.source_title,
@@ -3436,11 +3715,12 @@ function frontendEvidenceGraphPerson(db, rawEntityId, locale = "zh") {
     WHERE ecs.claim_id IN (
       SELECT claim_id
       FROM evidence_claim_subjects
-      WHERE subject_table = 'entities' AND subject_id = ?
+      WHERE subject_table = 'entities'
+        AND subject_id IN (SELECT value FROM json_each(?))
     )
     ORDER BY ecs.claim_id, ecs.sort_order, ecs.subject_table, ecs.subject_id
     LIMIT 300
-  `).all(locale, entityId).map((row) => ({
+  `).all(locale, memberEntityIdsJson).map((row) => ({
     claimId: row.claim_id,
     subjectTable: row.subject_table,
     subjectId: row.subject_id,
@@ -3469,10 +3749,10 @@ function frontendEvidenceGraphPerson(db, rawEntityId, locale = "zh") {
     LEFT JOIN event_i18n evi ON evi.event_id = ev.id AND evi.locale = ?
     LEFT JOIN event_i18n evizh ON evizh.event_id = ev.id AND evizh.locale = 'zh'
     WHERE claim_person.subject_table = 'entities'
-      AND claim_person.subject_id = ?
+      AND claim_person.subject_id IN (SELECT value FROM json_each(?))
     ORDER BY COALESCE(ev.time_start, 9999), ev.id
     LIMIT 120
-  `).all(locale, entityId);
+  `).all(locale, memberEntityIdsJson);
 
   return {
     schemaVersion: 1,
@@ -3485,7 +3765,7 @@ function frontendEvidenceGraphPerson(db, rawEntityId, locale = "zh") {
     summary: {
       claims: claims.length,
       sources: sources.length,
-      linkedSubjects: subjects.filter((subject) => subject.subjectId !== entityId).length,
+      linkedSubjects: subjects.filter((subject) => !memberEntityIds.includes(subject.subjectId)).length,
       linkedEvents: events.length,
       reviewedClaims: claims.filter((claim) => claim.reviewStatus === "reviewed").length
     }

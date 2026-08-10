@@ -5,6 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import migrateIdentityLinks from "../db/migrations/029-stable-identity-links.mjs";
+import migratePersonIdentityMerges from "../db/migrations/030-person-identity-merges.mjs";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const checkMode = process.argv.includes("--check");
@@ -160,6 +161,24 @@ function auditDatabase(db) {
     throw new Error(`Identity links contain wrong target types: ${JSON.stringify(wrongTargetTypes.slice(0, sampleLimit))}`);
   }
 
+  const curatedIdentityMerges = [
+    { label: "Zhang Jiao", personIds: ["zhang-jiao", "eh-zhang-jue"], entityId: "person:zhang-jiao" },
+    { label: "Shi Hu", personIds: ["shi-hu", "person:shi-hu"], entityId: "person:shi-hu" },
+    { label: "Emperor Ling of Han", personIds: ["han-lingdi", "eh-liu-hong"], entityId: "person:han-lingdi" },
+  ];
+  for (const merge of curatedIdentityMerges) {
+    const placeholders = merge.personIds.map(() => "?").join(", ");
+    const links = db.prepare(`
+      SELECT person_id, entity_id, link_method
+      FROM person_entity_links
+      WHERE person_id IN (${placeholders})
+      ORDER BY person_id
+    `).all(...merge.personIds);
+    if (links.length !== merge.personIds.length || links.some((link) => link.entity_id !== merge.entityId)) {
+      throw new Error(`Curated ${merge.label} identity merge is missing: ${JSON.stringify(links)}`);
+    }
+  }
+
   const coverage = db.prepare(`
     SELECT object_type, total_count, mapped_count, unmapped_count, coverage_percent
     FROM identity_mapping_coverage
@@ -208,6 +227,13 @@ function auditDatabase(db) {
     placeReferenceSources,
     missingSamples,
     runtimeOnlyPeople,
+    mergedPersonIdentities: db.prepare(`
+      SELECT entity_id, COUNT(*) AS legacy_person_count
+      FROM person_entity_links
+      GROUP BY entity_id
+      HAVING COUNT(*) > 1
+      ORDER BY legacy_person_count DESC, entity_id
+    `).all(),
     linkCounts: linkCounts(db),
     foreignKeyFailures: foreignKeyFailures.length,
   };
@@ -230,8 +256,10 @@ async function main() {
     let firstPassCounts = null;
     if (checkMode) {
       migrateIdentityLinks(db, { postRuntimeSeeds: true });
+      migratePersonIdentityMerges(db, { postRuntimeSeeds: true });
       firstPassCounts = linkCounts(db);
       migrateIdentityLinks(db, { postRuntimeSeeds: true });
+      migratePersonIdentityMerges(db, { postRuntimeSeeds: true });
       const secondPassCounts = linkCounts(db);
       if (JSON.stringify(firstPassCounts) !== JSON.stringify(secondPassCounts)) {
         throw new Error(

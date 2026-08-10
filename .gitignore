@@ -15,6 +15,7 @@ data/import-drafts/
 demos/
 data/backups/
 .codex-backups/
+tmp/
 public/
 scripts/export-static-api-snapshot.mjs
 

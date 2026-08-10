@@ -1,0 +1,129 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "songshu-prefecture-commandery-treatise-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true,
+      "documentScope": "volume-37-jiangxia-puqi-wuchang-name-layers"
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af024",
+    "title": "宋書",
+    "workKind": "official_history",
+    "language": "lzh",
+    "dateLabel": "南齊永明年間",
+    "dateStart": 487,
+    "dateEnd": 488,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af123",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af024",
+    "witnessType": "received_official_history_with_digital_reference",
+    "editionStatement": "維基文庫《宋書》卷三十七《州郡志三》公开数字文本；江夏、巴陵、武昌郡沿革段落 Phase 2 人工转写小样本",
+    "publisher": null,
+    "publicationDate": null,
+    "shelfmark": null,
+    "catalogUri": "https://zh.wikisource.org/zh/%E5%AE%8B%E6%9B%B8/%E5%8D%B737",
+    "fidelityStatus": "pilot_pending_edition_collation",
+    "note": "数字页面标为未完全校对；本见证只用于保存沙羡、沙阳、蒲圻、武昌名称的时代层次，必须再对版本影像。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://zh.wikisource.org/zh/%E5%AE%8B%E6%9B%B8/%E5%8D%B737",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "保存蒲圻县始立与历次改属、沙羡与沙阳沿革、鄂改武昌的正史地理志记录，避免把后世县名直接倒投到 208 年。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af223",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；数字文本与转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "版本影像与数字转写许可复核前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "songshu-v37",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 37,
+      "label": "卷三十七·州郡志三",
+      "locatorPath": "卷37/州郡志三",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "songshu-v37-yingzhou",
+      "parentKey": "songshu-v37",
+      "nodeType": "prefecture_section",
+      "ordinal": 1,
+      "label": "郢州",
+      "locatorPath": "卷37/州郡志三/郢州",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "songshu-v37-jiangxia-name-layers",
+      "parentKey": "songshu-v37-yingzhou",
+      "nodeType": "commandery_entry",
+      "ordinal": 1,
+      "label": "江夏郡的沙羡、沙阳与蒲圻沿革",
+      "locatorPath": "卷37/州郡志三/郢州/江夏太守",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "江夏太守，漢高帝立，本屬荊州。永初郡國及何志並治安陸，此後治夏口。又有安陸、曲陵，曲後別郡。領縣七，戶五千七十二，口二萬三千八百一十。汝南侯相，本沙羡土，晉末汝南郡民流寓夏口，因立為汝南縣。沙羡令，漢舊縣，吳省。晉武太康元年復立，治夏口。孝武太元三年，省併沙陽，後以其地為汝南實土。沙陽男相，二漢舊縣，本名沙羡，屬武昌，晉武帝太康元年更名，又立沙羡，而沙陽徙今所治。文帝元嘉十六年度巴陵，孝武孝建元年度江夏。蒲圻男相，晉武帝太康元年立。本屬長沙，文帝元嘉十六年度巴陵，孝武孝建元年度江夏。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "songshu-v37-baling-puqi",
+      "parentKey": "songshu-v37-yingzhou",
+      "nodeType": "commandery_entry",
+      "ordinal": 2,
+      "label": "巴陵郡所见蒲圻改属",
+      "locatorPath": "卷37/州郡志三/郢州/巴陵太守",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "巴陵太守，文帝元嘉十六年，分長沙之巴陵、蒲圻、下雋，江夏之沙陽四縣立，屬湘州；孝武孝建元年，割南郡之監利、州陵度江夏，屬郢州。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "songshu-v37-wuchang",
+      "parentKey": "songshu-v37-yingzhou",
+      "nodeType": "commandery_entry",
+      "ordinal": 3,
+      "label": "武昌郡与鄂县名称沿革",
+      "locatorPath": "卷37/州郡志三/郢州/武昌太守",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "武昌太守，晉起居注，太康元年，改江夏為武昌郡。領縣三，戶二千五百四十六，口一萬一千四百一十一。武昌侯相，魏文帝黃初二年，孫權改鄂為武昌。陽新侯相，吳立。鄂令，漢舊縣，屬江夏。吳改鄂為武昌，晉武帝太康元年，復立鄂縣，而武昌如故。"
+        }
+      ]
+    }
+  ]
+}

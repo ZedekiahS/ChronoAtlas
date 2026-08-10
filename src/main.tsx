@@ -34,6 +34,7 @@ import {
 import { CaoFamilyAtlas } from "./CaoFamilyAtlas";
 import ContentGovernanceWorkbench from "./ContentGovernanceWorkbench";
 import "./styles.css";
+import "./archive-context-pages.css";
 
 type Region = "china" | "rome" | "sasanian-persia" | "india";
 
@@ -5834,7 +5835,7 @@ function App() {
   const [eventCompareQuery, setEventCompareQuery] = useState("");
   const [eventCompareStartYear, setEventCompareStartYear] = useState(year - 5);
   const [eventCompareEndYear, setEventCompareEndYear] = useState(year + 5);
-  const [eventCompareScopeLocked, setEventCompareScopeLocked] = useState(true);
+  const [eventCompareScopeLocked, setEventCompareScopeLocked] = useState(false);
   const [selectedCompareEventIds, setSelectedCompareEventIds] = useState<string[]>([]);
   const [events, setEvents] = useState<HistoricalEvent[]>([]);
   const [eventsStatus, setEventsStatus] = useState<"loading" | "ready" | "error">("loading");
@@ -6420,7 +6421,12 @@ function App() {
     0,
   );
   const selectedPersonCurrentYearLifeEvents = selectedPersonLifeEvents.filter((lifeEvent) => isLifeEventInYear(lifeEvent, year));
-  const selectedPersonCurrentYearEvents = selectedPersonEvents.filter((event) => isPinnedToYear(event, year) || isNearYear(event, year));
+  const selectedPersonCurrentYearLifeEventIds = new Set(
+    selectedPersonCurrentYearLifeEvents.flatMap((lifeEvent) => lifeEvent.relatedEventIds),
+  );
+  const selectedPersonCurrentYearEvents = selectedPersonEvents.filter(
+    (event) => (isPinnedToYear(event, year) || isNearYear(event, year)) && !selectedPersonCurrentYearLifeEventIds.has(event.id),
+  );
   const relationshipGraphNodes = selectedPerson
     ? selectedPersonRelations.slice(0, 6).map((relation, index, relations) => {
         const isSource = relation.sourcePersonId === selectedPerson.id;
@@ -8841,7 +8847,7 @@ function App() {
   function openEventComparison() {
     setPage("compare");
     setQuery("");
-    setEventCompareScopeLocked(true);
+    setEventCompareScopeLocked(false);
     setEventCompareStartYear(yearMin);
     setEventCompareEndYear(yearMax);
     setSummaryRegion(null);
@@ -9438,6 +9444,86 @@ function App() {
   const historicalTheme = page === "home"
     ? getHistoricalTheme(activeOverviewTimelineEra, activeOverviewTimeline?.id ?? overviewTimelineId, activeOverviewTimelineEra?.color ?? activeOverviewPeriod.color)
     : getHistoricalTheme(detailThemeEra, detailPeriodContext.timelineId, currentDetailEra?.color ?? detailPeriodContext.color);
+  const evidenceGraphHistoricalTheme = (() => {
+    if (page !== "evidence-graph") {
+      return historicalTheme;
+    }
+
+    if (evidenceGraphTarget.type === "person") {
+      const targetPerson = personIndexItems.find((person) => person.id === evidenceGraphTarget.id);
+      if (targetPerson) {
+        return getEntityHistoricalTheme({
+          fallback: historicalTheme,
+          region: targetPerson.region,
+          text: [
+            targetPerson.id,
+            targetPerson.name,
+            ...(targetPerson.aliases ?? []),
+            targetPerson.primaryPolity,
+            ...targetPerson.roles,
+            targetPerson.summary,
+          ].join(" "),
+          year: getPersonDetailEntryYear(targetPerson),
+        });
+      }
+
+      const graphPerson = evidenceGraphData?.person?.id === evidenceGraphTarget.id
+        ? evidenceGraphData.person
+        : null;
+      const graphPersonRegion = graphPerson?.region_id;
+      if (
+        graphPerson &&
+        (graphPersonRegion === "china" || graphPersonRegion === "rome" || graphPersonRegion === "sasanian-persia" || graphPersonRegion === "india")
+      ) {
+        return getEntityHistoricalTheme({
+          fallback: historicalTheme,
+          region: graphPersonRegion,
+          text: [graphPerson.id, graphPerson.label, graphPerson.summary].filter(Boolean).join(" "),
+          year: graphPerson.time_start ?? year,
+        });
+      }
+    }
+
+    if (evidenceGraphTarget.type === "event") {
+      const targetEvent = events.find((event) => event.id === evidenceGraphTarget.id);
+      if (targetEvent) {
+        return getEntityHistoricalTheme({
+          fallback: historicalTheme,
+          region: targetEvent.region,
+          text: [
+            targetEvent.id,
+            targetEvent.title,
+            targetEvent.titleZh,
+            targetEvent.titleEn,
+            targetEvent.eventLabel,
+            targetEvent.summary,
+            ...targetEvent.polities,
+            ...targetEvent.tags,
+            ...targetEvent.people,
+          ].filter(Boolean).join(" "),
+          year: targetEvent.startYear,
+        });
+      }
+
+      const graphEvent = evidenceGraphData?.event?.id === evidenceGraphTarget.id
+        ? evidenceGraphData.event
+        : null;
+      const graphEventRegion = graphEvent?.region_id;
+      if (
+        graphEvent &&
+        (graphEventRegion === "china" || graphEventRegion === "rome" || graphEventRegion === "sasanian-persia" || graphEventRegion === "india")
+      ) {
+        return getEntityHistoricalTheme({
+          fallback: historicalTheme,
+          region: graphEventRegion,
+          text: [graphEvent.id, graphEvent.title, graphEvent.summary].filter(Boolean).join(" "),
+          year: graphEvent.time_start ?? year,
+        });
+      }
+    }
+
+    return historicalTheme;
+  })();
   const entityHistoricalTheme =
     page === "person-detail" && selectedPersonIndexItem
       ? getEntityHistoricalTheme({
@@ -9470,11 +9556,52 @@ function App() {
             ].filter(Boolean).join(" "),
             year: selectedEvent.startYear,
           })
-        : historicalTheme;
+        : page === "place-detail"
+          ? getEntityHistoricalTheme({
+              fallback: historicalTheme,
+              region: "china",
+              text: [
+                selectedPlaceBlock?.id,
+                selectedPlaceBlock?.name,
+                selectedPlaceBlock?.parent,
+                selectedPlaceControl?.controller,
+              ].filter(Boolean).join(" "),
+              year,
+            })
+          : page === "evidence" && evidenceRegionFilter !== "all"
+            ? getEntityHistoricalTheme({
+                fallback: historicalTheme,
+                region: evidenceRegionFilter,
+                text: regions.find((region) => region.id === evidenceRegionFilter)?.label ?? evidenceRegionFilter,
+                year,
+              })
+        : page === "evidence-graph"
+          ? evidenceGraphHistoricalTheme
+          : historicalTheme;
   const shellHistoricalTheme =
-    (page === "home" || page === "governance") && presentationMode === "collector"
+    (page === "home" || page === "world" || page === "governance" || page === "compare" || page === "coverage") && presentationMode === "collector"
       ? worldUnityTheme
       : entityHistoricalTheme;
+  const chinaArchiveEra = year < 190
+    ? "late-han"
+    : year < 220
+      ? "warlords"
+      : year < 263
+        ? "three-kingdoms"
+        : "jin-unification";
+  const chinaArchiveEraLabel = locale === "zh"
+    ? ({
+        "late-han": "汉末衰世",
+        warlords: "群雄割据",
+        "three-kingdoms": "三国鼎立",
+        "jin-unification": "三家归晋",
+      } as const)[chinaArchiveEra]
+    : ({
+        "late-han": "Late Han",
+        warlords: "Warlord Era",
+        "three-kingdoms": "Three Kingdoms",
+        "jin-unification": "Jin Unification",
+      } as const)[chinaArchiveEra];
   const collectorPalette = getCollectorPalette(shellHistoricalTheme);
   const previousDetailEra = currentDetailEraIndex > 0 ? detailTimelineEras[currentDetailEraIndex - 1] : null;
   const nextDetailEra =
@@ -9645,12 +9772,17 @@ function App() {
     </section>
   );
   const showTopbarSearch = !(["home", "learning", "people", "person-detail", "places", "place-detail", "evidence", "source-library", "event-detail", "coverage", "governance", "map-debug", "rag-eval", "ai-debug", "ai-history"] as Page[]).includes(page);
+  const isCaoFamilyAtlas = page === "person-detail" && selectedPerson?.id === "cao-cao";
+  const usesArchiveContextShell =
+    (["world", "evidence", "source-library", "events", "event-detail", "compare", "coverage", "places", "place-detail", "evidence-graph"] as Page[]).includes(page)
+    || (page === "person-detail" && !isCaoFamilyAtlas);
 
   return (
     <main
-      className={`app-shell ${page === "home" || page === "learning" || page === "age" || page === "evidence" || page === "source-library" || page === "events" || page === "event-detail" || page === "person-detail" || page === "places" || page === "place-detail" || page === "evidence-graph" || page === "compare" || page === "coverage" || page === "governance" || page === "map-debug" || page === "rag-eval" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""} ${page === "event-detail" || page === "person-detail" ? "entity-detail-shell" : ""} ${page === "person-detail" && selectedPerson?.id === "cao-cao" ? "family-atlas-shell" : ""}`}
+      className={`app-shell ${page === "home" || page === "learning" || page === "age" || page === "evidence" || page === "source-library" || page === "events" || page === "event-detail" || page === "person-detail" || page === "places" || page === "place-detail" || page === "evidence-graph" || page === "compare" || page === "coverage" || page === "governance" || page === "map-debug" || page === "rag-eval" || page === "ai-debug" || page === "ai-history" ? "wide-shell" : ""} ${page === "event-detail" || page === "person-detail" ? "entity-detail-shell" : ""} ${usesArchiveContextShell ? "archive-context-shell" : ""} ${page === "compare" ? "comparison-arena-shell" : ""} ${isCaoFamilyAtlas ? "family-atlas-shell" : ""}`}
       data-history-theme={shellHistoricalTheme.id}
       data-collector-theme={shellHistoricalTheme.id}
+      data-archive-era={chinaArchiveEra}
       data-page={page}
       data-presentation-mode={presentationMode}
       style={{
@@ -9683,6 +9815,9 @@ function App() {
         <div className="global-topbar-controls">
           <span className="theme-scope-label">
             {locale === "zh" ? shellHistoricalTheme.labelZh : shellHistoricalTheme.labelEn}
+            {presentationMode === "collector" && shellHistoricalTheme.id === "han-cinnabar"
+              ? ` · ${chinaArchiveEraLabel}`
+              : ""}
           </span>
           <div
             className="presentation-mode-control"
@@ -11572,11 +11707,23 @@ function App() {
               </div>
               <div className="evidence-quick-searches" aria-label={locale === "zh" ? "图谱事件切换" : "Evidence graph event switcher"}>
                 <button type="button" onClick={() => openEvidenceGraph(selectedEvent)}>
-                  {locale === "zh" ? "当前事件" : "Current event"}: {getEventDisplayTitle(selectedEvent, locale).primary}
+                  {locale === "zh"
+                    ? evidenceGraphTarget.type === "event" && evidenceGraphTarget.id === selectedEvent.id
+                      ? "当前事件"
+                      : "切换至事件"
+                    : evidenceGraphTarget.type === "event" && evidenceGraphTarget.id === selectedEvent.id
+                      ? "Current event"
+                      : "Switch to event"}: {getEventDisplayTitle(selectedEvent, locale).primary}
                 </button>
                 {selectedPersonIndexItem && (
                   <button type="button" onClick={() => openPersonEvidenceGraph(selectedPersonIndexItem.id)}>
-                    {locale === "zh" ? "当前人物" : "Current person"}: {selectedPersonIndexItem.name}
+                    {locale === "zh"
+                      ? evidenceGraphTarget.type === "person" && evidenceGraphTarget.id === selectedPersonIndexItem.id
+                        ? "当前人物"
+                        : "切换至人物"
+                      : evidenceGraphTarget.type === "person" && evidenceGraphTarget.id === selectedPersonIndexItem.id
+                        ? "Current person"
+                        : "Switch to person"}: {selectedPersonIndexItem.name}
                   </button>
                 )}
                 {events
@@ -11990,6 +12137,11 @@ function App() {
                       selectDetailPeriod(Number.isInteger(index) ? detailTimelineEras[index] ?? null : null);
                     }}
                   >
+                    {currentDetailEraIndex < 0 && (
+                      <option value="" disabled>
+                        {detailPeriodContext.title} · {formatHistoricalYear(yearMin)}-{formatHistoricalYear(yearMax)}
+                      </option>
+                    )}
                     {detailTimelineEras.map((era, index) => (
                       <option key={era.id} value={index}>
                         {era.title} · {formatHistoricalYear(era.startYear)}-{formatHistoricalYear(era.endYear)}
@@ -13316,7 +13468,12 @@ function App() {
             </div>
           </section>
         ) : page === "compare" ? (
-          <section className="event-compare-stage" aria-label="事件对比">
+          <section
+            className="event-compare-stage"
+            aria-label="事件对比"
+            data-compare-type={eventCompareType}
+            data-compare-count={displayedCompareEvents.length}
+          >
             <div className="event-compare-summary">
               <div>
                 <p className="kicker">事件对比</p>
@@ -13441,7 +13598,11 @@ function App() {
                       const isSelected = selectedCompareEventIds.includes(event.id);
                       return (
                         <article className={`event-compare-picker-item ${isSelected ? "selected" : ""}`} key={event.id}>
-                          <button type="button" onClick={() => addCompareEvent(event)}>
+                          <button
+                            type="button"
+                            aria-pressed={isSelected}
+                            onClick={() => addCompareEvent(event)}
+                          >
                             <span>{event.startYear} · {region?.label ?? event.region}</span>
                             <strong>{getEventDisplayTitle(event, locale).primary}</strong>
                             <small>{isSelected ? "再次点击取消选择" : "点击加入对比"} · {getComparableEventKind(event)} · {event.locationName ?? event.places?.[0] ?? "地点未标注"}</small>
@@ -13461,44 +13622,64 @@ function App() {
                 </div>
               </aside>
 
-              <div className="event-compare-board">
+              <div className="event-compare-board event-compare-arena" data-count={displayedCompareEvents.length}>
                 {displayedCompareEvents.length ? (
-                  displayedCompareEvents.map((event) => {
-                    const region = regions.find((item) => item.id === event.region);
-                    const fields = getEventCompareFields(event, eventCompareType);
-                    const isManual = selectedCompareEventIds.includes(event.id);
-                    return (
-                      <article className="event-compare-detail-card" key={event.id} style={{ "--accent": region?.accent ?? "#b94f32" } as React.CSSProperties}>
-                        <header>
-                          <div>
-                            <span>{region?.label ?? event.region} · {formatYearRange(event)}</span>
-                            <h3>{getEventDisplayTitle(event, locale).primary}</h3>
-                          </div>
-                          {isManual && (
-                            <button type="button" onClick={() => removeCompareEvent(event.id)} aria-label={`移除对比：${getEventDisplayTitle(event, locale).primary}`}>
-                              <X size={16} aria-hidden="true" />
-                            </button>
-                          )}
-                        </header>
-                        <div className="event-compare-field-grid">
-                          {fields.map((field) => (
-                            <div className={field.label === "结果" || field.label === "影响" || field.label === "后果" || field.label === "政策/行动" || field.label === "交涉内容" ? "wide" : ""} key={`${event.id}-${field.label}`}>
-                              <span>{field.label}</span>
-                              <p>{field.value}</p>
+                  <>
+                    <div className="event-compare-axis" aria-hidden="true">
+                      <small>{eventCompareTypes.find((type) => type.id === eventCompareType)?.label}</small>
+                      <strong>
+                        {displayedCompareEvents.length === 1
+                          ? "待选对手"
+                          : displayedCompareEvents.length === 2
+                            ? "两方对观"
+                            : "列国并观"}
+                      </strong>
+                      <span>{compareStartYear}-{compareEndYear}</span>
+                    </div>
+                    {displayedCompareEvents.map((event, index) => {
+                      const region = regions.find((item) => item.id === event.region);
+                      const fields = getEventCompareFields(event, eventCompareType);
+                      const isManual = selectedCompareEventIds.includes(event.id);
+                      const compareSlot = index === 0 ? "left" : index === 1 ? "right" : "third";
+                      return (
+                        <article
+                          className="event-compare-detail-card"
+                          data-region={event.region}
+                          data-slot={compareSlot}
+                          key={event.id}
+                          style={{ "--accent": region?.accent ?? "#b94f32" } as React.CSSProperties}
+                        >
+                          <header>
+                            <div>
+                              <span>{region?.label ?? event.region} · {formatYearRange(event)}</span>
+                              <h3>{getEventDisplayTitle(event, locale).primary}</h3>
                             </div>
-                          ))}
-                        </div>
-                        <div className="event-compare-actions">
-                          <button className="event-card-link" type="button" onClick={() => openEventEvidence(event)}>
-                            史料
-                          </button>
-                          <button className="event-card-link" type="button" onClick={() => selectHistoricalEvent(event)}>
-                            打开事件
-                          </button>
-                        </div>
-                      </article>
-                    );
-                  })
+                            {isManual && (
+                              <button type="button" onClick={() => removeCompareEvent(event.id)} aria-label={`移除对比：${getEventDisplayTitle(event, locale).primary}`}>
+                                <X size={16} aria-hidden="true" />
+                              </button>
+                            )}
+                          </header>
+                          <div className="event-compare-field-grid">
+                            {fields.map((field) => (
+                              <div className={field.label === "结果" || field.label === "影响" || field.label === "后果" || field.label === "政策/行动" || field.label === "交涉内容" ? "wide" : ""} key={`${event.id}-${field.label}`}>
+                                <span>{field.label}</span>
+                                <p>{field.value}</p>
+                              </div>
+                            ))}
+                          </div>
+                          <div className="event-compare-actions">
+                            <button className="event-card-link" type="button" onClick={() => openEventEvidence(event)}>
+                              史料
+                            </button>
+                            <button className="event-card-link" type="button" onClick={() => selectHistoricalEvent(event)}>
+                              打开事件
+                            </button>
+                          </div>
+                        </article>
+                      );
+                    })}
+                  </>
                 ) : (
                   <div className="event-compare-empty">
                     <strong>选择左侧事件开始对比</strong>

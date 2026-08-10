@@ -12,6 +12,66 @@ const coreOutputPath = path.join(seedsDir, "core-data.sql");
 const runtimeOutputPath = path.join(seedsDir, "runtime-data.sql");
 const maxSeedPartBytes = 45 * 1024 * 1024;
 
+const evidencePoolRuntimeTableOrder = [
+  "source_works",
+  "source_work_contributors",
+  "source_work_relations",
+  "source_witnesses",
+  "source_witness_relations",
+  "rights_statements",
+  "source_assets",
+  "asset_rights",
+  "ingest_runs",
+  "ingest_run_assets",
+  "document_nodes",
+  "text_layers",
+  "text_revisions",
+  "text_anchors",
+  "text_alignments",
+  "anchor_attributions",
+  "ingest_run_text_revisions",
+  "witness_active_ingests",
+  "calendar_systems",
+  "time_spans",
+  "extraction_runs",
+  "review_decisions",
+  "assertion_candidates",
+  "assertion_candidate_anchors",
+  "source_assertions",
+  "assertion_anchors",
+  "assertion_entities",
+  "assertion_times",
+  "assertion_places",
+  "assertion_relations",
+  "transmission_groups",
+  "claim_candidates",
+  "claim_candidate_assertions",
+  "claims",
+  "claim_assertions",
+  "claim_entities",
+  "claim_times",
+  "claim_places",
+  "claim_relations",
+  "transmission_group_candidates",
+  "transmission_group_candidate_members",
+  "claim_candidate_source_candidates",
+  "event_collection_candidates",
+  "event_candidates_v2",
+  "event_candidate_claim_candidates",
+  "event_records_v2",
+  "event_revisions_v2",
+  "event_revision_claims_v2",
+  "event_collection_records_v2",
+  "event_collection_revisions_v2",
+  "event_collection_revision_members_v2",
+  "content_releases_v2",
+  "content_release_items_v2",
+  "evidence_packs",
+  "evidence_pack_revisions",
+  "evidence_pack_documents",
+  "evidence_pack_active_revisions",
+];
+
 const preferredTableOrder = [
   "corpora",
   "sources",
@@ -96,6 +156,7 @@ const preferredTableOrder = [
   "rag_eval_results",
   "source_passage_entities",
   "search_documents",
+  ...evidencePoolRuntimeTableOrder,
 ];
 
 const coreTables = new Set([
@@ -185,6 +246,7 @@ const runtimeTables = new Set([
   "rag_eval_results",
   "source_passage_entities",
   "search_documents",
+  ...evidencePoolRuntimeTableOrder,
 ]);
 
 const baseSchemaColumns = new Map([
@@ -223,6 +285,33 @@ const baseSchemaColumns = new Map([
       "raw_json",
     ],
   ],
+]);
+
+function quoteSeedIdentifier(value) {
+  return `"${String(value).replaceAll('"', '""')}"`;
+}
+
+const runtimeTableSelectSql = new Map([
+  ["document_nodes", (tableName, tableInfo) => {
+    const columns = tableInfo.map((column) => quoteSeedIdentifier(column.name)).join(", ");
+    const table = quoteSeedIdentifier(tableName);
+    return `
+      WITH RECURSIVE node_hierarchy AS (
+        SELECT node.*, 0 AS _seed_depth,
+          printf('%010d:%s', node.ordinal, node.id) AS _seed_path
+        FROM ${table} node
+        WHERE node.parent_id IS NULL
+        UNION ALL
+        SELECT child.*, parent._seed_depth + 1,
+          parent._seed_path || '/' || printf('%010d:%s', child.ordinal, child.id)
+        FROM ${table} child
+        JOIN node_hierarchy parent ON parent.id = child.parent_id
+      )
+      SELECT ${columns}
+      FROM node_hierarchy
+      ORDER BY witness_id COLLATE BINARY ASC, _seed_path COLLATE BINARY ASC
+    `;
+  }],
 ]);
 
 async function removeSeedParts(outputPath) {
@@ -306,6 +395,7 @@ try {
     label: "Runtime/map and AI/RAG tables loaded after migrations",
     insertOrReplace: true,
     baseSchemaColumns,
+    tableSelectSql: runtimeTableSelectSql,
   });
 
   await mkdir(seedsDir, { recursive: true });

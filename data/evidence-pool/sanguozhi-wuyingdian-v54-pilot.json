@@ -1,0 +1,206 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "sanguozhi-commentary-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+    "title": "三國志",
+    "workKind": "official_history",
+    "language": "lzh",
+    "dateLabel": "西晉",
+    "dateStart": 280,
+    "dateEnd": 297,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "relatedWorks": [
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+      "title": "江表傳",
+      "workKind": "historical_record",
+      "language": "lzh",
+      "dateLabel": "三國吳至西晉",
+      "dateStart": 220,
+      "dateEnd": 300,
+      "availabilityStatus": "lost_fragmentary",
+      "evidenceDomain": "historical_source"
+    }
+  ],
+  "workRelations": [
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "裴松之注在宿主《三國志》卷五十四中显式引《江表傳》。"
+    }
+  ],
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af101",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+    "witnessType": "printed_edition_with_digital_reference",
+    "editionStatement": "《武英殿二十四史》本《三國志》；卷五十四赤壁相关段落 Phase 1 人工转写小样本",
+    "publisher": "武英殿",
+    "publicationDate": "清乾隆时期",
+    "shelfmark": null,
+    "catalogUri": "https://ctext.org/library.pl?res=77691",
+    "fidelityStatus": "pilot_pending_image_collation",
+    "note": "本样本用于验证不可变资产、注疏层级与锚点机制；尚未完成逐页影像校勘，不得标记为外交转写定本。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://ctext.org/sanguozhi/zh",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "项目内制作的单卷相关段落测试资产；正文、裴注与辑佚引文分层保存。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af201",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；本数字转写小样本由 ChronoAtlas 项目维护",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "在影像来源与数字转写许可复核完成前，仅限内部解析与测试，不进入公开全文页面。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "sgz-v54",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 54,
+      "label": "卷五十四",
+      "locatorPath": "卷54",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu",
+      "parentKey": "sgz-v54",
+      "nodeType": "biography",
+      "ordinal": 1,
+      "label": "吳書·周瑜傳",
+      "locatorPath": "卷54/周瑜傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-decision-main",
+      "parentKey": "sgz-v54-zhou-yu",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "建安十三年孙权集团议曹",
+      "locatorPath": "卷54/周瑜傳/段1",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "十三年春，權討江夏，瑜為前部大督。其年九月，曹公入荊州，劉琮舉眾降，曹公得其水軍，船步兵數十萬，將士聞之皆恐。權延見群下，問以計策。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-pei-comment",
+      "parentKey": "sgz-v54-zhou-yu-decision-main",
+      "nodeType": "commentary",
+      "ordinal": 2,
+      "label": "裴松之按鲁肃首倡拒曹",
+      "locatorPath": "卷54/周瑜傳/段1/裴注1",
+      "layerRole": "commentary",
+      "layers": [
+        {
+          "kind": "commentary",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "臣松之以為建計拒曹公，實始魯肅。於時周瑜使鄱陽，肅勸權呼瑜，瑜使鄱陽還，但與肅闇同，故能共成大勳。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-alliance-main",
+      "parentKey": "sgz-v54-zhou-yu",
+      "nodeType": "passage",
+      "ordinal": 3,
+      "label": "鲁肃接触、诸葛亮出使与联合出兵",
+      "locatorPath": "卷54/周瑜傳/段2",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "時劉備為曹公所破，欲引南渡江。與魯肅遇於當陽，遂共圖計，因進住夏口，遣諸葛亮詣權。權遂遣瑜及程普等與備並力逆曹公，遇於赤壁。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-battle-main",
+      "parentKey": "sgz-v54-zhou-yu",
+      "nodeType": "passage",
+      "ordinal": 4,
+      "label": "疾病、初战与火攻决策",
+      "locatorPath": "卷54/周瑜傳/段3",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "時曹公軍眾已有疾病，初一交戰，公軍敗退，引次江北。瑜等在南岸。瑜部將黃蓋曰：今寇眾我寡，難與持久。然觀操軍船艦，首尾相接，可燒而走也。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-jiangbiao-quote",
+      "parentKey": "sgz-v54-zhou-yu-battle-main",
+      "nodeType": "quoted_fragment",
+      "ordinal": 5,
+      "label": "裴注引《江表傳》火攻记载",
+      "locatorPath": "卷54/周瑜傳/段3/裴注引江表傳",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "《江表傳》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "至戰日，蓋先取輕利艦十舫，載燥荻枯柴積其中，灌以魚膏，赤幔覆之，建旌旗龍幡於艦上。時東南風急，因以十艦最著前。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-retreat-main",
+      "parentKey": "sgz-v54-zhou-yu",
+      "nodeType": "passage",
+      "ordinal": 6,
+      "label": "曹军败退与南郡后续",
+      "locatorPath": "卷54/周瑜傳/段4",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "蓋放諸船，同時發火。時風盛猛，悉延燒岸上營落。頃之，煙炎張天，人馬燒溺死者甚眾，軍遂敗退，還保南郡。備與瑜等復共追。曹公留曹仁等守江陵城，逕自北歸。"
+        }
+      ]
+    }
+  ]
+}

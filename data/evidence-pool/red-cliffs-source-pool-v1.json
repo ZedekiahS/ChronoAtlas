@@ -1,0 +1,132 @@
+{
+  "format": "chronoatlas-evidence-pack/1",
+  "packVersion": "1.1.0",
+  "packId": "red-cliffs-source-pool-v1",
+  "label": "赤壁之战原始证据资料池",
+  "scope": "Raw source and witness ingestion only; no assertion, claim, event candidate, formal event, or public release generation",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "revisionCreatedAt": "2026-08-09T13:30:00.000Z",
+  "documents": [
+    {
+      "assetPath": "sanguozhi-wuyingdian-red-cliffs-multivolume-v1.json",
+      "sourceFamily": "三國志及裴松之注",
+      "required": true,
+      "coverageRoles": ["魏蜀吴多传记叙事主干", "裴注史评", "辑佚文献的保存载体"]
+    },
+    {
+      "assetPath": "houhanshu-wuyingdian-red-cliffs-pilot.json",
+      "sourceFamily": "後漢書",
+      "required": true,
+      "coverageRoles": ["献帝纪纪年", "刘表传背景与结果"]
+    },
+    {
+      "assetPath": "huayang-guozhi-siku-v6-red-cliffs-pilot.json",
+      "sourceFamily": "華陽國志",
+      "required": true,
+      "coverageRoles": ["蜀方行动链", "战后荆州变化", "后世传承对读"]
+    },
+    {
+      "assetPath": "zizhi-tongjian-siku-v65-red-cliffs-pilot.json",
+      "sourceFamily": "資治通鑑及胡三省注",
+      "required": true,
+      "coverageRoles": ["后世编年综合叙事", "华容退军", "注家地理引文"]
+    },
+    {
+      "assetPath": "houhanji-v30-red-cliffs-v1.json",
+      "sourceFamily": "後漢紀",
+      "required": true,
+      "coverageRoles": ["战前荆州继承与投降", "赤壁交战与退军"]
+    },
+    {
+      "assetPath": "wenxuan-ruanyu-red-cliffs-v1.json",
+      "sourceFamily": "文選所收阮瑀书",
+      "required": true,
+      "coverageRoles": ["曹操方面的疫病与自焚船说", "江陵后勤背景"]
+    },
+    {
+      "assetPath": "xiangyangji-red-cliffs-v1.json",
+      "sourceFamily": "襄陽記及所引典論",
+      "required": true,
+      "coverageRoles": ["刘琦刘琮继承背景", "曹操破荆州造成的地方后果", "嵌引作品传承"]
+    },
+    {
+      "assetPath": "jingzhouji-red-cliffs-v1.json",
+      "sourceFamily": "荊州記",
+      "required": true,
+      "coverageRoles": ["赤壁及乌林地域记忆", "战场地理线索"]
+    },
+    {
+      "assetPath": "shuijingzhu-v35-red-cliffs-v1.json",
+      "sourceFamily": "水經注",
+      "required": true,
+      "coverageRoles": ["乌林与赤壁的江道地理", "公安及荆州处置的地理记忆"]
+    },
+    {
+      "assetPath": "jiankang-shilu-v1-red-cliffs-v1.json",
+      "sourceFamily": "建康實錄",
+      "required": true,
+      "coverageRoles": ["唐代吴方综合叙事", "战前决策至战后南郡的连续脉络"]
+    },
+    {
+      "assetPath": "yiwen-leiju-v66-red-cliffs-v1.json",
+      "sourceFamily": "藝文類聚所引江表傳",
+      "required": true,
+      "coverageRoles": ["曹操会猎书传本文字", "唐代类书保存见证", "八十万数字异文"]
+    },
+    {
+      "assetPath": "taiping-yulan-v770-771-red-cliffs-v1.json",
+      "sourceFamily": "太平御覽所引江表傳與英雄記",
+      "required": true,
+      "coverageRoles": ["曹操复书与樊口会见传本", "英雄记竹排夜焚异文", "北宋类书保存见证"]
+    },
+    {
+      "assetPath": "cefu-yuangui-v362-red-cliffs-v1.json",
+      "sourceFamily": "冊府元龜所引江表傳",
+      "required": true,
+      "coverageRoles": ["黄盖诈降书传本", "火攻执行传本", "北宋类书保存见证"]
+    },
+    {
+      "assetPath": "zizhi-tongjian-kaoyi-v3-red-cliffs-v1.json",
+      "sourceFamily": "資治通鑑考異",
+      "required": true,
+      "coverageRoles": ["赤壁与合肥先后纪年冲突", "史源选择与考异判断"]
+    },
+    {
+      "assetPath": "houhanshu-junguozhi-jingzhou-v1.json",
+      "sourceFamily": "後漢書郡國志所保存續漢書",
+      "required": true,
+      "coverageRoles": ["东汉末荆州郡县基线", "南郡江夏长沙行政地理", "保存载体与原作区分"]
+    },
+    {
+      "assetPath": "jinshu-dilizhi-jingzhou-red-cliffs-v1.json",
+      "sourceFamily": "晉書地理志",
+      "required": true,
+      "coverageRoles": ["建安十三年前后荆州分属", "江夏南郡武昌郡沿革"]
+    },
+    {
+      "assetPath": "songshu-v37-jingzhou-geography-red-cliffs-v1.json",
+      "sourceFamily": "宋書州郡志",
+      "required": true,
+      "coverageRoles": ["沙羡沙阳蒲圻武昌名称层次", "南朝行政地理传承"]
+    }
+  ],
+  "gates": {
+    "minimumRequiredSourceFamilies": 17,
+    "requireAllDocumentsCommittedBeforeExtraction": true,
+    "rawEvidenceOnly": true,
+    "candidateOnly": true,
+    "automaticAssertionAcceptance": false,
+    "automaticClaimAcceptance": false,
+    "automaticEventGeneration": false,
+    "automaticPublicRelease": false,
+    "transmissionIndependenceRequiresHumanReview": true
+  },
+  "notes": [
+    "本资料包只把作品、传本、数字资产、原文节点、文本版本与锚点写入证据池；不执行陈述抽取与事件拆分。",
+    "《江表傳》《山陽公載記》《漢晉春秋》《獻帝春秋》《阮瑀书》《典論》等散佚或嵌引材料，必须通过保存载体与原作归属关系表达，不能按出现次数重复计证。",
+    "《資治通鑑》《建康實錄》《華陽國志》等后世叙事可以补足脉络，但其来源依赖与独立性须在传承组中另行人工审核。",
+    "《藝文類聚》《太平御覽》《冊府元龜》只作为佚文保存载体；同指《江表傳》的文本不得按宿主数量增加证据权重。",
+    "郡国志、地理志和州郡志记录的是不同时代的行政地理层，不直接裁决赤壁战场的现代位置。",
+    "当前资产是可复现的研究转写清单，不等同于影像校勘完成；权利状态限制展示与索引。"
+  ]
+}

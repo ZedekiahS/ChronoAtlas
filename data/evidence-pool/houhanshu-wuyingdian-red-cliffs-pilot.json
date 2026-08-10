@@ -1,0 +1,129 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "houhanshu-annals-biography-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af003",
+    "title": "後漢書",
+    "workKind": "official_history",
+    "language": "lzh",
+    "dateLabel": "南朝宋",
+    "dateStart": 432,
+    "dateEnd": 445,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af103",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af003",
+    "witnessType": "printed_edition_with_digital_reference",
+    "editionStatement": "《武英殿二十四史》本《後漢書》；献帝纪与刘表传赤壁相关段落 Phase 2 人工转写小样本",
+    "publisher": "武英殿",
+    "publicationDate": "清乾隆时期",
+    "shelfmark": null,
+    "catalogUri": "https://ctext.org/library.pl?if=gb&res=77690",
+    "fidelityStatus": "pilot_pending_image_collation",
+    "note": "旧库国学导航文本仅用于检索比对；本 v2 样本以武英殿本数字影像为目标底本，尚待逐页校勘。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://ctext.org/library.pl?if=gb&res=77690",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "献帝纪、刘表传的最小跨来源测试资产。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af203",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；数字影像与转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "影像页码与数字来源许可复核前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "hhs-v9",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 9,
+      "label": "卷九",
+      "locatorPath": "卷9",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "hhs-v9-xiandi-annals",
+      "parentKey": "hhs-v9",
+      "nodeType": "annals",
+      "ordinal": 1,
+      "label": "孝獻帝紀第九",
+      "locatorPath": "卷9/孝獻帝紀",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "hhs-v9-red-cliffs-annals",
+      "parentKey": "hhs-v9-xiandi-annals",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "建安十三年曹操南征与乌林赤壁之败",
+      "locatorPath": "卷9/孝獻帝紀/建安十三年",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "十三年秋七月，曹操南征劉表。是月，劉表卒，少子琮立，琮以荊州降操。冬十月，曹操以舟師伐孫權，權將周瑜敗之於烏林、赤壁。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "hhs-v74b",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 74,
+      "label": "卷七十四下",
+      "locatorPath": "卷74下",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "hhs-v74b-liu-biao",
+      "parentKey": "hhs-v74b",
+      "nodeType": "biography",
+      "ordinal": 1,
+      "label": "袁紹劉表列傳第六十四下·劉表",
+      "locatorPath": "卷74下/劉表列傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "hhs-v74b-liu-biao-surrender",
+      "parentKey": "hhs-v74b-liu-biao",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "刘琮投降、刘备奔夏口与赤壁结果",
+      "locatorPath": "卷74下/劉表列傳/建安十三年",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "及操軍到襄陽，琮舉州請降，劉備奔夏口。操後敗於赤壁，劉備表琦為荊州刺史。"
+        }
+      ]
+    }
+  ]
+}

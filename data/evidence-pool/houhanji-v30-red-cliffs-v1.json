@@ -1,0 +1,180 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "houhanji-chronicle-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true,
+      "documentScope": "volume-30-red-cliffs"
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af00f",
+    "title": "後漢紀",
+    "workKind": "chronicle",
+    "language": "lzh",
+    "dateLabel": "東晉",
+    "dateStart": 376,
+    "dateEnd": 386,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af108",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af00f",
+    "witnessType": "received_text_with_digital_reference",
+    "editionStatement": "維基文庫《後漢紀》卷三十繁體文本；建安十三至十四年赤壁相关段落 Phase 2 人工转写小样本",
+    "publisher": null,
+    "publicationDate": null,
+    "shelfmark": null,
+    "catalogUri": "https://zh.wikisource.org/zh-hant/%E5%BE%8C%E6%BC%A2%E7%B4%80/%E5%8D%B730",
+    "fidelityStatus": "pilot_pending_edition_collation",
+    "note": "当前文本已与公开数字文本核对，尚未完成指定古籍影像逐页校勘，不得视为外交转写定本。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://zh.wikisource.org/zh-hant/%E5%BE%8C%E6%BC%A2%E7%B4%80/%E5%8D%B730",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "卷三十中荆州崩解、长坂退却、孙权决策、诸葛亮出使、赤壁战果与公安后续的最小证据资产。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af208",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；数字文本与转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "版本影像与数字转写许可复核前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "hhj-v30",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 30,
+      "label": "卷三十",
+      "locatorPath": "卷30",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "hhj-v30-xiandi",
+      "parentKey": "hhj-v30",
+      "nodeType": "chronicle_section",
+      "ordinal": 1,
+      "label": "孝獻皇帝紀·建安十三年",
+      "locatorPath": "卷30/孝獻皇帝紀/建安十三年",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "hhj-v30-jingzhou-collapse",
+      "parentKey": "hhj-v30-xiandi",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "刘表去世、刘琮投降与刘备退至汉津",
+      "locatorPath": "卷30/建安十三年/荊州崩解",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "劉表病死，少子琮領荊州。九月，劉琮降曹操。劉備率眾南行，曹操以精騎追之，及於當陽，備與諸葛亮等數十騎邪趣漢津。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "hhj-v30-wu-council",
+      "parentKey": "hhj-v30-xiandi",
+      "nodeType": "passage",
+      "ordinal": 2,
+      "label": "曹操取得荆州水军与孙权集团决策",
+      "locatorPath": "卷30/建安十三年/孫權議曹",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "操既有荊州水軍十萬，將順流東伐，吳人振恐，議者咸勸孫權迎操。周瑜曰：『不然。操雖託名漢相，其實漢賊。將軍以神武雄才，兼仗父兄之烈，割據江東，地方數千里，精兵足用，英豪樂業，尚當橫行天下，為漢除殘去害，況操自送死，何迎之有？瑜得精兵三萬，保為將軍破之！』權曰：『老賊欲廢漢天子自立久矣，徒忌二袁、劉表與孤耳。今數雄已滅，唯孤存。孤與老賊勢不兩立，君言當擊，甚與孤合，此天以君授孤也。』"
+        }
+      ]
+    },
+    {
+      "nodeKey": "hhj-v30-zhuge-mission",
+      "parentKey": "hhj-v30-xiandi",
+      "nodeType": "passage",
+      "ordinal": 3,
+      "label": "诸葛亮奉命求援并劝孙权决断",
+      "locatorPath": "卷30/建安十三年/諸葛亮出使/段1",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "劉備至夏口，諸葛亮謂備曰：『事急矣，請求救於孫將軍。』時權軍於柴桑，備使亮說權曰：『海內喪亂，將軍起兵江東，豫州亦收眾漢南，與曹操並爭天下。今操芟夷大難，略平矣，遂破荊州，威振四海。英雄無所用武，故豫州遁逃至此，將軍量力而處之！若能以吳、越之眾與中國抗行，不如早與之絕；若不能，何不案戈束甲，北面而事之乎？今將軍外托服從之名，內懷猶豫之計，事急而不斷，禍至無日矣！』"
+        }
+      ]
+    },
+    {
+      "nodeKey": "hhj-v30-alliance-decision",
+      "parentKey": "hhj-v30-xiandi",
+      "nodeType": "passage",
+      "ordinal": 4,
+      "label": "孙权决意拒曹并派周瑜水军",
+      "locatorPath": "卷30/建安十三年/諸葛亮出使/段2",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "權曰：『苟如君言，劉豫州何不事之乎？』亮曰：『田橫，齊之壯士耳，猶義不辱。況豫州王室之胄，英才蓋世，人之仰慕，若水之歸海。事之不濟，此乃天也，安能復為之下！』權勃然曰：『吾不能以全吳之地，十萬之眾，受制於人，吾計決矣！非劉豫州莫可當曹操者，然豫州新敗之後，復能抗此難乎？』亮曰：『豫州雖敗，戰士還者精甲萬人。曹操之眾遠來疲弊，聞追豫州騎一日一夜行三百里，此所謂「強弩之末不能穿魯縞」者也。故兵法忌之，曰「必蹶上將軍」。且北方之人，不習水戰，又荊州之民附操者，逼以兵勢耳，非心服也。將軍誠能命猛將統兵數萬，與豫州協規同契，破操必矣。操敗必北還；如此則荊、吳之勢強，鼎足之形成。成敗之機，在於今日！』權大悅，即遣周瑜將水軍三萬隨亮詣備，並力拒操。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "hhj-v30-red-cliffs-result",
+      "parentKey": "hhj-v30-xiandi",
+      "nodeType": "passage",
+      "ordinal": 5,
+      "label": "曹操与周瑜战于赤壁而大败",
+      "locatorPath": "卷30/建安十三年/赤壁戰果",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "是月，曹操與周瑜戰於赤壁，操師大敗。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "hhj-v30-gongan-aftermath",
+      "parentKey": "hhj-v30",
+      "nodeType": "passage",
+      "ordinal": 6,
+      "label": "建安十四年刘备领荆州屯公安",
+      "locatorPath": "卷30/建安十四年/公安",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "十四年，劉備以孫權行車騎將軍，備自領荊州，屯公安。"
+        }
+      ]
+    }
+  ]
+}

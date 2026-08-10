@@ -61,7 +61,7 @@ const people = [
     life: [["311", 311, "war", "攻陷洛阳", "汉赵军攻陷洛阳，俘晋怀帝。", "china-311-yongjia-luoyang"], ["316", 316, "war", "灭亡西晋", "汉赵军迫降长安，西晋灭亡。", "china-316-changan-falls-western-jin"]],
   },
   {
-    id: "person:shi-hu",
+    id: "shi-hu",
     name: "石虎",
     nameEn: "Shi Hu",
     polity: "后赵",
@@ -362,15 +362,27 @@ const people = [
 ];
 
 const insertPerson = db.prepare(`
-  INSERT OR REPLACE INTO persons (
+  INSERT INTO persons (
     id, region, name, courtesy_name, life, birth_year, death_year, life_confidence,
     primary_polity, summary, coverage_status, raw_json
   )
   VALUES (?, ?, ?, NULL, ?, ?, ?, 'medium', ?, ?, 'core', ?)
+  ON CONFLICT(id) DO UPDATE SET
+    region = excluded.region,
+    name = excluded.name,
+    courtesy_name = excluded.courtesy_name,
+    life = excluded.life,
+    birth_year = excluded.birth_year,
+    death_year = excluded.death_year,
+    life_confidence = excluded.life_confidence,
+    primary_polity = excluded.primary_polity,
+    summary = excluded.summary,
+    coverage_status = excluded.coverage_status,
+    raw_json = excluded.raw_json
 `);
 
 const insertEntity = db.prepare(`
-  INSERT OR REPLACE INTO entities (
+  INSERT OR IGNORE INTO entities (
     id, entity_type, primary_label, civilization_id, region_id, time_start, time_end,
     summary, confidence, review_status, raw_json
   )

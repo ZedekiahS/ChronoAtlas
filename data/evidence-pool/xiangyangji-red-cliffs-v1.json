@@ -1,0 +1,157 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "xiangyangji-reconstructed-text-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true,
+      "documentScope": "liu-biao-succession-red-cliffs-background"
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af012",
+    "title": "襄陽記",
+    "workKind": "regional_biographical_record",
+    "language": "lzh",
+    "dateLabel": "東晉",
+    "dateStart": 350,
+    "dateEnd": 383,
+    "availabilityStatus": "lost_fragmentary",
+    "evidenceDomain": "historical_source"
+  },
+  "relatedWorks": [
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af013",
+      "title": "典論",
+      "workKind": "treatise",
+      "language": "lzh",
+      "dateLabel": "東漢末至曹魏初",
+      "dateStart": 196,
+      "dateEnd": 220,
+      "availabilityStatus": "lost_fragmentary",
+      "evidenceDomain": "historical_source"
+    }
+  ],
+  "workRelations": [
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af012",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af013",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "《襄陽記》蔡瑁条明确以“魏文作《典論》”引出刘琦、刘琮继承叙述。"
+    }
+  ],
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af10b",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af012",
+    "witnessType": "reconstructed_text_with_digital_reference",
+    "editionStatement": "維基文庫所载《襄陽記》（《襄陽耆舊記》辑本系统）卷一蔡瑁条；刘表继承危机相关段落 Phase 2 人工转写小样本",
+    "publisher": null,
+    "publicationDate": null,
+    "shelfmark": null,
+    "catalogUri": "https://zh.wikisource.org/zh-hant/%E8%A5%84%E9%99%BD%E8%A8%98",
+    "fidelityStatus": "pilot_pending_reconstruction_collation",
+    "note": "原书传承复杂，当前按公开辑本文本分层保存，尚待与任兆麟辑本及现代校补本逐条校勘。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://zh.wikisource.org/zh-hant/%E8%A5%84%E9%99%BD%E8%A8%98",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "蔡瑁条所见刘琦、刘琮继承冲突、《典论》引文与刘琮举州请降的最小背景资产。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af20b",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；辑本与数字转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "辑本来源、版本异文与数字转写许可复核前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "xyj-v1",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 1,
+      "label": "卷一",
+      "locatorPath": "卷1",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "xyj-v1-cai-mao",
+      "parentKey": "xyj-v1",
+      "nodeType": "biographical_entry",
+      "ordinal": 1,
+      "label": "蔡瑁",
+      "locatorPath": "卷1/蔡瑁",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "xyj-v1-cai-mao-position",
+      "parentKey": "xyj-v1-cai-mao",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "蔡瑁职任及助刘琮、谗刘琦之评",
+      "locatorPath": "卷1/蔡瑁/段1",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "瑁，劉表時為江夏、南郡、章陵太守，鎮南將軍軍師。遂為魏武從事中郎、司馬、長水校尉、漢陽亭侯。魏武雖以故舊待之，而為時人所賤，責其助劉琮，讒劉琦故也。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "xyj-v1-cai-mao-dianlun",
+      "parentKey": "xyj-v1-cai-mao",
+      "nodeType": "quoted_fragment",
+      "ordinal": 2,
+      "label": "《典论》所述刘琦失爱与刘琮继嗣",
+      "locatorPath": "卷1/蔡瑁/引典論",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af013",
+        "type": "explicit_citation",
+        "text": "魏文作《典論》，以瑁成之，曰",
+        "certainty": "high"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "劉表長子曰琦，表始愛之，稱其類己。久之，為少子琮納後妻蔡氏之侄，遂愛琮而惡琦。瑁及外甥張允，並得幸於表，又睦於琮。琮有善，雖小必聞；有過，雖大必遮。蔡氏稱美於內，允、瑁誦德於外。愛憎由之，而琦益疏。乃出為江夏太守，監兵於外。瑁、允陰伺其過厥，隨而毀之。美無顯而不掩，厥無微而不露。於是忿怒之色日發，逍讓之言日至。而琮竟為嗣矣。故曰，『容刃生於身疏，積愛出於近習』，豈謂是邪！洩柳、申詳，無人乎穆公之側，不能安其身。君臣則然，父子亦猶是乎！"
+        }
+      ]
+    },
+    {
+      "nodeKey": "xyj-v1-liu-biao-succession",
+      "parentKey": "xyj-v1-cai-mao",
+      "nodeType": "passage",
+      "ordinal": 3,
+      "label": "刘琦被阻探病、刘琮继立并举州请罪",
+      "locatorPath": "卷1/蔡瑁/段2",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "後表疾病，琦慈孝，〈還省疾。〉瑁、允恐其見表，父子相感，更有託後之意，謂曰：『將軍令君撫臨江夏，為國東藩，其任至重。今釋眾而來，必見譴怒。傷親之歡心以增其疾，非孝敬也。』遂遏於戶外，使不相見，琦流涕而去，士民聞而傷焉。表卒琮竟嗣立，以侯印與琦。琦怒而投之，偽辭赴喪，有討瑁、允之意。會王師已臨其郊，琮舉州請罪，琦遂奔於江南。"
+        }
+      ]
+    }
+  ]
+}

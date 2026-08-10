@@ -1,0 +1,1295 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.3.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "sanguozhi-commentary-json",
+    "version": "1.1.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true,
+      "documentScope": "red-cliffs-multi-volume-pilot"
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+    "title": "三國志",
+    "workKind": "official_history",
+    "language": "lzh",
+    "dateLabel": "西晉",
+    "dateStart": 280,
+    "dateEnd": 297,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "relatedWorks": [
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+      "title": "江表傳",
+      "workKind": "historical_record",
+      "language": "lzh",
+      "dateLabel": "三國吳至西晉",
+      "dateStart": 220,
+      "dateEnd": 300,
+      "availabilityStatus": "lost_fragmentary",
+      "evidenceDomain": "historical_source"
+    },
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af007",
+      "title": "山陽公載記",
+      "workKind": "historical_record",
+      "language": "lzh",
+      "dateLabel": "魏晋间",
+      "dateStart": 220,
+      "dateEnd": 320,
+      "availabilityStatus": "lost_fragmentary",
+      "evidenceDomain": "historical_source"
+    },
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af008",
+      "title": "漢晉春秋",
+      "workKind": "historical_record",
+      "language": "lzh",
+      "dateLabel": "東晉",
+      "dateStart": 350,
+      "dateEnd": 384,
+      "availabilityStatus": "lost_fragmentary",
+      "evidenceDomain": "historical_source"
+    },
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af009",
+      "title": "獻帝春秋",
+      "workKind": "historical_record",
+      "language": "lzh",
+      "dateLabel": "漢末至晉，作者歸屬存疑",
+      "dateStart": 190,
+      "dateEnd": 320,
+      "availabilityStatus": "lost_fragmentary",
+      "evidenceDomain": "historical_source"
+    },
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af02a",
+      "title": "漢魏春秋",
+      "workKind": "historical_record",
+      "language": "lzh",
+      "dateLabel": "三國魏至西晉，孔衍撰",
+      "dateStart": 220,
+      "dateEnd": 300,
+      "availabilityStatus": "lost_fragmentary",
+      "evidenceDomain": "historical_source"
+    },
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af02b",
+      "title": "吳書",
+      "workKind": "historical_record",
+      "language": "lzh",
+      "dateLabel": "三國吳，韋昭等撰",
+      "dateStart": 250,
+      "dateEnd": 280,
+      "availabilityStatus": "lost_fragmentary",
+      "evidenceDomain": "historical_source"
+    }
+  ],
+  "workRelations": [
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "裴松之注在《先主传》《周瑜传》等宿主篇章中显式引《江表传》。"
+    },
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af007",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "裴松之注在《武帝纪》宿主篇章中显式引《山阳公载记》。"
+    },
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af008",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "裴松之注在《鲁肃传》宿主篇章中显式引《汉晋春秋》说明借地安刘备之议。"
+    },
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af009",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "裴松之注在《先主传》宿主篇章中显式引《献帝春秋》记孙刘战后共取蜀之议。"
+    },
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af02a",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "裴松之注在《先主传》宿主篇章中显式引孔衍《汉魏春秋》，补记刘琮请降后刘备获知消息与南撤决策。"
+    },
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af02b",
+      "relationType": "quotes",
+      "certainty": "high",
+      "note": "裴松之注在《黄盖传》宿主篇章中显式引《吴书》，补记黄盖在赤壁中流矢坠水及获救。"
+    }
+  ],
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af110",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af001",
+    "witnessType": "printed_edition_with_digital_reference",
+    "editionStatement": "《武英殿二十四史》本《三國志》；卷一、三十二、三十五、四十七、五十四赤壁相关段落 Phase 2 多卷人工转写小样本",
+    "publisher": "武英殿",
+    "publicationDate": "清乾隆时期",
+    "shelfmark": null,
+    "catalogUri": "https://ctext.org/library.pl?res=77691",
+    "fidelityStatus": "pilot_pending_image_collation",
+    "note": "多卷小样本用于跨传记对齐；尚未完成逐页影像校勘，不得标记为外交转写定本。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://ctext.org/sanguozhi/zh",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "项目内制作的赤壁多卷相关段落测试资产；正文、裴注与辑佚引文分层保存。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af210",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；本数字转写小样本由 ChronoAtlas 项目维护",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "在影像来源与数字转写许可复核完成前，仅限内部解析与测试，不进入公开全文页面。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "sgz-v1",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 1,
+      "label": "卷一",
+      "locatorPath": "卷1",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v1-wudi",
+      "parentKey": "sgz-v1",
+      "nodeType": "annals",
+      "ordinal": 1,
+      "label": "魏書·武帝紀",
+      "locatorPath": "卷1/武帝紀",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v1-wudi-southern-campaign",
+      "parentKey": "sgz-v1-wudi",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "曹操南征、刘表卒与刘琮降",
+      "locatorPath": "卷1/武帝紀/段1",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "秋七月，公南征劉表。八月，表卒，其子琮代，屯襄陽，劉備屯樊。九月，公到新野，琮遂降，備走夏口。公進軍江陵，下令荊州吏民，與之更始。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v1-wudi-red-cliffs-retreat",
+      "parentKey": "sgz-v1-wudi",
+      "nodeType": "passage",
+      "ordinal": 2,
+      "label": "赤壁交战、疾疫与曹军撤退",
+      "locatorPath": "卷1/武帝紀/段2",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "公至赤壁，與備戰，不利。於是大疫，吏士多死者，乃引軍還。備遂有荊州、江南諸郡。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v1-wudi-shanyang-huarong",
+      "parentKey": "sgz-v1-wudi-red-cliffs-retreat",
+      "nodeType": "quoted_fragment",
+      "ordinal": 3,
+      "label": "裴注引《山阳公载记》华容退军",
+      "locatorPath": "卷1/武帝紀/段2/裴注引山陽公載記",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af007",
+        "type": "explicit_citation",
+        "text": "《山陽公載記》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "公船艦為備所燒，引軍從華容道步歸，遇泥濘，道不通，天又大風，悉使羸兵負草填之，騎乃得過。羸兵為人馬所蹈藉，陷泥中，死者甚眾。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v1-wudi-shanyang-huarong-assessment",
+      "parentKey": "sgz-v1-wudi-shanyang-huarong",
+      "nodeType": "quoted_fragment",
+      "ordinal": 4,
+      "label": "《山阳公载记》曹操评刘备放火稍晚",
+      "locatorPath": "卷1/武帝紀/段2/裴注引山陽公載記/續段",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af007",
+        "type": "explicit_citation",
+        "text": "《山陽公載記》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "軍既得出，公大喜，諸將問之，公曰：「劉備，吾儔也。但得計少晚；向使早放火，吾徒無類矣。」備尋亦放火而無所及。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v9",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 9,
+      "label": "卷九",
+      "locatorPath": "卷9",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v9-cao-ren",
+      "parentKey": "sgz-v9",
+      "nodeType": "biography",
+      "ordinal": 1,
+      "label": "魏書·曹仁傳",
+      "locatorPath": "卷9/曹仁傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v9-cao-ren-jiangling-defense",
+      "parentKey": "sgz-v9-cao-ren",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "曹仁留屯江陵与牛金解围",
+      "locatorPath": "卷9/曹仁傳/江陵拒周瑜",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "從平荊州，以仁行征南將軍，留屯江陵，拒吳將周瑜。瑜將數萬眾來攻，前鋒數千人始至，仁登城望之，乃募得三百人，遣部曲將牛金逆與挑戰。賊多，金眾少，遂為所圍。長史陳矯俱在城上，望見金等垂沒，左右皆失色。仁意氣奮怒甚，謂左右取馬來，矯等共援持之。謂仁曰：「賊眾盛，不可當也。假使棄數百人何苦，而將軍以身赴之！」仁不應，遂被甲上馬，將其麾下壯士數十騎出城。去賊百餘步，迫溝，矯等以為仁當住溝上，為金形勢也，仁徑渡溝直前，衝入賊圍，金等乃得解。餘眾未盡出，仁復直還突之，拔出金兵，亡其數人，賊眾乃退。矯等初見仁出，皆懼，及見仁還，乃歎曰：「將軍真天人也！」三軍服其勇。太祖益壯之，轉封安平亭侯。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v9-cao-chun",
+      "parentKey": "sgz-v9-cao-ren",
+      "nodeType": "biography_section",
+      "ordinal": 2,
+      "label": "魏書·曹純",
+      "locatorPath": "卷9/曹仁傳/弟曹純",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v9-cao-chun-changban",
+      "parentKey": "sgz-v9-cao-chun",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "曹纯追击长坂并进降江陵",
+      "locatorPath": "卷9/曹仁傳/弟曹純/長坂追擊",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "從征荊州，追劉備於長阪，獲其二女輜重，收其散卒。進降江陵，從還譙。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v32",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 32,
+      "label": "卷三十二",
+      "locatorPath": "卷32",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v32-xianzhu",
+      "parentKey": "sgz-v32",
+      "nodeType": "biography",
+      "ordinal": 1,
+      "label": "蜀書·先主傳",
+      "locatorPath": "卷32/先主傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v32-xianzhu-withdrawal",
+      "parentKey": "sgz-v32-xianzhu",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "刘琮请降与刘备南撤",
+      "locatorPath": "卷32/先主傳/段1",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "曹公南征表，會表卒，子琮代立，遣使請降。先主屯樊，不知曹公卒至，至宛乃聞之，遂將其眾去。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v32-xianzhu-xiangyang-followers",
+      "parentKey": "sgz-v32-xianzhu",
+      "nodeType": "passage",
+      "ordinal": 9,
+      "label": "刘备过襄阳与民众南撤",
+      "locatorPath": "卷32/先主傳/襄陽至當陽",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "過襄陽，諸葛亮說先主攻琮，荊州可有。先主曰：「吾不忍也。」乃駐馬呼琮，琮懼不能起。琮左右及荊州人多歸先主。比到當陽，眾十餘萬，輜重數千兩，日行十餘里，別遣關羽乘船數百艘，使會江陵。或謂先主曰：「宜速行保江陵，今雖擁大眾，被甲者少，若曹公兵至，何以拒之？」先主曰：「夫濟大事必以人為本，今人歸吾，吾何忍棄去！」"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v32-xianzhu-hanwei-surrender-notice",
+      "parentKey": "sgz-v32-xianzhu-withdrawal",
+      "nodeType": "quoted_fragment",
+      "ordinal": 10,
+      "label": "裴注引孔衍《汉魏春秋》刘琮请降与刘备应对",
+      "locatorPath": "卷32/先主傳/劉琮請降/裴注引漢魏春秋",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af02a",
+        "type": "explicit_citation",
+        "text": "孔衍《漢魏春秋》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "劉琮乞降，不敢告備。備亦不知，久之乃覺，遣所親問琮。琮令宋忠詣備宣旨。是時曹公在宛，備乃大驚駭，謂忠曰：「卿諸人作事如此，不早相語，今禍至方告我，不亦太劇乎！」引刀向忠曰：「今斷卿頭，不足以解忿，亦恥大丈夫臨別復殺卿輩！」遣忠去，乃呼部曲議。或勸備劫將琮及荊州吏士徑南到江陵，備答曰：「劉荊州臨亡託我以孤遺，背信自濟，吾所不為，死何面目以見劉荊州乎！」"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v32-xianzhu-changban",
+      "parentKey": "sgz-v32-xianzhu",
+      "nodeType": "passage",
+      "ordinal": 2,
+      "label": "长坂追击、汉津会合与抵达夏口",
+      "locatorPath": "卷32/先主傳/段2",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "曹公以江陵有軍實，恐先主據之，乃釋輜重，輕軍到襄陽。聞先主已過，曹公將精騎五千急追之，一日一夜行三百餘里，及於當陽之長阪。先主棄妻子，與諸葛亮、張飛、趙雲等數十騎走，曹公大獲其人眾輜重。先主斜趨漢津，適與羽船會，得濟沔，遇表長子江夏太守琦眾萬餘人，與俱到夏口。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v32-xianzhu-alliance-battle",
+      "parentKey": "sgz-v32-xianzhu",
+      "nodeType": "passage",
+      "ordinal": 3,
+      "label": "诸葛亮出使、联军形成与赤壁追击",
+      "locatorPath": "卷32/先主傳/段3",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "先主遣諸葛亮自結於孫權，權遣周瑜、程普等水軍數萬，與先主並力，與曹公戰於赤壁，大破之，焚其舟船。先主與吳軍水陸並進，追到南郡，時又疾疫，北軍多死，曹公引歸。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v32-xianzhu-aftermath",
+      "parentKey": "sgz-v32-xianzhu",
+      "nodeType": "passage",
+      "ordinal": 4,
+      "label": "刘备南征荆南四郡",
+      "locatorPath": "卷32/先主傳/段4",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "先主表琦為荊州刺史，又南征四郡。武陵太守金旋、長沙太守韓玄、桂陽太守趙範、零陵太守劉度皆降。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v32-xianzhu-jiangbiao-lu-su",
+      "parentKey": "sgz-v32-xianzhu-changban",
+      "nodeType": "quoted_fragment",
+      "ordinal": 5,
+      "label": "裴注引《江表传》鲁肃接触刘备",
+      "locatorPath": "卷32/先主傳/段2/裴注引江表傳",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "《江表傳》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "孫權遣魯肅吊劉表二子，並令與備相結。肅未至而曹公已濟漢津。肅故進前，與備相遇於當陽。因宣權旨，論天下事勢，致殷勤之意。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v32-xianzhu-jiangbiao-fankou-force",
+      "parentKey": "sgz-v32-xianzhu-alliance-battle",
+      "nodeType": "quoted_fragment",
+      "ordinal": 6,
+      "label": "裴注引《江表传》樊口会见与三万兵力",
+      "locatorPath": "卷32/先主傳/段3/裴注引江表傳/樊口會見",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "《江表傳》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "備從魯肅計，進住鄂縣之樊口。諸葛亮詣吳未還，備聞曹公軍下，恐懼，日遣邏吏於水次候望權軍。吏望見瑜船，馳往白備，備曰：「何以知之非青徐軍邪？」吏對曰：「以船知之。」備遣人慰勞之。瑜曰：「有軍任，不可得委署，儻能屈威，誠副其所望。」備謂關羽、張飛曰：「彼欲致我，我今自結託於東而不往，非同盟之意也。」乃乘單舸往見瑜，問曰：「今拒曹公，深為得計。戰卒有幾？」瑜曰：「三萬人。」備曰：「恨少。」瑜曰：「此自足用，豫州但觀瑜破之。」備欲呼魯肅等共會語，瑜曰：「受命不得妄委署，若欲見子敬，可別過之。又孔明已俱來，不過三兩日到也。」備雖深愧異瑜，而心未許之能必破北軍也，故差池在後，將二千人與羽、飛俱，未肯係瑜，蓋為進退之計也。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v32-xianzhu-jiangbiao-gongan-jingzhou",
+      "parentKey": "sgz-v32-xianzhu-aftermath",
+      "nodeType": "quoted_fragment",
+      "ordinal": 7,
+      "label": "裴注引《江表传》公安立营与借荆州",
+      "locatorPath": "卷32/先主傳/段3/裴注引江表傳/公安與借荊州",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "《江表傳》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "周瑜為南郡太守，分南岸地以給備。備別立營於油江口，改名為公安。劉表吏士見從北軍，多叛來投備。備以瑜所給地少，不足以安民，（後）〔復〕從權借荊州數郡。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v32-xianzhu-xiandi-shu-strategy",
+      "parentKey": "sgz-v32-xianzhu",
+      "nodeType": "quoted_fragment",
+      "ordinal": 8,
+      "label": "裴注引《献帝春秋》孙刘共取蜀之议",
+      "locatorPath": "卷32/先主傳/戰後經略/裴注引獻帝春秋",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af009",
+        "type": "explicit_citation",
+        "text": "《獻帝春秋》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "孫權欲與備共取蜀，遣使報備曰：「米賊張魯居王巴、漢，為曹操耳目，規圖益州。劉璋不武，不能自守。若操得蜀，則荊州危矣。今欲先攻取璋，進討張魯，首尾相連，一統吳、楚，雖有十操，無所憂也。」備欲自圖蜀，拒答不聽，曰：「益州民富彊，土地險阻，劉璋雖弱，足以自守。張魯虛偽，未必盡忠於操。今暴師於蜀、漢，轉運於萬里，欲使戰克攻取，舉不失利，此吳起不能定其規，孫武不能善其事也。曹操雖有無君之心，而有奉主之名，議者見操失利於赤壁，謂其力屈，無復遠志也。今操三分天下已有其二，將欲飲馬於滄海，觀兵於吳會，何肯守此坐須老乎？今同盟無故自相攻伐，借樞於操，使敵承其隙，非長計也。」權不聽，遣孫瑜率水軍住夏口。備不聽軍過，謂瑜曰：「汝欲取蜀，吾當被髮入山，不失信於天下也。」使關羽屯江陵，張飛屯秭歸，諸葛亮據南郡，備自住孱陵。權知備意，因召瑜還。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v35",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 35,
+      "label": "卷三十五",
+      "locatorPath": "卷35",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v35-zhuge-liang",
+      "parentKey": "sgz-v35",
+      "nodeType": "biography",
+      "ordinal": 1,
+      "label": "蜀書·諸葛亮傳",
+      "locatorPath": "卷35/諸葛亮傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v35-zhuge-liang-mission",
+      "parentKey": "sgz-v35-zhuge-liang",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "诸葛亮请求出使孙权",
+      "locatorPath": "卷35/諸葛亮傳/段1",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "先主至於夏口，亮曰：『事急矣，請奉命求救於孫將軍。』時權擁軍在柴桑，觀望成敗。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v35-zhuge-liang-persuasion",
+      "parentKey": "sgz-v35-zhuge-liang",
+      "nodeType": "passage",
+      "ordinal": 2,
+      "label": "诸葛亮说孙权拒曹",
+      "locatorPath": "卷35/諸葛亮傳/段2",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "亮說權曰：『海內大亂，將軍起兵據有江東，劉豫州亦收眾漢南，與曹操並爭天下。今操芟夷大難，略已平矣，遂破荊州，威震四海。英雄無所用武，故豫州遁逃至此。將軍量力而處之：若能以吳、越之眾與中國抗衡，不如早與之絕；若不能當，何不案兵束甲，北面而事之！』"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v35-zhuge-liang-persuasion-continuation",
+      "parentKey": "sgz-v35-zhuge-liang",
+      "nodeType": "passage",
+      "ordinal": 4,
+      "label": "诸葛亮陈说联军兵力与曹军弱点",
+      "locatorPath": "卷35/諸葛亮傳/說孫權續段",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "今將軍外託服從之名，而內懷猶豫之計，事急而不斷，禍至無日矣！權曰：「苟如君言，劉豫州何不遂事之乎？」亮曰：「田橫，齊之壯士耳，猶守義不辱，況劉豫州王室之冑，英才蓋世，眾士仰慕，若水之歸海，若事之不濟，此乃天也，安能復為之下乎！」權勃然曰：「吾不能舉全吳之地，十萬之眾，受制於人。吾計決矣！非劉豫州莫可以當曹操者，然豫州新敗之後，安能抗此難乎？」亮曰：「豫州軍雖敗於長阪，今戰士還者及關羽水軍精甲萬人，劉琦合江夏戰士亦不下萬人。曹操之眾，遠來疲弊，聞追豫州，輕騎一日一夜行三百餘里，此所謂『強弩之末，勢不能穿魯縞』者也。故兵法忌之，曰『必蹶上將軍』。且北方之人，不習水戰；又荊州之民附操者，逼兵勢耳，非心服也。今將軍誠能命猛將統兵數萬，與豫州協規同力，破操軍必矣。操軍破，必北還，如此則荊、吳之勢強，鼎足之形成矣。成敗之機，在於今日。」"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v35-zhuge-liang-allied-dispatch",
+      "parentKey": "sgz-v35-zhuge-liang",
+      "nodeType": "passage",
+      "ordinal": 3,
+      "label": "孙权出兵与赤壁战后",
+      "locatorPath": "卷35/諸葛亮傳/段3",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "權大悅，即遣周瑜、程普、魯肅等水軍三萬，隨亮詣先主，並力拒曹公。曹公敗於赤壁，引軍歸鄴。先主遂收江南，以亮為軍師中郎將，使督零陵、桂陽、長沙三郡，調其賦稅，以充軍實。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v47",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 47,
+      "label": "卷四十七",
+      "locatorPath": "卷47",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v47-wuzhu",
+      "parentKey": "sgz-v47",
+      "nodeType": "annals",
+      "ordinal": 1,
+      "label": "吳書·吳主傳",
+      "locatorPath": "卷47/吳主傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v47-wuzhu-decision",
+      "parentKey": "sgz-v47-wuzhu",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "鲁肃接触、诸葛亮出使与孙权集团决策",
+      "locatorPath": "卷47/吳主傳/段1",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "荊州牧劉表死，魯肅乞奉命吊表二子，且以觀變。肅未到，而曹公已臨其境，表子琮舉眾以降。劉備欲南濟江，肅與相見，因傳權旨，為陳成敗。備進住夏口，使諸葛亮詣權，權遣周瑜、程普等行。是時曹公新得表眾，形勢甚盛，諸議者皆望風畏懼，多勸權迎之。惟瑜、肅執拒之議，意與權同。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v47-wuzhu-jiangbiao-cao-ultimatum",
+      "parentKey": "sgz-v47-wuzhu-decision",
+      "nodeType": "quoted_fragment",
+      "ordinal": 3,
+      "label": "裴注引《江表传》曹操致孙权书",
+      "locatorPath": "卷47/吳主傳/建安十三年/裴注引江表傳/曹公與權書",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "《江表傳》載曹公與權書曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "近者奉辭伐罪，旄麾南指，劉琮束手。今治水軍八十萬眾，方與將軍會獵於吳。權得書以示群臣，莫不響震失色。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v47-wuzhu-battle",
+      "parentKey": "sgz-v47-wuzhu",
+      "nodeType": "passage",
+      "ordinal": 2,
+      "label": "赤壁战胜、追至南郡与留守江陵",
+      "locatorPath": "卷47/吳主傳/段2",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "瑜、普為左右督，各領萬人，與備俱進，遇於赤壁，大破曹公軍。公燒其餘船引退，士卒飢疫，死者大半。備、瑜等復追至南郡，曹公遂北還，留曹仁、徐晃於江陵，使樂進守襄陽。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v47-wuzhu-jiangling-outcome",
+      "parentKey": "sgz-v47-wuzhu",
+      "nodeType": "passage",
+      "ordinal": 4,
+      "label": "周瑜曹仁相守与曹仁弃城",
+      "locatorPath": "卷47/吳主傳/建安十四年/南郡結果",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "十四年，瑜、仁相守歲餘，所殺傷甚眾。仁委城走。權以瑜為南郡太守。劉備表權行車騎將軍，領徐州牧。備領荊州牧，屯公安。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 54,
+      "label": "卷五十四",
+      "locatorPath": "卷54",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu",
+      "parentKey": "sgz-v54",
+      "nodeType": "biography",
+      "ordinal": 1,
+      "label": "吳書·周瑜傳",
+      "locatorPath": "卷54/周瑜傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-decision-main",
+      "parentKey": "sgz-v54-zhou-yu",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "建安十三年孙权集团议曹",
+      "locatorPath": "卷54/周瑜傳/段1",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "十三年春，權討江夏，瑜為前部大督。其年九月，曹公入荊州，劉琮舉眾降，曹公得其水軍，船步兵數十萬，將士聞之皆恐。權延見群下，問以計策。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-surrender-argument",
+      "parentKey": "sgz-v54-zhou-yu",
+      "nodeType": "passage",
+      "ordinal": 8,
+      "label": "群臣陈说迎曹理由",
+      "locatorPath": "卷54/周瑜傳/建安十三年/迎曹議",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "議者咸曰：「曹公豺虎也，然託名漢相，挾天子以征四方，動以朝廷為辭，今日拒之，事更不順。且將軍大勢可以拒操者，長江也。今操得荊州，奄有其地。劉表治水軍，蒙衝鬥艦，乃以千數，操悉浮以沿江，兼有步兵，水陸俱下。此為長江之險，已與我共之矣。而勢力眾寡，又不可論。愚謂大計不如迎之。」"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-reject-cao-analysis",
+      "parentKey": "sgz-v54-zhou-yu",
+      "nodeType": "passage",
+      "ordinal": 9,
+      "label": "周瑜分析曹军用兵四患",
+      "locatorPath": "卷54/周瑜傳/建安十三年/周瑜拒曹議",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "瑜曰：「不然。操雖託名漢相，其實漢賊也。將軍以神武雄才，兼仗父兄之烈，割據江東，地方數千里，兵精足用，英雄樂業，尚當橫行天下，為漢家除殘去穢。況操自送死，而可迎之邪？請為將軍籌之：今使北土已安，操無內憂，能曠日持久，來爭疆場，又能與我校勝負於船楫，可乎？今北土既未平安，加馬超、韓遂尚在關西，為操後患。且舍鞍馬，仗舟楫，與吳越爭衡，本非中國所長。又今盛寒，馬無蒿草。驅中國士眾遠涉江湖之間，不習水土，必生疾病。此數四者，用兵之患也，而操皆冒行之。將軍禽操，宜在今日。瑜請得精兵三萬人，進住夏口，保為將軍破之。」"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-sun-quan-decision",
+      "parentKey": "sgz-v54-zhou-yu",
+      "nodeType": "passage",
+      "ordinal": 10,
+      "label": "孙权确认拒曹决策",
+      "locatorPath": "卷54/周瑜傳/建安十三年/孫權定策",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "權曰：「老賊欲廢漢自立久矣，徒忌二袁、呂布、劉表與孤耳。今數雄已滅，惟孤尚存，孤與老賊，勢不兩立。君言當擊，甚與孤合，此天以君授孤也。」"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-jiangbiao-night-council",
+      "parentKey": "sgz-v54-zhou-yu-sun-quan-decision",
+      "nodeType": "quoted_fragment",
+      "ordinal": 11,
+      "label": "裴注引《江表传》斫案与夜议兵力",
+      "locatorPath": "卷54/周瑜傳/建安十三年/裴注引江表傳/斫案夜議",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "《江表傳》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "權拔刀斫前奏案曰：「諸將吏敢復有言當迎操者，與此案同！」及會罷之夜，瑜請見曰：「諸人徒見操書，言水步八十萬，而各恐懾，不復料其虛實，便開此議，甚無謂也。今以實校之，彼所將中國人，不過十五六萬，且軍已久疲，所得表眾，亦極七八萬耳，尚懷狐疑。夫以疲病之卒，御狐疑之眾，眾數雖多，甚未足畏。得精兵五萬，自足制之，願將軍勿慮。」權撫背曰：「公瑾，卿言至此，甚合孤心。子布、文表諸人，各顧妻子，挾持私慮，深失所望，獨卿與子敬與孤同耳，此天以卿二人贊孤也。五萬兵難卒合，已選三萬人，船糧戰具俱辦，卿與子敬、程公便在前發，孤當續發人眾，多載資糧，為卿後援。卿能辦之者誠決，邂逅不如意，便還就孤，孤當與孟德決之。」"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-pei-comment",
+      "parentKey": "sgz-v54-zhou-yu-decision-main",
+      "nodeType": "commentary",
+      "ordinal": 2,
+      "label": "裴松之按鲁肃首倡拒曹",
+      "locatorPath": "卷54/周瑜傳/段1/裴注1",
+      "layerRole": "commentary",
+      "layers": [
+        {
+          "kind": "commentary",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "臣松之以為建計拒曹公，實始魯肅。於時周瑜使鄱陽，肅勸權呼瑜，瑜使鄱陽還，但與肅闇同，故能共成大勳。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-alliance-main",
+      "parentKey": "sgz-v54-zhou-yu",
+      "nodeType": "passage",
+      "ordinal": 3,
+      "label": "鲁肃接触、诸葛亮出使与联合出兵",
+      "locatorPath": "卷54/周瑜傳/段2",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "時劉備為曹公所破，欲引南渡江。與魯肅遇於當陽，遂共圖計，因進住夏口，遣諸葛亮詣權。權遂遣瑜及程普等與備並力逆曹公，遇於赤壁。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-battle-main",
+      "parentKey": "sgz-v54-zhou-yu",
+      "nodeType": "passage",
+      "ordinal": 4,
+      "label": "疾病、初战与火攻决策",
+      "locatorPath": "卷54/周瑜傳/段3",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "時曹公軍眾已有疾病，初一交戰，公軍敗退，引次江北。瑜等在南岸。瑜部將黃蓋曰：今寇眾我寡，難與持久。然觀操軍船艦，首尾相接，可燒而走也。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-fire-attack-preparation-main",
+      "parentKey": "sgz-v54-zhou-yu",
+      "nodeType": "passage",
+      "ordinal": 12,
+      "label": "黄盖准备火船并诈降接近曹军",
+      "locatorPath": "卷54/周瑜傳/赤壁火攻/準備",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "乃取蒙衝鬥艦數十艘，實以薪草，膏油灌其中，裹以帷幕，上建牙旗，先書報曹公，欺以欲降。又豫備走舸，各繫大船後，因引次俱前。曹公軍吏士皆延頸觀望，指言蓋降。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-jiangbiao-huang-gai-letter",
+      "parentKey": "sgz-v54-zhou-yu-fire-attack-preparation-main",
+      "nodeType": "quoted_fragment",
+      "ordinal": 14,
+      "label": "裴注引《江表传》黄盖诈降书与曹操答复",
+      "locatorPath": "卷54/周瑜傳/赤壁火攻/裴注引江表傳/黃蓋書",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "《江表傳》載蓋書曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "蓋受孫氏厚恩，常為將帥，見遇不薄。然顧天下事有大勢，用江東六郡山越之人，以當中國百萬之眾，眾寡不敵，海內所共見也。東方將吏，無有愚智，皆知其不可，惟周瑜、魯肅偏懷淺戇，意未解耳。今日歸命，是其實計。瑜所督領，自易摧破。交鋒之日，蓋為前部，當因事變化，效命在近。曹公特見行人，密問之，口敕曰：「但恐汝詐耳。蓋若信實，當授爵賞，超於前後也。」"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-jiangbiao-quote",
+      "parentKey": "sgz-v54-zhou-yu-battle-main",
+      "nodeType": "quoted_fragment",
+      "ordinal": 5,
+      "label": "裴注引《江表传》火攻记载",
+      "locatorPath": "卷54/周瑜傳/段3/裴注引江表傳",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "《江表傳》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "至戰日，蓋先取輕利艦十舫，載燥荻枯柴積其中，灌以魚膏，赤幔覆之，建旌旗龍幡於艦上。時東南風急，因以十艦最著前。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-jiangbiao-fire-attack-continuation",
+      "parentKey": "sgz-v54-zhou-yu-jiangbiao-quote",
+      "nodeType": "quoted_fragment",
+      "ordinal": 13,
+      "label": "裴注引《江表传》火船发火与联军推进",
+      "locatorPath": "卷54/周瑜傳/赤壁火攻/裴注引江表傳/續段",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "《江表傳》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "中江舉帆，蓋舉火白諸校，使眾兵齊聲大叫曰：「降焉！」操軍人皆出營立觀。去北軍二里餘，同時發火，火烈風猛，往船如箭，飛埃絕爛，燒盡北船，延及岸邊營柴。瑜等率輕銳尋繼其後，雷鼓大進，北軍大壞，曹公退走。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-retreat-main",
+      "parentKey": "sgz-v54-zhou-yu",
+      "nodeType": "passage",
+      "ordinal": 6,
+      "label": "曹军败退与南郡后续",
+      "locatorPath": "卷54/周瑜傳/段4",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "蓋放諸船，同時發火。時風盛猛，悉延燒岸上營落。頃之，煙炎張天，人馬燒溺死者甚眾，軍遂敗退，還保南郡。備與瑜等復共追。曹公留曹仁等守江陵城，逕自北歸。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-zhou-yu-jiangbiao-cao-letter",
+      "parentKey": "sgz-v54-zhou-yu",
+      "nodeType": "quoted_fragment",
+      "ordinal": 7,
+      "label": "裴注引《江表传》曹操称疫病自焚退军",
+      "locatorPath": "卷54/周瑜傳/裴注引江表傳/曹公書",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af002",
+        "type": "explicit_citation",
+        "text": "《江表傳》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "瑜之破魏軍也，曹公曰：「孤不羞走。」後書與權曰：「赤壁之役，值有疾病，孤燒船自退，橫使周瑜虛獲此名。」"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-lu-su",
+      "parentKey": "sgz-v54",
+      "nodeType": "biography",
+      "ordinal": 2,
+      "label": "吳書·魯肅傳",
+      "locatorPath": "卷54/魯肅傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v54-lu-su-contact",
+      "parentKey": "sgz-v54-lu-su",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "鲁肃迎接刘备并促成遣使",
+      "locatorPath": "卷54/魯肅傳/段1",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "劉表死。肅進說曰：『夫荊楚與國鄰接，水流順北，外帶江漢，內阻山陵，有金城之固，沃野萬里，士民殷富，若據而有之，此帝王之資也。今表新亡，二子素不輯睦，軍中諸將，各有彼此。加劉備天下梟雄，與操有隙，寄寓於表，表惡其能而不能用也。若備與彼協心，上下齊同，則宜撫安，與結盟好；如有離違，宜別圖之，以濟大事。肅請得奉命弔表二子，並慰勞其軍中用事者，及說備使撫表眾，同心一意，共治曹操，備必喜而從命。如其克諧，天下可定也。今不速往，恐為操所先。』權即遣肅行。到夏口，聞曹公已向荊州，晨夜兼道。比至南郡，而表子琮已降曹公，備惶遽奔走，欲南渡江。肅徑迎之，到當陽長阪，與備會，宣騰權旨，及陳江東強固，勸備與權並力。備甚歡悅。備遂到夏口，遣亮使權，肅亦反命。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-lu-su-decision",
+      "parentKey": "sgz-v54-lu-su",
+      "nodeType": "passage",
+      "ordinal": 2,
+      "label": "鲁肃与孙权议拒曹",
+      "locatorPath": "卷54/魯肅傳/段2",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "會權得曹公欲東之問，與諸將議，皆勸權迎之，而肅獨不言。權起更衣，肅追於宇下。權知其意，執肅手曰：『卿欲何言？』肅對曰：『向察眾人之議，專欲誤將軍，不足與圖大事。今肅可迎操耳，如將軍，不可也。』權歎息曰：『此諸人持議，甚失孤望；今卿廓開大計，正與孤同，此天以卿賜我也。』"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-lu-su-strategy-and-return",
+      "parentKey": "sgz-v54-lu-su",
+      "nodeType": "passage",
+      "ordinal": 4,
+      "label": "鲁肃召回周瑜、助画方略与先还",
+      "locatorPath": "卷54/魯肅傳/拒曹部署與戰後返吳",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "時周瑜受使至鄱陽，肅勸追召瑜還。遂任瑜以行事，以肅為贊軍校尉，助畫方略。曹公破走，肅即先還，權大請諸將迎肅。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-lu-su-hanjin-jingzhou-loan",
+      "parentKey": "sgz-v54-lu-su",
+      "nodeType": "quoted_fragment",
+      "ordinal": 3,
+      "label": "裴注引《汉晋春秋》鲁肃劝借地安刘备",
+      "locatorPath": "卷54/魯肅傳/戰後經略/裴注引漢晉春秋",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af008",
+        "type": "explicit_citation",
+        "text": "《漢晉春秋》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "呂範勸留備，肅曰：「不可。將軍雖神武命世，然曹公威力實重，初臨荊州，恩信未洽，宜以藉備，使撫安之。多操之敵，而自為樹黨，計之上也。」權即從之。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v54-lu-meng",
+      "parentKey": "sgz-v54",
+      "nodeType": "biography",
+      "ordinal": 3,
+      "label": "吳書·呂蒙傳",
+      "locatorPath": "卷54/呂蒙傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v54-lu-meng-jiangling-aftermath",
+      "parentKey": "sgz-v54-lu-meng",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "吕蒙援夷陵并推进南郡",
+      "locatorPath": "卷54/呂蒙傳/烏林後南郡戰事",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "是歲，又與周瑜、程普等西破曹公於烏林，圍曹仁於南郡。瑜使甘寧前據夷陵，曹仁分眾圍寧，寧困急，使使請救。諸將以兵少不足分，蒙謂瑜、普曰：「留凌公績，蒙與君行，解圍釋急，勢亦不久，蒙保公績能十日守也。」又說瑜分遣三百人柴斷險道，賊走可得其馬。瑜從之。軍到夷陵，即日交戰，所殺過半。敵夜遁去，行遇柴道，騎皆捨馬步走。兵追蹙擊，獲馬三百匹，方船載還。於是將士形勢自倍，乃渡江立屯，與相攻擊，曹仁退走。遂據南郡，撫定荊州。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v55",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 55,
+      "label": "三國志卷五十五",
+      "locatorPath": "卷55",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v55-cheng-pu",
+      "parentKey": "sgz-v55",
+      "nodeType": "biography",
+      "ordinal": 1,
+      "label": "吳書·程普傳",
+      "locatorPath": "卷55/程普傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v55-cheng-pu-wulin-nanjun",
+      "parentKey": "sgz-v55-cheng-pu",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "程普与周瑜破曹并进攻南郡",
+      "locatorPath": "卷55/程普傳/烏林及南郡戰事",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "與周瑜為左右督，破曹公於烏林，又進攻南郡，走曹仁。拜裨將軍，領江夏太守，治沙羨，食四縣。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v55-huang-gai",
+      "parentKey": "sgz-v55",
+      "nodeType": "biography",
+      "ordinal": 2,
+      "label": "吳書·黃蓋傳",
+      "locatorPath": "卷55/黃蓋傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v55-huang-gai-red-cliffs",
+      "parentKey": "sgz-v55-huang-gai",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "黄盖建策火攻",
+      "locatorPath": "卷55/黃蓋傳/赤壁建策火攻",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "蓋姿貌嚴毅，善於養眾，每所征討，士卒皆爭為先。建安中，隨周瑜拒曹公於赤壁，建策火攻，語在瑜傳。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v55-huang-gai-wushu-wound",
+      "parentKey": "sgz-v55-huang-gai",
+      "nodeType": "quoted_fragment",
+      "ordinal": 2,
+      "label": "裴注引《吴书》黄盖中矢落水",
+      "locatorPath": "卷55/黃蓋傳/赤壁中矢落水/裴注引吳書",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af02b",
+        "type": "explicit_citation",
+        "text": "《吳書》曰"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "赤壁之役，蓋為流矢所中，時寒墮水，為吳軍人所得，不知其蓋也，置廁牀中。蓋自彊以一聲呼韓當，當聞之，曰：「此公覆聲也。」向之垂涕，解易其衣，遂以得生。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v55-han-dang",
+      "parentKey": "sgz-v55",
+      "nodeType": "biography",
+      "ordinal": 3,
+      "label": "吳書·韓當傳",
+      "locatorPath": "卷55/韓當傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v55-han-dang-red-cliffs",
+      "parentKey": "sgz-v55-han-dang",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "韩当随周瑜拒破曹军",
+      "locatorPath": "卷55/韓當傳/烏林及南郡戰事",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "後以中郎將與周瑜等拒破曹公，又與呂蒙襲取南郡，遷偏將軍，領永昌太守。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v55-zhou-tai",
+      "parentKey": "sgz-v55",
+      "nodeType": "biography",
+      "ordinal": 4,
+      "label": "吳書·周泰傳",
+      "locatorPath": "卷55/周泰傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v55-zhou-tai-red-cliffs",
+      "parentKey": "sgz-v55-zhou-tai",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "周泰参与赤壁与南郡战事",
+      "locatorPath": "卷55/周泰傳/赤壁及南郡戰事",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "後與周瑜、程普拒曹公於赤壁，攻曹仁於南郡。荊州平定，將兵屯岑。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v55-gan-ning",
+      "parentKey": "sgz-v55",
+      "nodeType": "biography",
+      "ordinal": 5,
+      "label": "吳書·甘寧傳",
+      "locatorPath": "卷55/甘寧傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v55-gan-ning-wulin-yiling",
+      "parentKey": "sgz-v55-gan-ning",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "甘宁乌林后取夷陵并受围",
+      "locatorPath": "卷55/甘寧傳/烏林夷陵及南郡戰事",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "後隨周瑜拒破曹公於烏林。攻曹仁於南郡，未拔，寧建計先徑進取夷陵，往即得其城，因入守之。時手下有數百兵，並所新得，僅滿千人。曹仁乃令五六千人圍寧。寧受攻累日，敵設高樓，雨射城中，士眾皆懼，惟寧談笑自若。遣使報瑜，瑜用呂蒙計，帥諸將解圍。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sgz-v55-ling-tong",
+      "parentKey": "sgz-v55",
+      "nodeType": "biography",
+      "ordinal": 6,
+      "label": "吳書·凌統傳",
+      "locatorPath": "卷55/凌統傳",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sgz-v55-ling-tong-wulin-nanjun",
+      "parentKey": "sgz-v55-ling-tong",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "凌统参与乌林与南郡战事",
+      "locatorPath": "卷55/凌統傳/烏林及南郡戰事",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "權以統為承烈都尉，與周瑜等拒破曹公於烏林，遂攻曹仁，遷為校尉。"
+        }
+      ]
+    }
+  ]
+}

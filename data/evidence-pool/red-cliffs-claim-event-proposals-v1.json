@@ -1,0 +1,487 @@
+{
+  "format": "chronoatlas-claim-event-proposal-set/1",
+  "proposalSetVersion": "1.0.0",
+  "proposalSetId": "red-cliffs-claims-events-v1",
+  "packId": "red-cliffs-multi-source-v1",
+  "assertionCandidateSetPath": "red-cliffs-assertion-candidates-v1.json",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "generator": {
+    "key": "red-cliffs-editorial-alignment-proposal",
+    "version": "1.0.0",
+    "parameters": {
+      "granularity": "six-phase-events-plus-one-cluster",
+      "sourceTitleDoesNotImplyIndependence": true,
+      "candidateOnly": true
+    }
+  },
+  "gates": {
+    "automaticTransmissionAcceptance": false,
+    "automaticClaimAcceptance": false,
+    "automaticEventAcceptance": false,
+    "automaticPublication": false,
+    "formalRecordsCreated": false
+  },
+  "transmissionGroups": [
+    {
+      "key": "tg-sgz-liu-cong-surrender-parallels",
+      "label": "《三国志》多传刘琮投降平行记载",
+      "assessment": "same_work_parallel",
+      "basisNote": "同一作品内《武帝纪》《先主传》《吴主传》《周瑜传》的平行叙述，不能按四本书计算独立见证。",
+      "members": [
+        ["sgz-wudi-liu-cong-surrenders", "parallel_passage"],
+        ["sgz-xianzhu-liu-cong-surrenders", "parallel_passage"],
+        ["sgz-liu-cong-surrenders", "parallel_passage"]
+      ]
+    },
+    {
+      "key": "tg-sgz-lu-su-contact-parallels",
+      "label": "鲁肃接触刘备的正文与辑佚引文传承",
+      "assessment": "quoted_transmission",
+      "basisNote": "《三国志》三篇正文与裴注所引《江表传》叙述彼此相关；被引佚书保留作品身份，但独立性需人工评估。",
+      "members": [
+        ["sgz-liu-bei-meets-lu-su", "parallel_passage"],
+        ["sgz-wuzhu-lu-su-meets-liu-bei", "parallel_passage"],
+        ["sgz-lusu-meets-liu-bei-changban", "parallel_passage"],
+        ["jiangbiao-lu-su-meets-liu-bei", "quotation"]
+      ]
+    },
+    {
+      "key": "tg-sgz-red-cliffs-outcome-parallels",
+      "label": "《三国志》多传赤壁战果平行记载",
+      "assessment": "same_work_parallel",
+      "basisNote": "《武帝纪》《先主传》《诸葛亮传》《吴主传》《周瑜传》分别从不同人物叙事位置记述战果。",
+      "members": [
+        ["sgz-wudi-red-cliffs-unfavorable", "parallel_passage"],
+        ["sgz-xianzhu-red-cliffs-victory", "parallel_passage"],
+        ["sgz-zhuge-cao-defeated-red-cliffs", "parallel_passage"],
+        ["sgz-wuzhu-red-cliffs-victory", "parallel_passage"],
+        ["sgz-cao-loses-first-engagement", "parallel_passage"]
+      ]
+    },
+    {
+      "key": "tg-zztj-alliance-synthesis",
+      "label": "《资治通鉴》对孙刘联军形成的后世综合",
+      "assessment": "likely_restatement",
+      "basisNote": "《资治通鉴》成书晚于《三国志》等材料，其联军叙事默认作为可能的综合转述，而非自动增加独立见证。",
+      "members": [
+        ["sgz-sun-quan-dispatches-allied-force", "earlier_witness"],
+        ["sgz-xianzhu-allied-force", "parallel_passage"],
+        ["sgz-zhuge-dispatches-thirty-thousand", "parallel_passage"],
+        ["zztj-allied-commanders", "dependent_synthesis"]
+      ]
+    },
+    {
+      "key": "tg-zztj-epidemic-synthesis",
+      "label": "曹军疾疫记载的平行与后世综合",
+      "assessment": "likely_restatement",
+      "basisNote": "《资治通鉴》疾疫叙事与《三国志》多篇相近，先归入待审传承组。",
+      "members": [
+        ["sgz-cao-army-disease", "earlier_witness"],
+        ["sgz-wudi-epidemic", "parallel_passage"],
+        ["sgz-wuzhu-cao-burns-ships-retreats", "parallel_passage"],
+        ["zztj-cao-army-epidemic", "dependent_synthesis"]
+      ]
+    },
+    {
+      "key": "tg-fire-attack-transmission",
+      "label": "赤壁火攻记载的正文、辑佚引文与后世综合",
+      "assessment": "independence_uncertain",
+      "basisNote": "火攻过程、焚船主体和细节在《三国志》正文、裴注辑佚材料、《华阳国志》《资治通鉴》中层次不同，需拆分事实与叙事来源。",
+      "members": [
+        ["sgz-huang-gai-proposes-fire", "earlier_witness"],
+        ["jiangbiao-ten-fire-ships", "quotation"],
+        ["sgz-fire-ships-released", "parallel_passage"],
+        ["hygz-cao-ships-burned", "uncertain"],
+        ["zztj-fire-attack-destroys-fleet", "dependent_synthesis"],
+        ["shanyang-liu-bei-burns-cao-ships", "quotation"]
+      ]
+    },
+    {
+      "key": "tg-huarong-transmission",
+      "label": "华容退军的辑佚来源与《资治通鉴》转述",
+      "assessment": "likely_restatement",
+      "basisNote": "《资治通鉴》的华容道叙述与裴注所引《山阳公载记》具有明显传承关系，暂不按两条独立见证计数。",
+      "members": [
+        ["shanyang-huarong-retreat", "quotation"],
+        ["zztj-huarong-retreat", "dependent_synthesis"]
+      ]
+    },
+    {
+      "key": "tg-nanjun-pursuit-synthesis",
+      "label": "南郡追击与江陵留守的平行叙述",
+      "assessment": "likely_restatement",
+      "basisNote": "《三国志》多篇和《资治通鉴》对追至南郡、留守江陵的叙述相近，作为同一行动链的传承候选。",
+      "members": [
+        ["sgz-allies-pursue", "earlier_witness"],
+        ["sgz-xianzhu-pursues-nanjun", "parallel_passage"],
+        ["sgz-wuzhu-nanjun-garrisons", "parallel_passage"],
+        ["zztj-allies-pursue-nanjun", "dependent_synthesis"],
+        ["zztj-cao-leaves-jiangling-garrison", "dependent_synthesis"]
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "key": "claim-cao-southern-campaign",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "military.campaign",
+      "statement": "建安十三年，曹操发动南征并进入荆州。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [["sgz-wudi-cao-southern-campaign", "supports", "direct"]]
+    },
+    {
+      "key": "claim-liu-biao-death",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "person.death",
+      "statement": "刘表在曹操南征期间去世。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-wudi-liu-biao-dies", "supports", "direct"],
+        ["hhs-liu-biao-dies", "supports", "direct"]
+      ]
+    },
+    {
+      "key": "claim-liu-cong-surrender",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "political.surrender",
+      "statement": "刘琮继承刘表势力后向曹操请降，荆州权力格局迅速崩解。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-wudi-liu-cong-surrenders", "supports", "direct", "tg-sgz-liu-cong-surrender-parallels"],
+        ["sgz-xianzhu-liu-cong-surrenders", "supports", "direct", "tg-sgz-liu-cong-surrender-parallels"],
+        ["sgz-liu-cong-surrenders", "supports", "direct", "tg-sgz-liu-cong-surrender-parallels"],
+        ["hhs-liu-cong-surrenders", "supports", "direct"],
+        ["hygz-liu-cong-requests-surrender", "supports", "direct"]
+      ]
+    },
+    {
+      "key": "claim-liu-bei-withdraws-xiakou",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "military.withdrawal",
+      "statement": "刘琮投降后，刘备方面向南撤退并最终到达夏口。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-wudi-liu-bei-to-xiakou", "supports", "direct"],
+        ["sgz-xianzhu-liu-bei-withdraws", "supports", "direct"],
+        ["sgz-xianzhu-arrives-xiakou", "supports", "direct"],
+        ["hhs-liu-bei-flees-xiakou", "supports", "direct"]
+      ]
+    },
+    {
+      "key": "claim-changban-pursuit",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "military.pursuit",
+      "statement": "曹操以轻骑急追刘备，在当阳长坂追及并使刘备方面遭受严重损失。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-xianzhu-cao-pursues-changban", "supports", "direct"],
+        ["sgz-xianzhu-liu-bei-flees-changban", "supports", "direct"],
+        ["hygz-cao-cavalry-catches-changban", "supports", "direct"]
+      ]
+    },
+    {
+      "key": "claim-hanjin-regroup-xiakou",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "military.regroup",
+      "statement": "刘备在汉津与关羽船队会合，又与刘琦所部汇合后到达夏口。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-xianzhu-hanjin-join", "supports", "direct"],
+        ["sgz-xianzhu-arrives-xiakou", "supports", "direct"],
+        ["hygz-liu-bei-meets-guan-yu-hanjin", "supports", "direct"]
+      ]
+    },
+    {
+      "key": "claim-lu-su-contacts-liu-bei",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "diplomacy.meeting",
+      "statement": "鲁肃奉孙权方面意旨接触刘备，并提出双方并力的方向。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-liu-bei-meets-lu-su", "supports", "direct", "tg-sgz-lu-su-contact-parallels"],
+        ["sgz-wuzhu-lu-su-meets-liu-bei", "supports", "direct", "tg-sgz-lu-su-contact-parallels"],
+        ["sgz-lusu-meets-liu-bei-changban", "supports", "direct", "tg-sgz-lu-su-contact-parallels"],
+        ["sgz-lusu-advises-alliance", "supports", "direct"],
+        ["jiangbiao-lu-su-meets-liu-bei", "supports", "quoted_fragment", "tg-sgz-lu-su-contact-parallels"]
+      ]
+    },
+    {
+      "key": "claim-zhuge-liang-mission",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "diplomacy.mission",
+      "statement": "刘备到夏口前后，诸葛亮受命出使孙权方面寻求联合。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-zhuge-liang-mission", "supports", "direct"],
+        ["sgz-xianzhu-zhuge-mission", "supports", "direct"],
+        ["sgz-zhuge-requests-mission", "supports", "direct"],
+        ["sgz-lusu-liu-bei-sends-zhuge", "supports", "direct"],
+        ["hygz-zhuge-liang-requests-aid", "supports", "direct"]
+      ]
+    },
+    {
+      "key": "claim-sun-quan-war-council",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "political.war_council",
+      "statement": "孙权集团内部就迎曹或拒曹发生争论，孙权最终采取拒曹方向。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-wuzhu-internal-decision", "supports", "direct"],
+        ["sgz-lusu-opposes-surrender", "supports", "direct"],
+        ["sgz-lusu-sun-quan-agrees-resistance", "supports", "direct"],
+        ["sgz-pei-lu-su-first-plan", "qualifies", "authorial_judgment"]
+      ]
+    },
+    {
+      "key": "claim-sun-liu-allied-force",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "military.allied_dispatch",
+      "statement": "孙权派周瑜、程普等率水军与刘备方面联合迎击曹操。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-sun-quan-dispatches-allied-force", "supports", "direct", "tg-zztj-alliance-synthesis"],
+        ["sgz-xianzhu-allied-force", "supports", "direct", "tg-zztj-alliance-synthesis"],
+        ["sgz-zhuge-dispatches-thirty-thousand", "supports", "direct", "tg-zztj-alliance-synthesis"],
+        ["hygz-sun-dispatches-thirty-thousand", "supports", "direct"],
+        ["zztj-allied-commanders", "supports", "later_restatement", "tg-zztj-alliance-synthesis"]
+      ]
+    },
+    {
+      "key": "claim-red-cliffs-contact",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "military.contact",
+      "statement": "孙刘联军与曹军在赤壁一带发生接战。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-allies-meet-cao-at-red-cliffs", "supports", "direct"],
+        ["zztj-contact-red-cliffs", "supports", "later_restatement"],
+        ["hhs-zhou-yu-defeats-cao-wulin-red-cliffs", "supports", "direct"]
+      ]
+    },
+    {
+      "key": "claim-red-cliffs-location",
+      "domain": "historical_occurrence",
+      "type": "location_context",
+      "predicateKey": "geography.red_cliffs",
+      "statement": "胡三省注所引《水经注》把赤壁地名定位在江水东流所经赤壁山北一带；该地点解释仍需与其他地理材料并审。",
+      "polarity": "positive",
+      "modality": "reported",
+      "evidence": [["shuijingzhu-red-cliffs-location", "supports", "geographic_context"]]
+    },
+    {
+      "key": "claim-cao-army-epidemic",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "military.army_disease",
+      "statement": "曹军在赤壁交战前后受到疾疫影响，相关记载把它与伤亡及撤军联系起来。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-cao-army-disease", "supports", "direct", "tg-zztj-epidemic-synthesis"],
+        ["sgz-wudi-epidemic", "supports", "direct", "tg-zztj-epidemic-synthesis"],
+        ["sgz-wuzhu-cao-burns-ships-retreats", "qualifies", "direct", "tg-zztj-epidemic-synthesis"],
+        ["zztj-cao-army-epidemic", "supports", "later_restatement", "tg-zztj-epidemic-synthesis"]
+      ]
+    },
+    {
+      "key": "claim-cao-loses-engagement",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "military.engagement_outcome",
+      "statement": "曹军在赤壁接战中失利并退却。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-cao-loses-first-engagement", "supports", "direct", "tg-sgz-red-cliffs-outcome-parallels"],
+        ["sgz-wudi-red-cliffs-unfavorable", "supports", "direct", "tg-sgz-red-cliffs-outcome-parallels"],
+        ["sgz-wuzhu-red-cliffs-victory", "supports", "direct", "tg-sgz-red-cliffs-outcome-parallels"],
+        ["hhs-cao-defeated-red-cliffs", "supports", "direct"],
+        ["hygz-cao-defeated-red-cliffs", "supports", "direct"]
+      ]
+    },
+    {
+      "key": "claim-fire-attack-and-fleet-loss",
+      "domain": "historical_occurrence",
+      "type": "contested_occurrence",
+      "predicateKey": "military.fire_attack",
+      "statement": "曹军舰船在赤壁战斗过程中遭焚毁；火攻实施细节、焚船主体及曹军自焚余船的关系需分层审定。",
+      "polarity": "mixed",
+      "modality": "reported",
+      "evidence": [
+        ["sgz-huang-gai-proposes-fire", "supports", "direct", "tg-fire-attack-transmission"],
+        ["jiangbiao-ten-fire-ships", "supports", "quoted_fragment", "tg-fire-attack-transmission"],
+        ["sgz-fire-ships-released", "supports", "direct", "tg-fire-attack-transmission"],
+        ["hygz-cao-ships-burned", "supports", "direct", "tg-fire-attack-transmission"],
+        ["zztj-fire-attack-destroys-fleet", "supports", "later_restatement", "tg-fire-attack-transmission"],
+        ["shanyang-liu-bei-burns-cao-ships", "qualifies", "quoted_fragment", "tg-fire-attack-transmission"],
+        ["sgz-wuzhu-cao-burns-ships-retreats", "qualifies", "direct"]
+      ]
+    },
+    {
+      "key": "claim-huarong-retreat",
+      "domain": "historical_occurrence",
+      "type": "occurrence",
+      "predicateKey": "military.retreat_route",
+      "statement": "曹操败退过程中经华容道步行撤军；现有两条入库叙述可能属于同一传承链。",
+      "polarity": "positive",
+      "modality": "reported",
+      "evidence": [
+        ["shanyang-huarong-retreat", "supports", "quoted_fragment", "tg-huarong-transmission"],
+        ["zztj-huarong-retreat", "supports", "later_restatement", "tg-huarong-transmission"]
+      ]
+    },
+    {
+      "key": "claim-nanjun-pursuit-jiangling",
+      "domain": "historical_occurrence",
+      "type": "occurrence_chain",
+      "predicateKey": "military.pursuit_and_garrison",
+      "statement": "孙刘方面追击曹军至南郡，曹操北还并留军守江陵、襄阳，随后进入江陵争夺阶段。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-allies-pursue", "supports", "direct", "tg-nanjun-pursuit-synthesis"],
+        ["sgz-xianzhu-pursues-nanjun", "supports", "direct", "tg-nanjun-pursuit-synthesis"],
+        ["sgz-wuzhu-nanjun-garrisons", "supports", "direct", "tg-nanjun-pursuit-synthesis"],
+        ["zztj-allies-pursue-nanjun", "supports", "later_restatement", "tg-nanjun-pursuit-synthesis"],
+        ["zztj-cao-leaves-jiangling-garrison", "supports", "later_restatement", "tg-nanjun-pursuit-synthesis"]
+      ]
+    },
+    {
+      "key": "claim-jingzhou-postwar-change",
+      "domain": "historical_occurrence",
+      "type": "aftermath",
+      "predicateKey": "political.territorial_outcome",
+      "statement": "赤壁战后刘备方面向荆南扩展，武陵、长沙、桂阳、零陵等地的归属发生变化。",
+      "polarity": "positive",
+      "modality": "asserted",
+      "evidence": [
+        ["sgz-wudi-jingzhou-outcome", "supports", "direct"],
+        ["sgz-xianzhu-four-commandaries", "supports", "direct"],
+        ["hygz-liu-bei-takes-four-commandries", "supports", "direct"]
+      ]
+    }
+  ],
+  "collection": {
+    "key": "red-cliffs-event-cluster",
+    "label": "赤壁之战事件簇",
+    "summary": "从曹操南征导致的荆州权力崩解，经刘备撤退、孙刘外交与联合出兵，到赤壁接战、曹军败退以及江陵和荆州格局变化的一组连续事件。",
+    "kind": "event_cluster",
+    "timeExpression": "建安十三年至十四年（约公元208—209年）",
+    "boundaryCertainty": "bounded"
+  },
+  "events": [
+    {
+      "key": "red-cliffs-phase-1-jingzhou-collapse",
+      "label": "曹操南征与荆州权力崩解",
+      "summary": "曹操南征刘表；刘表去世后刘琮继立并请降，曹操快速控制荆州核心区域。",
+      "kind": "background",
+      "timeExpression": "建安十三年秋",
+      "placeExpression": "荆州北部、襄阳、新野、江陵",
+      "boundaryCertainty": "bounded",
+      "boundaryNote": "作为赤壁事件簇的直接背景，不把每条纪年记录拆成独立事件卡。",
+      "claims": [
+        ["claim-cao-southern-campaign", "core"],
+        ["claim-liu-biao-death", "core"],
+        ["claim-liu-cong-surrender", "core"]
+      ]
+    },
+    {
+      "key": "red-cliffs-phase-2-changban-xiakou",
+      "label": "长坂追击与刘备退至夏口",
+      "summary": "刘备从荆州北部南撤，曹军轻骑追及长坂；刘备经汉津与关羽、刘琦所部会合后到达夏口。",
+      "kind": "phase",
+      "timeExpression": "建安十三年九月前后",
+      "placeExpression": "襄阳—当阳长坂—汉津—夏口",
+      "boundaryCertainty": "bounded",
+      "boundaryNote": "把连续撤退、追击和重新集结视为一个行动阶段，保留长坂为可下钻子节点。",
+      "claims": [
+        ["claim-liu-bei-withdraws-xiakou", "core"],
+        ["claim-changban-pursuit", "core"],
+        ["claim-hanjin-regroup-xiakou", "result"]
+      ]
+    },
+    {
+      "key": "red-cliffs-phase-3-alliance-decision",
+      "label": "鲁肃接触、诸葛亮出使与孙权决策",
+      "summary": "鲁肃接触刘备并提出联合方向，诸葛亮出使孙权；孙权集团经过内部争论后采取拒曹决策。",
+      "kind": "phase",
+      "timeExpression": "建安十三年秋冬之际",
+      "placeExpression": "当阳、夏口、柴桑及孙权议事地点",
+      "boundaryCertainty": "approximate",
+      "boundaryNote": "外交接触、使节行动和内部决策相互依赖，时间次序存在叙事压缩，先合为一个外交决策阶段。",
+      "claims": [
+        ["claim-lu-su-contacts-liu-bei", "core"],
+        ["claim-zhuge-liang-mission", "core"],
+        ["claim-sun-quan-war-council", "core"]
+      ]
+    },
+    {
+      "key": "red-cliffs-phase-4-allied-deployment",
+      "label": "孙刘联军形成并向赤壁推进",
+      "summary": "孙权派周瑜、程普等率水军与刘备方面合力，联军向赤壁方向推进并与曹军接触。",
+      "kind": "phase",
+      "timeExpression": "建安十三年冬",
+      "placeExpression": "长江中游、夏口至赤壁一线",
+      "boundaryCertainty": "approximate",
+      "boundaryNote": "联盟政治决定与实际军事部署分层，避免把‘结盟’与‘赤壁交战’压成同一张卡。",
+      "claims": [
+        ["claim-sun-liu-allied-force", "core"],
+        ["claim-red-cliffs-contact", "result"],
+        ["claim-red-cliffs-location", "location"]
+      ]
+    },
+    {
+      "key": "red-cliffs-phase-5-battle-retreat",
+      "label": "赤壁接战、疾疫、火攻与曹军败退",
+      "summary": "曹军受疾疫影响并在接战中失利；联军实施火攻，曹军舰船与营落遭焚，曹操方面败退。",
+      "kind": "phase",
+      "timeExpression": "建安十三年冬",
+      "placeExpression": "赤壁—乌林及长江两岸营地",
+      "boundaryCertainty": "contested",
+      "boundaryNote": "疾疫、初战、火攻、曹军自焚余船及最终撤退的因果比例存在记载差异，事件边界和文案必须保留争议。",
+      "claims": [
+        ["claim-red-cliffs-contact", "chronology"],
+        ["claim-cao-army-epidemic", "cause"],
+        ["claim-cao-loses-engagement", "core"],
+        ["claim-fire-attack-and-fleet-loss", "contested"]
+      ]
+    },
+    {
+      "key": "red-cliffs-phase-6-huarong-aftermath",
+      "label": "华容退军、江陵争夺与荆州格局变化",
+      "summary": "曹操经华容方向撤退并留军守江陵；孙刘方面追至南郡，随后江陵争夺和荆南扩展改变荆州格局。",
+      "kind": "aftermath",
+      "timeExpression": "建安十三年冬至十四年",
+      "placeExpression": "华容道、南郡、江陵、荆南四郡",
+      "boundaryCertainty": "open",
+      "boundaryNote": "华容撤军是战斗收束，江陵争夺与四郡变化延伸至次年；在事件簇中相连，但前端应允许继续拆出长时段专题。",
+      "claims": [
+        ["claim-huarong-retreat", "core"],
+        ["claim-nanjun-pursuit-jiangling", "core"],
+        ["claim-jingzhou-postwar-change", "result"]
+      ]
+    }
+  ]
+}

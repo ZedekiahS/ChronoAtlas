@@ -1,0 +1,48 @@
+{
+  "format": "chronoatlas-evidence-pack/1",
+  "packVersion": "1.0.0",
+  "packId": "red-cliffs-multi-source-v1",
+  "label": "赤壁事件簇多来源最小证据包",
+  "scope": "Phase 2 assertion/claim shadow workflow only; no event or public release generation",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "documents": [
+    {
+      "assetPath": "sanguozhi-wuyingdian-red-cliffs-multivolume-v1.json",
+      "sourceFamily": "三國志及裴松之注",
+      "required": true,
+      "coverageRoles": ["魏蜀吴多传记叙事主干", "裴注判断", "江表傳与山陽公載記辑佚引文"]
+    },
+    {
+      "assetPath": "houhanshu-wuyingdian-red-cliffs-pilot.json",
+      "sourceFamily": "後漢書",
+      "required": true,
+      "coverageRoles": ["献帝纪纪年", "刘表传背景与结果"]
+    },
+    {
+      "assetPath": "huayang-guozhi-siku-v6-red-cliffs-pilot.json",
+      "sourceFamily": "華陽國志",
+      "required": true,
+      "coverageRoles": ["刘备一方行动链", "战后荆州变化"]
+    },
+    {
+      "assetPath": "zizhi-tongjian-siku-v65-red-cliffs-pilot.json",
+      "sourceFamily": "資治通鑑及胡三省注",
+      "required": true,
+      "coverageRoles": ["后世编年综合叙事", "华容退军", "水經注地点引文"]
+    }
+  ],
+  "gates": {
+    "minimumRequiredSourceFamilies": 4,
+    "requireAllDocumentsCommittedBeforeExtraction": true,
+    "candidateOnly": true,
+    "automaticAssertionAcceptance": false,
+    "automaticClaimAcceptance": false,
+    "automaticEventGeneration": false,
+    "transmissionIndependenceRequiresHumanReview": true
+  },
+  "notes": [
+    "不同书名不自动计为独立证据；《资治通鉴》的来源依赖与传承组必须另审。",
+    "每个资产都保留自己的版本、数字来源、校验值、权利状态与字符锚点。",
+    "本证据包只覆盖赤壁工作流的最小段落，不代表整本书已经完成外交转写或影像校勘。"
+  ]
+}

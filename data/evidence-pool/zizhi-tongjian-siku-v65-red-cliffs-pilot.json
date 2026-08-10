@@ -1,0 +1,223 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "zizhi-tongjian-annals-commentary-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af005",
+    "title": "資治通鑑",
+    "workKind": "chronicle",
+    "language": "lzh",
+    "dateLabel": "北宋",
+    "dateStart": 1065,
+    "dateEnd": 1084,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "relatedWorks": [
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af006",
+      "title": "水經注",
+      "workKind": "geographical_commentary",
+      "language": "lzh",
+      "dateLabel": "北魏",
+      "dateStart": 515,
+      "dateEnd": 527,
+      "availabilityStatus": "extant",
+      "evidenceDomain": "historical_source"
+    }
+  ],
+  "workRelations": [
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af005",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af006",
+      "relationType": "commentary_quotes",
+      "certainty": "high",
+      "note": "胡三省注在赤壁地理说明中显式引《水經注》。"
+    }
+  ],
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af105",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af005",
+    "witnessType": "printed_edition_with_digital_reference",
+    "editionStatement": "《摛藻堂四庫全書薈要》本《資治通鑑》胡三省注；卷六十五赤壁相关段落 Phase 2 人工转写小样本",
+    "publisher": "摛藻堂",
+    "publicationDate": "清乾隆时期",
+    "shelfmark": null,
+    "catalogUri": "https://ctext.org/wiki.pl?if=gb&res=548761",
+    "fidelityStatus": "pilot_pending_image_collation",
+    "note": "旧库国学导航文本用于发现与比对；本 v2 样本选择 CTP 所标摛藻堂四库全书荟要底本，待影像逐字校勘。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://ctext.org/wiki.pl?chapter=924045&if=gb",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "正文、胡三省注及注中《水经注》引文分层保存。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af205",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；数字影像与平台转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "版本影像与数字转写许可复核前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "zztj-v65",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 65,
+      "label": "卷六十五",
+      "locatorPath": "卷65",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "zztj-v65-hanji57",
+      "parentKey": "zztj-v65",
+      "nodeType": "chronicle_section",
+      "ordinal": 1,
+      "label": "漢紀五十七·孝獻皇帝庚·建安十三年",
+      "locatorPath": "卷65/漢紀57/建安十三年",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "zztj-v65-alliance",
+      "parentKey": "zztj-v65-hanji57",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "孙权定策与孙刘联合出兵",
+      "locatorPath": "卷65/建安十三年/孙权定策",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "遂以周瑜、程普為左右督，將兵與備并力逆操；以魯肅為贊軍校尉，助畫方略。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "zztj-v65-red-cliffs-contact",
+      "parentKey": "zztj-v65-hanji57",
+      "nodeType": "passage",
+      "ordinal": 2,
+      "label": "联军与曹操相遇于赤壁",
+      "locatorPath": "卷65/建安十三年/赤壁接战",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "進，與操遇於赤壁。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "zztj-v65-hu-comment",
+      "parentKey": "zztj-v65-red-cliffs-contact",
+      "nodeType": "commentary",
+      "ordinal": 3,
+      "label": "胡三省赤壁地理注",
+      "locatorPath": "卷65/建安十三年/赤壁接战/胡注",
+      "layerRole": "commentary",
+      "layers": [
+        {
+          "kind": "commentary",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "赤壁山，在蒲圻西百三十里，北岸烏林，與赤壁相對。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "zztj-v65-hu-quote-shuijingzhu",
+      "parentKey": "zztj-v65-hu-comment",
+      "nodeType": "quoted_fragment",
+      "ordinal": 4,
+      "label": "胡三省注引《水經注》赤壁山",
+      "locatorPath": "卷65/建安十三年/赤壁接战/胡注引水經注",
+      "layerRole": "quoted_fragment",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af006",
+        "type": "explicit_citation",
+        "text": "水經注"
+      },
+      "layers": [
+        {
+          "kind": "quotation",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "江水自沙羨而東，右逕赤壁山北。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "zztj-v65-disease-fire",
+      "parentKey": "zztj-v65-hanji57",
+      "nodeType": "passage",
+      "ordinal": 5,
+      "label": "疾疫、初战、黄盖火攻与曹军大坏",
+      "locatorPath": "卷65/建安十三年/赤壁火攻",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "時操軍眾已有疾疫。初一交戰，操軍不利，引次江北。瑜等在南岸。瑜部將黃蓋曰：今寇眾我寡，難與持久。操軍方連船艦，首尾相接，可燒而走也。乃取蒙衝鬥艦十艘，載燥荻、枯柴，灌油其中。去北軍二里餘，同時發火，火烈風猛，燒盡北船，延及岸上營落。人馬燒溺死者甚眾，北軍大壞。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "zztj-v65-huarong-retreat",
+      "parentKey": "zztj-v65-hanji57",
+      "nodeType": "passage",
+      "ordinal": 6,
+      "label": "曹操经华容道退军",
+      "locatorPath": "卷65/建安十三年/华容退军",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "操引軍從華容道步走，遇泥濘，道不通。悉使羸兵負草填之，騎乃得過。羸兵為人馬所蹈藉，陷泥中，死者甚眾。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "zztj-v65-nanjun-aftermath",
+      "parentKey": "zztj-v65-hanji57",
+      "nodeType": "passage",
+      "ordinal": 7,
+      "label": "追击至南郡、留守江陵与北还",
+      "locatorPath": "卷65/建安十三年/南郡后续",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "劉備、周瑜水陸並進，追操至南郡。時操軍兼以饑疫，死者太半。操乃留征南將軍曹仁、橫野將軍徐晃守江陵，折衝將軍樂進守襄陽，引軍北還。"
+        }
+      ]
+    }
+  ]
+}

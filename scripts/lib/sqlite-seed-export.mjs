@@ -47,6 +47,7 @@ export function buildSeedStatements(db, {
   label,
   insertOrReplace = false,
   baseSchemaColumns = new Map(),
+  tableSelectSql = new Map(),
 }) {
   const insertVerb = insertOrReplace ? "INSERT OR REPLACE" : "INSERT";
   const output = [
@@ -60,7 +61,11 @@ export function buildSeedStatements(db, {
   for (const tableName of orderedTables.filter((name) => tables.has(name))) {
     const tableInfo = readTableInfo(db, tableName);
     const columns = tableInfo.map((column) => column.name);
-    const rows = db.prepare(buildDeterministicSelectSql(tableName, tableInfo)).all();
+    const selectOverride = tableSelectSql.get(tableName);
+    const selectSql = typeof selectOverride === "function"
+      ? selectOverride(tableName, tableInfo)
+      : selectOverride ?? buildDeterministicSelectSql(tableName, tableInfo);
+    const rows = db.prepare(selectSql).all();
 
     if (rows.length === 0) {
       continue;

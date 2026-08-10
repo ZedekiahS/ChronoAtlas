@@ -1,0 +1,146 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "shuijingzhu-geography-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true,
+      "documentScope": "volume-35-red-cliffs-geography"
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af006",
+    "title": "水經注",
+    "workKind": "geographical_commentary",
+    "language": "lzh",
+    "dateLabel": "北魏",
+    "dateStart": 515,
+    "dateEnd": 527,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af106",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af006",
+    "witnessType": "received_geographical_text_with_digital_reference",
+    "editionStatement": "維基文庫《水經注》卷三十五《江水》公开数字文本；公安、乌林、赤壁与黄军浦相关段落 Phase 2 人工转写小样本",
+    "publisher": null,
+    "publicationDate": null,
+    "shelfmark": null,
+    "catalogUri": "https://zh.wikisource.org/wiki/%E6%B0%B4%E7%B6%93%E6%B3%A8/35",
+    "fidelityStatus": "pilot_pending_edition_collation",
+    "note": "本文件建立《水经注》直接见证，不以《资治通鉴》胡三省注的短引文代替；尚待指定版本影像校勘。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://zh.wikisource.org/wiki/%E6%B0%B4%E7%B6%93%E6%B3%A8/35",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "赤壁专题的直接地理见证，分别保存公安、上中下乌林、赤壁山与黄军浦。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af206",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；数字文本与转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "版本影像与数字转写许可复核前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "sjz-v35",
+      "parentKey": null,
+      "nodeType": "volume",
+      "ordinal": 35,
+      "label": "卷三十五",
+      "locatorPath": "卷35",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sjz-v35-jiangshui",
+      "parentKey": "sjz-v35",
+      "nodeType": "river_section",
+      "ordinal": 1,
+      "label": "江水",
+      "locatorPath": "卷35/江水",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "sjz-v35-gongan",
+      "parentKey": "sjz-v35-jiangshui",
+      "nodeType": "passage",
+      "ordinal": 1,
+      "label": "公安筑镇与曹操闻借荆州落笔",
+      "locatorPath": "卷35/江水/公安縣北",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "又東，右合油口，又東逕公安縣北，劉備之奔江陵，使築而鎮之。曹公聞孫權以荊州借備，臨書落筆。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sjz-v35-three-wulin",
+      "parentKey": "sjz-v35-jiangshui",
+      "nodeType": "passage",
+      "ordinal": 2,
+      "label": "上乌林、中乌林、下乌林与黄盖败魏武",
+      "locatorPath": "卷35/江水/上中下烏林",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "江水左逕上烏林南，村居地名也。又東逕烏黎口，江浦也，即中烏林矣。又東逕下烏林南，吳黃蓋敗魏武于烏林，即是處也。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sjz-v35-red-cliffs-mountain",
+      "parentKey": "sjz-v35-jiangshui",
+      "nodeType": "passage",
+      "ordinal": 3,
+      "label": "百人山与赤壁山之间的战事记忆",
+      "locatorPath": "卷35/江水/赤壁山北",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "江水左逕百人山南，右逕赤壁山北，昔周瑜與黃蓋詐魏武大軍處所也。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "sjz-v35-huangjunpu",
+      "parentKey": "sjz-v35-jiangshui",
+      "nodeType": "passage",
+      "ordinal": 4,
+      "label": "黄军浦与黄盖屯军记忆",
+      "locatorPath": "卷35/江水/黃軍浦",
+      "layerRole": "main_text",
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "直鸚鵡洲之下尾，江水溠曰洑浦，是曰黃軍浦。昔吳將黃蓋軍師所屯，故浦得其名，亦商舟之所會矣。"
+        }
+      ]
+    }
+  ]
+}

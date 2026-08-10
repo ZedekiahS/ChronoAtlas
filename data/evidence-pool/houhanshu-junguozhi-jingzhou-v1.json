@@ -1,0 +1,169 @@
+{
+  "format": "chronoatlas-annotated-text/1",
+  "manifestVersion": "1.0.0",
+  "createdAt": "2026-08-09T00:00:00.000Z",
+  "adapter": {
+    "key": "houhanshu-incorporated-geography-json",
+    "version": "1.0.0",
+    "parameters": {
+      "anchorPolicy": "full-node",
+      "characterUnit": "unicode-code-point",
+      "preserveReadingOrder": true,
+      "documentScope": "treatise-22-jingzhou-nanjun-jiangxia-changsha"
+    }
+  },
+  "work": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af003",
+    "title": "後漢書",
+    "workKind": "official_history",
+    "language": "lzh",
+    "dateLabel": "南朝宋",
+    "dateStart": 432,
+    "dateEnd": 445,
+    "availabilityStatus": "extant",
+    "evidenceDomain": "historical_source"
+  },
+  "relatedWorks": [
+    {
+      "id": "019f24ee-4c8f-7a20-8b5b-8795d01af021",
+      "title": "續漢書·郡國志",
+      "workKind": "official_geographical_treatise",
+      "language": "lzh",
+      "dateLabel": "西晉",
+      "dateStart": 265,
+      "dateEnd": 306,
+      "availabilityStatus": "extant_as_incorporated_text",
+      "evidenceDomain": "historical_source"
+    }
+  ],
+  "workRelations": [
+    {
+      "fromWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af003",
+      "toWorkId": "019f24ee-4c8f-7a20-8b5b-8795d01af021",
+      "relationType": "preserves",
+      "certainty": "high",
+      "note": "今本《后汉书》志部由刘昭注补，保存司马彪《续汉书·郡国志》，不视作范晔纪传正文。"
+    }
+  ],
+  "witness": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af121",
+    "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af003",
+    "witnessType": "received_official_history_supplement_with_digital_reference",
+    "editionStatement": "識典古籍《後漢書》志第二十二《郡國四》公开数字文本；荆州南郡、江夏、长沙三郡段落 Phase 2 人工转写小样本",
+    "publisher": null,
+    "publicationDate": null,
+    "shelfmark": null,
+    "catalogUri": "https://www.shidianguji.com/zh/book/LS0003/chapter/1j7lpp6s48bi3_289",
+    "fidelityStatus": "pilot_pending_edition_collation",
+    "note": "郡国志反映的基准并非建安十三年逐日疆界；本见证只提供郡县名称层级，尚待武英殿本影像校勘。"
+  },
+  "asset": {
+    "assetKind": "annotated_transcription_sample",
+    "originUri": "https://www.shidianguji.com/zh/book/LS0003/chapter/1j7lpp6s48bi3_289",
+    "retrievedAt": "2026-08-09T00:00:00.000Z",
+    "mediaType": "application/vnd.chronoatlas.annotated-text+json",
+    "note": "保存南郡、江夏、长沙的郡县名录；208 年的空间推断仍需与纪传和地理专书交叉核验。"
+  },
+  "rights": {
+    "id": "019f24ee-4c8f-7a20-8b5b-8795d01af221",
+    "status": "internal_research_pilot",
+    "licenseUri": null,
+    "rightsHolder": "古代原文属公版；数字文本与转写使用条件待复核",
+    "jurisdiction": "CN",
+    "allowStore": true,
+    "allowDisplay": false,
+    "allowIndex": false,
+    "allowQuote": true,
+    "reviewedAt": "2026-08-09T00:00:00.000Z",
+    "note": "版本影像与数字转写许可复核前，只用于本地内部研究。"
+  },
+  "nodes": [
+    {
+      "nodeKey": "hhs-z22",
+      "parentKey": null,
+      "nodeType": "treatise_volume",
+      "ordinal": 22,
+      "label": "志第二十二·郡國四",
+      "locatorPath": "志22/郡國四",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "hhs-z22-jingzhou",
+      "parentKey": "hhs-z22",
+      "nodeType": "province_section",
+      "ordinal": 1,
+      "label": "荊州刺史部",
+      "locatorPath": "志22/郡國四/荊州",
+      "layerRole": "structure"
+    },
+    {
+      "nodeKey": "hhs-z22-nanjun",
+      "parentKey": "hhs-z22-jingzhou",
+      "nodeType": "commandery_entry",
+      "ordinal": 1,
+      "label": "南郡十七城",
+      "locatorPath": "志22/郡國四/荊州/南郡",
+      "layerRole": "incorporated_text",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af021",
+        "type": "incorporated_component",
+        "text": "劉昭注補司馬彪《續漢書·郡國志》",
+        "certainty": "high"
+      },
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "南郡十七城，户十六萬二千五百七十，口七十四萬七千六百四。江陵有津鄉。巫西有白帝城。秭歸本歸國。中盧侯國。編有藍口聚。當陽。華容侯國，雲夢澤在南。襄陽有阿頭山。邔侯國，有犁丘城。宜城侯國。鄀侯國，永平元年復。臨沮侯國，有荆山。枝江侯國，本羅國，有丹陽聚。夷道。夷陵有荆門、虎牙山。州陵。很山故屬武陵。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "hhs-z22-jiangxia",
+      "parentKey": "hhs-z22-jingzhou",
+      "nodeType": "commandery_entry",
+      "ordinal": 2,
+      "label": "江夏郡十四城",
+      "locatorPath": "志22/郡國四/荊州/江夏郡",
+      "layerRole": "incorporated_text",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af021",
+        "type": "incorporated_component",
+        "text": "劉昭注補司馬彪《續漢書·郡國志》",
+        "certainty": "high"
+      },
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "江夏郡十四城，户五萬八千四百三十四，口二十六萬五千四百六十四。西陵。西陽。軑侯國。鄳。竟陵侯國，有鄖鄉、立章山，本内方。雲杜。沙羡。邾。下雉。蘄春侯國。鄂。平春侯國。南新市侯國。安陸。"
+        }
+      ]
+    },
+    {
+      "nodeKey": "hhs-z22-changsha",
+      "parentKey": "hhs-z22-jingzhou",
+      "nodeType": "commandery_entry",
+      "ordinal": 3,
+      "label": "長沙郡十三城",
+      "locatorPath": "志22/郡國四/荊州/長沙郡",
+      "layerRole": "incorporated_text",
+      "attribution": {
+        "workId": "019f24ee-4c8f-7a20-8b5b-8795d01af021",
+        "type": "incorporated_component",
+        "text": "劉昭注補司馬彪《續漢書·郡國志》",
+        "certainty": "high"
+      },
+      "layers": [
+        {
+          "kind": "diplomatic",
+          "language": "lzh",
+          "script": "Hant",
+          "text": "長沙郡十三城，户二十五萬五千八百五十四，口百五萬九千三百七十二。臨湘。攸。荼陵。安城。酃。湘南侯國，衡山在東南。連道。昭陵。益陽。下雋。羅。醴陵。容陵。"
+        }
+      ]
+    }
+  ]
+}

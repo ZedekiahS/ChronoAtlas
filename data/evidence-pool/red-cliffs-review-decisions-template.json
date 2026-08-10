@@ -1,0 +1,15 @@
+{
+  "format": "chronoatlas-review-decision-bundle/1",
+  "bundleVersion": "1.0.0",
+  "packId": "red-cliffs-multi-source-v1",
+  "policyVersion": "evidence-review-policy/1",
+  "status": "awaiting_human_review",
+  "instructions": [
+    "逐条核对 proposedStatement 是否被 exact anchor 直接表达。",
+    "接受候选前确认 narratingWorkId，尤其是裴注所引辑佚书。",
+    "先接受 source_assertion，再讨论跨书 claim 聚合与 transmission group。",
+    "不得因为《资治通鉴》与《三国志》书名不同就认定为独立传承。",
+    "本模板为空；只有实际编辑者作出的决定才能写入 review_decisions。"
+  ],
+  "decisions": []
+}
